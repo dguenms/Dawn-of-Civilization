@@ -3,9 +3,6 @@
 #ifndef CvDLLUtilityIFaceBase_h
 #define CvDLLUtilityIFaceBase_h
 
-//#include "CvEnums.h"
-#include "LinkedList.h"
-
 //
 // abstract interface for utility functions used by DLL
 // Creator- Mustafa Thamer
@@ -21,19 +18,19 @@ class CvDLLFeatureIFaceBase;
 class CvDLLRouteIFaceBase;
 class CvDLLRiverIFaceBase;
 class CvDLLFAStarIFaceBase;
-class CvDLLEventReporterIFaceBase;
 class CvDLLXmlIFaceBase;
 class CvDLLFlagEntityIFaceBase;
 class CvDLLPythonIFaceBase;
 
+/*class CvDLLEventReporterIFaceBase;
 class CvSymbol;
 class CvPlot;
 class CvUnit;
 class CvCity;
-class CvCacheObject;
 class CvFont;
+class CvAudioGame;*/ // advc: unused
+class CvCacheObject;
 class CvDiploParameters;
-class CvAudioGame;
 struct ProfileSample;
 class CvReplayInfo;
 class CvPopupInfo;
@@ -45,6 +42,8 @@ public:
 	// accessors for other abstract interfaces
 	virtual CvDLLEntityIFaceBase* getEntityIFace() = 0;
 	virtual CvDLLInterfaceIFaceBase* getInterfaceIFace() = 0;
+	// advc: abbreviate
+	CvDLLInterfaceIFaceBase& UI() { return *getInterfaceIFace(); }
 	virtual CvDLLEngineIFaceBase* getEngineIFace() = 0;
 	virtual CvDLLIniParserIFaceBase* getIniParserIFace() = 0;
 	virtual CvDLLSymbolIFaceBase* getSymbolIFace() = 0;
@@ -62,11 +61,11 @@ public:
 
 	virtual void delMem(void *p, const char* pcFile, int iLine) = 0;
 	virtual void* newMem(size_t size, const char* pcFile, int iLine) = 0;
- 
+
 	virtual void delMemArray(void *p, const char* pcFile, int iLine) = 0;
 	virtual void* newMemArray(size_t size, const char* pcFile, int iLine) = 0;
 
-	virtual void* reallocMem(void* a, unsigned int uiBytes, const char* pcFile, int iLine) = 0; 
+	virtual void* reallocMem(void* a, unsigned int uiBytes, const char* pcFile, int iLine) = 0;
 	virtual unsigned int memSize(void* a) = 0;
 
 	virtual void clearVector(std::vector<int>& vec) = 0;
@@ -131,7 +130,10 @@ public:
 
 	virtual CvWString getMapScriptName() = 0;
 	virtual bool getTransferredMap() = 0;
+	/*  advc (comment): Presumably checks if szFileName has a WBSave ending.
+		"Desc" probably refers to the WBSave language. */
 	virtual bool isDescFileName(const char * szFileName) = 0;
+	// advc (comment): Might call isDescFileName. Should probably use CvGame::isScenario (advc.052) instead.
 	virtual bool isWBMapScript() = 0;
 	virtual bool isWBMapNoPlayers() = 0;
 	virtual bool pythonMapExists(const char * szMapName) = 0;
@@ -163,11 +165,14 @@ public:
 	virtual void beginMPDiplomacy( PlayerTypes eWhoTalkingTo, bool bRenegotiate = false, bool bSimultaneous = true) = 0;
 	virtual void endMPDiplomacy() = 0;
 
+	/*	advc (note): Don't know what this does. It doesn't say whether "No Sound" is
+		checked under Audio Options. Would have to look that up in the user profile
+		via a Python call (see CvOptionsScreen.drawAudioOptionsTab). */
 	virtual bool getAudioDisabled() = 0;
 	virtual int getAudioTagIndex(const TCHAR* szTag, int iScriptType = -1) = 0;
 
-	virtual void DoSound( int iScriptId ) = 0;
-	virtual void Do3DSound( int iScriptId, NiPoint3 vPosition ) = 0;
+	virtual void DoSound(int iScriptId) = 0;
+	virtual void Do3DSound(int iScriptId, NiPoint3 vPosition) = 0;
 
 	virtual FDataStreamBase* createFileStream() = 0;
 	virtual void destroyDataStream(FDataStreamBase*& stream) = 0;
@@ -203,7 +208,7 @@ public:
 
 	virtual CvWString getText(CvWString szIDTag, ...) = 0;
 	virtual CvWString getObjectText(CvWString szIDTag, uint uiForm, bool bNoSubs = false) = 0;
-	virtual void addText(const TCHAR* szIDTag, const wchar* szString, const wchar* szGender = L"N", const wchar* szPlural = L"false") = 0;		
+	virtual void addText(const TCHAR* szIDTag, const wchar* szString, const wchar* szGender = L"N", const wchar* szPlural = L"false") = 0;
 	virtual uint getNumForms(CvWString szIDTag) = 0;
 
 	virtual WorldSizeTypes getWorldSize() = 0;
@@ -236,7 +241,7 @@ public:
 	virtual bool getGraphicOption(GraphicOptionTypes eGraphicOption) = 0;
 	virtual bool getPlayerOption(PlayerOptionTypes ePlayerOption) = 0;
 	virtual int getMainMenu() = 0;
-	
+
 	virtual bool isFMPMgrHost() = 0;
 	virtual bool isFMPMgrPublic() = 0;
 	virtual void handleRetirement(PlayerTypes ePlayer) = 0;
@@ -246,10 +251,11 @@ public:
 	virtual bool ChangeINIKeyValue(const char* szGroupKey, const char* szKeyValue, const char* szOut) = 0;
 
 	virtual char* md5String(char* szString) = 0;
-
-	virtual const char* getModName(bool bFullPath = true) const = 0;
+	/*	advc.106i: Renamed from "getModName". Should generally use the name
+		cached by the DLL instead (CvGlobals::getModName). */
+	virtual const char* getExternalModName(bool bFullPath = true) const = 0;
 	virtual bool hasSkippedSaveChecksum() const = 0;
 	virtual void reportStatistics() = 0;
 };
 
-#endif	// CvDLLUtilityIFaceBase_h
+#endif

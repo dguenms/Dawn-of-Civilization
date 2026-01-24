@@ -1,19 +1,19 @@
 //
-// Python wrapper class for CvTeam 
+// Python wrapper class for CvTeam
 // updated 6-5
 //
 #include "CvGameCoreDLL.h"
 #include "CyTeam.h"
+#include "CvTeamAI.h"
 #include "CyArea.h"
-#include "CvTeam.h"
 
-CyTeam::CyTeam() : m_pTeam(NULL)
-{
-}
+CyTeam::CyTeam() : m_pTeam(NULL) {}
 
-CyTeam::CyTeam(CvTeam* pTeam) : m_pTeam(pTeam)
-{
-}
+CyTeam::CyTeam(CvTeam* pTeam) : m_pTeam(
+	pTeam == NULL ? NULL : &pTeam->AI()) // advc.003u
+{}
+
+//CvTeam* CyTeam::getTeam() { return m_pTeam; } // advc: unused
 
 void CyTeam::addTeam(int /*TeamTypes*/ eTeam)
 {
@@ -31,11 +31,33 @@ bool CyTeam::canDeclareWar(int /*TeamTypes*/ eTeam)
 	return m_pTeam ? m_pTeam->canDeclareWar((TeamTypes)eTeam) : false;
 }
 
+// K-Mod
+bool CyTeam::canEventuallyDeclareWar(int /*TeamTypes*/ eTeam)
+{
+	return m_pTeam ? m_pTeam->canEventuallyDeclareWar((TeamTypes)eTeam) : false;
+}
+// K-Mod end
+
 void CyTeam::declareWar(int /*TeamTypes*/ eTeam, bool bNewDiplo, int /*WarPlanTypes*/ eWarPlan)
 {
 	if (m_pTeam)
 		m_pTeam->declareWar((TeamTypes)eTeam, bNewDiplo, (WarPlanTypes)eWarPlan);
 }
+
+// <advc.106g>
+void CyTeam::declareWarEvent(int /*TeamTypes*/ eTeam, bool bNewDiplo, int /*WarPlanTypes*/ eWarPlan)
+{
+	if (m_pTeam)
+		m_pTeam->declareWar((TeamTypes)eTeam, bNewDiplo, (WarPlanTypes)eWarPlan,
+				true, NO_PLAYER, true);
+}
+
+void CyTeam::makePeaceEvent(int /*TeamTypes*/ eTeam)
+{
+	if (m_pTeam)
+		m_pTeam->makePeace((TeamTypes)eTeam, true, NO_TEAM, false, NULL, true);
+} // </advc.106g>
+
 
 void CyTeam::makePeace(int /*TeamTypes*/ eTeam)
 {
@@ -88,22 +110,22 @@ int CyTeam::getNumNukeUnits()
 
 int CyTeam::getAtWarCount(bool bIgnoreMinors)
 {
-	return m_pTeam ? m_pTeam->getAtWarCount(bIgnoreMinors) : -1;
+	return m_pTeam ? m_pTeam->getNumWars(bIgnoreMinors) : -1;
 }
 
 int CyTeam::getWarPlanCount(int /*WarPlanTypes*/ eWarPlan, bool bIgnoreMinors)
 {
-	return m_pTeam ? m_pTeam->getWarPlanCount((WarPlanTypes) eWarPlan, bIgnoreMinors) : -1;
+	return m_pTeam ? m_pTeam->AI_countWarPlans((WarPlanTypes)eWarPlan, bIgnoreMinors, MAX_CIV_PLAYERS) : -1;
 }
 
 int CyTeam::getAnyWarPlanCount(bool bIgnoreMinors)
 {
-	return m_pTeam ? m_pTeam->getAnyWarPlanCount(bIgnoreMinors) : -1;
+	return m_pTeam ? m_pTeam->AI_countWarPlans(NUM_WARPLAN_TYPES, bIgnoreMinors, MAX_CIV_PLAYERS) : -1;
 }
 
 int CyTeam::getChosenWarCount(bool bIgnoreMinors)
 {
-	return m_pTeam ? m_pTeam->getChosenWarCount(bIgnoreMinors) : -1;
+	return m_pTeam ? m_pTeam->AI_countChosenWars(bIgnoreMinors) : -1;
 }
 
 int CyTeam::getHasMetCivCount(bool bIgnoreMinors)
@@ -181,7 +203,7 @@ int CyTeam::countPowerByArea(CyArea* pArea)
 
 int CyTeam::countEnemyPowerByArea(CyArea* pArea)
 {
-	return m_pTeam ? m_pTeam->countEnemyPowerByArea(pArea->getArea()) : -1;
+	return m_pTeam ? m_pTeam->AI_countEnemyPowerByArea(pArea->getArea()) : -1;
 }
 
 int CyTeam::countNumAIUnitsByArea(CyArea* pArea, int /*UnitAITypes*/ eUnitAI)
@@ -191,7 +213,7 @@ int CyTeam::countNumAIUnitsByArea(CyArea* pArea, int /*UnitAITypes*/ eUnitAI)
 
 int CyTeam::countEnemyDangerByArea(CyArea* pArea)
 {
-	return m_pTeam ? m_pTeam->countEnemyDangerByArea(pArea->getArea()) : -1;
+	return m_pTeam ? m_pTeam->AI_countEnemyDangerByArea(pArea->getArea()) : -1;
 }
 
 int CyTeam::getResearchCost(int /*TechTypes*/ eTech)
@@ -252,6 +274,16 @@ int CyTeam::getNumMembers()
 {
 	return m_pTeam ? m_pTeam->getNumMembers() : -1;
 }
+// <advc.155>
+int CyTeam::getAliveCount()
+{
+	return m_pTeam ? m_pTeam->getAliveCount() : -1;
+}
+
+int CyTeam::getMasterTeam()
+{
+	return m_pTeam ? m_pTeam->getMasterTeam() : -1;
+} // </advc.155>
 
 bool CyTeam::isAlive()
 {
@@ -315,7 +347,7 @@ int CyTeam::getExtraWaterSeeFromCount()
 	return m_pTeam ? m_pTeam->getExtraWaterSeeFromCount() : -1;
 }
 
-bool CyTeam::isExtraWaterSeeFrom()	 
+bool CyTeam::isExtraWaterSeeFrom()
 {
 	return m_pTeam ? m_pTeam->isExtraWaterSeeFrom() : false;
 }
@@ -573,7 +605,7 @@ void CyTeam::setWarWeariness(int /*TeamTypes*/ eIndex, int iNewValue)
 		m_pTeam->setWarWeariness((TeamTypes)eIndex, iNewValue);
 }
 
-void CyTeam::changeWarWeariness(int /*TeamTypes*/ eIndex, int iChange)	 
+void CyTeam::changeWarWeariness(int /*TeamTypes*/ eIndex, int iChange)
 {
 	if (m_pTeam)
 		m_pTeam->changeWarWeariness((TeamTypes)eIndex, iChange);
@@ -581,18 +613,18 @@ void CyTeam::changeWarWeariness(int /*TeamTypes*/ eIndex, int iChange)
 
 int CyTeam::getTechShareCount(int iIndex)
 {
-	return m_pTeam ? m_pTeam->getTechShareCount(iIndex) : -1;
+	return m_pTeam ? m_pTeam->getTechShareCount((PlayerTypes)iIndex) : -1;
 }
 
 bool CyTeam::isTechShare(int iIndex)
 {
-	return m_pTeam ? m_pTeam->isTechShare(iIndex) : false;
+	return m_pTeam ? m_pTeam->isTechShare((PlayerTypes)iIndex) : false;
 }
 
 void CyTeam::changeTechShareCount(int iIndex, int iChange)
 {
 	if (m_pTeam)
-		m_pTeam->changeTechShareCount(iIndex, iChange);
+		m_pTeam->changeTechShareCount((PlayerTypes)iIndex, iChange);
 }
 
 int CyTeam::getCommerceFlexibleCount(int /*CommerceTypes*/ eIndex)
@@ -625,6 +657,11 @@ void CyTeam::changeExtraMoves(int /*DomainTypes*/ eIndex, int iChange)
 bool CyTeam::isHasMet(int /*TeamTypes*/ eIndex)
 {
 	return m_pTeam ? m_pTeam->isHasMet((TeamTypes)eIndex) : false;
+}
+// advc.091:
+int CyTeam::getHasMetTurn(int iOtherTeam)
+{
+	return m_pTeam ? m_pTeam->getHasMetTurn((TeamTypes)iOtherTeam) : -1;
 }
 
 //Rhye - start
@@ -668,17 +705,17 @@ bool CyTeam::isOpenBorders(int /*TeamTypes*/ eIndex)
 	return m_pTeam ? m_pTeam->isOpenBorders((TeamTypes)eIndex) : false;
 }
 
-bool CyTeam::isForcePeace(int /*TeamTypes*/ eIndex)				 
+bool CyTeam::isForcePeace(int /*TeamTypes*/ eIndex)
 {
 	return m_pTeam ? m_pTeam->isForcePeace((TeamTypes)eIndex) : false;
 }
 
-bool CyTeam::isVassal(int /*TeamTypes*/ eIndex)				 
+bool CyTeam::isVassal(int /*TeamTypes*/ eIndex)
 {
 	return m_pTeam ? m_pTeam->isVassal((TeamTypes)eIndex) : false;
 }
 
-void CyTeam::setVassal(int /*TeamTypes*/ eIndex, bool bVassal, bool bCapitulated)				 
+void CyTeam::setVassal(int /*TeamTypes*/ eIndex, bool bVassal, bool bCapitulated)
 {
 	if (m_pTeam)
 	{
@@ -686,7 +723,7 @@ void CyTeam::setVassal(int /*TeamTypes*/ eIndex, bool bVassal, bool bCapitulated
 	}
 }
 
-void CyTeam::assignVassal(int /*TeamTypes*/ eIndex, bool bSurrender)				 
+void CyTeam::assignVassal(int /*TeamTypes*/ eIndex, bool bSurrender)
 {
 	if (m_pTeam)
 	{
@@ -694,7 +731,7 @@ void CyTeam::assignVassal(int /*TeamTypes*/ eIndex, bool bSurrender)
 	}
 }
 
-void CyTeam::freeVassal(int /*TeamTypes*/ eIndex)				 
+void CyTeam::freeVassal(int /*TeamTypes*/ eIndex)
 {
 	if (m_pTeam)
 	{
@@ -702,7 +739,14 @@ void CyTeam::freeVassal(int /*TeamTypes*/ eIndex)
 	}
 }
 
-bool CyTeam::isDefensivePact(int /*TeamTypes*/ eIndex)				 
+// <advc.130v>
+bool CyTeam::isCapitulated() {
+	if(m_pTeam == NULL)
+		return false;
+	return m_pTeam->isCapitulated();
+} // </advc.130v>
+
+bool CyTeam::isDefensivePact(int /*TeamTypes*/ eIndex)
 {
 	return m_pTeam ? m_pTeam->isDefensivePact((TeamTypes)eIndex) : false;
 }
@@ -893,6 +937,10 @@ int CyTeam::getLaunchSuccessRate(int /*VictoryTypes*/ eVictory)
 	return (m_pTeam ? m_pTeam->getLaunchSuccessRate((VictoryTypes)eVictory) : -1);
 }
 
+bool CyTeam::hasSpaceshipArrived() // K-Mod
+{
+	return (m_pTeam ? m_pTeam->hasSpaceshipArrived() : false);
+}
 
 int CyTeam::getEspionagePointsAgainstTeam(int /*TeamTypes*/ eIndex)
 {
@@ -975,7 +1023,11 @@ void CyTeam::AI_setWarPlan(int /*TeamTypes*/ eIndex, int /*WarPlanTypes*/ eNewVa
 		m_pTeam->AI_setWarPlan((TeamTypes)eIndex, (WarPlanTypes)eNewValue);
 	}
 }
-
+// BETTER_BTS_AI_MOD, Player Interface, 01/12/09, jdog5000: START
+int CyTeam::AI_getWarPlan(int /*TeamTypes*/ eIndex) const
+{
+	return m_pTeam ? m_pTeam->AI_getWarPlan((TeamTypes)eIndex) : -1;
+} // BETTER_BTS_AI_MOD: END
 
 int CyTeam::AI_getAtWarCounter(int /*TeamTypes*/ eTeam) const
 {
@@ -997,7 +1049,25 @@ int CyTeam::AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const
 
 int CyTeam::AI_getWarSuccess(int /*TeamTypes*/ eIndex) const
 {
-	return m_pTeam ? m_pTeam->AI_getWarSuccess((TeamTypes)eIndex) : -1;
+	return m_pTeam ? m_pTeam->AI_getWarSuccess((TeamTypes)eIndex).uround() : -1;
+}
+
+// advc.152:
+int /*DenialTypes*/ CyTeam::AI_declareWarTrade(int /*TeamTypes*/ eWarTeam,
+		int /*TeamTypes*/ eTeam) const {
+
+	// Can't add AI_declareWarTrade to CvTeam
+	return m_pTeam ? GET_TEAM(m_pTeam->getID()).AI_declareWarTrade(
+			(TeamTypes)eWarTeam, (TeamTypes)eTeam) : -1;
+}
+
+// advc.038:
+int CyTeam::AI_estimateYieldRate(int iPlayer, int iYield) const
+{
+	if (m_pTeam == NULL)
+		return -1;
+	return m_pTeam->AI_estimateYieldRate((PlayerTypes)iPlayer,
+			(YieldTypes)iYield).round();
 }
 
 // Leoreth

@@ -3,9 +3,8 @@
 #ifndef CyMap_h
 #define CyMap_h
 
-//#include "CvEnums.h"
 //
-// Python wrapper class for CvMap 
+// Python wrapper class for CvMap
 // SINGLETON
 //
 
@@ -15,14 +14,15 @@ class CyCity;
 class CySelectionGroup;
 class CyUnit;
 class CyArea;
+
 class CyMap
 {
 public:
-	DllExport CyMap();
-	CyMap(CvMap* pMap);		// Call from C++
-	CvMap* getMap() { return m_pMap;	}	// Call from C++
-	bool isNone() { return (m_pMap==NULL); }
-	
+	CyMap() : m_kMap(GC.getMap()) {}
+	CyMap(CvMap& kMap) : m_kMap(kMap) {} // Call from C++
+	//CvMap& getMap() { return m_kMap;	} // advc: unused
+	bool isNone() { return /*(m_pMap==NULL)*/ false; } // advc: Initialization guaranteed
+
 	void erasePlots();
 	void setRevealedPlots(int /*TeamTypes*/ eTeam, bool bNewValue, bool bTerrainOnly);
 	void setAllPlotTypes(int /*PlotTypes*/ ePlotType);
@@ -62,6 +62,8 @@ public:
 	SeaLevelTypes getSeaLevel();
 	int getNumCustomMapOptions();
 	CustomMapOptionTypes getCustomMapOption(int iOption);
+	std::wstring getNonDefaultCustomMapOptionDesc(int iOption); // advc.190b
+	std::wstring getSettingsString(); // advc.savem
 	int getNumBonuses(int /* BonusTypes */ eIndex);
 	int getNumBonusesOnLand(int /* BonusTypes */ eIndex);
 
@@ -83,6 +85,18 @@ public:
 	void updateFog();
 	void updateMinimapColor();
 	void updateMinOriginalStartDist(CyArea* pArea);
+	// <advc.enum> Moved from CyGame
+	int getPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield); // K-Mod
+	void setPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield);
+	void changePlotExtraCost(int iX, int iY, int iExtraCost); // </advc.enum>
+	// <advc.002a>
+	void setMinimapShowUnits(bool b);
+	void setMinimapWaterAlpha(float f);
+	void setMinimapLandAlpha(float f);
+	bool isMinimapShowUnits();
+	float getMinimapWaterAlpha();
+	float getMinimapLandAlpha();
+	// </advc.002a>
 
 	// PYTHON HELPER FUNCTIONS
 	//int getNumPlayerOwnedPlots(int /*PlayerTypes*/ iPlayer);
@@ -99,7 +113,7 @@ public:
 	int getScenario();
 
 protected:
-	CvMap* m_pMap;
+	CvMap& m_kMap; // advc: was pointer
 };
 
-#endif	// CyMap_h
+#endif

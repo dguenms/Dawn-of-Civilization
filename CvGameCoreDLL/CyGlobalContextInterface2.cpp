@@ -7,16 +7,12 @@
 #include "CyMap.h"
 #include "CyPlayer.h"
 #include "CyGame.h"
-#include "CyGlobalContext.h"
-#include "CvRandom.h"
-//#include "CvStructs.h"
-#include "CvInfos.h"
 #include "CyTeam.h"
 
 
 void CyGlobalContextPythonInterface2(python::class_<CyGlobalContext>& x)
 {
-	OutputDebugString("Python Extension Module - CyGlobalContextPythonInterface2\n");
+	printToConsole("Python Extension Module - CyGlobalContextPythonInterface2\n");
 
 	x
 		// global defines.xml
@@ -26,40 +22,25 @@ void CyGlobalContextPythonInterface2(python::class_<CyGlobalContext>& x)
 		.def("setDefineINT", &CyGlobalContext::setDefineINT, "void ( string szName, int iValue )" )
 		.def("setDefineFLOAT", &CyGlobalContext::setDefineFLOAT, "void setDefineFLOAT( string szName, float fValue )" )
 		.def("setDefineSTRING", &CyGlobalContext::setDefineSTRING, "void ( string szName, string szValue )" )
-
+		// advc.003t: Rearranged these and removed about a dozen unused getters
 		.def("getMOVE_DENOMINATOR", &CyGlobalContext::getMOVE_DENOMINATOR, "int ()")
-		.def("getNUM_UNIT_PREREQ_OR_BONUSES", &CyGlobalContext::getNUM_UNIT_PREREQ_OR_BONUSES, "int ()")
-		.def("getNUM_BUILDING_PREREQ_OR_BONUSES", &CyGlobalContext::getNUM_BUILDING_PREREQ_OR_BONUSES, "int ()")
 		.def("getFOOD_CONSUMPTION_PER_POPULATION", &CyGlobalContext::getFOOD_CONSUMPTION_PER_POPULATION, "int ()")
 		.def("getMAX_HIT_POINTS", &CyGlobalContext::getMAX_HIT_POINTS, "int ()")
-		.def("getHILLS_EXTRA_DEFENSE", &CyGlobalContext::getHILLS_EXTRA_DEFENSE, "int ()")
-		.def("getRIVER_ATTACK_MODIFIER", &CyGlobalContext::getRIVER_ATTACK_MODIFIER, "int ()")
-		.def("getAMPHIB_ATTACK_MODIFIER", &CyGlobalContext::getAMPHIB_ATTACK_MODIFIER, "int ()")
-		.def("getHILLS_EXTRA_MOVEMENT", &CyGlobalContext::getHILLS_EXTRA_MOVEMENT, "int ()")
 		.def("getMAX_PLOT_LIST_ROWS", &CyGlobalContext::getMAX_PLOT_LIST_ROWS, "int ()")
 		.def("getUNIT_MULTISELECT_MAX", &CyGlobalContext::getUNIT_MULTISELECT_MAX, "int ()")
-		.def("getPERCENT_ANGER_DIVISOR", &CyGlobalContext::getPERCENT_ANGER_DIVISOR, "int ()")
 		.def("getEVENT_MESSAGE_TIME", &CyGlobalContext::getEVENT_MESSAGE_TIME, "int ()")
-		.def("getROUTE_FEATURE_GROWTH_MODIFIER", &CyGlobalContext::getROUTE_FEATURE_GROWTH_MODIFIER, "int ()")
-		.def("getFEATURE_GROWTH_MODIFIER", &CyGlobalContext::getFEATURE_GROWTH_MODIFIER, "int ()")
-		.def("getMIN_CITY_RANGE", &CyGlobalContext::getMIN_CITY_RANGE, "int ()")
-		.def("getCITY_MAX_NUM_BUILDINGS", &CyGlobalContext::getCITY_MAX_NUM_BUILDINGS, "int ()")
-		.def("getNUM_UNIT_AND_TECH_PREREQS", &CyGlobalContext::getNUM_UNIT_AND_TECH_PREREQS, "int ()")
+		.def("getPERCENT_ANGER_DIVISOR", &CyGlobalContext::getPERCENT_ANGER_DIVISOR, "int ()")
+		.def("getMIN_WATER_SIZE_FOR_OCEAN", &CyGlobalContext::getMIN_WATER_SIZE_FOR_OCEAN, "int ()")
+		.def("getMAX_CITY_DEFENSE_DAMAGE", &CyGlobalContext::getMAX_CITY_DEFENSE_DAMAGE, "int ()")
+
+		.def("getNUM_UNIT_PREREQ_OR_BONUSES", &CyGlobalContext::getNUM_UNIT_PREREQ_OR_BONUSES, "int ()")
+		.def("getNUM_BUILDING_PREREQ_OR_BONUSES", &CyGlobalContext::getNUM_BUILDING_PREREQ_OR_BONUSES, "int ()")
 		.def("getNUM_AND_TECH_PREREQS", &CyGlobalContext::getNUM_AND_TECH_PREREQS, "int ()")
 		.def("getNUM_OR_TECH_PREREQS", &CyGlobalContext::getNUM_OR_TECH_PREREQS, "int ()")
-		.def("getLAKE_MAX_AREA_SIZE", &CyGlobalContext::getLAKE_MAX_AREA_SIZE, "int ()")
+		.def("getNUM_UNIT_AND_TECH_PREREQS", &CyGlobalContext::getNUM_UNIT_AND_TECH_PREREQS, "int ()")
 		.def("getNUM_ROUTE_PREREQ_OR_BONUSES", &CyGlobalContext::getNUM_ROUTE_PREREQ_OR_BONUSES, "int ()")
 		.def("getNUM_BUILDING_AND_TECH_PREREQS", &CyGlobalContext::getNUM_BUILDING_AND_TECH_PREREQS, "int ()")
-		.def("getMIN_WATER_SIZE_FOR_OCEAN", &CyGlobalContext::getMIN_WATER_SIZE_FOR_OCEAN, "int ()")
-		.def("getFORTIFY_MODIFIER_PER_TURN", &CyGlobalContext::getFORTIFY_MODIFIER_PER_TURN, "int ()")
-		.def("getMAX_CITY_DEFENSE_DAMAGE", &CyGlobalContext::getMAX_CITY_DEFENSE_DAMAGE, "int ()")
 		.def("getNUM_CORPORATION_PREREQ_BONUSES", &CyGlobalContext::getNUM_CORPORATION_PREREQ_BONUSES, "int ()")
-		.def("getPEAK_SEE_THROUGH_CHANGE", &CyGlobalContext::getPEAK_SEE_THROUGH_CHANGE, "int ()")
-		.def("getHILLS_SEE_THROUGH_CHANGE", &CyGlobalContext::getHILLS_SEE_THROUGH_CHANGE, "int ()")
-		.def("getSEAWATER_SEE_FROM_CHANGE", &CyGlobalContext::getSEAWATER_SEE_FROM_CHANGE, "int ()")
-		.def("getPEAK_SEE_FROM_CHANGE", &CyGlobalContext::getPEAK_SEE_FROM_CHANGE, "int ()")
-		.def("getHILLS_SEE_FROM_CHANGE", &CyGlobalContext::getHILLS_SEE_FROM_CHANGE, "int ()")
-		.def("getUSE_SPIES_NO_ENTER_BORDERS", &CyGlobalContext::getUSE_SPIES_NO_ENTER_BORDERS, "int ()")
 
 		.def("getCAMERA_MIN_YAW", &CyGlobalContext::getCAMERA_MIN_YAW, "float ()")
 		.def("getCAMERA_MAX_YAW", &CyGlobalContext::getCAMERA_MAX_YAW, "float ()")
@@ -76,6 +57,8 @@ void CyGlobalContextPythonInterface2(python::class_<CyGlobalContext>& x)
 		.def("getFIELD_OF_VIEW", &CyGlobalContext::getFIELD_OF_VIEW, "float ()")
 		.def("getSHADOW_SCALE", &CyGlobalContext::getSHADOW_SCALE, "float ()")
 		.def("getUNIT_MULTISELECT_DISTANCE", &CyGlobalContext::getUNIT_MULTISELECT_DISTANCE, "float ()")
+		// advc.004m:
+		.def("updateCameraStartDistance", &CyGlobalContext::updateCameraStartDistance, "void (bReset)")
 
 		.def("getMAX_CIV_PLAYERS", &CyGlobalContext::getMAX_CIV_PLAYERS, "int ()")
 		.def("getMAX_PLAYERS", &CyGlobalContext::getMAX_PLAYERS, "int ()")

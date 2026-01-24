@@ -1,23 +1,20 @@
 //
-// Python wrapper class for CvPlot 
-// 
+// Python wrapper class for CvPlot
+//
 //
 #include "CvGameCoreDLL.h"
 #include "CyPlot.h"
-#include "CyCity.h"
 #include "CyArea.h"
-#include "CyUnit.h"
 #include "CvPlot.h"
+#include "CvArea.h" // advc: for CvArea::getID
+#include "CvUnit.h" // advc: for city/fort-related functions moved to CvUnit
+#include "CvMap.h" // advc.enum
 
-CyPlot::CyPlot(CvPlot* pPlot) : m_pPlot(pPlot)
-{
+CyPlot::CyPlot(CvPlot* pPlot) : m_pPlot(pPlot) {}
+// advc.003y: (see CyCity.cpp)
+CyPlot::CyPlot(CvPlot const& kPlot) : m_pPlot(const_cast<CvPlot*>(&kPlot)) {}
 
-}
-
-CyPlot::CyPlot() : m_pPlot(NULL)
-{
-
-}
+CyPlot::CyPlot() : m_pPlot(NULL) {}
 
 void CyPlot::erase()
 {
@@ -51,7 +48,8 @@ void CyPlot::nukeExplosion(int iRange, CyUnit* pNukeUnit)
 
 bool CyPlot::isConnectedTo(CyCity* pCity)
 {
-	return m_pPlot ? m_pPlot->isConnectedTo(pCity->getCity()) : false;
+	return (m_pPlot && pCity && pCity->getCity()) ?
+			m_pPlot->isConnectedTo(*pCity->getCity()) : false;
 }
 
 bool CyPlot::isConnectedToCapital(int /*PlayerTypes*/ ePlayer)
@@ -148,7 +146,13 @@ bool CyPlot::isRiverConnection(int /*DirectionTypes*/ eDirection)
 
 int CyPlot::getNearestLandArea()
 {
-	return m_pPlot ? m_pPlot->getNearestLandArea() : -1;
+	if (m_pPlot == NULL)
+		return -1;
+	// <advc> (The DLL function no longer returns the area id)
+	CvArea* pArea = m_pPlot->getNearestLandArea();
+	if (pArea == NULL)
+		return FFreeList::INVALID_INDEX;
+	return pArea->getID(); // </advc>
 }
 
 CyPlot* CyPlot::getNearestLandPlot()
@@ -180,15 +184,14 @@ bool CyPlot::canBuild(int /*BuildTypes*/ eBuild, int /*PlayerTypes*/ ePlayer, bo
 {
 	return m_pPlot ? m_pPlot->canBuild((BuildTypes) eBuild, (PlayerTypes) ePlayer, bTestVisible) : false;
 }
-
-int CyPlot::getBuildTime(int /* BuildTypes */ eBuild)
+// advc.251: param ePlayer added to these two functions
+int CyPlot::getBuildTime(int /* BuildTypes */ eBuild, int /* PlayerTypes */ ePlayer)
 {
-	return m_pPlot ? m_pPlot->getBuildTime((BuildTypes)eBuild) : -1;
+	return m_pPlot ? m_pPlot->getBuildTime((BuildTypes)eBuild, (PlayerTypes)ePlayer) : -1;
 }
-
-int CyPlot::getBuildTurnsLeft(int /*BuildTypes*/ eBuild, int iNowExtra, int iThenExtra)
+int CyPlot::getBuildTurnsLeft(int /*BuildTypes*/ eBuild, int /* PlayerTypes */ ePlayer, int iNowExtra, int iThenExtra)
 {
-	return m_pPlot ? m_pPlot->getBuildTurnsLeft((BuildTypes) eBuild, iNowExtra, iThenExtra) : -1;
+	return m_pPlot ? m_pPlot->getBuildTurnsLeft((BuildTypes)eBuild, (PlayerTypes)ePlayer, iNowExtra, iThenExtra) : -1;
 }
 
 int CyPlot::getFeatureProduction(int /*BuildTypes*/ eBuild, int /*TeamTypes*/ eTeam, CyCity* ppCity)
@@ -200,7 +203,7 @@ int CyPlot::getFeatureProduction(int /*BuildTypes*/ eBuild, int /*TeamTypes*/ eT
 CyUnit* CyPlot::getBestDefender(int /*PlayerTypes*/ eOwner, int /*PlayerTypes*/ eAttackingPlayer, CyUnit* pAttacker, bool bTestAtWar, bool bTestPotentialEnemy, bool bTestCanMove)
 {
 	return m_pPlot ? new CyUnit(m_pPlot->getBestDefender((PlayerTypes) eOwner, (PlayerTypes) eAttackingPlayer, pAttacker->getUnit(), bTestAtWar, bTestPotentialEnemy, bTestCanMove)) : NULL;
-}	
+}
 
 CyUnit* CyPlot::getSelectedUnit()
 {
@@ -214,23 +217,34 @@ int CyPlot::getUnitPower(int /* PlayerTypes */ eOwner)
 
 int CyPlot::movementCost(CyUnit* pUnit, CyPlot* pFromPlot)
 {
-	return m_pPlot ? m_pPlot->movementCost(pUnit->getUnit(), pFromPlot->getPlot()) : -1;
+	return m_pPlot &&
+		pUnit && pUnit->getUnit() && pFromPlot && pFromPlot->getPlot() ? // advc
+		m_pPlot->movementCost(*pUnit->getUnit(), *pFromPlot->getPlot()) : -1;
 }
 
 int CyPlot::defenseModifier(int iDefendTeam, bool bIgnoreBuilding, bool bHelp)
 {
-	return m_pPlot ? m_pPlot->defenseModifier((TeamTypes)iDefendTeam, bIgnoreBuilding, bHelp) : -1;
+	return m_pPlot ? m_pPlot->defenseModifier((TeamTypes)iDefendTeam, bIgnoreBuilding,
+		NO_TEAM, // advc.012: Python callers (none currently) always have feature defense included this way
+		bHelp) : -1;
 }
 
 int CyPlot::getExtraMovePathCost()
 {
-	return m_pPlot ? m_pPlot->getExtraMovePathCost() : -1;
+	//return m_pPlot ? m_pPlot->getExtraMovePathCost() : -1;
+	// <advc.enum>
+	if (m_pPlot == NULL)
+		return 0;
+	return GC.getMap().getPlotExtraCost(*m_pPlot); // </advc.enum>
 }
 
 void CyPlot::changeExtraMovePathCost(int iChange)
 {
 	if (m_pPlot)
-		m_pPlot->changeExtraMovePathCost(iChange);
+	{
+		//m_pPlot->changeExtraMovePathCost(iChange);
+		GC.getMap().changePlotExtraCost(*m_pPlot, iChange); // advc.enum
+	}
 }
 
 bool CyPlot::isAdjacentOwned()
@@ -336,14 +350,10 @@ bool CyPlot::isCity()
 	return m_pPlot ? m_pPlot->isCity() : false;
 }
 
-bool CyPlot::isFriendlyCity(CyUnit* pUnit, bool bCheckImprovement)													
+bool CyPlot::isEnemyCity(CyUnit* pUnit)
 {
-	return m_pPlot ? m_pPlot->isFriendlyCity(*(pUnit->getUnit()), bCheckImprovement) : false;
-}
-
-bool CyPlot::isEnemyCity(CyUnit* pUnit)														
-{
-	return m_pPlot ? m_pPlot->isEnemyCity(*(pUnit->getUnit())) : false;
+	return m_pPlot /* advc: */ && pUnit && pUnit->getUnit() ?
+			pUnit->getUnit()->isEnemyCity(*m_pPlot) : false;
 }
 
 bool CyPlot::isOccupation()
@@ -381,10 +391,12 @@ int CyPlot::getNumVisibleEnemyDefenders(CyUnit* pUnit)
 	return m_pPlot ? m_pPlot->getNumVisibleEnemyDefenders(pUnit->getUnit()) : -1;
 }
 
-int CyPlot::getNumVisiblePotentialEnemyDefenders(CyUnit* pUnit)
+/*	advc: This is now handled by CvUnitAI::AI_countEnemyDefenders - b/c it's AI code,
+	which shouldn't be exposed to Python. */
+/*int CyPlot::getNumVisiblePotentialEnemyDefenders(CyUnit* pUnit)
 {
 	return m_pPlot ? m_pPlot->getNumVisiblePotentialEnemyDefenders(pUnit->getUnit()) : -1;
-}
+}*/
 
 bool CyPlot::isVisibleEnemyUnit(int /*PlayerTypes*/ ePlayer)
 {
@@ -432,17 +444,19 @@ bool CyPlot::isTradeNetwork(int /*TeamTypes*/ eTeam)
 
 bool CyPlot::isTradeNetworkConnected(CyPlot* pPlot, int /*TeamTypes*/ eTeam)
 {
-	return m_pPlot ? m_pPlot->isTradeNetworkConnected(pPlot->getPlot(), (TeamTypes)eTeam) : false;
+	return m_pPlot ? m_pPlot->isTradeNetworkConnected(*pPlot->getPlot(), (TeamTypes)eTeam) : false;
 }
 
 bool CyPlot::isValidDomainForLocation(CyUnit* pUnit) const
 {
-	return (m_pPlot && pUnit && pUnit->getUnit()) ? m_pPlot->isValidDomainForLocation(*(pUnit->getUnit())) : false;
+	return (m_pPlot && pUnit && pUnit->getUnit()) ?
+			pUnit->getUnit()->isValidDomain(*m_pPlot) : false;
 }
 
 bool CyPlot::isValidDomainForAction(CyUnit* pUnit) const
 {
-	return (m_pPlot && pUnit && pUnit->getUnit()) ? m_pPlot->isValidDomainForAction(*(pUnit->getUnit())) : false;
+	return (m_pPlot && pUnit && pUnit->getUnit()) ?
+			pUnit->getUnit()->isValidDomain(m_pPlot->isWater()) : false;
 }
 
 bool CyPlot::isImpassable()
@@ -450,22 +464,27 @@ bool CyPlot::isImpassable()
 	return m_pPlot ? m_pPlot->isImpassable() : false;
 }
 
-int CyPlot::getX() 
+int CyPlot::getX()
 {
-	return m_pPlot ? m_pPlot->getX_INLINE() : -1;
+	return m_pPlot ? m_pPlot->getX() : -1;
 }
 
-int CyPlot::getY() 
+int CyPlot::getY()
 {
-	return m_pPlot ? m_pPlot->getY_INLINE() : -1;
+	return m_pPlot ? m_pPlot->getY() : -1;
 }
 
 bool CyPlot::at(int iX, int iY)
 {
 	return m_pPlot ? m_pPlot->at(iX, iY) : false;
 }
+// <advc.tsl>
+void CyPlot::setLatitude(int iLatitude) {
+	if(m_pPlot != NULL)
+		m_pPlot->setLatitude(iLatitude);
+} // </advc.tsl>
 
-int CyPlot::getLatitude()																						
+int CyPlot::getLatitude()
 {
 	return m_pPlot ? m_pPlot->getLatitude() : -1;
 }
@@ -482,7 +501,7 @@ CyArea* CyPlot::waterArea()
 
 int CyPlot::getArea()
 {
-	return m_pPlot ? m_pPlot->getArea() : -1;
+	return m_pPlot ? m_pPlot->getArea().getID() : -1;
 }
 
 //Rhye - start
@@ -542,9 +561,10 @@ int CyPlot::getCityRadiusCount()
 	return m_pPlot ? m_pPlot->getCityRadiusCount() : -1;
 }
 
-int CyPlot::isCityRadius()
+bool CyPlot::isCityRadius()
 {
-	return m_pPlot ? m_pPlot->isCityRadius() : -1;
+	//return m_pPlot ? m_pPlot->isCityRadius() : -1;
+	return m_pPlot ? m_pPlot->isCityRadius() : false; // K-Mod. (-1? really?)
 }
 
 bool CyPlot::isStartingPlot()
@@ -624,7 +644,7 @@ void CyPlot::setFlagDirty(bool bNewValue)
 
 int CyPlot::getOwner()
 {
-	return m_pPlot ? m_pPlot->getOwnerINLINE() : -1;
+	return m_pPlot ? m_pPlot->getOwner() : -1;
 }
 
 void CyPlot::setOwner(int /*PlayerTypes*/ eNewValue)
@@ -813,7 +833,7 @@ int /* RouteTypes */ CyPlot::getRouteType()
 void CyPlot::setRouteType(int /*RouteTypes*/ eNewValue)
 {
 	if (m_pPlot)
-		m_pPlot->setRouteType((RouteTypes) eNewValue, true);
+		m_pPlot->setRouteType((RouteTypes)eNewValue);
 }
 
 CyCity* CyPlot::getPlotCity()
@@ -839,7 +859,7 @@ int CyPlot::getRiverID() const
 void CyPlot::setRiverID(int iNewValue)
 {
 	if (m_pPlot)
-		m_pPlot->setRiverID(iNewValue);
+		m_pPlot->setRiverID(safeIntCast<short>(iNewValue));
 }
 
 int CyPlot::getMinOriginalStartDist()
@@ -862,6 +882,10 @@ int CyPlot::getYield(YieldTypes eIndex)
 	return m_pPlot ? m_pPlot->getYield(eIndex) : -1;
 }
 
+// K-Mod, 26/Jun/2011, karadoc: changed enum types to ints, so that it actually works...
+/*	advc: Reverted the K-Mod change. It seems that no automatic type conversion will
+	take place either way. It's not clear that accepting only int params is better than
+	accepting only enum params. */
 int CyPlot::calculateNatureYield(YieldTypes eIndex, TeamTypes eTeam, bool bIgnoreFeature)
 {
 	return m_pPlot ? m_pPlot->calculateNatureYield(eIndex, eTeam, bIgnoreFeature) : -1;
@@ -877,9 +901,12 @@ int CyPlot::calculateTotalBestNatureYield(TeamTypes eTeam)
 	return m_pPlot ? m_pPlot->calculateTotalBestNatureYield(eTeam) : -1;
 }
 
-int CyPlot::calculateImprovementYieldChange(int /*ImprovementTypes*/ eImprovement, YieldTypes eYield, int /*PlayerTypes*/ ePlayer, bool bOptimal)
+int CyPlot::calculateImprovementYieldChange(int /*ImprovementTypes*/ eImprovement,
+	YieldTypes eYield, int /*PlayerTypes*/ ePlayer, bool bOptimal)
 {
-	return m_pPlot ? m_pPlot->calculateImprovementYieldChange((ImprovementTypes) eImprovement, eYield, (PlayerTypes) ePlayer, bOptimal) : -1;
+	return m_pPlot ? m_pPlot->calculateImprovementYieldChange((ImprovementTypes)
+			eImprovement, eYield, (PlayerTypes)ePlayer) // advc: bOptimal is obsolete
+			: -1;
 }
 
 int CyPlot::calculateYield(YieldTypes eIndex, bool bDisplay)
@@ -903,8 +930,8 @@ int CyPlot::getCivCulture(int iCivilization)
 }
 
 int CyPlot::countTotalCulture()
-{
-	return m_pPlot ? m_pPlot->countTotalCulture() : -1;
+{	// advc.opt: was calling CvPlot::countTotalCulture
+	return m_pPlot ? m_pPlot->getTotalCulture() : -1;
 }
 
 int /*TeamTypes*/ CyPlot::findHighestCultureTeam()
@@ -912,12 +939,12 @@ int /*TeamTypes*/ CyPlot::findHighestCultureTeam()
 	return m_pPlot ? m_pPlot->findHighestCultureTeam() : -1;
 }
 
-int CyPlot::calculateCulturePercent(int /*PlayerTypes*/ eIndex)	
+int CyPlot::calculateCulturePercent(int /*PlayerTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->calculateCulturePercent((PlayerTypes)eIndex) : -1;
 }
 
-int CyPlot::calculateTeamCulturePercent(int /*TeamTypes*/ eIndex)	
+int CyPlot::calculateTeamCulturePercent(int /*TeamTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->calculateTeamCulturePercent((TeamTypes)eIndex) : -1;
 }
@@ -939,22 +966,22 @@ int CyPlot::countNumAirUnits(int /*TeamTypes*/ eTeam)
 	return m_pPlot ? m_pPlot->countNumAirUnits((TeamTypes)eTeam) : -1;
 }
 
-int CyPlot::getFoundValue(int /*PlayerTypes*/ eIndex)	
+int CyPlot::getFoundValue(int /*PlayerTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->getFoundValue((PlayerTypes)eIndex) : -1;
 }
 
-bool CyPlot::isBestAdjacentFound(int /*PlayerTypes*/ eIndex)	
+bool CyPlot::isBestAdjacentFound(int /*PlayerTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->isBestAdjacentFound((PlayerTypes)eIndex) : false;
 }
 
-int CyPlot::getPlayerCityRadiusCount(int /*PlayerTypes*/ eIndex)	
+int CyPlot::getPlayerCityRadiusCount(int /*PlayerTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->getPlayerCityRadiusCount((PlayerTypes)eIndex) : -1;
 }
 
-bool CyPlot::isPlayerCityRadius(int /*PlayerTypes*/ eIndex)	
+bool CyPlot::isPlayerCityRadius(int /*PlayerTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->isPlayerCityRadius((PlayerTypes)eIndex) : false;
 }
@@ -1011,24 +1038,28 @@ int /* RouteTypes */ CyPlot::getRevealedRouteType(int /*TeamTypes*/ eTeam, bool 
 	return m_pPlot ? m_pPlot->getRevealedRouteType((TeamTypes)eTeam, bDebug) : -1;
 }
 
-int CyPlot::getBuildProgress(int /*BuildTypes*/ eBuild)												
+int CyPlot::getBuildProgress(int /*BuildTypes*/ eBuild)
 {
 	return m_pPlot ? m_pPlot->getBuildProgress((BuildTypes)eBuild) : -1;
 }
 
-bool CyPlot::changeBuildProgress(int /*BuildTypes*/ eBuild, int iChange, int /*TeamTypes*/ eTeam)
+// advc.251: Last param now ePlayer (was eTeam)
+bool CyPlot::changeBuildProgress(int /*BuildTypes*/ eBuild, int iChange, int /*PlayerTypes*/ ePlayer)
 {
-	return m_pPlot ? m_pPlot->changeBuildProgress((BuildTypes)eBuild, iChange, (TeamTypes)eTeam) : false;
+	return m_pPlot ? m_pPlot->changeBuildProgress((BuildTypes)eBuild, iChange,
+			(PlayerTypes)ePlayer) : false;
 }
 
-int CyPlot::getCultureRangeCities(int /*PlayerTypes*/ eOwnerIndex, int iRangeIndex)
+int CyPlot::getCultureRangeCities(int eOwnerIndex, int eRangeIndex)
 {
-	return m_pPlot ? m_pPlot->getCultureRangeCities((PlayerTypes) eOwnerIndex, iRangeIndex) : -1;
+	return m_pPlot ? m_pPlot->getCultureRangeCities((PlayerTypes)eOwnerIndex,
+			(CultureLevelTypes)eRangeIndex) : -1;
 }
 
-bool CyPlot::isCultureRangeCity(int /*PlayerTypes*/ eOwnerIndex, int iRangeIndex)
+bool CyPlot::isCultureRangeCity(int eOwnerIndex, int eRangeIndex)
 {
-	return m_pPlot ? m_pPlot->isCultureRangeCity((PlayerTypes) eOwnerIndex, iRangeIndex) : false;
+	return m_pPlot ? m_pPlot->isCultureRangeCity((PlayerTypes) eOwnerIndex,
+		(CultureLevelTypes)eRangeIndex) : false;
 }
 
 int CyPlot::getInvisibleVisibilityCount(int /*TeamTypes*/ eTeam, int /*InvisibleTypes*/ eInvisible)
@@ -1038,7 +1069,7 @@ int CyPlot::getInvisibleVisibilityCount(int /*TeamTypes*/ eTeam, int /*Invisible
 
 bool CyPlot::isInvisibleVisible(int /*TeamTypes*/ eTeam, int /*InvisibleTypes*/ eInvisible)
 {
-	return m_pPlot ? m_pPlot->isInvisibleVisible((TeamTypes) eTeam, (InvisibleTypes) eInvisible) : -1;
+	return m_pPlot ? m_pPlot->isInvisibleVisible((TeamTypes) eTeam, (InvisibleTypes) eInvisible) : false;
 }
 
 void CyPlot::changeInvisibleVisibilityCount(int /*TeamTypes*/ eTeam, int /*InvisibleTypes*/ eInvisible, int iChange)

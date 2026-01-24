@@ -4,19 +4,16 @@
 //
 
 #include "CvGameCoreDLL.h"
+#include "CvInfo_All.h"
 #include "CyMap.h"
 #include "CyPlayer.h"
 #include "CyGame.h"
-#include "CyGlobalContext.h"
-#include "CvRandom.h"
-//#include "CvStructs.h"
-#include "CvInfos.h"
 #include "CyTeam.h"
 
 
 void CyGlobalContextPythonInterface1(python::class_<CyGlobalContext>& x)
 {
-	OutputDebugString("Python Extension Module - CyGlobalContextPythonInterface1\n");
+	printToConsole("Python Extension Module - CyGlobalContextPythonInterface1\n");
 
 	x
 		.def("isDebugBuild", &CyGlobalContext::isDebugBuild, "() - returns true if running a debug build")
@@ -26,7 +23,10 @@ void CyGlobalContextPythonInterface1(python::class_<CyGlobalContext>& x)
 		.def("getActivePlayer", &CyGlobalContext::getCyActivePlayer, python::return_value_policy<python::reference_existing_object>(), "() - active player instance")
 		.def("getASyncRand", &CyGlobalContext::getCyASyncRand, python::return_value_policy<python::reference_existing_object>(), "Non-Synch'd random #")
 		.def("getTeam", &CyGlobalContext::getCyTeam, python::return_value_policy<python::reference_existing_object>(), "(iTeam) - iTeam instance")
-
+		// <kekm.27>
+		.def("isLogging", &CyGlobalContext::isLogging, "bool () - returns true iff logging is enabled in the INI")
+		.def("isRandLogging", &CyGlobalContext::isRandLogging, "bool () - returns true iff rand logging (MPLog) is enabled in the INI")
+		// </kekm.27>
 		// infos
 		.def("getNumEffectInfos", &CyGlobalContext::getNumEffectInfos, "int () - Number of effect infos")
 		.def("getEffectInfo", &CyGlobalContext::getEffectInfo, python::return_value_policy<python::reference_existing_object>(), "(int (EffectTypes) eEffectID) - CvInfo for EffectID")

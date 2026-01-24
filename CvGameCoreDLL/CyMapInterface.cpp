@@ -1,13 +1,7 @@
 #include "CvGameCoreDLL.h"
 #include "CyMap.h"
 #include "CyArea.h"
-#include "CyCity.h"
 #include "CySelectionGroup.h"
-#include "CyUnit.h"
-#include "CyPlot.h"
-//#include "CvStructs.h"
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
 
 //
 // published python interface for CyMap
@@ -15,7 +9,7 @@
 
 void CyMapPythonInterface()
 {
-	OutputDebugString("Python Extension Module - CyMapPythonInterface\n");
+	printToConsole("Python Extension Module - CyMapPythonInterface\n");
 
 	python::class_<CyMap>("CyMap")
 		.def("isNone", &CyMap::isNone, "bool () - valid CyMap() interface")
@@ -35,9 +29,9 @@ void CyMapPythonInterface()
 		.def("findWater", &CyMap::findWater, "bool (CyPlot* pPlot, int iRange, bool bFreshWater)")
 		.def("isPlot", &CyMap::isPlot, "bool (iX,iY) - is (iX, iY) a valid plot?")
 		.def("numPlots", &CyMap::numPlots, "int () - total plots in the map")
-		.def("plotNum", &CyMap::plotNum, "int (iX,iY) - the index for a given plot") 
-		.def("plotX", &CyMap::plotX, "int (iIndex) - given the index of a plot, returns its X coordinate") 
-		.def("plotY", &CyMap::plotY, "int (iIndex) - given the index of a plot, returns its Y coordinate") 
+		.def("plotNum", &CyMap::plotNum, "int (iX,iY) - the index for a given plot")
+		.def("plotX", &CyMap::plotX, "int (iIndex) - given the index of a plot, returns its X coordinate")
+		.def("plotY", &CyMap::plotY, "int (iIndex) - given the index of a plot, returns its Y coordinate")
 		.def("getGridWidth", &CyMap::getGridWidth, "int () - the width of the map, in plots")
 		.def("getGridHeight", &CyMap::getGridHeight, "int () - the height of the map, in plots")
 
@@ -59,6 +53,9 @@ void CyMapPythonInterface()
 
 		.def("getNumCustomMapOptions", &CyMap::getNumCustomMapOptions, "int () - number of custom map settings")
 		.def("getCustomMapOption", &CyMap::getCustomMapOption, "CustomMapOptionTypes () - user defined map setting at this option id")
+		// advc.190b:
+		.def("getNonDefaultCustomMapOptionDesc", &CyMap::getNonDefaultCustomMapOptionDesc, "wstring (int)")
+		.def("getSettingsString", &CyMap::getSettingsString, "wstring ()") // advc.savem
 
 		.def("getNumBonuses", &CyMap::getNumBonuses, "int () - total bonuses")
 		.def("getNumBonusesOnLand", &CyMap::getNumBonusesOnLand, "int () - total bonuses on land plots")
@@ -81,15 +78,27 @@ void CyMapPythonInterface()
 		.def("updateFog", &CyMap::updateFog, "void ()")
 		.def("updateMinimapColor", &CyMap::updateMinimapColor, "void ()")
 		.def("updateMinOriginalStartDist", &CyMap::updateMinOriginalStartDist, "void (CyArea* pArea)")
+		// <advc.enum> Moved from CyGame
+		.def("getPlotExtraYield", &CyMap::getPlotExtraYield, "int (int iX, int iY, int eYield)") // K-Mod
+		.def("setPlotExtraYield", &CyMap::setPlotExtraYield, "void (int iX, int iY, int eYield, int iExtraYield)")
+		.def("changePlotExtraCost", &CyMap::changePlotExtraCost, "void (int iX, int iY, int iCost)")
+		// </advc.enum>  <advc.002a>
+		.def("setMinimapShowUnits", &CyMap::setMinimapShowUnits, "void (bool)")
+		.def("setMinimapWaterAlpha", &CyMap::setMinimapWaterAlpha, "void (float)")
+		.def("setMinimapLandAlpha", &CyMap::setMinimapLandAlpha, "void (float)")
+		.def("isMinimapShowUnits", &CyMap::isMinimapShowUnits, "bool ()")
+		.def("getMinimapWaterAlpha", &CyMap::getMinimapWaterAlpha, "float ()")
+		.def("getMinimapLandAlpha", &CyMap::getMinimapLandAlpha, "float ()")
+		// </advc.002a>
 
-		.def("plotIndex", &CyMap::plotIndex, "int (int iX, int iY)")
-		.def("getPrimeMeridian", &CyMap::getPrimeMeridian, "int ()")
-		.def("getEquator", &CyMap::getEquator, "int ()")
-		.def("updateCulture", &CyMap::updateCulture, "void ()")
+        .def("plotIndex", &CyMap::plotIndex, "int (int iX, int iY)") // doc
+        .def("getPrimeMeridian", &CyMap::getPrimeMeridian, "int ()") // doc
+        .def("getEquator", &CyMap::getEquator, "int ()") // doc
+        .def("updateCulture", &CyMap::updateCulture, "void ()") // doc
 
-		.def("maxStepDistance", &CyMap::maxStepDistance, "int ()")
-		.def("maxPlotDistance", &CyMap::maxPlotDistance, "int ()")
+        .def("maxStepDistance", &CyMap::maxStepDistance, "int ()") // doc
+        .def("maxPlotDistance", &CyMap::maxPlotDistance, "int ()") // doc
 
-		.def("getScenario", &CyMap::getScenario, "int ()")
+        .def("getScenario", &CyMap::getScenario, "int ()") // doc
 		;
 }

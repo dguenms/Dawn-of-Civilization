@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdvCiv", "AdvCiv.vcxproj", "{3021AF0E-699D-4232-86F6-FC374A0C9957}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Assert-fast|Win32 = Assert-fast|Win32
+		Debug|Win32 = Debug|Win32
+		Debug-fast|Win32 = Debug-fast|Win32
+		Debug-opt|Win32 = Debug-opt|Win32
+		Final_Release-fast|Win32 = Final_Release-fast|Win32
+		Profile-fast|Win32 = Profile-fast|Win32
+		Release|Win32 = Release|Win32
+		_Release-fast|Win32 = _Release-fast|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Assert-fast|Win32.ActiveCfg = Assert-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Assert-fast|Win32.Build.0 = Assert-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Debug|Win32.Build.0 = Debug|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Debug-fast|Win32.ActiveCfg = Debug-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Debug-fast|Win32.Build.0 = Debug-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Debug-opt|Win32.ActiveCfg = Debug-opt|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Debug-opt|Win32.Build.0 = Debug-opt|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Final_Release-fast|Win32.ActiveCfg = Final_Release-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Final_Release-fast|Win32.Build.0 = Final_Release-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Profile-fast|Win32.ActiveCfg = Profile-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Profile-fast|Win32.Build.0 = Profile-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Release|Win32.ActiveCfg = Release|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}.Release|Win32.Build.0 = Release|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}._Release-fast|Win32.ActiveCfg = _Release-fast|Win32
+		{3021AF0E-699D-4232-86F6-FC374A0C9957}._Release-fast|Win32.Build.0 = _Release-fast|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {886B8394-6690-4605-8600-4B0B2EE1B1CC}
+	EndGlobalSection
+EndGlobal

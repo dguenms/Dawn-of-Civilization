@@ -21,6 +21,7 @@
 //
 // Adding a New Entry:
 //		*	Create a new ArtInfo<new> in 'CvInfos.h' & add to CyInfosInterface
+			// ^advc.003x: Now in CvInfo_Asset.h
 //		*	Add a new ART_INFO_DECL to 'CvArtFileMgr.h'
 //		*	Add a new ART_INFO_DEFN to 'CvArtFileMgr.cpp'
 //		*	Update Python 'CyGlobalContext & CyArtFileMgr' files
@@ -44,14 +45,16 @@ class CvArtInfoInterface;
 #define ART_INFO_DECL(name) \
 public: \
 	friend class Cv##name##ArtInfoItem; \
-	DllExport CvArtInfo##name##* get##name##ArtInfo(const char *szArtDefineTag) const; \
-	DllExport int getNum##name##ArtInfos() { return (int)m_pa##name##ArtInfo.size(); } \
-	DllExport std::vector<CvArtInfo##name##*>& get##name##ArtInfo() { return m_pa##name##ArtInfo; } \
-	DllExport CvArtInfo##name##& get##name##ArtInfo(int i); \
+	DllExport CvArtInfo##name* get##name##ArtInfo(const char *szArtDefineTag) const; \
+	/* advc: shorthand */ \
+	TCHAR const* get##name##ArtPath(char const* szArtDefineTag) const; \
+	int getNum##name##ArtInfos() { return (int)m_pa##name##ArtInfo.size(); } \
+	std::vector<CvArtInfo##name*>& get##name##ArtInfo() { return m_pa##name##ArtInfo; } \
+	DllExport CvArtInfo##name& get##name##ArtInfo(int i); \
 private: \
-	typedef std::map<const char* /* index */,CvArtInfo##name##* /*value */, ltstr> ArtInfo##name##MapType; \
+	typedef std::map<const char* /* index */,CvArtInfo##name* /*value */, ltstr> ArtInfo##name##MapType; \
 	ArtInfo##name##MapType* m_map##name##ArtInfos; \
-	std::vector<CvArtInfo##name##*> m_pa##name##ArtInfo; \
+	std::vector<CvArtInfo##name*> m_pa##name##ArtInfo;
 
 class CvArtFileMgr
 {
@@ -68,20 +71,27 @@ public:
 	// singleton accessor
 	DllExport static CvArtFileMgr& GetInstance();
 
-	DllExport CvArtFileMgr() {};
-	DllExport virtual ~CvArtFileMgr() {};
+	CvArtFileMgr()
+	:	m_bCityBarPathsSwapped(false) // advc.095
+	{}
+	virtual ~CvArtFileMgr() {}
 
 	DllExport void Init();
 	DllExport void DeInit();
 
 	// Deletes Maps, Reloads Infos from XML, Rebuilds Maps
-	DllExport void Reset();																														// Exposed to Python
-	
+	DllExport void Reset();																					// Exposed to Python
+	void resetInfo(); // advc.enum
+
 	// Builds Maps
-	DllExport void buildArtFileInfoMaps();																							// Exposed to Python
+	DllExport void buildArtFileInfoMaps();																	// Exposed to Python
+	void testThemePath(); // advc.002b
 
 	// Adds an Art File List
-	void addArtInfoItem(CvArtFileMgr::ArtInfoItem* item) { m_artInfoItems.push_back(item);	}
+	void addArtInfoItem(CvArtFileMgr::ArtInfoItem* item) { m_artInfoItems.push_back(item); }
+	// <advc.095>
+	bool isCityBarPathsSwapped() const { return m_bCityBarPathsSwapped; }
+	void swapCityBarPaths(); // </advc.095>
 private:
 	struct ltstr
 	{
@@ -105,9 +115,12 @@ private:
 	ART_INFO_DECL(Interface);
 
 	std::vector<ArtInfoItem*> m_artInfoItems;
+	bool m_bCityBarPathsSwapped; // advc.095
 };
 
 // Singleton Accessor
 #define ARTFILEMGR CvArtFileMgr::GetInstance()
+
+#undef ART_INFO_DECL // advc
 
 #endif

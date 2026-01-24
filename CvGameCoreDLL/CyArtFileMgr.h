@@ -21,7 +21,7 @@ class CvArtInfoImprovement;
 class CvArtInfoTerrain;
 class CvArtInfoFeature;
 class CvArtInfoCivilization;
-class CyArtFileMgr 
+class CyArtFileMgr
 {
 public:
 	CyArtFileMgr();
@@ -44,7 +44,7 @@ public:
 	CvArtInfoImprovement* getImprovementArtInfo( const char * szArtDefineTag ) const;
 	CvArtInfoTerrain* getTerrainArtInfo( const char * szArtDefineTag ) const;
 	CvArtInfoFeature* getFeatureArtInfo( const char * szArtDefineTag ) const;
-	
+
 protected:
 	CvArtFileMgr* m_pArtFileMgr;
 };

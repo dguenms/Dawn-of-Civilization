@@ -1,17 +1,16 @@
 #include "CvGameCoreDLL.h"
 #include "CyArea.h"
-#include "CyCity.h"
 //
 // published python interface for CyArea
 //
 
 void CyAreaPythonInterface()
 {
-	OutputDebugString("Python Extension Module - CyAreaPythonInterface\n");
+	printToConsole("Python Extension Module - CyAreaPythonInterface\n");
 
 	python::class_<CyArea>("CyArea")
 		.def("isNone", &CyArea::isNone, "bool () - Returns whether the pointer points to a real Area")
-		
+
 		.def("calculateTotalBestNatureYield", &CyArea::calculateTotalBestNatureYield, "int () - Returns the total tile yield from the area")
 		.def("countCoastalLand", &CyArea::countCoastalLand)
 		.def("countNumUniqueBonusTypes", &CyArea::countNumUniqueBonusTypes, "int () - Returns the number of unique bonus types in this area")
@@ -30,7 +29,8 @@ void CyAreaPythonInterface()
 		.def("isWater", &CyArea::isWater, "bool () - Returns whether or not this area is water")
 
 		.def("getUnitsPerPlayer", &CyArea::getUnitsPerPlayer, "int (int (PlayerTypes) iIndex) - Returns the number of units in this area for this player")
-		.def("getAnimalsPerPlayer", &CyArea::getAnimalsPerPlayer, "int (int (PlayerTypes) iIndex) - Returns the number of animal units in this area for this player")
+		// advc: Was unused. CvArea no longer keeps track of animal counts.
+		//.def("getAnimalsPerPlayer", &CyArea::getAnimalsPerPlayer, "int (int (PlayerTypes) iIndex) - Returns the number of animal units in this area for this player")
 		.def("getCitiesPerPlayer", &CyArea::getCitiesPerPlayer, "int (int (PlayerTypes) iIndex) - Returns the number of cities in this area for this player")
 		.def("getPopulationPerPlayer", &CyArea::getPopulationPerPlayer, "int (int (PlayerTypes) iIndex) - Returns the total population of this area for this player")
 		.def("getBuildingGoodHealth", &CyArea::getBuildingGoodHealth, "int (int (PlayerTypes) iIndex) - Returns ?")
@@ -54,6 +54,9 @@ void CyAreaPythonInterface()
 
 		.def("getNumBonuses", &CyArea::getNumBonuses, "int(BonusID) - total # of BonusID")
 		.def("getNumTotalBonuses", &CyArea::getNumTotalBonuses, "int () - total number of bonuses, of all types")
-		.def("getNumImprovements", &CyArea::getNumImprovements, "int(ImprovementID) - total # of ImprovementID")
+		// advc.opt: No longer used
+		//.def("getNumImprovements", &CyArea::getNumImprovements, "int(ImprovementID) - total # of ImprovementID")
+		// advc.021b:
+		.def("getNumHabitableTiles", &CyArea::getNumHabitableTiles, "int ()")
 	;
 }

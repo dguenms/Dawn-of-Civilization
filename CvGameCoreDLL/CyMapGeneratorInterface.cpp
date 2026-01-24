@@ -1,8 +1,5 @@
 #include "CvGameCoreDLL.h"
 #include "CyMapGenerator.h"
-//#include "CvStructs.h"
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
 
 //
 // published python interface for CyMapGenerator
@@ -10,7 +7,7 @@
 
 void CyMapGeneratorPythonInterface()
 {
-	OutputDebugString("Python Extension Module - CyMapGeneratorPythonInterface\n");
+	printToConsole("Python Extension Module - CyMapGeneratorPythonInterface\n");
 
 	python::class_<CyMapGenerator>("CyMapGenerator")
 		.def("isNone", &CyMapGenerator::isNone, "bool () - valid CyMapGenerator() interface")

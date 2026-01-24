@@ -9,13 +9,13 @@
 
 class CyCity;
 class CvArea;
-class CyArea 
+class CyArea
 {
 public:
 
 	CyArea();
-	CyArea(CvArea* pArea);					// Call from C++
-	CvArea* getArea() { return m_pArea;	}	// Call from C++
+	CyArea(CvArea* pArea);						// Call from C++
+	CvArea& getArea() { return *m_pArea;	}	// Call from C++ (advc: return reference)
 	bool isNone() { return (m_pArea==NULL); }
 
 	int calculateTotalBestNatureYield();
@@ -36,7 +36,6 @@ public:
 	bool isWater();
 
 	int getUnitsPerPlayer(int /*PlayerTypes*/ eIndex);
-	int getAnimalsPerPlayer(int /*PlayerTypes*/ eIndex);
 	int getCitiesPerPlayer(int /*PlayerTypes*/ eIndex);
 	int getPopulationPerPlayer(int /*PlayerTypes*/ eIndex);
 	int getBuildingGoodHealth(int /*PlayerTypes*/ eIndex);
@@ -61,6 +60,7 @@ public:
 	int getNumBonuses(int /*BonusTypes*/ eBonus);
 	int getNumTotalBonuses();
 	int getNumImprovements(int /*ImprovementTypes*/ eImprovement);
+	int getNumHabitableTiles(); // advc.021b
 
 protected:
 

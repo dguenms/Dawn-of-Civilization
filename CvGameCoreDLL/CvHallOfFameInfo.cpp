@@ -1,21 +1,30 @@
 #include "CvGameCoreDLL.h"
 #include "CvHallOfFameInfo.h"
-#include "CvGlobals.h"
+#include "CvReplayInfo.h"
+#include "CvGame.h"
 
 CvHallOfFameInfo::CvHallOfFameInfo()
 {
+	GC.getGame().setHallOfFame(this); // advc.106i
 }
 
 CvHallOfFameInfo::~CvHallOfFameInfo()
-{
-	for (uint i = 0; i < m_aReplays.size(); i++)
-	{
-		SAFE_DELETE(m_aReplays[i]);
-	}
+{	// <advc.106i>
+	uninit();
 }
+
+void CvHallOfFameInfo::uninit()
+{
+	GC.getGame().setHallOfFame(NULL);
+	CvGlobals::getInstance().setHoFScreenUp(false);
+	for(size_t i = 0; i < m_aReplays.size(); i++)
+		SAFE_DELETE(m_aReplays[i]);
+	m_aReplays.clear();
+} // </advc.106i>
 
 void CvHallOfFameInfo::loadReplays()
 {
+	CvGlobals::getInstance().setHoFScreenUp(true); // advc.106i
 	gDLL->loadReplays(m_aReplays);
 }
 

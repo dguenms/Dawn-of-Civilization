@@ -3,81 +3,96 @@
 
 #pragma once
 
-#include "CvEnums.h"
-
 class CvReplayMessage;
-
 
 class CvReplayInfo
 {
+	CvReplayInfo& operator=(CvReplayInfo const&); // advc.003k (private)
 public:
+	CvReplayInfo(CvReplayInfo const&); // advc.003k
 	DllExport CvReplayInfo();
-	DllExport virtual ~CvReplayInfo();
+	virtual ~CvReplayInfo();
 
-	DllExport void createInfo(PlayerTypes ePlayer);
+	void createInfo(PlayerTypes ePlayer);
 
-	DllExport int getActivePlayer() const;
-	DllExport LeaderHeadTypes getLeader(int iPlayer = -1) const;
-	DllExport ColorTypes getColor(int iPlayer = -1) const;
-	DllExport HandicapTypes getDifficulty() const;
-	DllExport const CvWString& getLeaderName() const;
-	DllExport const CvWString& getCivDescription() const;
-	DllExport const CvWString& getShortCivDescription() const;
-	DllExport const CvWString& getCivAdjective() const;
-	DllExport const CvWString& getMapScriptName() const;
-	DllExport WorldSizeTypes getWorldSize() const;
-	DllExport ClimateTypes getClimate() const;
-	DllExport SeaLevelTypes getSeaLevel() const;
-	DllExport EraTypes getEra() const;
-	DllExport GameSpeedTypes getGameSpeed() const;
-	DllExport bool isGameOption(GameOptionTypes eOption) const;
-	DllExport bool isVictoryCondition(VictoryTypes eVictory) const;
-	DllExport VictoryTypes getVictoryType() const;
-	DllExport bool isMultiplayer() const;
+	PlayerTypes getActivePlayer() const;
+	LeaderHeadTypes getLeader(PlayerTypes ePlayer = NO_PLAYER) const;
+	ColorTypes getColor(PlayerTypes ePlayer = NO_PLAYER) const;
+	HandicapTypes getDifficulty() const;
+	const CvWString& getLeaderName() const;
+	const CvWString& getCivDescription() const;
+	const CvWString& getShortCivDescription() const;
+	const CvWString& getCivAdjective() const;
+	const CvWString& getMapScriptName() const;
+	WorldSizeTypes getWorldSize() const;
+	ClimateTypes getClimate() const;
+	SeaLevelTypes getSeaLevel() const;
+	EraTypes getEra() const;
+	GameSpeedTypes getGameSpeed() const;
+	bool isGameOption(GameOptionTypes eOption) const;
+	bool isVictoryCondition(VictoryTypes eVictory) const;
+	VictoryTypes getVictoryType() const;
+	bool isMultiplayer() const;
 
-	DllExport void addReplayMessage(CvReplayMessage* pMessage);
-	DllExport void clearReplayMessageMap();
-	DllExport int getReplayMessageTurn(uint i) const;
-	DllExport ReplayMessageTypes getReplayMessageType(uint i) const;
-	DllExport int getReplayMessagePlotX(uint i) const;
-	DllExport int getReplayMessagePlotY(uint i) const;
-	DllExport PlayerTypes getReplayMessagePlayer(uint i) const;
-	DllExport const wchar* getReplayMessageText(uint i) const;
-	DllExport uint getNumReplayMessages() const;
-	DllExport ColorTypes getReplayMessageColor(uint i) const;
+	void addReplayMessage(CvReplayMessage* pMessage);
+	void clearReplayMessageMap();
+	int getReplayMessageTurn(uint i) const;
+	ReplayMessageTypes getReplayMessageType(uint i) const;
+	int getReplayMessagePlotX(uint i) const;
+	int getReplayMessagePlotY(uint i) const;
+	PlayerTypes getReplayMessagePlayer(uint i) const;
+	const wchar* getReplayMessageText(uint i) const;
+	uint getNumReplayMessages() const;
+	ColorTypes getReplayMessageColor(uint i) const;
 
-	DllExport int getInitialTurn() const;
-	DllExport int getFinalTurn() const;
-	DllExport int getStartYear() const;
-	DllExport const wchar* getFinalDate() const;
-	DllExport CalendarTypes getCalendar() const;
-	DllExport int getNumPlayers() const;
-	DllExport int getPlayerScore(int iPlayer, int iTurn) const;
-	DllExport int getPlayerEconomy(int iPlayer, int iTurn) const;
-	DllExport int getPlayerIndustry(int iPlayer, int iTurn) const;
-	DllExport int getPlayerAgriculture(int iPlayer, int iTurn) const;
-	DllExport int getFinalScore() const;
-	DllExport int getFinalEconomy() const;
-	DllExport int getFinalIndustry() const;
-	DllExport int getFinalAgriculture() const;
-	DllExport int getNormalizedScore() const;
+	int getInitialTurn() const;
+	int getFinalTurn() const;
+	int getStartYear() const;
+	const wchar* getFinalDate() const;
+	CalendarTypes getCalendar() const;
+	int getNumPlayers() const;
+	int getPlayerScore(int iPlayer, int iTurn) const;
+	int getPlayerEconomy(int iPlayer, int iTurn) const;
+	int getPlayerIndustry(int iPlayer, int iTurn) const;
+	int getPlayerAgriculture(int iPlayer, int iTurn) const;
+	int getFinalScore() const;
+	// <advc.707>
+	void setFinalScore(int iScore);
+	int getFinalPlayerScore() const; // </advc.707>
+	int getFinalEconomy() const;
+	int getFinalIndustry() const;
+	int getFinalAgriculture() const;
+	int getNormalizedScore() const;
 
 	DllExport int getMapHeight() const;
 	DllExport int getMapWidth() const;
 	DllExport const unsigned char* getMinimapPixels() const;
+	int getMinimapSize() const; // advc.106m: for expo to Python
+	static int minimapPixels(int iMinimapSize); // advc.106m
+	// advc.106h: (exposed to Python for advc.savem through CyMap::getSettingsString)
+	void appendSettingsMsg(CvWString& szSettings, PlayerTypes ePlayer) const;
 
 	DllExport const char* getModName() const;
 
 	DllExport bool read(FDataStreamBase& stream);
-	DllExport void write(FDataStreamBase& stream);
+	void write(FDataStreamBase& stream);
 
 protected:
 	bool isValidPlayer(int i) const;
 	bool isValidTurn(int i) const;
-
+	bool isReplayMsgValid(uint i) const; // advc
+	// <advc.106m>
+	int minimapPixels() const;
+	void setDefaultMinimapSize();
+	void setMinimapSizeFromXML(); // </advc.106m>
+	void addSettingsMsg(); // advc.106h
+	// <advc.106i>
+	bool checkBounds(int iValue, int iLower, int iUpper) const;
+	bool isStoringReplaysAsBtS() const;
+	// </advc.106i>
 	static int REPLAY_VERSION;
 
-	int m_iActivePlayer;
+	PlayerTypes m_eActivePlayer;
 	HandicapTypes m_eDifficulty;
 	CvWString m_szLeaderName;
 	CvWString m_szCivDescription;
@@ -96,15 +111,27 @@ protected:
 	bool m_bMultiplayer;
 
 	typedef std::vector<const CvReplayMessage*> ReplayMessageList;
-	ReplayMessageList m_listReplayMessages; 
+	ReplayMessageList m_listReplayMessages;
 
 	int m_iInitialTurn;
 	int m_iFinalTurn;
 	int m_iStartYear;
 	CvWString m_szFinalDate;
 	CalendarTypes m_eCalendar;
-	int m_iNormalizedScore;
-
+	//int m_iNormalizedScore;
+	// <advc.003k> Additional data members
+	class Data
+	{
+		int iNormalizedScore; // (moved into Data to make room for Data* m)
+		int iFinalScore; // advc.707
+		// <advc.106i>
+		int iVersionRead;
+		bool bDisplayOtherMods;
+		// </advc.106i>
+		friend CvReplayInfo;
+	};
+	Data* m;
+	// </advc.003k>
 	struct TurnData
 	{
 		int m_iScore;
@@ -113,6 +140,7 @@ protected:
 		int m_iAgriculture;
 	};
 	typedef std::vector<TurnData> ScoreHistory;
+	TurnData const& getTurnData(int iPlayer, int iTurn) const; // advc
 
 	struct PlayerInfo
 	{
@@ -125,11 +153,11 @@ protected:
 
 	int m_iMapHeight;
 	int m_iMapWidth;
-	unsigned char* m_pcMinimapPixels;
-
-	int m_nMinimapSize;
+	int m_iMinimapSize;
+	byte const* m_pcMinimapPixels; // advc.106n: const
 
 	CvString m_szModName;
 };
+BOOST_STATIC_ASSERT(sizeof(CvReplayInfo) == 336); // advc.003k
 
 #endif

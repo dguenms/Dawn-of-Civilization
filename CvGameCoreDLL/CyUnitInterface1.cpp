@@ -1,14 +1,7 @@
 #include "CvGameCoreDLL.h"
-#include "CyUnit.h"
-#include "CyCity.h"
-#include "CyPlot.h"
 #include "CyArea.h"
 #include "CySelectionGroup.h"
 #include "CyArtFileMgr.h"
-#include "CvInfos.h"
-
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
 
 //
 // published python interface for CyUnit
@@ -16,14 +9,14 @@
 
 void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 {
-	OutputDebugString("Python Extension Module - CyUnitPythonInterface1\n");
+	printToConsole("Python Extension Module - CyUnitPythonInterface1\n");
 
 	x
 		.def("isNone", &CyUnit::isNone, "bool () - Is this a valid unit instance?")
 		.def("convert", &CyUnit::convert, "void (CyUnit* pUnit)")
 		.def("kill", &CyUnit::kill, "void (bool bDelay, int /*PlayerTypes*/ ePlayer)")
 		.def("NotifyEntity", &CyUnit::NotifyEntity, "void (int EntityEventType)")
-		
+
 		.def("isActionRecommended", &CyUnit::isActionRecommended, "int (int i)")
 		.def("isBetterDefenderThan", &CyUnit::isBetterDefenderThan, "bool (CyUnit* pDefender, CyUnit* pAttacker)")
 
@@ -38,7 +31,7 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("getDeclareWarMove", &CyUnit::getDeclareWarMove, "TeamTypes (CyPlot* pPlot)")
 		.def("canMoveInto", &CyUnit::canMoveInto, "bool (CyPlot* pPlot, bool bAttack, bool bDeclareWar, bool bIgnoreLoad)")
 		.def("canMoveOrAttackInto", &CyUnit::canMoveOrAttackInto, "bool (CyPlot* pPlot, bool bDeclareWar)")
-		.def("canMoveThrough", &CyUnit::canMoveThrough, "bool (CyPlot* pPlot)")
+		//.def("canMoveThrough", &CyUnit::canMoveThrough, "bool (CyPlot* pPlot)")
 		.def("jumpToNearestValidPlot", &CyUnit::jumpToNearestValidPlot, "bool ()")
 
 		.def("canAutomate", &CyUnit::canAutomate, "bool (int (AutomateTypes) eAutomate)")
@@ -66,10 +59,10 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 
 		.def("canRecon", &CyUnit::canRecon, "bool ()")
 		.def("canReconAt", &CyUnit::canReconAt, "bool (CyPlot* pPlot, int iX, int iY)")
-
-		.def("canRecon", &CyUnit::canParadrop, "bool ()")
-		.def("canReconAt", &CyUnit::canParadropAt, "bool (CyPlot* pPlot, int iX, int iY)")
-
+		// <advc.001> Was "canRecon", "canReconAt" (copy-paste error). Credit: Roamty.
+		.def("canParadrop", &CyUnit::canParadrop, "bool ()")
+		.def("canParadropAt", &CyUnit::canParadropAt, "bool (CyPlot* pPlot, int iX, int iY)")
+		// </advc.001>
 		.def("canAirBomb", &CyUnit::canAirBomb, "bool ()")
 		.def("canAirBombAt", &CyUnit::canAirBombAt, "bool (CyPlot* pPlot, int iX, int iY)")
 
@@ -203,8 +196,8 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("isWaiting", &CyUnit::isWaiting, "bool ()")
 		.def("isFortifyable", &CyUnit::isFortifyable, "bool ()")
 		.def("fortifyModifier", &CyUnit::fortifyModifier, "int ()")
-		.def("experienceNeeded", &CyUnit::experienceNeeded, "int ()") 
-		.def("attackXPValue", &CyUnit::attackXPValue, "int ()") 
+		.def("experienceNeeded", &CyUnit::experienceNeeded, "int ()")
+		.def("attackXPValue", &CyUnit::attackXPValue, "int ()")
 		.def("defenseXPValue", &CyUnit::defenseXPValue, "int ()")
 		.def("maxXPValue", &CyUnit::maxXPValue, "int ()")
 		.def("firstStrikes", &CyUnit::firstStrikes, "int ()")
@@ -244,20 +237,20 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("unitClassAttackModifier", &CyUnit::unitClassAttackModifier, "int (int /*UnitClassTypes*/ eUnitClass)")
 		.def("unitClassDefenseModifier", &CyUnit::unitClassDefenseModifier, "int (int /*UnitClassTypes*/ eUnitClass)")
 		.def("unitCombatModifier", &CyUnit::unitCombatModifier, "int (int /*UnitCombatTypes*/ eUnitCombat)")
-		.def("domainModifier", &CyUnit::domainModifier, "int (int /*DomainTypes*/ eDomain)") 
+		.def("domainModifier", &CyUnit::domainModifier, "int (int /*DomainTypes*/ eDomain)")
 
-		.def("bombardRate", &CyUnit::bombardRate, "int ()") 
+		.def("bombardRate", &CyUnit::bombardRate, "int ()")
 		.def("airBombBaseRate", &CyUnit::airBombBaseRate, "int ()")
 		.def("airBombCurrRate", &CyUnit::airBombCurrRate, "int ()")
 
-		.def("specialCargo", &CyUnit::specialCargo, "int ()") 
-		.def("domainCargo", &CyUnit::domainCargo, "int ()") 
+		.def("specialCargo", &CyUnit::specialCargo, "int ()")
+		.def("domainCargo", &CyUnit::domainCargo, "int ()")
 		.def("cargoSpace", &CyUnit::cargoSpace, "int ()")
 		.def("changeCargoSpace", &CyUnit::changeCargoSpace, "void (int)")
 		.def("isFull", &CyUnit::isFull, "bool ()")
 		.def("cargoSpaceAvailable", &CyUnit::cargoSpaceAvailable, "int ()")
 		.def("hasCargo", &CyUnit::hasCargo, "bool ()")
-		.def("canCargoAllMove", &CyUnit::canCargoAllMove, "bool ()")
+		//.def("canCargoAllMove", &CyUnit::canCargoAllMove, "bool ()")
 		.def("getUnitAICargo", &CyUnit::getUnitAICargo, "int (int (UnitAITypes) eUnitAI)")
 		.def("getID", &CyUnit::getID, "int ()")
 
@@ -278,7 +271,7 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("plot", &CyUnit::plot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
 		.def("area", &CyUnit::area, python::return_value_policy<python::manage_new_object>(), "CyArea* ()")
 		.def("getReconPlot", &CyUnit::getReconPlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
-		.def("setReconPlot", &CyUnit::setReconPlot, "void (CyPlot)")				 
+		.def("setReconPlot", &CyUnit::setReconPlot, "void (CyPlot)")
 
 		.def("getGameTurnCreated", &CyUnit::getGameTurnCreated, "int ()")
 
@@ -390,6 +383,7 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 
 		.def("getUnitAIType", &CyUnit::getUnitAIType, "int UnitAIType () - returns the int value of the UnitAIType")
 		.def("setUnitAIType", &CyUnit::setUnitAIType, "void UnitAIType (int iUnitAIType) - sets the unit's UnitAIType")
+		.def("isWorker", &CyUnit::isWorker, "bool isWorker()") // advc.154
 
 		.def("found", &CyUnit::found, "void () - founds a city") //Rhye
 

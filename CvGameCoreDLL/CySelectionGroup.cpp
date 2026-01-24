@@ -1,31 +1,27 @@
-//
 // Python wrapper class for CySelectionGroup
-// 
-//
 #include "CvGameCoreDLL.h"
 #include "CySelectionGroup.h"
-#include "CvSelectionGroup.h"
-#include "CvPlot.h"
-#include "CyPlot.h"
-#include "CvArea.h"
+#include "CvSelectionGroupAI.h"
 #include "CyArea.h"
-#include "CyUnit.h"
-//#include "CvStructs.h"
+#include "CvArea.h"
+#include "CvPlot.h"
 
-CySelectionGroup::CySelectionGroup() : m_pSelectionGroup(NULL)
-{
 
-}
+CySelectionGroup::CySelectionGroup() : m_pSelectionGroup(NULL) {}
 
-CySelectionGroup::CySelectionGroup(CvSelectionGroup* pSelectionGroup) : m_pSelectionGroup(pSelectionGroup)
-{
-
-}
+CySelectionGroup::CySelectionGroup(CvSelectionGroup* pSelectionGroup) : m_pSelectionGroup(pSelectionGroup) {}
+// advc.003y: (see CyCity.cpp)
+CySelectionGroup::CySelectionGroup(CvSelectionGroup const& kSelectionGroup) :
+	m_pSelectionGroup(const_cast<CvSelectionGroup*>(&kSelectionGroup)) {}
 
 void CySelectionGroup::pushMission(MissionTypes eMission, int iData1, int iData2, int iFlags, bool bAppend, bool bManual, MissionAITypes eMissionAI, CyPlot* pMissionAIPlot, CyUnit* pMissionAIUnit)
 {
 	if (m_pSelectionGroup)
-		return m_pSelectionGroup->pushMission(eMission, iData1, iData2, iFlags, bAppend, bManual, eMissionAI, pMissionAIPlot ? pMissionAIPlot->getPlot() : NULL, pMissionAIUnit ? pMissionAIUnit->getUnit() : NULL);
+	{
+		return m_pSelectionGroup->pushMission(eMission, iData1, iData2,
+				(MovementFlags)iFlags, bAppend, bManual, eMissionAI,
+				pMissionAIPlot->getPlot(), pMissionAIUnit->getUnit());
+	}
 }
 
 void CySelectionGroup::pushMoveToMission(int iX, int iY)
@@ -47,7 +43,8 @@ CyPlot* CySelectionGroup::lastMissionPlot()
 
 bool CySelectionGroup::canStartMission(int iMission, int iData1, int iData2, CyPlot* pPlot, bool bTestVisible)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->canStartMission(iMission, iData1, iData2, pPlot->getPlot(), bTestVisible) : false;
+	return m_pSelectionGroup ? m_pSelectionGroup->canStartMission((MissionTypes)iMission,
+			iData1, iData2, pPlot->getPlot(), bTestVisible) : false;
 }
 
 bool CySelectionGroup::canDoInterfaceMode(InterfaceModeTypes eInterfaceMode)
@@ -117,7 +114,7 @@ bool CySelectionGroup::canEnterArea(int /*TeamTypes*/ eTeam, CyArea* pArea, bool
 
 bool CySelectionGroup::canMoveInto(CyPlot* pPlot, bool bAttack)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->canMoveInto(pPlot->getPlot(), bAttack) : false;
+	return m_pSelectionGroup ? m_pSelectionGroup->canMoveInto(*pPlot->getPlot(), bAttack) : false;
 }
 
 bool CySelectionGroup::canMoveOrAttackInto(CyPlot* pPlot, bool bDeclareWar)
@@ -127,7 +124,7 @@ bool CySelectionGroup::canMoveOrAttackInto(CyPlot* pPlot, bool bDeclareWar)
 
 bool CySelectionGroup::canMoveThrough(CyPlot* pPlot)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->canMoveThrough(pPlot->getPlot()) : false;
+	return m_pSelectionGroup ? m_pSelectionGroup->canMoveThrough(*pPlot->getPlot()) : false;
 }
 
 bool CySelectionGroup::canFight()
@@ -159,6 +156,11 @@ bool CySelectionGroup::hasWorker()
 {
 	return m_pSelectionGroup ? m_pSelectionGroup->hasWorker() : false;
 }
+// BETTER_BTS_AI_MOD, General AI, 11/30/08, jdog5000:
+bool CySelectionGroup::isStranded()
+{
+	return m_pSelectionGroup ? m_pSelectionGroup->AI().AI_isStranded() : false;
+}
 
 bool CySelectionGroup::at(int iX, int iY)
 {
@@ -172,17 +174,23 @@ bool CySelectionGroup::atPlot(CyPlot* pPlot)
 
 CyPlot* CySelectionGroup::plot()
 {
-	return m_pSelectionGroup ? new CyPlot( m_pSelectionGroup->plot() ) : NULL;
+	return m_pSelectionGroup ? new CyPlot(m_pSelectionGroup->plot()) : NULL;
 }
 
 CyArea* CySelectionGroup::area()
 {
-	return m_pSelectionGroup ? new CyArea( m_pSelectionGroup->area() ) : NULL;
+	return m_pSelectionGroup ? new CyArea(m_pSelectionGroup->area()) : NULL;
 }
 
 int /*RouteTypes*/ CySelectionGroup::getBestBuildRoute(CyPlot* pPlot, BuildTypes* peBestBuild)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->getBestBuildRoute(pPlot->getPlot(), peBestBuild) : -1;
+	if (m_pSelectionGroup == NULL)
+		return NO_ROUTE;
+	// <advc> Pass by reference
+	CvPlot const* p = pPlot->getPlot();
+	if (p == NULL)
+		return NO_ROUTE; // </advc>
+	return m_pSelectionGroup->getBestBuildRoute(*p, peBestBuild);
 }
 
 bool CySelectionGroup::isAmphibPlot(CyPlot* pPlot)
@@ -211,7 +219,7 @@ int CySelectionGroup::getID()
 
 int /*PlayerTypes*/ CySelectionGroup::getOwner()
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->getOwnerINLINE() : -1;
+	return m_pSelectionGroup ? m_pSelectionGroup->getOwner() : -1;
 }
 
 int /*TeamTypes*/ CySelectionGroup::getTeam()
@@ -230,7 +238,7 @@ void CySelectionGroup::setActivityType(int /*ActivityTypes*/ eNewValue)
 		m_pSelectionGroup->setActivityType((ActivityTypes) eNewValue);
 }
 
-int /*AutomateTypes*/ CySelectionGroup::getAutomateType() 
+int /*AutomateTypes*/ CySelectionGroup::getAutomateType()
 {
 	return m_pSelectionGroup ? (AutomateTypes) m_pSelectionGroup->getAutomateType() : -1;
 }
@@ -256,15 +264,17 @@ CyPlot* CySelectionGroup::getPathEndTurnPlot()
 	return m_pSelectionGroup ? new CyPlot(m_pSelectionGroup->getPathEndTurnPlot()) : NULL;
 }
 
-bool CySelectionGroup::generatePath(CyPlot* pFromPlot, CyPlot* pToPlot, int iFlags, bool bReuse, int* piPathTurns)
+bool CySelectionGroup::generatePath(CyPlot* pFromPlot, CyPlot* pToPlot, int iFlags,
+	bool bReuse, int* piPathTurns)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->generatePath(pFromPlot->getPlot(), pToPlot->getPlot(), iFlags, bReuse, piPathTurns) : false;
-}
-
-void CySelectionGroup::resetPath()
-{
-	if (m_pSelectionGroup)
-		m_pSelectionGroup->resetPath();
+	if (m_pSelectionGroup == NULL ||
+		pFromPlot->getPlot() == NULL || pToPlot->getPlot() == NULL)
+	{
+		return false;
+	}
+	return m_pSelectionGroup->generatePath(
+			*pFromPlot->getPlot(), *pToPlot->getPlot(),
+			(MovementFlags)iFlags, bReuse, piPathTurns);
 }
 
 int CySelectionGroup::getNumUnits()
@@ -293,22 +303,27 @@ CyUnit* CySelectionGroup::getHeadUnit()
 	return m_pSelectionGroup ? new CyUnit(m_pSelectionGroup->getHeadUnit()) : NULL;
 }
 
-CyUnit* CySelectionGroup::getUnitAt(int index)
+CyUnit* CySelectionGroup::getUnitAt(int iIndex)
 {
-	return m_pSelectionGroup ? new CyUnit(m_pSelectionGroup->getUnitAt(index)) : NULL;
+	if (m_pSelectionGroup == NULL)
+		return NULL;
+	// <advc> Moved from CvSelectionGroup. Foolproofing should be handled here.
+	if (iIndex < 0 || m_pSelectionGroup->getNumUnits() <= iIndex)
+		return NULL; // </advc>
+	return new CyUnit(m_pSelectionGroup->getUnitAt(iIndex));
 }
 
-int CySelectionGroup::getMissionType( int iNode )
+int CySelectionGroup::getMissionType(int iNode)
 {
 	return m_pSelectionGroup ? m_pSelectionGroup->getMissionType(iNode) : -1;
 }
 
-int CySelectionGroup::getMissionData1( int iNode )
+int CySelectionGroup::getMissionData1(int iNode)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->getMissionData1( iNode ) : -1;
+	return m_pSelectionGroup ? m_pSelectionGroup->getMissionData1(iNode) : -1;
 }
 
-int CySelectionGroup::getMissionData2( int iNode )
+int CySelectionGroup::getMissionData2(int iNode)
 {
-	return m_pSelectionGroup ? m_pSelectionGroup->getMissionData2( iNode ) : -1;
+	return m_pSelectionGroup ? m_pSelectionGroup->getMissionData2(iNode) : -1;
 }

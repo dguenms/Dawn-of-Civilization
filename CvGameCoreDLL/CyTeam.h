@@ -2,20 +2,17 @@
 
 #ifndef CyTeam_h
 #define CyTeam_h
-//
 // Python wrapper class for CvTeam
-// 
-
-// //#include "CvEnums.h"
 
 class CvTeam;
 class CyArea;
+
 class CyTeam
 {
 public:
 	CyTeam();
-	CyTeam(CvTeam* pTeam);		// Call from C++
-	CvTeam* getTeam() { return m_pTeam;	}	// Call from C++
+	CyTeam(CvTeam* pTeam); // Call from C++
+	//CvTeam* getTeam(); // advc: unused
 
 	bool isNone() { return (m_pTeam==NULL); }
 
@@ -23,7 +20,12 @@ public:
 
 	bool canChangeWarPeace(int /*TeamTypes*/ eTeam);
 	bool canDeclareWar(int /*TeamTypes*/ eTeam);
+	bool canEventuallyDeclareWar(int /*TeamTypes*/ eTeam); // K-Mod
 	void declareWar(int /*TeamTypes*/ eTeam, bool bNewDiplo, int /*WarPlanTypes*/ eWarPlan);
+	// <advc.106g>
+	void declareWarEvent(int /*TeamTypes*/ eTeam, bool bNewDiplo, int /*WarPlanTypes*/ eWarPlan);
+	void makePeaceEvent(int /*TeamTypes*/ eTeam);
+	// </advc.106g>
 	void makePeace(int /*TeamTypes*/ eTeam);
 	bool canContact(int /*TeamTypes*/ eTeam);
 	void meet(int /*TeamTypes*/ eTeam, bool bNewDiplo);
@@ -47,7 +49,7 @@ public:
 	int getUnitClassMaking(int /*UnitClassTypes*/ eUnitClass);
 	int getUnitClassCountPlusMaking(int /*UnitClassTypes*/ eUnitClass);
 	int getBuildingClassMaking(int /*BuildingClassTypes*/ eBuildingClass);
-	int getBuildingClassCountPlusMaking(int /*BuildingClassTypes*/ eUnitClass);
+	int getBuildingClassCountPlusMaking(int /*BuildingClassTypes*/ eBuildingClass);
 	int getHasReligionCount(int /*ReligionTypes*/ eReligion);
 	int getHasCorporationCount(int /*CorporationTypes*/ eCorporation);
 
@@ -76,20 +78,23 @@ public:
 	std::wstring getName();
 
 	int getNumMembers();
+	// <advc.155>
+	int getAliveCount();
+	int getMasterTeam(); // </advc.155>
 	bool isAlive();
 	bool isEverAlive();
-	bool isExisting();
+	bool isExisting(); // doc
 	int getNumCities();
 	int getTotalPopulation();
 	int getTotalLand();
 	int getNukeInterception();
-	void changeNukeInterception(int iChange);	 
+	void changeNukeInterception(int iChange);
 
 	int getForceTeamVoteEligibilityCount(int /*VoteSourceTypes*/ eVoteSource);
 	bool isForceTeamVoteEligible(int /*VoteSourceTypes*/ eVoteSource);
 	void changeForceTeamVoteEligibilityCount(int /*VoteSourceTypes*/ eVoteSource, int iChange);
 	int getExtraWaterSeeFromCount();
-	bool isExtraWaterSeeFrom();		 
+	bool isExtraWaterSeeFrom();
 	void changeExtraWaterSeeFromCount(int iChange);
 	int getMapTradingCount();
 	bool isMapTrading();
@@ -105,25 +110,25 @@ public:
 	void changeOpenBordersTradingCount(int iChange);
 	int getDefensivePactTradingCount();
 	bool isDefensivePactTrading();
-	void changeDefensivePactTradingCount(int iChange);															
+	void changeDefensivePactTradingCount(int iChange);
 	int getPermanentAllianceTradingCount();
 	bool isPermanentAllianceTrading();
-	void changePermanentAllianceTradingCount(int iChange);													
+	void changePermanentAllianceTradingCount(int iChange);
 	int getVassalTradingCount();
 	bool isVassalStateTrading();
-	void changeVassalTradingCount(int iChange);													
+	void changeVassalTradingCount(int iChange);
 	int getBridgeBuildingCount();
 	bool isBridgeBuilding();
-	void changeBridgeBuildingCount(int iChange);																		
+	void changeBridgeBuildingCount(int iChange);
 	int getIrrigationCount();
 	bool isIrrigation();
-	void changeIrrigationCount(int iChange);																				
+	void changeIrrigationCount(int iChange);
 	int getIgnoreIrrigationCount();
 	bool isIgnoreIrrigation();
-	void changeIgnoreIrrigationCount(int iChange);																	
+	void changeIgnoreIrrigationCount(int iChange);
 	int getWaterWorkCount();
 	bool isWaterWork();
-	void changeWaterWorkCount(int iChange);																	
+	void changeWaterWorkCount(int iChange);
 
 	int getVassalPower() const;
 	void setVassalPower(int iPower);
@@ -139,9 +144,9 @@ public:
 	int getID();
 
 	bool isStolenVisibility(int /*TeamTypes*/ eIndex);
-	int getWarWeariness(int /*TeamTypes*/ eIndex);								 
-	void setWarWeariness(int /*TeamTypes*/ eIndex, int iNewValue);	 
-	void changeWarWeariness(int /*TeamTypes*/ eIndex, int iChange);	 
+	int getWarWeariness(int /*TeamTypes*/ eIndex);
+	void setWarWeariness(int /*TeamTypes*/ eIndex, int iNewValue);
+	void changeWarWeariness(int /*TeamTypes*/ eIndex, int iChange);
 	int getTechShareCount(int iIndex);
 	bool isTechShare(int iIndex);
 	void changeTechShareCount(int iIndex, int iChange);
@@ -153,9 +158,10 @@ public:
 	void changeExtraMoves(int /*DomainTypes*/ eIndex, int iChange);
 
 	bool isHasMet(int /*TeamTypes*/ eIndex);
-	void cutContact(int /*TeamTypes*/ eIndex); //
-	bool canCutContact(int /*TeamTypes*/ eIndex);
-	void setAtWar(int /*TeamTypes*/ eIndex, bool bNewValue); //Rhye
+    int getHasMetTurn(int iOtherTeam); // advc.091
+    void cutContact(int /*TeamTypes*/ eIndex); // rfc
+    bool canCutContact(int /*TeamTypes*/ eIndex); // rfc
+    void setAtWar(int /*TeamTypes*/ eIndex, bool bNewValue); // rfc
 	bool isAtWar(int /*TeamTypes*/ eIndex);
 	bool isPermanentWarPeace(int /*TeamTypes*/ eIndex);
 	void setPermanentWarPeace(int /*TeamTypes*/ eIndex, bool bNewValue);
@@ -167,6 +173,7 @@ public:
 	void setVassal(int /*TeamTypes*/ eIndex, bool bVassal, bool bCapitulated);
 	void assignVassal(int /*TeamTypes*/ eIndex, bool bSurrender);
 	void freeVassal(int /*TeamTypes*/ eIndex);
+	bool isCapitulated(); // advc.130v
 	bool isDefensivePact(int /*TeamTypes*/ eIndex);
 	int getRouteChange(int /*RouteTypes*/ eIndex);
 	void changeRouteChange(int /*RouteTypes*/ eIndex, int iChange);
@@ -205,6 +212,7 @@ public:
 	int getVictoryDelay(int /*VictoryTypes*/ eVictory);
 	bool canLaunch(int /*VictoryTypes*/ eVictory);
 	int getLaunchSuccessRate(int /*VictoryTypes*/ eVictory);
+	bool hasSpaceshipArrived();
 
 	int getEspionagePointsAgainstTeam(int /*TeamTypes*/ eIndex);
 	void setEspionagePointsAgainstTeam(int /*TeamTypes*/ eIndex, int iValue);
@@ -221,23 +229,27 @@ public:
 
 	bool AI_shareWar(int /*TeamTypes*/ eTeam);
 	void AI_setWarPlan(int /*TeamTypes*/ eIndex, int /*WarPlanTypes*/ eNewValue);
+	// BETTER_BTS_AI_MOD, Player Interface, 01/12/09, jdog5000:
+	int AI_getWarPlan(int /*TeamTypes*/ eIndex) const;
 	int AI_getAtWarCounter(int /*TeamTypes*/ eTeam) const;
-	void AI_setAtWarCounter(int /*TeamTypes*/ eTeam, int iNewValue);
+	void AI_setAtWarCounter(int /*TeamTypes*/ eTeam, int iNewValue); // doc
 	int AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const;
 	int AI_getWarSuccess(int /*TeamTypes*/ eIndex) const;
+	// advc.152:
+	int /*DenialTypes*/ AI_declareWarTrade(int /*TeamTypes*/ eWarTeam, int /*TeamTypes*/ eTeam) const;
+	// advc.038: Returns int b/c I'm not sure if float would cause problems
+	int AI_estimateYieldRate(int iPlayer, int iYield) const;
 
-	// Leoreth
-	void setOpenBorders(int eTeam, bool bNewValue);
-	void setDefensivePact(int eTeam, bool bNewValue);
-	bool isCapitulated();
-	int getTotalTechValue();
-	void changeObsoleteBuildingCount(int eBuilding, int iChange);
-	int AI_getWarPlan(int eTeam);
+	void setOpenBorders(int eTeam, bool bNewValue); // doc
+	void setDefensivePact(int eTeam, bool bNewValue); // doc
+	bool isCapitulated(); // doc
+	int getTotalTechValue(); // doc
+	void changeObsoleteBuildingCount(int eBuilding, int iChange); // doc
+	int AI_getWarPlan(int eTeam); // doc
 
 protected:
 
-	CvTeam* m_pTeam;
-
+	CvTeamAI* m_pTeam; // advc.003u: was CvTeam*
 };
 
 #endif	// #ifndef CyTeam

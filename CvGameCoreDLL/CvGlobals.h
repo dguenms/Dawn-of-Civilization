@@ -1,666 +1,363 @@
 #pragma once
 
-// CvGlobals.h
-
 #ifndef CIV4_GLOBALS_H
 #define CIV4_GLOBALS_H
+// <advc> Disable warnings about unknown pragma (MSVC03 doesn't know pragma region)
+#pragma warning(push)
+#pragma warning(disable: 68) // </advc>
 
-//#include "CvStructs.h"
-//
-// 'global' vars for Civ IV.  singleton class.
-// All globals and global types should be contained in this class
-//
+/*	'global' vars for Civ IV.  singleton class.
+	All globals and global types should be contained in this class. */
 
-class FProfiler;
-class CvDLLUtilityIFaceBase;
-class CvRandom;
-class CvGameAI;
+#pragma region ForwardDeclarations
+// External classes ...
 class CMessageControl;
 class CvDropMgr;
 class CMessageQueue;
 class CvSetupData;
-class CvInitCore;
 class CvMessageCodeTranslator;
 class CvPortal;
+class CvDiplomacyScreen;
+class CMPDiplomacyScreen;
+class FAStar;
+class FMPIManager;
+class CvInterface;
+
+class FProfiler;
+class CvDLLUtilityIFaceBase;
+class CvPythonCaller; // advc.003y
+class CvDLLLogger; // advc
+class CvRandom;
+class CvGame; // advc.003u
+class CvGameAI;
+class CvAgents; // advc.agent
+class ModName; // advc.106i
+class CvInitCore;
 class CvStatsReporter;
 class CvDLLInterfaceIFaceBase;
 class CvPlayerAI;
-class CvDiplomacyScreen;
-class CvCivicsScreen;
-class CvWBUnitEditScreen;
-class CvWBCityEditScreen;
-class CMPDiplomacyScreen;
-class FMPIManager;
-class FAStar;
-class CvInterface;
-class CMainMenu;
-class CvEngine;
 class CvArtFileMgr;
 class FVariableSystem;
 class CvMap;
 class CvPlayerAI;
 class CvTeamAI;
-class CvInterfaceModeInfo;
 class CvWorldInfo;
-class CvClimateInfo;
-class CvSeaLevelInfo;
-class CvColorInfo;
-class CvPlayerColorInfo;
-class CvAdvisorInfo;
-class CvRouteModelInfo;
-class CvRiverInfo;
-class CvRiverModelInfo;
-class CvWaterPlaneInfo;
-class CvTerrainPlaneInfo;
-class CvCameraOverlayInfo;
-class CvAnimationPathInfo;
-class CvAnimationCategoryInfo;
-class CvEntityEventInfo;
-class CvEffectInfo;
-class CvAttachableInfo;
-class CvCameraInfo;
-class CvUnitFormationInfo;
-class CvGameText;
-class CvLandscapeInfo;
-class CvTerrainInfo;
-class CvBonusClassInfo;
-class CvBonusInfo;
-class CvFeatureInfo;
-class CvCivilizationInfo;
-class CvLeaderHeadInfo;
-class CvTraitInfo;
-class CvCursorInfo;
-class CvThroneRoomCamera;
-class CvThroneRoomInfo;
-class CvThroneRoomStyleInfo;
-class CvSlideShowInfo;
-class CvSlideShowRandomInfo;
-class CvWorldPickerInfo;
-class CvSpaceShipInfo;
-class CvUnitInfo;
-class CvSpecialUnitInfo;
-class CvInfoBase;
-class CvYieldInfo;
-class CvCommerceInfo;
-class CvRouteInfo;
-class CvImprovementInfo;
-class CvGoodyInfo;
-class CvBuildInfo;
-class CvHandicapInfo;
-class CvGameSpeedInfo;
-class CvTurnTimerInfo;
-class CvProcessInfo;
-class CvVoteInfo;
-class CvProjectInfo;
-class CvBuildingClassInfo;
-class CvBuildingInfo;
-class CvSpecialBuildingInfo;
-class CvUnitClassInfo;
-class CvActionInfo;
-class CvMissionInfo;
-class CvControlInfo;
-class CvCommandInfo;
-class CvAutomateInfo;
-class CvPromotionInfo;
-class CvTechInfo;
-class CvReligionInfo;
-class CvCorporationInfo;
-class CvSpecialistInfo;
-class CvCivicOptionInfo;
-class CvCivicInfo;
-class CvDiplomacyInfo;
-class CvEraInfo;
-class CvHurryInfo;
-class CvEmphasizeInfo;
-class CvUpkeepInfo;
-class CvCultureLevelInfo;
-class CvVictoryInfo;
-class CvQuestInfo;
-class CvGameOptionInfo;
-class CvMPOptionInfo;
-class CvForceControlInfo;
-class CvPlayerOptionInfo;
-class CvGraphicOptionInfo;
-class CvTutorialInfo;
-class CvEventTriggerInfo;
-class CvEventInfo;
-class CvEspionageMissionInfo;
-class CvUnitArtStyleTypeInfo;
-class CvVoteSourceInfo;
-class CvMainMenuInfo;
-
+// <advc.enum>
+#define FORWARD_DECLARE_INFO_CLASS(Name, Dummy) class Cv##Name##Info;
+DO_FOR_EACH_INFO_TYPE(FORWARD_DECLARE_INFO_CLASS) // </advc.enum>
+#pragma endregion ForwardDeclarations
 
 class CvGlobals
 {
-//	friend class CvDLLUtilityIFace;
 	friend class CvXMLLoadUtility;
+	/*  advc: Removed the std::vector<Cv...Info*>& getters for each info type.
+		Comments in CvGlobals.cpp had said that those getters were
+		"For Moose - XML Load Util and CvInfos."
+		The only calls came from CvXMLLoadUtility (mostly the three
+		CvXMLLoadUtility::Load...Infos functions). CvXMLLoadUtility is a friend
+		class anyway; not a good reason to fully expose all the info vectors.
+		Some more comments deleted from CvGlobals.cpp:
+		getWaterPlaneInfo: "For Moose - CvDecal and CvWater"
+		getUnitFormationInfo: "For Moose - CvUnitEntity"
+		getBuildingInfo, getTechInfo "For Moose - XML Load Util, CvInfos, CvCacheObject"
+		None of those were called outside of CvXMLLoadUtility.
+		getHandicapInfo, getGameSpeed, getTurnTimer: "Do NOT export outside of the DLL"
+		Strange, but no reason not to remove those getter. */
 public:
 
 	// singleton accessor
-	DllExport inline static CvGlobals& getInstance();
+	DllExport __inline static CvGlobals& getInstance();
+	__inline static CvGlobals const& getConstInstance();
 
-	DllExport CvGlobals();
-	DllExport virtual ~CvGlobals();
+	CvGlobals();
 
 	DllExport void init();
 	DllExport void uninit();
-	DllExport void clearTypesMap();
+	void clearTypesMap();
+	void testInstallLocation(); // advc.002b
 
 	DllExport CvDiplomacyScreen* getDiplomacyScreen();
 	DllExport CMPDiplomacyScreen* getMPDiplomacyScreen();
-
 	DllExport FMPIManager*& getFMPMgrPtr();
 	DllExport CvPortal& getPortal();
 	DllExport CvSetupData& getSetupData();
-	DllExport CvInitCore& getInitCore();
+	DllExport CvInitCore& getInitCore()  // <advc> const replacement
+	{ CvGlobals const& kThis = *this; return kThis.getInitCore(); }
+	CvInitCore& getInitCore() const { return *m_initCore; } // </advc>
 	DllExport CvInitCore& getLoadedInitCore();
 	DllExport CvInitCore& getIniInitCore();
 	DllExport CvMessageCodeTranslator& getMessageCodes();
 	DllExport CvStatsReporter& getStatsReporter();
-	DllExport CvStatsReporter* getStatsReporterPtr();
+	CvStatsReporter* getStatsReporterPtr();
 	DllExport CvInterface& getInterface();
 	DllExport CvInterface* getInterfacePtr();
-	DllExport int getMaxCivPlayers() const;
-#ifdef _USRDLL
-	CvMap& getMapINLINE() { return *m_map; }				// inlined for perf reasons, do not use outside of dll
-	CvGameAI& getGameINLINE() { return *m_game; }			// inlined for perf reasons, do not use outside of dll
-#endif
-	DllExport CvMap& getMap();
-	DllExport CvGameAI& getGame();
-	DllExport CvGameAI *getGamePointer();
-	DllExport CvRandom& getASyncRand();
+
+	CvMap& getMap() const { return *m_map; } // advc.inl: was "getMapINLINE"
+	// advc.003u: return type was CvGameAI&
+	CvGame& getGame() const // advc.inl: was "getGameINLINE
+	{	/*	Can't be helped; this function has to be inlined,
+			and I won't include CvGameAI.h here. */
+		return *reinterpret_cast<CvGame*>(m_game);
+	}
+	CvGameAI& AI_getGame() const { return *m_game; } // advc.003u
+	CvAgents& getAgents() const { return *m_agents; } // advc.agents
+	CvMap& getMapExternal(); // advc.inl: Exported through .def file
+	CvGameAI& getGameExternal(); // advc.inl: Exported through .def file
+	DllExport CvGameAI* getGamePointer();
+	// <advc.003y>
+	CvPythonCaller const* getPythonCaller() const
+	{
+		return m_pPythonCaller;
+	} // </advc.003y>
+	DllExport CvRandom& getASyncRand() { return *m_asyncRand; }
+	CvRandom& getASyncRand() const { return *m_asyncRand; } // advc
 	DllExport CMessageQueue& getMessageQueue();
 	DllExport CMessageQueue& getHotMessageQueue();
 	DllExport CMessageControl& getMessageControl();
 	DllExport CvDropMgr& getDropMgr();
-	DllExport FAStar& getPathFinder();
-	DllExport FAStar& getInterfacePathFinder();
-	DllExport FAStar& getStepFinder();
-	DllExport FAStar& getRouteFinder();
-	DllExport FAStar& getBorderFinder();
-	DllExport FAStar& getAreaFinder();
+	/*  advc: inlined and constified. The caller is certainly going to change
+		the returned FAStar objects, but CvGlobals doesn't own those objects, so
+		it shouldn't be our concern. */
+	DllExport FAStar& getPathFinder() { CvGlobals const& kThis = *this; return kThis.getPathFinder(); }
+	FAStar& getPathFinder() const { return *m_pathFinder; }
+	DllExport FAStar& getInterfacePathFinder() { CvGlobals const& kThis = *this; return kThis.getInterfacePathFinder(); }
+	FAStar& getInterfacePathFinder() const { return *m_interfacePathFinder; }
+	DllExport FAStar& getStepFinder() { CvGlobals const& kThis = *this; return kThis.getStepFinder(); }
+	FAStar& getStepFinder() const { return *m_stepFinder; }
+	DllExport FAStar& getRouteFinder() { CvGlobals const& kThis = *this; return kThis.getRouteFinder(); }
+	FAStar& getRouteFinder() const { return *m_routeFinder; }
+	DllExport FAStar& getBorderFinder() { CvGlobals const& kThis = *this; return kThis.getBorderFinder(); }
+	FAStar& getBorderFinder() const { return *m_borderFinder; }
+	DllExport FAStar& getAreaFinder() { CvGlobals const& kThis = *this; return kThis.getAreaFinder(); }
+	FAStar& getAreaFinder() const { return *m_areaFinder; }
 	DllExport FAStar& getPlotGroupFinder();
-	DllExport NiPoint3& getPt3Origin();
+	//NiPoint3& getPt3Origin(); // advc.003j: unused
+	//NiPoint3& getPt3CameraDir(); // advc.003j: unused
+	DllExport bool& getLogging() { return m_bLogging; }
+	DllExport bool& getRandLogging() { return m_bRandLogging; }
+	DllExport bool& getSynchLogging() { return m_bSynchLogging; }
+	DllExport bool& overwriteLogs() { return m_bOverwriteLogs; }
+	// <advc> const inline versions of the above
+	// The first two are exposed to Python for kekm.27
+	bool isLogging() const { return m_bLogging; }
+	bool isRandLogging() const { return m_bRandLogging; }
+	bool isSynchLogging() const { return m_bSynchLogging; }
+	bool isOverwriteLogs() const { return m_bOverwriteLogs; }
+	// <advc>
+	CvDLLLogger& getLogger() const
+	{
+		return *m_pLogger;
+	} // </advc>
 
-	DllExport std::vector<CvInterfaceModeInfo*>& getInterfaceModeInfo();
-	DllExport CvInterfaceModeInfo& getInterfaceModeInfo(InterfaceModeTypes e);
-
-	DllExport NiPoint3& getPt3CameraDir();
-
-	DllExport bool& getLogging();
-	DllExport bool& getRandLogging();
-	DllExport bool& getSynchLogging();
-	DllExport bool& overwriteLogs();
-
-	DllExport int* getPlotDirectionX();
-	DllExport int* getPlotDirectionY();
-	DllExport int* getPlotCardinalDirectionX();
-	DllExport int* getPlotCardinalDirectionY();
-	DllExport int* getCityPlotX();
-	DllExport int* getCityPlotY();
-	DllExport int* getCityPlotPriority();
-	DllExport int getXYCityPlot(int i, int j);
-	DirectionTypes* getTurnLeftDirection();
-	DirectionTypes getTurnLeftDirection(int i);
-	DirectionTypes* getTurnRightDirection();
-	DirectionTypes getTurnRightDirection(int i);
-	DllExport DirectionTypes getXYDirection(int i, int j);
-
-	// Leoreth
-	DllExport int* getCityPlot3X();
-	DllExport int* getCityPlot3Y();
-
-	// Leoreth: graphics paging
-	void setGraphicalDetailPagingEnabled(bool bEnabled);
-	bool getGraphicalDetailPagingEnabled();
-	int getGraphicalDetailPageInRange();
+	// advc: Inlined and constified
+	DllExport int* getPlotDirectionX() { return m_aiPlotDirectionX; }
+	int const* getPlotDirectionX() const { return m_aiPlotDirectionX; }
+	DllExport int* getPlotDirectionY() { return m_aiPlotDirectionY; }
+	int const* getPlotDirectionY() const { return m_aiPlotDirectionY; }
+	DllExport int* getPlotCardinalDirectionX() { return m_aiPlotCardinalDirectionX; };
+	int const* getPlotCardinalDirectionX() const { return m_aiPlotCardinalDirectionX; };
+	DllExport int* getPlotCardinalDirectionY() { return m_aiPlotCardinalDirectionY; };
+	int const* getPlotCardinalDirectionY() const { return m_aiPlotCardinalDirectionY; };
+	DllExport DirectionTypes getXYDirection(int i, int j) { CvGlobals const& kThis = *this; return kThis.getXYDirection(i,j); }
+	DirectionTypes getXYDirection(int i, int j) const
+	{
+		FAssertBounds(0, DIRECTION_DIAMETER, i);
+		FAssertBounds(0, DIRECTION_DIAMETER, j);
+		return m_aaeXYDirection[i][j];
+	}
+	CityPlotTypes getXYCityPlot(int i, int j) const // advc.enum: return type was int
+	{
+		FAssertBounds(0, CITY_PLOTS_DIAMETER, i);
+		FAssertBounds(0, CITY_PLOTS_DIAMETER, j);
+		return m_aaeXYCityPlot[i][j];
+	}
+	int const* getCityPlotX() const { return m_aiCityPlotX; }
+	int const* getCityPlotY() const { return m_aiCityPlotY; }
+    int const* getCityPlot3X() const { return m_aiCityPlot3X; } // doc
+    int const* getCityPlot3Y() const { return m_aiCityPlot3Y; } // doc
+	int const* getCityPlotPriority() const { return m_aiCityPlotPriority; }
+	int maxCityPlotPriority() const { return m_iMaxCityPlotPriority; } // advc
+	/*	(advc: Unused getTurnLeftDirection, getTurnRightDirection deleted,
+		replacement rotateDir in CvGameCoreUtils.) */
 
 	//
 	// Global Infos
 	// All info type strings are upper case and are kept in this hash map for fast lookup
-	//
-	DllExport int getInfoTypeForString(const char* szType, bool hideAssert = false) const;			// returns the infos index, use this when searching for an info type string
-	DllExport void setInfoTypeFromString(const char* szType, int idx);
+	// returns the infos index, use this when searching for an info type string
+	DllExport int getInfoTypeForString(const char* szType, bool bHideAssert = false) const
+	// <advc.006> Need another param
+	{ return getInfoTypeForString(szType, bHideAssert, false); }
+	int getInfoTypeForString(const char* szType, bool bHideAssert, bool bFromPython) const;
+	// </advc.006>  // <advc>
+	ColorTypes getColorType(const char* szType) const
+	{
+		static CvString szPrefix = "COLOR_";
+		return (ColorTypes)getInfoTypeForString((szPrefix + szType).c_str());
+	}
+	DiploCommentTypes getAIDiploCommentType(const char* szType) const
+	{
+		static CvString szPrefix = "AI_DIPLOCOMMENT_";
+		return (DiploCommentTypes)getInfoTypeForString((szPrefix + szType).c_str());
+	} // </advc>
+	void setInfoTypeFromString(const char* szType, int idx);
 	DllExport void infoTypeFromStringReset();
-	DllExport void addToInfosVectors(void *infoVector);
 	DllExport void infosReset();
 
-	DllExport int getNumWorldInfos();
-	std::vector<CvWorldInfo*>& getWorldInfo();
-	DllExport CvWorldInfo& getWorldInfo(WorldSizeTypes e);
-
-	DllExport int getNumClimateInfos();
-	std::vector<CvClimateInfo*>& getClimateInfo();
-	DllExport CvClimateInfo& getClimateInfo(ClimateTypes e);
-
-	DllExport int getNumSeaLevelInfos();
-	std::vector<CvSeaLevelInfo*>& getSeaLevelInfo();
-	DllExport CvSeaLevelInfo& getSeaLevelInfo(SeaLevelTypes e);
-
-	DllExport int getNumColorInfos();
-	std::vector<CvColorInfo*>& getColorInfo();
-	DllExport CvColorInfo& getColorInfo(ColorTypes e);
-
-	DllExport int getNumPlayerColorInfos();
-	std::vector<CvPlayerColorInfo*>& getPlayerColorInfo();
-	DllExport CvPlayerColorInfo& getPlayerColorInfo(PlayerColorTypes e);
-
-	int getNumAdvisorInfos();
-	std::vector<CvAdvisorInfo*>& getAdvisorInfo();
-	CvAdvisorInfo& getAdvisorInfo(AdvisorTypes e);
-
-	DllExport  int getNumHints();
-	std::vector<CvInfoBase*>& getHints();
-	DllExport CvInfoBase& getHints(int i);
-
-	DllExport int getNumMainMenus();
-	std::vector<CvMainMenuInfo*>& getMainMenus();
-	DllExport CvMainMenuInfo& getMainMenus(int i);
-
-	DllExport int getNumRouteModelInfos();
-	std::vector<CvRouteModelInfo*>& getRouteModelInfo();
-	DllExport CvRouteModelInfo& getRouteModelInfo(int i);
-
-	DllExport int getNumRiverInfos();
-	std::vector<CvRiverInfo*>& getRiverInfo();
-	DllExport CvRiverInfo& getRiverInfo(RiverTypes e);
-
-	DllExport int getNumRiverModelInfos();
-	std::vector<CvRiverModelInfo*>& getRiverModelInfo();
-	DllExport CvRiverModelInfo& getRiverModelInfo(int i);
-
-	DllExport int getNumWaterPlaneInfos();
-	std::vector<CvWaterPlaneInfo*>& getWaterPlaneInfo();
-	DllExport CvWaterPlaneInfo& getWaterPlaneInfo(int i);
-
-	DllExport int getNumTerrainPlaneInfos();
-	std::vector<CvTerrainPlaneInfo*>& getTerrainPlaneInfo();
-	DllExport CvTerrainPlaneInfo& getTerrainPlaneInfo(int i);
-
-	DllExport int getNumCameraOverlayInfos();
-	std::vector<CvCameraOverlayInfo*>& getCameraOverlayInfo();
-	DllExport CvCameraOverlayInfo& getCameraOverlayInfo(int i);
-
-	DllExport int getNumAnimationPathInfos();
-	std::vector<CvAnimationPathInfo*>& getAnimationPathInfo();
-	DllExport CvAnimationPathInfo& getAnimationPathInfo(AnimationPathTypes e);
-
-	DllExport int getNumAnimationCategoryInfos();
-	std::vector<CvAnimationCategoryInfo*>& getAnimationCategoryInfo();
-	DllExport CvAnimationCategoryInfo& getAnimationCategoryInfo(AnimationCategoryTypes e);
-
-	DllExport int getNumEntityEventInfos();
-	std::vector<CvEntityEventInfo*>& getEntityEventInfo();
-	DllExport CvEntityEventInfo& getEntityEventInfo(EntityEventTypes e);
-
-	DllExport int getNumEffectInfos();
-	std::vector<CvEffectInfo*>& getEffectInfo();
-	DllExport CvEffectInfo& getEffectInfo(int i);
-
-	DllExport int getNumAttachableInfos();
-	std::vector<CvAttachableInfo*>& getAttachableInfo();
-	DllExport CvAttachableInfo& getAttachableInfo(int i);
-
-	DllExport int getNumCameraInfos();
-	std::vector<CvCameraInfo*>& getCameraInfo();
-	DllExport	CvCameraInfo& getCameraInfo(CameraAnimationTypes eCameraAnimationNum);
-
-	DllExport int getNumUnitFormationInfos();
-	std::vector<CvUnitFormationInfo*>& getUnitFormationInfo();
-	DllExport CvUnitFormationInfo& getUnitFormationInfo(int i);
-
-	int getNumGameTextXML();
-	std::vector<CvGameText*>& getGameTextXML();
-
-	DllExport int getNumLandscapeInfos();
-	std::vector<CvLandscapeInfo*>& getLandscapeInfo();
-	DllExport CvLandscapeInfo& getLandscapeInfo(int iIndex);
-	DllExport int getActiveLandscapeID();
+	//int getNumGameTextXML() const { return (int)m_paGameTextXML.size(); } // advc.003j: unused
+	DllExport int getActiveLandscapeID() { CvGlobals const& kThis = *this; return kThis.getActiveLandscapeID(); }
+	int getActiveLandscapeID() const { return m_iActiveLandscapeID; } // advc
 	DllExport void setActiveLandscapeID(int iLandscapeID);
-
-	DllExport int getNumTerrainInfos();
-	std::vector<CvTerrainInfo*>& getTerrainInfo();
-	DllExport CvTerrainInfo& getTerrainInfo(TerrainTypes eTerrainNum);
-
-	int getNumBonusClassInfos();
-	std::vector<CvBonusClassInfo*>& getBonusClassInfo();
-	CvBonusClassInfo& getBonusClassInfo(BonusClassTypes eBonusNum);
-
-	DllExport int getNumBonusInfos();
-	std::vector<CvBonusInfo*>& getBonusInfo();
-	DllExport CvBonusInfo& getBonusInfo(BonusTypes eBonusNum);
-
-	DllExport int getNumFeatureInfos();
-	std::vector<CvFeatureInfo*>& getFeatureInfo();
-	DllExport CvFeatureInfo& getFeatureInfo(FeatureTypes eFeatureNum);
-
+	// <advc.003x> So that CvMap doesn't have to use CvLandscapeInfo directly
+	int getLandscapePlotsPerCellX() const;
+	int getLandscapePlotsPerCellY() const; // </advc.003x>
 	DllExport int& getNumPlayableCivilizationInfos();
 	DllExport int& getNumAIPlayableCivilizationInfos();
-	DllExport int getNumCivilizationInfos();
-	std::vector<CvCivilizationInfo*>& getCivilizationInfo();
-	DllExport CvCivilizationInfo& getCivilizationInfo(CivilizationTypes eCivilizationNum);
-
-	DllExport int getNumLeaderHeadInfos();
-	std::vector<CvLeaderHeadInfo*>& getLeaderHeadInfo();
-	DllExport CvLeaderHeadInfo& getLeaderHeadInfo(LeaderHeadTypes eLeaderHeadNum);
-
-	int getNumTraitInfos();
-	std::vector<CvTraitInfo*>& getTraitInfo();
-	CvTraitInfo& getTraitInfo(TraitTypes eTraitNum);
-
-	DllExport int getNumCursorInfos();
-	std::vector<CvCursorInfo*>& getCursorInfo();
-	DllExport	CvCursorInfo& getCursorInfo(CursorTypes eCursorNum);
-
-	DllExport int getNumThroneRoomCameras();
-	std::vector<CvThroneRoomCamera*>& getThroneRoomCamera();
-	DllExport	CvThroneRoomCamera& getThroneRoomCamera(int iIndex);
-
-	DllExport int getNumThroneRoomInfos();
-	std::vector<CvThroneRoomInfo*>& getThroneRoomInfo();
-	DllExport	CvThroneRoomInfo& getThroneRoomInfo(int iIndex);
-
-	DllExport int getNumThroneRoomStyleInfos();
-	std::vector<CvThroneRoomStyleInfo*>& getThroneRoomStyleInfo();
-	DllExport	CvThroneRoomStyleInfo& getThroneRoomStyleInfo(int iIndex);
-
-	DllExport int getNumSlideShowInfos();
-	std::vector<CvSlideShowInfo*>& getSlideShowInfo();
-	DllExport	CvSlideShowInfo& getSlideShowInfo(int iIndex);
-
-	DllExport int getNumSlideShowRandomInfos();
-	std::vector<CvSlideShowRandomInfo*>& getSlideShowRandomInfo();
-	DllExport	CvSlideShowRandomInfo& getSlideShowRandomInfo(int iIndex);
-
-	DllExport int getNumWorldPickerInfos();
-	std::vector<CvWorldPickerInfo*>& getWorldPickerInfo();
-	DllExport	CvWorldPickerInfo& getWorldPickerInfo(int iIndex);
-
-	DllExport int getNumSpaceShipInfos();
-	std::vector<CvSpaceShipInfo*>& getSpaceShipInfo();
-	DllExport	CvSpaceShipInfo& getSpaceShipInfo(int iIndex);
-
-	int getNumUnitInfos();
-	std::vector<CvUnitInfo*>& getUnitInfo();
-	CvUnitInfo& getUnitInfo(UnitTypes eUnitNum);
-
-	int getNumSpecialUnitInfos();
-	std::vector<CvSpecialUnitInfo*>& getSpecialUnitInfo();
-	CvSpecialUnitInfo& getSpecialUnitInfo(SpecialUnitTypes eSpecialUnitNum);
-
-	int getNumConceptInfos();
-	std::vector<CvInfoBase*>& getConceptInfo();
-	CvInfoBase& getConceptInfo(ConceptTypes e);
-
-	int getNumNewConceptInfos();
-	std::vector<CvInfoBase*>& getNewConceptInfo();
-	CvInfoBase& getNewConceptInfo(NewConceptTypes e);
-
-	int getNumCityTabInfos();
-	std::vector<CvInfoBase*>& getCityTabInfo();
-	CvInfoBase& getCityTabInfo(CityTabTypes e);
-
-	int getNumCalendarInfos();
-	std::vector<CvInfoBase*>& getCalendarInfo();
-	CvInfoBase& getCalendarInfo(CalendarTypes e);
-
-	int getNumSeasonInfos();
-	std::vector<CvInfoBase*>& getSeasonInfo();
-	CvInfoBase& getSeasonInfo(SeasonTypes e);
-
-	int getNumMonthInfos();
-	std::vector<CvInfoBase*>& getMonthInfo();
-	CvInfoBase& getMonthInfo(MonthTypes e);
-
-	int getNumDenialInfos();
-	std::vector<CvInfoBase*>& getDenialInfo();
-	CvInfoBase& getDenialInfo(DenialTypes e);
-
-	int getNumInvisibleInfos();
-	std::vector<CvInfoBase*>& getInvisibleInfo();
-	CvInfoBase& getInvisibleInfo(InvisibleTypes e);
-
-	int getNumVoteSourceInfos();
-	std::vector<CvVoteSourceInfo*>& getVoteSourceInfo();
-	CvVoteSourceInfo& getVoteSourceInfo(VoteSourceTypes e);
-
-	int getNumUnitCombatInfos();
-	std::vector<CvInfoBase*>& getUnitCombatInfo();
-	CvInfoBase& getUnitCombatInfo(UnitCombatTypes e);
-
-	std::vector<CvInfoBase*>& getDomainInfo();
-	CvInfoBase& getDomainInfo(DomainTypes e);
-
-	std::vector<CvInfoBase*>& getUnitAIInfo();
-	CvInfoBase& getUnitAIInfo(UnitAITypes eUnitAINum);
-
-	std::vector<CvInfoBase*>& getAttitudeInfo();
-	CvInfoBase& getAttitudeInfo(AttitudeTypes eAttitudeNum);
-
-	std::vector<CvInfoBase*>& getMemoryInfo();
-	CvInfoBase& getMemoryInfo(MemoryTypes eMemoryNum);
-
-	DllExport int getNumGameOptionInfos();
-	std::vector<CvGameOptionInfo*>& getGameOptionInfo();
-	DllExport	CvGameOptionInfo& getGameOptionInfo(GameOptionTypes eGameOptionNum);
-
-	DllExport int getNumMPOptionInfos();
-	std::vector<CvMPOptionInfo*>& getMPOptionInfo();
-	DllExport	CvMPOptionInfo& getMPOptionInfo(MultiplayerOptionTypes eMPOptionNum);
-
-	DllExport int getNumForceControlInfos();
-	std::vector<CvForceControlInfo*>& getForceControlInfo();
-	DllExport	CvForceControlInfo& getForceControlInfo(ForceControlTypes eForceControlNum);
-
-	std::vector<CvPlayerOptionInfo*>& getPlayerOptionInfo();
-	DllExport	CvPlayerOptionInfo& getPlayerOptionInfo(PlayerOptionTypes ePlayerOptionNum);
-
-	std::vector<CvGraphicOptionInfo*>& getGraphicOptionInfo();
-	DllExport	CvGraphicOptionInfo& getGraphicOptionInfo(GraphicOptionTypes eGraphicOptionNum);
-
-	std::vector<CvYieldInfo*>& getYieldInfo();
-	CvYieldInfo& getYieldInfo(YieldTypes eYieldNum);
-
-	std::vector<CvCommerceInfo*>& getCommerceInfo();
-	CvCommerceInfo& getCommerceInfo(CommerceTypes eCommerceNum);
-
-	DllExport int getNumRouteInfos();
-	std::vector<CvRouteInfo*>& getRouteInfo();
-	DllExport	CvRouteInfo& getRouteInfo(RouteTypes eRouteNum);
-
-	DllExport int getNumImprovementInfos();
-	std::vector<CvImprovementInfo*>& getImprovementInfo();
-	DllExport CvImprovementInfo& getImprovementInfo(ImprovementTypes eImprovementNum);
-
-	DllExport int getNumGoodyInfos();
-	std::vector<CvGoodyInfo*>& getGoodyInfo();
-	DllExport CvGoodyInfo& getGoodyInfo(GoodyTypes eGoodyNum);
-
-	DllExport int getNumBuildInfos();
-	std::vector<CvBuildInfo*>& getBuildInfo();
-	DllExport CvBuildInfo& getBuildInfo(BuildTypes eBuildNum);
-
-	DllExport int getNumHandicapInfos();
-	std::vector<CvHandicapInfo*>& getHandicapInfo();
-	DllExport CvHandicapInfo& getHandicapInfo(HandicapTypes eHandicapNum);
-
-	DllExport int getNumGameSpeedInfos();
-	std::vector<CvGameSpeedInfo*>& getGameSpeedInfo();
-	DllExport CvGameSpeedInfo& getGameSpeedInfo(GameSpeedTypes eGameSpeedNum);
-
-	DllExport int getNumTurnTimerInfos();
-	std::vector<CvTurnTimerInfo*>& getTurnTimerInfo();
-	DllExport CvTurnTimerInfo& getTurnTimerInfo(TurnTimerTypes eTurnTimerNum);
-
-	int getNumProcessInfos();
-	std::vector<CvProcessInfo*>& getProcessInfo();
-	CvProcessInfo& getProcessInfo(ProcessTypes e);
-
-	int getNumVoteInfos();
-	std::vector<CvVoteInfo*>& getVoteInfo();
-	CvVoteInfo& getVoteInfo(VoteTypes e);
-
-	int getNumProjectInfos();
-	std::vector<CvProjectInfo*>& getProjectInfo();
-	CvProjectInfo& getProjectInfo(ProjectTypes e);
-
-	int getNumBuildingClassInfos();
-	std::vector<CvBuildingClassInfo*>& getBuildingClassInfo();
-	CvBuildingClassInfo& getBuildingClassInfo(BuildingClassTypes eBuildingClassNum);
-
-	int getNumBuildingInfos();
-	std::vector<CvBuildingInfo*>& getBuildingInfo();
-	CvBuildingInfo& getBuildingInfo(BuildingTypes eBuildingNum);
-
-	int getNumSpecialBuildingInfos();
-	std::vector<CvSpecialBuildingInfo*>& getSpecialBuildingInfo();
-	CvSpecialBuildingInfo& getSpecialBuildingInfo(SpecialBuildingTypes eSpecialBuildingNum);
-
-	int getNumUnitClassInfos();
-	std::vector<CvUnitClassInfo*>& getUnitClassInfo();
-	CvUnitClassInfo& getUnitClassInfo(UnitClassTypes eUnitClassNum);
-
-	DllExport int getNumActionInfos();
-	std::vector<CvActionInfo*>& getActionInfo();
-	DllExport CvActionInfo& getActionInfo(int i);
-
-	std::vector<CvMissionInfo*>& getMissionInfo();
-	DllExport CvMissionInfo& getMissionInfo(MissionTypes eMissionNum);
-
-	std::vector<CvControlInfo*>& getControlInfo();
-	DllExport CvControlInfo& getControlInfo(ControlTypes eControlNum);
-
-	std::vector<CvCommandInfo*>& getCommandInfo();
-	DllExport CvCommandInfo& getCommandInfo(CommandTypes eCommandNum);
-
-	DllExport int getNumAutomateInfos();
-	std::vector<CvAutomateInfo*>& getAutomateInfo();
-	DllExport CvAutomateInfo& getAutomateInfo(int iAutomateNum);
-
-	int getNumPromotionInfos();
-	std::vector<CvPromotionInfo*>& getPromotionInfo();
-	CvPromotionInfo& getPromotionInfo(PromotionTypes ePromotionNum);
-
-	int getNumTechInfos();
-	std::vector<CvTechInfo*>& getTechInfo();
-	CvTechInfo& getTechInfo(TechTypes eTechNum);
-
-	int getNumReligionInfos();
-	std::vector<CvReligionInfo*>& getReligionInfo();
-	CvReligionInfo& getReligionInfo(ReligionTypes eReligionNum);
-
-	int getNumPaganReligionInfos();
-	std::vector<CvInfoBase*>& getPaganReligionInfo();
-	CvInfoBase& getPaganReligionInfo(PaganReligionTypes ePaganReligion);
-
-	int getNumCorporationInfos();
-	std::vector<CvCorporationInfo*>& getCorporationInfo();
-	CvCorporationInfo& getCorporationInfo(CorporationTypes eCorporationNum);
-
-	int getNumSpecialistInfos();
-	std::vector<CvSpecialistInfo*>& getSpecialistInfo();
-	CvSpecialistInfo& getSpecialistInfo(SpecialistTypes eSpecialistNum);
-
-	int getNumCivicOptionInfos();
-	std::vector<CvCivicOptionInfo*>& getCivicOptionInfo();
-	CvCivicOptionInfo& getCivicOptionInfo(CivicOptionTypes eCivicOptionNum);
-
-	int getNumCivicInfos();
-	std::vector<CvCivicInfo*>& getCivicInfo();
-	CvCivicInfo& getCivicInfo(CivicTypes eCivicNum);
-
-	int getNumDiplomacyInfos();
-	std::vector<CvDiplomacyInfo*>& getDiplomacyInfo();
-	CvDiplomacyInfo& getDiplomacyInfo(int iDiplomacyNum);
-
-	DllExport int getNumEraInfos();
-	std::vector<CvEraInfo*>& getEraInfo();
-	DllExport CvEraInfo& getEraInfo(EraTypes eEraNum);
-
-	int getNumHurryInfos();
-	std::vector<CvHurryInfo*>& getHurryInfo();
-	CvHurryInfo& getHurryInfo(HurryTypes eHurryNum);
-
-	int getNumEmphasizeInfos();
-	std::vector<CvEmphasizeInfo*>& getEmphasizeInfo();
-	CvEmphasizeInfo& getEmphasizeInfo(EmphasizeTypes eEmphasizeNum);
-
-	int getNumUpkeepInfos();
-	std::vector<CvUpkeepInfo*>& getUpkeepInfo();
-	CvUpkeepInfo& getUpkeepInfo(UpkeepTypes eUpkeepNum);
-
-	int getNumCultureLevelInfos();
-	std::vector<CvCultureLevelInfo*>& getCultureLevelInfo();
-	CvCultureLevelInfo& getCultureLevelInfo(CultureLevelTypes eCultureLevelNum);
-
-	DllExport int getNumVictoryInfos();
-	std::vector<CvVictoryInfo*>& getVictoryInfo();
-	DllExport CvVictoryInfo& getVictoryInfo(VictoryTypes eVictoryNum);
-
-	int getNumQuestInfos();
-	std::vector<CvQuestInfo*>& getQuestInfo();
-	CvQuestInfo& getQuestInfo(int iIndex);
-
-	int getNumTutorialInfos();
-	std::vector<CvTutorialInfo*>& getTutorialInfo();
-	CvTutorialInfo& getTutorialInfo(int i);
-
-	int getNumEventTriggerInfos();
-	std::vector<CvEventTriggerInfo*>& getEventTriggerInfo();
-	CvEventTriggerInfo& getEventTriggerInfo(EventTriggerTypes eEventTrigger);
-
-	int getNumEventInfos();
-	std::vector<CvEventInfo*>& getEventInfo();
-	CvEventInfo& getEventInfo(EventTypes eEvent);
-
-	int getNumEspionageMissionInfos();
-	std::vector<CvEspionageMissionInfo*>& getEspionageMissionInfo();
-	CvEspionageMissionInfo& getEspionageMissionInfo(EspionageMissionTypes eEspionageMissionNum);
-
-	int getNumUnitArtStyleTypeInfos();
-	std::vector<CvUnitArtStyleTypeInfo*>& getUnitArtStyleTypeInfo();
-	CvUnitArtStyleTypeInfo& getUnitArtStyleTypeInfo(UnitArtStyleTypes eUnitArtStyleTypeNum);
-
-	//
-	// Global Types
-	// All type strings are upper case and are kept in this hash map for fast lookup
-	// The other functions are kept for convenience when enumerating, but most are not used
-	//
-	DllExport int getTypesEnum(const char* szType) const;				// use this when searching for a type
-	DllExport void setTypesEnum(const char* szType, int iEnum);
-
-	DllExport int getNUM_ENGINE_DIRTY_BITS() const;
-	DllExport int getNUM_INTERFACE_DIRTY_BITS() const;
-	DllExport int getNUM_YIELD_TYPES() const;
-	DllExport int getNUM_COMMERCE_TYPES() const;
-	DllExport int getNUM_FORCECONTROL_TYPES() const;
-	DllExport int getNUM_INFOBAR_TYPES() const;
-	DllExport int getNUM_HEALTHBAR_TYPES() const;
-	DllExport int getNUM_CONTROL_TYPES() const;
-	DllExport int getNUM_LEADERANIM_TYPES() const;
-
-	DllExport int& getNumEntityEventTypes();
+// <advc.enum>
+#pragma region InfoAccessors
+	// DllExports turned into wrappers/adapters
+	// Start with those that have no associated enum type
+	DllExport std::vector<CvInterfaceModeInfo*>& getInterfaceModeInfo(); // (advc: deprecated)
+	DllExport int getNumRouteModelInfos() { CvGlobals const& kThis = *this; return kThis.getNumRouteModelInfos(); }
+	DllExport int getNumRiverModelInfos() { CvGlobals const& kThis = *this; return kThis.getNumRiverModelInfos(); }
+	DllExport int getNumTerrainPlaneInfos() { CvGlobals const& kThis = *this; return kThis.getNumTerrainPlaneInfos(); }
+	DllExport int getNumUnitFormationInfos() { CvGlobals const& kThis = *this; return kThis.getNumUnitFormationInfos(); }
+	DllExport int getNumThroneRoomInfos(); // 003v: No in-line definition; needs to do some extra work.
+	DllExport int getNumThroneRoomStyleInfos() { CvGlobals const& kThis = *this; return kThis.getNumThroneRoomStyleInfos(); }
+	DllExport int getNumSlideShowInfos() { CvGlobals const& kThis = *this; return kThis.getNumSlideShowInfos(); }
+	DllExport int getNumSlideShowRandomInfos() { CvGlobals const& kThis = *this; return kThis.getNumSlideShowRandomInfos(); }
+	DllExport int getNumWorldPickerInfos() { CvGlobals const& kThis = *this; return kThis.getNumWorldPickerInfos(); }
+	DllExport int getNumSpaceShipInfos() { CvGlobals const& kThis = *this; return kThis.getNumSpaceShipInfos(); }
+	DllExport int getNumHints() { CvGlobals const& kThis = *this; return kThis.getNumHintInfos(); }
+	DllExport int getNumCameraOverlayInfos() { CvGlobals const& kThis = *this; return kThis.getNumCameraOverlayInfos(); }
+	DllExport int getNumActionInfos() { CvGlobals const& kThis = *this; return kThis.getNumActionInfos(); }
+	DllExport CvRouteModelInfo& getRouteModelInfo(int iRouteModel) { CvGlobals const& kThis = *this; return kThis.getRouteModelInfo(iRouteModel); }
+	DllExport CvRiverModelInfo& getRiverModelInfo(int iRiverModel) { CvGlobals const& kThis = *this; return kThis.getRiverModelInfo(iRiverModel); }
+	DllExport CvTerrainPlaneInfo& getTerrainPlaneInfo(int iTerrainPlane) { CvGlobals const& kThis = *this; return kThis.getTerrainPlaneInfo(iTerrainPlane); }
+	DllExport CvUnitFormationInfo& getUnitFormationInfo(int iUnitFormation) { CvGlobals const& kThis = *this; return kThis.getUnitFormationInfo(iUnitFormation); }
+	DllExport CvThroneRoomInfo& getThroneRoomInfo(int iThroneRoom) { CvGlobals const& kThis = *this; return kThis.getThroneRoomInfo(iThroneRoom); }
+	DllExport CvThroneRoomStyleInfo& getThroneRoomStyleInfo(int iThroneRoomStyle) { CvGlobals const& kThis = *this; return kThis.getThroneRoomStyleInfo(iThroneRoomStyle); }
+	DllExport CvThroneRoomCamera& getThroneRoomCamera(int iThroneRoomCamera) { CvGlobals const& kThis = *this; return kThis.getThroneRoomCameraInfo(iThroneRoomCamera); }
+	DllExport CvSlideShowInfo& getSlideShowInfo(int iSlideShow) { CvGlobals const& kThis = *this; return kThis.getSlideShowInfo(iSlideShow); }
+	DllExport CvSlideShowRandomInfo& getSlideShowRandomInfo(int iSlideShowRandom) { CvGlobals const& kThis = *this; return kThis.getSlideShowRandomInfo(iSlideShowRandom); }
+	DllExport CvWorldPickerInfo& getWorldPickerInfo(int iWorldPicker) { CvGlobals const& kThis = *this; return kThis.getWorldPickerInfo(iWorldPicker); }
+	DllExport CvSpaceShipInfo& getSpaceShipInfo(int iSpaceShip) { CvGlobals const& kThis = *this; return kThis.getSpaceShipInfo(iSpaceShip); }
+	DllExport CvInfoBase& getHints(int iHint) { CvGlobals const& kThis = *this; return kThis.getHintInfo(iHint); }
+	DllExport CvMainMenuInfo& getMainMenus(int iMainMenu)
+	{	/*	advc (note): The caller should check this - but the EXE doesn't. Important
+			for switching in between mods when a mod adds or removes menu backgrounds. */
+		if (iMainMenu >= getNumMainMenuInfos())
+			iMainMenu = 0;
+		CvGlobals const& kThis = *this; return kThis.getMainMenuInfo(iMainMenu);
+	}
+	DllExport CvWaterPlaneInfo& getWaterPlaneInfo(int iWaterPlane) { CvGlobals const& kThis = *this; return kThis.getWaterPlaneInfo(iWaterPlane); }
+	DllExport CvLandscapeInfo& getLandscapeInfo(int iLandscape) { CvGlobals const& kThis = *this; return kThis.getLandscapeInfo(iLandscape); }
+	DllExport CvCameraOverlayInfo& getCameraOverlayInfo(int iCameraOverlay) { CvGlobals const& kThis = *this; return kThis.getCameraOverlayInfo((CameraOverlayTypes)iCameraOverlay); }
+	DllExport CvActionInfo& getActionInfo(int iAction) { CvGlobals const& kThis = *this; return kThis.getActionInfo(iAction); }
+	// DllExports with associated enum type
+	DllExport int getNumPlayerColorInfos() { CvGlobals const& kThis = *this; return kThis.getNumPlayerColorInfos(); }
+	DllExport int getNumWorldInfos() { CvGlobals const& kThis = *this; return kThis.getNumWorldInfos(); }
+	DllExport int getNumSeaLevelInfos() { CvGlobals const& kThis = *this; return kThis.getNumSeaLevelInfos(); }
+	DllExport int getNumClimateInfos() { CvGlobals const& kThis = *this; return kThis.getNumClimateInfos(); }
+	DllExport int getNumTerrainInfos() { CvGlobals const& kThis = *this; return kThis.getNumTerrainInfos(); }
+	DllExport int getNumBonusInfos() { CvGlobals const& kThis = *this; return kThis.getNumBonusInfos(); }
+	DllExport int getNumFeatureInfos() { CvGlobals const& kThis = *this; return kThis.getNumFeatureInfos(); }
+	DllExport int getNumCivilizationInfos() { CvGlobals const& kThis = *this; return kThis.getNumCivilizationInfos(); }
+	DllExport int getNumLeaderHeadInfos() { CvGlobals const& kThis = *this; return kThis.getNumLeaderHeadInfos(); }
+	DllExport int getNumCursorInfos() { CvGlobals const& kThis = *this; return kThis.getNumCursorInfos(); }
+	DllExport int getNumRouteInfos() { CvGlobals const& kThis = *this; return kThis.getNumRouteInfos(); }
+	DllExport int getNumImprovementInfos() { CvGlobals const& kThis = *this; return kThis.getNumImprovementInfos(); }
+	DllExport int getNumHandicapInfos() { CvGlobals const& kThis = *this; return kThis.getNumHandicapInfos(); }
+	DllExport int getNumGameSpeedInfos() { CvGlobals const& kThis = *this; return kThis.getNumGameSpeedInfos(); }
+	DllExport int getNumTurnTimerInfos() { CvGlobals const& kThis = *this; return kThis.getNumTurnTimerInfos(); }
+	DllExport int getNumEraInfos() { CvGlobals const& kThis = *this; return kThis.getNumEraInfos(); }
+	DllExport int getNumVictoryInfos() { CvGlobals const& kThis = *this; return kThis.getNumVictoryInfos(); }
+
+	DllExport CvEffectInfo& getEffectInfo(int iEffect) { return getInfo((EffectTypes)iEffect); }
+	DllExport CvAttachableInfo& getAttachableInfo(int iAttachable) { return getInfo((AttachableTypes)iAttachable); }
+	DllExport CvColorInfo& getColorInfo(ColorTypes eColor); // advc.106i: No inline definition; needs to do some extra work.
+	DllExport CvPlayerColorInfo& getPlayerColorInfo(PlayerColorTypes ePlayerColor) { return getInfo(ePlayerColor); }
+	DllExport CvWorldInfo& getWorldInfo(WorldSizeTypes eWorld) { return getInfo(eWorld); }
+	DllExport CvInterfaceModeInfo& getInterfaceModeInfo(InterfaceModeTypes e) { return getInfo(e); }
+	DllExport CvClimateInfo& getClimateInfo(ClimateTypes eClimate) { return getInfo(eClimate); }
+	DllExport CvSeaLevelInfo& getSeaLevelInfo(SeaLevelTypes eSeaLevel) { return getInfo(eSeaLevel); }
+	DllExport CvAnimationPathInfo& getAnimationPathInfo(AnimationPathTypes eAnimationPath) { return getInfo(eAnimationPath); }
+	DllExport CvAnimationCategoryInfo& getAnimationCategoryInfo(AnimationCategoryTypes eAnimationCategory) { return getInfo(eAnimationCategory); }
+	DllExport CvEntityEventInfo& getEntityEventInfo(EntityEventTypes e) { return getInfo(e); }
+	DllExport CvTerrainInfo& getTerrainInfo(TerrainTypes eTerrain) { return getInfo(eTerrain); }
+	DllExport CvBonusInfo& getBonusInfo(BonusTypes eBonus) { return getInfo(eBonus); }
+	DllExport CvFeatureInfo& getFeatureInfo(FeatureTypes eFeature) { return getInfo(eFeature); }
+	DllExport CvCivilizationInfo& getCivilizationInfo(CivilizationTypes eCivilization) { return getInfo(eCivilization); }
+	DllExport CvLeaderHeadInfo& getLeaderHeadInfo(LeaderHeadTypes eLeaderHead) { return getInfo(eLeaderHead); }
+	DllExport CvCursorInfo& getCursorInfo(CursorTypes eCursor) { return getInfo(eCursor); }
+	DllExport CvGameOptionInfo& getGameOptionInfo(GameOptionTypes eGameOption) { return getInfo(eGameOption); }
+	DllExport CvMPOptionInfo& getMPOptionInfo(MultiplayerOptionTypes eMPOption) { return getInfo(eMPOption); }
+	DllExport CvForceControlInfo& getForceControlInfo(ForceControlTypes eForceControl) { return getInfo(eForceControl); }
+	DllExport CvPlayerOptionInfo& getPlayerOptionInfo(PlayerOptionTypes ePlayerOption) { return getInfo(ePlayerOption); }
+	DllExport CvGraphicOptionInfo& getGraphicOptionInfo(GraphicOptionTypes eGraphicOption) { return getInfo(eGraphicOption); }
+	DllExport CvImprovementInfo& getImprovementInfo(ImprovementTypes eImprovement) { return getInfo(eImprovement); }
+	DllExport CvBuildInfo& getBuildInfo(BuildTypes eBuild) { return getInfo(eBuild); }
+	DllExport CvHandicapInfo& getHandicapInfo(HandicapTypes eHandicap) { return getInfo(eHandicap); }
+	DllExport CvGameSpeedInfo& getGameSpeedInfo(GameSpeedTypes eGameSpeed) { return getInfo(eGameSpeed); }
+	DllExport CvTurnTimerInfo& getTurnTimerInfo(TurnTimerTypes eTurnTimer) { return getInfo(eTurnTimer); }
+	DllExport CvMissionInfo& getMissionInfo(MissionTypes eMission) { return getInfo(eMission); }
+	DllExport CvEraInfo& getEraInfo(EraTypes eEra) { return getInfo(eEra); }
+	DllExport CvVictoryInfo& getVictoryInfo(VictoryTypes eVictory) { return getInfo(eVictory); }
+
+	// Generate accessors for use within the DLL
+	DO_FOR_EACH_STATIC_INFO_TYPE(MAKE_INFO_ACCESSORS_STATIC)
+	DO_FOR_EACH_DYN_INFO_TYPE(MAKE_INFO_ACCESSORS_DYN)
+	DO_FOR_EACH_INT_INFO_TYPE(MAKE_INFO_ACCESSORS_INT)
+	// World(Size)Info: awkward to generate through a macro
+	CvWorldInfo& getInfo(WorldSizeTypes eWorld) const
+	{
+		FAssertBounds(0, getNumWorldInfos(), eWorld);
+		return *m_paWorldInfo[eWorld];
+	}
+	int getNumWorldInfos() const
+	{
+		return (int)m_paWorldInfo.size();
+	}
+	CvWorldInfo& getWorldInfo(int iWorld) const
+	{
+		return getInfo(static_cast<WorldSizeTypes>(iWorld));
+	}
+#pragma endregion InfoAccessors
+	// </advc.enum>
+
+	/*	Global Types
+		All type strings are upper case and are kept in this hash map for fast lookup
+		The other functions are kept for convenience when enumerating, but most are not used. */
+	DllExport int getTypesEnum(const char* szType) const // use this when searching for a type
+	// <advc.006> Add two params
+	{ return getTypesEnum(szType, false); }
+	int getTypesEnum(const char* szType, bool bHideAssert, bool bFromPython = false) const;
+	// </advc.006>
+	void setTypesEnum(const char* szType, int iEnum);
+
+	int& getNumEntityEventTypes();
 	CvString*& getEntityEventTypes();
-	DllExport CvString& getEntityEventTypes(EntityEventTypes e);
+	CvString& getEntityEventTypes(EntityEventTypes e);
 
-	DllExport int& getNumAnimationOperatorTypes();
+	int& getNumAnimationOperatorTypes();
 	CvString*& getAnimationOperatorTypes();
-	DllExport CvString& getAnimationOperatorTypes(AnimationOperatorTypes e);
+	CvString& getAnimationOperatorTypes(AnimationOperatorTypes e);
 
 	CvString*& getFunctionTypes();
-	DllExport CvString& getFunctionTypes(FunctionTypes e);
+	CvString& getFunctionTypes(FunctionTypes e);
 
-	int& getNumFlavorTypes();
+	int& getNumFlavorTypes() { return m_iNumFlavorTypes; }
+	int const& getNumFlavorTypes() const { return m_iNumFlavorTypes; } // advc
 	CvString*& getFlavorTypes();
 	CvString& getFlavorTypes(FlavorTypes e);
 
 	DllExport int& getNumArtStyleTypes();
+	int const& getNumArtStyleTypes() const { return m_iNumArtStyleTypes; } // advc
 	CvString*& getArtStyleTypes();
 	DllExport CvString& getArtStyleTypes(ArtStyleTypes e);
 
-	int& getNumCitySizeTypes();
+	//int& getNumCitySizeTypes(); // advc: Use NUM_CITYSIZE_TYPES instead
 	CvString*& getCitySizeTypes();
-	CvString& getCitySizeTypes(int i);
+	CvString& getCitySizeTypes(CitySizeTypes e);
 
 	CvString*& getContactTypes();
 	CvString& getContactTypes(ContactTypes e);
@@ -672,131 +369,344 @@ public:
 	CvString& getAutomateTypes(AutomateTypes e);
 
 	CvString*& getDirectionTypes();
-	DllExport CvString& getDirectionTypes(AutomateTypes e);
+	CvString& getDirectionTypes(AutomateTypes e);
 
 	DllExport int& getNumFootstepAudioTypes();
+	int getNumFootstepAudioTypes() const { return m_iNumFootstepAudioTypes; } // advc
 	CvString*& getFootstepAudioTypes();
-	DllExport CvString& getFootstepAudioTypes(int i);
-	DllExport int getFootstepAudioTypeByTag(CvString strTag);
+	CvString& getFootstepAudioTypes(int i);
+	int getFootstepAudioTypeByTag(CvString strTag);
 
 	CvString*& getFootstepAudioTags();
 	DllExport CvString& getFootstepAudioTags(int i);
 
-	CvString& getCurrentXMLFile();
+	CvString const& getCurrentXMLFile() const; // advc: 2x const
 	void setCurrentXMLFile(const TCHAR* szFileName);
+	// <advc.003v>
+	void setXMLLoadUtility(CvXMLLoadUtility* pXML);
+	void loadOptionalXMLInfo();
+	void loadThroneRoomInfo();
+	// </advc.003v>
 
-	//
-	///////////////// BEGIN global defines
-	// THESE ARE READ-ONLY
-	//
-
-	DllExport FVariableSystem* getDefinesVarSystem();
-	DllExport void cacheGlobals();
+	DllExport FVariableSystem* getDefinesVarSystem() { return m_VarSystem; }
+	// advc: Need a const version
+	FVariableSystem const* getDefinesVarSystem() const { return m_VarSystem; }
+	void cacheGlobals();
+	bool isCachingDone() const { return (m_aiGlobalDefinesCache != NULL); } // advc.003c
 
 	// ***** EXPOSED TO PYTHON *****
-	DllExport int getDefineINT( const char * szName ) const;
-	DllExport float getDefineFLOAT( const char * szName ) const;
-	DllExport const char * getDefineSTRING( const char * szName ) const;
-	DllExport void setDefineINT( const char * szName, int iValue );
-	DllExport void setDefineFLOAT( const char * szName, float fValue );
-	DllExport void setDefineSTRING( const char * szName, const char * szValue );
+	int getDefineINT(char const* szName) const
+	{
+		return getDefineINT(szName, 0); // advc.opt: Call the BBAI version
+	}
+	// advc: Separate function for external calls (exported through .def file)
+	int getDefineINTExternal(char const* szName) const;
+	// BETTER_BTS_AI_MOD, Efficiency, Options, 02/21/10, jdog5000:
+	int getDefineINT(char const* szName, int iDefault) const;
+	// <advc>
+	bool getDefineBOOL(char const* szName, bool bDefault = false) const
+	{
+		return (getDefineINT(szName, (int)bDefault) > 0);
+	} // </advc>
+	DllExport float getDefineFLOAT(char const* szName) const;
+	/*	advc (note): Global TextVals loaded by CvXMLLoadUtility::
+		SetPostGlobalsGlobalDefines need to be accessed through getDefineINT instead. */
+	DllExport const char* getDefineSTRING(char const* szName) const;
+	/*  advc.opt: Params for suppressing cache update added. False for string b/c
+		there are none that we could update. */
+	void setDefineINT(char const* szName, int iValue, bool bUpdateCache = true);
+	void setDefineFLOAT(char const* szName, float fValue, bool bUpdateCache = true);
+	void setDefineSTRING(char const* szName, char const* szValue, bool bUpdateCache = false);
+	// advc.opt:
+#pragma region GlobalDefines
+	/*  Access cached integer GlobalDefines through enum values. Not exposed to Python
+		as Python isn't that fast anyway, can just use getDefineINT(char const*). */
+	#define DO_FOR_EACH_GLOBAL_DEFINE(DO) \
+		DO(EXTRA_YIELD) /* K-Mod */ \
+		DO(CITY_RADIUS_DECAY) /* advc.130s */ \
+		DO(REVOLTS_IGNORE_CULTURE_RANGE) /* advc.099c */ \
+		DO(NUM_WARNING_REVOLTS) /* advc.101 */ \
+		DO(OCCUPATION_COUNTDOWN_EXPONENT) /* advc.023 */ \
+		DO(MAX_DISTANCE_CITY_MAINTENANCE) /* advc.140 */ \
+		DO(OWN_EXCLUSIVE_RADIUS) /* advc.035 */ \
+		DO(ANNOUNCE_REPARATIONS) /* advc.039 */ \
+		DO(PER_PLAYER_MESSAGE_CONTROL_LOG) /* advc.007 */ \
+		DO(DELAY_UNTIL_BUILD_DECAY) /* advc.011 */ \
+		DO(DISENGAGE_LENGTH) /* advc.034 */ \
+		DO(AT_WAR_ATTITUDE_CHANGE) /* advc.130g */ \
+		DO(RESEARCH_MODIFIER_EXTRA_TEAM_MEMBER) /* advc.156 */ \
+		DO(WORKER_RESERVE_PERCENT) /* advc.113 */ \
+		DO(CITY_DEFENSE_DAMAGE_HEAL_RATE) /* cdtw.2 */ \
+		/* <advc.148> */ \
+		DO(RELATIONS_THRESH_FRIENDLY) \
+		DO(RELATIONS_THRESH_PLEASED) \
+		DO(RELATIONS_THRESH_FURIOUS) \
+		DO(RELATIONS_THRESH_ANNOYED) \
+		DO(RELATIONS_THRESH_WORST_ENEMY) \
+		/* </advc.148> */ \
+		DO(MINIMAP_RENDER_SIZE) /* advc.106m */ \
+		DO(CAN_TRAIN_CHECKS_AIR_UNIT_CAP) /* advc.001b */ \
+		/* <advc.groundbr> */ \
+		DO(AI_GROUNDBREAKING_PENALTY_ENABLE) \
+		DO(HUMAN_GROUNDBREAKING_PENALTY_ENABLE) \
+		/* </advc.groundbr> */ \
+		DO(SPEND_ALL_MOVES_ON_INVASION) /* advc.162 */ \
+		/* <advc.ctr> */ \
+		DO(CITY_TRADE_CULTURE_THRESH) \
+		DO(NATIVE_CITY_CULTURE_THRESH) /* </advc.ctr> */ \
+		DO(CITY_NUKE_CULTURE_THRESH) /* advc (for kekm.7) */ \
+		DO(TREAT_REVEALED_BUILDINGS_AS_VISIBLE) /* advc.045 */ \
+		DO(DOUBLE_OBSOLETE_BUILDING_COMMERCE) /* advc.098 */ \
+		/* <advc.094> */ \
+		DO(BUILDING_PRODUCTION_DECAY_TIME) \
+		DO(BUILDING_PRODUCTION_DECAY_PERCENT) \
+		DO(UNIT_PRODUCTION_DECAY_TIME) \
+		DO(UNIT_PRODUCTION_DECAY_PERCENT) \
+		/* </advc.094> */ \
+		DO(PASSABLE_AREAS) /* advc.030 */ \
+		/* <advc.opt> */ \
+		DO(DIPLOMACY_VALUE_REMAINDER) \
+		DO(PEACE_TREATY_LENGTH) \
+		DO(PLOT_VISIBILITY_RANGE) \
+		DO(MAX_WORLD_WONDERS_PER_CITY) \
+		DO(MAX_TEAM_WONDERS_PER_CITY) \
+		DO(MAX_NATIONAL_WONDERS_PER_CITY_FOR_OCC) \
+		DO(MAX_NATIONAL_WONDERS_PER_CITY) \
+		DO(CONSCRIPT_POPULATION_PER_COST) \
+		DO(NO_MILITARY_PERCENT_ANGER) \
+		DO(HURRY_POP_ANGER) \
+		DO(CONSCRIPT_POP_ANGER) \
+		DO(VASSAL_HAPPINESS) \
+		DO(HURRY_ANGER_DIVISOR) \
+		DO(FRESH_WATER_HEALTH_CHANGE) \
+		DO(POWER_HEALTH_CHANGE) \
+		DO(DIRTY_POWER_HEALTH_CHANGE) \
+		DO(CITY_AIR_UNIT_CAPACITY) \
+		DO(COLLATERAL_COMBAT_DAMAGE) \
+		DO(TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER) \
+		DO(AI_OFFER_EXTRA_GOLD_PERCENT) \
+		DO(RECON_VISIBILITY_RANGE) \
+		DO(UNIT_VISIBILITY_RANGE) \
+		DO(MAX_FORTIFY_TURNS) \
+		DO(WAR_SUCCESS_ATTACKING) \
+		DO(WAR_SUCCESS_DEFENDING) \
+		DO(ESPIONAGE_SPY_INTERCEPT_MOD) \
+		DO(ESPIONAGE_SPY_NO_INTRUDE_INTERCEPT_MOD) \
+		DO(USE_SPIES_NO_ENTER_BORDERS) \
+		DO(MIN_EXPERIENCE_PER_COMBAT) \
+		DO(MAX_EXPERIENCE_PER_COMBAT) \
+		DO(EXPERIENCE_FROM_WITHDRAWL) \
+		DO(LAND_UNITS_CAN_ATTACK_WATER_CITIES) \
+		DO(BASE_UNIT_UPGRADE_COST) \
+		DO(UNIT_UPGRADE_COST_PER_PRODUCTION) \
+		DO(AIR_COMBAT_DAMAGE) \
+		DO(SHIP_BLOCKADE_RANGE) \
+		DO(MAX_TRADE_ROUTES) \
+		DO(ENABLE_DEBUG_TOOLS_MULTIPLAYER) \
+		DO(FREE_VASSAL_LAND_PERCENT) \
+		DO(FREE_VASSAL_POPULATION_PERCENT) \
+		DO(OVERSEAS_TRADE_MODIFIER) \
+		DO(MIN_REVOLUTION_TURNS) \
+		DO(NUKE_BUILDING_DESTRUCTION_PROB) \
+		DO(NUKE_UNIT_DAMAGE_BASE) \
+		DO(NUKE_UNIT_DAMAGE_RAND_1) \
+		DO(NUKE_UNIT_DAMAGE_RAND_2) \
+		DO(EVENT_MESSAGE_STAGGER_TIME) \
+		/* </advc.opt> */ \
+		DO(PATH_DAMAGE_WEIGHT) \
+		DO(HILLS_EXTRA_DEFENSE) \
+		DO(RIVER_ATTACK_MODIFIER) \
+		DO(AMPHIB_ATTACK_MODIFIER) \
+		DO(HILLS_EXTRA_MOVEMENT) \
+		DO(PERCENT_ANGER_DIVISOR) \
+		DO(MIN_CITY_RANGE) \
+		DO(CITY_MAX_NUM_BUILDINGS) \
+		DO(LAKE_MAX_AREA_SIZE) \
+		DO(PEAK_SEE_THROUGH_CHANGE) \
+		DO(HILLS_SEE_THROUGH_CHANGE) \
+		DO(SEAWATER_SEE_FROM_CHANGE) \
+		DO(PEAK_SEE_FROM_CHANGE) \
+		DO(HILLS_SEE_FROM_CHANGE) \
+		DO(MAX_CITY_DEFENSE_DAMAGE) \
+		DO(MIN_WATER_SIZE_FOR_OCEAN) \
+		DO(MOVE_DENOMINATOR) \
+		DO(FOOD_CONSUMPTION_PER_POPULATION) \
+		DO(MAX_HIT_POINTS) \
+		DO(MAX_PLOT_LIST_ROWS) \
+		DO(UNIT_MULTISELECT_MAX) \
+		/*DO(EVENT_MESSAGE_TIME) \ (cached separately) */ \
+		DO(EVENT_MESSAGE_TIME_LONG) \
+		DO(NUM_UNIT_PREREQ_OR_BONUSES) \
+		DO(NUM_UNIT_AND_TECH_PREREQS) \
+		DO(NUM_BUILDING_PREREQ_OR_BONUSES) \
+		DO(NUM_BUILDING_AND_TECH_PREREQS) \
+		DO(NUM_AND_TECH_PREREQS) \
+		DO(NUM_OR_TECH_PREREQS) \
+		DO(NUM_ROUTE_PREREQ_OR_BONUSES) \
+		DO(NUM_CORPORATION_PREREQ_BONUSES) \
+		/* BETTER_BTS_AI_MOD, Efficiency, Options, 02/21/10, jdog5000: START */ \
+		DO(COMBAT_DIE_SIDES) \
+		DO(COMBAT_DAMAGE) \
+		DO(WAR_SUCCESS_CITY_CAPTURING) \
+		DO(TECH_COST_KNOWN_PREREQ_MODIFIER) \
+		DO(TECH_COST_FIRST_KNOWN_PREREQ_MODIFIER) \
+		DO(BBAI_DEFENSIVE_PACT_BEHAVIOR) \
+		DO(BBAI_ATTACK_CITY_STACK_RATIO) \
+		DO(BBAI_SKIP_BOMBARD_BASE_STACK_RATIO) \
+		DO(BBAI_SKIP_BOMBARD_MIN_STACK_RATIO) \
+		/* From Lead From Behind by UncutDragon. (edited for K-Mod) */ \
+		DO(LFB_ENABLE) DO(LFB_BASEDONGENERAL) DO(LFB_BASEDONEXPERIENCE) \
+		DO(LFB_BASEDONLIMITED) DO(LFB_BASEDONHEALER) DO(LFB_DEFENSIVEADJUSTMENT) \
+		DO(LFB_USESLIDINGSCALE) DO(LFB_ADJUSTNUMERATOR) DO(LFB_ADJUSTDENOMINATOR) \
+		DO(LFB_USECOMBATODDS) /* BETTER_BTS_AI_MOD: END */ \
+		DO(POWER_CORRECTION) /* advc.104 */ \
+		DO(TRUE_STARTS_SANITIZE) /* advc.tsl */ \
+		DO(TRUE_STARTS_SANITIZE_SCENARIOS) /* advc.tsl */ \
+		DO(RF_PLAYER_HANDICAP_ADJUSTMENT) /* advc.708 */ \
+		DO(BASE_UNIT_CAPTURE_CHANCE) /* advc.010 */ \
+		DO(DOW_UNIT_CAPTURE_CHANCE) /* advc.010 */ \
+		DO(SHOW_ODDS_IN_COMBAT_MESSAGES) /* advc.048 */ \
+		DO(CAN_CHOP_UNOWNED_FEATURES) /* advc.119 */ \
+		DO(DEFY_RESOLUTION_POP_ANGER) /* advc.118b */
+	#define MAKE_ENUMERATOR(VAR) VAR,
+	enum GlobalDefines
+	{
+		NO_GLOBAL_DEFINE = -1,
+		DO_FOR_EACH_GLOBAL_DEFINE(MAKE_ENUMERATOR)
+		NUM_GLOBAL_DEFINES
+	};
+	int getDefineINT(GlobalDefines eVarName) const
+	{
+		return m_aiGlobalDefinesCache[eVarName];
+	}
+	bool getDefineBOOL(GlobalDefines eVarName) const
+	{
+		return (getDefineINT(eVarName) > 0);
+	}
+	// Keep these as wrappers; too many call locations to change, or DllExport.
+	// These are all exposed to Python
+	int getMOVE_DENOMINATOR() const { return getDefineINT(MOVE_DENOMINATOR); }
+	int getFOOD_CONSUMPTION_PER_POPULATION() const { return getDefineINT(FOOD_CONSUMPTION_PER_POPULATION); }
+	int getMAX_HIT_POINTS() const { return getDefineINT(MAX_HIT_POINTS); }
+	int getPERCENT_ANGER_DIVISOR() const { return getDefineINT(PERCENT_ANGER_DIVISOR); }
+	int getMAX_CITY_DEFENSE_DAMAGE() const { return getDefineINT(MAX_CITY_DEFENSE_DAMAGE); }
+	DllExport int getMAX_PLOT_LIST_ROWS() { CvGlobals const& kThis = *this; return kThis.getMAX_PLOT_LIST_ROWS(); }
+	int getMAX_PLOT_LIST_ROWS() const { return getDefineINT(MAX_PLOT_LIST_ROWS); }
+	DllExport int getUNIT_MULTISELECT_MAX() { CvGlobals const& kThis = *this; return kThis.getUNIT_MULTISELECT_MAX(); }
+	int getUNIT_MULTISELECT_MAX() const { return getDefineINT(UNIT_MULTISELECT_MAX); }
+	// Note: The EXE calls this during audio init if all audio devices are disabled
+	DllExport int getEVENT_MESSAGE_TIME() { CvGlobals const& kThis = *this; return kThis.getEVENT_MESSAGE_TIME(); }
+	int getEVENT_MESSAGE_TIME() const { return m_iEventMessageTime; }
+	// BETTER_BTS_AI_MOD, Efficiency, Options, 02/21/10, jdog5000: START
+	int getWAR_SUCCESS_CITY_CAPTURING() const { return getDefineINT(WAR_SUCCESS_CITY_CAPTURING); }
+	int getCOMBAT_DIE_SIDES() const { return getDefineINT(COMBAT_DIE_SIDES); }
+	int getCOMBAT_DAMAGE() const { return getDefineINT(COMBAT_DAMAGE); }
+	// BETTER_BTS_AI_MOD: END
+	/*	advc.004k: Future-proofing. This could be a global define, but, so far,
+		1 is the only supported value. */
+	int getMAX_SEA_PATROL_RANGE() const { return 1; }
+	/*  <advc.opt> (TextVals can't be loaded by cacheGlobals. Hence also won't be
+		updated when a setDefine... function is called.) */
+	ImprovementTypes getRUINS_IMPROVEMENT() const
+	{
+		FAssertMsg(m_eRUINS_IMPROVEMENT != NO_IMPROVEMENT, "RUINS_IMPROVEMENT accessed before CvXMLLoadUtility::SetPostGlobalsGlobalDefines");
+		return m_eRUINS_IMPROVEMENT;
+	}
+	void setRUINS_IMPROVEMENT(int iVal);
+	SpecialistTypes getDEFAULT_SPECIALIST() const
+	{
+		FAssertMsg(m_eDEFAULT_SPECIALIST != NO_SPECIALIST, "DEFAULT_SPECIALIST accessed before CvXMLLoadUtility::SetPostGlobalsGlobalDefines");
+		return m_eDEFAULT_SPECIALIST;
+	}
+	void setDEFAULT_SPECIALIST(int iVal);
+	TerrainTypes getWATER_TERRAIN(bool bShallow) const
+	{
+		TerrainTypes eTerrain = m_aeWATER_TERRAIN[bShallow];
+		FAssertMsg(eTerrain != NO_TERRAIN, "WATER_TERRAIN accessed before CvXMLLoadUtility::SetPostGlobalsGlobalDefines");
+		return eTerrain;
+	}
+	void setWATER_TERRAIN(bool bShallow, int iValue);
+	// </advc.opt>
+	/*	advc.003t: Still exposed to Python, but, in the DLL, CvInfo functions,
+		e.g. CvTechInfo::getNumOrTechPrereqs, should be used instead. */
+	/*int getNUM_UNIT_PREREQ_OR_BONUSES() const;
+	int getNUM_UNIT_AND_TECH_PREREQS() const;
+	int getNUM_BUILDING_PREREQ_OR_BONUSES() const;
+	int getNUM_BUILDING_AND_TECH_PREREQS() const;
+	int getNUM_AND_TECH_PREREQS() const;
+	int getNUM_OR_TECH_PREREQS() const;
+	int getNUM_ROUTE_PREREQ_OR_BONUSES() const;
+	int getNUM_CORPORATION_PREREQ_BONUSES() const;*/
+	// advc: All inlined and constified
+	DllExport float getCAMERA_MIN_YAW() { CvGlobals const& kThis = *this; return kThis.getCAMERA_MIN_YAW(); }
+	float getCAMERA_MIN_YAW() const { return m_fCAMERA_MIN_YAW; }
+	DllExport float getCAMERA_MAX_YAW() { CvGlobals const& kThis = *this; return kThis.getCAMERA_MAX_YAW(); }
+	float getCAMERA_MAX_YAW() const { return m_fCAMERA_MAX_YAW; }
+	DllExport float getCAMERA_FAR_CLIP_Z_HEIGHT() { CvGlobals const& kThis = *this; return kThis.getCAMERA_FAR_CLIP_Z_HEIGHT(); }
+	float getCAMERA_FAR_CLIP_Z_HEIGHT() const { return m_fCAMERA_FAR_CLIP_Z_HEIGHT; }
+	DllExport float getCAMERA_MAX_TRAVEL_DISTANCE() { CvGlobals const& kThis = *this; return kThis.getCAMERA_MAX_TRAVEL_DISTANCE(); }
+	float getCAMERA_MAX_TRAVEL_DISTANCE() const { return m_fCAMERA_MAX_TRAVEL_DISTANCE; }
+	DllExport float getCAMERA_START_DISTANCE() { CvGlobals const& kThis = *this; return kThis.getCAMERA_START_DISTANCE(); }
+	float getCAMERA_START_DISTANCE() const { return m_fCAMERA_START_DISTANCE; }
+	DllExport float getAIR_BOMB_HEIGHT() { CvGlobals const& kThis = *this; return kThis.getAIR_BOMB_HEIGHT(); }
+	float getAIR_BOMB_HEIGHT() const { return m_fAIR_BOMB_HEIGHT; }
+	DllExport float getPLOT_SIZE() { CvGlobals const& kThis = *this; return kThis.getPLOT_SIZE(); }
+	float getPLOT_SIZE() const { return m_fPLOT_SIZE; }
+	DllExport float getCAMERA_SPECIAL_PITCH() { CvGlobals const& kThis = *this; return kThis.getCAMERA_SPECIAL_PITCH(); }
+	float getCAMERA_SPECIAL_PITCH() const { return m_fCAMERA_SPECIAL_PITCH; }
+	DllExport float getCAMERA_MAX_TURN_OFFSET() { CvGlobals const& kThis = *this; return kThis.getCAMERA_MAX_TURN_OFFSET(); }
+	float getCAMERA_MAX_TURN_OFFSET() const { return m_fCAMERA_MAX_TURN_OFFSET; }
+	DllExport float getCAMERA_MIN_DISTANCE() { CvGlobals const& kThis = *this; return kThis.getCAMERA_MIN_DISTANCE(); }
+	float getCAMERA_MIN_DISTANCE() const { return m_fCAMERA_MIN_DISTANCE; }
+	DllExport float getCAMERA_UPPER_PITCH() { CvGlobals const& kThis = *this; return kThis.getCAMERA_UPPER_PITCH(); }
+	float getCAMERA_UPPER_PITCH() const { return m_fCAMERA_UPPER_PITCH; }
+	DllExport float getCAMERA_LOWER_PITCH() { CvGlobals const& kThis = *this; return kThis.getCAMERA_LOWER_PITCH(); }
+	float getCAMERA_LOWER_PITCH() const { return m_fCAMERA_LOWER_PITCH; }
+	DllExport float getFIELD_OF_VIEW() { CvGlobals const& kThis = *this; return kThis.getFIELD_OF_VIEW(); }
+	float getFIELD_OF_VIEW() const { return m_fFIELD_OF_VIEW; }
+	DllExport float getSHADOW_SCALE() { CvGlobals const& kThis = *this; return kThis.getSHADOW_SCALE(); }
+	float getSHADOW_SCALE() const { return m_fSHADOW_SCALE; }
+	DllExport float getUNIT_MULTISELECT_DISTANCE() { CvGlobals const& kThis = *this; return kThis.getUNIT_MULTISELECT_DISTANCE(); }
+	float getUNIT_MULTISELECT_DISTANCE() const { return m_fUNIT_MULTISELECT_DISTANCE; }
+	void updateCameraStartDistance(bool bReset); // advc.004m  (exposed to Python)
+	void updateCityCamDist(); // advc.004m
 
-	int getMOVE_DENOMINATOR();
-	int getNUM_UNIT_PREREQ_OR_BONUSES();
-	int getNUM_BUILDING_PREREQ_OR_BONUSES();
-	int getFOOD_CONSUMPTION_PER_POPULATION();
-	int getMAX_HIT_POINTS();
-	int getPATH_DAMAGE_WEIGHT();
-	int getHILLS_EXTRA_DEFENSE();
-	int getRIVER_ATTACK_MODIFIER();
-	int getAMPHIB_ATTACK_MODIFIER();
-	int getHILLS_EXTRA_MOVEMENT();
-	DllExport int getMAX_PLOT_LIST_ROWS();
-	DllExport int getUNIT_MULTISELECT_MAX();
-	int getPERCENT_ANGER_DIVISOR();
-	DllExport int getEVENT_MESSAGE_TIME();
-	int getROUTE_FEATURE_GROWTH_MODIFIER();
-	int getFEATURE_GROWTH_MODIFIER();
-	int getMIN_CITY_RANGE();
-	int getCITY_MAX_NUM_BUILDINGS();
-	int getNUM_UNIT_AND_TECH_PREREQS();
-	int getNUM_AND_TECH_PREREQS();
-	int getNUM_OR_TECH_PREREQS();
-	int getLAKE_MAX_AREA_SIZE();
-	int getNUM_ROUTE_PREREQ_OR_BONUSES();
-	int getNUM_BUILDING_AND_TECH_PREREQS();
-	int getMIN_WATER_SIZE_FOR_OCEAN();
-	int getFORTIFY_MODIFIER_PER_TURN();
-	int getMAX_CITY_DEFENSE_DAMAGE();
-	int getNUM_CORPORATION_PREREQ_BONUSES();
-	int getPEAK_SEE_THROUGH_CHANGE();
-	int getHILLS_SEE_THROUGH_CHANGE();
-	int getSEAWATER_SEE_FROM_CHANGE();
-	int getPEAK_SEE_FROM_CHANGE();
-	int getHILLS_SEE_FROM_CHANGE();
-	int getUSE_SPIES_NO_ENTER_BORDERS();
-
-	DllExport float getCAMERA_MIN_YAW();
-	DllExport float getCAMERA_MAX_YAW();
-	DllExport float getCAMERA_FAR_CLIP_Z_HEIGHT();
-	DllExport float getCAMERA_MAX_TRAVEL_DISTANCE();
-	DllExport float getCAMERA_START_DISTANCE();
-	DllExport float getAIR_BOMB_HEIGHT();
-	DllExport float getPLOT_SIZE();
-	DllExport float getCAMERA_SPECIAL_PITCH();
-	DllExport float getCAMERA_MAX_TURN_OFFSET();
-	DllExport float getCAMERA_MIN_DISTANCE();
-	DllExport float getCAMERA_UPPER_PITCH();
-	DllExport float getCAMERA_LOWER_PITCH();
-	DllExport float getFIELD_OF_VIEW();
-	DllExport float getSHADOW_SCALE();
-	DllExport float getUNIT_MULTISELECT_DISTANCE();
-
-	int getUSE_CANNOT_FOUND_CITY_CALLBACK();
-	int getUSE_CAN_FOUND_CITIES_ON_WATER_CALLBACK();
-	int getUSE_IS_PLAYER_RESEARCH_CALLBACK();
-	int getUSE_CAN_RESEARCH_CALLBACK();
-	int getUSE_CANNOT_DO_CIVIC_CALLBACK();
-	int getUSE_CAN_DO_CIVIC_CALLBACK();
-	int getUSE_CANNOT_CONSTRUCT_CALLBACK();
-	int getUSE_CAN_CONSTRUCT_CALLBACK();
-	int getUSE_CAN_DECLARE_WAR_CALLBACK();
-	int getUSE_CANNOT_RESEARCH_CALLBACK();
-	int getUSE_GET_UNIT_COST_MOD_CALLBACK();
-	int getUSE_GET_BUILDING_COST_MOD_CALLBACK();
-	int getUSE_GET_CITY_FOUND_VALUE_CALLBACK();
-	int getUSE_CANNOT_HANDLE_ACTION_CALLBACK();
-	int getUSE_CAN_BUILD_CALLBACK();
-	int getUSE_CANNOT_TRAIN_CALLBACK();
-	int getUSE_CAN_TRAIN_CALLBACK();
-	int getUSE_UNIT_CANNOT_MOVE_INTO_CALLBACK();
-	int getUSE_USE_CANNOT_SPREAD_RELIGION_CALLBACK();
 	DllExport int getUSE_FINISH_TEXT_CALLBACK();
-	int getUSE_ON_UNIT_SET_XY_CALLBACK();
-	int getUSE_ON_UNIT_SELECTED_CALLBACK();
-	int getUSE_ON_UPDATE_CALLBACK();
-	int getUSE_ON_UNIT_CREATED_CALLBACK();
-	int getUSE_ON_UNIT_LOST_CALLBACK();
-
+	// advc.003y: Moved the other callback getters to CvPythonCaller
+#pragma endregion GlobalDefines
+	/*	K-Mod: more reliable versions of the 'gDLL->xxxKey' functions
+		NOTE: I've replaced all calls to the gDLL key functions with calls to these functions. */
+	// advc: Helper function (let's make it public; why not).
+	bool isKeyDown(int iVirtualKey) const
+	{
+		return (GetKeyState(iVirtualKey) & 0x8000);
+	}
+	bool altKey() const { return isKeyDown(VK_MENU); }
+	bool ctrlKey() const { return isKeyDown(VK_CONTROL); }
+	bool shiftKey() const { return isKeyDown(VK_SHIFT); }
+	// hold X to temporarily suppress automatic unit cycling.
+	bool suppressCycling() const
+	{
+		return (isKeyDown('X') ||
+			/*	advc.088: Needs to be consistent with GC.getInfo(CONTROL_UNSELECT_ALL).
+				getHotKeyVal(), isAltDown() etc. Could check those here, but not in-line.
+				Not quite sure if performance matters here. If it doesn't, then key X
+				should perhaps also be a ControlInfo. */
+			(isKeyDown('U') && shiftKey() && altKey()));
+	} // K-Mod end
+	/*	advc: These two shouldn't be used in the DLL.
+		The EXE mostly seems to call the const version. */
+	DllExport int getMaxCivPlayers() const;
 	DllExport int getMAX_CIV_PLAYERS();
-	DllExport int getMAX_PLAYERS();
-	DllExport int getMAX_CIV_TEAMS();
-	DllExport int getMAX_TEAMS();
-	DllExport int getBARBARIAN_PLAYER();
-	DllExport int getBARBARIAN_TEAM();
-	DllExport int getINVALID_PLOT_COORD();
-	DllExport int getNUM_CITY_PLOTS();
-	DllExport int getCITY_HOME_PLOT();
-
-	// ***** END EXPOSED TO PYTHON *****
-
-	////////////// END DEFINES //////////////////
+	/*  The rest of these (getMAX_PLAYERS, getMAX_CIV_TEAMS, getMAX_TEAMS,
+		getBARBARIAN_PLAYER, getBARBARIAN_TEAM, getINVALID_PLOT_COORD,
+		getNUM_CITY_PLOTS, getCITY_HOME_PLOT) were only used by CyGlobalContext. */
 
 	DllExport void setDLLIFace(CvDLLUtilityIFaceBase* pDll);
-#ifdef _USRDLL
-	CvDLLUtilityIFaceBase* getDLLIFace() { return m_pDLL; }		// inlined for perf reasons, do not use outside of dll
-#endif
+	CvDLLUtilityIFaceBase* getDLLIFace() const { return m_pDLL; } // advc: const
 	DllExport CvDLLUtilityIFaceBase* getDLLIFaceNonInl();
+	ModName const& getModName() const { return m_modName; } // advc.106i
+
 	DllExport void setDLLProfiler(FProfiler* prof);
 	FProfiler* getDLLProfiler();
 	DllExport void enableDLLProfiler(bool bEnable);
@@ -806,6 +716,7 @@ public:
 	DllExport void SetGraphicsInitialized(bool bVal);
 
 	// for caching
+#pragma region ReadInfoArrays
 	DllExport bool readBuildingInfoArray(FDataStreamBase* pStream);
 	DllExport void writeBuildingInfoArray(FDataStreamBase* pStream);
 
@@ -844,10 +755,9 @@ public:
 
 	DllExport bool readEventTriggerInfoArray(FDataStreamBase* pStream);
 	DllExport void writeEventTriggerInfoArray(FDataStreamBase* pStream);
+#pragma endregion ReadInfoArrays
 
-	//
-	// additional accessors for initting globals
-	//
+	// additional accessors for initializing globals ...
 
 	DllExport void setInterface(CvInterface* pVal);
 	DllExport void setDiplomacyScreen(CvDiplomacyScreen* pVal);
@@ -869,6 +779,7 @@ public:
 	DllExport void setPlotGroupFinder(FAStar* pVal);
 
 	// So that CvEnums are moddable in the DLL
+	// (advc: Don't use these functions in the DLL)
 	DllExport int getNumDirections() const;
 	DllExport int getNumGameOptions() const;
 	DllExport int getNumMPOptions() const;
@@ -877,37 +788,26 @@ public:
 	DllExport int getNumTradeableItems() const;
 	DllExport int getNumBasicItems() const;
 	DllExport int getNumTradeableHeadings() const;
-	DllExport int getNumCommandInfos() const;
-	DllExport int getNumControlInfos() const;
-	DllExport int getNumMissionInfos() const;
 	DllExport int getNumPlayerOptionInfos() const;
 	DllExport int getMaxNumSymbols() const;
 	DllExport int getNumGraphicLevels() const;
-	DllExport int getNumGlobeLayers() const;
-
-// BUG - DLL Info - start
-	bool isBull() const;
-	int getBullApiVersion() const;
-
-	const wchar* getBullName() const;
-	const wchar* getBullVersion() const;
-// BUG - DLL Info - end
-
-// BUG - BUG Info - start
-	void setIsBug(bool bIsBug);
-// BUG - BUG Info - end
-
-// BUFFY - DLL Info - start
-#ifdef _BUFFY
-	bool isBuffy() const;
-	int getBuffyApiVersion() const;
-
-	const wchar* getBuffyName() const;
-	const wchar* getBuffyVersion() const;
-#endif
-// BUFFY - DLL Info - end
+	/*int getNumCommandInfos() const { return NUM_COMMAND_TYPES; }
+	int getNumControlInfos() const { return NUM_CONTROL_TYPES; }
+	int getNumMissionInfos() const { return NUM_MISSION_TYPES; }
+	int getNumGlobeLayers() const { return NUM_GLOBE_LAYER_TYPES; }*/ // advc
+	DllExport int getNUM_ENGINE_DIRTY_BITS() const;
+	DllExport int getNUM_INTERFACE_DIRTY_BITS() const;
+	DllExport int getNUM_YIELD_TYPES() const;
+	DllExport int getNUM_FORCECONTROL_TYPES() const;
+	DllExport int getNUM_INFOBAR_TYPES() const;
+	DllExport int getNUM_HEALTHBAR_TYPES() const;
+	DllExport int getNUM_LEADERANIM_TYPES() const;
+	/*int getNUM_CONTROL_TYPES() const;
+	int getNUM_COMMERCE_TYPES() const;*/ // advc
 
 	void deleteInfoArrays();
+
+	void setHoFScreenUp(bool b); // advc.106i
 
 protected:
 
@@ -917,20 +817,21 @@ protected:
 	bool m_bRandLogging;
 	bool m_bSynchLogging;
 	bool m_bOverwriteLogs;
-	NiPoint3  m_pt3CameraDir;
+	/*NiPoint3  m_pt3CameraDir;
 	int m_iNewPlayers;
-
 	CMainMenu* m_pkMainMenu;
-
 	bool m_bZoomOut;
 	bool m_bZoomIn;
-	bool m_bLoadGameFromFile;
+	bool m_bLoadGameFromFile;*/ // advc.003j: Unused; not even written.
+	ModName m_modName; // advc.106i
 
-	FMPIManager * m_pFMPMgr;
+	FMPIManager* m_pFMPMgr;
 
-	CvRandom* m_asyncRand;
-
+	CvRandomExtended* m_asyncRand; // advc.007c (was CvRandom)
+	CvPythonCaller* m_pPythonCaller; // advc.003y
+	CvDLLLogger* m_pLogger;
 	CvGameAI* m_game;
+	CvAgents* m_agents; // advc.agents
 
 	CMessageQueue* m_messageQueue;
 	CMessageQueue* m_hotJoinMsgQueue;
@@ -960,158 +861,51 @@ protected:
 	FAStar* m_areaFinder;
 	FAStar* m_plotGroupFinder;
 
-	NiPoint3 m_pt3Origin;
+	//NiPoint3 m_pt3Origin; // advc.003j: unused
 
-	int* m_aiPlotDirectionX;	// [NUM_DIRECTION_TYPES];
-	int* m_aiPlotDirectionY;	// [NUM_DIRECTION_TYPES];
-	int* m_aiPlotCardinalDirectionX;	// [NUM_CARDINALDIRECTION_TYPES];
-	int* m_aiPlotCardinalDirectionY;	// [NUM_CARDINALDIRECTION_TYPES];
-	int* m_aiCityPlotX;	// [NUM_CITY_PLOTS];
-	int* m_aiCityPlotY;	// [NUM_CITY_PLOTS];
-	int* m_aiCityPlotPriority;	// [NUM_CITY_PLOTS];
-	int m_aaiXYCityPlot[CITY_PLOTS_DIAMETER][CITY_PLOTS_DIAMETER];
-
-	// Leoreth: index over the third ring as well
-	int* m_aiCityPlot3X;
-	int* m_aiCityPlot3Y;
-
-	// Leoreth: graphics paging
-	bool m_bGraphicalDetailPagingEnabled;
-
-	DirectionTypes* m_aeTurnLeftDirection;	// [NUM_DIRECTION_TYPES];
-	DirectionTypes* m_aeTurnRightDirection;	// [NUM_DIRECTION_TYPES];
+	// advc: Allocate these arrays statically
+	int m_aiPlotDirectionX[NUM_DIRECTION_TYPES];
+	int m_aiPlotDirectionY[NUM_DIRECTION_TYPES];
+	int m_aiPlotCardinalDirectionX[NUM_CARDINALDIRECTION_TYPES];
+	int m_aiPlotCardinalDirectionY[NUM_CARDINALDIRECTION_TYPES];
+	int m_aiCityPlotX[NUM_CITY_PLOTS];
+	int m_aiCityPlotY[NUM_CITY_PLOTS];
+    int m_aiCityPlot3X[NUM_CITY_PLOTS_3]; // doc
+    int m_aiCityPlot3Y[NUM_CITY_PLOTS_3]; // doc
+	int m_aiCityPlotPriority[NUM_CITY_PLOTS];
+	int m_iMaxCityPlotPriority; // advc
+	CityPlotTypes m_aaeXYCityPlot[CITY_PLOTS_DIAMETER][CITY_PLOTS_DIAMETER];
+	// advc: Can calculate these on the fly just fine (also: were unused)
+	/*DirectionTypes m_aeTurnLeftDirection[NUM_DIRECTION_TYPES];
+	DirectionTypes m_aeTurnRightDirection[NUM_DIRECTION_TYPES];*/
 	DirectionTypes m_aaeXYDirection[DIRECTION_DIAMETER][DIRECTION_DIAMETER];
 
-	//InterfaceModeInfo m_aInterfaceModeInfo[NUM_INTERFACEMODE_TYPES] =
-	std::vector<CvInterfaceModeInfo*> m_paInterfaceModeInfo;
 
-	/***********************************************************************************************************************
-	Globals loaded from XML
-	************************************************************************************************************************/
+	// Globals loaded from XML ...
 
 	// all type strings are upper case and are kept in this hash map for fast lookup, Moose
 	typedef stdext::hash_map<std::string /* type string */, int /* info index */> InfosMap;
 	InfosMap m_infosMap;
-	std::vector<std::vector<CvInfoBase *> *> m_aInfoVectors;
-
-	std::vector<CvColorInfo*> m_paColorInfo;
-	std::vector<CvPlayerColorInfo*> m_paPlayerColorInfo;
-	std::vector<CvAdvisorInfo*> m_paAdvisorInfo;
-	std::vector<CvInfoBase*> m_paHints;
-	std::vector<CvMainMenuInfo*> m_paMainMenus;
-	std::vector<CvTerrainInfo*> m_paTerrainInfo;
-	std::vector<CvLandscapeInfo*> m_paLandscapeInfo;
 	int m_iActiveLandscapeID;
-	std::vector<CvWorldInfo*> m_paWorldInfo;
-	std::vector<CvClimateInfo*> m_paClimateInfo;
-	std::vector<CvSeaLevelInfo*> m_paSeaLevelInfo;
-	std::vector<CvYieldInfo*> m_paYieldInfo;
-	std::vector<CvCommerceInfo*> m_paCommerceInfo;
-	std::vector<CvRouteInfo*> m_paRouteInfo;
-	std::vector<CvFeatureInfo*> m_paFeatureInfo;
-	std::vector<CvBonusClassInfo*> m_paBonusClassInfo;
-	std::vector<CvBonusInfo*> m_paBonusInfo;
-	std::vector<CvImprovementInfo*> m_paImprovementInfo;
-	std::vector<CvGoodyInfo*> m_paGoodyInfo;
-	std::vector<CvBuildInfo*> m_paBuildInfo;
-	std::vector<CvHandicapInfo*> m_paHandicapInfo;
-	std::vector<CvGameSpeedInfo*> m_paGameSpeedInfo;
-	std::vector<CvTurnTimerInfo*> m_paTurnTimerInfo;
-	std::vector<CvCivilizationInfo*> m_paCivilizationInfo;
 	int m_iNumPlayableCivilizationInfos;
 	int m_iNumAIPlayableCivilizationInfos;
-	std::vector<CvLeaderHeadInfo*> m_paLeaderHeadInfo;
-	std::vector<CvTraitInfo*> m_paTraitInfo;
-	std::vector<CvCursorInfo*> m_paCursorInfo;
-	std::vector<CvThroneRoomCamera*> m_paThroneRoomCamera;
-	std::vector<CvThroneRoomInfo*> m_paThroneRoomInfo;
-	std::vector<CvThroneRoomStyleInfo*> m_paThroneRoomStyleInfo;
-	std::vector<CvSlideShowInfo*> m_paSlideShowInfo;
-	std::vector<CvSlideShowRandomInfo*> m_paSlideShowRandomInfo;
-	std::vector<CvWorldPickerInfo*> m_paWorldPickerInfo;
-	std::vector<CvSpaceShipInfo*> m_paSpaceShipInfo;
-	std::vector<CvProcessInfo*> m_paProcessInfo;
-	std::vector<CvVoteInfo*> m_paVoteInfo;
-	std::vector<CvProjectInfo*> m_paProjectInfo;
-	std::vector<CvBuildingClassInfo*> m_paBuildingClassInfo;
-	std::vector<CvBuildingInfo*> m_paBuildingInfo;
-	std::vector<CvSpecialBuildingInfo*> m_paSpecialBuildingInfo;
-	std::vector<CvUnitClassInfo*> m_paUnitClassInfo;
-	std::vector<CvUnitInfo*> m_paUnitInfo;
-	std::vector<CvSpecialUnitInfo*> m_paSpecialUnitInfo;
-	std::vector<CvInfoBase*> m_paConceptInfo;
-	std::vector<CvInfoBase*> m_paNewConceptInfo;
-	std::vector<CvInfoBase*> m_paCityTabInfo;
-	std::vector<CvInfoBase*> m_paCalendarInfo;
-	std::vector<CvInfoBase*> m_paSeasonInfo;
-	std::vector<CvInfoBase*> m_paMonthInfo;
-	std::vector<CvInfoBase*> m_paDenialInfo;
-	std::vector<CvInfoBase*> m_paInvisibleInfo;
-	std::vector<CvVoteSourceInfo*> m_paVoteSourceInfo;
-	std::vector<CvInfoBase*> m_paUnitCombatInfo;
-	std::vector<CvInfoBase*> m_paDomainInfo;
-	std::vector<CvInfoBase*> m_paUnitAIInfos;
-	std::vector<CvInfoBase*> m_paAttitudeInfos;
-	std::vector<CvInfoBase*> m_paMemoryInfos;
-	std::vector<CvInfoBase*> m_paFeatInfos;
-	std::vector<CvGameOptionInfo*> m_paGameOptionInfos;
-	std::vector<CvMPOptionInfo*> m_paMPOptionInfos;
-	std::vector<CvForceControlInfo*> m_paForceControlInfos;
-	std::vector<CvPlayerOptionInfo*> m_paPlayerOptionInfos;
-	std::vector<CvGraphicOptionInfo*> m_paGraphicOptionInfos;
-	std::vector<CvSpecialistInfo*> m_paSpecialistInfo;
-	std::vector<CvEmphasizeInfo*> m_paEmphasizeInfo;
-	std::vector<CvUpkeepInfo*> m_paUpkeepInfo;
-	std::vector<CvCultureLevelInfo*> m_paCultureLevelInfo;
-	std::vector<CvReligionInfo*> m_paReligionInfo;
-	std::vector<CvInfoBase*> m_paPaganReligionInfo;
-	std::vector<CvCorporationInfo*> m_paCorporationInfo;
-	std::vector<CvActionInfo*> m_paActionInfo;
-	std::vector<CvMissionInfo*> m_paMissionInfo;
-	std::vector<CvControlInfo*> m_paControlInfo;
-	std::vector<CvCommandInfo*> m_paCommandInfo;
-	std::vector<CvAutomateInfo*> m_paAutomateInfo;
-	std::vector<CvPromotionInfo*> m_paPromotionInfo;
-	std::vector<CvTechInfo*> m_paTechInfo;
-	std::vector<CvCivicOptionInfo*> m_paCivicOptionInfo;
-	std::vector<CvCivicInfo*> m_paCivicInfo;
-	std::vector<CvDiplomacyInfo*> m_paDiplomacyInfo;
-	std::vector<CvEraInfo*> m_aEraInfo;	// [NUM_ERA_TYPES];
-	std::vector<CvHurryInfo*> m_paHurryInfo;
-	std::vector<CvVictoryInfo*> m_paVictoryInfo;
-	std::vector<CvRouteModelInfo*> m_paRouteModelInfo;
-	std::vector<CvRiverInfo*> m_paRiverInfo;
-	std::vector<CvRiverModelInfo*> m_paRiverModelInfo;
-	std::vector<CvWaterPlaneInfo*> m_paWaterPlaneInfo;
-	std::vector<CvTerrainPlaneInfo*> m_paTerrainPlaneInfo;
-	std::vector<CvCameraOverlayInfo*> m_paCameraOverlayInfo;
-	std::vector<CvAnimationPathInfo*> m_paAnimationPathInfo;
-	std::vector<CvAnimationCategoryInfo*> m_paAnimationCategoryInfo;
-	std::vector<CvEntityEventInfo*> m_paEntityEventInfo;
-	std::vector<CvUnitFormationInfo*> m_paUnitFormationInfo;
-	std::vector<CvEffectInfo*> m_paEffectInfo;
-	std::vector<CvAttachableInfo*> m_paAttachableInfo;
-	std::vector<CvCameraInfo*> m_paCameraInfo;
-	std::vector<CvQuestInfo*> m_paQuestInfo;
-	std::vector<CvTutorialInfo*> m_paTutorialInfo;
-	std::vector<CvEventTriggerInfo*> m_paEventTriggerInfo;
-	std::vector<CvEventInfo*> m_paEventInfo;
-	std::vector<CvEspionageMissionInfo*> m_paEspionageMissionInfo;
-    std::vector<CvUnitArtStyleTypeInfo*> m_paUnitArtStyleTypeInfo;
+	// <advc.enum>
+	// Don't need to keep track of these anymore
+	//std::vector<std::vector<CvInfoBase*>*> m_aInfoVectors;
+	#define DECLARE_INFO_VECTOR(Name, Dummy) \
+		std::vector<Cv##Name##Info*> m_pa##Name##Info;
+	DO_FOR_EACH_INFO_TYPE(DECLARE_INFO_VECTOR) // </advc.enum>
+	std::vector<CvWorldInfo*> m_paWorldInfo;
 
-	// Game Text
-	std::vector<CvGameText*> m_paGameTextXML;
 
-	//////////////////////////////////////////////////////////////////////////
-	// GLOBAL TYPES
-	//////////////////////////////////////////////////////////////////////////
+	// GLOBAL TYPES ...
 
 	// all type strings are upper case and are kept in this hash map for fast lookup, Moose
 	typedef stdext::hash_map<std::string /* type string */, int /*enum value */> TypesMap;
 	TypesMap m_typesMap;
 
 	// XXX These are duplicates and are kept for enumeration convenience - most could be removed, Moose
-	CvString *m_paszEntityEventTypes2;
+	//CvString *m_paszEntityEventTypes2; // advc.003j: actually unused
 	CvString *m_paszEntityEventTypes;
 	int m_iNumEntityEventTypes;
 
@@ -1127,69 +921,32 @@ protected:
 	int m_iNumArtStyleTypes;
 
 	CvString *m_paszCitySizeTypes;
-	int m_iNumCitySizeTypes;
 
 	CvString *m_paszContactTypes;
-
 	CvString *m_paszDiplomacyPowerTypes;
-
 	CvString *m_paszAutomateTypes;
-
 	CvString *m_paszDirectionTypes;
 
 	CvString *m_paszFootstepAudioTypes;
 	int m_iNumFootstepAudioTypes;
 
 	CvString *m_paszFootstepAudioTags;
-	int m_iNumFootstepAudioTags;
 
 	CvString m_szCurrentXMLFile;
-	//////////////////////////////////////////////////////////////////////////
-	// Formerly Global Defines
-	//////////////////////////////////////////////////////////////////////////
+	bool m_bHoFScreenUp; // advc.106i
 
 	FVariableSystem* m_VarSystem;
-
-	int m_iMOVE_DENOMINATOR;
-	int m_iNUM_UNIT_PREREQ_OR_BONUSES;
-	int m_iNUM_BUILDING_PREREQ_OR_BONUSES;
-	int m_iFOOD_CONSUMPTION_PER_POPULATION;
-	int m_iMAX_HIT_POINTS;
-	int m_iPATH_DAMAGE_WEIGHT;
-	int m_iHILLS_EXTRA_DEFENSE;
-	int m_iRIVER_ATTACK_MODIFIER;
-	int m_iAMPHIB_ATTACK_MODIFIER;
-	int m_iHILLS_EXTRA_MOVEMENT;
-	int m_iMAX_PLOT_LIST_ROWS;
-	int m_iUNIT_MULTISELECT_MAX;
-	int m_iPERCENT_ANGER_DIVISOR;
-	int m_iEVENT_MESSAGE_TIME;
-	int m_iROUTE_FEATURE_GROWTH_MODIFIER;
-	int m_iFEATURE_GROWTH_MODIFIER;
-	int m_iMIN_CITY_RANGE;
-	int m_iCITY_MAX_NUM_BUILDINGS;
-	int m_iNUM_UNIT_AND_TECH_PREREQS;
-	int m_iNUM_AND_TECH_PREREQS;
-	int m_iNUM_OR_TECH_PREREQS;
-	int m_iLAKE_MAX_AREA_SIZE;
-	int m_iNUM_ROUTE_PREREQ_OR_BONUSES;
-	int m_iNUM_BUILDING_AND_TECH_PREREQS;
-	int m_iMIN_WATER_SIZE_FOR_OCEAN;
-	int m_iFORTIFY_MODIFIER_PER_TURN;
-	int m_iMAX_CITY_DEFENSE_DAMAGE;
-	int m_iNUM_CORPORATION_PREREQ_BONUSES;
-	int m_iPEAK_SEE_THROUGH_CHANGE;
-	int m_iHILLS_SEE_THROUGH_CHANGE;
-	int m_iSEAWATER_SEE_FROM_CHANGE;
-	int m_iPEAK_SEE_FROM_CHANGE;
-	int m_iHILLS_SEE_FROM_CHANGE;
-	int m_iUSE_SPIES_NO_ENTER_BORDERS;
+	// <advc.opt>
+	int* m_aiGlobalDefinesCache;
+	int m_iEventMessageTime; // Cached separately b/c the EXE can access it before XML loading
+	ImprovementTypes m_eRUINS_IMPROVEMENT;
+	SpecialistTypes m_eDEFAULT_SPECIALIST;
+	TerrainTypes m_aeWATER_TERRAIN[2]; // </advc.opt>
 
 	float m_fCAMERA_MIN_YAW;
 	float m_fCAMERA_MAX_YAW;
 	float m_fCAMERA_FAR_CLIP_Z_HEIGHT;
 	float m_fCAMERA_MAX_TRAVEL_DISTANCE;
-	float m_fCAMERA_START_DISTANCE;
 	float m_fAIR_BOMB_HEIGHT;
 	float m_fPLOT_SIZE;
 	float m_fCAMERA_SPECIAL_PITCH;
@@ -1197,74 +954,47 @@ protected:
 	float m_fCAMERA_MIN_DISTANCE;
 	float m_fCAMERA_UPPER_PITCH;
 	float m_fCAMERA_LOWER_PITCH;
-	float m_fFIELD_OF_VIEW;
 	float m_fSHADOW_SCALE;
 	float m_fUNIT_MULTISELECT_DISTANCE;
+	float m_fFIELD_OF_VIEW;
+	float m_fCAMERA_START_DISTANCE;
 
-	int m_iUSE_CANNOT_FOUND_CITY_CALLBACK;
-	int m_iUSE_CAN_FOUND_CITIES_ON_WATER_CALLBACK;
-	int m_iUSE_IS_PLAYER_RESEARCH_CALLBACK;
-	int m_iUSE_CAN_RESEARCH_CALLBACK;
-	int m_iUSE_CANNOT_DO_CIVIC_CALLBACK;
-	int m_iUSE_CAN_DO_CIVIC_CALLBACK;
-	int m_iUSE_CANNOT_CONSTRUCT_CALLBACK;
-	int m_iUSE_CAN_CONSTRUCT_CALLBACK;
-	int m_iUSE_CAN_DECLARE_WAR_CALLBACK;
-	int m_iUSE_CANNOT_RESEARCH_CALLBACK;
-	int m_iUSE_GET_UNIT_COST_MOD_CALLBACK;
-	int m_iUSE_GET_BUILDING_COST_MOD_CALLBACK;
-	int m_iUSE_GET_CITY_FOUND_VALUE_CALLBACK;
-	int m_iUSE_CANNOT_HANDLE_ACTION_CALLBACK;
-	int m_iUSE_CAN_BUILD_CALLBACK;
-	int m_iUSE_CANNOT_TRAIN_CALLBACK;
-	int m_iUSE_CAN_TRAIN_CALLBACK;
-	int m_iUSE_UNIT_CANNOT_MOVE_INTO_CALLBACK;
-	int m_iUSE_USE_CANNOT_SPREAD_RELIGION_CALLBACK;
-	int m_iUSE_FINISH_TEXT_CALLBACK;
-	int m_iUSE_ON_UNIT_SET_XY_CALLBACK;
-	int m_iUSE_ON_UNIT_SELECTED_CALLBACK;
-	int m_iUSE_ON_UPDATE_CALLBACK;
-	int m_iUSE_ON_UNIT_CREATED_CALLBACK;
-	int m_iUSE_ON_UNIT_LOST_CALLBACK;
+	CvXMLLoadUtility* m_pXMLLoadUtility; // advc.003v
 
-	// DLL interface
 	CvDLLUtilityIFaceBase* m_pDLL;
 
-	FProfiler* m_Profiler;		// profiler
+	FProfiler* m_Profiler;
 	CvString m_szDllProfileText;
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
-/*                                                                                              */
-/* Efficiency, Options                                                                          */
-/************************************************************************************************/
-public:
-	int getDefineINT( const char * szName, const int iDefault ) const;
-	int getCOMBAT_DIE_SIDES();
-	int getCOMBAT_DAMAGE();
 
-protected:
-	int m_iCOMBAT_DIE_SIDES;
-	int m_iCOMBAT_DAMAGE;
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
+private:
+	// <advc.opt>
+	void cacheGlobalInts(char const* szChangedDefine = NULL, int iNewValue = 0);
+	void cacheGlobalFloats(/* advc.004m: */ bool bAllowRecursion = true); // </advc.opt>
+	// advc.006:
+	void handleUnknownTypeString(char const* szType, bool bHideAssert, bool bFromPython) const;
+	//void addToInfosVectors(void* infoVector); // advc.enum (no longer used)
+	void updateModName(); // advc.106i
 };
 
 extern CvGlobals gGlobals;	// for debugging
 
-//
-// inlines
-//
-inline CvGlobals& CvGlobals::getInstance()
+
+// inlines ...
+
+__inline CvGlobals& CvGlobals::getInstance()
+{
+	return gGlobals;
+}
+// advc:
+__inline CvGlobals const& CvGlobals::getConstInstance()
 {
 	return gGlobals;
 }
 
 
-//
-// helpers
-//
-#define GC CvGlobals::getInstance()
+// helpers ...
+
+#define GC CvGlobals::getConstInstance() // advc: was ...getInstance()
 #ifndef _USRDLL
 #define gDLL GC.getDLLIFaceNonInl()
 #else
@@ -1280,13 +1010,15 @@ inline CvGlobals& CvGlobals::getInstance()
 #define NUM_TRADEABLE_ITEMS (GC.getNumTradeableItems())
 #define NUM_BASIC_ITEMS (GC.getNumBasicItems())
 #define NUM_TRADEABLE_HEADINGS (GC.getNumTradeableHeadings())
-#define NUM_COMMAND_TYPES (GC.getNumCommandInfos())
+// advc: The EXE doesn't call these
+/*#define NUM_COMMAND_TYPES (GC.getNumCommandInfos())
 #define NUM_CONTROL_TYPES (GC.getNumControlInfos())
-#define NUM_MISSION_TYPES (GC.getNumMissionInfos())
+#define NUM_MISSION_TYPES (GC.getNumMissionInfos())*/
 #define NUM_PLAYEROPTION_TYPES (GC.getNumPlayerOptionInfos())
 #define MAX_NUM_SYMBOLS (GC.getMaxNumSymbols())
 #define NUM_GRAPHICLEVELS (GC.getNumGraphicLevels())
 #define NUM_GLOBE_LAYER_TYPES (GC.getNumGlobeLayers())
 #endif
+#pragma warning(pop) // advc: Re-enable "unknown pragma" warning
 
 #endif

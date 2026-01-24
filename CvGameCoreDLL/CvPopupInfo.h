@@ -2,8 +2,6 @@
 #ifndef CVPOPUPINFO_H
 #define CVPOPUPINFO_H
 
-//#include "CvEnums.h"
-
 struct CvPopupButtonPython
 {
 	CvWString szText;
@@ -14,8 +12,10 @@ struct CvPopupButtonPython
 class CvPopupInfo
 {
 public:
-	DllExport CvPopupInfo(ButtonPopupTypes eButtonPopupType = BUTTONPOPUP_TEXT, int iData1 = -1, int iData2 = -1, int iData3 = -1, int iFlags = 0, bool bOption1 = false, bool bOption2 = false);
-	DllExport virtual ~CvPopupInfo();
+	DllExport CvPopupInfo(ButtonPopupTypes eButtonPopupType = BUTTONPOPUP_TEXT,
+			int iData1 = -1, int iData2 = -1, int iData3 = -1, int iFlags = 0,
+			bool bOption1 = false, bool bOption2 = false);
+	DllExport virtual ~CvPopupInfo() {}
 
 	DllExport void read(FDataStreamBase& stream);
 	DllExport void write(FDataStreamBase& stream) const;
@@ -53,7 +53,7 @@ public:
 	DllExport void setPythonModule(const char* szModule);
 	DllExport void addPythonButton(const wchar* szText, const char* szArt);
 
-protected:
+protected: // advc.003k (warning): It's not safe to add data members to this class!
 	int m_iData1;
 	int m_iData2;
 	int m_iData3;
@@ -71,5 +71,6 @@ protected:
 	bool m_bPendingDelete;
 };
 
+BOOST_STATIC_ASSERT(sizeof(CvPopupInfo) == 160); // advc.003k
 
 #endif

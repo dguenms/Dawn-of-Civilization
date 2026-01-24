@@ -1,7 +1,8 @@
 #include "CvGameCoreDLL.h"
 #include "CvEventReporter.h"
-#include "CvDllPythonEvents.h"
-#include "CvInitCore.h"
+#include "CvGame.h"
+#include "CvPlayer.h"
+#include "CvDLLPythonIFaceBase.h" // advc
 
 //
 // static, singleton accessor
@@ -18,17 +19,22 @@ void CvEventReporter::resetStatistics()
 	m_kStatistics.reset();
 }
 
-//
+// advc.106l: Explicit constructor added, so I can initialize my booleans.
+CvEventReporter::CvEventReporter() : m_bPreAutoSave(false), m_bPreQuickSave(false) {}
+
+// advc.003y: Just pass the call along
+void CvEventReporter::initPythonCallbackGuards()
+{
+	m_kPythonEventMgr.initCallbackGuards();
+}
+
 // Returns true if the event is consumed by Python
-//
 bool CvEventReporter::mouseEvent(int evt, int iCursorX, int iCursorY, bool bInterfaceConsumed)
 {
 	return m_kPythonEventMgr.reportMouseEvent(evt, iCursorX, iCursorY, bInterfaceConsumed);
 }
 
-//
 // Returns true if the event is consumed by Python
-//
 bool CvEventReporter::kbdEvent(int evt, int key, int iCursorX, int iCursorY)
 {
 	return m_kPythonEventMgr.reportKbdEvent(evt, key, iCursorX, iCursorY);
@@ -42,18 +48,18 @@ void CvEventReporter::genericEvent(const char* szEventName, void *pyArgs)
 
 void CvEventReporter::newGame()
 {
-	// This will only be called if statistics are being reported!
-	// Called at the launch of a game (new or loaded)
+	/*	This will only be called if statistics are being reported!
+		Called at the launch of a game (new or loaded) */
 
 	// Report initial stats for the game
-	m_kStatistics.setMapName( CvString(GC.getInitCore().getMapScriptName()).GetCString() );
+	m_kStatistics.setMapName(CvString(GC.getInitCore().getMapScriptName()).GetCString());
 	m_kStatistics.setEra(GC.getInitCore().getEra());
 }
 
 void CvEventReporter::newPlayer(PlayerTypes ePlayer)
 {
-	// This will only be called if statistics are being reported!
-	// Called at the launch of a game (new or loaded)
+	/*	This will only be called if statistics are being reported!
+		Called at the launch of a game (new or loaded) */
 
 	// Report initial stats for this player
 	m_kStatistics.setLeader(ePlayer, GET_PLAYER(ePlayer).getLeaderType());
@@ -114,6 +120,7 @@ void CvEventReporter::firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2)
 	m_kPythonEventMgr.reportFirstContact(eTeamID1, eTeamID2);
 }
 
+// doc: restored contact event
 void CvEventReporter::restoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2)
 {
 	m_kPythonEventMgr.reportRestoredContact(eTeamID1, eTeamID2);
@@ -124,27 +131,17 @@ void CvEventReporter::combatResult(CvUnit* pWinner, CvUnit* pLoser)
 	m_kPythonEventMgr.reportCombatResult(pWinner, pLoser);
 }
 
-// BUG - Combat Events - start
-void CvEventReporter::combatRetreat(CvUnit* pAttacker, CvUnit* pDefender)
+// advc: Cut from CvUnit::resolveCombat
+void CvEventReporter::combatLogHit(CombatDetails const& kAttackerDetails,
+	CombatDetails const& kDefenderDetails, int iDamage, bool bAttackerTakesHit)
 {
-	m_kPythonEventMgr.reportCombatRetreat(pAttacker, pDefender);
+	CyArgsList pyArgs;
+	pyArgs.add(gDLL->getPythonIFace()->makePythonObject(&kAttackerDetails));
+	pyArgs.add(gDLL->getPythonIFace()->makePythonObject(&kDefenderDetails));
+	pyArgs.add(bAttackerTakesHit ? 1 : 0);
+	pyArgs.add(iDamage);
+	genericEvent("combatLogHit", pyArgs.makeFunctionArgs());
 }
-
-void CvEventReporter::combatWithdrawal(CvUnit* pAttacker, CvUnit* pDefender)
-{
-	m_kPythonEventMgr.reportCombatWithdrawal(pAttacker, pDefender);
-}
-
-void CvEventReporter::combatLogCollateral(CvUnit* pAttacker, CvUnit* pDefender, int iDamage)
-{
-	m_kPythonEventMgr.reportCombatLogCollateral(pAttacker, pDefender, iDamage);
-}
-
-void CvEventReporter::combatLogFlanking(CvUnit* pAttacker, CvUnit* pDefender, int iDamage)
-{
-	m_kPythonEventMgr.reportCombatLogFlanking(pAttacker, pDefender, iDamage);
-}
-// BUG - Combat Events - end
 
 void CvEventReporter::improvementBuilt(int iImprovementType, int iX, int iY)
 {
@@ -186,13 +183,13 @@ void CvEventReporter::gotoPlotSet(CvPlot *pPlot, PlayerTypes ePlayer)
 	m_kPythonEventMgr.reportGotoPlotSet(pPlot, ePlayer);
 }
 
-void CvEventReporter::cityBuilt( CvCity *pCity )
+void CvEventReporter::cityBuilt(CvCity *pCity)
 {
 	m_kPythonEventMgr.reportCityBuilt(pCity);
 	m_kStatistics.cityBuilt(pCity);
 }
 
-void CvEventReporter::cityRazed( CvCity *pCity, PlayerTypes ePlayer )
+void CvEventReporter::cityRazed(CvCity *pCity, PlayerTypes ePlayer)
 {
 	m_kPythonEventMgr.reportCityRazed(pCity, ePlayer);
 	m_kStatistics.cityRazed(pCity, ePlayer);
@@ -213,17 +210,19 @@ void CvEventReporter::cityLost( CvCity *pCity)
 	m_kPythonEventMgr.reportCityLost(pCity);
 }
 
+// doc: city gifted event
 void CvEventReporter::cityGifted(CvCity* pCity)
 {
-	m_kPythonEventMgr.reportCityGifted(pCity);
+    m_kPythonEventMgr.reportCityGifted(pCity);
 }
 
+// doc: city liberated event
 void CvEventReporter::cityLiberated(CvCity* pCity)
 {
-	m_kPythonEventMgr.reportCityLiberated(pCity);
+    m_kPythonEventMgr.reportCityLiberated(pCity);
 }
 
-void CvEventReporter::cultureExpansion( CvCity *pCity, PlayerTypes ePlayer )
+void CvEventReporter::cultureExpansion(CvCity *pCity, PlayerTypes ePlayer)
 {
 	m_kPythonEventMgr.reportCultureExpansion(pCity, ePlayer);
 }
@@ -233,7 +232,7 @@ void CvEventReporter::cityGrowth(CvCity *pCity, PlayerTypes ePlayer)
 	m_kPythonEventMgr.reportCityGrowth(pCity, ePlayer);
 }
 
-void CvEventReporter::cityDoTurn( CvCity *pCity, PlayerTypes ePlayer )
+void CvEventReporter::cityDoTurn(CvCity *pCity, PlayerTypes ePlayer)
 {
 	m_kPythonEventMgr.reportCityProduction(pCity, ePlayer);
 }
@@ -248,20 +247,6 @@ void CvEventReporter::cityBuildingBuilding(CvCity* pCity, BuildingTypes eBuildin
 	m_kPythonEventMgr.reportCityBuildingBuilding(pCity, eBuildingType);
 }
 
-// BUG - Project Started Event - start
-void CvEventReporter::cityBuildingProject(CvCity* pCity, ProjectTypes eProjectType)
-{
-	m_kPythonEventMgr.reportCityBuildingProject(pCity, eProjectType);
-}
-// BUG - Project Started Event - end
-
-// BUG - Process Started Event - start
-void CvEventReporter::cityBuildingProcess(CvCity* pCity, ProcessTypes eProcessType)
-{
-	m_kPythonEventMgr.reportCityBuildingProcess(pCity, eProcessType);
-}
-// BUG - Process Started Event - end
-
 void CvEventReporter::cityRename(CvCity* pCity)
 {
 	m_kPythonEventMgr.reportCityRename(pCity);
@@ -272,6 +257,7 @@ void CvEventReporter::cityHurry(CvCity* pCity, HurryTypes eHurry)
 	m_kPythonEventMgr.reportCityHurry(pCity, eHurry);
 }
 
+// doc: city capture gold event
 void CvEventReporter::cityCaptureGold(CvCity* pCity, PlayerTypes ePlayer, int iCaptureGold)
 {
 	m_kPythonEventMgr.reportCityCaptureGold(pCity, ePlayer, iCaptureGold);
@@ -303,18 +289,11 @@ void CvEventReporter::unitBuilt(CvCity *pCity, CvUnit *pUnit)
 	m_kStatistics.unitBuilt(pUnit);
 }
 
-void CvEventReporter::unitKilled(CvUnit *pUnit, PlayerTypes eAttacker )
+void CvEventReporter::unitKilled(CvUnit *pUnit, PlayerTypes eAttacker)
 {
 	m_kPythonEventMgr.reportUnitKilled(pUnit, eAttacker);
 	m_kStatistics.unitKilled(pUnit, eAttacker);
 }
-
-// BUG - Unit Captured Event - start
-void CvEventReporter::unitCaptured(PlayerTypes eFromPlayer, UnitTypes eUnitType, CvUnit* pNewUnit)
-{
-	m_kPythonEventMgr.reportUnitCaptured(eFromPlayer, eUnitType, pNewUnit);
-}
-// BUG - Unit Captured Event - end
 
 void CvEventReporter::unitLost(CvUnit *pUnit)
 {
@@ -325,13 +304,6 @@ void CvEventReporter::unitPromoted(CvUnit *pUnit, PromotionTypes ePromotion)
 {
 	m_kPythonEventMgr.reportUnitPromoted(pUnit, ePromotion);
 }
-
-// BUG - Upgrade Unit Event - start
-void CvEventReporter::unitUpgraded(CvUnit *pOldUnit, CvUnit *pNewUnit, int iPrice)
-{
-	m_kPythonEventMgr.reportUnitUpgraded(pOldUnit, pNewUnit, iPrice);
-}
-// BUG - Upgrade Unit Event - end
 
 void CvEventReporter::unitSelected( CvUnit *pUnit)
 {
@@ -442,9 +414,9 @@ void CvEventReporter::changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam
 	m_kPythonEventMgr.reportChangeWar(bWar, eTeam, eOtherTeam, bFromDefensivePact);
 }
 
-void CvEventReporter::setPlayerAlive( PlayerTypes ePlayerID, bool bNewValue )
+void CvEventReporter::setPlayerAlive(PlayerTypes ePlayerID, bool bNewValue)
 {
-	m_kPythonEventMgr.reportSetPlayerAlive( ePlayerID, bNewValue );
+	m_kPythonEventMgr.reportSetPlayerAlive(ePlayerID, bNewValue);
 }
 
 void CvEventReporter::playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion)
@@ -457,12 +429,18 @@ void CvEventReporter::playerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPl
 	m_kPythonEventMgr.reportPlayerGoldTrade(eFromPlayer, eToPlayer, iAmount);
 }
 
-// edead: start
+// doc (edead): revolution event
 void CvEventReporter::revolution(PlayerTypes ePlayerID)
 {
-	m_kPythonEventMgr.reportRevolution(ePlayerID);
+    m_kPythonEventMgr.reportRevolution(ePlayerID);
 }
-// edead: end
+
+/*	advc.make: To get rid of the K-Mod friend declaration in the header.
+	Not const because CvStatistics performs lazy initialization of player records. */
+CvPlayerRecord const* CvEventReporter::getPlayerRecord(PlayerTypes ePlayer)
+{
+	return m_kStatistics.getPlayerRecord(ePlayer);
+}
 
 void CvEventReporter::chat(CvWString szString)
 {
@@ -482,9 +460,7 @@ void CvEventReporter::victory(TeamTypes eWinner, VictoryTypes eVictory)
 			m_kStatistics.setTimePlayed((PlayerTypes)i, GET_PLAYER((PlayerTypes)i).getTotalTimePlayed());
 		}
 	}
-
-	// automatically report MP stats on victory
-	gDLL->reportStatistics();
+	gDLL->reportStatistics(); // automatically report MP stats on victory
 }
 
 void CvEventReporter::vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated)
@@ -492,105 +468,109 @@ void CvEventReporter::vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVa
 	m_kPythonEventMgr.reportVassalState(eMaster, eVassal, bVassal, bCapitulated);
 }
 
-// Leoreth: trade mission (great merchants)
+// doc: trade mission event
 void CvEventReporter::tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold)
 {
 	m_kPythonEventMgr.reportTradeMission(unitID, ePlayer, iX, iY, iGold);
 }
 
-// Leoreth: slave trade (amount of gold received)
+// doc: slave trade event
 void CvEventReporter::playerSlaveTrade(PlayerTypes ePlayer, int iGold)
 {
 	m_kPythonEventMgr.reportPlayerSlaveTrade(ePlayer, iGold);
 }
 
-// Leoreth: release player
+// doc: civilization released event
 void CvEventReporter::releasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization)
 {
 	m_kPythonEventMgr.reportReleasedCivilization(ePlayer, eReleasedCivilization);
 }
 
-// Leoreth: blockade a city
+// doc: blockade event
 void CvEventReporter::blockade(PlayerTypes ePlayer, CvCity* pCity, int iGold)
 {
 	m_kPythonEventMgr.reportBlockade(ePlayer, pCity, iGold);
 }
 
-// Leoreth: arrange peace deal between players
+// doc: peace brokered event
 void CvEventReporter::peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2)
 {
 	m_kPythonEventMgr.reportPeaceBrokered(eBroker, ePlayer1, ePlayer2);
 }
 
-// Leoreth: XML loaded before menu
+// doc: XML loaded before menu
 void CvEventReporter::xmlLoaded()
 {
 	m_kPythonEventMgr.reportXMLLoaded();
 }
 
-// Leoreth: fonts loaded and font IDs assigned
+// doc: fonts loaded and font IDs assigned
 void CvEventReporter::fontsLoaded()
 {
 	m_kPythonEventMgr.reportFontsLoaded();
 }
 
-// Leoreth: civic changed
+// doc: civic changed event
 void CvEventReporter::civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic)
 {
 	m_kPythonEventMgr.reportCivicChanged(ePlayer, eOldCivic, eNewCivic);
 }
 
-// Leoreth: autoplay ended
+// doc: autoplay ended event
 void CvEventReporter::autoplayEnded()
 {
 	m_kPythonEventMgr.reportAutoplayEnded();
 }
 
-// Leoreth: player civilization assigned
+// doc: player civilization assigned event
 void CvEventReporter::playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization)
 {
 	m_kPythonEventMgr.reportPlayerCivAssigned(ePlayer, eNewCivilization);
 }
 
-// Leoreth: player destroyed
+// doc: player destroyed event
 void CvEventReporter::playerDestroyed(PlayerTypes ePlayer)
 {
 	m_kPythonEventMgr.reportPlayerDestroyed(ePlayer);
 }
 
-// Leoreth: player switched
+// doc: player switched event
 void CvEventReporter::playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer)
 {
 	m_kPythonEventMgr.reportPlayerSwitch(eOldPlayer, eNewPlayer);
 }
 
-// Leoreth: tech traded
+// doc: tech traded event
 void CvEventReporter::techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech)
 {
 	m_kPythonEventMgr.reportTechTraded(eFrom, eTo, eTech);
 }
 
-// Leoreth: tribute given
+// doc: tribute given event
 void CvEventReporter::tribute(PlayerTypes eFrom, PlayerTypes eTo)
 {
 	m_kPythonEventMgr.reportTribute(eFrom, eTo);
 }
 
+// doc: global warming event
 void CvEventReporter::globalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense)
 {
 	m_kPythonEventMgr.reportGlobalWarming(iGlobalWarmingValue, iGlobalWarmingDefense);
 }
 
+// doc: global warming effect event
 void CvEventReporter::globalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature)
 {
 	m_kPythonEventMgr.reportGlobalWarmingEffect(pPlot, bChanged, ePreviousTerrain, eNewTerrain, ePreviousFeature);
 }
 
+// doc: building processed event
 void CvEventReporter::buildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange)
 {
 	m_kPythonEventMgr.reportBuildingProcessed(pCity, eBuilding, iChange);
 }
 
+// doc: city sacked event
 void CvEventReporter::citySacked(CvCity* pCity)
 {
 	m_kPythonEventMgr.reportCitySacked(pCity);
@@ -599,7 +579,58 @@ void CvEventReporter::citySacked(CvCity* pCity)
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();
+	/*  <advc.106l> The original "saving" messages are disabled through game text XML
+		b/c the EXE displays them for too long. Will show replacement messages here. */
+	bool bAutoSave = m_bPreAutoSave;
+	bool bQuickSave = m_bPreQuickSave;
+	m_bPreAutoSave = m_bPreQuickSave = false;
+	FAssertMsg(bAutoSave || !GC.getGame().isInBetweenTurns() ||
+			GC.getInitCore().getPbem() || GC.getGame().isNetworkMultiPlayer(),
+			"Quicksave in between turns?");
+	char const* szDefineName = "";
+	CvWString szMsgTag;
+	if(bAutoSave)
+	{
+		szDefineName = "AUTO_SAVING_MESSAGE_TIME";
+		szMsgTag = L"TXT_KEY_AUTOSAVING2";
+	}
+	else if(bQuickSave)
+	{
+		szDefineName = "QUICK_SAVING_MESSAGE_TIME";
+		szMsgTag = L"TXT_KEY_QUICK_SAVING2";
+	}
+	else
+	{
+		szDefineName = "SAVING_MESSAGE_TIME";
+		szMsgTag = L"TXT_KEY_SAVING_GAME2";
+	}
+	int iLength = GC.getDefineINT(szDefineName);
+	if(iLength <= 0)
+		return;
+	PlayerTypes eActivePlayer = GC.getGame().getActivePlayer();
+	if(eActivePlayer == NO_PLAYER)
+	{
+		FAssert(eActivePlayer != NO_PLAYER);
+		return;
+	}
+	gDLL->UI().addMessage(eActivePlayer, true,
+			iLength, gDLL->getText(szMsgTag), NULL, MESSAGE_TYPE_DISPLAY_ONLY);
 }
+
+void CvEventReporter::preAutoSave()
+{
+	/*  Can detect failed auto-saves here, but only if AutoSaveInterval=1 in the INI.
+		Can't test in the DLL if that's the case. (Can't parse the INI file either;
+		it could be any file passed to the EXE at startup through ini="...") */
+	//FAssertMsg(!m_bPreAutoSave || GC.getGame().isNetworkMultiPlayer(), "Should've been reset by preSave");
+	m_bPreAutoSave = true;
+}
+
+void CvEventReporter::preQuickSave()
+{
+	//FAssertMsg(!m_bPreAutoSave || GC.getGame().isNetworkMultiPlayer(), "Should've been reset by preSave");
+	m_bPreQuickSave = true;
+} // </advc.106l>
 
 void CvEventReporter::windowActivation(bool bActive)
 {
@@ -632,33 +663,32 @@ void CvEventReporter::getPlayerStatistics(PlayerTypes ePlayer, std::vector<CvSta
 		aStats.push_back(new CvStatInt("citiesrazed", pRecord->getNumCitiesRazed()));
 		aStats.push_back(new CvStatInt("goldenages", pRecord->getNumGoldenAges()));
 
-
-		// Units by type
 		CvString strKey;
-		for (int j = 0; j < GC.getNumUnitInfos(); ++j)
+		FOR_EACH_ENUM(Unit)
 		{
-			strKey.format("unit_%d_built", j);
-			aStats.push_back(new CvStatInt(strKey, pRecord->getNumUnitsBuilt(j)));
-
-			strKey.format("unit_%d_killed", j);
-			aStats.push_back(new CvStatInt(strKey, pRecord->getNumUnitsKilled(j)));
-
-			strKey.format("unit_%d_lost", j);
-			aStats.push_back(new CvStatInt(strKey, pRecord->getNumUnitsWasKilled(j)));
+			strKey.format("unit_%d_built", eLoopUnit);
+			aStats.push_back(new CvStatInt(strKey,
+					pRecord->getNumUnitsBuilt(eLoopUnit)));
+			strKey.format("unit_%d_killed", eLoopUnit);
+			aStats.push_back(new CvStatInt(strKey,
+					pRecord->getNumUnitsKilled(eLoopUnit)));
+			strKey.format("unit_%d_lost", eLoopUnit);
+			aStats.push_back(new CvStatInt(strKey,
+					pRecord->getNumUnitsWasKilled(eLoopUnit)));
 		}
 
-		// Buildings by type
-		for (int j = 0; j < GC.getNumBuildingInfos(); ++j)
+		FOR_EACH_ENUM(Building)
 		{
-			strKey.format("building_%d_built", j);
-			aStats.push_back(new CvStatInt(strKey, pRecord->getNumBuildingsBuilt((BuildingTypes)j)));
+			strKey.format("building_%d_built", eLoopBuilding);
+			aStats.push_back(new CvStatInt(strKey,
+					pRecord->getNumBuildingsBuilt(eLoopBuilding)));
 		}
 
-		// Religions by type
-		for (int j = 0; j < GC.getNumReligionInfos(); ++j)
+		FOR_EACH_ENUM(Religion)
 		{
-			strKey.format("religion_%d_founded", j);
-			aStats.push_back(new CvStatInt(strKey, pRecord->getReligionFounded((ReligionTypes)j)));
+			strKey.format("religion_%d_founded", eLoopReligion);
+			aStats.push_back(new CvStatInt(strKey,
+					pRecord->getReligionFounded(eLoopReligion)));
 		}
 	}
 }
@@ -667,9 +697,13 @@ void CvEventReporter::readStatistics(FDataStreamBase* pStream)
 {
 	m_kStatistics.reset();
 	m_kStatistics.read(pStream);
-}
-void CvEventReporter::writeStatistics(FDataStreamBase* pStream)
-{
-	m_kStatistics.write(pStream);
+	GC.getGame().onAllGameDataRead(); // advc
 }
 
+void CvEventReporter::writeStatistics(FDataStreamBase* pStream)
+{
+	PROFILE_FUNC(); // advc
+	REPRO_TEST_BEGIN_WRITE("Statistics");
+	m_kStatistics.write(pStream);
+	REPRO_TEST_FINAL_WRITE();
+}

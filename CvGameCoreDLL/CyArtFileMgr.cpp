@@ -1,10 +1,8 @@
 //
-// Python wrapper class for CvArtFileMgr 
-// 
+// Python wrapper class for CvArtFileMgr
+//
 #include "CvGameCoreDLL.h"
 #include "CyArtFileMgr.h"
-#include "CvArtFileMgr.h"
-#include "CyGlobalContext.h"
 
 CyArtFileMgr::CyArtFileMgr() : m_pArtFileMgr(NULL)
 {

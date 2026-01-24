@@ -1,24 +1,18 @@
 //
-// Python wrapper class for CvGame 
-// 
+// Python wrapper class for CvGame
+//
 
 #include "CvGameCoreDLL.h"
 #include "CyDeal.h"
 #include "CvDeal.h"
 
-CyDeal::CyDeal(CvDeal* pDeal) :
-	m_pDeal(pDeal)
-{
+CyDeal::CyDeal(CvDeal* pDeal) : m_pDeal(pDeal) {}
 
-}
-
-CyDeal::~CyDeal()
-{
-}
+CyDeal::~CyDeal() {}
 
 bool CyDeal::isNone()
-{ 
-	return (NULL == m_pDeal); 
+{
+	return (m_pDeal == NULL);
 }
 
 int CyDeal::getID() const
@@ -43,56 +37,46 @@ int CyDeal::getSecondPlayer() const
 
 int CyDeal::getLengthFirstTrades() const
 {
-	return (m_pDeal ? m_pDeal->getLengthFirstTrades() : 0);
+	return (m_pDeal ? m_pDeal->getLengthFirst() : 0);
 }
 
 int CyDeal::getLengthSecondTrades() const
 {
-	return (m_pDeal ? m_pDeal->getLengthSecondTrades() : 0);
+	return (m_pDeal ? m_pDeal->getLengthSecond() : 0);
 }
 
 TradeData* CyDeal::getFirstTrade(int i) const
 {
-	if (i < getLengthFirstTrades() && NULL != m_pDeal && NULL != m_pDeal->getFirstTrades())
+	if (i >= getLengthFirstTrades() || m_pDeal == NULL)
+		return NULL;
+	int iCount = 0;
+	FOR_EACH_TRADE_ITEM_VAR(m_pDeal->getFirstListVar())
 	{
-		const CLinkList<TradeData>& listTradeData = *(m_pDeal->getFirstTrades());
-		int iCount = 0;
-		for (CLLNode<TradeData>* pNode = listTradeData.head(); NULL != pNode; pNode = listTradeData.next(pNode))
-		{
-			if (iCount == i)
-			{
-				return &(pNode->m_data);
-			}
-			iCount++;
-		}
+		if (iCount == i)
+			return pItem;
+		iCount++;
 	}
-	return (NULL);
+	return NULL;
 }
 
 TradeData* CyDeal::getSecondTrade(int i) const
 {
-	if (i < getLengthSecondTrades() && NULL != m_pDeal && NULL != m_pDeal->getSecondTrades())
+	if (i >= getLengthSecondTrades() || m_pDeal == NULL)
+		return NULL;
+	int iCount = 0;
+	FOR_EACH_TRADE_ITEM_VAR(m_pDeal->getSecondListVar())
 	{
-		const CLinkList<TradeData>& listTradeData = *(m_pDeal->getSecondTrades());
-		int iCount = 0;
-		for (CLLNode<TradeData>* pNode = listTradeData.head(); NULL != pNode; pNode = listTradeData.next(pNode))
-		{
-			if (iCount == i)
-			{
-				return &(pNode->m_data);
-			}
-			iCount++;
-		}
+		if (iCount == i)
+			return pItem;
+		iCount++;
 	}
-	return (NULL);
+	return NULL;
 }
 
 void CyDeal::kill()
 {
-	if (NULL != m_pDeal)
-	{
+	if (m_pDeal != NULL)
 		m_pDeal->kill();
-	}
 }
 
 // BUG - Expose Deal Cancelability - start

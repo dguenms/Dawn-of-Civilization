@@ -1,29 +1,21 @@
 //
 // Python wrapper class for CvUnit
 //
-//
+
 #include "CvGameCoreDLL.h"
 #include "CyUnit.h"
-#include "CyCity.h"
+#include "CyArea.h"
+#include "CySelectionGroup.h"
+#include "CvUnitAI.h" // advc.003u
 #include "CvArea.h"
 #include "CvPlot.h"
-#include "CvUnit.h"
-#include "CyPlot.h"
-#include "CyArea.h"
-#include "CvArtFileMgr.h"
-#include "CySelectionGroup.h"
-#include "CvDLLInterfaceIFaceBase.h"
-#include "CvGlobals.h"
+#include "CvMap.h" // advc: For canAirBombAt
 
-CyUnit::CyUnit() : m_pUnit(NULL)
-{
+CyUnit::CyUnit() : m_pUnit(NULL) {}
+// advc.003y: (see CyCity.cpp)
+CyUnit::CyUnit(CvUnit const& kUnit) : m_pUnit(const_cast<CvUnit*>(&kUnit)) {}
 
-}
-
-CyUnit::CyUnit(CvUnit* pUnit) : m_pUnit(pUnit)
-{
-
-}
+CyUnit::CyUnit(CvUnit* pUnit) : m_pUnit(pUnit) {}
 
 void CyUnit::convert(CyUnit* pUnit)
 {
@@ -45,7 +37,7 @@ void CyUnit::NotifyEntity(int /*MissionTypes*/ eEvent)
 
 bool CyUnit::isActionRecommended(int i)
 {
-	if ( m_pUnit )
+	if (m_pUnit)
 	{
 		return m_pUnit->isActionRecommended(i);
 	}
@@ -53,7 +45,7 @@ bool CyUnit::isActionRecommended(int i)
 	return false;
 }
 
-bool CyUnit::isBetterDefenderThan(CyUnit* pDefender, CyUnit* pAttacker) 
+bool CyUnit::isBetterDefenderThan(CyUnit* pDefender, CyUnit* pAttacker)
 {
 	return m_pUnit ? m_pUnit->isBetterDefenderThan(pDefender->getUnit(), pAttacker->getUnit()) : false;
 }
@@ -71,12 +63,15 @@ void CyUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 
 CyPlot* CyUnit::getPathEndTurnPlot()
 {
-	return m_pUnit ? new CyPlot(m_pUnit->getPathEndTurnPlot()) : false;
+	return m_pUnit ? new CyPlot(m_pUnit->getPathEndTurnPlot()) : NULL;
 }
 
 bool CyUnit::generatePath(CyPlot* pToPlot, int iFlags, bool bReuse, int* piPathTurns)
 {
-	return m_pUnit ? m_pUnit->generatePath(pToPlot->getPlot(), iFlags, bReuse, piPathTurns) : false;
+	if (m_pUnit == NULL || pToPlot->getPlot() == NULL)
+		return false;
+	return m_pUnit->generatePath(*pToPlot->getPlot(), (MovementFlags)iFlags,
+			bReuse, piPathTurns);
 }
 
 bool CyUnit::canEnterTerritory(int /*TeamTypes*/ eTeam, bool bIgnoreRightOfPassage)
@@ -86,28 +81,28 @@ bool CyUnit::canEnterTerritory(int /*TeamTypes*/ eTeam, bool bIgnoreRightOfPassa
 
 bool CyUnit::canEnterArea(int /*TeamTypes*/ eTeam, CyArea* pArea, bool bIgnoreRightOfPassage)
 {
-	return m_pUnit ? (int) m_pUnit->canEnterArea((TeamTypes) eTeam, pArea->getArea(), bIgnoreRightOfPassage) : false;
+	return m_pUnit ? (int) m_pUnit->canEnterTerritory((TeamTypes)eTeam, bIgnoreRightOfPassage, &pArea->getArea()) : false;
 }
 
-int /*TeamTypes*/ CyUnit::getDeclareWarMove(CyPlot* pPlot)																					 
+int /*TeamTypes*/ CyUnit::getDeclareWarMove(CyPlot* pPlot)
 {
 	return m_pUnit ? (int) m_pUnit->getDeclareWarMove(pPlot->getPlot()) : (int) NO_TEAM;
 }
 
 bool CyUnit::canMoveInto(CyPlot* pPlot, bool bAttack, bool bDeclareWar, bool bIgnoreLoad)
 {
-	return m_pUnit ? m_pUnit->canMoveInto(pPlot->getPlot(), bAttack, bDeclareWar, bIgnoreLoad) : false;
+	return m_pUnit ? m_pUnit->canMoveInto(*pPlot->getPlot(), bAttack, bDeclareWar, bIgnoreLoad) : false;
 }
 
 bool CyUnit::canMoveOrAttackInto(CyPlot* pPlot, bool bDeclareWar)
 {
-	return m_pUnit ? m_pUnit->canMoveOrAttackInto(pPlot->getPlot(), bDeclareWar) : false;
+	return m_pUnit ? m_pUnit->canMoveOrAttackInto(*pPlot->getPlot(), bDeclareWar) : false;
 }
 
-bool CyUnit::canMoveThrough(CyPlot* pPlot)
+/*bool CyUnit::canMoveThrough(CyPlot* pPlot)
 {
 	return m_pUnit ? m_pUnit->canMoveThrough(pPlot->getPlot()) : false;
-}
+}*/
 
 bool CyUnit::jumpToNearestValidPlot()
 {
@@ -131,12 +126,12 @@ bool CyUnit::canGift(bool bTestVisible)
 
 bool CyUnit::canLoadUnit(CyUnit* pUnit, CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canLoadUnit(pUnit->getUnit(), pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canLoadOnto(*pUnit->getUnit(), *pPlot->getPlot()) : false;
 }
 
 bool CyUnit::canLoad(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canLoad(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canLoadOntoAnyUnit(*pPlot->getPlot()) : false;
 }
 
 bool CyUnit::canUnload()
@@ -166,7 +161,7 @@ bool CyUnit::canFortify(CyPlot* pPlot)
 
 bool CyUnit::canPlunder(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canPlunder(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canPlunder(*pPlot->getPlot()) : false;
 }
 
 bool CyUnit::canAirPatrol(CyPlot* pPlot)
@@ -176,7 +171,9 @@ bool CyUnit::canAirPatrol(CyPlot* pPlot)
 
 bool CyUnit::canSeaPatrol(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canSeaPatrol(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canSeaPatrol(pPlot->getPlot(),
+			true) // advc.004k: For the same behavior as in K-Mod
+			: false;
 }
 
 bool CyUnit::canHeal(CyPlot* pPlot)
@@ -211,7 +208,9 @@ bool CyUnit::canNuke(CyPlot* pPlot)
 
 bool CyUnit::canNukeAt(CyPlot* pPlot, int iX, int iY)
 {
-	return m_pUnit ? m_pUnit->canNukeAt(pPlot->getPlot(), iX, iY) : false;
+	if (m_pUnit == NULL || pPlot == NULL || pPlot->getPlot() == NULL)
+		return false;
+	return m_pUnit->canNukeAt(*pPlot->getPlot(), iX, iY);
 }
 
 bool CyUnit::canRecon(CyPlot* pPlot)
@@ -239,24 +238,31 @@ bool CyUnit::canAirBomb(CyPlot* pPlot)
 	return m_pUnit ? m_pUnit->canAirBomb(pPlot->getPlot()) : false;
 }
 
+// advc: Adjusted to changed param list of CvUnit::canAirBombAt
 bool CyUnit::canAirBombAt(CyPlot* pPlot, int iX, int iY)
 {
-	return m_pUnit ? m_pUnit->canAirBombAt(pPlot->getPlot(), iX, iY) : false;
+	if (m_pUnit == NULL)
+		return false;
+	CvPlot const* pTarget = GC.getMap().plot(iX, iY);
+	if (pTarget == NULL)
+		return false;
+	return m_pUnit->canAirBombAt(*pTarget,
+			pPlot == NULL ? NULL : pPlot->getPlot());
 }
 
 CyCity* CyUnit::bombardTarget(CyPlot* pPlot)
 {
-	return m_pUnit ? new CyCity(m_pUnit->bombardTarget(pPlot->getPlot())) : false;
+	return m_pUnit ? new CyCity(m_pUnit->bombardTarget(*pPlot->getPlot())) : NULL;
 }
 
 bool CyUnit::canBombard(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canBombard(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canBombard(*pPlot->getPlot()) : false;
 }
 
 bool CyUnit::canPillage(CyPlot* pPlot)
 {
-	return m_pUnit ? m_pUnit->canPillage(pPlot->getPlot()) : false;
+	return m_pUnit ? m_pUnit->canPillage(*pPlot->getPlot()) : false;
 }
 
 //SuperSpies: TSHEEP Assassin Mission
@@ -329,7 +335,9 @@ bool CyUnit::canSpread(CyPlot* pPlot, int /*ReligionTypes*/ eReligion, bool bTes
 
 bool CyUnit::canJoin(CyPlot* pPlot, int /*SpecialistTypes*/ eSpecialist)
 {
-	return m_pUnit ? m_pUnit->canFound(pPlot->getPlot(), (SpecialistTypes) eSpecialist) : false;
+	return m_pUnit ? //m_pUnit->canFound(
+			m_pUnit->canJoin( // advc.001
+			pPlot->getPlot(), (SpecialistTypes)eSpecialist) : false;
 }
 
 bool CyUnit::canConstruct(CyPlot* pPlot, int /*BuildingTypes*/ eBuilding)
@@ -409,7 +417,13 @@ bool CyUnit::canGoldenAge(CyPlot* pPlot, bool bTestVisible)
 
 bool CyUnit::canBuild(CyPlot* pPlot, int /*BuildTypes*/ eBuild, bool bTestVisible)
 {
-	return m_pUnit ? m_pUnit->canBuild(pPlot->getPlot(), (BuildTypes) eBuild, bTestVisible) : false;
+	if (m_pUnit == NULL)
+		return false;
+	// <advc> Pass by reference
+	CvPlot const* p = pPlot->getPlot();
+	if (p == NULL)
+		return false; // </advc>
+	return m_pUnit->canBuild(*p, (BuildTypes)eBuild, bTestVisible);
 }
 
 int CyUnit::canLead(CyPlot* pPlot, int iUnitId) const
@@ -453,12 +467,12 @@ bool CyUnit::upgradeAvailable(int /*UnitTypes*/ eFromUnit, int /*UnitClassTypes*
 	return m_pUnit ? m_pUnit->upgradeAvailable((UnitTypes) eFromUnit, (UnitClassTypes) eToUnitClass, iCount) : false;
 }
 
-bool CyUnit::canUpgrade(int /*UnitTypes*/ eUnit, bool bTestVisible)			
+bool CyUnit::canUpgrade(int /*UnitTypes*/ eUnit, bool bTestVisible)
 {
 	return m_pUnit ? m_pUnit->canUpgrade((UnitTypes)eUnit, bTestVisible) : false;
 }
 
-bool CyUnit::hasUpgrade(bool bSearch)			
+bool CyUnit::hasUpgrade(bool bSearch)
 {
 	return m_pUnit ? m_pUnit->hasUpgrade(bSearch) : false;
 }
@@ -576,7 +590,7 @@ bool CyUnit::canBuildRoute()
 
 int /*BuildTypes*/ CyUnit::getBuildType()
 {
-	return (int) m_pUnit ? m_pUnit->getBuildType() : (int) NO_BUILD;
+	return (int)(m_pUnit ? m_pUnit->getBuildType() : NO_BUILD); // kmodx
 }
 
 int CyUnit::workRate(bool bMax)
@@ -601,7 +615,7 @@ bool CyUnit::isOnlyDefensive()
 
 bool CyUnit::isNoCapture()
 {
-	return m_pUnit ? m_pUnit->isNoCapture() : false;
+	return m_pUnit ? m_pUnit->isNoCityCapture() : false;
 }
 
 bool CyUnit::isRivalTerritory()
@@ -656,7 +670,7 @@ bool CyUnit::isDefending()
 
 bool CyUnit::isCombat()
 {
-	return m_pUnit ? m_pUnit->isCombat() : false;
+	return m_pUnit ? m_pUnit->isInCombat() : false;
 }
 
 int CyUnit::maxHitPoints()
@@ -789,7 +803,11 @@ int CyUnit::airCombatDamage(CyUnit* pDefender)
 
 CyUnit* CyUnit::bestInterceptor(CyPlot* pPlot)
 {
-	return m_pUnit ? new CyUnit(m_pUnit->bestInterceptor(pPlot->getPlot())) : false;
+	//return m_pUnit ? new CyUnit(m_pUnit->bestInterceptor(pPlot->getPlot())) : false;
+	// <advc>
+	if (m_pUnit == NULL || pPlot == NULL || pPlot->getPlot() == NULL)
+		return NULL;
+	return new CyUnit(m_pUnit->bestInterceptor(*pPlot->getPlot())); // </advc>
 }
 
 bool CyUnit::isAutomated()
@@ -1048,7 +1066,7 @@ bool CyUnit::isFull()
 	return m_pUnit ? m_pUnit->isFull() : false;
 }
 
-int CyUnit::cargoSpaceAvailable(int /*SpecialUnitTypes*/ eSpecialCargo, int /*DomainTypes*/ eDomainCargo)	 
+int CyUnit::cargoSpaceAvailable(int /*SpecialUnitTypes*/ eSpecialCargo, int /*DomainTypes*/ eDomainCargo)
 {
 	return m_pUnit ? m_pUnit->cargoSpaceAvailable((SpecialUnitTypes) eSpecialCargo, (DomainTypes) eDomainCargo) : -1;
 }
@@ -1058,10 +1076,10 @@ bool CyUnit::hasCargo()
 	return m_pUnit ? m_pUnit->hasCargo() : false;
 }
 
-bool CyUnit::canCargoAllMove()
+/* bool CyUnit::canCargoAllMove()
 {
 	return m_pUnit ? m_pUnit->canCargoAllMove() : false;
-}
+} */
 
 int CyUnit::getUnitAICargo(UnitAITypes eUnitAI)
 {
@@ -1080,7 +1098,8 @@ int CyUnit::getGroupID()
 
 bool CyUnit::isInGroup()
 {
-	return m_pUnit ? m_pUnit->isInGroup() : false;
+	// advc: Cut from CvUnit::isInGroup. I've removed that function.
+	return m_pUnit ? (m_pUnit->getGroupID() != FFreeList::INVALID_INDEX) : false;
 }
 
 bool CyUnit::isGroupHead()
@@ -1090,7 +1109,7 @@ bool CyUnit::isGroupHead()
 
 CySelectionGroup* CyUnit::getGroup()
 {
-	return m_pUnit ? new CySelectionGroup( m_pUnit->getGroup() ) : NULL;
+	return m_pUnit ? new CySelectionGroup(m_pUnit->getGroup()) : NULL;
 }
 
 int CyUnit::getHotKeyNumber()
@@ -1106,12 +1125,12 @@ void CyUnit::setHotKeyNumber(int iNewValue)
 
 int CyUnit::getX()
 {
-	return m_pUnit ? m_pUnit->getX_INLINE() : -1;
+	return m_pUnit ? m_pUnit->getX() : -1;
 }
 
 int CyUnit::getY()
 {
-	return m_pUnit ? m_pUnit->getY_INLINE() : -1;
+	return m_pUnit ? m_pUnit->getY() : -1;
 }
 
 void CyUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow)
@@ -1218,7 +1237,10 @@ void CyUnit::setExperience(int iNewValue, int iMax)
 void CyUnit::changeExperience(int iChange, int iMax, bool bFromCombat, bool bInBorders, bool bUpdateGlobal)
 {
 	if (m_pUnit)
-		m_pUnit->changeExperience(iChange, iMax, bFromCombat, bInBorders, bUpdateGlobal);
+	{
+		m_pUnit->changeExperience(iChange, iMax, bFromCombat, bInBorders, //bUpdateGlobal
+				bUpdateGlobal ? 100 : 0); // advc.312
+	}
 }
 
 int CyUnit::getLevel()
@@ -1273,7 +1295,7 @@ int CyUnit::getBlitzCount()
 	return m_pUnit ? m_pUnit->getBlitzCount() : -1;
 }
 
-bool CyUnit::isBlitz()	 
+bool CyUnit::isBlitz()
 {
 	return m_pUnit ? m_pUnit->isBlitz() : false;
 }
@@ -1283,7 +1305,7 @@ int CyUnit::getAmphibCount()
 	return m_pUnit ? m_pUnit->getAmphibCount() : -1;
 }
 
-bool CyUnit::isAmphib()		 
+bool CyUnit::isAmphib()
 {
 	return m_pUnit ? m_pUnit->isAmphib() : false;
 }
@@ -1293,22 +1315,22 @@ int CyUnit::getRiverCount()
 	return m_pUnit ? m_pUnit->getRiverCount() : -1;
 }
 
-bool CyUnit::isRiver()	 
+bool CyUnit::isRiver()
 {
 	return m_pUnit ? m_pUnit->isRiver() : false;
 }
 
-bool CyUnit::isEnemyRoute()	
+bool CyUnit::isEnemyRoute()
 {
 	return m_pUnit ? m_pUnit->isEnemyRoute(): false;
 }
 
-bool CyUnit::isAlwaysHeal()			 
+bool CyUnit::isAlwaysHeal()
 {
 	return m_pUnit ? m_pUnit->isAlwaysHeal(): false;
 }
 
-bool CyUnit::isHillsDoubleMove()			 
+bool CyUnit::isHillsDoubleMove()
 {
 	return m_pUnit ? m_pUnit->isHillsDoubleMove(): false;
 }
@@ -1456,7 +1478,7 @@ void CyUnit::setImmobileTimer(int iNewValue)
 	}
 }
 
-bool CyUnit::isMadeAttack()	 
+bool CyUnit::isMadeAttack()
 {
 	return m_pUnit ? m_pUnit->isMadeAttack() : false;
 }
@@ -1467,7 +1489,7 @@ void CyUnit::setMadeAttack(bool bNewValue)
 		m_pUnit->setMadeAttack(bNewValue);
 }
 
-bool CyUnit::isMadeInterception()	 
+bool CyUnit::isMadeInterception()
 {
 	return m_pUnit ? m_pUnit->isMadeInterception() : false;
 }
@@ -1478,7 +1500,7 @@ void CyUnit::setMadeInterception(bool bNewValue)
 		m_pUnit->setMadeInterception(bNewValue);
 }
 
-bool CyUnit::isPromotionReady() 
+bool CyUnit::isPromotionReady()
 {
 	return m_pUnit ? m_pUnit->isPromotionReady() : false;
 }
@@ -1491,7 +1513,7 @@ void CyUnit::setPromotionReady(bool bNewValue)
 
 int CyUnit::getOwner()
 {
-	return m_pUnit ? m_pUnit->getOwnerINLINE() : -1;
+	return m_pUnit ? m_pUnit->getOwner() : -1;
 }
 
 int CyUnit::getVisualOwner()
@@ -1501,7 +1523,7 @@ int CyUnit::getVisualOwner()
 
 int CyUnit::getCombatOwner(int iForTeam)
 {
-	return m_pUnit ? m_pUnit->getCombatOwner((TeamTypes)iForTeam, m_pUnit->plot()) : -1;
+	return m_pUnit ? m_pUnit->getCombatOwner((TeamTypes)iForTeam, m_pUnit->getPlot()) : -1;
 }
 
 int CyUnit::getTeam()
@@ -1658,11 +1680,17 @@ void CyUnit::setUnitAIType(int /*UnitAITypes*/ iNewValue)
 {
 	if (m_pUnit)
 	{
-		m_pUnit->AI_setUnitAIType((UnitAITypes)iNewValue);
+		m_pUnit->AI().AI_setUnitAIType((UnitAITypes)iNewValue);
 	}
 }
 
-bool CyUnit::IsSelected( void )
+// advc.154:
+bool CyUnit::isWorker()
+{
+	return m_pUnit ? m_pUnit->isWorker() : false;
+}
+
+bool CyUnit::IsSelected()
 {
 	return m_pUnit ? m_pUnit->IsSelected() : false;
 }
@@ -1680,7 +1708,7 @@ void CyUnit::centerCamera()
 {
 	if (m_pUnit)
 	{
-		gDLL->getInterfaceIFace()->centerCamera(m_pUnit);
+		gDLL->UI().centerCamera(m_pUnit);
 	}
 }
 

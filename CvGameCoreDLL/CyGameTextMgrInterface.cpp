@@ -7,7 +7,7 @@
 
 void CyGameTextMgrInterface()
 {
-	OutputDebugString("Python Extension Module - CyTextMgr\n");
+	printToConsole("Python Extension Module - CyTextMgr\n");
 
 	python::class_<CyGameTextMgr>("CyGameTextMgr")
 		.def("isNone", &CyGameTextMgr::isNone, "bool () - Checks to see if pointer points to a real object")
@@ -22,7 +22,11 @@ void CyGameTextMgrInterface()
 		.def("getNetStats", &CyGameTextMgr::getNetStats, "wstring (int /*PlayerTypes*/ iPlayer)")
 		.def("getTechHelp", &CyGameTextMgr::getTechHelp, "wstring (int iTech, bool bCivilopediaText, bool bPlayerContext, bool bStrategyText, bool bTreeInfo, int iFromTech)")
 		.def("getUnitHelp", &CyGameTextMgr::getUnitHelp, "wstring (int iUnit, bool bCivilopediaText, bool bStrategyText, bool bTechChooserText, CyCity* pCity)")
+		// advc.069:
+		.def("getBasicUnitHelp", &CyGameTextMgr::getBasicUnitHelp, "wstring (int iUnit, bool bCivilopediaText)")
 		.def("getSpecificUnitHelp", &CyGameTextMgr::getSpecificUnitHelp, "wstring (CyUnit* pUnit, bool bOneLine, bool bShort)")
+		// advc.004:
+		.def("getHurtUnitStrength", &CyGameTextMgr::getHurtUnitStrength, "wstring (CyUnit* pUnit)")
 		.def("getBuildingHelp", &CyGameTextMgr::getBuildingHelp, "wstring (int iBuilding, bool bCivilopediaText, bool bStrategyText, bool bTechChooserText, CyCity* pCity)")
 		.def("getProjectHelp", &CyGameTextMgr::getProjectHelp, "wstring (int iProject, bool bCivilopediaText, CyCity* pCity)")
 		.def("getPromotionHelp", &CyGameTextMgr::getPromotionHelp, "wstring (int iPromotion, bool bCivilopediaText)")

@@ -63,12 +63,12 @@ public:
 
 	int getMapWidth() const;
 	int getMapHeight() const;
+	int getMinimapSize() const; // advc.106m
 
 	const char* getModName() const;
 
 private:
 	CvReplayInfo* m_pHoF;
-
 	CvReplayInfo m_replay;
 };
 

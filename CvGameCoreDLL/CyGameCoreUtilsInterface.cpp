@@ -1,10 +1,5 @@
-#pragma component (mintypeinfo, on)
-
 #include "CvGameCoreDLL.h"
 #include "CyGameCoreUtils.h"
-#include "CyPlot.h"
-#include "CyCity.h"
-#include "CyUnit.h"
 
 //
 // Python interface for CvgameCoreUtils.h.
@@ -12,7 +7,7 @@
 
 void CyGameCoreUtilsPythonInterface()
 {
-	OutputDebugString("Python Extension Module - CyGameCoreUtilsPythonInterface\n");
+	printToConsole("Python Extension Module - CyGameCoreUtilsPythonInterface\n");
 
 	python::def("cyIntRange", cyIntRange,"int (int iNum, int iLow, int iHigh)");
 	python::def("cyFloatRange", cyFloatRange,"float (float fNum, float fLow, float fHigh)");
@@ -37,22 +32,24 @@ void CyGameCoreUtilsPythonInterface()
 	python::def("estimateDirection", cyEstimateDirection, "DirectionTypes (int iDX, int iDY)");
 
 	python::def("atWar", cyAtWar,"bool (int eTeamA, int eTeamB)");
-	python::def("isPotentialEnemy", cyIsPotentialEnemy,"bool (int eOurTeam, int eTheirTeam)");
+	// advc: No longer exposed
+	//python::def("isPotentialEnemy", cyIsPotentialEnemy,"bool (int eOurTeam, int eTheirTeam)");
 
 	python::def("getCity", cyGetCity, python::return_value_policy<python::manage_new_object>(), "CyPlot* (IDInfo city)");
 	python::def("getUnit", cyGetUnit, python::return_value_policy<python::manage_new_object>(), "CyUnit* (IDInfo unit)");
 
-	python::def("isPromotionValid", cyIsPromotionValid, "bool (int /*PromotionTypes*/ ePromotion, int /*UnitTypes*/ eUnit, bool bLeader)");
-	python::def("getPopulationAsset", cyGetPopulationAsset, "int (int iPopulation)");
+	/*python::def("getPopulationAsset", cyGetPopulationAsset, "int (int iPopulation)");
 	python::def("getLandPlotsAsset", cyGetLandPlotsAsset, "int (int iLandPlots)");
 	python::def("getPopulationPower", cyGetPopulationPower, "int (int iPopulation)");
 	python::def("getPopulationScore", cyGetPopulationScore, "int (int iPopulation)");
 	python::def("getLandPlotsScore", cyGetLandPlotsScore, "int (int iPopulation)");
-	python::def("getTechScore", cyGetTechScore, "int (int /*TechTypes*/ eTech)");
-	python::def("getWonderScore", cyGetWonderScore, "int (int /*BuildingClassTypes*/ eWonderClass)");
-	python::def("finalImprovementUpgrade", cyFinalImprovementUpgrade, "int /*ImprovementTypes*/ (int /*ImprovementTypes*/ eImprovement, int iCount)");
+	python::def("getTechScore", cyGetTechScore, "int (int eTech)");
+	python::def("getWonderScore", cyGetWonderScore, "int (int eWonderClass)");*/ // advc: No longer exposed
 
-	python::def("getWorldSizeMaxConscript", cyGetWorldSizeMaxConscript, "int (int /*CivicTypes*/ eCivic)");
+	python::def("isPromotionValid", cyIsPromotionValid, "bool (int /*PromotionTypes*/ ePromotion, int /*UnitTypes*/ eUnit, bool bLeader)");
+	python::def("finalImprovementUpgrade", cyFinalImprovementUpgrade, "int /*ImprovementTypes*/ (int /*ImprovementTypes*/ eImprovement)");
+
+	//python::def("getWorldSizeMaxConscript", cyGetWorldSizeMaxConscript, "int (int /*CivicTypes*/ eCivic)"); // advc: No longer exposed
 	python::def("isReligionTech", cyIsReligionTech, "int (int /*TechTypes*/ eTech)");
 
 	python::def("isTechRequiredForUnit", cyIsTechRequiredForUnit, "bool (int /*TechTypes*/ eTech, int /*UnitTypes*/ eUnit)");
@@ -72,20 +69,15 @@ void CyGameCoreUtilsPythonInterface()
 	python::def("getCombatOdds", cyGetCombatOdds, "int (CyUnit* pAttacker, CyUnit* pDefender)");
 	python::def("getEspionageModifier", cyGetEspionageModifier, "int (int /*TeamTypes*/ iOurTeam, int /*TeamTypes*/ iTargetTeam)");
 
-// BUG - Unit Experience - start
-	python::def("calculateExperience", cyCalculateExperience, "int (int iLevel, int /*PlayerTypes*/ iPlayer)");
-	python::def("calculateLevel", cyCalculateLevel, "int (int iExperience, int /*PlayerTypes*/ iPlayer)");
-// BUG - Unit Experience - end
-	
-	// edead: start
-	python::def("getTurnForYear", cyGetTurnForYear, "int (int iTurnYear)");
-	python::def("getGameTurnForYear", cyGetGameTurnForYear, "int (int iTurnYear, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	python::def("getGameTurnForMonth", cyGetGameTurnForMonth, "int (int iTurnMonth, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	python::def("getTurnYearForGame", cyGetTurnYearForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	python::def("getTurnMonthForGame", cyGetTurnMonthForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	// edead: end
+	python::def("cyUpdatePlotIndicatorSize", cyUpdatePlotIndicatorSize, "void (void)"); // advc.092b
 
-	python::def("fileLog", cyLog, "void (string logfile, string message)");
-	python::def("setDirty", cySetDirty, "void (int iDirtyBit, bool bNewValue)");
-	python::def("validatePeriodConstant", cyValidatePeriodConstant, "bool (int iPeriod)");
+    python::def("getTurnForYear", cyGetTurnForYear, "int (int iTurnYear)"); // doc (edead)
+    python::def("getGameTurnForYear", cyGetGameTurnForYear, "int (int iTurnYear, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)"); // doc (edead)
+    python::def("getGameTurnForMonth", cyGetGameTurnForMonth, "int (int iTurnMonth, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)"); // doc (edead)
+    python::def("getTurnYearForGame", cyGetTurnYearForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)"); // doc (edead)
+    python::def("getTurnMonthForGame", cyGetTurnMonthForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)"); // doc (edead)
+
+    python::def("fileLog", cyLog, "void (string logfile, string message)"); // doc
+    python::def("setDirty", cySetDirty, "void (int iDirtyBit, bool bNewValue)"); // doc
+    python::def("validatePeriodConstant", cyValidatePeriodConstant, "bool (int iPeriod)"); // doc
 }

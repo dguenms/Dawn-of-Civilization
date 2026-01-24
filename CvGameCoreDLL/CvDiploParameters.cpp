@@ -1,5 +1,8 @@
 #include "CvGameCoreDLL.h"
 #include "CvDiploParameters.h"
+#include "CvGamePlay.h"
+#include "FVariableSystem.h" // advc (moved from header)
+
 
 CvDiploParameters::CvDiploParameters(PlayerTypes ePlayer) :
 	m_eWhoTalkingTo(ePlayer),
@@ -12,14 +15,14 @@ CvDiploParameters::CvDiploParameters(PlayerTypes ePlayer) :
 	m_bOurOffering(false),
 	m_bTheirOffering(false)
 {
-	m_ourOffer.clear();
-	m_theirOffer.clear();
+	/*m_ourOffer.clear();
+	m_theirOffer.clear();*/ // advc: no need
 }
 
-CvDiploParameters::~CvDiploParameters() 
+CvDiploParameters::~CvDiploParameters()
 {
-	m_ourOffer.clear();
-	m_theirOffer.clear();
+	/*m_ourOffer.clear();
+	m_theirOffer.clear();*/ // advc
 }
 
 void CvDiploParameters::setWhoTalkingTo(PlayerTypes eWhoTalkingTo)
@@ -28,7 +31,13 @@ void CvDiploParameters::setWhoTalkingTo(PlayerTypes eWhoTalkingTo)
 }
 
 PlayerTypes CvDiploParameters::getWhoTalkingTo() const
-{
+{	/*  <advc.134a> When checking a peace offer, the EXE calls this function
+		shortly before an (erroneous) at-war check. Tell the recipient of the offer
+		to feign peace. */
+	CvTeam& kActiveTeam = GET_TEAM(GC.getGame().getActiveTeam());
+	if(kActiveTeam.isPeaceOfferStage(1, TEAMID(m_eWhoTalkingTo)))
+		kActiveTeam.advancePeaceOfferStage(TEAMID(m_eWhoTalkingTo));
+	// </advc.134a>
 	return m_eWhoTalkingTo;
 }
 
@@ -88,28 +97,19 @@ SET_DIPLO_COMMENT_ARGS
 void CvDiploParameters::setDiploComment(DiploCommentTypes eCommentType, int arg1, int arg2, int arg3)
 SET_DIPLO_COMMENT_ARGS
 
-void CvDiploParameters::setDiploComment(DiploCommentTypes eCommentType, const std::vector<FVariable>* args)
+void CvDiploParameters::setDiploComment(DiploCommentTypes eCommentType,
+	std::vector<FVariable> const* pArgs)
 {
 	m_eCommentType = eCommentType;
-	if (args)
-		m_diploCommentArgs = *args;
+	if (pArgs != NULL)
+		m_diploCommentArgs = *pArgs;
 }
 
-DiploCommentTypes CvDiploParameters::getDiploComment() const
+void CvDiploParameters::setOurOfferList(CLinkList<TradeData> const& kOurOffer)
 {
-	return m_eCommentType;
-}
-
-void CvDiploParameters::setOurOfferList(const CLinkList<TradeData>& ourOffer)
-{
-	CLLNode<TradeData> *pNode;
-
 	m_ourOffer.clear();
-
-	for (pNode = ourOffer.head(); pNode; pNode = ourOffer.next(pNode))
-	{
-		m_ourOffer.insertAtEnd(pNode->m_data);
-	}
+	FOR_EACH_TRADE_ITEM(kOurOffer)
+		m_ourOffer.insertAtEnd(*pItem);
 }
 
 const CLinkList<TradeData>& CvDiploParameters::getOurOfferList() const
@@ -117,19 +117,14 @@ const CLinkList<TradeData>& CvDiploParameters::getOurOfferList() const
 	return m_ourOffer;
 }
 
-void CvDiploParameters::setTheirOfferList(const CLinkList<TradeData>& theirOffer)
+void CvDiploParameters::setTheirOfferList(CLinkList<TradeData> const& kTheirOffer)
 {
-	CLLNode<TradeData> *pNode;
-
 	m_theirOffer.clear();
-
-	for (pNode = theirOffer.head(); pNode; pNode = theirOffer.next(pNode))
-	{
-		m_theirOffer.insertAtEnd(pNode->m_data);
-	}
+	FOR_EACH_TRADE_ITEM(kTheirOffer)
+		m_theirOffer.insertAtEnd(*pItem);
 }
 
-const CLinkList<TradeData>& CvDiploParameters::getTheirOfferList() const
+CLinkList<TradeData> const& CvDiploParameters::getTheirOfferList() const
 {
 	return m_theirOffer;
 }
@@ -138,7 +133,8 @@ void CvDiploParameters::setRenegotiate(bool bValue)
 {
 	m_bRenegotiate = bValue;
 }
-
+/*  advc.003j (comment): m_bRenegotiate is never set, and while the EXE calls
+	getRenegotiate, it doesn't seem to matter if true or false is returned. */
 bool CvDiploParameters::getRenegotiate() const
 {
 	return m_bRenegotiate;
@@ -216,13 +212,12 @@ const wchar* CvDiploParameters::getChatText() const
 	return m_szChatText;
 }
 
-
 void CvDiploParameters::read(FDataStreamBase& stream)
 {
-	int iType;
-	uint uiFlag=0;
-	stream.Read(&uiFlag);	// flags for expansion
+	uint uiFlag;
+	stream.Read(&uiFlag);
 
+	int iType;
 	stream.Read(&iType);
 	m_eWhoTalkingTo = (PlayerTypes)iType;
 	stream.Read(&iType);
@@ -238,17 +233,17 @@ void CvDiploParameters::read(FDataStreamBase& stream)
 	stream.ReadString(m_szChatText);
 
 	// read diplo args vec
-	int i, iSize;
+	int iSize;
 	stream.Read(&iSize);
 	m_diploCommentArgs.resize(iSize);
-	for(i=0;i<iSize;i++)
+	for (int i = 0; i < iSize; i++)
 		m_diploCommentArgs[i].Read(&stream);
 }
 
 void CvDiploParameters::write(FDataStreamBase& stream) const
 {
-	uint uiFlag=0;
-	stream.Write(uiFlag);		// flag for expansion
+	uint uiFlag = 0;
+	stream.Write(uiFlag);
 
 	stream.Write(m_eWhoTalkingTo);
 	stream.Write(m_eCommentType);
@@ -263,8 +258,8 @@ void CvDiploParameters::write(FDataStreamBase& stream) const
 	stream.WriteString(m_szChatText);
 
 	// write diplo args vec
-	int i, iSize = m_diploCommentArgs.size();
+	int iSize = m_diploCommentArgs.size();
 	stream.Write(iSize);
-	for(i=0;i<iSize;i++)
+	for (int i = 0; i < iSize; i++)
 		m_diploCommentArgs[i].Write(&stream);
 }

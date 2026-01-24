@@ -1,370 +1,329 @@
-//
-// Python wrapper class for CvGame 
-// 
+// Python wrapper class for CvGame
 
 #include "CvGameCoreDLL.h"
 #include "CyGame.h"
 #include "CvGameAI.h"
-#include "CyGlobalContext.h"
+#include "StartPointsAsHandicap.h" // advc.250b
+#include "RiseFall.h" // advc.703
 #include "CyPlayer.h"
-//#include "CvEnums.h"
-#include "CyCity.h"
 #include "CyDeal.h"
 #include "CyReplayInfo.h"
-#include "CvReplayInfo.h"
-#include "CyPlot.h"
-
-// BUG - MapFinder - start
-#include "CvDLLEngineIFaceBase.h"
-// BUG - MapFinder - end
-
-// BUG - EXE/DLL Paths - start
-#include "CvInitCore.h"
-// BUG - EXE/DLL Paths - end
-
-CyGame::CyGame() : m_pGame(NULL)
-{
-	m_pGame = &GC.getGameINLINE();
-}
-
-CyGame::CyGame(CvGame* pGame) : m_pGame(pGame)
-{
-
-}
-
-CyGame::CyGame(CvGameAI* pGame) : m_pGame(pGame)
-{
-
-}
+#include "CvMap.h" // advc.enum
 
 void CyGame::updateScore(bool bForce)
 {
-	if (m_pGame)
-	{
-		m_pGame->updateScore(bForce);
-	}
+	m_kGame.updateScore(bForce);
 }
 
 void CyGame::cycleCities(bool bForward, bool bAdd)
 {
-	if (m_pGame)
-		m_pGame->cycleCities(bForward, bAdd);
+	m_kGame.cycleCities(bForward, bAdd);
 }
 
 void CyGame::cycleSelectionGroups(bool bClear, bool bForward, bool bWorkers)
 {
-	if (m_pGame)
-		m_pGame->cycleSelectionGroups(bClear, bForward, bWorkers);
+	m_kGame.cycleSelectionGroups(bClear, bForward, bWorkers);
 }
 
 bool CyGame::cyclePlotUnits(CyPlot* pPlot, bool bForward, bool bAuto, int iCount)
 {
-	return m_pGame ? m_pGame->cyclePlotUnits(pPlot->getPlot(), bForward, bAuto, iCount) : false;
+	return m_kGame.cyclePlotUnits(pPlot->getPlot(), bForward, bAuto, iCount);
+}
+// advc.154:
+CyUnit* CyGame::getNextUnitInCycle(bool bForward, bool bWorkers)
+{
+	CvUnit* pUnit = GC.getGame().getCycleButtonUnit(bForward, bWorkers);
+	if (pUnit == NULL)
+		return NULL;
+	return new CyUnit(pUnit);
 }
 
 void CyGame::selectionListMove(CyPlot* pPlot, bool bAlt, bool bShift, bool bCtrl)
 {
-	GC.getGameINLINE().selectionListMove(pPlot->getPlot(), bAlt, bShift, bCtrl);
+	GC.getGame().selectionListMove(pPlot->getPlot(), bAlt, bShift, bCtrl);
 }
 
 void CyGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, int iData4, int iFlags, bool bAlt, bool bShift)
 {
-	GC.getGameINLINE().selectionListGameNetMessage(eMessage, iData2, iData3, iData4, iFlags, bAlt, bShift);
+	GC.getGame().selectionListGameNetMessage(eMessage, iData2, iData3, iData4, iFlags, bAlt, bShift);
 }
 
 void CyGame::selectedCitiesGameNetMessage(int eMessage, int iData2, int iData3, int iData4, bool bOption, bool bAlt, bool bShift, bool bCtrl)
 {
-	GC.getGameINLINE().selectedCitiesGameNetMessage(eMessage, iData2, iData3, iData4, bOption, bAlt, bShift, bCtrl);
+	GC.getGame().selectedCitiesGameNetMessage(eMessage, iData2, iData3, iData4, bOption, bAlt, bShift, bCtrl);
 }
 
 void CyGame::cityPushOrder(CyCity* pCity, OrderTypes eOrder, int iData, bool bAlt, bool bShift, bool bCtrl)
 {
-	GC.getGameINLINE().cityPushOrder(pCity->getCity(), eOrder, iData, bAlt, bShift, bCtrl);
+	GC.getGame().cityPushOrder(pCity->getCity(), eOrder, iData, bAlt, bShift, bCtrl);
 }
 
 int CyGame::getSymbolID(int iSymbol)
 {
-	if (m_pGame)
-	{
-		return m_pGame->getSymbolID(iSymbol);
-	}
-
-	return -1;
+	return m_kGame.getSymbolID(iSymbol);
 }
 
 int CyGame::getProductionPerPopulation(int /*HurryTypes*/ eHurry)
 {
-	return m_pGame ? m_pGame->getProductionPerPopulation((HurryTypes) eHurry) : -1;
+	return m_kGame.getProductionPerPopulation((HurryTypes) eHurry);
 }
 
 int CyGame::getAdjustedPopulationPercent(int /*VictoryTypes*/ eVictory)
 {
-	return m_pGame ? m_pGame->getAdjustedPopulationPercent((VictoryTypes) eVictory) : -1;
+	return m_kGame.getAdjustedPopulationPercent((VictoryTypes) eVictory);
 }
 
 int CyGame::getAdjustedLandPercent(int /* VictoryTypes*/ eVictory)
 {
-	return m_pGame ? m_pGame->getAdjustedLandPercent((VictoryTypes) eVictory) : -1;
+	return m_kGame.getAdjustedLandPercent((VictoryTypes) eVictory);
+}
+// advc.178:
+bool CyGame::isDiploVictoryValid()
+{
+	return m_kGame.isDiploVictoryValid();
 }
 
 bool CyGame::isTeamVote(int /*VoteTypes*/ eVote) const
 {
-	return m_pGame ? m_pGame->isTeamVote((VoteTypes) eVote) : false;
+	return m_kGame.isTeamVote((VoteTypes) eVote);
 }
 
 bool CyGame::isChooseElection(int /*VoteTypes*/ eVote) const
 {
-	return m_pGame ? m_pGame->isChooseElection((VoteTypes) eVote) : false;
+	return m_kGame.isChooseElection((VoteTypes) eVote);
 }
 
 bool CyGame::isTeamVoteEligible(int /*TeamTypes*/ eTeam, int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? m_pGame->isTeamVoteEligible((TeamTypes) eTeam, (VoteSourceTypes)eVoteSource) : false;
+	return m_kGame.isTeamVoteEligible((TeamTypes) eTeam, (VoteSourceTypes)eVoteSource);
 }
 
 int CyGame::countPossibleVote(int /*VoteTypes*/ eVote, int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? m_pGame->countPossibleVote((VoteTypes) eVote, (VoteSourceTypes)eVoteSource) : -1;
+	return m_kGame.countPossibleVote((VoteTypes) eVote, (VoteSourceTypes)eVoteSource);
 }
 
 int CyGame::getVoteRequired(int /*VoteTypes*/ eVote, int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? (int)m_pGame->getVoteRequired((VoteTypes)eVote, (VoteSourceTypes) eVoteSource) : -1;
+	return m_kGame.getVoteRequired((VoteTypes)eVote, (VoteSourceTypes) eVoteSource);
 }
 
 int CyGame::getSecretaryGeneral(int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? (int)m_pGame->getSecretaryGeneral((VoteSourceTypes) eVoteSource) : -1;
+	return m_kGame.getSecretaryGeneral((VoteSourceTypes) eVoteSource);
 }
 
 bool CyGame::canHaveSecretaryGeneral(int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? (int)m_pGame->canHaveSecretaryGeneral((VoteSourceTypes) eVoteSource) : -1;
+	return m_kGame.canHaveSecretaryGeneral((VoteSourceTypes) eVoteSource);
 }
 
 int CyGame::getVoteSourceReligion(int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? (int)m_pGame->getVoteSourceReligion((VoteSourceTypes) eVoteSource) : -1;
+	return m_kGame.getVoteSourceReligion((VoteSourceTypes) eVoteSource);
 }
 
 void CyGame::setVoteSourceReligion(int /*VoteSourceTypes*/ eVoteSource, int /*ReligionTypes*/ eReligion, bool bAnnounce)
 {
-	if (m_pGame)
-	{
-		m_pGame->setVoteSourceReligion((VoteSourceTypes)eVoteSource, (ReligionTypes)eReligion, bAnnounce);
-	}
+	m_kGame.setVoteSourceReligion((VoteSourceTypes)eVoteSource, (ReligionTypes)eReligion, bAnnounce);
 }
 
 int CyGame::countCivPlayersAlive()
 {
-	return m_pGame ? m_pGame->countCivPlayersAlive() : -1;
+	return m_kGame.countCivPlayersAlive();
 }
 
 int CyGame::countCivPlayersEverAlive()
-{
-	return m_pGame ? m_pGame->countCivPlayersEverAlive() : -1;
+{	// advc.opt: was m_kGame.countCivPlayersEverAlive()
+	return m_kGame.getCivPlayersEverAlive();
 }
 
 int CyGame::countCivTeamsAlive()
 {
-	return m_pGame ? m_pGame->countCivTeamsAlive() : -1;
+	return m_kGame.countCivTeamsAlive();
 }
 
 int CyGame::countCivTeamsEverAlive()
-{
-	return m_pGame ? m_pGame->countCivTeamsEverAlive() : -1;
+{	// advc.opt: was m_kGame.countCivTeamsEverAlive()
+	return m_kGame.getCivTeamsEverAlive();
 }
 
 int CyGame::countHumanPlayersAlive()
 {
-	return m_pGame ? m_pGame->countHumanPlayersAlive() : -1;
+	return m_kGame.countHumanPlayersAlive();
 }
 
 int CyGame::countTotalCivPower()
 {
-	return m_pGame ? m_pGame->countTotalCivPower() : -1;
+	return m_kGame.countTotalCivPower();
 }
 
 int CyGame::countTotalNukeUnits()
 {
-	return m_pGame ? m_pGame->countTotalNukeUnits() : -1;
+	return m_kGame.countTotalNukeUnits();
 }
 
 int CyGame::countKnownTechNumTeams(int /*TechTypes*/ eTech)
 {
-	return m_pGame ? m_pGame->countKnownTechNumTeams((TechTypes) eTech) : -1;
+	return m_kGame.countKnownTechNumTeams((TechTypes) eTech);
 }
 
 int CyGame::getNumFreeBonuses(int /*BuildingTypes*/ eBuilding)
 {
-	return m_pGame ? m_pGame->getNumFreeBonuses((BuildingTypes) eBuilding) : -1;
+	return m_kGame.getNumFreeBonuses((BuildingTypes) eBuilding);
 }
 
 int CyGame::countReligionLevels(int /*ReligionTypes*/ eReligion)
 {
-	return m_pGame ? m_pGame->countReligionLevels((ReligionTypes) eReligion) : -1;
+	return m_kGame.countReligionLevels((ReligionTypes) eReligion);
 }
 
 int CyGame::countCorporationLevels(int /*CorporationTypes*/ eCorporation)
 {
-	return m_pGame ? m_pGame->countCorporationLevels((CorporationTypes) eCorporation) : -1;
+	return m_kGame.countCorporationLevels((CorporationTypes) eCorporation);
 }
 
 int CyGame::calculateReligionPercent(int /*ReligionTypes*/ eReligion)
 {
-	return m_pGame ? m_pGame->calculateReligionPercent((ReligionTypes) eReligion) : -1;
+	return m_kGame.calculateReligionPercent((ReligionTypes) eReligion);
 }
 
 int CyGame::goldenAgeLength()
 {
-	return m_pGame ? m_pGame->goldenAgeLength() : -1;
+	return m_kGame.goldenAgeLength();
 }
 
 int CyGame::victoryDelay(int iVictory)
 {
-	return m_pGame ? m_pGame->victoryDelay((VictoryTypes)iVictory) : -1;
+	return m_kGame.victoryDelay((VictoryTypes)iVictory);
 }
 
 int CyGame::getImprovementUpgradeTime(int /*ImprovementTypes*/ eImprovement)
 {
-	return m_pGame ? m_pGame->getImprovementUpgradeTime((ImprovementTypes) eImprovement) : -1;
+	return m_kGame.getImprovementUpgradeTime((ImprovementTypes) eImprovement);
 }
 
 bool CyGame::canTrainNukes()
 {
-	return m_pGame ? m_pGame->canTrainNukes() : false;
+	return m_kGame.canTrainNukes();
 }
 
 int CyGame::getCurrentEra()
 {
-	return m_pGame ? (int) m_pGame->getCurrentEra() : (int) NO_ERA;
+	return m_kGame.getCurrentEra();
 }
 
 int CyGame::getActiveTeam()
 {
-	return m_pGame ? (int) m_pGame->getActiveTeam() : (int) NO_TEAM;
+	return m_kGame.getActiveTeam();
 }
 
 int /* CivilizationTypes */ CyGame::getActiveCivilizationType()
 {
-	return m_pGame ? (int) m_pGame->getActiveCivilizationType() : (int) NO_CIVILIZATION;
+	return m_kGame.getActiveCivilizationType();
 }
 
 bool CyGame::isNetworkMultiPlayer()
 {
-	return m_pGame ? m_pGame->isNetworkMultiPlayer() : false;
+	return m_kGame.isNetworkMultiPlayer();
 }
 
 bool CyGame::isGameMultiPlayer()
 {
-	return m_pGame ? m_pGame->isGameMultiPlayer() : false;
+	return m_kGame.isGameMultiPlayer();
 }
 
 bool CyGame::isTeamGame()
 {
-	return m_pGame ? m_pGame->isTeamGame() : false;
+	return m_kGame.isTeamGame();
 }
 
 bool CyGame::isModem()
 {
-	return m_pGame ? m_pGame->isModem() : true;	// err on the side of caution
+	return m_kGame.isModem(); // err on the side of caution
 }
 
 void CyGame::setModem(bool bModem)
 {
-	if (m_pGame)
-		m_pGame->setModem(bModem);
+	m_kGame.setModem(bModem);
 }
 
 void CyGame::reviveActivePlayer()
 {
-	if (m_pGame)
-		m_pGame->reviveActivePlayer();
+	m_kGame.reviveActivePlayer();
 }
 
 int CyGame::getNumHumanPlayers()
 {
-	return m_pGame ? m_pGame->getNumHumanPlayers() : -1;
+	return m_kGame.getNumHumanPlayers();
 }
 
 int CyGame::getGameTurn()
 {
-	return m_pGame ? m_pGame->getGameTurn() : -1;
+	return m_kGame.getGameTurn();
 }
 
 void CyGame::setGameTurn(int iNewValue)
 {
-	if (m_pGame)
-		m_pGame->setGameTurn(iNewValue);
+	m_kGame.setGameTurn(iNewValue);
 }
 
 int CyGame::getTurnYear(int iGameTurn)
 {
-	return  m_pGame ? m_pGame->getTurnYear(iGameTurn) : -1;
+	return  m_kGame.getTurnYear(iGameTurn);
 }
 
 int CyGame::getGameTurnYear()
 {
-	return  m_pGame ? m_pGame->getGameTurnYear() : -1;
+	return  m_kGame.getGameTurnYear();
 }
 
 int CyGame::getElapsedGameTurns()
 {
-	return m_pGame ? m_pGame->getElapsedGameTurns() : -1;
+	return m_kGame.getElapsedGameTurns();
 }
 
 int CyGame::getMaxTurns() const
 {
-	return (NULL != m_pGame ? m_pGame->getMaxTurns() : -1);
+	return m_kGame.getMaxTurns();
 }
 
 void CyGame::setMaxTurns(int iNewValue)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->setMaxTurns(iNewValue);
-	}
+	m_kGame.setMaxTurns(iNewValue);
 }
 
 void CyGame::changeMaxTurns(int iChange)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->changeMaxTurns(iChange);
-	}
+	m_kGame.changeMaxTurns(iChange);
 }
 
 int CyGame::getMaxCityElimination() const
 {
-	return (NULL != m_pGame ? m_pGame->getMaxCityElimination() : -1);
+	return m_kGame.getMaxCityElimination();
 }
 
 void CyGame::setMaxCityElimination(int iNewValue)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->setMaxCityElimination(iNewValue);
-	}
+	m_kGame.setMaxCityElimination(iNewValue);
 }
 
 int CyGame::getNumAdvancedStartPoints() const
 {
-	return (NULL != m_pGame ? m_pGame->getNumAdvancedStartPoints() : -1);
+	return m_kGame.getNumAdvancedStartPoints();
 }
 
 void CyGame::setNumAdvancedStartPoints(int iNewValue)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->setNumAdvancedStartPoints(iNewValue);
-	}
+	m_kGame.setNumAdvancedStartPoints(iNewValue);
 }
 
 int CyGame::getStartTurn() const
 {
-	return (NULL != m_pGame ? m_pGame->getStartTurn() : -1);
+	return m_kGame.getStartTurn();
 }
 
+// doc
 void CyGame::setStartTurn(int iNewValue)
 {
 	if (m_pGame) m_pGame->setStartTurn(iNewValue);
@@ -372,40 +331,35 @@ void CyGame::setStartTurn(int iNewValue)
 
 int CyGame::getStartYear() const
 {
-	return (NULL != m_pGame ? m_pGame->getStartYear() : -1);
+	return m_kGame.getStartYear();
 }
 
 void CyGame::setStartYear(int iNewValue)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->setStartYear(iNewValue);
-	}
+	m_kGame.setStartYear(iNewValue);
 }
 
 int CyGame::getEstimateEndTurn() const
 {
-	return (NULL != m_pGame ? m_pGame->getEstimateEndTurn() : -1);
+	return m_kGame.getEstimateEndTurn();
 }
 
 void CyGame::setEstimateEndTurn(int iNewValue)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->setEstimateEndTurn(iNewValue);
-	}
+	m_kGame.setEstimateEndTurn(iNewValue);
 }
 
 int CyGame::getTurnSlice() const
 {
-	return (NULL != m_pGame ? m_pGame->getTurnSlice() : -1);
+	return m_kGame.getTurnSlice();
 }
 
 int CyGame::getMinutesPlayed() const
 {
-	return (NULL != m_pGame ? m_pGame->getMinutesPlayed() : 0);
+	return m_kGame.getMinutesPlayed();
 }
 
+// doc
 int CyGame::getSecondsPlayed() const
 {
 	return m_pGame ? m_pGame->getSecondsPlayed() : 0;
@@ -413,203 +367,230 @@ int CyGame::getSecondsPlayed() const
 
 int CyGame::getTargetScore() const
 {
-	return (NULL != m_pGame ? m_pGame->getTargetScore() : -1);
+	return m_kGame.getTargetScore();
 }
 
 void CyGame::setTargetScore(int iNewValue)
 {
-	if (NULL != m_pGame)
-	{
-		m_pGame->setTargetScore(iNewValue);
-	}
+	m_kGame.setTargetScore(iNewValue);
 }
 
 int CyGame::getNumGameTurnActive()
 {
-	return m_pGame ? m_pGame->getNumGameTurnActive() : -1;
+	return m_kGame.getNumGameTurnActive();
 }
 
 int CyGame::countNumHumanGameTurnActive()
 {
-	return m_pGame ? m_pGame->countNumHumanGameTurnActive() : -1;
+	return m_kGame.countNumHumanGameTurnActive();
 }
 
 int CyGame::getNumCities()
 {
-	return m_pGame ? m_pGame->getNumCities() : -1;
+	return m_kGame.getNumCities();
 }
 
 int CyGame::getNumCivCities()
 {
-	return m_pGame ? m_pGame->getNumCivCities() : -1;
+	return m_kGame.getNumCivCities();
 }
 
 int CyGame::getTotalPopulation()
 {
-	return m_pGame ? m_pGame->getTotalPopulation() : -1;
+	return m_kGame.getTotalPopulation();
 }
 
 int CyGame::getTradeRoutes() const
 {
-	return m_pGame ? m_pGame->getTradeRoutes() : -1;
+	return m_kGame.getTradeRoutes();
 }
 
 void CyGame::changeTradeRoutes(int iChange)
 {
-	if (m_pGame)
-		m_pGame->changeTradeRoutes(iChange);
+	m_kGame.changeTradeRoutes(iChange);
 }
 
 int CyGame::getFreeTradeCount() const
 {
-	return m_pGame ? m_pGame->getFreeTradeCount() : -1;
+	return m_kGame.getFreeTradeCount();
 }
 
 bool CyGame::isFreeTrade() const
 {
-	return m_pGame ? m_pGame->isFreeTrade() : false;
+	return m_kGame.isFreeTrade();
 }
 
 void CyGame::changeFreeTradeCount(int iChange)
 {
-	if (m_pGame)
-		m_pGame->changeFreeTradeCount(iChange);
+	m_kGame.changeFreeTradeCount(iChange);
 }
 
 int CyGame::getNoNukesCount() const
 {
-	return m_pGame ? m_pGame->getNoNukesCount() : -1;
+	return m_kGame.getNoNukesCount();
 }
 
 bool CyGame::isNoNukes() const
 {
-	return m_pGame ? m_pGame->isNoNukes() : false;
+	return m_kGame.isNoNukes();
 }
 
 void CyGame::changeNoNukesCount(int iChange)
 {
-	if (m_pGame)
-		m_pGame->changeNoNukesCount(iChange);
+	m_kGame.changeNoNukesCount(iChange);
 }
 
 int CyGame::getSecretaryGeneralTimer(int iVoteSource) const
 {
-	return m_pGame ? m_pGame->getSecretaryGeneralTimer((VoteSourceTypes)iVoteSource) : -1;
+	return m_kGame.getSecretaryGeneralTimer((VoteSourceTypes)iVoteSource);
 }
 
 int CyGame::getVoteTimer(int iVoteSource) const
 {
-	return m_pGame ? m_pGame->getVoteTimer((VoteSourceTypes)iVoteSource) : -1;
+	return m_kGame.getVoteTimer((VoteSourceTypes)iVoteSource);
 }
 
 int CyGame::getNukesExploded() const
 {
-	return m_pGame ? m_pGame->getNukesExploded() : -1;
+	return m_kGame.getNukesExploded();
 }
 
 void CyGame::changeNukesExploded(int iChange)
 {
-	if (m_pGame)
-		m_pGame->changeNukesExploded(iChange);
+	m_kGame.changeNukesExploded(iChange);
 }
 
 int CyGame::getMaxPopulation() const
 {
-	return (NULL != m_pGame ? m_pGame->getMaxPopulation() : 0);
+	return m_kGame.getMaxPopulation();
 }
 
 int CyGame::getMaxLand() const
 {
-	return (NULL != m_pGame ? m_pGame->getMaxLand() : 0);
+	return m_kGame.getMaxLand();
 }
 
 int CyGame::getMaxTech() const
 {
-	return (NULL != m_pGame ? m_pGame->getMaxTech() : 0);
+	return m_kGame.getMaxTech();
 }
 
 int CyGame::getMaxWonders() const
 {
-	return (NULL != m_pGame ? m_pGame->getMaxWonders() : 0);
+	return m_kGame.getMaxWonders();
 }
 
 int CyGame::getInitPopulation() const
 {
-	return (NULL != m_pGame ? m_pGame->getInitPopulation() : 0);
+	return m_kGame.getInitPopulation();
 }
 
 int CyGame::getInitLand() const
 {
-	return (NULL != m_pGame ? m_pGame->getInitLand() : 0);
+	return m_kGame.getInitLand();
 }
 
 int CyGame::getInitTech() const
 {
-	return (NULL != m_pGame ? m_pGame->getInitTech() : 0);
+	return m_kGame.getInitTech();
 }
 
 int CyGame::getInitWonders() const
 {
-	return (NULL != m_pGame ? m_pGame->getInitWonders() : 0);
+	return m_kGame.getInitWonders();
 }
 
 int CyGame::getAIAutoPlay() const
 {
-	return (NULL != m_pGame ? m_pGame->getAIAutoPlay() : 0);
+	return m_kGame.getAIAutoPlay();
 }
 
 void CyGame::setAIAutoPlay(int iNewValue)
 {
-	if (m_pGame)
-		m_pGame->setAIAutoPlay(iNewValue);
+	m_kGame.setAIAutoPlay(iNewValue);
 }
+
+// K-Mod, 11/dec/10, start
+int CyGame::getGlobalWarmingIndex() const
+{
+	return m_kGame.getGlobalWarmingIndex();
+}
+
+int CyGame::getGlobalWarmingChances() const
+{
+	return m_kGame.getGlobalWarmingChances();
+}
+
+int CyGame::getGwEventTally() const
+{
+	return m_kGame.getGwEventTally();
+}
+
+int CyGame::calculateGlobalPollution() const
+{
+	return m_kGame.calculateGlobalPollution();
+}
+
+int CyGame::calculateGwLandDefence(int /* PlayerTypes */ ePlayer) const
+{
+	return m_kGame.calculateGwLandDefence((PlayerTypes)ePlayer);
+}
+
+int CyGame::calculateGwSustainabilityThreshold(int /* PlayerTypes */ ePlayer) const
+{
+	return m_kGame.calculateGwSustainabilityThreshold((PlayerTypes)ePlayer);
+}
+
+int CyGame::calculateGwSeverityRating() const
+{
+	return m_kGame.calculateGwSeverityRating();
+}
+// K-Mod end
 
 bool CyGame::isScoreDirty() const
 {
-	return m_pGame ? m_pGame->isScoreDirty() : false;
+	return m_kGame.isScoreDirty();
 }
 
 void CyGame::setScoreDirty(bool bNewValue)
 {
-	if (m_pGame)
-		m_pGame->setScoreDirty(bNewValue);
+	m_kGame.setScoreDirty(bNewValue);
 }
 
 bool CyGame::isCircumnavigated() const
 {
-	return m_pGame ? m_pGame->isCircumnavigated() : false;
+	return m_kGame.isCircumnavigated();
 }
 
-void CyGame::makeCircumnavigated()								 
+void CyGame::makeCircumnavigated()
 {
-	if (m_pGame)
-		m_pGame->makeCircumnavigated();
+	m_kGame.makeCircumnavigated();
 }
 
-//Rhye - start
+// rfc
 int CyGame::getCircumnavigated()
 {
 	return m_pGame ? m_pGame->getCircumnavigated() : false;
 }
 
-void CyGame::setCircumnavigated(int i)								 
+// rfc
+void CyGame::setCircumnavigated(int iNewValue)
 {
 	if (m_pGame)
-		m_pGame->setCircumnavigated(i);
+		m_pGame->setCircumnavigated(iNewValue);
 }
-//Rhye - end
 
 bool CyGame::isDiploVote(int /*VoteSourceTypes*/ eVoteSource) const
 {
-	return m_pGame ? m_pGame->isDiploVote((VoteSourceTypes)eVoteSource) : false;
+	return m_kGame.isDiploVote((VoteSourceTypes)eVoteSource);
 }
 
 void CyGame::changeDiploVote(int /*VoteSourceTypes*/ eVoteSource, int iChange)
 {
-	if (m_pGame)
-		m_pGame->changeDiploVote((VoteSourceTypes)eVoteSource, iChange);
+	m_kGame.changeDiploVote((VoteSourceTypes)eVoteSource, iChange);
 }
 
+// rfc
 bool CyGame::isCheatingEnabled() const
 {
 	return (gDLL->getChtLvl() > 0);
@@ -617,234 +598,248 @@ bool CyGame::isCheatingEnabled() const
 
 bool CyGame::isDebugMode() const
 {
-	return m_pGame ? m_pGame->isDebugMode() : false;
+	return m_kGame.isDebugMode();
 }
 
 void CyGame::toggleDebugMode()
 {
-	if (m_pGame)
-		m_pGame->toggleDebugMode();
+	m_kGame.toggleDebugMode();
 }
 
 int CyGame::getPitbossTurnTime()
 {
-	return m_pGame ? m_pGame->getPitbossTurnTime() : -1;
+	return m_kGame.getPitbossTurnTime();
 }
 
 void CyGame::setPitbossTurnTime(int iHours)
 {
-	if (m_pGame)
-		m_pGame->setPitbossTurnTime(iHours);
+	m_kGame.setPitbossTurnTime(iHours);
 }
 
 bool CyGame::isHotSeat()
 {
-	return m_pGame ? m_pGame->isHotSeat() : false;
+	return m_kGame.isHotSeat();
 }
 
 bool CyGame::isPbem()
 {
-	return m_pGame ? m_pGame->isPbem() : false;
+	return m_kGame.isPbem();
 }
 
 bool CyGame::isPitboss()
 {
-	return m_pGame ? m_pGame->isPitboss() : false;
+	return m_kGame.isPitboss();
 }
 
 bool CyGame::isSimultaneousTeamTurns()
 {
-	return m_pGame ? m_pGame->isSimultaneousTeamTurns() : false;
+	return m_kGame.isSimultaneousTeamTurns();
 }
 
 bool CyGame::isFinalInitialized()
 {
-	return m_pGame ? m_pGame->isFinalInitialized() : false;
+	return m_kGame.isFinalInitialized();
+}
+// advc.061:
+void CyGame::setScreenDimensions(int iWidth, int iHeight)
+{
+	m_kGame.setScreenDimensions(iWidth, iHeight);
 }
 
-int /*PlayerTypes*/ CyGame::getActivePlayer() 
+int /*PlayerTypes*/ CyGame::getActivePlayer()
 {
-	return m_pGame ? (int)m_pGame->getActivePlayer() : -1;
+	return m_kGame.getActivePlayer();
 }
 
 void CyGame::setActivePlayer(int /*PlayerTypes*/ eNewValue, bool bForceHotSeat)
 {
-	if (m_pGame)
-		m_pGame->setActivePlayer((PlayerTypes)eNewValue, bForceHotSeat);
+	m_kGame.setActivePlayer((PlayerTypes)eNewValue, bForceHotSeat);
 }
 
 int CyGame::getPausePlayer()
 {
-	return m_pGame ? m_pGame->getPausePlayer() : -1;
+	return m_kGame.getPausePlayer();
 }
 
 bool CyGame::isPaused()
 {
-	return m_pGame ? m_pGame->isPaused() : false;
+	return m_kGame.isPaused();
 }
 
-int /*PlayerTypes*/ CyGame::getBestLandUnit() 
+int /*PlayerTypes*/ CyGame::getBestLandUnit()
 {
-	return m_pGame ? (int)m_pGame->getBestLandUnit() : -1;
+	return m_kGame.getBestLandUnit();
 }
 
-int CyGame::getBestLandUnitCombat() 
+int CyGame::getBestLandUnitCombat()
 {
-	return m_pGame ? m_pGame->getBestLandUnitCombat() : -1;
+	return m_kGame.getBestLandUnitCombat();
 }
 
-int /*TeamTypes*/ CyGame::getWinner() 
+int /*TeamTypes*/ CyGame::getWinner()
 {
-	return m_pGame ? (int)m_pGame->getWinner() : -1;
+	return m_kGame.getWinner();
 }
 
-int /*VictoryTypes*/ CyGame::getVictory() 
+int /*VictoryTypes*/ CyGame::getVictory()
 {
-	return m_pGame ? (int)m_pGame->getVictory() : -1;
+	return m_kGame.getVictory();
 }
 
 void CyGame::setWinner(int /*TeamTypes*/ eNewWinner, int /*VictoryTypes*/ eNewVictory)
 {
-	if (m_pGame)
-		m_pGame->setWinner((TeamTypes) eNewWinner, (VictoryTypes) eNewVictory);
+	m_kGame.setWinner((TeamTypes) eNewWinner, (VictoryTypes) eNewVictory);
 }
 
-int /*GameStateTypes*/ CyGame::getGameState() 
+int /*GameStateTypes*/ CyGame::getGameState()
 {
-	return m_pGame ? (int)m_pGame->getGameState() : -1;
+	return m_kGame.getGameState();
 }
 
 int /* HandicapTypes */ CyGame::getHandicapType()
 {
-	return m_pGame ? (int) m_pGame->getHandicapType() : (int) NO_HANDICAP;
+	return m_kGame.getHandicapType();
+}
+
+// advc.708:
+int CyGame::getAIHandicap()
+{
+	return m_kGame.getAIHandicap();
 }
 
 CalendarTypes CyGame::getCalendar() const
 {
-	return m_pGame ? m_pGame->getCalendar() : CALENDAR_DEFAULT;
+	return m_kGame.getCalendar();
 }
 
 int /*EraTypes*/ CyGame::getStartEra()
 {
-	return m_pGame ? m_pGame->getStartEra() : -1;
+	return m_kGame.getStartEra();
 }
 
 int /*GameSpeedTypes*/ CyGame::getGameSpeedType()
 {
-	return m_pGame ? m_pGame->getGameSpeedType() : -1;
+	return m_kGame.getGameSpeedType();
 }
 
 int /*PlayerTypes*/ CyGame::getRankPlayer(int iRank)
 {
-	return m_pGame ? m_pGame->getRankPlayer(iRank) : -1;
+	return m_kGame.getRankPlayer((PlayerTypes)iRank);
 }
 
 int CyGame::getPlayerRank(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pGame ? m_pGame->getPlayerRank((PlayerTypes)ePlayer) : -1;
+	return m_kGame.getPlayerRank((PlayerTypes)ePlayer);
 }
 
 int CyGame::getPlayerScore(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pGame ? m_pGame->getPlayerScore((PlayerTypes)ePlayer) : -1;
+	return m_kGame.getPlayerScore((PlayerTypes)ePlayer);
 }
 
 int /*TeamTypes*/ CyGame::getRankTeam(int iRank)
 {
-	return m_pGame ? m_pGame->getRankTeam(iRank) : -1;
+	return m_kGame.getRankTeam((TeamTypes)iRank);
 }
 
 int CyGame::getTeamRank(int /*TeamTypes*/ eTeam)
 {
-	return m_pGame ? m_pGame->getTeamRank((TeamTypes)eTeam) : -1;
+	return m_kGame.getTeamRank((TeamTypes)eTeam);
 }
 
 int CyGame::getTeamScore(int /*TeamTypes*/ eTeam)
 {
-	return m_pGame ? m_pGame->getTeamScore((TeamTypes)eTeam) : -1;
+	return m_kGame.getTeamScore((TeamTypes)eTeam);
+}
+
+/*	advc: Exposed so that players can fix accidental settings
+	through the Python console */
+void CyGame::setVictoryValid(int iVictory, bool b)
+{
+	m_kGame.setVictoryValid((VictoryTypes)iVictory, b);
 }
 
 bool CyGame::isOption(int /*GameOptionTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isOption((GameOptionTypes)eIndex) : -1;
+	return m_kGame.isOption((GameOptionTypes)eIndex);
 }
 
 void CyGame::setOption(int /*GameOptionTypes*/ eIndex, bool bEnabled)
 {
-	if (m_pGame)
-		m_pGame->setOption((GameOptionTypes)eIndex, bEnabled);
+	m_kGame.setOption((GameOptionTypes)eIndex, bEnabled);
 }
 
 bool CyGame::isMPOption(int /*MultiplayerOptionTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isMPOption((MultiplayerOptionTypes)eIndex) : -1;
+	return m_kGame.isMPOption((MultiplayerOptionTypes)eIndex);
 }
 
 bool CyGame::isForcedControl(int /*ForceControlTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isForcedControl((ForceControlTypes)eIndex) : -1;
+	return m_kGame.isForcedControl((ForceControlTypes)eIndex);
 }
 
 int CyGame::getUnitCreatedCount(int /*UnitTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getUnitCreatedCount((UnitTypes)eIndex) : -1;
+	return m_kGame.getUnitCreatedCount((UnitTypes)eIndex);
 }
 
 int CyGame::getUnitClassCreatedCount(int /*UnitClassTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getUnitClassCreatedCount((UnitClassTypes)eIndex) : -1;
+	return m_kGame.getUnitClassCreatedCount((UnitClassTypes)eIndex);
 }
 
 bool CyGame::isUnitClassMaxedOut(int /*UnitClassTypes*/ eIndex, int iExtra)
 {
-	return m_pGame ? m_pGame->isUnitClassMaxedOut((UnitClassTypes)eIndex, iExtra) : -1;
+	return m_kGame.isUnitClassMaxedOut((UnitClassTypes)eIndex, iExtra);
 }
 
-int CyGame::getBuildingClassCreatedCount(int /*BuildingClassTypes*/ eIndex) 
+int CyGame::getBuildingClassCreatedCount(int /*BuildingClassTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getBuildingClassCreatedCount((BuildingClassTypes) eIndex) : -1;
+	return m_kGame.getBuildingClassCreatedCount((BuildingClassTypes) eIndex);
 }
 
 bool CyGame::isBuildingClassMaxedOut(int /*BuildingClassTypes*/ eIndex, int iExtra)
 {
-	return m_pGame ? m_pGame->isBuildingClassMaxedOut((BuildingClassTypes)eIndex, iExtra) : false;
+	return m_kGame.isBuildingClassMaxedOut((BuildingClassTypes)eIndex, iExtra);
 }
 
-int CyGame::getProjectCreatedCount(int /*ProjectTypes*/ eIndex) 
+int CyGame::getProjectCreatedCount(int /*ProjectTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getProjectCreatedCount((ProjectTypes) eIndex) : -1;
+	return m_kGame.getProjectCreatedCount((ProjectTypes) eIndex);
 }
 
 bool CyGame::isProjectMaxedOut(int /*ProjectTypes*/ eIndex, int iExtra)
 {
-	return m_pGame ? m_pGame->isProjectMaxedOut((ProjectTypes)eIndex, iExtra) : false;
+	return m_kGame.isProjectMaxedOut((ProjectTypes)eIndex, iExtra);
 }
 
-int CyGame::getForceCivicCount(int /*CivicTypes*/ eIndex) 
+int CyGame::getForceCivicCount(int /*CivicTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getForceCivicCount((CivicTypes) eIndex) : -1;
+	return m_kGame.getForceCivicCount((CivicTypes) eIndex);
 }
 
 bool CyGame::isForceCivic(int /*CivicTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isForceCivic((CivicTypes)eIndex) : false;
+	return m_kGame.isForceCivic((CivicTypes)eIndex);
 }
 
 bool CyGame::isForceCivicOption(int /*CivicOptionTypes*/ eCivicOption)
 {
-	return m_pGame ? m_pGame->isForceCivicOption((CivicOptionTypes)eCivicOption) : false;
+	return m_kGame.isForceCivicOption((CivicOptionTypes)eCivicOption);
 }
 
-int CyGame::getVoteOutcome(int /*VoteTypes*/ eIndex) 
+int CyGame::getVoteOutcome(int /*VoteTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getVoteOutcome((VoteTypes) eIndex) : NO_PLAYER_VOTE;
+	return m_kGame.getVoteOutcome((VoteTypes) eIndex);
 }
 
 int CyGame::getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getReligionGameTurnFounded((ReligionTypes) eIndex) : -1;
+	return m_kGame.getReligionGameTurnFounded((ReligionTypes) eIndex);
 }
 
+// doc
 void CyGame::setReligionGameTurnFounded(int eReligion, int iGameTurn)
 {
 	if (m_pGame) m_pGame->setReligionGameTurnFounded((ReligionTypes)eReligion, iGameTurn);
@@ -852,224 +847,178 @@ void CyGame::setReligionGameTurnFounded(int eReligion, int iGameTurn)
 
 bool CyGame::isReligionFounded(int /*ReligionTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isReligionFounded((ReligionTypes) eIndex) : false;
+	return m_kGame.isReligionFounded((ReligionTypes) eIndex);
 }
 
 bool CyGame::isReligionSlotTaken(int /*ReligionTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isReligionSlotTaken((ReligionTypes) eIndex) : false;
+	return m_kGame.isReligionSlotTaken((ReligionTypes) eIndex);
 }
 
 int CyGame::getCorporationGameTurnFounded(int /*CorporationTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->getCorporationGameTurnFounded((CorporationTypes) eIndex) : -1;
+	return m_kGame.getCorporationGameTurnFounded((CorporationTypes) eIndex);
 }
 
 bool CyGame::isCorporationFounded(int /*CorporationTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isCorporationFounded((CorporationTypes) eIndex) : false;
+	return m_kGame.isCorporationFounded((CorporationTypes) eIndex);
 }
 
 bool CyGame::isVotePassed(int /*VoteTypes*/ eIndex) const
 {
-	return m_pGame ? m_pGame->isVotePassed((VoteTypes)eIndex) : false;
+	return m_kGame.isVotePassed((VoteTypes)eIndex);
 }
 
 bool CyGame::isVictoryValid(int /*VictoryTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isVictoryValid((VictoryTypes)eIndex) : false;
+	return m_kGame.isVictoryValid((VictoryTypes)eIndex);
 }
 
 bool CyGame::isSpecialUnitValid(int /*SpecialUnitTypes*/ eSpecialUnitType)
 {
-	return m_pGame ? m_pGame->isSpecialUnitValid((SpecialUnitTypes)eSpecialUnitType) : false;
+	return m_kGame.isSpecialUnitValid((SpecialUnitTypes)eSpecialUnitType);
 }
 
 void CyGame::makeSpecialUnitValid(int /*SpecialUnitTypes*/ eSpecialUnitType)
 {
-	if (m_pGame)
-		m_pGame->makeSpecialUnitValid((SpecialUnitTypes) eSpecialUnitType);
+	m_kGame.makeSpecialUnitValid((SpecialUnitTypes) eSpecialUnitType);
 }
 
 bool CyGame::isSpecialBuildingValid(int /*SpecialBuildingTypes*/ eIndex)
 {
-	return m_pGame ? m_pGame->isSpecialBuildingValid((SpecialBuildingTypes)eIndex) : false;
+	return m_kGame.isSpecialBuildingValid((SpecialBuildingTypes)eIndex);
 }
 
 void CyGame::makeSpecialBuildingValid(int /*SpecialBuildingTypes*/ eIndex)
 {
-	if (m_pGame)
-		m_pGame->makeSpecialBuildingValid((SpecialBuildingTypes) eIndex);
+	m_kGame.makeSpecialBuildingValid((SpecialBuildingTypes) eIndex);
 }
 
 bool CyGame::isNukesValid()
 {
-	return m_pGame ? m_pGame->isNukesValid() : false;
+	return m_kGame.isNukesValid();
 }
 
 void CyGame::makeNukesValid(bool bValid)
 {
-	if (m_pGame)
-		m_pGame->makeNukesValid(bValid);
+	m_kGame.makeNukesValid(bValid);
 }
 
 bool CyGame::isInAdvancedStart()
 {
-	return m_pGame ? m_pGame->isInAdvancedStart() : false;
+	return m_kGame.isInAdvancedStart();
 }
 
 CyCity* CyGame::getHolyCity(int /*ReligionTypes*/ eIndex)
 {
-	return m_pGame ? new CyCity(m_pGame->getHolyCity((ReligionTypes) eIndex)) : NULL;
+	return new CyCity(m_kGame.getHolyCity((ReligionTypes) eIndex));
 }
 
 void CyGame::setHolyCity(int /*ReligionTypes*/ eIndex, CyCity* pNewValue, bool bAnnounce)
 {
-	if (m_pGame)
-		m_pGame->setHolyCity((ReligionTypes) eIndex, pNewValue->getCity(), bAnnounce);
+	m_kGame.setHolyCity((ReligionTypes) eIndex, pNewValue->getCity(), bAnnounce);
 }
 
 void CyGame::clearHolyCity(int /*ReligionTypes*/ eIndex)
 {
-	if (m_pGame)
-		m_pGame->setHolyCity((ReligionTypes) eIndex, NULL, false);
+	m_kGame.setHolyCity((ReligionTypes) eIndex, NULL, false);
 }
 
 CyCity* CyGame::getHeadquarters(int /*CorporationTypes*/ eIndex)
 {
-	return m_pGame ? new CyCity(m_pGame->getHeadquarters((CorporationTypes) eIndex)) : NULL;
+	return new CyCity(m_kGame.getHeadquarters((CorporationTypes) eIndex));
 }
 
 void CyGame::setHeadquarters(int /*CorporationTypes*/ eIndex, CyCity* pNewValue, bool bAnnounce)
 {
-	if (m_pGame)
-		m_pGame->setHeadquarters((CorporationTypes) eIndex, pNewValue->getCity(), bAnnounce);
+	m_kGame.setHeadquarters((CorporationTypes) eIndex, pNewValue->getCity(), bAnnounce);
 }
 
 void CyGame::clearHeadquarters(int /*CorporationTypes*/ eIndex)
 {
-	if (m_pGame)
-		m_pGame->setHeadquarters((CorporationTypes) eIndex, NULL, false);
+	m_kGame.setHeadquarters((CorporationTypes) eIndex, NULL, false);
 }
 
 int CyGame::getPlayerVote(int /*PlayerTypes*/ eOwnerIndex, int iVoteId)
 {
-	return m_pGame ? m_pGame->getPlayerVote((PlayerTypes) eOwnerIndex, iVoteId) : NO_PLAYER_VOTE;
+	return m_kGame.getPlayerVote((PlayerTypes) eOwnerIndex, iVoteId);
 }
 
 std::string CyGame::getScriptData() const
 {
-	return m_pGame ? m_pGame->getScriptData() : "";
+	return m_kGame.getScriptData();
 }
 
 void CyGame::setScriptData(std::string szNewValue)
 {
-	if (m_pGame)
-		m_pGame->setScriptData(szNewValue);
+	m_kGame.setScriptData(szNewValue);
 }
 
 void CyGame::setName(TCHAR* szNewValue)
 {
-	if (m_pGame)
-		m_pGame->setName(szNewValue);
+	m_kGame.setName(szNewValue);
 }
 
 std::wstring CyGame::getName()
 {
-	return m_pGame ? m_pGame->getName() : "";
+	return m_kGame.getName();
 }
 
-int CyGame::getIndexAfterLastDeal() 
+int CyGame::getIndexAfterLastDeal()
 {
-	return m_pGame ? m_pGame->getIndexAfterLastDeal() : -1;
+	return m_kGame.getIndexAfterLastDeal();
 }
 
-int CyGame::getNumDeals() 
+int CyGame::getNumDeals()
 {
-	return m_pGame ? m_pGame->getNumDeals() : -1;
+	return m_kGame.getNumDeals();
 }
 
 CyDeal* CyGame::getDeal(int iID)
 {
-	if (m_pGame)
-	{
-		return new CyDeal(m_pGame->getDeal(iID));
-	}
-	else
-	{
-		return NULL;
-	}
+	return new CyDeal(m_kGame.getDeal(iID));
 }
 
 CyDeal* CyGame::addDeal()
 {
-	if (m_pGame)
-	{
-		return new CyDeal(m_pGame->addDeal());
-	}
-	else
-	{
-		return NULL;
-	}
+	return new CyDeal(m_kGame.addDeal());
 }
 
 void CyGame::deleteDeal(int iID)
 {
-	if (m_pGame)
-	{
-		m_pGame->deleteDeal(iID);
-	}
+	m_kGame.deleteDeal(iID);
 }
 
 CvRandom& CyGame::getMapRand()
 {
-	FAssert(m_pGame);
-	return (m_pGame->getMapRand());
+	return m_kGame.getMapRand();
 }
 
-int CyGame::getMapRandNum(int iNum, TCHAR* pszLog) 
+int CyGame::getMapRandNum(int iNum, TCHAR* pszLog)
 {
-	return m_pGame ? m_pGame->getMapRandNum(iNum, pszLog) : -1;
+	return m_kGame.getMapRandNum(iNum, pszLog);
 }
 
 CvRandom& CyGame::getSorenRand()
 {
-	FAssert(m_pGame);
-	return (m_pGame->getSorenRand());
+	return m_kGame.getSorenRand();
 }
 
-int CyGame::getSorenRandNum(int iNum, TCHAR* pszLog) 
+int CyGame::getSorenRandNum(int iNum, TCHAR* pszLog)
 {
-	return m_pGame ? m_pGame->getSorenRandNum(iNum, pszLog) : -1;
+	return m_kGame.getSorenRandNum(iNum, pszLog);
 }
 
 int CyGame::calculateSyncChecksum()
 {
-	return m_pGame ? m_pGame->calculateSyncChecksum() : -1;
+	return m_kGame.calculateSyncChecksum();
 }
 
 int CyGame::calculateOptionsChecksum()
 {
-	return m_pGame ? m_pGame->calculateOptionsChecksum() : -1;
+	return m_kGame.calculateOptionsChecksum();
 }
-
-
-// Rhye - start (jdog)
-
-bool CyGame::changePlayer( int playerIdx, int newCivType, int newLeader, int teamIdx, bool bIsHuman, bool bChangeGraphics )
-{
-	if(m_pGame)
-		return m_pGame->changePlayer(playerIdx,newCivType,newLeader,teamIdx,bIsHuman,bChangeGraphics);
-	return false;
-}
-
-void CyGame::convertUnits( int playerIdx )
-{
-	if(m_pGame)
-		m_pGame->convertUnits(playerIdx);
-}
-// Rhye - end
-
 
 // JS - can't access protected member declared in class CvGame
 
@@ -1095,292 +1044,380 @@ void CyGame::setCurrentLanguage(int iNewLanguage)			// remove once CvApp is expo
 
 int CyGame::getReplayMessageTurn(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessageTurn(i) : -1);
+	return m_kGame.getReplayMessageTurn(i);
 }
 
 ReplayMessageTypes CyGame::getReplayMessageType(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessageType(i) : NO_REPLAY_MESSAGE);
+	return m_kGame.getReplayMessageType(i);
 }
 
 int CyGame::getReplayMessagePlotX(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessagePlotX(i) : -1);
+	return m_kGame.getReplayMessagePlotX(i);
 }
 
 int CyGame::getReplayMessagePlotY(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessagePlotY(i) : -1);
+	return m_kGame.getReplayMessagePlotY(i);
 }
 
 int CyGame::getReplayMessagePlayer(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessagePlayer(i) : -1);
+	return m_kGame.getReplayMessagePlayer(i);
 }
 
 ColorTypes CyGame::getReplayMessageColor(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessageColor(i) : NO_COLOR);
+	return m_kGame.getReplayMessageColor(i);
 }
 
 std::wstring CyGame::getReplayMessageText(int i) const
 {
-	return (NULL != m_pGame ? m_pGame->getReplayMessageText(i) : L"");
+	return m_kGame.getReplayMessageText(i);
 }
 
 uint CyGame::getNumReplayMessages() const
 {
-	return (NULL != m_pGame ? m_pGame->getNumReplayMessages() : 0);
+	return m_kGame.getNumReplayMessages();
 }
 
 CyReplayInfo* CyGame::getReplayInfo() const
 {
-	return (NULL != m_pGame ? (new CyReplayInfo(m_pGame->getReplayInfo())) : NULL);
+	return new CyReplayInfo(m_kGame.getReplayInfo());
 }
 
 bool CyGame::hasSkippedSaveChecksum() const
 {
-	return (NULL != m_pGame ? m_pGame->hasSkippedSaveChecksum() : false);
+	return m_kGame.hasSkippedSaveChecksum();
 }
 
 void CyGame::saveReplay(int iPlayer)
 {
-	if (m_pGame)
-	{
-		m_pGame->saveReplay((PlayerTypes)iPlayer);
-	}
+	m_kGame.saveReplay((PlayerTypes)iPlayer);
 }
 
 void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv, int iBirthTurn, bool bAlive, bool bMinor)
 {
-	if (m_pGame)
-	{
-		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv, iBirthTurn, bAlive, bMinor);
-	}
+	m_kGame.addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv, iBirthTurn, bAlive, bMinor);
+	/*  <advc.104r> Only relevant for mod-mods (e.g. Barbarian Civ, PlatyBuilder).
+		Colonial vassals are handled by CvPlayer::splitEmpire instead. */
+	if(getUWAI().isEnabled())
+		getUWAI().processNewPlayerInGame((PlayerTypes)eNewPlayer); // </advc.104r>
 }
+
+// BETTER_BTS_AI_MOD, Debug, 8/1/08, jdog5000: START
+void CyGame::changeHumanPlayer(int /*PlayerTypes*/ eNewHuman)
+{
+	m_kGame.changeHumanPlayer((PlayerTypes)eNewHuman);
+} // BETTER_BTS_AI_MOD: END
+
 
 int CyGame::getCultureThreshold(int eLevel)
 {
-	return (m_pGame ? m_pGame->getCultureThreshold((CultureLevelTypes) eLevel) : -1);
+	return m_kGame.getCultureThreshold((CultureLevelTypes) eLevel);
 }
 
-void CyGame::setPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield)
+/*	<advc.enum> These three are preserved for compatibility in mods;
+	they're deprecated in favor of homonymous CyMap functions. */
+int CyGame::getPlotExtraYield(int iX, int iY, int eYield) // K-Mod
 {
-	if (m_pGame)
-	{
-		m_pGame->setPlotExtraYield(iX, iY, (YieldTypes)eYield, iExtraYield);
-	}
+	CvPlot const* pPlot = GC.getMap().plot(iX, iY);
+	if (pPlot == NULL)
+		return 0;
+	return GC.getMap().getPlotExtraYield(*pPlot, (YieldTypes)eYield);
+}
+
+void CyGame::setPlotExtraYield(int iX, int iY, int eYield, int iExtraYield)
+{
+	CvPlot* pPlot = GC.getMap().plot(iX, iY);
+	if (pPlot == NULL)
+		return;
+	GC.getMap().setPlotExtraYield(*pPlot, (YieldTypes)eYield, iExtraYield);
 }
 
 void CyGame::changePlotExtraCost(int iX, int iY, int iCost)
 {
-	if (m_pGame)
-	{
-		m_pGame->changePlotExtraCost(iX, iY, iCost);
-	}
-}
+	CvPlot* pPlot = GC.getMap().plot(iX, iY);
+	if (pPlot == NULL)
+		return;
+	GC.getMap().changePlotExtraCost(*pPlot, iCost);
+} // </advc.enum>
 
 bool CyGame::isCivEverActive(int /*CivilizationTypes*/ eCivilization)
 {
-	return (NULL != m_pGame ? m_pGame->isCivEverActive((CivilizationTypes)eCivilization) : false);
+	return m_kGame.isCivEverActive((CivilizationTypes)eCivilization);
 }
 
 bool CyGame::isLeaderEverActive(int /*LeaderHeadTypes*/ eLeader)
 {
-	return (NULL != m_pGame ? m_pGame->isLeaderEverActive((LeaderHeadTypes)eLeader) : false);
+	return m_kGame.isLeaderEverActive((LeaderHeadTypes)eLeader);
 }
 
 bool CyGame::isUnitEverActive(int /*UnitTypes*/ eUnit)
 {
-	return (NULL != m_pGame ? m_pGame->isUnitEverActive((UnitTypes)eUnit) : false);
+	return m_kGame.isUnitEverActive((UnitTypes)eUnit);
 }
 
 bool CyGame::isBuildingEverActive(int /*BuildingTypes*/ eBuilding)
 {
-	return (NULL != m_pGame ? m_pGame->isBuildingEverActive((BuildingTypes)eBuilding) : false);
+	return m_kGame.isBuildingEverActive((BuildingTypes)eBuilding);
 }
 
 bool CyGame::isEventActive(int /*EventTriggerTypes*/ eTrigger)
 {
-	return (NULL != m_pGame ? m_pGame->isEventActive((EventTriggerTypes)eTrigger) : false);
+	return m_kGame.isEventActive((EventTriggerTypes)eTrigger);
 }
 
 void CyGame::doControl(int iControl)
 {
-	if (m_pGame)
-	{
-		m_pGame->doControl((ControlTypes) iControl);
-	}
+	m_kGame.doControl((ControlTypes) iControl);
 }
-
-// BUG - MapFinder - start
-// from HOF Mod - Dianthus
-bool CyGame::canRegenerateMap() const
+// advc.095:
+void CyGame::setCityBarWidth(bool bWide)
 {
-	return (NULL != m_pGame ? m_pGame->canRegenerateMap() : false);
+	m_kGame.setCityBarWidth(bWide);
 }
-
-bool CyGame::regenerateMap()
+// BULL - AutoSave:
+void CyGame::saveGame(std::string szFileName)
 {
-	if (canRegenerateMap() && m_pGame)
-	{
-		m_pGame->regenerateMap();
-		return true;
-	}
-	return false;
+	// <advc> The BULL code had instead cast szFileName to a CvString&
+	static CvString szTmp;
+	szTmp = szFileName; // </advc>
+	gDLL->getEngineIFace()->SaveGame(szTmp, SAVEGAME_NORMAL);
 }
-
-
-void CyGame::saveGame(std::string fileName) const
+// advc.104:
+bool CyGame::useKModAI()
 {
-	//m_pGame->setFileType(SAVE_HOFMOD);
-	gDLL->getEngineIFace()->SaveGame((CvString &)fileName, SAVEGAME_NORMAL);
-	//m_pGame->setFileType(SAVE_NORMAL);
+	return !getUWAI().isEnabled();
 }
-// BUG - MapFinder - end
-
-// BUG - EXE/DLL Paths - start
-std::string CyGame::getDLLPath() const
+// advc.300:
+int CyGame::getBarbarianStartTurn()
 {
-	return GC.getInitCore().getDLLPath();
+	return m_kGame.getBarbarianStartTurn();
 }
-
-std::string CyGame::getExePath() const
+// advc.250b:
+std::wstring CyGame::SPaHPointsForSettingsScreen()
 {
-	return GC.getInitCore().getExePath();
+	std::wstring* r = m_kGame.startPointsAsHandicap().forSettingsScreen();
+	if(r == NULL)
+		return L"";
+	return *r;
 }
-// BUG - EXE/DLL Paths - end
-
-// BUFFY - Security Checks - start
-#ifdef _BUFFY
-int CyGame::checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const
+// advc.250:
+int CyGame::getDifficultyForEndScore()
 {
-	return NULL != m_pGame ? m_pGame->checkCRCs(fileName_, expectedModCRC_, expectedDLLCRC_, expectedShaderCRC_, expectedPythonCRC_, expectedXMLCRC_) : -1;
+	return m_kGame.getDifficultyForEndScore();
 }
-
-int CyGame::getWarningStatus() const
+// <advc.703>
+int CyGame::getMaxChapters()
 {
-	return NULL != m_pGame ? m_pGame->getWarningStatus() : -1;
+	return m_kGame.getRiseFall().getMaxChapters();
 }
-#endif
-// BUFFY - Security Checks - end
+int CyGame::getCurrentChapter()
+{
+	return m_kGame.getRiseFall().getCurrentChapter();
+}
+int CyGame::getChapterStart(int chapter)
+{
+	return m_kGame.getRiseFall().getChapter(chapter).getStartTurn();
+}
+int CyGame::getChapterEnd(int chapter)
+{
+	return m_kGame.getRiseFall().getChapter(chapter).getEndTurn();
+}
+int CyGame::getChapterScore(int chapter)
+{
+	return m_kGame.getRiseFall().getChapter(chapter).computeScore();
+}
+int CyGame::getChapterScoreTurn(int chapter)
+{
+	return m_kGame.getRiseFall().getChapter(chapter).getScoreTurn();
+}
+int CyGame::getChapterCiv(int chapter)
+{
+	return m_kGame.getRiseFall().getChapter(chapter).getCiv();
+}
+std::wstring CyGame::chapterScoreBreakdown()
+{
+	std::wstring* r = m_kGame.getRiseFall().chapterScoreBreakdown();
+	if(r == NULL)
+		return L"";
+	return *r;
+}
+std::wstring CyGame::riseScoreBreakdown()
+{
+	std::wstring* r = m_kGame.getRiseFall().riseScoreBreakdown();
+	if(r == NULL)
+		return L"";
+	return *r;
+} // </advc.703>
+// <advc.706>
+bool CyGame::isRFInterlude()
+{
+	return (m_kGame.isOption(GAMEOPTION_RISE_FALL) &&
+			m_kGame.getRiseFall().getInterludeCountdown() >= 0);
+}
+bool CyGame::isRFBlockPopups()
+{
+	return (m_kGame.isOption(GAMEOPTION_RISE_FALL) &&
+			m_kGame.getRiseFall().isBlockPopups());
+} // </advc.706>
+// advc.004m:
+void CyGame::reportCurrentLayer(int iLayer)
+{
+	m_kGame.reportCurrentLayer((GlobeLayerTypes)iLayer);
+}
+// advc.190c:
+bool CyGame::isCivLeaderSetupKnown()
+{
+	return GC.getInitCore().isCivLeaderSetupKnown();
+}
+// advc.052:
+bool CyGame::isScenario()
+{
+	return m_kGame.isScenario();
+}
 
-
+// doc
 bool CyGame::isNeighbors(int ePlayer1, int ePlayer2)
 {
 	return m_pGame ? m_pGame->isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2) : false;
 }
 
+// doc
 int CyGame::determineWinner(int eTeam1, int eTeam2)
 {
 	return m_pGame ? m_pGame->determineWinner((TeamTypes)eTeam1, (TeamTypes)eTeam2) : eTeam1;
 }
 
+// doc
 int CyGame::getXResolution() const
 {
 	return m_pGame ? m_pGame->getXResolution() : -1;
 }
 
+// doc
 void CyGame::setXResolution(int iNewValue)
 {
-	if (m_pGame) m_pGame->setXResolution(iNewValue); 
+	if (m_pGame) m_pGame->setXResolution(iNewValue);
 }
 
+// doc
 void CyGame::changeXResolution(int iChange)
 {
 	if (m_pGame) m_pGame->changeXResolution(iChange);
 }
 
+// doc
 int CyGame::getYResolution() const
 {
 	return m_pGame ? m_pGame->getYResolution() : -1;
 }
 
+// doc
 void CyGame::setYResolution(int iNewValue)
 {
 	if (m_pGame) m_pGame->setYResolution(iNewValue);
 }
 
+// doc
 void CyGame::changeYResolution(int iChange)
 {
 	if (m_pGame) m_pGame->changeYResolution(iChange);
 }
 
+// doc
 void CyGame::addGreatPersonBornName(std::wstring sName)
 {
 	if (m_pGame) m_pGame->addGreatPersonBornName(sName);
 }
 
+// doc
 bool CyGame::isGreatPersonBorn(std::wstring sName)
 {
 	return m_pGame ? m_pGame->isGreatPersonBorn(CvWString(sName)) : false;
 }
 
+// doc
 void CyGame::autosave()
 {
 	if (m_pGame) m_pGame->autosave();
 }
 
+// doc
 void CyGame::initialSave()
 {
 	if (m_pGame) m_pGame->autosave(true);
 }
 
+// doc
 void CyGame::incrementBuildingClassCreatedCount(int iBuildingClass)
 {
 	if (m_pGame) m_pGame->incrementBuildingClassCreatedCount((BuildingClassTypes)iBuildingClass);
 }
 
+// doc
 void CyGame::setCityScreenOwner(int iPlayer)
 {
 	if (m_pGame) m_pGame->setCityScreenOwner((PlayerTypes)iPlayer);
 }
 
+// doc
 void CyGame::resetCityScreenOwner()
 {
 	if (m_pGame) m_pGame->resetCityScreenOwner();
 }
 
+// doc
 void CyGame::setGreatPeopleNotifications(int iNotificationLevel)
 {
 	if (m_pGame) m_pGame->setGreatPeopleNotifications((NotificationLevels)iNotificationLevel);
 }
 
+// doc
 void CyGame::setReligionSpreadNotifications(int iNotificationLevel)
 {
 	if (m_pGame) m_pGame->setReligionSpreadNotifications((NotificationLevels)iNotificationLevel);
 }
 
+// doc
 void CyGame::setEventEffectNotifications(int iNotificationLevel)
 {
 	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevels)iNotificationLevel);
 }
 
+// doc
 int CyGame::getPeriod(int iCivilization)
 {
 	return m_pGame ? m_pGame->getPeriod((CivilizationTypes)iCivilization) : -1;
 }
 
+// doc
 void CyGame::setPeriod(int iCivilization, int iPeriod)
 {
 	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
 }
 
+// doc
 int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)
 {
 	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
 }
 
+// doc
 int CyGame::getFirstDiscovered(int iTech)
 {
 	return m_pGame ? m_pGame->getFirstDiscovered((TechTypes)iTech) : -1;
 }
 
+// doc
 int CyGame::getFirstDiscoveredTurn(int iTech)
 {
 	return m_pGame ? m_pGame->getFirstDiscoveredTurn((TechTypes)iTech) : -1;
 }
 
+// doc
 int CyGame::getMedianTechValue()
 {
 	return m_pGame ? m_pGame->getMedianTechValue() : -1;

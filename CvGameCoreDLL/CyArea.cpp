@@ -1,18 +1,13 @@
 //
-// Python wrapper class for CvArea 
-// 
+// Python wrapper class for CvArea
+//
 #include "CvGameCoreDLL.h"
-#include "CyCity.h"
 #include "CyArea.h"
 #include "CvArea.h"
 
-CyArea::CyArea() : m_pArea(NULL)
-{
-}
+CyArea::CyArea() : m_pArea(NULL) {}
 
-CyArea::CyArea(CvArea* pArea) : m_pArea(pArea)
-{
-}
+CyArea::CyArea(CvArea* pArea) : m_pArea(pArea) {}
 
 int CyArea::calculateTotalBestNatureYield()
 {
@@ -51,7 +46,7 @@ int CyArea::getNumTiles()
 
 bool CyArea::isLake()
 {
-	return m_pArea ? m_pArea->isLake() : -1;
+	return m_pArea ? m_pArea->isLake() : false;
 }
 
 int CyArea::getNumOwnedTiles()
@@ -97,11 +92,6 @@ bool CyArea::isWater()
 int CyArea::getUnitsPerPlayer(int /*PlayerTypes*/ eIndex)
 {
 	return m_pArea ? m_pArea->getUnitsPerPlayer((PlayerTypes) eIndex) : -1;
-}
-
-int CyArea::getAnimalsPerPlayer(int /*PlayerTypes*/ eIndex)
-{
-	return m_pArea ? m_pArea->getAnimalsPerPlayer((PlayerTypes) eIndex) : -1;
 }
 
 int CyArea::getCitiesPerPlayer(int /*PlayerTypes*/ eIndex)
@@ -171,7 +161,7 @@ int /*AreaAITypes*/ CyArea::getAreaAIType(int /*TeamTypes*/ eIndex)
 
 CyCity* CyArea::getTargetCity(int /*PlayerTypes*/ eIndex)
 {
-	return m_pArea ? new CyCity(m_pArea->getTargetCity((PlayerTypes) eIndex)) : NULL;
+	return m_pArea ? new CyCity(m_pArea->AI_getTargetCity((PlayerTypes) eIndex)) : NULL;
 }
 
 int CyArea::getYieldRateModifier(int /*PlayerTypes*/ eIndex1, int /*YieldTypes*/ eIndex2)
@@ -199,8 +189,17 @@ int CyArea::getNumTotalBonuses()
 	return m_pArea ? m_pArea->getNumTotalBonuses() : -1;
 }
 
-
-int CyArea::getNumImprovements(int /*ImprovementTypes*/ eImprovement)
+// advc.opt: No longer used
+/*int CyArea::getNumImprovements(int eImprovement) // ImprovementTypes
 {
 	return m_pArea ? m_pArea->getNumImprovements( (ImprovementTypes)eImprovement) : -1;
-}
+}*/
+
+// <advc.021b>
+int CyArea::getNumHabitableTiles() {
+
+	if(m_pArea == NULL)
+		return -1;
+	std::pair<int,int> r = m_pArea->countOwnedUnownedHabitableTiles();
+	return r.first + r.second;
+} // </advc.021b>

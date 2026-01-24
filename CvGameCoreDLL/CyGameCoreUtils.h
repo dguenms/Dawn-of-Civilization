@@ -4,7 +4,7 @@
 #define CyGameCoreUtils_h
 
 //
-// Python wrapper functions for DLL 
+// Python wrapper functions for DLL
 //
 
 class CyCity;
@@ -34,22 +34,23 @@ bool cyIsCardinalDirection(DirectionTypes eDirection);
 DirectionTypes cyEstimateDirection(int iDX, int iDY);
 
 bool cyAtWar(int /*TeamTypes*/ eTeamA, int /*TeamTypes*/ eTeamB);
-bool cyIsPotentialEnemy(int /*TeamTypes*/ eOurPlayer, int /*TeamTypes*/ eTheirPlayer);
+// advc: No longer exposed
+//bool cyIsPotentialEnemy(int /*TeamTypes*/ eOurPlayer, int /*TeamTypes*/ eTheirPlayer);
 
 CyCity* cyGetCity(IDInfo city);
 CyUnit* cyGetUnit(IDInfo unit);
 
-bool cyIsPromotionValid(int /*PromotionTypes*/ ePromotion, int /*UnitTypes*/ eUnit, bool bLeader);
-int cyGetPopulationAsset(int iPopulation);
+/*int cyGetPopulationAsset(int iPopulation);
 int cyGetLandPlotsAsset(int iLandPlots);
 int cyGetPopulationPower(int iPopulation);
 int cyGetPopulationScore(int iPopulation);
 int cyGetLandPlotsScore(int iPopulation);
-int cyGetTechScore(int /*TechTypes*/ eTech);
-int cyGetWonderScore(int /*BuildingClassTypes*/ eWonderClass);
-int /*ImprovementTypes*/ cyFinalImprovementUpgrade(int /*ImprovementTypes*/ eImprovement, int iCount);
+int cyGetTechScore(int eTech);
+int cyGetWonderScore(int eWonderClass);*/ // advc: No longer exposed to Python
 
-int cyGetWorldSizeMaxConscript(int /*CivicTypes*/ eCivic);
+bool cyIsPromotionValid(int /*PromotionTypes*/ ePromotion, int /*UnitTypes*/ eUnit, bool bLeader);
+int /*ImprovementTypes*/ cyFinalImprovementUpgrade(int /*ImprovementTypes*/ eImprovement);
+//int cyGetWorldSizeMaxConscript(int eCivic); // advc: No longer exposed
 
 bool cyIsReligionTech(int /*TechTypes*/ eTech);
 
@@ -69,6 +70,7 @@ bool cyIsTeamProject(int /*ProjectTypes*/ eProject);
 bool cyIsLimitedProject(int /*ProjectTypes*/ eProject);
 int cyGetCombatOdds(CyUnit* pAttacker, CyUnit* pDefender);
 int cyGetEspionageModifier(int /*TeamTypes*/ iOurTeam, int /*TeamTypes*/ iTargetTeam);
+void cyUpdatePlotIndicatorSize(); // advc.092b
 
 // BUG - Unit Experience - start
 int cyCalculateExperience(int iLevel, int /*PlayerTypes*/ ePlayer);

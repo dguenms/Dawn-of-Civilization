@@ -1,3 +1,4 @@
+// TODO: merge with individual header files
 //  $Header:
 //------------------------------------------------------------------------------------------------
 //
@@ -986,7 +987,7 @@ int CvSpecialistInfo::getCultureLevelGreatPeopleRateChange(CultureLevelTypes eCu
 // Leoreth
 bool CvSpecialistInfo::isSatellite() const
 {
-	return getHappiness() == 0 && isNoGlobalEffects(); 
+	return getHappiness() == 0 && isNoGlobalEffects();
 }
 
 const TCHAR* CvSpecialistInfo::getTexture() const
@@ -1093,7 +1094,7 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 
 		iLastValue = m_piCultureLevelGreatPeopleRateChanges[i];
 	}
-	
+
 	// initialize the boolean list to the correct size and all the booleans to false
 	FAssertMsg((GC.getNumCultureLevelInfos() > 0) && (NUM_YIELD_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
 	pXML->Init2DIntList(&m_paiCultureLevelYieldChanges, GC.getNumCultureLevelInfos(), NUM_YIELD_TYPES);
@@ -1155,7 +1156,7 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 			iLastValue = m_paiCultureLevelYieldChanges[j][i];
 		}
 	}
-	
+
 	// initialize the boolean list to the correct size and all the booleans to false
 	FAssertMsg((GC.getNumCultureLevelInfos() > 0) && (NUM_COMMERCE_TYPES) > 0,"either the number of improvement infos is zero or less or the number of yield types is zero or less");
 	pXML->Init2DIntList(&m_paiCultureLevelCommerceChanges, GC.getNumCultureLevelInfos(), NUM_COMMERCE_TYPES);
@@ -11612,7 +11613,7 @@ int CvHandicapInfo::getNumCitiesMaintenancePercent() const
 int CvHandicapInfo::getNumCitiesMaintenancePercentByID(PlayerTypes ePlayer) const
 {
 	int iMaintenance = m_iNumCitiesMaintenancePercent;
-	
+
 	iMaintenance *= GET_PLAYER(ePlayer).getModifier(MODIFIER_CITIES_MAINTENANCE);
 	iMaintenance /= 100;
 

@@ -9,7 +9,7 @@
 
 void CyHallOfFameInterface()
 {
-	OutputDebugString("Python Extension Module - CyReplayInterface\n");
+	printToConsole("Python Extension Module - CyReplayInterface\n");
 
 	python::class_<CyReplayInfo>("CyReplayInfo")
 		.def("isNone", &CyReplayInfo::isNone, "bool () - Returns whether or not this is a valid object")
@@ -40,9 +40,9 @@ void CyHallOfFameInterface()
 		.def("getPlayerEconomy", &CyReplayInfo::getPlayerEconomy, "int (int iPlayer, int iTurn)")
 		.def("getPlayerIndustry", &CyReplayInfo::getPlayerIndustry, "int (int iPlayer, int iTurn)")
 		.def("getPlayerAgriculture", &CyReplayInfo::getPlayerAgriculture, "int (int iPlayer, int iTurn)")
-		
+
 		.def("getNormalizedScore", &CyReplayInfo::getNormalizedScore, "int ()")
-		
+
 		.def("getReplayMessageTurn", &CyReplayInfo::getReplayMessageTurn, "int (int i)")
 		.def("getReplayMessageType", &CyReplayInfo::getReplayMessageType, "int (int i)")
 		.def("getReplayMessagePlotX", &CyReplayInfo::getReplayMessagePlotX, "int (int i)")
@@ -65,10 +65,12 @@ void CyHallOfFameInterface()
 
 		.def("getMapWidth", &CyReplayInfo::getMapWidth, "int ()")
 		.def("getMapHeight", &CyReplayInfo::getMapHeight, "int ()")
+		// advc.106m:
+		.def("getMinimapSize", &CyReplayInfo::getMinimapSize, "int ()")
 
 		.def("getModName", &CyReplayInfo::getModName, "std::wstring ()")
 		;
-		
+
 	python::class_<CyHallOfFameInfo>("CyHallOfFameInfo")
 		.def("loadReplays", &CyHallOfFameInfo::loadReplays, "void ()")
 		.def("getNumGames", &CyHallOfFameInfo::getNumGames, "int ()")

@@ -1,65 +1,84 @@
 #include "CvGameCoreDLL.h"
 #include "CvGameCoreUtils.h"
-#include <algorithm>
-#include "CvUnit.h"
-#include "CvGameAI.h"
-#include "CvPlayerAI.h"
-#include "CvMap.h"
-#include "CvPlot.h"
-#include "CvRandom.h"
-#include "FAStarNode.h"
-#include "CvCity.h"
-#include "CvTeamAI.h"
-#include "CvInfos.h"
-#include "CvGlobals.h"
-#include "FProfiler.h"
+#include "CoreAI.h"
+#include "CvUnitAI.h"
+#include "CvSelectionGroupAI.h"
+#include "CityPlotIterator.h"
+#include "BBAILog.h" // advc.007
+#include "CvInfo_GameOption.h"
 
-#include "CvDLLInterfaceIFaceBase.h"
-#include "CvDLLEntityIFaceBase.h"
-#include "CvDLLFAStarIFaceBase.h"
-
-#include "CvRhyes.h"
-
-#define PATH_MOVEMENT_WEIGHT									(1000)
-#define PATH_RIVER_WEIGHT											(100)
-#define PATH_CITY_WEIGHT											(100)
-#define PATH_DEFENSE_WEIGHT										(10)
-#define PATH_TERRITORY_WEIGHT									(3)
-#define PATH_STEP_WEIGHT											(2)
-#define PATH_STRAIGHT_WEIGHT									(1)
-
-#define PATH_DAMAGE_WEIGHT										(500)
-CvPlot* plotCity(int iX, int iY, int iIndex)
-{
-	return GC.getMapINLINE().plotINLINE((iX + GC.getCityPlotX()[iIndex]), (iY + GC.getCityPlotY()[iIndex]));
-}
-
-// Leoreth: third ring too
+// doc: map within first ring
+// TODO: move next to plotCity
 CvPlot* plotCity3(int iX, int iY, int iIndex)
 {
 	return GC.getMapINLINE().plotINLINE((iX + GC.getCityPlot3X()[iIndex]), (iY + GC.getCityPlot3Y()[iIndex]));
 }
 
-int plotCityXY(int iDX, int iDY)
+// advc.035:
+void contestedPlots(std::vector<CvPlot*>& r, TeamTypes t1, TeamTypes t2)
 {
-	if ((abs(iDX) > CITY_PLOTS_RADIUS) || (abs(iDY) > CITY_PLOTS_RADIUS))
+	if(!GC.getDefineBOOL(CvGlobals::OWN_EXCLUSIVE_RADIUS))
+		return;
+	// Sufficient to check plots around the teams' cities
+	std::vector<CvCity const*> apCities;
+	for (MemberIter itMember1(t1); itMember1.hasNext(); ++itMember1)
 	{
-		return -1;
+		FOR_EACH_CITY(c, *itMember1)
+			apCities.push_back(c);
 	}
-	else
+	for (MemberIter itMember2(t2); itMember2.hasNext(); ++itMember2)
 	{
-		return GC.getXYCityPlot((iDX + CITY_PLOTS_RADIUS), (iDY + CITY_PLOTS_RADIUS));
+		FOR_EACH_CITY(c, *itMember2)
+			apCities.push_back(c);
+	}
+	std::set<int> seenPlots; // To avoid duplicates
+	for(size_t i = 0; i < apCities.size(); i++)
+	{
+		CvCity const& c = *apCities[i];
+		for(CityPlotIter it(c, false); it.hasNext(); ++it)
+		{
+			CvPlot& p = *it;
+			if(p.isCity())
+				continue;
+			PlayerTypes eSecondOwner = p.getSecondOwner();
+			PlayerTypes eOwner = p.getOwner();
+			if(eOwner == NO_PLAYER || eSecondOwner == NO_PLAYER)
+				continue;
+			TeamTypes eTeam = TEAMID(eOwner);
+			TeamTypes eSecondTeam = TEAMID(eSecondOwner);
+			if(eTeam == eSecondTeam)
+				continue;
+			if((eTeam == t1 && eSecondTeam == t2) || (eTeam == t2 && eSecondTeam == t1))
+			{
+				int iPlotID = p.getX() * 1000 + p.getY();
+				if(seenPlots.count(iPlotID) <= 0)
+				{
+					seenPlots.insert(iPlotID);
+					r.push_back(&p);
+				}
+			}
+		}
 	}
 }
-
-int plotCityXY(const CvCity* pCity, const CvPlot* pPlot)
+// advc.004w: I'm not positive that there isn't already a function like this somewhere
+void applyColorToString(CvWString& s, char const* szColor, bool bLink)
 {
-	return plotCityXY(dxWrap(pPlot->getX_INLINE() - pCity->getX_INLINE()), dyWrap(pPlot->getY_INLINE() - pCity->getY_INLINE()));
+	if(bLink)
+		s.Format(L"<link=literal>%s</link>", s.GetCString());
+	s.Format(SETCOLR L"%s" ENDCOLR, TEXT_COLOR(szColor), s.GetCString());
 }
 
-CardinalDirectionTypes getOppositeCardinalDirection(CardinalDirectionTypes eDir)
+// advc.002i: Formula by T. Riemersma (CompuPhase.com) via Wikipedia ("Color difference")
+float colorDifference(NiColorA const& c1, NiColorA const& c2)
 {
-	return (CardinalDirectionTypes)((eDir + 2) % NUM_CARDINALDIRECTION_TYPES);
+	float channelWeights[] = { 2, 4, 3 }; // R, G, B
+	if (c1.r + c2.r > 1)
+		std::swap(channelWeights[0], channelWeights[2]);
+	float fDiff = 0;
+	fDiff += SQR(c1.r - c2.r) * channelWeights[0];
+	fDiff += SQR(c1.g - c2.g) * channelWeights[1];
+	fDiff += SQR(c1.b - c2.b) * channelWeights[2];
+	return fDiff;
 }
 
 DirectionTypes cardinalDirectionToDirection(CardinalDirectionTypes eCard)
@@ -76,19 +95,6 @@ DirectionTypes cardinalDirectionToDirection(CardinalDirectionTypes eCard)
 		return DIRECTION_WEST;
 	}
 	return NO_DIRECTION;
-}
-
-bool isCardinalDirection(DirectionTypes eDirection)
-{
-	switch( eDirection )
-	{
-	case DIRECTION_EAST:
-	case DIRECTION_NORTH:
-	case DIRECTION_SOUTH:
-	case DIRECTION_WEST:
-		return true;
-	}
-	return false;
 }
 
 DirectionTypes estimateDirection(int iDX, int iDY)
@@ -114,300 +120,191 @@ DirectionTypes estimateDirection(int iDX, int iDY)
 
 DirectionTypes estimateDirection(const CvPlot* pFromPlot, const CvPlot* pToPlot)
 {
-	return estimateDirection(dxWrap(pToPlot->getX_INLINE() - pFromPlot->getX_INLINE()), dyWrap(pToPlot->getY_INLINE() - pFromPlot->getY_INLINE()));
+	CvMap const& m = GC.getMap();
+	return estimateDirection(
+			m.dxWrap(pToPlot->getX() - pFromPlot->getX()),
+			m.dyWrap(pToPlot->getY() - pFromPlot->getY()));
 }
 
-
-float directionAngle( DirectionTypes eDirection )
+/*	advc: Cut from CvXMLLoadUtility.cpp, renamed
+	from "CreateHotKeyFromDescription"; nothing is "created" here. */
+CvWString hotkeyDescr::hotKeyFromDescription(TCHAR const* szDescr,
+	bool bShift, bool bAlt, bool bCtrl)
 {
-	switch( eDirection )
+	// Example: "Delete <COLOR:140,255,40,255>Shift+Delete</COLOR>"
+	CvWString szHotKey;
+	if (szDescr != NULL && strcmp(szDescr, "") != 0)
 	{
-	case DIRECTION_NORTHEAST:	return fM_PI * 0.25f;
-	case DIRECTION_EAST:			return fM_PI * 0.5f;
-	case DIRECTION_SOUTHEAST:	return fM_PI * 0.75f;
-	case DIRECTION_SOUTH:			return fM_PI * 1.0f;
-	case DIRECTION_SOUTHWEST:	return fM_PI * 1.25f;
-	case DIRECTION_WEST:			return fM_PI * 1.5f;
-	case DIRECTION_NORTHWEST:	return fM_PI * 1.75f;
-	default:
-	case DIRECTION_NORTH:			return 0.0f;
+		szHotKey += L" <color=140,255,40,255>";
+		szHotKey += L"&lt;";
+
+		if (bShift)
+			szHotKey += gDLL->getText("TXT_KEY_SHIFT");
+
+		if (bAlt)
+			szHotKey += gDLL->getText("TXT_KEY_ALT");
+
+		if (bCtrl)
+			szHotKey += gDLL->getText("TXT_KEY_CTRL");
+
+		szHotKey += keyStringFromKBCode(szDescr);
+		szHotKey += L">";
+		szHotKey += L"</color>";
 	}
+	return szHotKey;
 }
+
+// KB code to string; e.g. KB_DELETE -> "Delete"
+// advc: Cut from CvXMLLoadUtility.cpp, renamed from "CreateKeyStringFromKBCode".
+CvWString hotkeyDescr::keyStringFromKBCode(TCHAR const* szDescr)
+{
+	PROFILE_FUNC();
+
+	struct CvKeyBoardMapping
+	{
+		TCHAR szDefineString[25];
+		CvWString szKeyString;
+	};
+
+	// TODO - this should be a stl map instead of looping strcmp
+	const int iNumKeyBoardMappings=108;
+	const CvKeyBoardMapping asCvKeyBoardMapping[iNumKeyBoardMappings] =
+	{
+		{"KB_ESCAPE", gDLL->getText("TXT_KEY_KEYBOARD_ESCAPE")},
+		{"KB_0","0"},
+		{"KB_1","1"},
+		{"KB_2","2"},
+		{"KB_3","3"},
+		{"KB_4","4"},
+		{"KB_5","5"},
+		{"KB_6","6"},
+		{"KB_7","7"},
+		{"KB_8","8"},
+		{"KB_9","9"},
+		{"KB_MINUS","-"},	    /* - on main keyboard */
+		{"KB_A","A"},
+		{"KB_B","B"},
+		{"KB_C","C"},
+		{"KB_D","D"},
+		{"KB_E","E"},
+		{"KB_F","F"},
+		{"KB_G","G"},
+		{"KB_H","H"},
+		{"KB_I","I"},
+		{"KB_J","J"},
+		{"KB_K","K"},
+		{"KB_L","L"},
+		{"KB_M","M"},
+		{"KB_N","N"},
+		{"KB_O","O"},
+		{"KB_P","P"},
+		{"KB_Q","Q"},
+		{"KB_R","R"},
+		{"KB_S","S"},
+		{"KB_T","T"},
+		{"KB_U","U"},
+		{"KB_V","V"},
+		{"KB_W","W"},
+		{"KB_X","X"},
+		{"KB_Y","Y"},
+		{"KB_Z","Z"},
+		{"KB_EQUALS","="},
+		{"KB_BACKSPACE",gDLL->getText("TXT_KEY_KEYBOARD_BACKSPACE")},
+		{"KB_TAB","TAB"},
+		{"KB_LBRACKET","["},
+		{"KB_RBRACKET","]"},
+		{"KB_RETURN",gDLL->getText("TXT_KEY_KEYBOARD_ENTER")},		/* Enter on main keyboard */
+		{"KB_LCONTROL",gDLL->getText("TXT_KEY_KEYBOARD_LEFT_CONTROL_KEY")},
+		{"KB_SEMICOLON",";"},
+		{"KB_APOSTROPHE","'"},
+		{"KB_GRAVE","`"},		/* accent grave */
+		{"KB_LSHIFT",gDLL->getText("TXT_KEY_KEYBOARD_LEFT_SHIFT_KEY")},
+		{"KB_BACKSLASH","\\"},
+		{"KB_COMMA",","},
+		{"KB_PERIOD","."},
+		{"KB_SLASH","/"},
+		{"KB_RSHIFT",gDLL->getText("TXT_KEY_KEYBOARD_RIGHT_SHIFT_KEY")},
+		{"KB_NUMPADSTAR",gDLL->getText("TXT_KEY_KEYBOARD_NUM_PAD_STAR")},
+		{"KB_LALT",gDLL->getText("TXT_KEY_KEYBOARD_LEFT_ALT_KEY")},
+		{"KB_SPACE",gDLL->getText("TXT_KEY_KEYBOARD_SPACE_KEY")},
+		{"KB_CAPSLOCK",gDLL->getText("TXT_KEY_KEYBOARD_CAPS_LOCK")},
+		{"KB_F1","F1"},
+		{"KB_F2","F2"},
+		{"KB_F3","F3"},
+		{"KB_F4","F4"},
+		{"KB_F5","F5"},
+		{"KB_F6","F6"},
+		{"KB_F7","F7"},
+		{"KB_F8","F8"},
+		{"KB_F9","F9"},
+		{"KB_F10","F10"},
+		{"KB_NUMLOCK",gDLL->getText("TXT_KEY_KEYBOARD_NUM_LOCK")},
+		{"KB_SCROLL",gDLL->getText("TXT_KEY_KEYBOARD_SCROLL_KEY")},
+		{"KB_NUMPAD7",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 7)},
+		{"KB_NUMPAD8",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 8)},
+		{"KB_NUMPAD9",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 9)},
+		{"KB_NUMPADMINUS",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_MINUS")},
+		{"KB_NUMPAD4",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 4)},
+		{"KB_NUMPAD5",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 5)},
+		{"KB_NUMPAD6",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 6)},
+		{"KB_NUMPADPLUS",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_PLUS")},
+		{"KB_NUMPAD1",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 1)},
+		{"KB_NUMPAD2",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 2)},
+		{"KB_NUMPAD3",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 3)},
+		{"KB_NUMPAD0",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_NUMBER", 0)},
+		{"KB_NUMPADPERIOD",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_PERIOD")},
+		{"KB_F11","F11"},
+		{"KB_F12","F12"},
+		{"KB_NUMPADEQUALS",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_EQUALS")},
+		{"KB_AT","@"},
+		{"KB_UNDERLINE","_"},
+		{"KB_COLON",":"},
+		{"KB_NUMPADENTER",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_ENTER_KEY")},
+		{"KB_RCONTROL",gDLL->getText("TXT_KEY_KEYBOARD_RIGHT_CONTROL_KEY")},
+		{"KB_VOLUMEDOWN",gDLL->getText("TXT_KEY_KEYBOARD_VOLUME_DOWN")},
+		{"KB_VOLUMEUP",gDLL->getText("TXT_KEY_KEYBOARD_VOLUME_UP")},
+		{"KB_NUMPADCOMMA",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_COMMA")},
+		{"KB_NUMPADSLASH",gDLL->getText("TXT_KEY_KEYBOARD_NUMPAD_SLASH")},
+		{"KB_SYSRQ",gDLL->getText("TXT_KEY_KEYBOARD_SYSRQ")},
+		{"KB_RALT",gDLL->getText("TXT_KEY_KEYBOARD_RIGHT_ALT_KEY")},
+		{"KB_PAUSE",gDLL->getText("TXT_KEY_KEYBOARD_PAUSE_KEY")},
+		{"KB_HOME",gDLL->getText("TXT_KEY_KEYBOARD_HOME_KEY")},
+		{"KB_UP",gDLL->getText("TXT_KEY_KEYBOARD_UP_ARROW")},
+		{"KB_PGUP",gDLL->getText("TXT_KEY_KEYBOARD_PAGE_UP")},
+		{"KB_LEFT",gDLL->getText("TXT_KEY_KEYBOARD_LEFT_ARROW")},
+		{"KB_RIGHT",gDLL->getText("TXT_KEY_KEYBOARD_RIGHT_ARROW")},
+		{"KB_END",gDLL->getText("TXT_KEY_KEYBOARD_END_KEY")},
+		{"KB_DOWN",gDLL->getText("TXT_KEY_KEYBOARD_DOWN_ARROW")},
+		{"KB_PGDN",gDLL->getText("TXT_KEY_KEYBOARD_PAGE_DOWN")},
+		{"KB_INSERT",gDLL->getText("TXT_KEY_KEYBOARD_INSERT_KEY")},
+		{"KB_DELETE",gDLL->getText("TXT_KEY_KEYBOARD_DELETE_KEY")},
+	};
+
+	for (int i = 0; i < iNumKeyBoardMappings; i++)
+	{
+		if (strcmp(asCvKeyBoardMapping[i].szDefineString, szDescr) == 0)
+			return asCvKeyBoardMapping[i].szKeyString;
+	}
+
+	return "";
+}
+
 
 bool atWar(TeamTypes eTeamA, TeamTypes eTeamB)
 {
-	if ((eTeamA == NO_TEAM) || (eTeamB == NO_TEAM))
-	{
-		return false;
-	}
-
-	FAssert(GET_TEAM(eTeamA).isAtWar(eTeamB) == GET_TEAM(eTeamB).isAtWar(eTeamA));
-	//FAssert((eTeamA != eTeamB) || !(GET_TEAM(eTeamA).isAtWar(eTeamB)));
-
-	if(eTeamA == eTeamB) return false; //Rhye
-
-	return GET_TEAM(eTeamA).isAtWar(eTeamB);
+	return (eTeamA != NO_TEAM && eTeamB != NO_TEAM && GET_TEAM(eTeamA).isAtWar(eTeamB));
 }
-
-bool isPotentialEnemy(TeamTypes eOurTeam, TeamTypes eTheirTeam)
+// advc: No longer needed
+/*bool isPotentialEnemy(TeamTypes eOurTeam, TeamTypes eTheirTeam)
 {
 	FAssert(eOurTeam != NO_TEAM);
-
 	if (eTheirTeam == NO_TEAM)
-	{
 		return false;
-	}
+	// advc: Moved into new CvTeamAI function
+	return GET_TEAM(eOurTeam).AI_mayAttack(eTheirTeam);
+}*/
 
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       05/05/09                                jdog5000      */
-/*                                                                                              */
-/* Bugfix, General AI                                                                           */
-/************************************************************************************************/
-/* original bts code
-	return (atWar(eOurTeam, eTheirTeam) || GET_TEAM(eOurTeam).AI_isSneakAttackReady(eTheirTeam));
-*/
-	// Fixes bug where AI would launch invasion while unable to declare war
-	// which caused units to be bumped once forced peace expired
-	return (atWar(eOurTeam, eTheirTeam) || (GET_TEAM(eOurTeam).AI_isSneakAttackReady(eTheirTeam) && GET_TEAM(eOurTeam).canDeclareWar(eTheirTeam)));
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
-}
-
-CvCity* getCity(IDInfo city)
-{
-	if ((city.eOwner >= 0) && city.eOwner < MAX_PLAYERS)
-	{
-		return (GET_PLAYER((PlayerTypes)city.eOwner).getCity(city.iID));
-	}
-
-	return NULL;
-}
-
-CvUnit* getUnit(IDInfo unit)
-{
-	if ((unit.eOwner >= 0) && unit.eOwner < MAX_PLAYERS)
-	{
-		return (GET_PLAYER((PlayerTypes)unit.eOwner).getUnit(unit.iID));
-	}
-
-	return NULL;
-}
-
-bool isBeforeUnitCycle(const CvUnit* pFirstUnit, const CvUnit* pSecondUnit)
-{
-	FAssert(pFirstUnit != NULL);
-	FAssert(pSecondUnit != NULL);
-	FAssert(pFirstUnit != pSecondUnit);
-
-	if (pFirstUnit->getOwnerINLINE() != pSecondUnit->getOwnerINLINE())
-	{
-		return (pFirstUnit->getOwnerINLINE() < pSecondUnit->getOwnerINLINE());
-	}
-
-	if (pFirstUnit->getDomainType() != pSecondUnit->getDomainType())
-	{
-		return (pFirstUnit->getDomainType() < pSecondUnit->getDomainType());
-	}
-
-	if (pFirstUnit->baseCombatStr() != pSecondUnit->baseCombatStr())
-	{
-		return (pFirstUnit->baseCombatStr() > pSecondUnit->baseCombatStr());
-	}
-
-	if (pFirstUnit->getUnitType() != pSecondUnit->getUnitType())
-	{
-		return (pFirstUnit->getUnitType() > pSecondUnit->getUnitType());
-	}
-
-	if (pFirstUnit->getLevel() != pSecondUnit->getLevel())
-	{
-		return (pFirstUnit->getLevel() > pSecondUnit->getLevel());
-	}
-
-	if (pFirstUnit->getExperience() != pSecondUnit->getExperience())
-	{
-		return (pFirstUnit->getExperience() > pSecondUnit->getExperience());
-	}
-
-	return (pFirstUnit->getID() < pSecondUnit->getID());
-}
-
-/*************************************************************************************************/
-/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
-/** BEGIN                                                                       v?.?             */
-/*************************************************************************************************/
-bool isPromotionValid(PromotionTypes ePromotion, UnitTypes eUnit, bool bLeader)
-{
-	if (GC.getUnitInfo(eUnit).getFreePromotions(ePromotion))
-	{
-		return true;
-	}
-
-	if (GC.getUnitInfo(eUnit).getUnitCombatType() == NO_UNITCOMBAT)
-	{
-		return false;
-	}
-
-	if (!bLeader && GC.getPromotionInfo(ePromotion).isLeader())
-	{
-		return false;
-	}
-
-	if (!(GC.getPromotionInfo(ePromotion).getUnitCombat(GC.getUnitInfo(eUnit).getUnitCombatType())))
-	{
-		return false;
-	}
-
-	//SuperSpies: TSHEEP Override for Spy promotions
-	//if (GC.getUnitInfo(eUnit).isOnlyDefensive())
-	if (GC.getUnitInfo(eUnit).isOnlyDefensive() && !GC.getUnitInfo(eUnit).isSpy())//SuperSpies: TSHEEP End
-	{
-		if ((GC.getPromotionInfo(ePromotion).getCityAttackPercent() != 0) ||
-			  (GC.getPromotionInfo(ePromotion).getWithdrawalChange() != 0) ||
-			  (GC.getPromotionInfo(ePromotion).getCollateralDamageChange() != 0) ||
-			  (GC.getPromotionInfo(ePromotion).isBlitz()) ||
-			  (GC.getPromotionInfo(ePromotion).isAmphib()) ||
-			  (GC.getPromotionInfo(ePromotion).isRiver()) ||
-			  (GC.getPromotionInfo(ePromotion).getHillsAttackPercent() != 0))
-		{
-			return false;
-		}
-	}
-
-	if (GC.getUnitInfo(eUnit).isIgnoreTerrainCost())
-	{
-		if (GC.getPromotionInfo(ePromotion).getMoveDiscountChange() != 0)
-		{
-			return false;
-		}
-	}
-
-	if (GC.getUnitInfo(eUnit).getMoves() == 1)
-	{
-		if (GC.getPromotionInfo(ePromotion).isBlitz())
-		{
-			return false;
-		}
-	}
-
-	if ((GC.getUnitInfo(eUnit).getCollateralDamageLimit() == 0) || (GC.getUnitInfo(eUnit).getCollateralDamageMaxUnits() == 0))
-	{
-		if (GC.getPromotionInfo(ePromotion).getCollateralDamageChange() != 0)
-		{
-			return false;
-		}
-	}
-
-	//SuperSpies: TSHEEP - Spy Promotion Override
-	//if (GC.getUnitInfo(eUnit).getInterceptionProbability() == 0)
-	if (GC.getUnitInfo(eUnit).getInterceptionProbability() == 0 && !GC.getUnitInfo(eUnit).isSpy())//SuperSpies: TSHEEP End
-	{
-		if (GC.getPromotionInfo(ePromotion).getInterceptChange() != 0)
-		{
-			return false;
-		}
-	}
-
-	if (NO_PROMOTION != GC.getPromotionInfo(ePromotion).getPrereqPromotion())
-	{
-		if (!isPromotionValid((PromotionTypes)GC.getPromotionInfo(ePromotion).getPrereqPromotion(), eUnit, bLeader))
-		{
-			return false;
-		}
-	}
-
-	PromotionTypes ePrereq1 = (PromotionTypes)GC.getPromotionInfo(ePromotion).getPrereqOrPromotion1();
-	PromotionTypes ePrereq2 = (PromotionTypes)GC.getPromotionInfo(ePromotion).getPrereqOrPromotion2();
-	if (NO_PROMOTION != ePrereq1 || NO_PROMOTION != ePrereq2)
-	{
-		bool bValid = false;
-		if (!bValid)
-		{
-			if (NO_PROMOTION != ePrereq1 && isPromotionValid(ePrereq1, eUnit, bLeader))
-			{
-				bValid = true;
-			}
-		}
-
-		if (!bValid)
-		{
-			if (NO_PROMOTION != ePrereq2 && isPromotionValid(ePrereq2, eUnit, bLeader))
-			{
-				bValid = true;
-			}
-		}
-
-		if (!bValid)
-		{
-			return false;
-		}
-	}
-
-	return true;
-}
-
-int getPopulationAsset(int iPopulation)
-{
-	return (iPopulation * 2);
-}
-
-int getLandPlotsAsset(int iLandPlots)
-{
-	return iLandPlots;
-}
-
-int getPopulationPower(int iPopulation)
-{
-	return (iPopulation / 2);
-}
-
-int getPopulationScore(int iPopulation)
-{
-	return iPopulation;
-}
-
-int getLandPlotsScore(int iLandPlots)
-{
-	return iLandPlots;
-}
-
-int getTechScore(TechTypes eTech)
-{
-	return (GC.getTechInfo(eTech).getEra() + 1);
-}
-
-int getWonderScore(BuildingClassTypes eWonderClass)
-{
-	if (isLimitedWonderClass(eWonderClass))
-	{
-		return 5;
-	}
-	else
-	{
-		return 0;
-	}
-}
-
-ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, int iCount)
-{
-	FAssertMsg(eImprovement != NO_IMPROVEMENT, "Improvement is not assigned a valid value");
-
-	if (iCount > GC.getNumImprovementInfos())
-	{
-		return NO_IMPROVEMENT;
-	}
-
-	if (GC.getImprovementInfo(eImprovement).getImprovementUpgrade() != NO_IMPROVEMENT)
-	{
-		return finalImprovementUpgrade(((ImprovementTypes)(GC.getImprovementInfo(eImprovement).getImprovementUpgrade())), (iCount + 1));
-	}
-	else
-	{
-		return eImprovement;
-	}
-}
-
+// TODO: removed by advciv find new location
 int getWorldSizeMaxConscript(CivicTypes eCivic)
 {
 	int iMaxConscript;
@@ -421,716 +318,66 @@ int getWorldSizeMaxConscript(CivicTypes eCivic)
 	return iMaxConscript;
 }
 
-bool isReligionTech(TechTypes eTech)
+// K-Mod: (advc - Where do we move this? Should not be global.)
+int estimateCollateralWeight(CvPlot const* pPlot, TeamTypes eAttackTeam,
+	TeamTypes eDefenseTeam)
 {
-	int iI;
+	int iBaseCollateral = GC.getDefineINT(CvGlobals::COLLATERAL_COMBAT_DAMAGE); // normally 10
+	if (pPlot == NULL)
+		return iBaseCollateral * 110;
 
-	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	/*	Collateral damage does not depend on any kind of strength bonus -
+		so when a unit takes collateral damage, their bonuses are effectively wasted.
+		Therefore, I'm going to inflate the value of collateral damage based
+		on a rough estimate of the defenders bonuses. */
+
+	TeamTypes ePlotBonusTeam = eDefenseTeam;
+	if (ePlotBonusTeam == NO_TEAM)
+		ePlotBonusTeam = (pPlot->getTeam() == eAttackTeam ? NO_TEAM : pPlot->getTeam());
+
+	iBaseCollateral *= (pPlot->isCity() ? 130 : 110) +
+			pPlot->defenseModifier(ePlotBonusTeam, false,
+			eAttackTeam); // advc.012
+
+	// Estimate the average collateral damage reduction of the units on the plot
+	int iResistanceSum = 0;
+	int iUnits = 0;
+
+	FOR_EACH_UNIT_IN(pUnit, *pPlot)
 	{
-		if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eTech)
+		if (!pUnit->canDefend(pPlot))
+			continue;
+		if (eDefenseTeam != NO_TEAM && pUnit->getTeam() != eDefenseTeam)
+			continue;
+		if (eAttackTeam != NO_TEAM && pUnit->getTeam() == eAttackTeam)
+			continue;
+
+		iUnits++;
+		/*	Kludge! I'm only checking for immunity against the unit's own combat type.
+			Ideally we'd know what kind of collateral damage we're expecting to be hit by,
+			and check for immunity vs that.
+			Or we could check all types... But the reality is, there are always
+			going to be mods and fringe cases where the esitmate is inaccurate.
+			And currently in K-Mod, all instances of immunity are to the unit's own type anyway.
+			Whichever way we do the estimate, cho-ku-nu is going to mess it up anyway.
+			(Unless I change the game mechanics.) */
+		if ( // advc.001: Animals have no unit combat type (K146 also fixes this)
+			pUnit->getUnitCombatType() != NO_UNITCOMBAT &&
+			pUnit->getUnitInfo().getUnitCombatCollateralImmune(pUnit->getUnitCombatType()))
 		{
-			return true;
+			iResistanceSum += 100;
 		}
+		else iResistanceSum += pUnit->getCollateralDamageProtection();
 	}
-
-	return false;
-}
-
-bool isCorporationTech(TechTypes eTech)
-{
-	int iI;
-
-	for (iI = 0; iI < GC.getNumCorporationInfos(); iI++)
+	if (iUnits > 0)
 	{
-		if (GC.getCorporationInfo((CorporationTypes)iI).getTechPrereq() == eTech)
-		{
-			return true;
-		}
+		iBaseCollateral = iBaseCollateral * (iUnits * 100 - iResistanceSum) /
+				(iUnits * 100);
 	}
 
-	return false;
+	return iBaseCollateral; // note, a factor of 100 is included in the result.
 }
 
-bool isTechRequiredForUnit(TechTypes eTech, UnitTypes eUnit)
-{
-	int iI;
-	CvUnitInfo& info = GC.getUnitInfo(eUnit);
-
-	if (info.getPrereqAndTech() == eTech)
-	{
-		return true;
-	}
-
-	for (iI = 0; iI < GC.getNUM_UNIT_AND_TECH_PREREQS(); iI++)
-	{
-		if (info.getPrereqAndTechs(iI) == eTech)
-		{
-			return true;
-		}
-	}
-
-	return false;
-}
-
-bool isTechRequiredForBuilding(TechTypes eTech, BuildingTypes eBuilding)
-{
-	int iI;
-	CvBuildingInfo& info = GC.getBuildingInfo(eBuilding);
-
-	if (info.getPrereqAndTech() == eTech)
-	{
-		return true;
-	}
-
-	for (iI = 0; iI < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iI++)
-	{
-		if (info.getPrereqAndTechs(iI) == eTech)
-		{
-			return true;
-		}
-	}
-
-	SpecialBuildingTypes eSpecial = (SpecialBuildingTypes)info.getSpecialBuildingType();
-	if (NO_SPECIALBUILDING != eSpecial && GC.getSpecialBuildingInfo(eSpecial).getTechPrereq() == eTech)
-	{
-		return true;
-	}
-
-	return false;
-}
-
-bool isTechRequiredForProject(TechTypes eTech, ProjectTypes eProject)
-{
-	if (GC.getProjectInfo(eProject).getTechPrereq() == eTech)
-	{
-		return true;
-	}
-
-	return false;
-}
-
-bool isWorldUnitClass(UnitClassTypes eUnitClass)
-{
-	return (GC.getUnitClassInfo(eUnitClass).getMaxGlobalInstances() != -1);
-}
-
-bool isTeamUnitClass(UnitClassTypes eUnitClass)
-{
-	return (GC.getUnitClassInfo(eUnitClass).getMaxTeamInstances() != -1);
-}
-
-bool isNationalUnitClass(UnitClassTypes eUnitClass)
-{
-	return (GC.getUnitClassInfo(eUnitClass).getMaxPlayerInstances() != -1);
-}
-
-bool isLimitedUnitClass(UnitClassTypes eUnitClass)
-{
-	return (isWorldUnitClass(eUnitClass) || isTeamUnitClass(eUnitClass) || isNationalUnitClass(eUnitClass));
-}
-
-bool isWorldWonderClass(BuildingClassTypes eBuildingClass)
-{
-	return (GC.getBuildingClassInfo(eBuildingClass).getMaxGlobalInstances() != -1);
-}
-
-bool isTeamWonderClass(BuildingClassTypes eBuildingClass)
-{
-	return (GC.getBuildingClassInfo(eBuildingClass).getMaxTeamInstances() != -1);
-}
-
-bool isNationalWonderClass(BuildingClassTypes eBuildingClass)
-{
-	return (GC.getBuildingClassInfo(eBuildingClass).getMaxPlayerInstances() != -1);
-}
-
-bool isLimitedWonderClass(BuildingClassTypes eBuildingClass)
-{
-	return (isWorldWonderClass(eBuildingClass) || isTeamWonderClass(eBuildingClass) || isNationalWonderClass(eBuildingClass));
-}
-
-int limitedWonderClassLimit(BuildingClassTypes eBuildingClass)
-{
-	int iMax;
-	int iCount = 0;
-	bool bIsLimited = false;
-
-	iMax = GC.getBuildingClassInfo(eBuildingClass).getMaxGlobalInstances();
-	if (iMax != -1)
-	{
-		iCount += iMax;
-		bIsLimited = true;
-	}
-
-	iMax = GC.getBuildingClassInfo(eBuildingClass).getMaxTeamInstances();
-	if (iMax != -1)
-	{
-		iCount += iMax;
-		bIsLimited = true;
-	}
-
-	iMax = GC.getBuildingClassInfo(eBuildingClass).getMaxPlayerInstances();
-	if (iMax != -1)
-	{
-		iCount += iMax;
-		bIsLimited = true;
-	}
-
-	return bIsLimited ? iCount : -1;
-}
-
-bool isWorldProject(ProjectTypes eProject)
-{
-	return (GC.getProjectInfo(eProject).getMaxGlobalInstances() != -1);
-}
-
-bool isTeamProject(ProjectTypes eProject)
-{
-	return (GC.getProjectInfo(eProject).getMaxTeamInstances() != -1);
-}
-
-bool isLimitedProject(ProjectTypes eProject)
-{
-	return (isWorldProject(eProject) || isTeamProject(eProject));
-}
-
-// FUNCTION: getBinomialCoefficient
-// Needed for getCombatOdds
-// Returns int value, being the possible number of combinations 
-// of k draws out of a population of n
-// Written by DeepO 
-// Modified by Jason Winokur to keep the intermediate factorials small
-__int64 getBinomialCoefficient(int iN, int iK)
-{
-	__int64 iTemp = 1;
-	//take advantage of symmetry in combination, eg. 15C12 = 15C3
-	iK = std::min(iK, iN - iK);
-	
-	//eg. 15C3 = (15 * 14 * 13) / (1 * 2 * 3) = 15 / 1 * 14 / 2 * 13 / 3 = 455
-	for(int i=1;i<=iK;i++)
-		iTemp = (iTemp * (iN - i + 1)) / i;
-
-	// Make sure iTemp fits in an integer (and thus doesn't overflow)
-	FAssert(iTemp < MAX_INT);
-
-	return iTemp;
-}
-
-// FUNCTION: getCombatOdds
-// Calculates combat odds, given two units
-// Returns value from 0-1000
-// Written by DeepO
-int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender)
-{
-	float fOddsEvent;
-	float fOddsAfterEvent;
-	int iAttackerStrength;
-	int iAttackerFirepower;
-	int iDefenderStrength;
-	int iDefenderFirepower;
-	int iDefenderOdds;
-	int iAttackerOdds;
-	int iStrengthFactor;
-	int iDamageToAttacker;
-	int iDamageToDefender;
-	int iNeededRoundsAttacker;
-	int iNeededRoundsDefender;
-	int iMaxRounds;
-	int iAttackerLowFS;
-	int iAttackerHighFS;
-	int iDefenderLowFS;
-	int iDefenderHighFS;
-	int iFirstStrikes;
-	int iDefenderHitLimit;
-	int iI;
-	int iJ;
-	int iI3;
-	int iI4;
-	int iOdds = 0;
-
-	// setup battle, calculate strengths and odds
-	//////
-
-	//Added ST
-	iAttackerStrength = pAttacker->currCombatStr(NULL, NULL);
-	iAttackerFirepower = pAttacker->currFirepower(NULL, NULL);
-
-	iDefenderStrength = pDefender->currCombatStr(pDefender->plot(), pAttacker);
-	iDefenderFirepower = pDefender->currFirepower(pDefender->plot(), pAttacker);
-
-	FAssert((iAttackerStrength + iDefenderStrength) > 0);
-	FAssert((iAttackerFirepower + iDefenderFirepower) > 0);
-
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
-/*                                                                                              */
-/* Efficiency, Lead From Behind                                                                 */
-/************************************************************************************************/
-	// From Lead From Behind by UncutDragon
-	// original
-	//iDefenderOdds = ((GC.getDefineINT("COMBAT_DIE_SIDES") * iDefenderStrength) / (iAttackerStrength + iDefenderStrength));
-	// modified
-	iDefenderOdds = ((GC.getCOMBAT_DIE_SIDES() * iDefenderStrength) / (iAttackerStrength + iDefenderStrength));
-	// /UncutDragon
-
-	if (iDefenderOdds == 0)
-	{
-		return 1000;
-	}
-
-	// UncutDragon
-	// original
-	//iAttackerOdds = GC.getDefineINT("COMBAT_DIE_SIDES") - iDefenderOdds;	
-	// modified
-	iAttackerOdds = GC.getCOMBAT_DIE_SIDES() - iDefenderOdds;	
-	// /UncutDragon
-
-	if (iAttackerOdds == 0)
-	{
-		return 0;
-	}
-
-	iStrengthFactor = ((iAttackerFirepower + iDefenderFirepower + 1) / 2);
-
-	// calculate damage done in one round
-	//////
-
-	// UncutDragon
-	// original
-	//iDamageToAttacker = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iDefenderFirepower + iStrengthFactor)) / (iAttackerFirepower + iStrengthFactor)));
-	//iDamageToDefender = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iAttackerFirepower + iStrengthFactor)) / (iDefenderFirepower + iStrengthFactor)));
-	// modified
-	iDamageToAttacker = std::max(1,((GC.getCOMBAT_DAMAGE() * (iDefenderFirepower + iStrengthFactor)) / (iAttackerFirepower + iStrengthFactor)));
-	iDamageToDefender = std::max(1,((GC.getCOMBAT_DAMAGE() * (iAttackerFirepower + iStrengthFactor)) / (iDefenderFirepower + iStrengthFactor)));
-	// /UncutDragon
-
-	// calculate needed rounds.
-	// Needed rounds = round_up(health/damage)
-	//////
-
-	iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender);
-
-	iNeededRoundsAttacker = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - 1 ) / iDamageToDefender;
-	iNeededRoundsDefender = (pAttacker->currHitPoints() + iDamageToAttacker - 1 ) / iDamageToAttacker;
-	iMaxRounds = iNeededRoundsAttacker + iNeededRoundsDefender - 1;
-
-	// calculate possible first strikes distribution.
-	// We can't use the getCombatFirstStrikes() function (only one result,
-	// no distribution), so we need to mimic it.
-	//////
-
-	iAttackerLowFS = (pDefender->immuneToFirstStrikes()) ? 0 : pAttacker->firstStrikes();
-	iAttackerHighFS = (pDefender->immuneToFirstStrikes()) ? 0 : (pAttacker->firstStrikes() + pAttacker->chanceFirstStrikes());
-
-	iDefenderLowFS = (pAttacker->immuneToFirstStrikes()) ? 0 : pDefender->firstStrikes();
-	iDefenderHighFS = (pAttacker->immuneToFirstStrikes()) ? 0 : (pDefender->firstStrikes() + pDefender->chanceFirstStrikes());
-
-	// For every possible first strike event, calculate the odds of combat.
-	// Then, add these to the total, weighted to the chance of that first 
-	// strike event occurring
-	//////
-
-	for (iI = iAttackerLowFS; iI < iAttackerHighFS + 1; iI++)
-	{
-		for (iJ = iDefenderLowFS; iJ < iDefenderHighFS + 1; iJ++)
-		{
-			// for every possible combination of fs results, calculate the chance
-
-			if (iI >= iJ)
-			{
-				// Attacker gets more or equal first strikes than defender
-
-				iFirstStrikes = iI - iJ;
-
-				// For every possible first strike getting hit, calculate both
-				// the chance of that event happening, as well as the rest of 
-				// the chance assuming the event has happened. Multiply these 
-				// together to get the total chance (Bayes rule). 
-				// iI3 counts the number of successful first strikes
-				//////
-
-				for (iI3 = 0; iI3 < (iFirstStrikes + 1); iI3++)
-				{
-					// event: iI3 first strikes hit the defender
-
-					// calculate chance of iI3 first strikes hitting: fOddsEvent
-					// f(k;n,p)=C(n,k)*(p^k)*((1-p)^(n-k)) 
-					// this needs to be in floating point math
-					//////
-
-					// UncutDragon
-					// original
-					//fOddsEvent = ((float)getBinomialCoefficient(iFirstStrikes, iI3)) * pow((((float)iAttackerOdds) / GC.getDefineINT("COMBAT_DIE_SIDES")), iI3) * pow((1.0f - (((float)iAttackerOdds) / GC.getDefineINT("COMBAT_DIE_SIDES"))), (iFirstStrikes - iI3));
-					// modified
-					fOddsEvent = ((float)getBinomialCoefficient(iFirstStrikes, iI3)) * pow((((float)iAttackerOdds) / GC.getCOMBAT_DIE_SIDES()), iI3) * pow((1.0f - (((float)iAttackerOdds) / GC.getCOMBAT_DIE_SIDES())), (iFirstStrikes - iI3));
-					// /UncutDragon
-
-					// calculate chance assuming iI3 first strike hits: fOddsAfterEvent
-					//////
-
-					if (iI3 >= iNeededRoundsAttacker)
-					{
-						fOddsAfterEvent = 1;
-					}
-					else
-					{
-						fOddsAfterEvent = 0;
-
-						// odds for _at_least_ (iNeededRoundsAttacker - iI3) (the remaining hits 
-						// the attacker needs to make) out of (iMaxRounds - iI3) (the left over 
-						// rounds) is the sum of each _exact_ draw
-						//////
-
-						for (iI4 = (iNeededRoundsAttacker - iI3); iI4 < (iMaxRounds - iI3 + 1); iI4++)
-						{
-							// odds of exactly iI4 out of (iMaxRounds - iI3) draws.
-							// f(k;n,p)=C(n,k)*(p^k)*((1-p)^(n-k)) 
-							// this needs to be in floating point math
-							//////
-
-							// UncutDragon
-							// original
-							//fOddsAfterEvent += ((float)getBinomialCoefficient((iMaxRounds - iI3), iI4)) * pow((((float)iAttackerOdds) / GC.getDefineINT("COMBAT_DIE_SIDES")), iI4) * pow((1.0f - (((float)iAttackerOdds) / GC.getDefineINT("COMBAT_DIE_SIDES"))), ((iMaxRounds - iI3) - iI4));
-							// modified
-							fOddsAfterEvent += ((float)getBinomialCoefficient((iMaxRounds - iI3), iI4)) * pow((((float)iAttackerOdds) / GC.getCOMBAT_DIE_SIDES()), iI4) * pow((1.0f - (((float)iAttackerOdds) / GC.getCOMBAT_DIE_SIDES())), ((iMaxRounds - iI3) - iI4));
-							// /UncutDragon
-						}
-					}
-
-					// Multiply these together, round them properly, and add 
-					// the result to the total iOdds
-					//////
-
-					iOdds += ((int)(1000.0 * (fOddsEvent*fOddsAfterEvent + 0.0005)));
-				}
-			}
-			else // (iI < iJ)
-			{
-				// Attacker gets less first strikes than defender
-
-				iFirstStrikes = iJ - iI;
-
-				// For every possible first strike getting hit, calculate both
-				// the chance of that event happening, as well as the rest of 
-				// the chance assuming the event has happened. Multiply these 
-				// together to get the total chance (Bayes rule). 
-				// iI3 counts the number of successful first strikes
-				//////
-
-				for (iI3 = 0; iI3 < (iFirstStrikes + 1); iI3++)
-				{
-					// event: iI3 first strikes hit the defender
-
-					// First of all, check if the attacker is still alive.
-					// Otherwise, no further calculations need to occur 
-					/////
-
-					if (iI3 < iNeededRoundsDefender)
-					{
-						// calculate chance of iI3 first strikes hitting: fOddsEvent
-						// f(k;n,p)=C(n,k)*(p^k)*((1-p)^(n-k)) 
-						// this needs to be in floating point math
-						//////
-
-						// UncutDragon
-						// original
-						//fOddsEvent = ((float)getBinomialCoefficient(iFirstStrikes, iI3)) * pow((((float)iDefenderOdds) / GC.getDefineINT("COMBAT_DIE_SIDES")), iI3) * pow((1.0f - (((float)iDefenderOdds) / GC.getDefineINT("COMBAT_DIE_SIDES"))), (iFirstStrikes - iI3));
-						// modified
-						fOddsEvent = ((float)getBinomialCoefficient(iFirstStrikes, iI3)) * pow((((float)iDefenderOdds) / GC.getCOMBAT_DIE_SIDES()), iI3) * pow((1.0f - (((float)iDefenderOdds) / GC.getCOMBAT_DIE_SIDES())), (iFirstStrikes - iI3));
-						// /UncutDragon
-
-						// calculate chance assuming iI3 first strike hits: fOddsAfterEvent
-						//////
-
-						fOddsAfterEvent = 0;
-
-						// odds for _at_least_ iNeededRoundsAttacker (the remaining hits 
-						// the attacker needs to make) out of (iMaxRounds - iI3) (the left over 
-						// rounds) is the sum of each _exact_ draw
-						//////
-
-						for (iI4 = iNeededRoundsAttacker; iI4 < (iMaxRounds - iI3 + 1); iI4++)
-						{
-
-							// odds of exactly iI4 out of (iMaxRounds - iI3) draws.
-							// f(k;n,p)=C(n,k)*(p^k)*((1-p)^(n-k)) 
-							// this needs to be in floating point math
-							//////
-
-							// UncutDragon
-							// original
-							//fOddsAfterEvent += ((float)getBinomialCoefficient((iMaxRounds - iI3), iI4)) * pow((((float)iAttackerOdds) / GC.getDefineINT("COMBAT_DIE_SIDES")), iI4) * pow((1.0f - (((float)iAttackerOdds) / GC.getDefineINT("COMBAT_DIE_SIDES"))), ((iMaxRounds - iI3) - iI4));
-							// modified
-							fOddsAfterEvent += ((float)getBinomialCoefficient((iMaxRounds - iI3), iI4)) * pow((((float)iAttackerOdds) / GC.getCOMBAT_DIE_SIDES()), iI4) * pow((1.0f - (((float)iAttackerOdds) / GC.getCOMBAT_DIE_SIDES())), ((iMaxRounds - iI3) - iI4));
-							// /UncutDragon
-						}
-
-						// Multiply these together, round them properly, and add 
-						// the result to the total iOdds
-						//////
-
-						iOdds += ((int)(1000.0 * (fOddsEvent*fOddsAfterEvent + 0.0005)));
-					}
-				}				
-			}
-		}
-	}
-
-	// Weigh the total to the number of possible combinations of first strikes events
-	// note: the integer math breaks down when #FS > 656 (with a die size of 1000)
-	//////
-
-	iOdds /= (((pDefender->immuneToFirstStrikes()) ? 0 : pAttacker->chanceFirstStrikes()) + 1) * (((pAttacker->immuneToFirstStrikes()) ? 0 : pDefender->chanceFirstStrikes()) + 1); 
-
-	// finished!
-	//////
-
-	return iOdds;
-}
-
-/*************************************************************************************************/
-/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
-/** BEGIN                                                                       v1.1             */
-/*************************************************************************************************/
-
-//Calculates the probability of a particular combat outcome
-//Returns a float value (between 0 and 1)
-//Written by PieceOfMind
-//n_A = hits taken by attacker, n_D = hits taken by defender.
-float getCombatOddsSpecific(CvUnit* pAttacker, CvUnit* pDefender, int n_A, int n_D)
-{
-    int iAttackerStrength;
-    int iAttackerFirepower;
-    int iDefenderStrength;
-    int iDefenderFirepower;
-    int iDefenderOdds;
-    int iAttackerOdds;
-    int iStrengthFactor;
-    int iDamageToAttacker;
-    int iDamageToDefender;
-    int iNeededRoundsAttacker;
-    //int iNeededRoundsDefender;
-
-    int AttFSnet;
-    int AttFSC;
-    int DefFSC;
-
-    int iDefenderHitLimit;
-
-
-    iAttackerStrength = pAttacker->currCombatStr(NULL, NULL);
-    iAttackerFirepower = pAttacker->currFirepower(NULL, NULL);
-    iDefenderStrength = pDefender->currCombatStr(pDefender->plot(), pAttacker);
-    iDefenderFirepower = pDefender->currFirepower(pDefender->plot(), pAttacker);
-
-    iStrengthFactor = ((iAttackerFirepower + iDefenderFirepower + 1) / 2);
-    iDamageToAttacker = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iDefenderFirepower + iStrengthFactor)) / (iAttackerFirepower + iStrengthFactor)));
-    iDamageToDefender = std::max(1,((GC.getDefineINT("COMBAT_DAMAGE") * (iAttackerFirepower + iStrengthFactor)) / (iDefenderFirepower + iStrengthFactor)));
-
-    iDefenderOdds = ((GC.getDefineINT("COMBAT_DIE_SIDES") * iDefenderStrength) / (iAttackerStrength + iDefenderStrength));
-    iAttackerOdds = GC.getDefineINT("COMBAT_DIE_SIDES") - iDefenderOdds;
-
-    if (GC.getDefineINT("ACO_IgnoreBarbFreeWins")==0)
-    {
-        if (pDefender->isBarbarian())
-        {
-            //defender is barbarian
-            if (!GET_PLAYER(pAttacker->getOwnerINLINE()).isBarbarian() && GET_PLAYER(pAttacker->getOwnerINLINE()).getWinsVsBarbs() < GC.getHandicapInfo(GET_PLAYER(pAttacker->getOwnerINLINE()).getHandicapType()).getFreeWinsVsBarbs())
-            {
-                //attacker is not barb and attacker player has free wins left
-                //I have assumed in the following code only one of the units (attacker and defender) can be a barbarian
-
-                iDefenderOdds = std::min((10 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iDefenderOdds);
-                iAttackerOdds = std::max((90 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iAttackerOdds);
-            }
-        }
-        else if (pAttacker->isBarbarian())
-        {
-            //attacker is barbarian
-            if (!GET_PLAYER(pDefender->getOwnerINLINE()).isBarbarian() && GET_PLAYER(pDefender->getOwnerINLINE()).getWinsVsBarbs() < GC.getHandicapInfo(GET_PLAYER(pDefender->getOwnerINLINE()).getHandicapType()).getFreeWinsVsBarbs())
-            {
-                //defender is not barbarian and defender has free wins left and attacker is barbarian
-                iAttackerOdds = std::min((10 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iAttackerOdds);
-                iDefenderOdds = std::max((90 * GC.getDefineINT("COMBAT_DIE_SIDES")) / 100, iDefenderOdds);
-            }
-        }
-    }
-
-    iDefenderHitLimit = pDefender->maxHitPoints() - pAttacker->combatLimitAgainst(pDefender);
-
-    //iNeededRoundsAttacker = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimit())==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
-    iNeededRoundsAttacker = (pDefender->currHitPoints() - pDefender->maxHitPoints() + pAttacker->combatLimitAgainst(pDefender) - (((pAttacker->combatLimitAgainst(pDefender)) == pDefender->maxHitPoints()) ? 1 : 0)) / iDamageToDefender + 1;
-
-    int N_D = (std::max(0, pDefender->currHitPoints() - iDefenderHitLimit) + iDamageToDefender - (((pAttacker->combatLimitAgainst(pDefender))==GC.getMAX_HIT_POINTS())?1:0) ) / iDamageToDefender;
-
-    //int N_A = (pAttacker->currHitPoints() + iDamageToAttacker - 1 ) / iDamageToAttacker;  //same as next line
-    int N_A = (pAttacker->currHitPoints() - 1)/iDamageToAttacker + 1;
-
-
-    //int iRetreatOdds = std::max((pAttacker->withdrawalProbability()),100);
-    float RetreatOdds = ((float)(std::min((pAttacker->withdrawalProbability()),100)))/100.0f ;
-
-    AttFSnet = ( (pDefender->immuneToFirstStrikes()) ? 0 : pAttacker->firstStrikes() ) - ((pAttacker->immuneToFirstStrikes()) ? 0 : pDefender->firstStrikes());
-    AttFSC = (pDefender->immuneToFirstStrikes()) ? 0 : (pAttacker->chanceFirstStrikes());
-    DefFSC = (pAttacker->immuneToFirstStrikes()) ? 0 : (pDefender->chanceFirstStrikes());
-
-
-    float P_A = (float)iAttackerOdds / GC.getDefineINT("COMBAT_DIE_SIDES");
-    float P_D = (float)iDefenderOdds / GC.getDefineINT("COMBAT_DIE_SIDES");
-    float answer = 0.0f;
-    if (n_A < N_A && n_D == iNeededRoundsAttacker)   // (1) Defender dies or is taken to combat limit
-    {
-        float sum1 = 0.0f;
-        for (int i = (-AttFSnet-AttFSC<1?1:-AttFSnet-AttFSC); i <= DefFSC - AttFSnet; i++)
-        {
-            for (int j = 0; j <= i; j++)
-            {
-
-                if (n_A >= j)
-                {
-                    sum1 += (float)getBinomialCoefficient(i,j) * pow(P_A,(float)(i-j)) * getBinomialCoefficient(iNeededRoundsAttacker-1+n_A-j,iNeededRoundsAttacker-1);
-
-                } //if
-            }//for j
-        }//for i
-        sum1 *= pow(P_D,(float)n_A)*pow(P_A,(float)iNeededRoundsAttacker);
-        answer += sum1;
-
-
-        float sum2 = 0.0f;
-
-
-        for (int i = (0<AttFSnet-DefFSC?AttFSnet-DefFSC:0); i <= AttFSnet + AttFSC; i++)
-        {
-
-            for (int j = 0; j <= i; j++)
-            {
-                if (N_D > j)
-                {
-                    sum2 = sum2 + getBinomialCoefficient(n_A+iNeededRoundsAttacker-j-1,n_A) * (float)getBinomialCoefficient(i,j) * pow(P_A,(float)iNeededRoundsAttacker) * pow(P_D,(float)(n_A+i-j));
-
-                }
-                else if (n_A == 0)
-                {
-                    sum2 = sum2 + (float)getBinomialCoefficient(i,j) * pow(P_A,(float)j) * pow(P_D,(float)(i-j));
-                }
-                else
-                {
-                    sum2 = sum2 + 0.0f;
-                }
-            }//for j
-
-        }//for i
-        answer += sum2;
-
-    }
-    else if (n_D < N_D && n_A == N_A)  // (2) Attacker dies!
-    {
-
-        float sum1 = 0.0f;
-        for (int i = (-AttFSnet-AttFSC<1?1:-AttFSnet-AttFSC); i <= DefFSC - AttFSnet; i++)
-        {
-
-            for (int j = 0; j <= i; j++)
-            {
-                if (N_A>j)
-                {
-                    sum1 += getBinomialCoefficient(n_D+N_A-j-1,n_D) * (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(N_A)) * pow(P_A,(float)(n_D+i-j));
-                }
-                else
-                {
-                    if (n_D == 0)
-                    {
-                        sum1 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(j)) * pow(P_A,(float)(i-j));
-                    }//if (inside if) else sum += 0
-                }//if
-            }//for j
-
-        }//for i
-        answer += sum1;
-        float sum2 = 0.0f;
-        for (int i = (0<AttFSnet-DefFSC?AttFSnet-DefFSC:0); i <= AttFSnet + AttFSC; i++)
-        {
-            for (int j = 0; j <= i; j++)
-            {
-                if (n_D >= j)
-                {
-                    sum2 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(i-j)) * getBinomialCoefficient(N_A-1+n_D-j,N_A-1);
-                } //if
-            }//for j
-        }//for i
-        sum2 *= pow(P_A,(float)(n_D))*pow(P_D,(float)(N_A));
-        answer += sum2;
-        answer = answer * (1.0f - RetreatOdds);
-
-    }
-    else if (n_A == (N_A-1) && n_D < N_D)  // (3) Attacker retreats!
-    {
-        float sum1 = 0.0f;
-        for (int i = (AttFSnet+AttFSC>-1?1:-AttFSnet-AttFSC); i <= DefFSC - AttFSnet; i++)
-        {
-
-            for (int j = 0; j <= i; j++)
-            {
-                if (N_A>j)
-                {
-                    sum1 += getBinomialCoefficient(n_D+N_A-j-1,n_D) * (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(N_A)) * pow(P_A,(float)(n_D+i-j));
-                }
-                else
-                {
-                    if (n_D == 0)
-                    {
-                        sum1 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(j)) * pow(P_A,(float)(i-j));
-                    }//if (inside if) else sum += 0
-                }//if
-            }//for j
-
-        }//for i
-        answer += sum1;
-
-        float sum2 = 0.0f;
-        for (int i = (0<AttFSnet-DefFSC?AttFSnet-DefFSC:0); i <= AttFSnet + AttFSC; i++)
-        {
-            for (int j = 0; j <= i; j++)
-            {
-                if (n_D >= j)
-                {
-                    sum2 += (float)getBinomialCoefficient(i,j) * pow(P_D,(float)(i-j)) * getBinomialCoefficient(N_A-1+n_D-j,N_A-1);
-                } //if
-            }//for j
-        }//for i
-        sum2 *= pow(P_A,(float)(n_D))*pow(P_D,(float)(N_A));
-        answer += sum2;
-        answer = answer * RetreatOdds;//
-    }
-    else
-    {
-        //Unexpected value.  Process should not reach here.
-    }
-
-    answer = answer / ((float)(AttFSC+DefFSC+1)); // dividing by (t+w+1) as is necessary
-    return answer;
-}// getCombatOddsSpecific
-
-// I had to add this function to the header file CvGameCoreUtils.h
-/*************************************************************************************************/
-/** ADVANCED COMBAT ODDS                      11/7/09                           PieceOfMind      */
-/** END                                                                                          */
-/*************************************************************************************************/
-
-int getEspionageModifier(TeamTypes eOurTeam, TeamTypes eTargetTeam)
-{
-	FAssert(eOurTeam != eTargetTeam);
-	FAssert(eOurTeam != BARBARIAN_TEAM);
-	FAssert(eTargetTeam != BARBARIAN_TEAM);
-
-	int iTargetPoints = GET_TEAM(eTargetTeam).getEspionagePointsEver();
-	int iOurPoints = GET_TEAM(eOurTeam).getEspionagePointsEver();
-
-	int iModifier = GC.getDefineINT("ESPIONAGE_SPENDING_MULTIPLIER") * (2 * iTargetPoints + iOurPoints);
-	iModifier /= std::max(1, iTargetPoints + 2 * iOurPoints);
-	return iModifier;
-}
 
 void setTradeItem(TradeData* pItem, TradeableItems eItemType, int iData)
 {
@@ -1140,89 +387,18 @@ void setTradeItem(TradeData* pItem, TradeableItems eItemType, int iData)
 	pItem->m_bHidden = false;
 }
 
-bool isPlotEventTrigger(EventTriggerTypes eTrigger)
+
+void setListHelp(CvWString& szBuffer, wchar const* szStart, wchar const* szItem,
+	wchar const* szSeparator, bool& bFirst) // advc: bool&
 {
-	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eTrigger);
-
-	if (kTrigger.getNumPlotsRequired() > 0)
-	{
-		if (kTrigger.getPlotType() != NO_PLOT)
-		{
-			return true;
-		}
-
-		if (kTrigger.getNumFeaturesRequired() > 0)
-		{
-			return true;
-		}
-
-		if (kTrigger.getNumTerrainsRequired() > 0)
-		{
-			return true;
-		}
-
-		if (kTrigger.getNumImprovementsRequired() > 0)
-		{
-			return true;
-		}
-
-		if (kTrigger.getNumBonusesRequired() > 0)
-		{
-			return true;
-		}
-
-		if (kTrigger.getNumRoutesRequired() > 0)
-		{
-			return true;
-		}
-
-		if (kTrigger.isUnitsOnPlot() && kTrigger.getNumUnitsRequired() > 0)
-		{
-			return true;
-		}
-
-		if (kTrigger.isPrereqEventCity() && !kTrigger.isPickCity())
-		{
-			return true;
-		}
-	}
-
-	return false;
+	if (bFirst)
+		szBuffer += szStart;
+	else szBuffer += szSeparator;
+	szBuffer += szItem;
+	bFirst = false; // advc: And deleted this line from every call location
 }
 
-TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eIgnoreTech)
-{
-	TechTypes eBestTech = NO_TECH;
-	int iBestValue = 0;
-
-	for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
-	{
-		if ((TechTypes)iI == eIgnoreTech)
-		{
-			continue;
-		}
-
-		if (GET_PLAYER(ePlayer).canResearch((TechTypes)iI, false, eIgnoreTech))
-		{
-			int iValue = 0;
-
-			for (int iJ = 0; iJ < GC.getNumFlavorTypes(); iJ++)
-			{
-				iValue += (GC.getTechInfo((TechTypes) iI).getFlavorValue(iJ) * GC.getUnitInfo(eUnit).getFlavorValue(iJ));
-			}
-
-			if (iValue > iBestValue)
-			{
-				iBestValue = iValue;
-				eBestTech = ((TechTypes)iI);
-			}
-		}
-	}
-
-	return eBestTech;
-}
-
-
+// TODO: removed by advvic, find new location
 int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 {
 	int iResearch;
@@ -1238,165 +414,190 @@ int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 	return std::max(0, iResearch);
 }
 
-
-void setListHelp(wchar* szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst)
+void setListHelp(CvWStringBuffer& szBuffer, wchar const* szStart, wchar const* szItem,
+	wchar const* szSeparator, bool& bFirst) // advc: bool&
 {
 	if (bFirst)
-	{
-		wcscat(szBuffer, szStart);
-	}
-	else
-	{
-		wcscat(szBuffer, szSeparator);
-	}
-
-	wcscat(szBuffer, szItem);
-}
-
-void setListHelp(CvWString& szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst)
-{
-	if (bFirst)
-	{
-		szBuffer += szStart;
-	}
-	else
-	{
-		szBuffer += szSeparator;
-	}
-
-	szBuffer += szItem;
-}
-
-void setListHelp(CvWStringBuffer& szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst)
-{
-	if (bFirst)
-	{
 		szBuffer.append(szStart);
-	}
-	else
-	{
-		szBuffer.append(szSeparator);
-	}
-
+	else szBuffer.append(szSeparator);
 	szBuffer.append(szItem);
+	bFirst = false; // advc: And deleted this line from every call location
 }
 
-bool PUF_isGroupHead(const CvUnit* pUnit, int iData1, int iData2)
+// <advc> Based on the above
+void setListHelp(CvWString& szBuffer, wchar const* szStart, wchar const* szItem,
+	wchar const* szSeparator, int& iLastListID, int iListID)
 {
-	return (pUnit->isGroupHead());
+	if (iLastListID != iListID)
+		szBuffer += szStart;
+	else szBuffer += szSeparator;
+	szBuffer += szItem;
+	iLastListID = iListID; // advc: And deleted this line from every call location
 }
 
-bool PUF_isPlayer(const CvUnit* pUnit, int iData1, int iData2)
+void setListHelp(CvWStringBuffer& szBuffer, wchar const* szStart, wchar const* szItem,
+	wchar const* szSeparator, int& iLastListID, int iListID)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (pUnit->getOwnerINLINE() == iData1);
+	if (iLastListID != iListID)
+		szBuffer.append(szStart);
+	else szBuffer.append(szSeparator);
+	szBuffer.append(szItem);
+	iLastListID = iListID; // advc: And deleted this line from every call location
+} // </advc>
+
+bool PUF_isGroupHead(CvUnit const* pUnit, int iDummy1, int iDummy2)
+{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	return pUnit->isGroupHead();
 }
 
-bool PUF_isTeam(const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (pUnit->getTeam() == iData1);
+bool PUF_isPlayer(CvUnit const* pUnit, int iOwner, int iForTeam)
+{	// advc.061: rewritten
+	TeamTypes eForTeam = (TeamTypes)iForTeam;
+	PlayerTypes eOwner = (PlayerTypes)iOwner;
+	FAssertEnumBounds(eOwner);
+	if(eForTeam == NO_TEAM || eForTeam == TEAMID(eOwner))
+		return (pUnit->getOwner() == eOwner);
+	FAssertEnumBounds(eForTeam);
+	return (pUnit->getOwner() == eOwner && !pUnit->isInvisible(eForTeam, false) &&
+			!pUnit->getUnitInfo().isHiddenNationality());
 }
 
-bool PUF_isCombatTeam(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isTeam(CvUnit const* pUnit, int iTeam, int iDummy)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-
-	return (GET_PLAYER(pUnit->getCombatOwner((TeamTypes)iData2, pUnit->plot())).getTeam() == iData1 && !pUnit->isInvisible((TeamTypes)iData2, false, false));
+	FAssert(iDummy == -1);
+	TeamTypes eTeam = (TeamTypes)iTeam;
+	FAssertEnumBounds(eTeam);
+	return (pUnit->getTeam() == eTeam);
 }
 
-bool PUF_isOtherPlayer(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isCombatTeam(CvUnit const* pUnit, int iTeam, int iForTeam)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (pUnit->getOwnerINLINE() != iData1);
+	TeamTypes eTeam = (TeamTypes)iTeam;
+	FAssertEnumBounds(eTeam);
+	TeamTypes eForTeam = (TeamTypes)iForTeam;
+	FAssertEnumBounds(eForTeam);
+	return (TEAMID(pUnit->getCombatOwner(eForTeam, pUnit->getPlot())) ==
+			eTeam && !pUnit->isInvisible(eForTeam, false, false));
 }
 
-bool PUF_isOtherTeam(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isOtherPlayer(CvUnit const* pUnit, int iPlayer, int iDummy)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	TeamTypes eTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
+	FAssert(iDummy == -1);
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	return (pUnit->getOwner() != ePlayer);
+}
+
+bool PUF_isOtherTeam(CvUnit const* pUnit, int iPlayer, int iDummy)
+{
+	FAssert(iDummy == -1);
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	TeamTypes eTeam = TEAMID(ePlayer);
 	if (pUnit->canCoexistWithEnemyUnit(eTeam))
-	{
 		return false;
-	}
-
 	return (pUnit->getTeam() != eTeam);
 }
 
-bool PUF_isEnemy(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_canDefend(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-
-	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
-	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, pUnit->plot())).getTeam();
-
-	if (pUnit->canCoexistWithEnemyUnit(eOtherTeam))
-	{
-		return false;
-	}
-
-	return (iData2 ? eOtherTeam != eOurTeam : atWar(eOtherTeam, eOurTeam));
-}
-
-bool PUF_isVisible(const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), false));
-}
-
-bool PUF_isVisibleDebug(const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return !(pUnit->isInvisible(GET_PLAYER((PlayerTypes)iData1).getTeam(), true));
-}
-
-bool PUF_canSiege(const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return pUnit->canSiege(GET_PLAYER((PlayerTypes)iData1).getTeam());
-}
-
-bool PUF_isPotentialEnemy(const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-
-	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
-	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, pUnit->plot())).getTeam();
-
-	if (pUnit->canCoexistWithEnemyUnit(eOtherTeam))
-	{
-		return false;
-	}
-	return (iData2 ? eOtherTeam != eOurTeam : isPotentialEnemy(eOtherTeam, eOurTeam));
-}
-
-bool PUF_canDeclareWar( const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-
-	TeamTypes eOtherTeam = GET_PLAYER((PlayerTypes)iData1).getTeam();
-	TeamTypes eOurTeam = GET_PLAYER(pUnit->getCombatOwner(eOtherTeam, pUnit->plot())).getTeam();
-
-	if (pUnit->canCoexistWithEnemyUnit(eOtherTeam))
-	{
-		return false;
-	}
-
-	return (iData2 ? false : GET_TEAM(eOtherTeam).canDeclareWar(eOurTeam));
-}
-
-bool PUF_canDefend(const CvUnit* pUnit, int iData1, int iData2)
-{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->canDefend();
 }
 
+bool PUF_cannotDefend(const CvUnit* pUnit, int iDummy1, int iDummy2)
+{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	return !pUnit->canDefend();
+}
+
+bool PUF_canDefendGroupHead(CvUnit const* pUnit, int iDummy1, int iDummy2)
+{
+	return (PUF_canDefend(pUnit, iDummy1, iDummy2) &&
+			PUF_isGroupHead(pUnit, iDummy1, iDummy2));
+}
+
+bool PUF_canDefendPotentialEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile)
+{
+	return (PUF_canDefend(pUnit) && PUF_isPotentialEnemy(pUnit, iPlayer, iAlwaysHostile));
+}
+
+bool PUF_canDefendEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile)
+{
+	return (PUF_canDefend(pUnit) && PUF_isEnemy(pUnit, iPlayer, iAlwaysHostile));
+}
+
+bool PUF_isPotentialEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile)
+{
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	FAssertBOOL(iAlwaysHostile);
+	bool bAlwaysHostile = iAlwaysHostile;
+	// advc: Switched the Our/Other variable names. It's iPlayer whose war plans matter.
+	TeamTypes eOurTeam = TEAMID(ePlayer);
+	TeamTypes eOtherTeam = TEAMID(pUnit->getCombatOwner(eOurTeam));
+	if (pUnit->canCoexistWithEnemyUnit(eOurTeam))
+		return false;
+	return (bAlwaysHostile ? eOurTeam != eOtherTeam :
+			GET_TEAM(eOurTeam).AI_mayAttack(eOtherTeam));
+}
+
+bool PUF_isEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile)
+{
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	FAssertBOOL(iAlwaysHostile);
+	bool bAlwaysHostile = iAlwaysHostile;
+	// advc: Switched the Our/Other variable names
+	TeamTypes eOurTeam = TEAMID(ePlayer);
+	TeamTypes eOtherTeam = TEAMID(pUnit->getCombatOwner(eOurTeam));
+	if (pUnit->canCoexistWithEnemyUnit(eOurTeam))
+		return false;
+	return (bAlwaysHostile ? eOurTeam != eOtherTeam :
+			GET_TEAM(eOurTeam).isAtWar(eOtherTeam));
+}
+
+bool PUF_canDeclareWar(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile)
+{
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	FAssertBOOL(iAlwaysHostile);
+	bool bAlwaysHostile = iAlwaysHostile;
+	/*	advc: Switched the Our/Other variable names. This function says whether
+		iPlayer can declare war on the combat owner of pUnit. */
+	TeamTypes eOurTeam = TEAMID(ePlayer);
+	TeamTypes eOtherTeam = TEAMID(pUnit->getCombatOwner(eOurTeam));
+	if (pUnit->canCoexistWithEnemyUnit(eOurTeam))
+		return false;
+	return (bAlwaysHostile ? false : GET_TEAM(eOurTeam).canDeclareWar(eOtherTeam));
+}
+// advc.ctr:
+bool PUF_isEnemyCityAttacker(CvUnit const* pUnit, int iPlayer, int iAssumePeaceTeam)
+{
+	TeamTypes eAssumePeaceTeam = (TeamTypes)iAssumePeaceTeam;
+	if (eAssumePeaceTeam != NO_TEAM)
+	{
+		FAssertEnumBounds(eAssumePeaceTeam);
+		if (GET_TEAM(pUnit->getTeam()).getMasterTeam() == GET_TEAM(eAssumePeaceTeam).getMasterTeam())
+			return false;
+	}
+	CvUnitInfo& u = pUnit->getUnitInfo();
+	if (u.getCargoSpace() <= 0 || u.getSpecialCargo() != NO_SPECIALUNIT)
+	{
+		if (u.getDomainType() != DOMAIN_LAND)
+			return false;
+		if (u.isOnlyDefensive() || u.getCombat() <= 0)
+			return false;
+	}
+	return PUF_isEnemy(pUnit, iPlayer, false);
+}
+
+// doc
+// TODO: make sure this is used where appropriate
 bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
 {
-	// Leoreth: Turkic UP
+	// doc: Turkic UP
 	if (pUnit->isBarbarian() && GET_PLAYER((PlayerTypes)iData1).getCivilizationType() == TURKS && GET_TEAM(GET_PLAYER((PlayerTypes)iData1).getTeam()).isAtWarWithMajorPlayer())
 	{
 		if (pUnit->getUnitCombatType() == 2 || pUnit->getUnitCombatType() == 3)
@@ -1408,882 +609,279 @@ bool PUF_canDefendAgainst(const CvUnit* pUnit, int iData1, int iData2)
 	return pUnit->canDefend();
 }
 
-bool PUF_cannotDefend(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isVisible(CvUnit const* pUnit, int iPlayer, int iDummy)
 {
-	return !(pUnit->canDefend());
+	FAssert(iDummy == -1);
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	return !pUnit->isInvisible(TEAMID(ePlayer), false);
 }
 
-bool PUF_canDefendGroupHead(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isVisibleDebug(CvUnit const* pUnit, int iPlayer, int iDummy)
 {
-	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isGroupHead(pUnit, iData1, iData2));
+	FAssert(iDummy == -1);
+	PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+	FAssertEnumBounds(ePlayer);
+	return !pUnit->isInvisible(TEAMID(ePlayer), true);
+}
+// advc.298:
+bool PUF_isLethal(CvUnit const* pUnit, int iDummy1, int iDummy2)
+{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	return (pUnit->canAttack() && pUnit->combatLimit() >= 100);
 }
 
-bool PUF_canDefendEnemy(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_canSiege(CvUnit const* pUnit, int iTargetPlayer, int iDummy)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2));
+	FAssert(iDummy == -1);
+	PlayerTypes eTargetPlayer = (PlayerTypes)iTargetPlayer;
+	FAssertEnumBounds(eTargetPlayer);
+	return pUnit->canSiege(TEAMID(eTargetPlayer));
 }
 
-bool PUF_canDefendAgainstEnemy(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_canAirAttack(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	FAssertMsg(iData2 != -1, "Invalid data argument, should be >= 0");
-	return PUF_canDefendAgainst(pUnit, iData1, iData2) && PUF_isEnemy(pUnit, iData1, iData2);
-}
-
-bool PUF_canDefendPotentialEnemy(const CvUnit* pUnit, int iData1, int iData2)
-{
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (PUF_canDefend(pUnit, iData1, iData2) && PUF_isPotentialEnemy(pUnit, iData1, iData2));
-}
-
-bool PUF_canAirAttack(const CvUnit* pUnit, int iData1, int iData2)
-{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->canAirAttack();
 }
 
-bool PUF_canAirDefend(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_canAirDefend(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->canAirDefend();
 }
-
-bool PUF_isFighting(const CvUnit* pUnit, int iData1, int iData2)
+// K-Mod:
+bool PUF_isAirIntercept(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	return (pUnit->getDomainType() == DOMAIN_AIR &&
+			pUnit->getGroup()->getActivityType() == ACTIVITY_INTERCEPT);
+}
+
+bool PUF_isFighting(CvUnit const* pUnit, int iDummy1, int iDummy2)
+{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->isFighting();
 }
 
-bool PUF_isAnimal( const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isAnimal(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->isAnimal();
 }
 
-bool PUF_isMilitaryHappiness(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isMilitaryHappiness(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
-	 // Leoreth: in case of cities, check if city owner equals unit owner -> no military happiness for other players
+	FAssert(iDummy2 == -1);
+	// doc: only city owner units provide military happiness
 	return (pUnit->isMilitaryHappiness() && (iData1 == -1 || pUnit->getOwner() == (PlayerTypes)iData1));
 }
 
-bool PUF_isInvestigate(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isInvestigate(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	// <advc.103>
+	if(pUnit->hasMoved())
+		return false; // </advc.103>
 	return pUnit->isInvestigate();
 }
 
-bool PUF_isCounterSpy(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isCounterSpy(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->isCounterSpy();
 }
 
-bool PUF_isSpy(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isSpy(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->isSpy();
 }
 
-bool PUF_isDomainType(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isDomainType(CvUnit const* pUnit, int iDomain, int iDummy)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (pUnit->getDomainType() == iData1);
+	FAssert(iDummy == -1);
+	DomainTypes eDomain = (DomainTypes)iDomain;
+	FAssertEnumBounds(eDomain);
+	return (pUnit->getDomainType() == eDomain);
 }
 
-bool PUF_isUnitType(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isUnitType(CvUnit const* pUnit, int iUnit, int iDummy)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (pUnit->getUnitType() == iData1);
+	FAssert(iDummy == -1);
+	UnitTypes eUnit = (UnitTypes)iUnit;
+	FAssertEnumBounds(eUnit);
+	return (pUnit->getUnitType() == eUnit);
 }
 
-bool PUF_isUnitAIType(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isUnitAIType(CvUnit const* pUnit, int iUnitAI, int iDummy)
 {
-	FAssertMsg(iData1 != -1, "Invalid data argument, should be >= 0");
-	return (pUnit->AI_getUnitAIType() == iData1);
+	FAssert(iDummy == -1);
+	UnitAITypes eUnitAI = (UnitAITypes)iUnitAI;
+	FAssertEnumBounds(eUnitAI);
+	return (pUnit->AI_getUnitAIType() == eUnitAI);
+}
+// K-Mod:
+bool PUF_isMissionAIType(CvUnit const* pUnit, int iMissionAI, int iDummy)
+{
+	FAssert(iDummy == -1);
+	MissionAITypes eMissionAI = (MissionAITypes)iMissionAI;
+	FAssertEnumBounds(eMissionAI);
+	return (pUnit->AI().AI_getGroup()->AI_getMissionAIType() == eMissionAI);
 }
 
-bool PUF_isCityAIType(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isCityAIType(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
-	return pUnit->AI_isCityAIType();
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	return pUnit->AI().AI_isCityAIType();
 }
 
-bool PUF_isNotCityAIType(const CvUnit* pUnit, int iData1, int iData2)
+bool PUF_isNotCityAIType(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
-	return !(PUF_isCityAIType(pUnit, iData1, iData2));
+	return !PUF_isCityAIType(pUnit);
 }
-
-bool PUF_isSelected(const CvUnit* pUnit, int iData1, int iData2)
+// advc.003j (comment): unused
+bool PUF_isSelected(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	return pUnit->IsSelected();
 }
 
-bool PUF_makeInfoBarDirty(CvUnit* pUnit, int iData1, int iData2)
+/*bool PUF_isNoMission(CvUnit const* pUnit, int iDummy1, int iDummy2)
 {
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	//return (pUnit->getGroup()->getActivityType() != ACTIVITY_MISSION); // BtS
+	return (pUnit->getGroup()->AI_getMissionAIType() == NO_MISSIONAI); // K-Mod
+}*/
+/*  advc.113b: The above won't do for counting the workers available to a city:
+	Doesn't count retreated workers and does count workers in cargo. */
+/*  Replacement: Count pUnit if its mission plot has the given city as its
+	working city. If pUnit has no mission, then it's counted if its current plot
+	has the given city as its working city. */
+bool PUF_isMissionPlotWorkingCity(CvUnit const* pUnit, int iCity, int iCityOwner)
+{
+	CvCity* pCity = GET_PLAYER((PlayerTypes)iCityOwner).getCity(iCity);
+	if(pCity == NULL || pUnit->isCargo())
+		return false;
+	CvPlot* pMissionPlot = pUnit->AI().AI_getGroup()->AI_getMissionAIPlot();
+	if(pMissionPlot == NULL)
+		pMissionPlot = pUnit->plot();
+	return (pMissionPlot->getWorkingCity() == pCity);
+}
+
+bool PUF_isFiniteRange(CvUnit const* pUnit, int iDummy1, int iDummy2)
+{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
+	return (pUnit->getDomainType() != DOMAIN_AIR || pUnit->getUnitInfo().getAirRange() > 0);
+}
+// BETTER_BTS_AI_MOD, General AI, 01/15/09, jdog5000: START
+bool PUF_isAvailableUnitAITypeGroupie(CvUnit const* pUnit, int iUnitAI, int iDummy)
+{	// (advc: Removed unnecessary helper function)
+	return (PUF_isUnitAIType(pUnit->getGroup()->getHeadUnit(), iUnitAI) &&
+			!pUnit->isCargo());
+}
+
+bool PUF_isFiniteRangeAndNotJustProduced(CvUnit const* pUnit, int iDummy1, int iDummy2)
+{
+	return (PUF_isFiniteRange(pUnit) &&
+			GC.getGame().getGameTurn() - pUnit->getGameTurnCreated() > 1);
+} // BETTER_BTS_AI_MOD: END
+
+bool PUF_makeInfoBarDirty(CvUnit* pUnit, int iDummy1, int iDummy2)
+{
+	FAssert(iDummy1 == -1 && iDummy2 == -1);
 	pUnit->setInfoBarDirty(true);
 	return true;
 }
 
-bool PUF_isNoMission(const CvUnit* pUnit, int iData1, int iData2)
-{
-	return (pUnit->getGroup()->getActivityType() != ACTIVITY_MISSION);
-}
-
-bool PUF_isFiniteRange(const CvUnit* pUnit, int iData1, int iData2)
-{
-	return ((pUnit->getDomainType() != DOMAIN_AIR) || (pUnit->getUnitInfo().getAirRange() > 0));
-}
-
-int potentialIrrigation(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	return ((GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->isPotentialIrrigation()) ? TRUE : FALSE);
-}
-
-
-int checkFreshWater(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	if (data == ASNL_ADDCLOSED)
-	{
-		if (GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->isFreshWater())
-		{
-			*((bool *)pointer) = true;
-		}
-	}
-
-	return 1;
-}
-
-
-int changeIrrigated(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder) 
-{
-	if (data == ASNL_ADDCLOSED)
-	{
-		GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->setIrrigated(*((bool *)pointer));
-	}
-
-	return 1;
-}
-
-
-int pathDestValid(int iToX, int iToY, const void* pointer, FAStar* finder)
-{
-	PROFILE_FUNC();
-
-	CLLNode<IDInfo>* pUnitNode1;
-	CLLNode<IDInfo>* pUnitNode2;
-	CvSelectionGroup* pSelectionGroup;
-	CvUnit* pLoopUnit1;
-	CvUnit* pLoopUnit2;
-	CvPlot* pToPlot;
-	bool bAIControl;
-	bool bValid;
-
-	pToPlot = GC.getMapINLINE().plotSorenINLINE(iToX, iToY);
-	FAssert(pToPlot != NULL);
-
-	pSelectionGroup = ((CvSelectionGroup *)pointer);
-
-	if (pSelectionGroup->atPlot(pToPlot))
-	{
-		return TRUE;
-	}
-
-	if (pSelectionGroup->getDomainType() == DOMAIN_IMMOBILE)
-	{
-		return FALSE;
-	}
-
-	bAIControl = pSelectionGroup->AI_isControlled();
-
-	if (bAIControl)
-	{
-		if (!(gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_IGNORE_DANGER))
-		{
-			if (!(pSelectionGroup->canFight()) && !(pSelectionGroup->alwaysInvisible()))
-			{
-				if (GET_PLAYER(pSelectionGroup->getHeadOwner()).AI_getPlotDanger(pToPlot) > 0)
-				{
-					return FALSE;
-				}
-			}
-		}
-
-		if (pSelectionGroup->getDomainType() == DOMAIN_LAND)
-		{
-			int iGroupAreaID = pSelectionGroup->getArea();
-			if (pToPlot->getArea() != iGroupAreaID)
-			{
-				if (!(pToPlot->isAdjacentToArea(iGroupAreaID)))
-				{
-					return FALSE;
-				}
-			}
-		}
-	}
-
-	if (bAIControl || pToPlot->isRevealed(pSelectionGroup->getHeadTeam(), false))
-	{
-		if (pSelectionGroup->isAmphibPlot(pToPlot))
-		{
-			pUnitNode1 = pSelectionGroup->headUnitNode();
-
-			while (pUnitNode1 != NULL)
-			{
-				pLoopUnit1 = ::getUnit(pUnitNode1->m_data);
-				pUnitNode1 = pSelectionGroup->nextUnitNode(pUnitNode1);
-
-				if ((pLoopUnit1->getCargo() > 0) && (pLoopUnit1->domainCargo() == DOMAIN_LAND))
-				{
-					bValid = false;
-
-					pUnitNode2 = pLoopUnit1->plot()->headUnitNode();
-
-					while (pUnitNode2 != NULL)
-					{
-						pLoopUnit2 = ::getUnit(pUnitNode2->m_data);
-						pUnitNode2 = pLoopUnit1->plot()->nextUnitNode(pUnitNode2);
-
-						if (pLoopUnit2->getTransportUnit() == pLoopUnit1)
-						{
-							if (pLoopUnit2->isGroupHead())
-							{
-								if (pLoopUnit2->getGroup()->canMoveOrAttackInto(pToPlot, (pSelectionGroup->AI_isDeclareWar(pToPlot) || (gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_DECLARE_WAR))))
-								{
-									bValid = true;
-									break;
-								}
-							}
-						}
-					}
-
-					if (bValid)
-					{
-						return TRUE;
-					}
-				}
-			}
-
-			return FALSE;
-		}
-		else
-		{
-			if (!(pSelectionGroup->canMoveOrAttackInto(pToPlot, (pSelectionGroup->AI_isDeclareWar(pToPlot) || (gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_DECLARE_WAR)))))
-			{
-				return FALSE;
-			}
-		}
-	}
-
-	return TRUE;
-}
-
-
-int pathHeuristic(int iFromX, int iFromY, int iToX, int iToY)
-{
-	return (stepDistance(iFromX, iFromY, iToX, iToY) * PATH_MOVEMENT_WEIGHT);
-}
-
-
-int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	CLLNode<IDInfo>* pUnitNode;
-	CvSelectionGroup* pSelectionGroup;
-	CvUnit* pLoopUnit;
-	CvPlot* pFromPlot;
-	CvPlot* pToPlot;
-	int iWorstCost;
-	int iCost;
-	int iWorstMovesLeft;
-	int iMovesLeft;
-	int iWorstMax;
-	int iMax;
-
-	pFromPlot = GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY);
-	FAssert(pFromPlot != NULL);
-	pToPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-	FAssert(pToPlot != NULL);
-
-	pSelectionGroup = ((CvSelectionGroup *)pointer);
-
-	iWorstCost = MAX_INT;
-	iWorstMovesLeft = MAX_INT;
-	iWorstMax = MAX_INT;
-
-	pUnitNode = pSelectionGroup->headUnitNode();
-
-	while (pUnitNode != NULL)
-	{
-		pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = pSelectionGroup->nextUnitNode(pUnitNode);
-		FAssertMsg(pLoopUnit->getDomainType() != DOMAIN_AIR, "pLoopUnit->getDomainType() is not expected to be equal with DOMAIN_AIR");
-
-		if (parent->m_iData1 > 0)
-		{
-			iMax = parent->m_iData1;
-		}
-		else
-		{
-			iMax = pLoopUnit->maxMoves();
-		}
-
-		iCost = pToPlot->movementCost(pLoopUnit, pFromPlot);
-
-		iMovesLeft = std::max(0, (iMax - iCost));
-
-		if (iMovesLeft <= iWorstMovesLeft)
-		{
-			if ((iMovesLeft < iWorstMovesLeft) || (iMax <= iWorstMax))
-			{
-				if (iMovesLeft == 0)
-				{
-					iCost = (PATH_MOVEMENT_WEIGHT * iMax);
-
-					if (pToPlot->getTeam() != pLoopUnit->getTeam())
-					{
-						iCost += PATH_TERRITORY_WEIGHT;
-					}
-
-					// Damage caused by features (mods)
-					if (0 != GC.getPATH_DAMAGE_WEIGHT())
-					{
-						if (pToPlot->getFeatureType() != NO_FEATURE)
-						{
-							iCost += (GC.getPATH_DAMAGE_WEIGHT() * std::max(0, GC.getFeatureInfo(pToPlot->getFeatureType()).getTurnDamage())) / GC.getMAX_HIT_POINTS();
-						}
-
-						if (pToPlot->getExtraMovePathCost() > 0)
-						{
-							iCost += (PATH_MOVEMENT_WEIGHT * pToPlot->getExtraMovePathCost());
-						}
-					}
-				}
-				else
-				{
-					iCost = (PATH_MOVEMENT_WEIGHT * iCost);
-				}
-
-				if (pLoopUnit->canFight())
-				{
-					if (iMovesLeft == 0)
-					{
-						iCost += (PATH_DEFENSE_WEIGHT * std::max(0, (200 - ((pLoopUnit->noDefensiveBonus()) ? 0 : pToPlot->defenseModifier(pLoopUnit->getTeam(), false)))));
-					}
-
-					if (pSelectionGroup->AI_isControlled())
-					{
-						if (pLoopUnit->canAttack())
-						{
-							if (gDLL->getFAStarIFace()->IsPathDest(finder, pToPlot->getX_INLINE(), pToPlot->getY_INLINE()))
-							{
-								if (pToPlot->isVisibleEnemyDefender(pLoopUnit))
-								{
-									iCost += (PATH_DEFENSE_WEIGHT * std::max(0, (200 - ((pLoopUnit->noDefensiveBonus()) ? 0 : pFromPlot->defenseModifier(pLoopUnit->getTeam(), false)))));
-
-									if (!(pFromPlot->isCity()))
-									{
-										iCost += PATH_CITY_WEIGHT;
-									}
-
-									if (pFromPlot->isRiverCrossing(directionXY(pFromPlot, pToPlot)))
-									{
-										if (!(pLoopUnit->isRiver()))
-										{
-											iCost += (PATH_RIVER_WEIGHT * -(GC.getRIVER_ATTACK_MODIFIER()));
-											iCost += (PATH_MOVEMENT_WEIGHT * iMovesLeft);
-										}
-									}
-								}
-							}
-						}
-					}
-				}
-
-				if (iCost < iWorstCost)
-				{
-					iWorstCost = iCost;
-					iWorstMovesLeft = iMovesLeft;
-					iWorstMax = iMax;
-				}
-			}
-		}
-	}
-
-	FAssert(iWorstCost != MAX_INT);
-
-	iWorstCost += PATH_STEP_WEIGHT;
-
-	if ((pFromPlot->getX_INLINE() != pToPlot->getX_INLINE()) && (pFromPlot->getY_INLINE() != pToPlot->getY_INLINE()))
-	{
-		iWorstCost += PATH_STRAIGHT_WEIGHT;
-	}
-
-	FAssert(iWorstCost > 0);
-
-	return iWorstCost;
-}
-
-
-int pathValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	CvSelectionGroup* pSelectionGroup;
-	CvPlot* pFromPlot;
-	CvPlot* pToPlot;
-	bool bAIControl;
-
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	pFromPlot = GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY);
-	FAssert(pFromPlot != NULL);
-	pToPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-	FAssert(pToPlot != NULL);
-
-	pSelectionGroup = ((CvSelectionGroup *)pointer);
-
-	// XXX might want to take this out...
-	if (pSelectionGroup->getDomainType() == DOMAIN_SEA)
-	{
-		if (pFromPlot->isWater() && pToPlot->isWater())
-		{
-			if (!(GC.getMapINLINE().plotINLINE(parent->m_iX, node->m_iY)->isWater()) && !(GC.getMapINLINE().plotINLINE(node->m_iX, parent->m_iY)->isWater()))
-			{
-				return FALSE;
-			}
-		}
-	}
-
-	if (pSelectionGroup->atPlot(pFromPlot))
-	{
-		return TRUE;
-	}
-
-	if (gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_SAFE_TERRITORY)
-	{
-		if (!(pFromPlot->isRevealed(pSelectionGroup->getHeadTeam(), false)))
-		{
-			return FALSE;
-		}
-
-		if (pFromPlot->isOwned())
-		{
-			if (pFromPlot->getTeam() != pSelectionGroup->getHeadTeam())
-			{
-				return FALSE;
-			}
-		}
-	}
-
-	if (gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_NO_ENEMY_TERRITORY)
-	{
-		if (pFromPlot->isOwned())
-		{
-			if (atWar(pFromPlot->getTeam(), pSelectionGroup->getHeadTeam()))
-			{
-				return FALSE;
-			}
-		}
-	}
-
-	bAIControl = pSelectionGroup->AI_isControlled();
-
-	if (bAIControl)
-	{
-		if ((parent->m_iData2 > 1) || (parent->m_iData1 == 0))
-		{
-			if (!(gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_IGNORE_DANGER))
-			{
-				if (!(pSelectionGroup->canFight()) && !(pSelectionGroup->alwaysInvisible()))
-				{
-					if (GET_PLAYER(pSelectionGroup->getHeadOwner()).AI_getPlotDanger(pFromPlot) > 0)
-					{
-						return FALSE;
-					}
-				}
-			}
-		}
-	}
-
-	if (bAIControl || pFromPlot->isRevealed(pSelectionGroup->getHeadTeam(), false))
-	{
-		if (gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_THROUGH_ENEMY)
-		{
-			if (!(pSelectionGroup->canMoveOrAttackInto(pFromPlot)))
-			{
-				return FALSE;
-			}
-		}
-		else
-		{
-			if (!(pSelectionGroup->canMoveThrough(pFromPlot)))
-			{
-				return FALSE;
-			}
-		}
-	}
-
-	return TRUE;
-}
-
-
-int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	PROFILE_FUNC();
-
-	CvSelectionGroup* pSelectionGroup = ((CvSelectionGroup *)pointer);
-	FAssert(pSelectionGroup->getNumUnits() > 0);
-
-	int iTurns = 1;
-	int iMoves = MAX_INT;
-
-	if (data == ASNC_INITIALADD)
-	{
-		bool bMaxMoves = (gDLL->getFAStarIFace()->GetInfo(finder) & MOVE_MAX_MOVES);
-		if (bMaxMoves)
-		{
-			iMoves = 0;
-		}
-
-		for (CLLNode<IDInfo>* pUnitNode = pSelectionGroup->headUnitNode(); pUnitNode != NULL; pUnitNode = pSelectionGroup->nextUnitNode(pUnitNode))
-		{
-			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-			if (bMaxMoves)
-			{
-				iMoves = std::max(iMoves, pLoopUnit->maxMoves());
-			}
-			else
-			{
-				iMoves = std::min(iMoves, pLoopUnit->movesLeft());
-			}
-		}
-	}
-	else
-	{
-		CvPlot* pFromPlot = GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY);
-		FAssertMsg(pFromPlot != NULL, "FromPlot is not assigned a valid value");
-		CvPlot* pToPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-		FAssertMsg(pToPlot != NULL, "ToPlot is not assigned a valid value");
-
-		int iStartMoves = parent->m_iData1;
-		iTurns = parent->m_iData2;
-		if (iStartMoves == 0)
-		{
-			iTurns++;
-		}
-
-		for (CLLNode<IDInfo>* pUnitNode = pSelectionGroup->headUnitNode(); pUnitNode != NULL; pUnitNode = pSelectionGroup->nextUnitNode(pUnitNode))
-		{
-			CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
-
-			int iUnitMoves = (iStartMoves == 0 ? pLoopUnit->maxMoves() : iStartMoves);
-			iUnitMoves -= pToPlot->movementCost(pLoopUnit, pFromPlot);
-			iUnitMoves = std::max(iUnitMoves, 0);
-			
-			iMoves = std::min(iMoves, iUnitMoves);
-		}
-	}
-
-	FAssertMsg(iMoves >= 0, "iMoves is expected to be non-negative (invalid Index)");
-
-	node->m_iData1 = iMoves;
-	node->m_iData2 = iTurns;
-
-	return 1;
-}
-
-
-int stepDestValid(int iToX, int iToY, const void* pointer, FAStar* finder)
-{
-	PROFILE_FUNC();
-
-	CvPlot* pFromPlot;
-	CvPlot* pToPlot;
-
-	pFromPlot = GC.getMapINLINE().plotSorenINLINE(gDLL->getFAStarIFace()->GetStartX(finder), gDLL->getFAStarIFace()->GetStartY(finder));
-	FAssert(pFromPlot != NULL);
-	pToPlot = GC.getMapINLINE().plotSorenINLINE(iToX, iToY);
-	FAssert(pToPlot != NULL);
-
-	if (pFromPlot->area() != pToPlot->area())
-	{
-		return FALSE;
-	}
-
-	return TRUE;
-}
-
-
-int stepHeuristic(int iFromX, int iFromY, int iToX, int iToY)
-{
-	return stepDistance(iFromX, iFromY, iToX, iToY);
-}
-
-
-int stepCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	return 1;
-}
-
-
-int stepValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	CvPlot* pNewPlot;
-
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	pNewPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-
-	if (pNewPlot->isImpassable())
-	{
-		return FALSE;
-	}
-
-	if (GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY)->area() != pNewPlot->area())
-	{
-		return FALSE;
-	}
-
-	return TRUE;
-}
-
-
-int stepAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	if (data == ASNC_INITIALADD)
-	{
-		node->m_iData1 = 0;
-	}
-	else
-	{
-		node->m_iData1 = (parent->m_iData1 + 1);
-	}
-
-	FAssertMsg(node->m_iData1 >= 0, "node->m_iData1 is expected to be non-negative (invalid Index)");
-
-	return 1;
-}
-
-
-int routeValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	CvPlot* pNewPlot;
-	PlayerTypes ePlayer;
-
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	pNewPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-
-	ePlayer = ((PlayerTypes)(gDLL->getFAStarIFace()->GetInfo(finder)));
-
-	if (!(pNewPlot->isOwned()) || (pNewPlot->getTeam() == GET_PLAYER(ePlayer).getTeam()))
-	{
-		if (pNewPlot->getRouteType() == GET_PLAYER(ePlayer).getBestRoute(pNewPlot))
-		{
-			return TRUE;
-		}
-	}
-
-	return FALSE;
-}
-
-
-int borderValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	CvPlot* pNewPlot;
-	PlayerTypes ePlayer;
-
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	pNewPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-
-	ePlayer = ((PlayerTypes)(gDLL->getFAStarIFace()->GetInfo(finder)));
-
-	if (pNewPlot->getTeam() == GET_PLAYER(ePlayer).getTeam())
-	{
-		return TRUE;
-	}
-
-	return FALSE;
-}
-
-
-int areaValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	return ((GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY)->isWater() == GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->isWater()) ? TRUE : FALSE);
-}
-
-
-int joinArea(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder) 
-{
-	if (data == ASNL_ADDCLOSED)
-	{
-		GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY)->setArea(gDLL->getFAStarIFace()->GetInfo(finder));
-	}
-
-	return 1;
-}
-
-
-int plotGroupValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	CvPlot* pOldPlot;
-	CvPlot* pNewPlot;
-	PlayerTypes ePlayer;
-
-	if (parent == NULL)
-	{
-		return TRUE;
-	}
-
-	pOldPlot = GC.getMapINLINE().plotSorenINLINE(parent->m_iX, parent->m_iY);
-	pNewPlot = GC.getMapINLINE().plotSorenINLINE(node->m_iX, node->m_iY);
-
-	ePlayer = ((PlayerTypes)(gDLL->getFAStarIFace()->GetInfo(finder)));
-	TeamTypes eTeam = GET_PLAYER(ePlayer).getTeam();
-
-	if (pOldPlot->getPlotGroup(ePlayer) == pNewPlot->getPlotGroup(ePlayer))
-	{
-		if (pNewPlot->isTradeNetwork(eTeam))
-		{
-			if (pNewPlot->isTradeNetworkConnected(pOldPlot, eTeam))
-			{
-				return TRUE;
-			}
-		}
-	}
-
-	return FALSE;
-}
-
-
-int countPlotGroup(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
-{
-	if (data == ASNL_ADDCLOSED)
-	{
-		(*((int*)pointer))++;
-	}
-
-	return 1;
-}
-
-
+// advc.003j (comment): Unused
 int baseYieldToSymbol(int iNumYieldTypes, int iYieldStack)
 {
-	int iReturn;	// holds the return value we will be calculating
-
-	// get the base value for the iReturn value
-	iReturn = iNumYieldTypes * GC.getDefineINT("MAX_YIELD_STACK");
-	// then add the offset to the return value
-	iReturn += iYieldStack;
-
-	// return the value we have calculated
-	return iReturn;
+	return iNumYieldTypes * GC.getDefineINT("MAX_YIELD_STACK") + iYieldStack;
 }
-
-
-bool isPickableName(const TCHAR* szName)
-{
-	if (szName)
-	{
+/*  advc.003j: Vanilla Civ 4 function that used to be a DLLExport;
+	certainly unused since BtS, and doesn't sound too useful. */
+/*bool isPickableName(const TCHAR* szName) {
+	if (szName) {
 		int iLen = _tcslen(szName);
-
 		if (!_tcsicmp(&szName[iLen-6], "NOPICK"))
-		{
 			return false;
-		}
 	}
-
 	return true;
-}
+}*/
 
-
-// create an array of shuffled numbers
-int* shuffle(int iNum, CvRandom& rand)
+/*	advc: Akin to natGetDeterministicRandom (deleted from CvCity.cpp). For reference,
+	the implementation of that function was:
+	srand(7297 * iSeedX + 2909  * iSeedY);
+	return (rand() % (iMax - iMin)) + iMin; */
+int intHash(std::vector<int> const& kInputs, PlayerTypes ePlayer)
 {
-	int* piShuffle = new int[iNum];
-	shuffleArray(piShuffle, iNum, rand);
-	return piShuffle;
-}
-
-
-void shuffleArray(int* piShuffle, int iNum, CvRandom& rand)
-{
-	int iI, iJ;
-
-	for (iI = 0; iI < iNum; iI++)
+	int const iPrime = 31;
+	int iHashVal = 0;
+	for (size_t i = 0; i < kInputs.size(); i++)
 	{
-		piShuffle[iI] = iI;
+		iHashVal += kInputs[i];
+		iHashVal *= iPrime;
 	}
-
-	for (iI = 0; iI < iNum; iI++)
+	int iCapitalIndex = -1;
+	if (ePlayer != NO_PLAYER)
 	{
-		iJ = (rand.get(iNum - iI, NULL) + iI);
-
-		if (iI != iJ)
-		{
-			int iTemp = piShuffle[iI];
-			piShuffle[iI] = piShuffle[iJ];
-			piShuffle[iJ] = iTemp;
-		}
+		CvCity const* pCapital = GET_PLAYER(ePlayer).getCapital();
+		if (pCapital != NULL)
+			iCapitalIndex = pCapital->plotNum();
 	}
+	if (iCapitalIndex >= 0)
+	{
+		iHashVal += iCapitalIndex;
+		iHashVal *= iPrime;
+	}
+	return iHashVal;
 }
 
-int getTurnYearForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed)
+
+int getTurnYearForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar,
+	GameSpeedTypes eSpeed)
 {
-	return (getTurnMonthForGame(iGameTurn, iStartYear, eCalendar, eSpeed) / GC.getNumMonthInfos());
+	return getTurnMonthForGame(iGameTurn, iStartYear, eCalendar, eSpeed) /
+			std::max(1, GC.getNumMonthInfos()); // advc: max
 }
 
 
-int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed)
+int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar,
+	GameSpeedTypes eSpeed)
 {
-	int iTurnMonth;
-	int iTurnCount;
-	int iI;
-
-	iTurnMonth = iStartYear * GC.getNumMonthInfos();
-
+	int iTurnMonth = iStartYear * GC.getNumMonthInfos();
 	switch (eCalendar)
 	{
 	case CALENDAR_DEFAULT:
-		iTurnCount = 0;
-
-		for (iI = 0; iI < GC.getGameSpeedInfo(eSpeed).getNumTurnIncrements(); iI++)
+	{
+		int iTurnCount = 0;
+		for (int i = 0; i < GC.getInfo(eSpeed).getNumTurnIncrements(); i++)
 		{
-			if (iGameTurn > (iTurnCount + GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement))
+			GameTurnInfo const& kGameTurn = GC.getInfo(eSpeed).getGameTurnInfo(i);
+			if (iGameTurn > iTurnCount + kGameTurn.iNumGameTurnsPerIncrement)
 			{
-				iTurnMonth += (GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement);
-				iTurnCount += GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement;
+				iTurnMonth += kGameTurn.iMonthIncrement *
+						kGameTurn.iNumGameTurnsPerIncrement;
+				iTurnCount += kGameTurn.iNumGameTurnsPerIncrement;
 			}
 			else
 			{
-				iTurnMonth += (GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * (iGameTurn - iTurnCount));
-				iTurnCount += (iGameTurn - iTurnCount);
+				iTurnMonth += kGameTurn.iMonthIncrement * (iGameTurn - iTurnCount);
+				iTurnCount += iGameTurn - iTurnCount;
 				break;
 			}
 		}
-
 		if (iGameTurn > iTurnCount)
 		{
-			iTurnMonth += (GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(GC.getGameSpeedInfo(eSpeed).getNumTurnIncrements() - 1).iMonthIncrement * (iGameTurn - iTurnCount));
+			iTurnMonth += GC.getInfo(eSpeed).getGameTurnInfo(
+					GC.getInfo(eSpeed).getNumTurnIncrements() - 1).
+					iMonthIncrement * (iGameTurn - iTurnCount);
 		}
 		break;
-
+	}
 	case CALENDAR_BI_YEARLY:
-		iTurnMonth += (2 * iGameTurn * GC.getNumMonthInfos());
+		iTurnMonth += 2 * iGameTurn * GC.getNumMonthInfos();
 		break;
 
 	case CALENDAR_YEARS:
@@ -2292,7 +890,8 @@ int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, 
 		break;
 
 	case CALENDAR_SEASONS:
-		iTurnMonth += (iGameTurn * GC.getNumMonthInfos()) / GC.getNumSeasonInfos();
+		iTurnMonth += (iGameTurn * GC.getNumMonthInfos()) /
+				std::max(1, GC.getNumSeasonInfos()); // advc: max
 		break;
 
 	case CALENDAR_MONTHS:
@@ -2300,7 +899,8 @@ int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, 
 		break;
 
 	case CALENDAR_WEEKS:
-		iTurnMonth += iGameTurn / GC.getDefineINT("WEEKS_PER_MONTHS");
+		iTurnMonth += iGameTurn /
+				std::max(1, GC.getDefineINT("WEEKS_PER_MONTHS")); // advc: max
 		break;
 
 	default:
@@ -2310,15 +910,12 @@ int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, 
 	return iTurnMonth;
 }
 
-// edead: start
 
-// a set functions to calculate the turn for a given year/month number, depending on game settings
-// everything is exposed to python
-
+// doc (edead): convert normal speed turns to game speed turns
 int getTurns(int iTurns)
 {
 	int iSpeed = (int)GC.getGameINLINE().getGameSpeedType();
-	
+
 	// marathon
 	if (iSpeed == 0) return 3 * iTurns;
 
@@ -2334,16 +931,19 @@ int getTurns(int iTurns)
 	return iTurns;
 }
 
+// doc (edead): convert year to turn number in current game speed
 int getTurnForYear(int iTurnYear)
 {
 	return (getGameTurnForMonth(iTurnYear * GC.getNumMonthInfos(), GC.getGameINLINE().getStartYear(), GC.getGameINLINE().getCalendar(), GC.getGameINLINE().getGameSpeedType()));
 }
 
+// doc (edead): convert year to turn number in current game speed
 int getGameTurnForYear(int iTurnYear, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed)
 {
 	return (getGameTurnForMonth(iTurnYear * GC.getNumMonthInfos(), iStartYear, eCalendar, eSpeed));
 }
 
+// doc (edead) convert month to turn number in current game speed
 int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed)
 {
 	int iMonthCount;
@@ -2355,7 +955,7 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 	iTurnMonth -= iStartYear * GC.getNumMonthInfos();
 	iTurnCount = 0;
 	iMonthCount = 0;
-	
+
 		for (iI = 0; iI < GC.getGameSpeedInfo(eSpeed).getNumTurnIncrements(); iI++)
 		{
 			if (iTurnMonth > (iMonthCount + GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iMonthIncrement * GC.getGameSpeedInfo(eSpeed).getGameTurnInfo(iI).iNumGameTurnsPerIncrement))
@@ -2380,15 +980,13 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 	return iTurnCount;
 }
 
-// edead: end
-
-// Leoreth: identify the active scenario
-
+// doc: active scenario
 ScenarioTypes getScenario()
 {
 	return GC.getMapINLINE().getScenario();
 }
 
+// doc: active scenario start year
 int getScenarioStartYear(ScenarioTypes eScenario)
 {
 	if (eScenario == NO_SCENARIO)
@@ -2401,6 +999,7 @@ int getScenarioStartYear(ScenarioTypes eScenario)
 	else return 1700;
 }
 
+// doc: active scenario start turn
 int getScenarioStartTurn()
 {
 	return getTurnForYear(getScenarioStartYear());
@@ -2410,6 +1009,10 @@ int getScenarioStartTurn()
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType)
 {
+	/*  advc.007: Turned this comment
+		"these string functions should only be used under chipotle cheat code (not internationalized)"
+		into an assertion: */
+	FAssertMsg(gLogBBAI || GC.getGame().isDebugMode(), "getDirectionTypeString should only be used for Debug output");
 	switch (eDirectionType)
 	{
 	case NO_DIRECTION: szString = L"NO_DIRECTION"; break;
@@ -2432,43 +1035,44 @@ void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes 
 	getDirectionTypeString(szString, cardinalDirectionToDirection(eDirectionType));
 }
 
+// advc.007: Removed the "ACTIVITY_" prefix from the strings b/c it takes up too much space.
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType)
 {
+	FAssertMsg(gLogBBAI || GC.getGame().isDebugMode(), "getActivityTypeString should only be used for Debug output"); // advc.007
 	switch (eActivityType)
 	{
 	case NO_ACTIVITY: szString = L"NO_ACTIVITY"; break;
 
-	case ACTIVITY_AWAKE: szString = L"ACTIVITY_AWAKE"; break;
-	case ACTIVITY_HOLD: szString = L"ACTIVITY_HOLD"; break;
-	case ACTIVITY_SLEEP: szString = L"ACTIVITY_SLEEP"; break;
-	case ACTIVITY_HEAL: szString = L"ACTIVITY_HEAL"; break;
-	case ACTIVITY_SENTRY: szString = L"ACTIVITY_SENTRY"; break;
-// BUG - Sentry Actions - start
-#ifdef _MOD_SENTRY
-	case ACTIVITY_SENTRY_WHILE_HEAL: szString = L"ACTIVITY_SENTRY_WHILE_HEAL"; break;
-	case ACTIVITY_SENTRY_NAVAL_UNITS: szString = L"ACTIVITY_SENTRY_NAVAL_UNITS"; break;
-	case ACTIVITY_SENTRY_LAND_UNITS: szString = L"ACTIVITY_SENTRY_LAND_UNITS"; break;
-#endif
-// BUG - Sentry Actions - end
-	case ACTIVITY_INTERCEPT: szString = L"ACTIVITY_INTERCEPT"; break;
-	case ACTIVITY_MISSION: szString = L"ACTIVITY_MISSION"; break;
-
+	case ACTIVITY_AWAKE: szString = L"AWAKE"; break;
+	case ACTIVITY_HOLD: szString = L"HOLD"; break;
+	case ACTIVITY_SLEEP: szString = L"SLEEP"; break;
+	case ACTIVITY_HEAL: szString = L"HEAL"; break;
+	case ACTIVITY_SENTRY: szString = L"SENTRY"; break;
+	case ACTIVITY_INTERCEPT: szString = L"INTERCEPT"; break;
+	case ACTIVITY_MISSION: szString = L"MISSION"; break;
+// K-Mod. There were some missing activity strings...
+/*#define case_string(x) case x: szString = L#x; break;
+	case_string(ACTIVITY_PATROL)
+	case_string(ACTIVITY_PLUNDER)
+#undef case_string*/
+// K-Mod end
+	// <advc.007>
+	case ACTIVITY_PATROL: szString = L"PATROL"; break;
+	case ACTIVITY_PLUNDER: szString = L"PLUNDER"; break;
+	// </advc.007>
+	case ACTIVITY_BOARDED: szString = L"BOARDED"; break; // advc.075
 	default: szString = CvWString::format(L"UNKNOWN_ACTIVITY(%d)", eActivityType); break;
 	}
 }
 
 void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 {
+	FAssertMsg(gLogBBAI || GC.getGame().isDebugMode(), "getMissionTypeString should only be used for Debug output"); // advc.007
 	switch (eMissionType)
 	{
 	case NO_MISSION: szString = L"NO_MISSION"; break;
 
 	case MISSION_MOVE_TO: szString = L"MISSION_MOVE_TO"; break;
-// BUG - Sentry Actions - start
-#ifdef _MOD_SENTRY
-	case MISSION_MOVE_TO_SENTRY: szString = L"MISSION_MOVE_TO_SENTRY"; break;
-#endif
-// BUG - Sentry Actions - end
 	case MISSION_ROUTE_TO: szString = L"MISSION_ROUTE_TO"; break;
 	case MISSION_MOVE_TO_UNIT: szString = L"MISSION_MOVE_TO_UNIT"; break;
 	case MISSION_SKIP: szString = L"MISSION_SKIP"; break;
@@ -2478,14 +1082,8 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_AIRPATROL: szString = L"MISSION_AIRPATROL"; break;
 	case MISSION_SEAPATROL: szString = L"MISSION_SEAPATROL"; break;
 	case MISSION_HEAL: szString = L"MISSION_HEAL"; break;
+	case MISSION_SENTRY_HEAL: szString = L"MISSION_SENTRY_HEAL"; break; // advc.004l
 	case MISSION_SENTRY: szString = L"MISSION_SENTRY"; break;
-// BUG - Sentry Actions - start
-#ifdef _MOD_SENTRY
-	case MISSION_SENTRY_WHILE_HEAL: szString = L"MISSION_SENTRY_WHILE_HEAL"; break;
-	case MISSION_SENTRY_NAVAL_UNITS: szString = L"MISSION_SENTRY_NAVAL_UNITS"; break;
-	case MISSION_SENTRY_LAND_UNITS: szString = L"MISSION_SENTRY_LAND_UNITS"; break;
-#endif
-// BUG - Sentry Actions - end
 	case MISSION_AIRLIFT: szString = L"MISSION_AIRLIFT"; break;
 	case MISSION_NUKE: szString = L"MISSION_NUKE"; break;
 	case MISSION_RECON: szString = L"MISSION_RECON"; break;
@@ -2510,13 +1108,13 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	case MISSION_BUILD: szString = L"MISSION_BUILD"; break;
 	case MISSION_LEAD: szString = L"MISSION_LEAD"; break;
 	case MISSION_ESPIONAGE: szString = L"MISSION_ESPIONAGE"; break;
-	case MISSION_RESOLVE_CRISIS: szString = L"MISSION_RESOLVE_CRISIS"; break;
-	case MISSION_REFORM_GOVERNMENT: szString = L"MISSION_REFORM_GOVERNMENT"; break;
-	case MISSION_DIPLOMATIC_MISSION: szString = L"MISSION_DIPLOMATIC_MISSION"; break;
-	case MISSION_PERSECUTE: szString = L"MISSION_PERSECUTION"; break;
-	case MISSION_GREAT_MISSION: szString = L"MISSION_GREAT_MISSION"; break;
-	case MISSION_SATELLITE_ATTACK: szString = L"MISSION_SATELLITE_ATTACK"; break;
-	case MISSION_REBUILD: szString = L"MISSION_REBUILD"; break;
+	case MISSION_RESOLVE_CRISIS: szString = L"MISSION_RESOLVE_CRISIS"; break; // doc
+	case MISSION_REFORM_GOVERNMENT: szString = L"MISSION_REFORM_GOVERNMENT"; break; // doc
+	case MISSION_DIPLOMATIC_MISSION: szString = L"MISSION_DIPLOMATIC_MISSION"; break; // doc
+	case MISSION_PERSECUTE: szString = L"MISSION_PERSECUTION"; break; // doc
+	case MISSION_GREAT_MISSION: szString = L"MISSION_GREAT_MISSION"; break; // doc
+	case MISSION_SATELLITE_ATTACK: szString = L"MISSION_SATELLITE_ATTACK"; break; // doc
+	case MISSION_REBUILD: szString = L"MISSION_REBUILD"; break; // doc
 
 	case MISSION_DIE_ANIMATION: szString = L"MISSION_DIE_ANIMATION"; break;
 
@@ -2535,44 +1133,66 @@ void getMissionTypeString(CvWString& szString, MissionTypes eMissionType)
 	}
 }
 
+// advc.007: Removed the "MISSIONAI_" prefix from the strings b/c it takes up too much space.
 void getMissionAIString(CvWString& szString, MissionAITypes eMissionAI)
 {
+	FAssertMsg(gLogBBAI || GC.getGame().isDebugMode(), "getMissionAIString should only be used for Debug output"); // advc.007
 	switch (eMissionAI)
 	{
 	case NO_MISSIONAI: szString = L"NO_MISSIONAI"; break;
 
-	case MISSIONAI_SHADOW: szString = L"MISSIONAI_SHADOW"; break;
-	case MISSIONAI_GROUP: szString = L"MISSIONAI_GROUP"; break;
-	case MISSIONAI_LOAD_ASSAULT: szString = L"MISSIONAI_LOAD_ASSAULT"; break;
-	case MISSIONAI_LOAD_SETTLER: szString = L"MISSIONAI_LOAD_SETTLER"; break;
-	case MISSIONAI_LOAD_SPECIAL: szString = L"MISSIONAI_LOAD_SPECIAL"; break;
-	case MISSIONAI_GUARD_CITY: szString = L"MISSIONAI_GUARD_CITY"; break;
-	case MISSIONAI_GUARD_BONUS: szString = L"MISSIONAI_GUARD_BONUS"; break;
-	case MISSIONAI_GUARD_SPY: szString = L"MISSIONAI_GUARD_SPY"; break;
-	case MISSIONAI_ATTACK_SPY: szString = L"MISSIONAI_ATTACK_SPY"; break;
-	case MISSIONAI_SPREAD: szString = L"MISSIONAI_SPREAD"; break;
-	case MISSIONAI_CONSTRUCT: szString = L"MISSIONAI_CONSTRUCT"; break;
-	case MISSIONAI_HURRY: szString = L"MISSIONAI_HURRY"; break;
-	case MISSIONAI_GREAT_WORK: szString = L"MISSIONAI_GREAT_WORK"; break;
-	case MISSIONAI_EXPLORE: szString = L"MISSIONAI_EXPLORE"; break;
-	case MISSIONAI_BLOCKADE: szString = L"MISSIONAI_BLOCKADE"; break;
-	case MISSIONAI_PILLAGE: szString = L"MISSIONAI_PILLAGE"; break;
-	case MISSIONAI_FOUND: szString = L"MISSIONAI_FOUND"; break;
-	case MISSIONAI_BUILD: szString = L"MISSIONAI_BUILD"; break;
-	case MISSIONAI_ASSAULT: szString = L"MISSIONAI_ASSAULT"; break;
-	case MISSIONAI_CARRIER: szString = L"MISSIONAI_CARRIER"; break;
-	case MISSIONAI_PICKUP: szString = L"MISSIONAI_PICKUP"; break;
-	case MISSIONAI_CIRCUMNAVIGATE: szString = L"MISSIONAI_CIRCUMNAVIGATE"; break;
-	case MISSIONAI_REBUILD: szString = L"MISSIONAI_REBUILD"; break;
-
+	case MISSIONAI_SHADOW: szString = L"SHADOW"; break;
+	case MISSIONAI_GROUP: szString = L"GROUP"; break;
+	case MISSIONAI_LOAD_ASSAULT: szString = L"LOAD_ASSAULT"; break;
+	case MISSIONAI_LOAD_SETTLER: szString = L"LOAD_SETTLER"; break;
+	case MISSIONAI_LOAD_SPECIAL: szString = L"LOAD_SPECIAL"; break;
+	case MISSIONAI_GUARD_CITY: szString = L"GUARD_CITY"; break;
+	case MISSIONAI_GUARD_BONUS: szString = L"GUARD_BONUS"; break;
+	case MISSIONAI_GUARD_SPY: szString = L"GUARD_SPY"; break;
+	case MISSIONAI_ATTACK_SPY: szString = L"ATTACK_SPY"; break;
+	case MISSIONAI_SPREAD: szString = L"SPREAD"; break;
+	case MISSIONAI_CONSTRUCT: szString = L"CONSTRUCT"; break;
+	case MISSIONAI_HURRY: szString = L"HURRY"; break;
+	case MISSIONAI_GREAT_WORK: szString = L"GREAT_WORK"; break;
+	case MISSIONAI_EXPLORE: szString = L"EXPLORE"; break;
+	case MISSIONAI_BLOCKADE: szString = L"BLOCKADE"; break;
+	case MISSIONAI_PILLAGE: szString = L"PILLAGE"; break;
+	case MISSIONAI_FOUND: szString = L"FOUND"; break;
+	case MISSIONAI_BUILD: szString = L"BUILD"; break;
+	case MISSIONAI_ASSAULT: szString = L"ASSAULT"; break;
+	case MISSIONAI_CARRIER: szString = L"CARRIER"; break;
+	case MISSIONAI_PICKUP: szString = L"PICKUP"; break;
+	case MISSIONAI_CIRCUMNAVIGATE: szString = L"CIRCUMNAVIGATE"; break; // doc
+	case MISSIONAI_REBUILD: szString = L"REBUILD"; break; // doc
+// K-Mod
+#define mission_string(x) case x: szString = L#x; break;
+	mission_string(MISSIONAI_GUARD_COAST)
+	mission_string(MISSIONAI_REINFORCE)
+	mission_string(MISSIONAI_SPREAD_CORPORATION)
+	mission_string(MISSIONAI_RECON_SPY)
+	mission_string(MISSIONAI_JOIN_CITY)
+	mission_string(MISSIONAI_TRADE)
+	mission_string(MISSIONAI_INFILTRATE)
+	mission_string(MISSIONAI_CHOKE)
+	mission_string(MISSIONAI_HEAL)
+	mission_string(MISSIONAI_RETREAT)
+	mission_string(MISSIONAI_PATROL)
+	mission_string(MISSIONAI_DEFEND)
+	mission_string(MISSIONAI_COUNTER_ATTACK)
+	mission_string(MISSIONAI_UPGRADE)
+	mission_string(MISSIONAI_STRANDED)
+#undef mission_string
+// K-Mod end
 	default: szString = CvWString::format(L"UNKOWN_MISSION_AI(%d)", eMissionAI); break;
 	}
 }
 
 void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 {
-	// note, GC.getUnitAIInfo(eUnitAI).getDescription() is a international friendly way to get string (but it will be longer)
-	
+	FAssertMsg(gLogBBAI || GC.getGame().isDebugMode(), "getUnitAIString should only be used for Debug output"); // advc.007
+
+	// note, GC.getInfo(eUnitAI).getDescription() is a international friendly way to get string (but it will be longer)
+
 	switch (eUnitAI)
 	{
 	case NO_UNITAI: szString = L"no unitAI"; break;
@@ -2598,6 +1218,7 @@ void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 	case UNITAI_GENERAL: szString = L"general"; break;
 	case UNITAI_MERCHANT: szString = L"merchant"; break;
 	case UNITAI_ENGINEER: szString = L"engineer"; break;
+	case UNITAI_GREAT_SPY: szString = L"great spy"; break; // K-Mod
 	case UNITAI_SPY: szString = L"spy"; break;
 	case UNITAI_ICBM: szString = L"icbm"; break;
 	case UNITAI_WORKER_SEA: szString = L"worker sea"; break;
@@ -2615,166 +1236,10 @@ void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 	case UNITAI_ATTACK_AIR: szString = L"attack air"; break;
 	case UNITAI_DEFENSE_AIR: szString = L"defense air"; break;
 	case UNITAI_CARRIER_AIR: szString = L"carrier air"; break;
+	case UNITAI_MISSILE_AIR: szString = L"missile air"; break; // K-Mod (this string was missing)
 	case UNITAI_PARADROP: szString = L"paradrop"; break;
 	case UNITAI_ATTACK_CITY_LEMMING: szString = L"attack city lemming"; break;
 
 	default: szString = CvWString::format(L"unknown(%d)", eUnitAI); break;
 	}
-}
-
-// BUG - Unit Experience - start
-#include "CyArgsList.h"
-
-/*
- * Calculates the experience needed to reach the next level after the given level.
- */
-int calculateExperience(int iLevel, PlayerTypes ePlayer)
-{
-	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
-	//FAssertMsg(iLevel > 0, "iLevel must be greater than zero");
-
-	int iExperienceNeeded = iLevel * iLevel + 1;
-
-	int iModifier = GET_PLAYER(ePlayer).getLevelExperienceModifier();
-
-	if (iModifier != 0)
-	{
-		iExperienceNeeded = (iExperienceNeeded * 100 + (iExperienceNeeded * iModifier + 99)) / 100; // round up
-	}
-
-	return iExperienceNeeded;
-}
-
-/*
- * Calculates the level for a unit with the given experience.
- */
-int calculateLevel(int iExperience, PlayerTypes ePlayer)
-{
-	FAssertMsg(ePlayer != NO_PLAYER, "ePlayer must be a valid player");
-
-	if (iExperience <= 0)
-	{
-		return 1;
-	}
-
-	int iLevel = 1;
-	while (true)
-	{
-		int iNextLevelExperience = calculateExperience(iLevel, ePlayer);
-		if (iNextLevelExperience > iExperience)
-		{
-			break;
-		}
-		++iLevel;
-		if (iNextLevelExperience == iExperience)
-		{
-			break;
-		}
-	}
-
-	return iLevel;
-}
-// BUG - Unit Experience - end
-
-BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding)
-{
-	return (BuildingTypes)GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getBuildingClassType());
-}
-
-UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit)
-{
-	return (UnitTypes)GC.getCivilizationInfo(eCivilization).getCivilizationUnits(GC.getUnitInfo(eUnit).getUnitClassType());
-}
-
-bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion)
-{
-	if (ePrecursor == CONFUCIANISM && eReligion == TAOISM) return true;
-	if (ePrecursor == TAOISM && eReligion == CONFUCIANISM) return true;
-	if (ePrecursor == HINDUISM && eReligion == BUDDHISM) return true;
-	if ((ePrecursor == CATHOLICISM || ePrecursor == ORTHODOXY) && eReligion == ISLAM) return true;
-	if (ePrecursor == JUDAISM && (eReligion == CATHOLICISM || eReligion == ORTHODOXY)) return true;
-
-	return false;
-}
-
-void log(char* format, ...)
-{
-	static char buf[2048];
-	_vsnprintf( buf, 2048-4, format, (char*)(&format+1) );
-	gDLL->logMsg("sdkDbg.log", buf);
-}
-
-void log(CvWString message)
-{
-	gDLL->logMsg("sdkDbg.log", CvString(message));
-}
-
-void log(CvString logfile, CvString message)
-{
-	gDLL->logMsg(logfile, message);
-}
-
-void warn(CvWString message)
-{
-	CvWString fullMessage = CvWString::format(L"Detected a bug, please report latest autosave in the Dawn of Civilization forums: %s", message.c_str());
-	log(fullMessage);
-	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), fullMessage, "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), -1, -1, true, true);
-}
-
-void logMajorError(CvWString message, int iX, int iY)
-{
-	log(message);
-	gDLL->getInterfaceIFace()->addMessage(GC.getGame().getActivePlayer(), true, GC.getEVENT_MESSAGE_TIME(), message, "", MESSAGE_TYPE_MAJOR_EVENT, ARTFILEMGR.getInterfaceArtInfo("WORLDBUILDER_CITY_EDIT")->getPath(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), iX, iY, true, true);
-	//GC.getGameINLINE().setAIAutoPlay(0);
-}
-
-bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization)
-{
-	return eBuilding == (BuildingTypes)eWonder && GC.getGame().getActiveCivilizationType() == eCivilization && GC.getGameINLINE().getGameTurn() < getTurnForYear(GC.getCivilizationInfo(eCivilization).getStartingYear()) + 5;
-}
-
-void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)
-{
-	gDLL->getInterfaceIFace()->setDirty(eDirtyBit, bNewValue);
-}
-
-bool canRespawn(CivilizationTypes eCivilization)
-{
-	long lResult = -1;
-	CyArgsList argsList;
-	argsList.add(eCivilization);
-
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canRespawn", argsList.makeFunctionArgs(), &lResult);
-
-	return (lResult == 1);
-}
-
-bool canEverRespawn(CivilizationTypes eCivilization)
-{
-	long lResult = -1;
-	CyArgsList argsList;
-	argsList.add(eCivilization);
-	argsList.add(GC.getGame().getGameTurn());
-
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "canEverRespawn", argsList.makeFunctionArgs(), &lResult);
-
-	return (lResult == 1);
-}
-
-bool isCivAlive(CivilizationTypes eCivilization)
-{
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getCivilizationType() == eCivilization)
-		{
-			return true;
-		}
-	}
-
-	return false;
-}
-
-bool validatePeriodConstant(PeriodTypes ePeriod)
-{
-	return ePeriod == NUM_PERIODS;
 }

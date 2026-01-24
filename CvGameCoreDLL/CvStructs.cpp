@@ -12,17 +12,30 @@
 //------------------------------------------------------------------------------------------------
 
 #include "CvGameCoreDLL.h"
+#include "CvStructs.h"
 #include "CvUnit.h"
-//#include "CvStructs.h"
+#include "CvPlot.h" // advc.071
+#include "CvInfo_Command.h" // advc (for NukeMissionDef)
 
-int EventTriggeredData::getID() const 
-{ 
-	return m_iId; 
+// advc.opt: For reading legacy savegames
+void IDInfo::validateOwner()
+{
+	if (eOwner == NO_PLAYER)
+	{
+		if (iID == FFreeList::INVALID_INDEX)
+			eOwner = BARBARIAN_PLAYER;
+		else FAssert(iID == FFreeList::INVALID_INDEX);
+	}
 }
 
-void EventTriggeredData::setID(int iID) 
-{ 
-	m_iId = iID; 
+int EventTriggeredData::getID() const
+{
+	return m_iId;
+}
+
+void EventTriggeredData::setID(int iID)
+{
+	m_iId = iID;
 }
 
 void EventTriggeredData::read(FDataStreamBase* pStream)
@@ -63,14 +76,14 @@ void EventTriggeredData::write(FDataStreamBase* pStream)
 	pStream->WriteString(m_szGlobalText);
 }
 
-int VoteSelectionData::getID() const 
-{ 
-	return iId; 
+int VoteSelectionData::getID() const
+{
+	return iId;
 }
 
-void VoteSelectionData::setID(int iID) 
-{ 
-	iId = iID; 
+void VoteSelectionData::setID(int iID)
+{
+	iId = iID;
 }
 
 void VoteSelectionData::read(FDataStreamBase* pStream)
@@ -98,22 +111,22 @@ void VoteSelectionData::write(FDataStreamBase* pStream)
 	pStream->Write(aVoteOptions.size());
 	for (std::vector<VoteSelectionSubData>::iterator it = aVoteOptions.begin(); it != aVoteOptions.end(); ++it)
 	{
-		pStream->Write((*it).eVote);
-		pStream->Write((*it).ePlayer);
-		pStream->Write((*it).iCityId);
-		pStream->Write((*it).eOtherPlayer);
-		pStream->WriteString((*it).szText);
+		pStream->Write(it->eVote);
+		pStream->Write(it->ePlayer);
+		pStream->Write(it->iCityId);
+		pStream->Write(it->eOtherPlayer);
+		pStream->WriteString(it->szText);
 	}
 }
 
-int VoteTriggeredData::getID() const 
-{ 
-	return iId; 
+int VoteTriggeredData::getID() const
+{
+	return iId;
 }
 
-void VoteTriggeredData::setID(int iID) 
-{ 
-	iId = iID; 
+void VoteTriggeredData::setID(int iID)
+{
+	iId = iID;
 }
 
 void VoteTriggeredData::read(FDataStreamBase* pStream)
@@ -138,70 +151,52 @@ void VoteTriggeredData::write(FDataStreamBase* pStream)
 	pStream->WriteString(kVoteOption.szText);
 }
 
-void PlotExtraYield::read(FDataStreamBase* pStream)
-{
+// advc.enum: Obsolete
+/*void PlotExtraYield::read(FDataStreamBase* pStream) {
 	pStream->Read(&m_iX);
 	pStream->Read(&m_iY);
 	m_aeExtraYield.clear();
-	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
-	{
-		int iYield;
-		pStream->Read(&iYield);
+	FOR_EACH_ENUM(Yield) {
+		int iYield; pStream->Read(&iYield);
 		m_aeExtraYield.push_back(iYield);
 	}
 }
-
-void PlotExtraYield::write(FDataStreamBase* pStream)
-{
+void PlotExtraYield::write(FDataStreamBase* pStream) {
 	pStream->Write(m_iX);
 	pStream->Write(m_iY);
 	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
-	{
 		pStream->Write(m_aeExtraYield[i]);
-	}
 }
-
-void PlotExtraCost::read(FDataStreamBase* pStream)
-{
+void PlotExtraCost::read(FDataStreamBase* pStream) {
 	pStream->Read(&m_iX);
 	pStream->Read(&m_iY);
 	pStream->Read(&m_iCost);
 }
-
-void PlotExtraCost::write(FDataStreamBase* pStream)
-{
+void PlotExtraCost::write(FDataStreamBase* pStream) {
 	pStream->Write(m_iX);
 	pStream->Write(m_iY);
 	pStream->Write(m_iCost);
 }
-
-void BuildingYieldChange::read(FDataStreamBase* pStream)
-{
+void BuildingYieldChange::read(FDataStreamBase* pStream) {
 	pStream->Read((int*)&eBuildingClass);
 	pStream->Read((int*)&eYield);
 	pStream->Read(&iChange);
 }
-
-void BuildingYieldChange::write(FDataStreamBase* pStream)
-{
+void BuildingYieldChange::write(FDataStreamBase* pStream) {
 	pStream->Write(eBuildingClass);
 	pStream->Write(eYield);
 	pStream->Write(iChange);
 }
-
-void BuildingCommerceChange::read(FDataStreamBase* pStream)
-{
+void BuildingCommerceChange::read(FDataStreamBase* pStream) {
 	pStream->Read((int*)&eBuildingClass);
 	pStream->Read((int*)&eCommerce);
 	pStream->Read(&iChange);
 }
-
-void BuildingCommerceChange::write(FDataStreamBase* pStream)
-{
+void BuildingCommerceChange::write(FDataStreamBase* pStream) {
 	pStream->Write(eBuildingClass);
 	pStream->Write(eCommerce);
 	pStream->Write(iChange);
-}
+}*/
 
 void checkBattleUnitType(BattleUnitTypes unitType)
 {
@@ -210,7 +205,7 @@ void checkBattleUnitType(BattleUnitTypes unitType)
 
 CvBattleRound::CvBattleRound() :
 	m_iWaveSize(0),
-	m_bRangedRound(false) 
+	m_bRangedRound(false)
 {
 	m_aNumKilled[BATTLE_UNIT_ATTACKER] = m_aNumKilled[BATTLE_UNIT_DEFENDER] = 0;
 	m_aNumAlive[BATTLE_UNIT_ATTACKER] = m_aNumAlive[BATTLE_UNIT_DEFENDER] = 0;
@@ -282,7 +277,8 @@ void CvBattleRound::setNumAlive(BattleUnitTypes unitType, int value)
 //! \brief      Default constructor.
 //------------------------------------------------------------------------------------------------
 CvMissionDefinition::CvMissionDefinition() :
-	m_fMissionTime(0.0f),
+	// advc.001 (from C2C): Was 0. Currently always overwritten by setMissionTime anyway.
+	m_fMissionTime(-1.f),
 	m_eMissionType(NO_MISSION),
 	m_pPlot(NULL)
 {
@@ -332,12 +328,24 @@ void CvMissionDefinition::setPlot(const CvPlot *plot)
 	m_pPlot = plot;
 }
 
+// advc: Body cut from CvUnit::nuke
+NukeMissionDef::NukeMissionDef(CvPlot const& kPlot, CvUnit& kNuke, bool bIntercept,
+	int iBaseTime) // advc.002m
+{
+	setMissionTime(iBaseTime * gDLL->getSecsPerTurn());
+	setMissionType(MISSION_NUKE);
+	setPlot(&kPlot);
+	setUnit(BATTLE_UNIT_ATTACKER, &kNuke);
+	if (bIntercept)
+		setUnit(BATTLE_UNIT_DEFENDER, &kNuke);
+}
+
 //------------------------------------------------------------------------------------------------
 // FUNCTION:    CvBattleDefinition::CvBattleDefinition
 //! \brief      Constructor.
 //------------------------------------------------------------------------------------------------
-CvBattleDefinition::CvBattleDefinition() : 
-	m_bAdvanceSquare(false), 
+CvBattleDefinition::CvBattleDefinition() :
+	m_bAdvanceSquare(false),
 	CvMissionDefinition()
 {
 	m_fMissionTime = 0.0f;
@@ -359,8 +367,8 @@ CvBattleDefinition::CvBattleDefinition() :
 //! \brief      Copy constructor
 //! \param      kCopy The object to copy
 //------------------------------------------------------------------------------------------------
-CvBattleDefinition::CvBattleDefinition( const CvBattleDefinition & kCopy ) :
-	m_bAdvanceSquare( kCopy.m_bAdvanceSquare )
+CvBattleDefinition::CvBattleDefinition(const CvBattleDefinition & kCopy) :
+	m_bAdvanceSquare(kCopy.m_bAdvanceSquare)
 {
 	m_fMissionTime = kCopy.m_fMissionTime;
 	m_eMissionType = MISSION_BEGIN_COMBAT;
@@ -377,6 +385,8 @@ CvBattleDefinition::CvBattleDefinition( const CvBattleDefinition & kCopy ) :
 
 	m_aBattleRounds.assign(kCopy.m_aBattleRounds.begin(), kCopy.m_aBattleRounds.end());
 }
+
+CvBattleDefinition::~CvBattleDefinition() {}
 
 int CvBattleDefinition::getDamage(BattleUnitTypes unitType, BattleTimeTypes timeType) const
 {
@@ -508,6 +518,9 @@ CvAirMissionDefinition::CvAirMissionDefinition() :
 {
 	m_fMissionTime = 0.0f;
 	m_eMissionType = MISSION_AIRPATROL;
+	// <advc> Safer to initialize this here
+	for(int i = 0; i < BATTLE_UNIT_COUNT; i++)
+		m_aDamage[i] = 0; // </advc>
 }
 
 //------------------------------------------------------------------------------------------------
@@ -515,7 +528,7 @@ CvAirMissionDefinition::CvAirMissionDefinition() :
 //! \brief      Copy constructor
 //! \param      kCopy The object to copy
 //------------------------------------------------------------------------------------------------
-CvAirMissionDefinition::CvAirMissionDefinition( const CvAirMissionDefinition & kCopy )
+CvAirMissionDefinition::CvAirMissionDefinition(const CvAirMissionDefinition & kCopy)
 {
 	m_fMissionTime = kCopy.m_fMissionTime;
 	m_eMissionType = kCopy.m_eMissionType;
@@ -562,3 +575,31 @@ PBGameSetupData::PBGameSetupData()
 	}
 }
 
+// advc.071:
+FirstContactData::FirstContactData(CvPlot const* pAt1, CvPlot const* pAt2,
+	CvUnit const* pUnit1, CvUnit const* pUnit2)
+{
+	/*  Don't need to worry here about which unit is where and who sees whom - can
+		figure that out when we know which teams are meeting. */
+
+	if(pAt1 != NULL)
+	{
+		x1 = pAt1->getX();
+		y1 = pAt1->getY();
+	}
+	if(pAt2 != NULL)
+	{
+		x2 = pAt2->getX();
+		y2 = pAt2->getY();
+	}
+	if(pUnit1 != NULL)
+	{
+		u1.eOwner = pUnit1->getOwner();
+		u1.iID = pUnit1->getID();
+	}
+	if(pUnit2 != NULL)
+	{
+		u2.eOwner = pUnit2->getOwner();
+		u2.iID = pUnit2->getID();
+	}
+}

@@ -2,11 +2,11 @@
 #include "CyMessageControl.h"
 #include "CvMessageControl.h"
 #include "CvDLLPythonIFaceBase.h"
-#include "CvDLLUtilityIFaceBase.h"
 
 void CyMessageControl::sendPushOrder(int iCityID, int eOrder, int iData, bool bAlt, bool bShift, bool bCtrl)
 {
-	CvMessageControl::getInstance().sendPushOrder(iCityID, (OrderTypes) eOrder, iData, bAlt, bShift, bCtrl);
+	//CvMessageControl::getInstance().sendPushOrder(iCityID, (OrderTypes) eOrder, iData, bAlt, bShift, bCtrl);
+	CvMessageControl::getInstance().sendPushOrder(iCityID, (OrderTypes) eOrder, iData, bAlt, !(bShift || bCtrl), bCtrl ? 0 : -1);
 }
 
 void CyMessageControl::sendDoTask(int iCity, int eTask, int iData1, int iData2, bool bOption, bool bAlt, bool bShift, bool bCtrl)
@@ -21,15 +21,14 @@ void CyMessageControl::sendTurnComplete()
 
 void CyMessageControl::sendUpdateCivics(boost::python::list& iCivics)
 {
-	int *PYiCivics = NULL;		//	do not delete this memory
+	int* PYiCivics = NULL; // do not delete this memory
 	gDLL->getPythonIFace()->putSeqInArray(iCivics.ptr(), &PYiCivics);
-	std::vector<CivicTypes> aiCivics;
-	for (int i = 0; i < GC.getNumCivicOptionInfos(); ++i)
-	{
-		aiCivics.push_back((CivicTypes) PYiCivics[i]);
-	}
-	CvMessageControl::getInstance().sendUpdateCivics(aiCivics);
-	delete PYiCivics;
+	CivicMap aeCivics;
+	FOR_EACH_ENUM(CivicOption)
+		aeCivics.set(eLoopCivicOption, (CivicTypes)PYiCivics[eLoopCivicOption]);
+	CvMessageControl::getInstance().sendUpdateCivics(aeCivics);
+	//delete PYiCivics;
+	delete[] PYiCivics; // advc.001: Bugfix from C2C
 }
 
 void CyMessageControl::sendConvert(int  iReligion)

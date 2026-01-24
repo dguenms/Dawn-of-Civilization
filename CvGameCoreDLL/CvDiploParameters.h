@@ -2,42 +2,45 @@
 #ifndef CVDIPLOPARAMETERS_H
 #define CVDIPLOPARAMETERS_H
 
-#include "LinkedList.h"
-//#include "CvStructs.h"
-#include "FVariableSystem.h"
+class FVariable;
 
-class CvDiploParameters
+class CvDiploParameters /* advc.003k: */ : private boost::noncopyable
 {
 public:
 	DllExport CvDiploParameters(PlayerTypes ePlayer);
-	DllExport virtual ~CvDiploParameters();
+	virtual ~CvDiploParameters();
 
 	DllExport void setWhoTalkingTo(PlayerTypes eWhoTalkingTo);
 	DllExport PlayerTypes getWhoTalkingTo() const;
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, const std::vector<FVariable>* args=NULL);
+
+	void setDiploComment(DiploCommentTypes eCommentType,
+			std::vector<FVariable> const* pArgs = NULL);
 
 	// allow 3 args either int or string.  can't really use va_argslist here
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, CvWString  arg2="", CvWString  arg3="");
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, CvWString  arg2, int arg3=MAX_INT);
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, int arg2, CvWString  arg3="");
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, int arg2, int arg3=MAX_INT);
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, int arg1, CvWString  arg2="", CvWString  arg3="");
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, int arg1, CvWString  arg2, int arg3=MAX_INT);
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, int arg1, int arg2=MAX_INT, CvWString  arg3="");
-	DllExport void setDiploComment(DiploCommentTypes eCommentType, int arg1, int arg2, int arg3=MAX_INT);
+	void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, CvWString  arg2="", CvWString  arg3="");
+	void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, CvWString  arg2, int arg3=MAX_INT);
+	void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, int arg2, CvWString  arg3="");
+	void setDiploComment(DiploCommentTypes eCommentType, CvWString  arg1, int arg2, int arg3=MAX_INT);
+	void setDiploComment(DiploCommentTypes eCommentType, int arg1, CvWString  arg2="", CvWString  arg3="");
+	void setDiploComment(DiploCommentTypes eCommentType, int arg1, CvWString  arg2, int arg3=MAX_INT);
+	void setDiploComment(DiploCommentTypes eCommentType, int arg1, int arg2=MAX_INT, CvWString  arg3="");
+	void setDiploComment(DiploCommentTypes eCommentType, int arg1, int arg2, int arg3=MAX_INT);
 
-	DllExport DiploCommentTypes getDiploComment() const;
-	DllExport void setOurOfferList(const CLinkList<TradeData>& ourOffer);
+	DllExport DiploCommentTypes getDiploComment() const
+	{
+		return m_eCommentType;
+	}
+	DllExport void setOurOfferList(CLinkList<TradeData> const& kOurOffer);
 	DllExport const CLinkList<TradeData>& getOurOfferList() const;
-	DllExport void setTheirOfferList(const CLinkList<TradeData>& theirOffer);
-	DllExport const CLinkList<TradeData>& getTheirOfferList() const;
-	DllExport void setRenegotiate(bool bValue);
+	DllExport void setTheirOfferList(CLinkList<TradeData> const& kTheirOffer);
+	DllExport CLinkList<TradeData> const& getTheirOfferList() const;
+	void setRenegotiate(bool bValue);
 	DllExport bool getRenegotiate() const;
-	DllExport void setAIContact(bool bValue);
+	void setAIContact(bool bValue);
 	DllExport bool getAIContact() const;
 	DllExport void setPendingDelete(bool bPending);
 	DllExport bool getPendingDelete() const;
-	DllExport void setData(int iData);
+	void setData(int iData);
 	DllExport int getData() const;
 	DllExport void setHumanDiplo(bool bValue);
 	DllExport bool getHumanDiplo() const;
@@ -47,12 +50,16 @@ public:
 	DllExport bool getTheirOffering() const;
 	DllExport void setChatText(const wchar* szText);
 	DllExport const wchar* getChatText() const;
-	DllExport const std::vector<FVariable>& getDiploCommentArgs() const { return m_diploCommentArgs; }
-
+	/*	advc.003k (note): Unused. I don't know how the EXE accesses
+		m_diploCommentArgs; not through read/write either. memcopy I guess? */
+	std::vector<FVariable> const& getDiploCommentArgs() const { return m_diploCommentArgs; }
+	/*	advc (note): These two get called externally when a human-to-human trade
+		is offered in a hotseat game. They get called internally when creating a savegame. */
 	DllExport void read(FDataStreamBase& stream);
 	DllExport void write(FDataStreamBase& stream) const;
 
-private:
+private: /*	advc.003k (warning): It's not safe to add data members to this class,
+			nor to rearrange the existing members! */
 	PlayerTypes m_eWhoTalkingTo;
 	DiploCommentTypes m_eCommentType;
 	CLinkList<TradeData> m_ourOffer;
@@ -67,5 +74,7 @@ private:
 	CvWString m_szChatText;
 	std::vector<FVariable> m_diploCommentArgs;
 };
+
+BOOST_STATIC_ASSERT(sizeof(CvDiploParameters) == 100); // advc.003k
 
 #endif
