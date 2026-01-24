@@ -28,7 +28,6 @@ public:
 	int countNumUniqueBonusTypes() const;																			// Exposed to Python
 	int countHasReligion(ReligionTypes eReligion, PlayerTypes eOwner = NO_PLAYER) const;		// Exposed to Python
 	int countHasCorporation(CorporationTypes eCorporation, PlayerTypes eOwner = NO_PLAYER) const;		// Exposed to Python
-	int countCanSpread(ReligionTypes eReligion, PlayerTypes eOwner = NO_PLAYER, bool bMissionary = false) const;
 
 	int getID() const;																							// Exposed to Python
 	void setID(int iID);
@@ -118,10 +117,6 @@ public:
 
 	int getNumImprovements(ImprovementTypes eImprovement) const;							// Exposed to Python
 	void changeNumImprovements(ImprovementTypes eImprovement, int iChange);
-
-	int getClosestAreaSize(int iSize) const;
-
-	int getEnemyPower(PlayerTypes ePlayer, bool bIncludeMinors = false) const;
 
 protected:
 

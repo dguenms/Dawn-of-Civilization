@@ -29,8 +29,10 @@
 #
 # Note: $(PROGRAMFILES) converts to "C:\Program Files", "C:\Program Files (x86)" or whatever fits your system.
 # run "nmake.exe /P" in cmd.exe to see what it is on your system
-TOOLKIT=$(PROGRAMFILES)\Microsoft Visual C++ Toolkit 2003
-PSDK=$(PROGRAMFILES)\Microsoft SDKs\Windows\v7.0A
+# The MS Visual C++ Toolkit and MS SDKs need to be downloaded separately
+# Replace with the correct paths for your system
+TOOLKIT=$(PROGRAMFILES)\Civ4SDK\Microsoft Visual C++ Toolkit 2003
+PSDK=$(PROGRAMFILES)\Civ4SDK\WindowsSDK
 ## Uncomment to have newly compiled dlls copied to your mod's Assets directory
 YOURMOD=..
 
@@ -142,17 +144,16 @@ Target_PDB=$(TEMP_TARGET_FILES)\CvGameCoreDLL.pdb
 Target_OTHER=$(TEMP_TARGET_FILES)\CvGameCoreDLL.exp
 
 !IFDEF IGNORE_CUSTOM
-CUSTOM_CFLAGS  = /D_MOD_FRACTRADE
+CUSTOM_CFLAGS  =
 CUSTOM_LDFLAGS =
 !ENDIF
 
 FILE_DEPENDS = $(TEMP_TARGET_FILES)\depends
 
 #### CFLAGS ####
-GLOBAL_CFLAGS=/GR /Gy /W3 /EHsc /Gd /Gm- /Fd"$(Target_PDB)" $(CUSTOM_CFLAGS) $(PROJECT_CFLAGS) /D_MOD_FRACTRADE
+GLOBAL_CFLAGS=/GR /Gy /W3 /EHsc /Gd /Gm- /Fd"$(Target_PDB)" $(CUSTOM_CFLAGS) $(PROJECT_CFLAGS)
 Debug_CFLAGS=/MD /Zi /Od /RTC1 $(Debug_DEFINES) $(GLOBAL_CFLAGS)
 Release_CFLAGS= /MD /O2 /Oy /Oi /G7 $(Release_DEFINES) $(GLOBAL_CFLAGS)
-Final_Release_CFLAGS= /MD /O2 /Oy /Oi /G7 /arch:SSE2 /GL $(Release_DEFINES) $(GLOBAL_CFLAGS)
 
 PRECOMPILE_CFLAGS1 = /Yu"
 PRECOMPILE_CFLAGS2 = CvGameCoreDLL.h" /Fp"$(Target_PCH)"
@@ -161,8 +162,6 @@ PRECOMPILE_CFLAGS2 = CvGameCoreDLL.h" /Fp"$(Target_PCH)"
 GLOBAL_LDFLAGS=/DLL /NOLOGO /SUBSYSTEM:WINDOWS /LARGEADDRESSAWARE /TLBID:1 /PDB:"$(Target_PDB)" $(CUSTOM_LDFLAGS) $(PROJECT_LDFLAGS)
 Debug_LDFLAGS=/INCREMENTAL /DEBUG /IMPLIB:"$(Target_STATICLIB)" $(GLOBAL_LDFLAGS)
 Release_LDFLAGS=/INCREMENTAL:NO /OPT:REF /OPT:ICF $(GLOBAL_LDFLAGS)
-Final_Release_LDFLAGS=/LTCG /INCREMENTAL:NO /OPT:REF /OPT:ICF $(GLOBAL_LDFLAGS)
-Final_Profile_LDFLAGS=/LTCG /DEBUG /IMPLIB:"$(Target_STATICLIB)" $(GLOBAL_LDFLAGS)
 
 #### INCLUDES ####
 GLOBAL_INCS=/I"$(TOOLKIT)/include" /I"$(PSDK)/Include" /I"$(PSDK)/Include/mfc"
@@ -216,13 +215,9 @@ LDFLAGS = $(Release_LDFLAGS)
 CFLAGS  = $(Release_CFLAGS) /Zi
 LDFLAGS = $(Debug_LDFLAGS)
 !ENDIF
-!IF "$(TARGET)" == "Final_Release"
-CFLAGS  = $(Final_Release_CFLAGS)
-LDFLAGS = $(Final_Release_LDFLAGS)
-!ENDIF
 
 !IFNDEF CFLAGS
-!ERROR Target "$(TARGET)" not supported. Supported targets: Debug Release Assert Profile Final_Release
+!ERROR Target "$(TARGET)" not supported. Supported targets: Debug Release Assert Profile
 !ENDIF
 
 !IF EXIST ($(FILE_DEPENDS))

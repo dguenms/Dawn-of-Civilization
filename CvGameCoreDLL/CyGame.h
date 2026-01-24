@@ -101,14 +101,12 @@ public:
 	int getNumAdvancedStartPoints() const;
 	void setNumAdvancedStartPoints(int iNewValue);
 	int getStartTurn() const;
-	void setStartTurn(int iNewValue); // Leoreth
 	int getStartYear() const;
 	void setStartYear(int iNewValue);
 	int getEstimateEndTurn() const;
 	void setEstimateEndTurn(int iNewValue);
 	int getTurnSlice() const;
 	int getMinutesPlayed() const;
-	int getSecondsPlayed() const;
 	int getTargetScore() const;
 	void setTargetScore(int iNewValue);
 
@@ -147,8 +145,6 @@ public:
 	void setScoreDirty(bool bNewValue);
 	bool isCircumnavigated() const;
 	void makeCircumnavigated();
-	int getCircumnavigated(); //Rhye
-	void setCircumnavigated(int i); //Rhye
 	bool isDiploVote(int /*VoteSourceTypes*/ eVoteSource) const;
 	void changeDiploVote(int /*VoteSourceTypes*/ eVoteSource, int iChange);
 	bool isDebugMode() const;
@@ -204,7 +200,6 @@ public:
 	int getVoteOutcome(int /*VoteTypes*/ eIndex);
 
 	int getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex);
-	void setReligionGameTurnFounded(int eReligion, int iGameTurn);
 	bool isReligionFounded(int /*ReligionTypes*/ eIndex);
 	bool isReligionSlotTaken(int /*ReligionTypes*/ eIndex);
 	int getCorporationGameTurnFounded(int /*CorporationTypes*/ eIndex);
@@ -245,10 +240,6 @@ public:
 	int getSorenRandNum(int iNum, TCHAR* pszLog);
 	int calculateSyncChecksum();
 	int calculateOptionsChecksum();
-	// Rhye - start (jdog)
-	bool changePlayer( int playerIdx, int newCivType, int newLeader, int teamIdx, bool bIsHuman, bool bChangeGraphics );
-	void convertUnits( int playerIdx );
-	// Rhye - end
 	bool GetWorldBuilderMode() const;				// remove once CvApp is exposed
 	bool isPitbossHost() const;				// remove once CvApp is exposed
 	int getCurrentLanguage() const;				// remove once CvApp is exposed
@@ -267,7 +258,7 @@ public:
 
 	void saveReplay(int iPlayer);
 
-	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv, int iBirthTurn, bool bAlive, bool bMinor);
+	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv);
 	int getCultureThreshold(int /*CultureLevelTypes*/ eLevel);
 	void setPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield);
 	void changePlotExtraCost(int iX, int iY, int iExtraCost);
@@ -279,63 +270,6 @@ public:
 
 	bool isEventActive(int /*EventTriggerTypes*/ eTrigger);
 	void doControl(int iControl);
-
-// BUG - MapFinder - start
-	bool canRegenerateMap() const;
-	bool regenerateMap();
-
-	void saveGame(std::string fileName) const;
-// BUG - MapFinder - end
-
-// BUG - EXE/DLL Paths - start
-	std::string getDLLPath() const;
-	std::string getExePath() const;
-// BUG - EXE/DLL Paths - end
-
-// BUFFY - Security Checks - start
-#ifdef _BUFFY
-	int checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const;
-	int getWarningStatus() const;
-#endif
-// BUFFY - Security Checks - end
-
-	// Leoreth
-	bool isNeighbors(int /*PlayerTypes*/ ePlayer1, int /*PlayerTypes*/ ePlayer2);
-	bool isCheatingEnabled() const;
-	int determineWinner(int /*TeamTypes*/ eTeam1, int /*TeamTypes*/ eTeam2);
-
-	int getXResolution() const;
-	void setXResolution(int iNewValue);
-	void changeXResolution(int iChange);
-
-	int getYResolution() const;
-	void setYResolution(int iNewValue);
-	void changeYResolution(int iChange);
-
-	void addGreatPersonBornName(std::wstring sName);
-	bool isGreatPersonBorn(std::wstring sName);
-
-	void autosave();
-	void initialSave();
-
-	void incrementBuildingClassCreatedCount(int iBuildingClass);
-
-	void setCityScreenOwner(int iPlayer);
-	void resetCityScreenOwner();
-
-	void setGreatPeopleNotifications(int iNotificationLevel);
-	void setReligionSpreadNotifications(int iNotificationLevel);
-	void setEventEffectNotifications(int iNotificationLevel);
-
-	int getPeriod(int iCivilization);
-	void setPeriod(int iCivilization, int iPeriod);
-
-	int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn);
-
-	int getFirstDiscovered(int iTech);
-	int getFirstDiscoveredTurn(int iTech);
-
-	int getMedianTechValue();
 
 protected:
 	CvGame* m_pGame;

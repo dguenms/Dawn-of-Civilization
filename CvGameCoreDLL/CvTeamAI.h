@@ -68,7 +68,7 @@ public:
 	int AI_endWarVal(TeamTypes eTeam) const;
 
 	int AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const;
-	DenialTypes AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnoreProgress = false) const;
+	DenialTypes AI_techTrade(TechTypes eTech, TeamTypes eTeam) const;
 
 	int AI_mapTradeVal(TeamTypes eTeam) const;
 	DenialTypes AI_mapTrade(TeamTypes eTeam) const;
@@ -104,8 +104,7 @@ public:
 	void AI_setAtWarCounter(TeamTypes eIndex, int iNewValue);
 	void AI_changeAtWarCounter(TeamTypes eIndex, int iChange);
 
-	//int AI_getAtPeaceCounter(TeamTypes eIndex) const; //Rhye
-	DllExport int AI_getAtPeaceCounter(TeamTypes eIndex) const; //Rhye
+	int AI_getAtPeaceCounter(TeamTypes eIndex) const;
 	void AI_setAtPeaceCounter(TeamTypes eIndex, int iNewValue);
 	void AI_changeAtPeaceCounter(TeamTypes eIndex, int iChange);
 
@@ -155,10 +154,6 @@ public:
 	
 	bool AI_isWaterAreaRelevant(CvArea* pArea);
 	
-	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
-	void AI_invalidateLandTargetCache();
-	// Sanguo Mod Performance, end
-	
 	virtual void read(FDataStreamBase* pStream);
 	virtual void write(FDataStreamBase* pStream);
 
@@ -178,9 +173,6 @@ protected:
 	int* m_aiWarSuccess;
 	int* m_aiEnemyPeacetimeTradeValue;
 	int* m_aiEnemyPeacetimeGrantValue;
-	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
-	unsigned short* m_aiLandTargetCache;
-	// Sanguo Mod Performance, end
 
 	WarPlanTypes* m_aeWarPlan;
 

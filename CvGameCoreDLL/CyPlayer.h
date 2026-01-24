@@ -3,8 +3,8 @@
 #ifndef CyPlayer_h
 #define CyPlayer_h
 //
-// Python wrapper class for CvPlayer
-//
+// Python wrapper class for CvPlayer 
+// 
 
 //#include "CvEnums.h"
 //#include "CvStructs.h"
@@ -42,18 +42,9 @@ public:
 	bool isHuman();
 	bool isBarbarian();
 	std::wstring getName();
-	//Rhye (jdog) -  start ---------------------
-	void setName(std::wstring szNewValue);																														// Exposed to Python
-	//Rhye (jdog) -  end -----------------------
 	std::wstring getNameForm(int iForm);
 	std::wstring getNameKey();
 	std::wstring getCivilizationDescription(int iForm);
-	//Rhye (jdog) -  start ---------------------
-	void setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj);																														// Exposed to Python
-	void setCivDescription(std::wstring szNewDesc);		// Exposed to Python
-	void setCivShortDescription(std::wstring szNewShortDesc);
-	void setCivAdjective(std::wstring szNewAdj);
-	//Rhye (jdog) -  end -----------------------
 	std::wstring getCivilizationDescriptionKey();
 	std::wstring getCivilizationShortDescription(int iForm);
 	std::wstring getCivilizationShortDescriptionKey();
@@ -68,7 +59,7 @@ public:
 	std::wstring getBestAttackUnitKey();
 	int /*ArtStyleTypes*/ getArtStyleType();
 	std::string getUnitButton(int eUnit);
-
+	
 	int findBestFoundValue();
 
 	int countReligionSpreadUnits(CyArea* pArea, int /*ReligionTypes*/ eReligion);
@@ -101,7 +92,7 @@ public:
 	void killAllDeals();
 	bool isTurnActive( void );
 
-	void findNewCapital();
+	void findNewCapital();	
 	int getNumGovernmentCenters();
 	bool canRaze(CyCity* pCity);
 	void raze(CyCity* pCity);
@@ -114,7 +105,7 @@ public:
 	bool canTrain(int /*UnitTypes*/ eUnit, bool bContinue, bool bTestVisible);
 	bool canConstruct(int /*BuildingTypes*/eBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost);
 	bool canCreate(int /*ProjectTypes*/ eProject, bool bContinue, bool bTestVisible);
-	bool canMaintain(int /*ProcessTypes*/ eProcess, bool bContinue);
+	bool canMaintain(int /*ProcessTypes*/ eProcess, bool bContinue);	
 	bool isProductionMaxedUnitClass(int /*UnitClassTypes*/ eUnitClass);
 	bool isProductionMaxedBuildingClass(int /*BuildingClassTypes*/ eBuildingClass, bool bAcquireCity);
 	bool isProductionMaxedProject(int /*ProjectTypes*/ eProject);
@@ -154,7 +145,6 @@ public:
 	bool isResearch();
 	bool canEverResearch(int /*TechTypes*/ eTech);
 	bool canResearch(int /*TechTypes*/ eTech, bool bTrade);
-	bool canResearchGiven(int eTech, bool bTrade, int eGivenTech); // Leoreth
 	int /* TechTypes */ getCurrentResearch();
 	bool isCurrentResearchRepeat();
 	bool isNoResearchAvailable();
@@ -186,7 +176,6 @@ public:
 	int unitsGoldenAgeCapable();
 	int unitsGoldenAgeReady();
 	int greatPeopleThreshold(bool bMilitary);
-	int greatSpyThreshold(); // Leoreth
 	int specialistYield(int /*SpecialistTypes*/ eSpecialist, int /*YieldTypes*/ eCommerce);
 	int specialistCommerce(int /*SpecialistTypes*/ eSpecialist, int /*CommerceTypes*/ eCommerce);
 
@@ -229,10 +218,9 @@ public:
 	int getGoldenAgeTurns();
 	int getGoldenAgeLength();
 	bool isGoldenAge();
-	void changeGoldenAgeTurns(int iChange);
+	void changeGoldenAgeTurns(int iChange);	
 	int getNumUnitGoldenAges();
-	void changeNumUnitGoldenAges(int iChange);
-	void setNumUnitGoldenAges(int iNewValue);
+	void changeNumUnitGoldenAges(int iChange);	
 	int getAnarchyTurns();
 	bool isAnarchy();
 	void changeAnarchyTurns(int iChange);
@@ -240,12 +228,10 @@ public:
 	int getMaxAnarchyTurns();
 	int getAnarchyModifier();
 	int getGoldenAgeModifier();
-	void changeGoldenAgeModifier(int iChange); // edead
 	int getHurryModifier();
 	void createGreatPeople(int eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience, int iX, int iY);
 	int getGreatPeopleCreated();
 	int getGreatGeneralsCreated();
-	int getGreatSpiesCreated();
 	int getGreatPeopleThresholdModifier();
 	int getGreatGeneralsThresholdModifier();
 	int getGreatPeopleRateModifier();
@@ -296,9 +282,6 @@ public:
 	int getLevelExperienceModifier() const;
 
 	int getExtraHealth();
-// BUG - start
-	void changeExtraHealth(int iChange);
-// BUG - end
 	int getBuildingGoodHealth();
 	int getBuildingBadHealth();
 
@@ -317,11 +300,7 @@ public:
 	void changeCoastalTradeRoutes(int iChange);
 	int getTradeRoutes();
 	int getConversionTimer();
-	void setConversionTimer(int iNewValue); // edead
-	void changeConversionTimer(int iChange); // edead
 	int getRevolutionTimer();
-	void setRevolutionTimer(int iNewValue); // edead
-	void changeRevolutionTimer(int iChange); // edead
 
 	bool isStateReligion();
 	bool isNoNonStateReligionSpread();
@@ -350,15 +329,12 @@ public:
 	bool isEverAlive();
 	bool isExtendedGame();
 	bool isFoundedFirstCity();
-
+	
 	bool isStrike();
-	void setStrike(bool bNewValue); // edead
 
 	int getID();
 	int /* HandicapTypes */ getHandicapType();
-	void setHandicapType(int /* HandicapTypes */ eHandicap); //Rhye
 	int /* CivilizationTypes */ getCivilizationType();
-	void setCivilizationType(int /* CivilizationTypes */ iNewValue); //edead
 	int /*LeaderHeadTypes*/ getLeaderType();
 	int /*LeaderHeadTypes*/ getPersonalityType();
 	void setPersonalityType(int /*LeaderHeadTypes*/ eNewValue);
@@ -366,11 +342,10 @@ public:
 	void setCurrentEra(int /*EraTypes*/ iNewValue);
 
 	int /*ReligonTypes*/ getStateReligion();
-	int getLastStateReligion();
 	void setLastStateReligion(int /*ReligionTypes*/ iNewReligion);
 
 	int getTeam();
-
+	
 	int /*PlayerColorTypes*/ getPlayerColor();
 	int getPlayerTextColorR();
 	int getPlayerTextColorG();
@@ -383,7 +358,6 @@ public:
 	int getExtraYieldThreshold(YieldTypes eIndex);
 	int getTradeYieldModifier(YieldTypes eIndex);
 	int getFreeCityCommerce(CommerceTypes eIndex);
-	void changeFreeCityCommerce(CommerceTypes eIndex, int iChange); // edead
 	int getCommercePercent(int /*CommerceTypes*/ eIndex);
 	void setCommercePercent(CommerceTypes eIndex, int iNewValue);
 	void changeCommercePercent(CommerceTypes eIndex, int iChange);
@@ -397,11 +371,11 @@ public:
 	int getGoldPerTurnByPlayer(int /*PlayerTypes*/ eIndex);
 	void setGoldPerTurnByPlayer(int /*PlayerTypes*/ eIndex, int iValue);
 
-	bool isFeatAccomplished(int /*FeatTypes*/ eIndex);
+	bool isFeatAccomplished(int /*FeatTypes*/ eIndex);	
 	void setFeatAccomplished(int /*FeatTypes*/ eIndex, bool bNewValue);
-	bool isOption(int /*PlayerOptionTypes*/ eIndex);
+	bool isOption(int /*PlayerOptionTypes*/ eIndex);	
 	void setOption(int /*PlayerOptionTypes*/ eIndex, bool bNewValue);
-	bool isLoyalMember(int /*VoteSourceTypes*/ eIndex);
+	bool isLoyalMember(int /*VoteSourceTypes*/ eIndex);	
 	void setLoyalMember(int /*VoteSourceTypes*/ eIndex, bool bNewValue);
 	int getVotes(int /*VoteTypes*/ eVote, int /*VoteSourceTypes*/ eVoteSource);
 	bool isFullMember(int /*VoteSourceTypes*/ eVoteSource) const;
@@ -410,7 +384,6 @@ public:
 	void setPlayable(bool bNewValue);
 	int getBonusExport(int /*BonusTypes*/ iIndex);
 	int getBonusImport(int /*BonusTypes*/ iIndex);
-	void changeBonusImport(int eBonus, int iChange); // Leoreth
 
 	int getImprovementCount(int /*ImprovementTypes*/ iIndex);
 
@@ -452,10 +425,7 @@ public:
 	void changeCombatExperience(int iChange);
 	void setCombatExperience(int iExperience);
 
-	// Leoreth
-	int getEspionageExperience() const;
 	int getSpecialistExtraYield(int /*SpecialistTypes*/ eIndex1, int /*YieldTypes*/ eIndex2);
-	int getSpreadType(CyPlot* pPlot, int iReligion) const;
 
 	int findPathLength(int /*TechTypes*/ eTech, bool bCost);
 
@@ -492,10 +462,6 @@ public:
 	bool AI_isFinancialTrouble();
 	bool AI_demandRebukedWar(int /*PlayerTypes*/ ePlayer);
 	AttitudeTypes AI_getAttitude(int /*PlayerTypes*/ ePlayer);
-	int AI_getAttitudeVal(int /*PlayerTypes*/ ePlayer);
-	int AI_getSameReligionAttitude(int /*PlayerTypes*/ ePlayer);
-	int AI_getDifferentReligionAttitude(int /*PlayerTypes*/ ePlayer);
-	int AI_getFirstImpressionAttitude(int /*PlayerTypes*/ ePlayer);
 	int AI_unitValue(int /*UnitTypes*/ eUnit, int /*UnitAITypes*/ eUnitAI, CyArea* pArea);
 	int AI_civicValue(int /*CivicTypes*/ eCivic);
 	int AI_totalUnitAIs(int /*UnitAITypes*/ eUnitAI);
@@ -509,9 +475,15 @@ public:
 	void AI_changeMemoryCount(int /*PlayerTypes*/ eIndex1, int /*MemoryTypes*/ eIndex2, int iChange);
 	int AI_getExtraGoldTarget() const;
 	void AI_setExtraGoldTarget(int iNewValue);
-// BUG - Refuses to Talk - start
-	bool AI_isWillingToTalk(int /*PlayerTypes*/ ePlayer);
-// BUG - Refuses to Talk - end
+
+
+	int getScoreHistory(int iTurn) const;
+	int getEconomyHistory(int iTurn) const;
+	int getIndustryHistory(int iTurn) const;
+	int getAgricultureHistory(int iTurn) const;
+	int getPowerHistory(int iTurn) const;
+	int getCultureHistory(int iTurn) const;
+	int getEspionageHistory(int iTurn) const;
 
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
@@ -527,95 +499,6 @@ public:
 
 	void forcePeace(int iPlayer);
 
-// BUG - Reminder Mod - start
-	void addReminder(int iGameTurn, std::wstring szMessage) const;
-// BUG - Reminder Mod - end
-
-	void setFlag(std::wstring s); //Rhye
-	void setLeader(int i); //Rhye
-	void setLeaderName(std::wstring name);
-	int /*LeaderHeadTypes*/ getLeader(); //Rhye
-
-	//Leoreth
-	void updateTradeRoutes();
-	void updateMaintenance();
-	void AI_reset();
-	void setPersecutionCountdown(int iNewValue);
-	bool hasCivic(int iCivic);
-	int getWorstEnemy();
-	int getInitialBirthTurn();
-	void setInitialBirthTurn(int iNewValue);
-	int getLastBirthTurn();
-	void setLastBirthTurn(int iNewValue);
-	bool isSlaveTrade(int ePlayer);
-	bool isHasBuilding(int eBuildingType);
-	bool isHasBuildingEffect(int eBuildingType);
-	void setStabilityParameter(int eParameter, int iNewValue);
-	int countRequiredSlaves();
-	void setEspionageExperience(int iNewValue);
-	int getModifier(int eModifierType);
-	void setModifier(int eModifierType, int iNewValue);
-	int getTechPreference(int eTech);
-	void setTechPreference(int eTech, int iNewValue);
-	void resetTechPreferences();
-	int getStartingEra();
-	void setStartingEra(int iNewValue);
-	void setTakenTilesThreshold(int iNewValue);
-	void setDistanceSubtrahend(int iNewValue);
-	void setDistanceFactor(int iNewValue);
-	void setCompactnessModifier(int iNewValue);
-	void setTargetDistanceValueModifier(int iNewValue);
-	void setReligiousTolerance(int iNewValue);
-	void AI_chooseFreeTech();
-	bool isSlavery();
-	bool isColonialSlavery();
-	bool canUseSlaves();
-	int AI_bestCivic(int iCivicOptionType);
-	void setFreeTechsOnDiscovery(int iNewValue);
-	CyPlot* AI_getCitySite(int iIndex);
-	int AI_getNumCitySites();
-	int AI_getMemoryAttitude(int iPlayer, int iMemory);
-	void restoreGeneralThreshold();
-	void resetGreatPeopleCreated();
-	void changeYieldRateModifier(int iYieldType, int iChange);
-	void setBuildingClassPreference(int iBuildingClass, int iNewValue);
-	void resetBuildingClassPreferences();
-	int getBuildingClassPreference(int iBuildingClass);
-	void changeGreatPeopleCreated(int iChange);
-	void changeGreatGeneralsCreated(int iChange);
-	void changeGreatSpiesCreated(int iChange);
-	void launch(int iVictory);
-	void setAlive(bool bNewValue, bool bTurnActive);
-	int getPeriod();
-	int getDomainFreeExperience(int iDomainType);
-	void changeGoldPerTurnByPlayer(int iPlayer, int iChange);
-	bool isUnstableCivic(int iCivic);
-	void setBirthProtected(bool bNewValue);
-	bool isBirthProtected();
-	void changeNoAnarchyTurns(int iChange); 
-	void AI_doAdvancedStart();
-	void setMinorCiv(bool bNewValue);
-	void verifyAlive();
-	int getReligionPopulation(int iReligion);
-
-	int getScoreHistory(int iTurn);
-	int getEconomyHistory(int iTurn);
-	int getIndustryHistory(int iTurn);
-	int getAgricultureHistory(int iTurn);
-	int getPowerHistory(int iTurn);
-	int getCultureHistory(int iTurn);
-	int getEspionageHistory(int iTurn);
-	int getTechnologyHistory(int iTurn);
-	int getPopulationHistory(int iTurn);
-	int getLandHistory(int iTurn);
-
-	bool isExisting();
-
-	void AI_unitUpdate();
-	void separateAttackCitySelectionGroups();
-	int getModifiedCommerceRate(CommerceTypes eCommerce);
-	bool canBuySlaves() const;
-	
 private:
 	CvPlayer* m_pPlayer;
 };

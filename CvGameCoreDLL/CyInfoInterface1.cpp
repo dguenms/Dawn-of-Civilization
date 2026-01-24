@@ -26,8 +26,6 @@ void CyInfoPythonInterface1()
 		.def("getHelp", &CvInfoBase::pyGetHelp, "wstring ()")
 		.def("isMatchForLink", &CvInfoBase::isMatchForLink, "bool (string)")
 
-		// Leoreth
-		.def("setDescription", &CvInfoBase::setDescription, "void (string)")
 		;
 
 	python::class_<CvScalableInfo>("CvScalableInfo")
@@ -47,13 +45,7 @@ void CyInfoPythonInterface1()
 		.def("getExperience", &CvSpecialistInfo::getExperience, "int ()")
 		.def("getFlavorValue", &CvSpecialistInfo::getFlavorValue, "int (int i)")
 
-		.def("getCultureLevelYieldChange", &CvSpecialistInfo::getCultureLevelYieldChange, "int (CultureLevelTypes eCultureLevel)")
-		.def("getCultureLevelCommerceChange", &CvSpecialistInfo::getCultureLevelCommerceChange, "int (CultureLevelTypes eCultureLevel, CommerceTypes eCommerce")
-		.def("getCultureLevelGreatPeopleRateChange", &CvSpecialistInfo::getCultureLevelGreatPeopleRateChange, "int (CultureLevelTypes eCultureLevel")
-
 		.def("getTexture", &CvSpecialistInfo::getTexture, "string ()")
-
-		.def("isSatellite", &CvSpecialistInfo::isSatellite, "bool ()")
 		;
 
 	python::class_<CvTechInfo, python::bases<CvInfoBase> >("CvTechInfo")
@@ -279,15 +271,6 @@ void CyInfoPythonInterface1()
 		.def("isAnimal", &CvUnitInfo::isAnimal, "bool ()")
 		.def("isFoodProduction", &CvUnitInfo::isFoodProduction, "bool ()")
 		.def("isNoBadGoodies", &CvUnitInfo::isNoBadGoodies, "bool ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       03/20/10                       Afforess & jdog5000    */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
-		.def("isOnlyDefensive", &CvUnitInfo::isOnlyDefensive, "bool ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 		.def("isNoCapture", &CvUnitInfo::isNoCapture, "bool ()")
 		.def("isRivalTerritory", &CvUnitInfo::isRivalTerritory, "bool ()")
 		.def("isMilitaryHappiness", &CvUnitInfo::isMilitaryHappiness, "bool ()")
@@ -320,15 +303,9 @@ void CyInfoPythonInterface1()
 		.def("isLineOfSight", &CvUnitInfo::isLineOfSight, "bool ()")
 		.def("isHiddenNationality", &CvUnitInfo::isHiddenNationality, "bool ()")
 		.def("isAlwaysHostile", &CvUnitInfo::isAlwaysHostile, "bool ()")
-		.def("isPersecute", &CvUnitInfo::isPersecute, "bool ()")
-		.def("isSlave", &CvUnitInfo::isSlave, "bool ()")
 
 		.def("getUnitMaxSpeed", &CvUnitInfo::getUnitMaxSpeed, "float ()")
 		.def("getUnitPadTime", &CvUnitInfo::getUnitPadTime, "float ()")
-		
-// BUG - Unit Experience - start
-		.def("canAcquireExperience", &CvUnitInfo::canAcquireExperience, "int ()")
-// BUG - Unit Experience - end
 
 		// Arrays
 
@@ -531,7 +508,6 @@ void CyInfoPythonInterface1()
 		.def("getReligionType", &CvBuildingInfo::getReligionType, "int ()")
 		.def("getStateReligion", &CvBuildingInfo::getStateReligion, "int ()")
 		.def("getPrereqReligion", &CvBuildingInfo::getPrereqReligion, "int ()")
-		.def("getPrereqCivic", &CvBuildingInfo::getPrereqCivic, "int ()")
 		.def("getPrereqCorporation", &CvBuildingInfo::getPrereqCorporation, "int ()")
 		.def("getFoundsCorporation", &CvBuildingInfo::getFoundsCorporation, "int ()")
 		.def("getGlobalReligionCommerce", &CvBuildingInfo::getGlobalReligionCommerce, "int ()")
@@ -552,14 +528,10 @@ void CyInfoPythonInterface1()
 		.def("getFreeTechs", &CvBuildingInfo::getFreeTechs, "int ()")
 		.def("getDefenseModifier", &CvBuildingInfo::getDefenseModifier, "int ()")
 		.def("getBombardDefenseModifier", &CvBuildingInfo::getBombardDefenseModifier, "int ()")
-		.def("getUnignorableBombardDefenseModifier", &CvBuildingInfo::getUnignorableBombardDefenseModifier, "int ()")
 		.def("getAllCityDefenseModifier", &CvBuildingInfo::getAllCityDefenseModifier, "int ()")
 		.def("getEspionageDefenseModifier", &CvBuildingInfo::getEspionageDefenseModifier, "int ()")
 		.def("getMissionType", &CvBuildingInfo::getMissionType, "int ()")
 		.def("getVoteSourceType", &CvBuildingInfo::getVoteSourceType, "int ()")
-		.def("getCultureCommerceModifier", &CvBuildingInfo::getCultureCommerceModifier, "int (CommerceTypes eCommerce)")
-		.def("getCultureGreatPeopleRateModifier", &CvBuildingInfo::getCultureGreatPeopleRateModifier, "int ()")
-		.def("getCultureTradeRouteModifier", &CvBuildingInfo::getCultureTradeRouteModifier, "int ()")
 
 		.def("isTeamShare", &CvBuildingInfo::isTeamShare, "bool ()")
 		.def("isWater", &CvBuildingInfo::isWater, "bool ()")
@@ -590,17 +562,12 @@ void CyInfoPythonInterface1()
 		.def("getMovie", &CvBuildingInfo::getMovie, "string ()")
 		.def("getMovieDefineTag", &CvBuildingInfo::getMovieDefineTag, "string ()")
 
-		// Leoreth
-		.def("getOrPrereqReligion", &CvBuildingInfo::getOrPrereqReligion, "int ()")
-		.def("getOrStateReligion", &CvBuildingInfo::getOrStateReligion, "int ()")
-		.def("isPagan", &CvBuildingInfo::isPagan, "bool ()")
 
 		// Arrays
 
 		.def("getYieldChange", &CvBuildingInfo::getYieldChange, "int (int i)")
 		.def("getYieldModifier", &CvBuildingInfo::getYieldModifier, "int (int i)")
 		.def("getPowerYieldModifier", &CvBuildingInfo::getPowerYieldModifier, "int (int i)")
-		.def("getPowerCommerceModifier", &CvBuildingInfo::getPowerCommerceModifier, "int (int i)")
 		.def("getGlobalYieldModifier", &CvBuildingInfo::getGlobalYieldModifier, "int (int i)")
 		.def("getSeaPlotYieldChange", &CvBuildingInfo::getSeaPlotYieldChange, "int (int i)")
 		.def("getRiverPlotYieldChange", &CvBuildingInfo::getRiverPlotYieldChange, "int (int i)")

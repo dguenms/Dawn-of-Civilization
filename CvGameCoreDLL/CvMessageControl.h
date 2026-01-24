@@ -17,7 +17,7 @@ public:
 	DllExport void sendAdvancedStartAction(AdvancedStartActionTypes eAction, PlayerTypes ePlayer, int iX, int iY, int iData, bool bAdd);
 	void sendModNetMessage(int iData1, int iData2, int iData3, int iData4, int iData5);
 	void sendConvert(ReligionTypes eReligion);
-	void sendEmpireSplit(PlayerTypes ePlayer, int iPlayerID);
+	void sendEmpireSplit(PlayerTypes ePlayer, int iAreaId);
 	void sendFoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion, ReligionTypes eSlotReligion);
 	DllExport void sendLaunch(PlayerTypes ePlayer, VictoryTypes eVictory);
 	void sendEventTriggered(PlayerTypes ePlayer, EventTypes eEvent, int iEventTriggeredId);
@@ -31,10 +31,6 @@ public:
 	void sendDiploVote(int iVoteId, PlayerVoteTypes eChoice);
 	DllExport void sendChangeWar(TeamTypes eRivalTeam, bool bWar);
 	DllExport void sendPing(int iX, int iY);
-
-// BUG - Reminder Mod - start
-	void sendAddReminder(PlayerTypes ePlayer, int iGameTurn, CvWString szMessage);
-// BUG - Reminder Mod - end
 };
 
 

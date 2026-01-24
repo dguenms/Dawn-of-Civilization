@@ -58,7 +58,7 @@ public:
 
 	void AI_makeProductionDirty();
 
-	void AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, PlayerTypes eHighestCulturePlayer, int iCaptureGold);
+	void AI_conquerCity(CvCity* pCity);
 
 	bool AI_acceptUnit(CvUnit* pUnit) const;
 	bool AI_captureUnit(UnitTypes eUnit, CvPlot* pPlot) const;
@@ -121,16 +121,6 @@ public:
 	int AI_getMemoryAttitude(PlayerTypes ePlayer, MemoryTypes eMemory) const;
 	int AI_getColonyAttitude(PlayerTypes ePlayer) const;
 
-    // BEGIN: Show Hidden Attitude Mod 01/22/2010
-	int AI_getFirstImpressionAttitude(PlayerTypes ePlayer) const;
-	int AI_getTeamSizeAttitude(PlayerTypes ePlayer) const;
-	int AI_getBetterRankDifferenceAttitude(PlayerTypes ePlayer) const;
-	int AI_getWorseRankDifferenceAttitude(PlayerTypes ePlayer) const;
-	int AI_getLowRankAttitude(PlayerTypes ePlayer) const;
-	int AI_getLostWarAttitude(PlayerTypes ePlayer) const;
-    int AI_getKnownPlayerRank(PlayerTypes ePlayer) const;
-    // END: Show Hidden Attitude Mod
-
 	PlayerVoteTypes AI_diploVote(const VoteSelectionSubData& kVoteData, VoteSourceTypes eVoteSource, bool bPropose);
 
 	int AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pList, bool bIgnoreAnnual = false, int iExtra = 1) const;
@@ -144,24 +134,10 @@ public:
 	int AI_goldPerTurnTradeVal(int iGoldPerTurn) const;
 
 	int AI_bonusVal(BonusTypes eBonus, int iChange = 1) const;
-	int AI_baseBonusVal(BonusTypes eBonus, int iChange = 1) const;
+	int AI_baseBonusVal(BonusTypes eBonus) const;
 	int AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) const;
-	int AI_corporationBonusVal(BonusTypes eBonus, int iChange = 1) const;
-
-	// Leoreth: determine value provided by additional resource instances
-	int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const;
-
-	int AI_bonusHappinessChange(BonusTypes eBonus, int iChange) const;
-	int AI_bonusHealthChange(BonusTypes eBonus, int iChange) const;
-
-	int AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange) const;
-	int AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) const;
-
-	int AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange) const;
-
-	int AI_bonusActualHappinessChange(BonusTypes eBonus, int iChange) const;
-	int AI_bonusActualHealthChange(BonusTypes eBonus, int iChange) const;
+	int AI_corporationBonusVal(BonusTypes eBonus) const;
 
 	int AI_cityTradeVal(CvCity* pCity) const;
 	DenialTypes AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const;
@@ -183,7 +159,7 @@ public:
 	int AI_countCargoSpace(UnitAITypes eUnitAI) const;
 
 	int AI_neededExplorers(CvArea* pArea) const;
-	int AI_neededWorkers(CvArea* pArea = NULL) const;
+	int AI_neededWorkers(CvArea* pArea) const;
 	int AI_neededMissionaries(CvArea* pArea, ReligionTypes eReligion) const;
 	int AI_neededExecutives(CvArea* pArea, CorporationTypes eCorporation) const;
 	
@@ -203,6 +179,7 @@ public:
 	int AI_enemyTargetMissionAIs(MissionAITypes eMissionAI, CvSelectionGroup* pSkipSelectionGroup = NULL) const;
 	int AI_enemyTargetMissionAIs(MissionAITypes* aeMissionAI, int iMissionAICount, CvSelectionGroup* pSkipSelectionGroup = NULL) const;
 	int AI_wakePlotTargetMissionAIs(CvPlot* pPlot, MissionAITypes eMissionAI, CvSelectionGroup* pSkipSelectionGroup = NULL) const;
+	
 
 	CivicTypes AI_bestCivic(CivicOptionTypes eCivicOption) const;
 	int AI_civicValue(CivicTypes eCivic) const;
@@ -296,15 +273,18 @@ public:
 
 	int AI_goldToUpgradeAllUnits(int iExpThreshold = 0) const;
 
-	int AI_goldTradeValuePercent(PlayerTypes eOtherPlayer) const;
+	int AI_goldTradeValuePercent() const;
 	
 	int AI_averageYieldMultiplier(YieldTypes eYield) const;
 	int AI_averageCommerceMultiplier(CommerceTypes eCommerce) const;
 	int AI_averageGreatPeopleMultiplier() const;
-	int AI_averageTradeMultiplier() const; // Leoreth
 	int AI_averageCommerceExchange(CommerceTypes eCommerce) const;
 	
 	int AI_playerCloseness(PlayerTypes eIndex, int iMaxDistance) const;
+	
+	int AI_getTotalCityThreat() const;
+	int AI_getTotalFloatingDefenseNeeded() const;
+	
 	
 	int AI_getTotalAreaCityThreat(CvArea* pArea) const;
 	int AI_countNumAreaHostileUnits(CvArea* pArea, bool bPlayer, bool bTeam, bool bNeutral, bool bHostile) const;
@@ -318,7 +298,6 @@ public:
 	bool AI_advancedStartPlaceExploreUnits(bool bLand);
 	void AI_advancedStartRevealRadius(CvPlot* pPlot, int iRadius);
 	bool AI_advancedStartPlaceCity(CvPlot* pPlot);
-	bool AI_advancedStartImproveCity(CvCity* pCity);
 	bool AI_advancedStartDoRoute(CvPlot* pFromPlot, CvPlot* pToPlot);
 	void AI_advancedStartRouteTerritory();
 	void AI_doAdvancedStart(bool bNoExit = false);
@@ -327,7 +306,6 @@ public:
 	
 	void AI_recalculateFoundValues(int iX, int iY, int iInnerRadius, int iOuterRadius) const;
 	
-	bool AI_canUpdateCitySites() const;
 	void AI_updateCitySites(int iMinFoundValueThreshold, int iMaxSites) const;
 	void AI_invalidateCitySites(int iMinFoundValueThreshold) const;
 	bool AI_isPlotCitySite(CvPlot* pPlot) const;
@@ -336,9 +314,6 @@ public:
 	
 	int AI_getNumCitySites() const;
 	CvPlot* AI_getCitySite(int iIndex) const;
-
-	int AI_bestCitySiteSettlerValue(int iAreaID = -1) const; // Leoreth
-	int AI_bestAdjacentCitySiteSettlerValue(int iAreaID = -1) const; // Leoreth
 	
 	int AI_bestAreaUnitAIValue(UnitAITypes eUnitAI, CvArea* pArea, UnitTypes* peBestUnitType = NULL) const;
 	int AI_bestCityUnitAIValue(UnitAITypes eUnitAI, CvCity* pCity, UnitTypes* peBestUnitType = NULL) const;
@@ -363,22 +338,6 @@ public:
 
 	bool AI_isFirstTech(TechTypes eTech) const;
 
-	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
-	void AI_invalidateAttitudeCache(PlayerTypes ePlayer);
-	void AI_invalidatePlotDangerCache(int iPlotIndex);
-	// Sanguo Mod Performance, end
-	
-	int AI_slaveTradeVal(CvUnit* pUnit) const; // edead/Afforess
-	int AI_getPersecutionValue(ReligionTypes eReligion) const; // Leoreth
-	int AI_neededPersecutors(CvArea* pArea) const;
-	int AI_getUnitEnabledValue(UnitTypes eUnit, TechTypes eTech, CvCity* pCapitalCity, int iHasMetCount, int iCoastalCities, bool bWarPlan, bool bCapitalAlone) const;
-	int AI_getUnitEnabledValue(UnitTypes eUnit) const;
-	bool AI_enablesUnitWonder(UnitClassTypes eUnitClass, int iPathLength) const;
-
-	bool AI_willUseNukes(PlayerTypes eTarget, bool bOffensive) const;
-
-	int AI_getEnemyPower(bool bIncludeMinors = false) const;
-
 	// for serialization
   virtual void read(FDataStreamBase* pStream);
   virtual void write(FDataStreamBase* pStream);
@@ -401,7 +360,6 @@ protected:
 	mutable int m_iAveragesCacheTurn;
 	
 	mutable int m_iAverageGreatPeopleMultiplier;
-	mutable int m_iAverageTradeMultiplier;
 	
 	mutable int *m_aiAverageYieldMultiplier;
 	mutable int *m_aiAverageCommerceMultiplier;
@@ -423,15 +381,11 @@ protected:
 	int* m_aiGoldTradedTo;
 	int* m_aiAttitudeExtra;
 	int* m_aiBonusValue;
-	int* m_aiLastBonusValueChange;
 	int* m_aiUnitClassWeights;
 	int* m_aiUnitCombatWeights;
 
 	mutable int* m_aiCloseBordersAttitudeCache;
 
-	// Sanguo Mod Performance, start, added by poyuzhe 7.26.09
-	mutable int* m_aiAttitudeCache;
-	// Sanguo Mod Performance, end
 
 	bool* m_abFirstContact;
 
@@ -457,7 +411,7 @@ protected:
 	int AI_getStrategyHash() const;
 	void AI_calculateAverages() const;
 	
-	int AI_getHappinessWeight(int iHappy, int iExtraPop, bool bClampToHalf = false) const;
+	int AI_getHappinessWeight(int iHappy, int iExtraPop) const;
 	int AI_getHealthWeight(int iHealth, int iExtraPop) const;
 	
 	void AI_convertUnitAITypesForCrush();

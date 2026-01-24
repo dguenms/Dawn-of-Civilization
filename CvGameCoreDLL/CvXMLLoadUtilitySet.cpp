@@ -13,7 +13,6 @@
 #include "FProfiler.h"
 #include "FVariableSystem.h"
 #include "CvGameCoreUtils.h"
-#include "CvEventReporter.h"
 
 // Macro for Setting Global Art Defines
 #define INIT_XML_GLOBAL_LOAD(xmlInfoPath, infoArray, numInfos)  SetGlobalClassInfo(infoArray, xmlInfoPath, numInfos);
@@ -192,11 +191,6 @@ bool CvXMLLoadUtility::SetGlobalDefines()
 		return false;
 	}
 
-	if (!ReadGlobalDefines("xml\\GlobalDefinesVersion.xml", cache))
-	{
-		return false;
-	}
-
 	if (!ReadGlobalDefines("xml\\PythonCallbackDefines.xml", cache))
 	{
 		return false;
@@ -263,42 +257,6 @@ bool CvXMLLoadUtility::SetPostGlobalsGlobalDefines()
 		SetGlobalDefine("SHALLOW_WATER_TERRAIN", szVal);
 		idx = FindInInfoClass(szVal);
 		GC.getDefinesVarSystem()->SetValue("SHALLOW_WATER_TERRAIN", idx);
-
-// BUG - Global Warming Mod - start
-#ifdef _MOD_GWARM
-		SetGlobalDefine("FROZEN_TERRAIN", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("FROZEN_TERRAIN", idx);
-
-		SetGlobalDefine("COLD_TERRAIN", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("COLD_TERRAIN", idx);
-
-		SetGlobalDefine("TEMPERATE_TERRAIN", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("TEMPERATE_TERRAIN", idx);
-
-		SetGlobalDefine("DRY_TERRAIN", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("DRY_TERRAIN", idx);
-
-		SetGlobalDefine("BARREN_TERRAIN", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("BARREN_TERRAIN", idx);
-
-		SetGlobalDefine("COLD_FEATURE", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("COLD_FEATURE", idx);
-
-		SetGlobalDefine("TEMPERATE_FEATURE", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("TEMPERATE_FEATURE", idx);
-
-		SetGlobalDefine("WARM_FEATURE", szVal);
-		idx = FindInInfoClass(szVal);
-		GC.getDefinesVarSystem()->SetValue("WARM_FEATURE", idx);
-#endif
-// BUG - Global Warming Mod - end
 
 		SetGlobalDefine("LAND_IMPROVEMENT", szVal);
 		idx = FindInInfoClass(szVal);
@@ -435,11 +393,6 @@ bool CvXMLLoadUtility::SetGlobalTypes()
 		iEnumVal = NUM_DIRECTION_TYPES;
 		SetGlobalStringArray(&GC.getDirectionTypes(), "Civ4Types/DirectionTypes/DirectionType", &iEnumVal, true);
 		SetGlobalStringArray(&GC.getFootstepAudioTypes(), "Civ4Types/FootstepAudioTypes/FootstepAudioType", &GC.getNumFootstepAudioTypes());
-
-		// Leoreth: we just want to read the XML tags and not store the values
-		CvString* impactTypes;
-		int iNumImpactTypes;
-		SetGlobalStringArray(&impactTypes, "Civ4Types/ImpactTypes/ImpactType", &iNumImpactTypes);
 
 		gDLL->getXMLIFace()->SetToParent(m_pFXml);
 		gDLL->getXMLIFace()->SetToParent(m_pFXml);
@@ -614,7 +567,6 @@ bool CvXMLLoadUtility::LoadBasicInfos()
 	LoadGlobalClassInfo(GC.getUnitAIInfo(), "CIV4UnitAIInfos", "BasicInfos", "Civ4UnitAIInfos/UnitAIInfos/UnitAIInfo", false);
 	LoadGlobalClassInfo(GC.getAttitudeInfo(), "CIV4AttitudeInfos", "BasicInfos", "Civ4AttitudeInfos/AttitudeInfos/AttitudeInfo", false);
 	LoadGlobalClassInfo(GC.getMemoryInfo(), "CIV4MemoryInfos", "BasicInfos", "Civ4MemoryInfos/MemoryInfos/MemoryInfo", false);
-	LoadGlobalClassInfo(GC.getPaganReligionInfo(), "CIV4PaganReligionInfos", "GameInfo", "Civ4PaganReligionInfo/PaganReligionInfos/PaganReligionInfo", false);
 
 	DestroyFXml();
 	return true;
@@ -638,10 +590,9 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 	LoadGlobalClassInfo(GC.getClimateInfo(), "CIV4ClimateInfo", "GameInfo", "Civ4ClimateInfo/ClimateInfos/ClimateInfo", false);
 	LoadGlobalClassInfo(GC.getSeaLevelInfo(), "CIV4SeaLevelInfo", "GameInfo", "Civ4SeaLevelInfo/SeaLevelInfos/SeaLevelInfo", false);
 	LoadGlobalClassInfo(GC.getAdvisorInfo(), "CIV4AdvisorInfos", "Interface", "Civ4AdvisorInfos/AdvisorInfos/AdvisorInfo", false);
-	LoadGlobalClassInfo(GC.getTerrainInfo(), "CIV4TerrainInfos", "Terrain", "Civ4TerrainInfos/TerrainInfos/TerrainInfo", true);
+	LoadGlobalClassInfo(GC.getTerrainInfo(), "CIV4TerrainInfos", "Terrain", "Civ4TerrainInfos/TerrainInfos/TerrainInfo", false);
 	LoadGlobalClassInfo(GC.getEraInfo(), "CIV4EraInfos", "GameInfo", "Civ4EraInfos/EraInfos/EraInfo", false);
 	LoadGlobalClassInfo(GC.getUnitClassInfo(), "CIV4UnitClassInfos", "Units", "Civ4UnitClassInfos/UnitClassInfos/UnitClassInfo", false);
-	LoadGlobalClassInfo(GC.getCultureLevelInfo(), "CIV4CultureLevelInfo", "GameInfo", "Civ4CultureLevelInfo/CultureLevelInfos/CultureLevelInfo", false);
 	LoadGlobalClassInfo(GC.getSpecialistInfo(), "CIV4SpecialistInfos", "GameInfo", "Civ4SpecialistInfos/SpecialistInfos/SpecialistInfo", false);
 	LoadGlobalClassInfo(GC.getVoteSourceInfo(), "CIV4VoteSourceInfos", "GameInfo", "Civ4VoteSourceInfos/VoteSourceInfos/VoteSourceInfo", false);
 	LoadGlobalClassInfo(GC.getTechInfo(), "CIV4TechInfos", "Technologies", "Civ4TechInfos/TechInfos/TechInfo", true, &CvDLLUtilityIFaceBase::createTechInfoCacheObject);
@@ -658,6 +609,7 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 	LoadGlobalClassInfo(GC.getUpkeepInfo(), "CIV4UpkeepInfo", "GameInfo", "Civ4UpkeepInfo/UpkeepInfos/UpkeepInfo", false);
 	LoadGlobalClassInfo(GC.getHurryInfo(), "CIV4HurryInfo", "GameInfo", "Civ4HurryInfo/HurryInfos/HurryInfo", false);
 	LoadGlobalClassInfo(GC.getSpecialBuildingInfo(), "CIV4SpecialBuildingInfos", "Buildings", "Civ4SpecialBuildingInfos/SpecialBuildingInfos/SpecialBuildingInfo", false);
+	LoadGlobalClassInfo(GC.getCultureLevelInfo(), "CIV4CultureLevelInfo", "GameInfo", "Civ4CultureLevelInfo/CultureLevelInfos/CultureLevelInfo", false);
 	LoadGlobalClassInfo(GC.getBonusClassInfo(), "CIV4BonusClassInfos", "Terrain", "Civ4BonusClassInfos/BonusClassInfos/BonusClassInfo", false);
 	LoadGlobalClassInfo(GC.getVictoryInfo(), "CIV4VictoryInfo", "GameInfo", "Civ4VictoryInfo/VictoryInfos/VictoryInfo", false);
 	LoadGlobalClassInfo(GC.getBonusInfo(), "CIV4BonusInfos", "Terrain", "Civ4BonusInfos/BonusInfos/BonusInfo", false, &CvDLLUtilityIFaceBase::createBonusInfoCacheObject);
@@ -671,17 +623,12 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 		GC.getBuildingClassInfo((BuildingClassTypes)i).readPass3();
 	}
 	LoadGlobalClassInfo(GC.getSpecialUnitInfo(), "CIV4SpecialUnitInfos", "Units", "Civ4SpecialUnitInfos/SpecialUnitInfos/SpecialUnitInfo", false);
+	LoadGlobalClassInfo(GC.getProjectInfo(), "CIV4ProjectInfo", "GameInfo", "Civ4ProjectInfo/ProjectInfos/ProjectInfo", true);
 	LoadGlobalClassInfo(GC.getCivicInfo(), "CIV4CivicInfos", "GameInfo", "Civ4CivicInfos/CivicInfos/CivicInfo", false, &CvDLLUtilityIFaceBase::createCivicInfoCacheObject);
 	for (int i=0; i < GC.getNumVoteSourceInfos(); ++i)
 	{
 		GC.getVoteSourceInfo((VoteSourceTypes)i).readPass3();
 	}
-	// edead: start
-	for (int i=0; i < GC.getNumBuildingInfos(); ++i)
-	{
-		GC.getBuildingInfo((BuildingTypes)i).readPass3();
-	}
-	// edead: end
 	LoadGlobalClassInfo(GC.getLeaderHeadInfo(), "CIV4LeaderHeadInfos", "Civilizations", "Civ4LeaderHeadInfos/LeaderHeadInfos/LeaderHeadInfo", false, &CvDLLUtilityIFaceBase::createLeaderHeadInfoCacheObject);
 	LoadGlobalClassInfo(GC.getColorInfo(), "CIV4ColorVals", "Interface", "Civ4ColorVals/ColorVals/ColorVal", false);
 	LoadGlobalClassInfo(GC.getPlayerColorInfo(), "CIV4PlayerColorInfos", "Interface", "Civ4PlayerColorInfos/PlayerColorInfos/PlayerColorInfo", false);
@@ -695,7 +642,6 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 	}
 	LoadGlobalClassInfo(GC.getUnitArtStyleTypeInfo(), "CIV4UnitArtStyleTypeInfos", "Civilizations", "Civ4UnitArtStyleTypeInfos/UnitArtStyleTypeInfos/UnitArtStyleTypeInfo", false);
 	LoadGlobalClassInfo(GC.getCivilizationInfo(), "CIV4CivilizationInfos", "Civilizations", "Civ4CivilizationInfos/CivilizationInfos/CivilizationInfo", true, &CvDLLUtilityIFaceBase::createCivilizationInfoCacheObject);
-	LoadGlobalClassInfo(GC.getProjectInfo(), "CIV4ProjectInfo", "GameInfo", "Civ4ProjectInfo/ProjectInfos/ProjectInfo", true);
 	LoadGlobalClassInfo(GC.getHints(), "CIV4Hints", "GameInfo", "Civ4Hints/HintInfos/HintInfo", false);
 	LoadGlobalClassInfo(GC.getMainMenus(), "CIV4MainMenus", "Art", "Civ4MainMenus/MainMenus/MainMenu", false);
 	LoadGlobalClassInfo(GC.getSlideShowInfo(), "CIV4SlideShowInfos", "Interface", "Civ4SlideShowInfos/SlideShowInfos/SlideShowInfo", false);
@@ -743,8 +689,6 @@ bool CvXMLLoadUtility::LoadPreMenuGlobals()
 	UpdateProgressCB("GlobalOther");
 
 	DestroyFXml();
-
-	CvEventReporter::getInstance().xmlLoaded();
 
 	return true;
 }
@@ -1348,8 +1292,7 @@ void CvXMLLoadUtility::SetGlobalClassInfo(std::vector<T*>& aInfos, const char* s
 				}
 
 				bool bSuccess = pClassInfo->read(this);
-				//Rhye - comment
-				//FAssert(bSuccess);
+				FAssert(bSuccess);
 				if (!bSuccess)
 				{
 					delete pClassInfo;
@@ -2004,7 +1947,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(int **ppiList, const TCHAR* szRoot
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
-					sprintf( szMessage, "There are more siblings than memory allocated for them in CvXMLLoadUtility::SetVariableListTagPair \n Current XML file is: %s, \n Number of siblings: %d \n Allocated memory: %d", GC.getCurrentXMLFile().GetCString(), iNumSibs, iInfoBaseLength);
+					sprintf( szMessage, "There are more siblings than memory allocated for them in CvXMLLoadUtility::SetVariableListTagPair \n Current XML file is: %s", GC.getCurrentXMLFile().GetCString());
 					gDLL->MessageBox(szMessage, "XML Error");
 				}
 				if (gDLL->getXMLIFace()->SetToChild(m_pFXml))
@@ -2595,10 +2538,6 @@ DllExport bool CvXMLLoadUtility::LoadPlayerOptions()
 {
 	if (!CreateFXml())
 		return false;
-
-	// Leoreth: force logging and Python exceptions
-	gDLL->ChangeINIKeyValue("CONFIG", "HidePythonExceptions", "0");
-	gDLL->ChangeINIKeyValue("CONFIG", "LoggingEnabled", "1");
 
 	LoadGlobalClassInfo(GC.getPlayerOptionInfo(), "CIV4PlayerOptionInfos", "GameInfo", "Civ4PlayerOptionInfos/PlayerOptionInfos/PlayerOptionInfo", false);
 	FAssert(GC.getNumPlayerOptionInfos() == NUM_PLAYEROPTION_TYPES);

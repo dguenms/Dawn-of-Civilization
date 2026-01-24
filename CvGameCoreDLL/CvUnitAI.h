@@ -45,9 +45,6 @@ public:
 
 	int AI_sacrificeValue(const CvPlot* pPlot) const;
 
-	std::pair<CvPlot*, CvPlot*> AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission = false); // Leoreth
-	CvCity* AI_persecutionTarget(); // Leoreth
-
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 
@@ -82,7 +79,6 @@ protected:
 	void AI_merchantMove();
 	void AI_engineerMove();
 	void AI_spyMove();
-	void AI_statesmanMove(); // Leoreth
 	void AI_ICBMMove();
 	void AI_workerSeaMove();
 	void AI_barbAttackSeaMove();
@@ -101,8 +97,6 @@ protected:
 	void AI_defenseAirMove();
 	void AI_carrierAirMove();
 	void AI_missileAirMove();
-	void AI_persecutorMove(); // Leoreth
-	void AI_satelliteMove(); // Leoreth
 
 	void AI_networkAutomated();
 	void AI_cityAutomated();
@@ -149,12 +143,8 @@ protected:
 	bool AI_goody(int iRange);
 	bool AI_explore();
 	bool AI_exploreRange(int iRange);
-	bool AI_exploreCoasts(); // Leoreth
-	bool AI_exploreCircumnavigate(); // Leoreth
 	bool AI_targetCity(int iFlags = 0);
-	bool AI_targetBarbCity(bool bTarget = true);
-	bool AI_targetMinorCity(int iMinorCiv, bool bTarget = true); //Rhye
-	bool AI_isTargetableCity(CvCity* pCity);
+	bool AI_targetBarbCity();
 	bool AI_bombardCity();
 	bool AI_cityAttack(int iRange, int iOddsThreshold, bool bFollow = false);
 	bool AI_anyAttack(int iRange, int iOddsThreshold, int iMinStack = 0, bool bFollow = false);
@@ -211,23 +201,13 @@ protected:
 	bool AI_airRetreatFromCityDanger();
 	bool AI_airAttackDamagedSkip();
 
-	// Leoreth
-	bool AI_resolveCrisis(int iTurns);
-	bool AI_reformGovernment(int iNumChanges);
-	bool AI_diplomaticMission(int iPowerMultiplier);
-	bool AI_persecute();
-	bool AI_greatMission(int iCityPercent);
-	bool AI_satelliteDefendMove();
-	bool AI_satelliteAttackMove();
-	bool AI_rebuildMove(int iMinimumCost);
-
 	bool AI_followBombard();
 
 	bool AI_potentialEnemy(TeamTypes eTeam, const CvPlot* pPlot = NULL);
 
 	bool AI_defendPlot(CvPlot* pPlot);
 	int AI_pillageValue(CvPlot* pPlot, int iBonusValueThreshold = 0);
-	int AI_nukeValue(CvCity* pCity) const;
+	int AI_nukeValue(CvCity* pCity);
 	bool AI_canPillage(CvPlot& kPlot) const;
 
 	int AI_searchRange(int iRange);
@@ -255,10 +235,6 @@ protected:
 
 	bool AI_canGroupWithAIType(UnitAITypes eUnitAI) const;
 	bool AI_allowGroup(const CvUnit* pUnit, UnitAITypes eUnitAI) const;
-
-	CvCity* AI_offensiveSatelliteTarget() const;
-	CvCity* AI_offensiveNukeTarget() const;
-	CvPlot* AI_defensiveNukeTarget() const;
 
 	// added so under cheat mode we can call protected functions for testing
 	friend class CvGameTextMgr;

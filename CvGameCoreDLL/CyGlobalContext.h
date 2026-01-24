@@ -74,7 +74,6 @@ public:
 	CvProcessInfo* getProcessInfo(int i) const;
 	CvSpecialistInfo* getSpecialistInfo(int i) const;
 	CvReligionInfo* getReligionInfo(int i) const;
-	CvInfoBase* getPaganReligionInfo(int i) const;
 	CvCorporationInfo* getCorporationInfo(int i) const;
 	CvControlInfo* getControlInfo(int i) const;
 	CvTechInfo* getTechInfo(int i) const;
@@ -184,7 +183,6 @@ public:
 	int getNumPromotionInfos() const { return GC.getNumPromotionInfos(); }
 	int getNumTechInfos() const { return GC.getNumTechInfos(); }
 	int getNumReligionInfos() const { return GC.getNumReligionInfos(); }
-	int getNumPaganReligionInfos() const { return GC.getNumPaganReligionInfos(); }
 	int getNumCorporationInfos() const { return GC.getNumCorporationInfos(); }
 	int getNumSpecialistInfos() const { return GC.getNumSpecialistInfos(); }
 	int getNumCivicInfos() const { return GC.getNumCivicInfos(); }
@@ -318,35 +316,6 @@ public:
 	int getINVALID_PLOT_COORD() const { return GC.getINVALID_PLOT_COORD(); }
 	int getNUM_CITY_PLOTS() const { return GC.getNUM_CITY_PLOTS(); }
 	int getCITY_HOME_PLOT() const { return GC.getCITY_HOME_PLOT(); }
-
-// BUG - DLL Info - start
-	bool isBull() const { return GC.isBull(); }												// Exposed to Python
-	int getBullApiVersion() const { return GC.getBullApiVersion(); }						// Exposed to Python
-
-	const wchar* getBullName() const { return GC.getBullName(); }
-	const wchar* getBullVersion() const { return GC.getBullVersion(); }
-	
-	std::wstring pyGetBullName() { return getBullName(); }									// Exposed to Python
-	std::wstring pyGetBullVersion() { return getBullVersion(); }							// Exposed to Python
-// BUG - DLL Info - end
-
-// BUG - BUG Info - start
-	void setIsBug(bool bIsBug) { GC.setIsBug(bIsBug); }										// Exposed to Python
-// BUG - BUG Info - end
-
-// BUFFY - DLL Info - start
-#ifdef _BUFFY
-	bool isBuffy() const { return GC.isBuffy(); }
-	int getBuffyApiVersion() const { return GC.getBuffyApiVersion(); }
-
-	const wchar* getBuffyName() const { return GC.getBuffyName(); }
-	const wchar* getBuffyVersion() const { return GC.getBuffyVersion(); }
-	
-	std::wstring pyGetBuffyName() { return getBuffyName(); }								// Exposed to Python
-	std::wstring pyGetBuffyVersion() { return getBuffyVersion(); }							// Exposed to Python
-#endif
-// BUFFY - DLL Info - end
-
 };
 
 #endif	// CyGlobalContext_h

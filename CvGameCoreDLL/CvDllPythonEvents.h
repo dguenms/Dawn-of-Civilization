@@ -24,15 +24,8 @@ public:
 	void reportBeginPlayerTurn(int iGameTurn, PlayerTypes);
 	void reportEndPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);	
-	void reportRestoredContact(TeamTypes iTeamID1, TeamTypes iTeamID2);
+	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);						
 	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);					
-// BUG - Combat Events - start
-	void reportCombatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
-	void reportCombatWithdrawal(CvUnit* pAttacker, CvUnit* pDefender);
-	void reportCombatLogCollateral(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
-	void reportCombatLogFlanking(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
-// BUG - Combat Events - start
 	void reportImprovementBuilt(int iImprovementType, int iX, int iY);	
 	void reportImprovementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);	
 	void reportRouteBuilt(int iRouteType, int iX, int iY);	
@@ -48,23 +41,13 @@ public:
 	void reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pOldCity, bool bConquest, bool bTrade);
 	void reportCityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void reportCityLost(CvCity *pCity);
-	void reportCityGifted(CvCity* pCity); // Leoreth
-	void reportCityLiberated(CvCity* pCity); // Leoreth
 	void reportCultureExpansion(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityGrowth(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityProduction(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityBuildingUnit(CvCity *pCity, UnitTypes eUnitType);
 	void reportCityBuildingBuilding(CvCity *pCity, BuildingTypes eBuildingType);
-// BUG - Project Started Event - start
-	void reportCityBuildingProject(CvCity* pCity, ProjectTypes eProjectType);
-// BUG - Project Started Event - end
-// BUG - Process Started Event - start
-	void reportCityBuildingProcess(CvCity* pCity, ProcessTypes eProcessType);
-// BUG - Process Started Event - end
 	void reportCityRename(CvCity *pCity);
 	void reportCityHurry(CvCity *pCity, HurryTypes eHurry);
-	void reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold);
-	void reportCitySacked(CvCity* pCity);
 
 	void reportSelectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 
@@ -73,17 +56,11 @@ public:
 	void reportUnitCreated(CvUnit *pUnit);
 	void reportUnitBuilt(CvCity *pCity, CvUnit *pUnit);
 	void reportUnitKilled(CvUnit *pUnit, PlayerTypes eAttacker);			
-// BUG - Upgrade Unit Event - start
-	void reportUnitCaptured(PlayerTypes eFromPlayer, UnitTypes eUnitType, CvUnit* pNewUnit);
-// BUG - Upgrade Unit Event - end
 	void reportUnitLost(CvUnit *pUnit);
 	void reportUnitPromoted(CvUnit* pUnit, PromotionTypes ePromotion);
-// BUG - Upgrade Unit Event - start
-	void reportUnitUpgraded(CvUnit* pOldUnit, CvUnit* pNewUnit, int iPrice);
-// BUG - Upgrade Unit Event - end
 	void reportUnitSelected(CvUnit *pUnit);
 	void reportUnitRename(CvUnit *pUnit);
-	void reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold);
+	void reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer);
 	void reportUnitSpreadReligionAttempt(CvUnit* pUnit, ReligionTypes eReligion, bool bSuccess);
 	void reportUnitGifted(CvUnit* pUnit, PlayerTypes eGiftingPlayer, CvPlot* pPlotLocation);
 	void reportUnitBuildImprovement(CvUnit* pUnit, BuildTypes eBuild, bool bFinished);
@@ -108,36 +85,19 @@ public:
 
 	void reportGoldenAge(PlayerTypes ePlayer);
 	void reportEndGoldenAge(PlayerTypes ePlayer);
-	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
+	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
 	void reportChat(CvWString szString);				
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 
-	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
-	void reportRevolution(PlayerTypes ePlayerID); //edead
-
-	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
-	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
-	void reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); //Leoreth
-	void reportBlockade(PlayerTypes ePlayer, CvCity* pCity, int iGold); // Leoreth
-	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
-	void reportXMLLoaded(); // Leoreth
-	void reportFontsLoaded(); // Leoreth
-	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
-	void reportAutoplayEnded(); // Leoreth
-	void reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
-	void reportPlayerDestroyed(PlayerTypes ePlayer); // Leoreth
-	void reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
-	void reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
-	void reportTribute(PlayerTypes eFrom, PlayerTypes eTo); // Leoreth
-	void reportGlobalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense); // Leoreth
-	void reportGlobalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature); // Leoreth
-	void reportBuildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange); // Leoreth
+	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal);
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
 	void reportPlayerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount);
 
 	void preSave();
+
+	void reportPlotCovered(CvCity* pCity, CvPlot* pPlot);
 
 private:
 	bool preEvent();

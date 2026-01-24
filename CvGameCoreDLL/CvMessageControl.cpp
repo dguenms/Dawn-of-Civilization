@@ -99,9 +99,9 @@ void CvMessageControl::sendConvert(ReligionTypes eReligion)
 	}
 }
 
-void CvMessageControl::sendEmpireSplit(PlayerTypes ePlayer, int iPlayerID)
+void CvMessageControl::sendEmpireSplit(PlayerTypes ePlayer, int iAreaId)
 {
-	gDLL->sendMessageData(new CvNetEmpireSplit(ePlayer, iPlayerID));
+	gDLL->sendMessageData(new CvNetEmpireSplit(ePlayer, iAreaId));
 }
 
 void CvMessageControl::sendFoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion, ReligionTypes eSlotReligion)
@@ -199,9 +199,4 @@ void CvMessageControl::sendPing(int iX, int iY)
 	}
 }
 
-// BUG - Reminder Mod - start
-void CvMessageControl::sendAddReminder(PlayerTypes ePlayer, int iGameTurn, CvWString szMessage)
-{
-	gDLL->sendMessageData(new CvNetAddReminder(ePlayer, iGameTurn, szMessage));
-}
-// BUG - Reminder Mod - end
+

@@ -206,15 +206,6 @@ public:
 	DirectionTypes getTurnRightDirection(int i);
 	DllExport DirectionTypes getXYDirection(int i, int j);
 
-	// Leoreth
-	DllExport int* getCityPlot3X();
-	DllExport int* getCityPlot3Y();
-
-	// Leoreth: graphics paging
-	void setGraphicalDetailPagingEnabled(bool bEnabled);
-	bool getGraphicalDetailPagingEnabled();
-	int getGraphicalDetailPageInRange();
-
 	//
 	// Global Infos
 	// All info type strings are upper case and are kept in this hash map for fast lookup
@@ -549,10 +540,6 @@ public:
 	std::vector<CvReligionInfo*>& getReligionInfo();
 	CvReligionInfo& getReligionInfo(ReligionTypes eReligionNum);
 
-	int getNumPaganReligionInfos();
-	std::vector<CvInfoBase*>& getPaganReligionInfo();
-	CvInfoBase& getPaganReligionInfo(PaganReligionTypes ePaganReligion);
-
 	int getNumCorporationInfos();
 	std::vector<CvCorporationInfo*>& getCorporationInfo();
 	CvCorporationInfo& getCorporationInfo(CorporationTypes eCorporationNum);
@@ -885,28 +872,6 @@ public:
 	DllExport int getNumGraphicLevels() const;
 	DllExport int getNumGlobeLayers() const;
 
-// BUG - DLL Info - start
-	bool isBull() const;
-	int getBullApiVersion() const;
-
-	const wchar* getBullName() const;
-	const wchar* getBullVersion() const;
-// BUG - DLL Info - end
-
-// BUG - BUG Info - start
-	void setIsBug(bool bIsBug);
-// BUG - BUG Info - end
-
-// BUFFY - DLL Info - start
-#ifdef _BUFFY
-	bool isBuffy() const;
-	int getBuffyApiVersion() const;
-
-	const wchar* getBuffyName() const;
-	const wchar* getBuffyVersion() const;
-#endif
-// BUFFY - DLL Info - end
-
 	void deleteInfoArrays();
 
 protected:
@@ -970,13 +935,6 @@ protected:
 	int* m_aiCityPlotY;	// [NUM_CITY_PLOTS];
 	int* m_aiCityPlotPriority;	// [NUM_CITY_PLOTS];
 	int m_aaiXYCityPlot[CITY_PLOTS_DIAMETER][CITY_PLOTS_DIAMETER];
-
-	// Leoreth: index over the third ring as well
-	int* m_aiCityPlot3X;
-	int* m_aiCityPlot3Y;
-
-	// Leoreth: graphics paging
-	bool m_bGraphicalDetailPagingEnabled;
 
 	DirectionTypes* m_aeTurnLeftDirection;	// [NUM_DIRECTION_TYPES];
 	DirectionTypes* m_aeTurnRightDirection;	// [NUM_DIRECTION_TYPES];
@@ -1064,7 +1022,6 @@ protected:
 	std::vector<CvUpkeepInfo*> m_paUpkeepInfo;
 	std::vector<CvCultureLevelInfo*> m_paCultureLevelInfo;
 	std::vector<CvReligionInfo*> m_paReligionInfo;
-	std::vector<CvInfoBase*> m_paPaganReligionInfo;
 	std::vector<CvCorporationInfo*> m_paCorporationInfo;
 	std::vector<CvActionInfo*> m_paActionInfo;
 	std::vector<CvMissionInfo*> m_paMissionInfo;
@@ -1232,22 +1189,6 @@ protected:
 
 	FProfiler* m_Profiler;		// profiler
 	CvString m_szDllProfileText;
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
-/*                                                                                              */
-/* Efficiency, Options                                                                          */
-/************************************************************************************************/
-public:
-	int getDefineINT( const char * szName, const int iDefault ) const;
-	int getCOMBAT_DIE_SIDES();
-	int getCOMBAT_DAMAGE();
-
-protected:
-	int m_iCOMBAT_DIE_SIDES;
-	int m_iCOMBAT_DAMAGE;
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 };
 
 extern CvGlobals gGlobals;	// for debugging

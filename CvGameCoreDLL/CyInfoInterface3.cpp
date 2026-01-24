@@ -33,7 +33,6 @@ void CyInfoPythonInterface3()
 		.def("getSeeThroughLevel", &CvTerrainInfo::getSeeThroughLevel, "int ()")
 		.def("getBuildModifier", &CvTerrainInfo::getBuildModifier, "int ()")
 		.def("getDefenseModifier", &CvTerrainInfo::getDefenseModifier, "int ()")
-		.def("getGlobalWarmingTerrainType", &CvTerrainInfo::getGlobalWarmingTerrainType, "int ()")
 
 		.def("isWater", &CvTerrainInfo::isWater, "bool ()")
 		.def("isImpassable", &CvTerrainInfo::isImpassable, "bool ()")
@@ -248,9 +247,6 @@ void CyInfoPythonInterface3()
 		.def("getButtonDisabled", &CvReligionInfo::getButtonDisabled, "string ()")
 		.def("getAdjectiveKey", &CvReligionInfo::pyGetAdjectiveKey, "wstring ()")
 
-		.def("isProselytizing", &CvReligionInfo::isProselytizing, "bool ()")
-		.def("isLocal", &CvReligionInfo::isLocal, "bool ()")
-
 		// Arrays
 
 		.def("getGlobalReligionCommerce", &CvReligionInfo::getGlobalReligionCommerce, "int (int i)")
@@ -265,7 +261,6 @@ void CyInfoPythonInterface3()
 		.def("getFreeUnitClass", &CvCorporationInfo::getFreeUnitClass, "int ()")
 		.def("getSpreadFactor", &CvCorporationInfo::getSpreadFactor, "int ()")
 		.def("getSpreadCost", &CvCorporationInfo::getSpreadCost, "int ()")
-		.def("getMaxConsumableBonuses", &CvCorporationInfo::getMaxConsumableBonuses, "int ()") // merijn
 		.def("getMaintenance", &CvCorporationInfo::getMaintenance, "int ()")
 		.def("getMissionType", &CvCorporationInfo::getMissionType, "int ()")
 
@@ -420,8 +415,6 @@ void CyInfoPythonInterface3()
 
 	python::class_<CvCultureLevelInfo, python::bases<CvInfoBase> >("CvCultureLevelInfo")
 		.def("getCityDefenseModifier", &CvCultureLevelInfo::getCityDefenseModifier, "int ()")
-		.def("getWonderLimit", &CvCultureLevelInfo::getWonderLimit, "int ()")
-		.def("getNationalWonderLimit", &CvCultureLevelInfo::getNationalWonderLimit, "int ()")
 
 		.def("getSpeedThreshold", &CvCultureLevelInfo::getSpeedThreshold, "int ()")
 		;

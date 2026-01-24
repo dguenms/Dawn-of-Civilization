@@ -20,20 +20,6 @@
 #include "FVariableSystem.h"
 #include "CvInitCore.h"
 
-// BUG - DLL Info - start
-#include "BugMod.h"
-// BUG - DLL Info - end
-
-// BUG - BUG Info - start
-#include "CvBugOptions.h"
-// BUG - BUG Info - end
-
-// BUFFY - DLL Info - start
-#ifdef _BUFFY
-#include "Buffy.h"
-#endif
-// BUFFY - DLL Info - end
-
 #define COPY(dst, src, typeName) \
 	{ \
 		int iNum = sizeof(src)/sizeof(typeName); \
@@ -146,8 +132,6 @@ m_aiPlotCardinalDirectionX(NULL),
 m_aiPlotCardinalDirectionY(NULL),
 m_aiCityPlotX(NULL),
 m_aiCityPlotY(NULL),
-m_aiCityPlot3X(NULL), // Leoreth
-m_aiCityPlot3Y(NULL), // Leoreth
 m_aiCityPlotPriority(NULL),
 m_aeTurnLeftDirection(NULL),
 m_aeTurnRightDirection(NULL),
@@ -230,19 +214,6 @@ m_iUSE_ON_UNIT_CREATED_CALLBACK(0),
 m_iUSE_ON_UNIT_LOST_CALLBACK(0),
 m_paHints(NULL),
 m_paMainMenus(NULL)
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
-/*                                                                                              */
-/* Efficiency, Options                                                                          */
-/************************************************************************************************/
-,m_iCOMBAT_DIE_SIDES(-1)
-,m_iCOMBAT_DAMAGE(-1)
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
-
-// Leoreth: graphics paging
-,m_bGraphicalDetailPagingEnabled(false)
 {
 }
 
@@ -311,23 +282,6 @@ void CvGlobals::init()
 		0,
 		1, 1, 0,-1,-1,-1, 0, 1,
 		2, 2, 1, 0,-1,-2,-2,-2,-1, 0, 1, 2,
-	};
-
-	// Leoreth: also index the third ring around a city
-	int aiCityPlot3X[NUM_CITY_PLOTS_3] =
-	{
-		0,
-		0, 1, 1, 1, 0,-1,-1,-1,
-		0, 1, 2, 2, 2, 1, 0,-1,-2,-2,-2,-1,
-		0, 1, 2, 3, 3, 3, 2, 1, 0,-1,-2,-3,-3,-3,-2,-1,
-	};
-
-	int aiCityPlot3Y[NUM_CITY_PLOTS_3] =
-	{
-		0,
-		1, 1, 0,-1,-1,-1, 0, 1,
-		2, 2, 1, 0,-1,-2,-2,-2,-1, 0, 1, 2,
-		3, 3, 2, 1, 0,-1,-2,-3,-3,-3,-2,-1, 0, 1, 2, 3,
 	};
 
 	int aiCityPlotPriority[NUM_CITY_PLOTS] =
@@ -405,8 +359,6 @@ void CvGlobals::init()
 	COPY(m_aiPlotCardinalDirectionY, aiPlotCardinalDirectionY, int);
 	COPY(m_aiCityPlotX, aiCityPlotX, int);
 	COPY(m_aiCityPlotY, aiCityPlotY, int);
-	COPY(m_aiCityPlot3X, aiCityPlot3X, int);
-	COPY(m_aiCityPlot3Y, aiCityPlot3Y, int);
 	COPY(m_aiCityPlotPriority, aiCityPlotPriority, int);
 	COPY(m_aeTurnLeftDirection, aeTurnLeftDirection, DirectionTypes);
 	COPY(m_aeTurnRightDirection, aeTurnRightDirection, DirectionTypes);
@@ -428,8 +380,6 @@ void CvGlobals::uninit()
 	SAFE_DELETE_ARRAY(m_aiPlotCardinalDirectionY);
 	SAFE_DELETE_ARRAY(m_aiCityPlotX);
 	SAFE_DELETE_ARRAY(m_aiCityPlotY);
-	SAFE_DELETE_ARRAY(m_aiCityPlot3X); // Leoreth
-	SAFE_DELETE_ARRAY(m_aiCityPlot3Y); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiCityPlotPriority);
 	SAFE_DELETE_ARRAY(m_aeTurnLeftDirection);
 	SAFE_DELETE_ARRAY(m_aeTurnRightDirection);
@@ -676,17 +626,6 @@ int* CvGlobals::getCityPlotX()
 int* CvGlobals::getCityPlotY()
 {
 	return m_aiCityPlotY;
-}
-
-// Leoreth: also index over the third ring
-int* CvGlobals::getCityPlot3X()
-{
-	return m_aiCityPlot3X;
-}
-
-int* CvGlobals::getCityPlot3Y()
-{
-	return m_aiCityPlot3Y;
 }
 
 int* CvGlobals::getCityPlotPriority()
@@ -2139,23 +2078,6 @@ CvReligionInfo& CvGlobals::getReligionInfo(ReligionTypes eReligionNum)
 	return *(m_paReligionInfo[eReligionNum]);
 }
 
-int CvGlobals::getNumPaganReligionInfos()
-{
-	return (int)m_paPaganReligionInfo.size();
-}
-
-std::vector<CvInfoBase*>& CvGlobals::getPaganReligionInfo()
-{
-	return m_paPaganReligionInfo;
-}
-
-CvInfoBase& CvGlobals::getPaganReligionInfo(PaganReligionTypes ePaganReligion)
-{
-	FAssert(ePaganReligion > -1);
-	FAssert(ePaganReligion < GC.getNumPaganReligionInfos());
-	return *(m_paPaganReligionInfo[ePaganReligion]);
-}
-
 int CvGlobals::getNumCorporationInfos()
 {
 	return (int)m_paCorporationInfo.size();
@@ -2733,16 +2655,6 @@ void CvGlobals::cacheGlobals()
 	m_iUSE_ON_UPDATE_CALLBACK = getDefineINT("USE_ON_UPDATE_CALLBACK");
 	m_iUSE_ON_UNIT_CREATED_CALLBACK = getDefineINT("USE_ON_UNIT_CREATED_CALLBACK");
 	m_iUSE_ON_UNIT_LOST_CALLBACK = getDefineINT("USE_ON_UNIT_LOST_CALLBACK");
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
-/*                                                                                              */
-/* Efficiency, Options                                                                          */
-/************************************************************************************************/
-	m_iCOMBAT_DIE_SIDES = getDefineINT("COMBAT_DIE_SIDES");
-	m_iCOMBAT_DAMAGE = getDefineINT("COMBAT_DAMAGE");
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
 }
 
 int CvGlobals::getDefineINT( const char * szName ) const
@@ -3426,23 +3338,6 @@ int CvGlobals::getNUM_LEADERANIM_TYPES() const
 }
 
 
-// Leoreth: graphics paging
-void CvGlobals::setGraphicalDetailPagingEnabled(bool bEnabled)
-{
-	m_bGraphicalDetailPagingEnabled = bEnabled;
-}
-
-bool CvGlobals::getGraphicalDetailPagingEnabled()
-{
-	return m_bGraphicalDetailPagingEnabled;
-}
-
-int CvGlobals::getGraphicalDetailPageInRange()
-{
-	return std::max(GC.getGameINLINE().getXResolution(), GC.getGameINLINE().getYResolution()) / 150;
-}
-
-
 void CvGlobals::deleteInfoArrays()
 {
 	deleteInfoArray(m_paBuildingClassInfo);
@@ -3470,7 +3365,6 @@ void CvGlobals::deleteInfoArrays()
 	deleteInfoArray(m_paVoteInfo);
 	deleteInfoArray(m_paProjectInfo);
 	deleteInfoArray(m_paReligionInfo);
-	deleteInfoArray(m_paPaganReligionInfo);
 	deleteInfoArray(m_paCorporationInfo);
 	deleteInfoArray(m_paCommerceInfo);
 	deleteInfoArray(m_paEmphasizeInfo);
@@ -3609,9 +3503,7 @@ void CvGlobals::setInfoTypeFromString(const char* szType, int idx)
 #ifdef _DEBUG
 	InfosMap::const_iterator it = m_infosMap.find(szType);
 	int iExisting = (it!=m_infosMap.end()) ? it->second : -1;
-	CvString szError;
-	szError.Format("info type %s already exists, Current XML file is: %s", szType, GC.getCurrentXMLFile().GetCString());
-	FAssertMsg(iExisting==-1 || iExisting==idx || strcmp(szType, "ERROR")==0, szError.c_str());
+	FAssertMsg(iExisting==-1 || iExisting==idx || strcmp(szType, "ERROR")==0, CvString::format("xml info type entry %s already exists", szType).c_str());
 #endif
 	m_infosMap[szType] = idx;
 }
@@ -3687,40 +3579,3 @@ void CvGlobals::setBorderFinder(FAStar* pVal) { m_borderFinder = pVal; }
 void CvGlobals::setAreaFinder(FAStar* pVal) { m_areaFinder = pVal; }
 void CvGlobals::setPlotGroupFinder(FAStar* pVal) { m_plotGroupFinder = pVal; }
 CvDLLUtilityIFaceBase* CvGlobals::getDLLIFaceNonInl() { return m_pDLL; }
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                      02/21/10                                jdog5000      */
-/*                                                                                              */
-/* Efficiency, Options                                                                          */
-/************************************************************************************************/
-int CvGlobals::getCOMBAT_DIE_SIDES()
-{
-	return m_iCOMBAT_DIE_SIDES;
-}
-
-int CvGlobals::getCOMBAT_DAMAGE()
-{
-	return m_iCOMBAT_DAMAGE;
-}
-/************************************************************************************************/
-/* BETTER_BTS_AI_MOD                       END                                                  */
-/************************************************************************************************/
-
-// BUG - DLL Info - start
-bool CvGlobals::isBull() const { return true; }
-int CvGlobals::getBullApiVersion() const { return BUG_DLL_API_VERSION; }
-const wchar* CvGlobals::getBullName() const { return BUG_DLL_NAME; }
-const wchar* CvGlobals::getBullVersion() const { return BUG_DLL_VERSION; }
-// BUG - DLL Info - end
-
-// BUG - BUG Info - start
-void CvGlobals::setIsBug(bool bIsBug) { ::setIsBug(bIsBug); }
-// BUG - BUG Info - end
-
-// BUFFY - DLL Info - start
-#ifdef _BUFFY
-bool CvGlobals::isBuffy() const { return true; }
-int CvGlobals::getBuffyApiVersion() const { return BUFFY_DLL_API_VERSION; }
-const wchar* CvGlobals::getBuffyName() const { return BUFFY_DLL_NAME; }
-const wchar* CvGlobals::getBuffyVersion() const { return BUFFY_DLL_VERSION; }
-#endif
-// BUFFY - DLL Info - end

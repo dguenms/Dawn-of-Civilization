@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef CvDLLEventReporterIFaceBase_h
 #define CvDLLEventReporterIFaceBase_h
 
@@ -53,7 +51,6 @@ public:
 	virtual void cityBuildingBuilding(CvCity* pCity, BuildingTypes eBuildingType) = 0;
 	virtual void cityRename(CvCity* pCity) = 0;
 	virtual void cityHurry(CvCity* pCity, HurryTypes eHurry) = 0;
-	virtual void cityCaptureGold(CvCity* pCity, PlayerTypes ePlayer, int iCaptureGold) = 0;
 
 	virtual void selectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission) = 0;
 
@@ -101,7 +98,7 @@ public:
 
 	virtual void victory(TeamTypes eNewWinner, VictoryTypes eNewVictory) = 0;
 
-	virtual void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated) = 0;
+	virtual void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal) = 0;
 };
 
 #endif	// CvDLLEventReporterIFaceBase_h

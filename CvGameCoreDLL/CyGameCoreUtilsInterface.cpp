@@ -1,5 +1,3 @@
-#pragma component (mintypeinfo, on)
-
 #include "CvGameCoreDLL.h"
 #include "CyGameCoreUtils.h"
 #include "CyPlot.h"
@@ -71,21 +69,4 @@ void CyGameCoreUtilsPythonInterface()
 	python::def("isLimitedProject", cyIsLimitedProject, "bool (int /*ProjectTypes*/ eProject)");
 	python::def("getCombatOdds", cyGetCombatOdds, "int (CyUnit* pAttacker, CyUnit* pDefender)");
 	python::def("getEspionageModifier", cyGetEspionageModifier, "int (int /*TeamTypes*/ iOurTeam, int /*TeamTypes*/ iTargetTeam)");
-
-// BUG - Unit Experience - start
-	python::def("calculateExperience", cyCalculateExperience, "int (int iLevel, int /*PlayerTypes*/ iPlayer)");
-	python::def("calculateLevel", cyCalculateLevel, "int (int iExperience, int /*PlayerTypes*/ iPlayer)");
-// BUG - Unit Experience - end
-	
-	// edead: start
-	python::def("getTurnForYear", cyGetTurnForYear, "int (int iTurnYear)");
-	python::def("getGameTurnForYear", cyGetGameTurnForYear, "int (int iTurnYear, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	python::def("getGameTurnForMonth", cyGetGameTurnForMonth, "int (int iTurnMonth, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	python::def("getTurnYearForGame", cyGetTurnYearForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	python::def("getTurnMonthForGame", cyGetTurnMonthForGame, "int (int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)");
-	// edead: end
-
-	python::def("fileLog", cyLog, "void (string logfile, string message)");
-	python::def("setDirty", cySetDirty, "void (int iDirtyBit, bool bNewValue)");
-	python::def("validatePeriodConstant", cyValidatePeriodConstant, "bool (int iPeriod)");
 }

@@ -32,12 +32,6 @@ public:
 
 	void kill();
 
-// BUG - Expose Deal Cancelability - start
-	bool isCancelable(int /*PlayerTypes*/ eByPlayer, bool bIgnoreWaitingPeriod = false) const;
-	std::wstring getCannotCancelReason(int /*PlayerTypes*/ eByPlayer) const;
-	int turnsToCancel(int /*PlayerTypes*/ eByPlayer) const;
-// BUG - Expose Deal Cancelability - end
-
 protected:
 	CvDeal* m_pDeal;
 };

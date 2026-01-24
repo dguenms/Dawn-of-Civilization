@@ -75,8 +75,8 @@ public:
 	// **************************
 	// Member access
 	// **************************
-	DllExport const CvWString& getGameName() const;
-	DllExport void setGameName(const CvWString& szGameName);
+	DllExport const CvWString & getGameName() const	{ return m_szGameName; }
+	DllExport void setGameName(const CvWString & szGameName)	{ m_szGameName = szGameName; }
 
 	DllExport const CvWString & getGamePassword() const	{ return m_szGamePassword; }
 	DllExport void setGamePassword(const CvWString & szGamePassword)	{ m_szGamePassword = szGamePassword; }
@@ -166,10 +166,7 @@ public:
 	DllExport void setGameTurn(int iGameTurn)	{ m_iGameTurn = iGameTurn; }
 
 	DllExport int getMaxTurns() const	{ return m_iMaxTurns; }
-	DllExport void setMaxTurns(int iMaxTurns)	
-	{ 
-		m_iMaxTurns = iMaxTurns; 
-	}
+	DllExport void setMaxTurns(int iMaxTurns)	{ m_iMaxTurns = iMaxTurns; }
 
 	DllExport int getPitbossTurnTime() const	{ return m_iPitbossTurnTime; }
 	DllExport void setPitbossTurnTime(int iPitbossTurnTime)	{ m_iPitbossTurnTime = iPitbossTurnTime; }
@@ -283,14 +280,6 @@ public:
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
 
-// BUG - EXE/DLL Paths - start
-	// EF: should these be CvWString?
-	CvString getDLLPath() const;
-	CvString getDLLName() const;
-	CvString getExePath() const;
-	CvString getExeName() const;
-// BUG - EXE/DLL Paths - end
-
 protected:
 
 	void clearCustomMapOptions();
@@ -399,16 +388,6 @@ protected:
 	CvString* m_aszPythonCheck;
 	CvString* m_aszXMLCheck;
 	mutable CvString m_szTempCheck;
-
-// BUG - EXE/DLL Paths - start
-	static void setPathNames();
-
-	static CvString dllPath;
-	static CvString dllName;
-	static CvString exePath;
-	static CvString exeName;
-	static bool bPathsSet;
-// BUG - EXE/DLL Paths - end
 };
 
 #endif

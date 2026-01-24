@@ -52,15 +52,11 @@ struct CvMapInitData
 	int m_iTopLatitude;
 	int m_iBottomLatitude;
 
-	// Leoreth
-	int m_iPrimeMeridian;
-	int m_iEquator;
-
 	bool m_bWrapX;
 	bool m_bWrapY;
 
-	CvMapInitData(int iGridW=0, int iGridH=0, int iPrimeMeridian=-1, int iEquator=-1, int iTopLatitude=90, int iBottomLatitude=-90, bool bWrapX=false, bool bWrapY=false) :
-		m_iGridH(iGridH),m_iGridW(iGridW),m_iPrimeMeridian(iPrimeMeridian),m_iEquator(iEquator),m_iTopLatitude(iTopLatitude),m_iBottomLatitude(iBottomLatitude),m_bWrapY(bWrapY),m_bWrapX(bWrapX)
+	CvMapInitData(int iGridW=0, int iGridH=0, int iTopLatitude=90, int iBottomLatitude=-90, bool bWrapX=false, bool bWrapY=false) :
+		m_iGridH(iGridH),m_iGridW(iGridW),m_iTopLatitude(iTopLatitude),m_iBottomLatitude(iBottomLatitude),m_bWrapY(bWrapY),m_bWrapX(bWrapX)
 	{ }
 };
 
@@ -110,8 +106,6 @@ public:
 	void updateMinOriginalStartDist(CvArea* pArea);										// Exposed to Python
 	void updateYield();
 
-	void updateCulture();
-
 	void verifyUnitValidPlot();
 
 	void combinePlotGroups(PlayerTypes ePlayer, CvPlotGroup* pPlotGroup1, CvPlotGroup* pPlotGroup2);	
@@ -150,9 +144,6 @@ public:
 	int plotX(int iIndex) const;																										// Exposed to Python
 	int plotY(int iIndex) const;																										// Exposed to Python
 
-	// Leoreth
-	int plotIndex(int iX, int iY) const;
-
 	DllExport int pointXToPlotX(float fX);
 	DllExport float plotXToPointX(int iX);
 
@@ -187,9 +178,6 @@ public:
 
 	int getTopLatitude();																									// Exposed to Python
 	int getBottomLatitude();																							// Exposed to Python
-
-	int getPrimeMeridian() const;
-	int getEquator() const;
 
 	int getNextRiverID();																									// Exposed to Python
 	void incrementNextRiverID();																					// Exposed to Python
@@ -271,16 +259,13 @@ public:
 	void recalculateAreas();																		// Exposed to Python
 
 	void resetPathDistance();																		// Exposed to Python
-	int calculatePathDistance(CvPlot *pSource, CvPlot *pDest, int iFlags = 0);	// Exposed to Python
+	int calculatePathDistance(CvPlot *pSource, CvPlot *pDest);	// Exposed to Python
 
 	// Serialization:
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
 
-	void rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * eCustomMapOptions);		// Exposed to Python
-
-	// Leoreth
-	ScenarioTypes getScenario();
+	void rebuild(int iGridW, int iGridH, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * eCustomMapOptions);		// Exposed to Python
 
 protected:
 
@@ -291,10 +276,6 @@ protected:
 	int m_iTopLatitude;
 	int m_iBottomLatitude;
 	int m_iNextRiverID;
-
-	// Leoreth
-	int m_iPrimeMeridian;
-	int m_iEquator;
 
 	bool m_bWrapX;
 	bool m_bWrapY;

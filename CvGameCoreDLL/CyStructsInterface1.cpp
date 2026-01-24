@@ -155,9 +155,6 @@ void CyStructsPythonInterface1()
 		.def_readwrite("iCityDefenseModifier", &CombatDetails::iCityDefenseModifier)
 		.def_readwrite("iHillsAttackModifier", &CombatDetails::iHillsAttackModifier)
 		.def_readwrite("iHillsDefenseModifier", &CombatDetails::iHillsDefenseModifier)
-		.def_readwrite("iPlainsAttackModifier", &CombatDetails::iPlainsAttackModifier) // Leoreth
-		.def_readwrite("iPlainsDefenseModifier", &CombatDetails::iPlainsDefenseModifier) // Leoreth
-		.def_readwrite("iRiverAttackModifier", &CombatDetails::iRiverAttackModifier) // Leoreth
 		.def_readwrite("iFeatureAttackModifier", &CombatDetails::iFeatureAttackModifier)
 		.def_readwrite("iFeatureDefenseModifier", &CombatDetails::iFeatureDefenseModifier)
 		.def_readwrite("iTerrainAttackModifier", &CombatDetails::iTerrainAttackModifier)

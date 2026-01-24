@@ -1,5 +1,3 @@
-#pragma once
-
 //	$Revision: #4 $		$Author: mbreitkreutz $ 	$DateTime: 2005/06/13 13:35:55 $
 //---------------------------------------------------------------------------------------
 //  Copyright (c) 2004 Firaxis Games, Inc. All rights reserved.

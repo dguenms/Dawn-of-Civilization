@@ -6,7 +6,6 @@
 #define CIV4_TEAM_H
 
 //#include "CvEnums.h"
-#include <set>
 
 class CvArea;
 
@@ -19,9 +18,6 @@ public:
 
 	DllExport void init(TeamTypes eID);
 	DllExport void reset(TeamTypes eID = NO_TEAM, bool bConstructorCall = false);
-
-	__forceinline CvTeamAI* AI() { return (CvTeamAI*)(this); }
-	__forceinline const CvTeamAI* AI() const { return (const CvTeamAI*)(this); }
 
 protected:
 
@@ -42,7 +38,7 @@ public:
 
 	bool canChangeWarPeace(TeamTypes eTeam, bool bAllowVassal = false) const;																			// Exposed to Python
 	DllExport bool canDeclareWar(TeamTypes eTeam) const;																// Exposed to Python
-	DllExport void declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, bool bIgnoreDefensivePacts = false, bool bFromDefensivePact = false);										// Exposed to Python
+	DllExport void declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan);										// Exposed to Python
 	DllExport void makePeace(TeamTypes eTeam, bool bBumpUnits = true);																		// Exposed to Python
 	bool canContact(TeamTypes eTeam) const;																							// Exposed to Python
 	void meet(TeamTypes eTeam, bool bNewDiplo);																		// Exposed to Python
@@ -87,21 +83,8 @@ public:
 	int countNumAIUnitsByArea(CvArea* pArea, UnitAITypes eUnitAI) const;								// Exposed to Python
 	int countEnemyDangerByArea(CvArea* pArea) const;																		// Exposed to Python
 
-	int getResearchCost(TechTypes eTech, bool bModifiers = true) const;																// Exposed to Python
+	int getResearchCost(TechTypes eTech) const;																// Exposed to Python
 	int getResearchLeft(TechTypes eTech) const;																// Exposed to Python
-
-	// Leoreth
-	int getPopulationResearchModifier() const;
-	int getScenarioResearchModifier() const;
-	int getCivilizationResearchModifier() const;
-	int getTechLeaderModifier() const;
-	int getTechDifferenceModifier() const;
-	int getSpreadResearchModifier(TechTypes eTech) const;
-	int getTurnResearchModifier() const;
-	int getModernizationResearchModifier(TechTypes eTech) const;
-
-	int calculateTechDifferenceModifier() const;
-	void updateTechDifferenceModifier();
 
 	bool hasHolyCity(ReligionTypes eReligion) const;																		// Exposed to Python
 	bool hasHeadquarters(CorporationTypes eCorporation) const;																		// Exposed to Python
@@ -111,8 +94,6 @@ public:
 	bool isHuman() const;																																// Exposed to Python
 	bool isBarbarian() const;																														// Exposed to Python
 	bool isMinorCiv() const;																														// Exposed to Python
-	bool isIndependent() const;
-	bool isNative() const;
 	PlayerTypes getLeaderID() const;																										// Exposed to Python
 	PlayerTypes getSecretaryID() const;																									// Exposed to Python
 	HandicapTypes getHandicapType() const;																							// Exposed to Python
@@ -128,8 +109,6 @@ public:
 	int getEverAliveCount() const;
 	int isEverAlive() const;																														// Exposed to Python
 	void changeEverAliveCount(int iChange);
-
-	bool isExisting() const;
 
 	int getNumCities() const;																														// Exposed to Python
 	void changeNumCities(int iChange);							
@@ -231,9 +210,6 @@ public:
 
 	bool isHasMet(TeamTypes eIndex) const;																		// Exposed to Python
 	void makeHasMet(TeamTypes eIndex, bool bNewDiplo);
-	bool isHasEverMet(TeamTypes eIndex) const;
-	DllExport void cutContact(TeamTypes eIndex);	//Rhye
-	bool canCutContact(TeamTypes eIndex); // Leoreth
 
 	DllExport bool isAtWar(TeamTypes eIndex) const;																			// Exposed to Python
 	DllExport void setAtWar(TeamTypes eIndex, bool bNewValue);
@@ -253,8 +229,6 @@ public:
 
 	bool isVassal(TeamTypes eIndex) const;																// Exposed to Python
 	void setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated);
-
-	TeamTypes getMaster() const; // Leoreth
 
 	void assignVassal(TeamTypes eVassal, bool bSurrender) const;																// Exposed to Python
 	void freeVassal(TeamTypes eVassal) const;																// Exposed to Python
@@ -314,7 +288,6 @@ public:
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);		// Exposed to Python 
 
 	bool isFriendlyTerritory(TeamTypes eTeam) const;
-	bool isAccessibleTerritory(TeamTypes eTeam) const;
 
 	int getVictoryCountdown(VictoryTypes eIndex) const;																							// Exposed to Python
 	void setVictoryCountdown(VictoryTypes eIndex, int iTurnsLeft);
@@ -354,35 +327,9 @@ public:
 
 	bool hasShrine(ReligionTypes eReligion);
 
-	// Sanguo Mod Performance, start, added by poyuzhe 07.26.09
-	void setHasPlayerMember(PlayerTypes ePlayer, bool bNewValue);
-	bool isHasPlayerMember(PlayerTypes ePlayer) const;
-	PlayerTypes getPlayerMemberAt(int iIndex) const;
-	int getPlayerMemberListSize() const;
-	// Sanguo Mod Performance, end
 	DllExport void getCompletedSpaceshipProjects(std::map<ProjectTypes, int>& mapProjects) const;
 	DllExport int getProjectPartNumber(ProjectTypes projectType, bool bAssert) const;
 	DllExport bool hasLaunched() const;
-
-	// Leoreth
-	int getTotalTechValue() const;
-	void changeTotalTechValue(int iChange);
-
-	bool canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered = NO_TECH) const;
-	PlayerTypes getFoundingPlayer(ReligionTypes eReligion) const;
-
-	bool isAtWarWithMajorPlayer() const;
-
-	bool canSatelliteIntercept() const;
-	void changeSatelliteInterceptCount(int iChange);
-
-	bool canSatelliteAttack() const;
-	void changeSatelliteAttackCount(int iChange);
-
-	std::set<TeamTypes> determineDefensivePactPartners(std::set<TeamTypes> visited) const;
-
-	bool isAllied(TeamTypes eTeam) const;
-	int countContacts() const;
 
 	virtual void AI_init() = 0;
 	virtual void AI_reset(bool bConstructor) = 0;
@@ -417,9 +364,6 @@ public:
 	virtual bool AI_isSneakAttackReady(TeamTypes eIndex) const = 0;
 	virtual void AI_setWarPlan(TeamTypes eIndex, WarPlanTypes eNewValue, bool bWar = true) = 0;
 
-	// Leoreth
-	//virtual TeamTypes AI_getWorstEnemy() const = 0;
-
 protected:
 
 	int m_iNumMembers;
@@ -447,11 +391,6 @@ protected:
 	int m_iRiverTradeCount;
 	int m_iEspionagePointsEver;
 
-	int m_iTotalTechValue; // Leoreth
-	int m_iSatelliteInterceptCount; // Leoreth
-	int m_iSatelliteAttackCount; // Leoreth
-	int m_iTechDifferenceModifier; // Leoreth
-
 	bool m_bMapCentering;
 	bool m_bCapitulated;
 
@@ -466,7 +405,6 @@ protected:
 
 	bool* m_abAtWar;
 	bool* m_abHasMet;
-	bool* m_abHasEverMet; //Rhye
 	bool* m_abPermanentWarPeace;
 	bool* m_abOpenBorders;
 	bool* m_abDefensivePact;
@@ -497,9 +435,6 @@ protected:
 	int** m_ppaaiImprovementYieldChange;
 
 	std::vector<BonusTypes> m_aeRevealedBonuses;
-	// Sanguo Mod Performance, start, added by poyuzhe 07.26.09
-	std::vector<PlayerTypes> m_aePlayerMembers;
-	// Sanguo Mod Performance, end
 
 	void doWarWeariness();
 

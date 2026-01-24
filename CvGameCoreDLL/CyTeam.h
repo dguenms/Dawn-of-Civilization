@@ -78,7 +78,6 @@ public:
 	int getNumMembers();
 	bool isAlive();
 	bool isEverAlive();
-	bool isExisting();
 	int getNumCities();
 	int getTotalPopulation();
 	int getTotalLand();
@@ -153,9 +152,6 @@ public:
 	void changeExtraMoves(int /*DomainTypes*/ eIndex, int iChange);
 
 	bool isHasMet(int /*TeamTypes*/ eIndex);
-	void cutContact(int /*TeamTypes*/ eIndex); //
-	bool canCutContact(int /*TeamTypes*/ eIndex);
-	void setAtWar(int /*TeamTypes*/ eIndex, bool bNewValue); //Rhye
 	bool isAtWar(int /*TeamTypes*/ eIndex);
 	bool isPermanentWarPeace(int /*TeamTypes*/ eIndex);
 	void setPermanentWarPeace(int /*TeamTypes*/ eIndex, bool bNewValue);
@@ -222,17 +218,8 @@ public:
 	bool AI_shareWar(int /*TeamTypes*/ eTeam);
 	void AI_setWarPlan(int /*TeamTypes*/ eIndex, int /*WarPlanTypes*/ eNewValue);
 	int AI_getAtWarCounter(int /*TeamTypes*/ eTeam) const;
-	void AI_setAtWarCounter(int /*TeamTypes*/ eTeam, int iNewValue);
 	int AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const;
 	int AI_getWarSuccess(int /*TeamTypes*/ eIndex) const;
-
-	// Leoreth
-	void setOpenBorders(int eTeam, bool bNewValue);
-	void setDefensivePact(int eTeam, bool bNewValue);
-	bool isCapitulated();
-	int getTotalTechValue();
-	void changeObsoleteBuildingCount(int eBuilding, int iChange);
-	int AI_getWarPlan(int eTeam);
 
 protected:
 

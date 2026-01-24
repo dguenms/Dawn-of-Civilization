@@ -9,7 +9,6 @@
 #include "CvCity.h"
 #include "CvDLLFAStarIFaceBase.h"
 #include "FProfiler.h"
-#include "CvRhyes.h"
 
 // Public Functions...
 
@@ -239,68 +238,6 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 			}
 
 			pPlotNode = nextPlotsNode(pPlotNode);
-		}
-
-		// Leoreth: Escorial
-		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(ESCORIAL))
-		{
-			if (eBonus == BONUS_SILVER || eBonus == BONUS_GOLD)
-			{
-				int iLoop;
-				for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
-				{
-					if (pLoopCity->isHasRealBuilding(ESCORIAL))
-					{
-						pLoopCity->changeBuildingCommerceChange(ESCORIAL, COMMERCE_GOLD, 2 * iChange);
-						break;
-					}
-				}
-			}
-		}
-
-		// Leoreth: Atomium
-		if (getOwnerINLINE() != NO_PLAYER && GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(ATOMIUM))
-		{
-			if (eBonus == BONUS_URANIUM || eBonus == BONUS_IRON || eBonus == BONUS_COPPER || eBonus == BONUS_ALUMINUM)
-			{
-				int iLoop;
-				for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
-				{
-					pLoopCity->changeBuildingCommerceChange(ATOMIUM, COMMERCE_RESEARCH, (eBonus == BONUS_URANIUM ? 10 : 1) * iChange);
-				}
-			}
-		}
-
-		// Leoreth: Global Seed Vault
-		if (getOwner() != NO_PLAYER && GET_PLAYER(getOwner()).isHasBuildingEffect(GLOBAL_SEED_VAULT))
-		{
-			int iLoop;
-			for (CvCity* pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
-			{
-				if (pLoopCity->isHasRealBuilding(GLOBAL_SEED_VAULT))
-				{
-					for (int iJ = 0; iJ < GC.getNumBuildInfos(); iJ++)
-					{
-						CvBuildInfo& kBuild = GC.getBuildInfo((BuildTypes)iJ);
-						if (kBuild.isGraphicalOnly())
-						{
-							continue;
-						}
-
-						if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
-						{
-							CvImprovementInfo& kImprovement = GC.getImprovementInfo((ImprovementTypes)kBuild.getImprovement());
-							if (kImprovement.isImprovementBonusMakesValid(eBonus) && !kImprovement.isGraphicalOnly() && !kImprovement.isActsAsCity())
-							{
-								pLoopCity->changeBuildingCommerceChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)GLOBAL_SEED_VAULT).getBuildingClassType(), COMMERCE_RESEARCH, iChange);
-								break;
-							}
-						}
-					}
-
-					break;
-				}
-			}
 		}
 	}
 }

@@ -84,6 +84,7 @@ void CvSelectionGroupAI::AI_seperateNonAI(UnitAITypes eUnitAI)
 	CvUnit* pLoopUnit;
 
 	pEntityNode = headUnitNode();
+
 	while (pEntityNode != NULL)
 	{
 		pLoopUnit = ::getUnit(pEntityNode->m_data);
@@ -164,7 +165,7 @@ bool CvSelectionGroupAI::AI_update()
 		iTempHack++;
 		if (iTempHack > 100)
 		{
-			//FAssert(false);
+			FAssert(false);
 			CvUnit* pHeadUnit = getHeadUnit();
 			if (NULL != pHeadUnit)
 			{
@@ -583,14 +584,12 @@ bool CvSelectionGroupAI::AI_isDeclareWar(const CvPlot* pPlot)
 			case UNITAI_CITY_SPECIAL:
 			case UNITAI_EXPLORE:
 			case UNITAI_MISSIONARY:
-			case UNITAI_PERSECUTOR:
 			case UNITAI_PROPHET:
 			case UNITAI_ARTIST:
 			case UNITAI_SCIENTIST:
 			case UNITAI_GENERAL:
 			case UNITAI_MERCHANT:
 			case UNITAI_ENGINEER:
-			case UNITAI_STATESMAN:
 			case UNITAI_SPY:
 			case UNITAI_ICBM:
 			case UNITAI_WORKER_SEA:
@@ -624,7 +623,6 @@ bool CvSelectionGroupAI::AI_isDeclareWar(const CvPlot* pPlot)
 			case UNITAI_DEFENSE_AIR:
 			case UNITAI_CARRIER_AIR:
 			case UNITAI_MISSILE_AIR:
-			case UNITAI_SATELLITE:
 				break;
 
 			default:
@@ -771,8 +769,7 @@ CvUnit* CvSelectionGroupAI::AI_ejectBestDefender(CvPlot* pDefendPlot)
 		pLoopUnit = ::getUnit(pEntityNode->m_data);
 		pEntityNode = nextUnitNode(pEntityNode);
 		
-		// Leoreth: ignore to make it more likely to find a defender
-		//if (!pLoopUnit->noDefensiveBonus())
+		if (!pLoopUnit->noDefensiveBonus())
 		{
 			int iValue = pLoopUnit->currEffectiveStr(pDefendPlot, NULL) * 100;
 			

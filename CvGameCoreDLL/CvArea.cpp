@@ -13,8 +13,6 @@
 
 #include "CvDLLInterfaceIFaceBase.h"
 
-#include "CvRhyes.h" //Rhye
-
 // Public Functions...
 
 CvArea::CvArea()
@@ -310,38 +308,6 @@ int CvArea::countHasReligion(ReligionTypes eReligion, PlayerTypes eOwner) const
 					if (pLoopCity->area()->getID() == getID())
 					{
 						if (pLoopCity->isHasReligion(eReligion))
-						{
-							iCount++;
-						}
-					}
-				}
-			}
-		}
-	}
-
-	return iCount;
-}
-
-int CvArea::countCanSpread(ReligionTypes eReligion, PlayerTypes eOwner, bool bMissionary) const
-{
-	CvCity* pLoopCity;
-	int iCount;
-	int iLoop;
-	int iI;
-
-	iCount = 0;
-
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if ((eOwner == NO_PLAYER) || (iI == eOwner))
-			{
-				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
-				{
-					if (pLoopCity->area()->getID() == getID())
-					{
-						if (pLoopCity->canSpread(eReligion, bMissionary))
 						{
 							iCount++;
 						}
@@ -654,20 +620,6 @@ int CvArea::getPower(PlayerTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be < MAX_PLAYERS");
-
-	if (GET_PLAYER(eIndex).isBarbarian())
-	{
-		return m_aiPower[eIndex] /= 2;
-	}
-	else if (GET_PLAYER(eIndex).isIndependent())
-	{
-		return m_aiPower[eIndex] /= 8;
-	}
-	else if (GET_PLAYER(eIndex).isMinorCiv())
-	{
-		return m_aiPower[eIndex] /= 4;
-	}
-
 	return m_aiPower[eIndex];
 }
 
@@ -676,7 +628,6 @@ void CvArea::changePower(PlayerTypes eIndex, int iChange)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be >= 0");
 	FAssertMsg(eIndex < MAX_PLAYERS, "eIndex is expected to be < MAX_PLAYERS");
-	if (m_aiPower[eIndex] + iChange < 0) iChange = -m_aiPower[eIndex];
 	m_aiPower[eIndex] = (m_aiPower[eIndex] + iChange);
 	FAssert(getPower(eIndex) >= 0);
 }
@@ -955,76 +906,6 @@ void CvArea::changeNumImprovements(ImprovementTypes eImprovement, int iChange)
 	FAssertMsg(eImprovement < GC.getNumImprovementInfos(), "eImprovement expected to be < GC.getNumImprovementInfos");
 	m_paiNumImprovements[eImprovement] = (m_paiNumImprovements[eImprovement] + iChange);
 	FAssert(getNumImprovements(eImprovement) >= 0);
-}
-
-
-int CvArea::getClosestAreaSize(int iSize) const
-{
-	if (getNumTiles() > iSize)
-	{
-		return getID();
-	}
-
-	int iCurrentDistance;
-	CvPlot* pCurrentPlot;
-	CvPlot* pLoopPlot;
-	int iClosestArea = -1;
-	int iClosestDistance = MAX_INT;
-	
-	for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
-	{
-		pCurrentPlot = GC.getMapINLINE().plotByIndex(iI);
-
-		if (pCurrentPlot->getArea() == getID())
-		{
-			for (int iJ = 0; iJ < GC.getMapINLINE().numPlotsINLINE(); iJ++)
-			{
-				pLoopPlot = GC.getMapINLINE().plotByIndex(iJ);
-
-				if (pLoopPlot->getArea() != getID() && !pLoopPlot->isWater() && GC.getMapINLINE().getArea(pLoopPlot->getArea())->getNumTiles() > iSize)
-				{
-					// Leoreth: prevent from using Australia as closest continent unless Oceania
-					if (pLoopPlot->getRegionID() == REGION_AUSTRALIA && pCurrentPlot->getRegionID() != REGION_OCEANIA)
-					{
-						continue;
-					}
-
-					iCurrentDistance = stepDistance(pCurrentPlot->getX(), pCurrentPlot->getY(), pLoopPlot->getX(), pLoopPlot->getY());
-
-					if (iCurrentDistance < iClosestDistance)
-					{
-						iClosestDistance = iCurrentDistance;
-						iClosestArea = pLoopPlot->getArea();
-					}
-				}
-			}
-		}
-	}
-
-	return iClosestArea;
-}
-
-
-int CvArea::getEnemyPower(PlayerTypes ePlayer, bool bIncludeMinors) const
-{
-	int iPower = 0;
-
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
-		if (bIncludeMinors || !kPlayer.isMinorCiv())
-		{
-			if (GET_TEAM(kPlayer.getTeam()).isAtWar(GET_PLAYER(ePlayer).getTeam()))
-			{
-				if (getCitiesPerPlayer((PlayerTypes)iI) > 0)
-				{
-					iPower += kPlayer.getPower();
-				}
-			}
-		}
-	}
-
-	return iPower;
 }
 
 

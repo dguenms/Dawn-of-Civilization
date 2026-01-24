@@ -70,22 +70,4 @@ bool cyIsLimitedProject(int /*ProjectTypes*/ eProject);
 int cyGetCombatOdds(CyUnit* pAttacker, CyUnit* pDefender);
 int cyGetEspionageModifier(int /*TeamTypes*/ iOurTeam, int /*TeamTypes*/ iTargetTeam);
 
-// BUG - Unit Experience - start
-int cyCalculateExperience(int iLevel, int /*PlayerTypes*/ ePlayer);
-int cyCalculateLevel(int iExperience, int /*PlayerTypes*/ ePlayer);
-// BUG - Unit Experience - end
-
-// edead: start
-int cyGetTurnForYear(int iTurnYear);
-int cyGetGameTurnForYear(int iTurnYear, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed);
-int cyGetGameTurnForMonth(int iTurnMonth, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed);
-int cyGetTurnYearForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed);
-int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed);
-// edead: end
-
-void cyLog(std::string logfile, std::string message);
-bool cyValidatePeriodConstant(int iPeriod);
-
-void cySetDirty(int iDirtyBit, bool bNewValue);
-
 #endif	// CyGameCoreUtils_h

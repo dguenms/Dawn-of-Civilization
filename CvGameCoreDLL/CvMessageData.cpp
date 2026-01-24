@@ -61,10 +61,6 @@ CvMessageData* CvMessageData::createMessage(GameMessageTypes eType)
 		return new CvNetChangeWar();
 	case GAMEMESSAGE_PING: 
 		return new CvNetPing();
-// BUG - Reminder Mod - start
-	case GAMEMESSAGE_ADD_REMINDER: 
-		return new CvNetAddReminder();
-// BUG - Reminder Mod - end
 	default:
 		FAssertMsg(false, "Unknown message type");
 	}
@@ -370,21 +366,15 @@ void CvNetResearch::Execute()
 	if (m_ePlayer != NO_PLAYER)
 	{
 		CvPlayer& kPlayer = GET_PLAYER(m_ePlayer);
-		int iDiscover = m_iDiscover;
-		CvWString szMessage = "";
-
-		if (iDiscover > 0)
+		if (m_iDiscover > 0)
 		{
-			// Leoreth: remember free techs chosen
-			kPlayer.setFreeTechChosen(m_eTech);
-
 			GET_TEAM(kPlayer.getTeam()).setHasTech(m_eTech, true, m_ePlayer, true, true);
 
-			if (iDiscover > 1)
+			if (m_iDiscover > 1)
 			{
 				if (m_ePlayer == GC.getGameINLINE().getActivePlayer())
 				{
-					kPlayer.chooseTech(iDiscover - 1, szMessage);
+					kPlayer.chooseTech(m_iDiscover - 1);
 				}
 			}
 		}
@@ -569,9 +559,9 @@ void CvNetConvert::SetFromBuffer(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eReligion);
 }
 
-CvNetEmpireSplit::CvNetEmpireSplit(PlayerTypes ePlayer, int iPlayerID) : CvMessageData(GAMEMESSAGE_EMPIRE_SPLIT),
+CvNetEmpireSplit::CvNetEmpireSplit(PlayerTypes ePlayer, int iAreaId) : CvMessageData(GAMEMESSAGE_EMPIRE_SPLIT),
 	m_ePlayer(ePlayer),
-	m_iPlayerID(iPlayerID)
+	m_iAreaId(iAreaId)
 {
 }
 
@@ -584,20 +574,20 @@ void CvNetEmpireSplit::Execute()
 {
 	if (m_ePlayer != NO_PLAYER)
 	{
-		GET_PLAYER(m_ePlayer).splitEmpire(m_iPlayerID);
+		GET_PLAYER(m_ePlayer).splitEmpire(m_iAreaId);
 	}
 }
 
 void CvNetEmpireSplit::PutInBuffer(FDataStreamBase* pStream)
 {
 	pStream->Write(m_ePlayer);
-	pStream->Write(m_iPlayerID);
+	pStream->Write(m_iAreaId);
 }
 
 void CvNetEmpireSplit::SetFromBuffer(FDataStreamBase* pStream)
 {
 	pStream->Read((int*)&m_ePlayer);
-	pStream->Read(&m_iPlayerID);
+	pStream->Read(&m_iAreaId);
 }
 
 CvNetFoundReligion::CvNetFoundReligion(PlayerTypes ePlayer, ReligionTypes eReligion, ReligionTypes eSlotReligion) : CvMessageData(GAMEMESSAGE_FOUND_RELIGION),
@@ -861,25 +851,9 @@ void CvNetDoCommand::Execute()
 			if (m_bAlt && GC.getCommandInfo(m_eCommand).getAll())
 			{
 				int iLoop;
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       07/08/09                                jdog5000      */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
-/* orginal bts code
-				
 				for (CvUnit* pLoopUnit = GET_PLAYER(m_ePlayer).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER(m_ePlayer).nextUnit(&iLoop))
 				{
 					if (pLoopUnit->getUnitType() == pUnit->getUnitType())
-*/
-				// Have to save type ahead of time, pointer can change
-				UnitTypes eUpgradeType = pUnit->getUnitType();
-				for (CvUnit* pLoopUnit = GET_PLAYER(m_ePlayer).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER(m_ePlayer).nextUnit(&iLoop))
-				{
-					if (pLoopUnit->getUnitType() == eUpgradeType)
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 					{
 						pLoopUnit->doCommand(m_eCommand, m_iData1, m_iData2);
 					}
@@ -1132,44 +1106,3 @@ void CvNetPing::Execute()
 	}
 }
 
-// BUG - Reminder Mod - start
-#include "CyArgsList.h"
-#include "CvDLLPythonIFaceBase.h"
-CvNetAddReminder::CvNetAddReminder(PlayerTypes ePlayer, int iGameTurn, CvWString szMessage) : CvMessageData(GAMEMESSAGE_ADD_REMINDER), m_ePlayer(ePlayer), m_iGameTurn(iGameTurn), m_szMessage(szMessage)
-{
-}
-
-void CvNetAddReminder::Debug(char* szAddendum) 
-{
-	sprintf(szAddendum, "Add Reminder, player %d on turn %d: %s", m_ePlayer, m_iGameTurn, m_szMessage.c_str());
-}
-
-void CvNetAddReminder::Execute()
-{
-	if (m_ePlayer != NO_PLAYER)
-	{
-		CyArgsList argsList;
-		long lResult = 0;
-
-		argsList.add(m_ePlayer);
-		argsList.add(m_iGameTurn);
-		argsList.add(m_szMessage.c_str());
-
-		gDLL->getPythonIFace()->callFunction(PYCivModule, "netAddReminder", argsList.makeFunctionArgs(), &lResult);
-	}
-}
-
-void CvNetAddReminder::PutInBuffer(FDataStreamBase* pStream)
-{
-	pStream->Write(m_ePlayer);
-	pStream->Write(m_iGameTurn);
-	pStream->WriteString(m_szMessage);
-}
-
-void CvNetAddReminder::SetFromBuffer(FDataStreamBase* pStream)
-{
-	pStream->Read((int*)&m_ePlayer);
-	pStream->Read(&m_iGameTurn);
-	pStream->ReadString(m_szMessage);
-}
-// BUG - Reminder Mod - end
