@@ -172,6 +172,10 @@ public:
 	int getMissionData1(int iNode) const;																														// Exposed to Python
 	int getMissionData2(int iNode) const;																														// Exposed to Python
 
+// BUG - All Units Actions - start
+	bool allMatch(UnitTypes eUnit) const;
+// BUG - All Units Actions - end
+
 	// for serialization
 	virtual void read(FDataStreamBase* pStream);
 	virtual void write(FDataStreamBase* pStream);
@@ -220,10 +224,28 @@ protected:
 	std::vector<CvUnit *> m_aDifferentUnitCache;
 	bool m_bIsBusyCache;
 
+// BUG - Safe Move - start
+	bool m_bLastPathPlotChecked;
+	bool m_bLastPlotVisible;
+	bool m_bLastPlotRevealed;
+
+	void checkLastPathPlot(CvPlot* pPlot);
+	void clearLastPathPlot();
+	bool isLastPathPlotChecked() const;
+	bool isLastPathPlotVisible() const;
+	bool isLastPathPlotRevealed() const;
+// BUG - Safe Move - end
+
 	void activateHeadMission();
 	void deactivateHeadMission();
 	
 	bool sentryAlert() const;
+
+// BUG - Sentry Actions - start
+#ifdef _MOD_SENTRY
+	bool sentryAlertSameDomainType() const;
+#endif
+// BUG - Sentry Actions - end
 };
 
 #endif

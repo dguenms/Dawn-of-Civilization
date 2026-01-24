@@ -14,6 +14,14 @@
 #include "CvReplayInfo.h"
 #include "CyPlot.h"
 
+// BUG - MapFinder - start
+#include "CvDLLEngineIFaceBase.h"
+// BUG - MapFinder - end
+
+// BUG - EXE/DLL Paths - start
+#include "CvInitCore.h"
+// BUG - EXE/DLL Paths - end
+
 CyGame::CyGame() : m_pGame(NULL)
 {
 	m_pGame = &GC.getGameINLINE();
@@ -357,6 +365,11 @@ int CyGame::getStartTurn() const
 	return (NULL != m_pGame ? m_pGame->getStartTurn() : -1);
 }
 
+void CyGame::setStartTurn(int iNewValue)
+{
+	if (m_pGame) m_pGame->setStartTurn(iNewValue);
+}
+
 int CyGame::getStartYear() const
 {
 	return (NULL != m_pGame ? m_pGame->getStartYear() : -1);
@@ -391,6 +404,11 @@ int CyGame::getTurnSlice() const
 int CyGame::getMinutesPlayed() const
 {
 	return (NULL != m_pGame ? m_pGame->getMinutesPlayed() : 0);
+}
+
+int CyGame::getSecondsPlayed() const
+{
+	return m_pGame ? m_pGame->getSecondsPlayed() : 0;
 }
 
 int CyGame::getTargetScore() const
@@ -568,6 +586,19 @@ void CyGame::makeCircumnavigated()
 		m_pGame->makeCircumnavigated();
 }
 
+//Rhye - start
+int CyGame::getCircumnavigated()
+{
+	return m_pGame ? m_pGame->getCircumnavigated() : false;
+}
+
+void CyGame::setCircumnavigated(int i)								 
+{
+	if (m_pGame)
+		m_pGame->setCircumnavigated(i);
+}
+//Rhye - end
+
 bool CyGame::isDiploVote(int /*VoteSourceTypes*/ eVoteSource) const
 {
 	return m_pGame ? m_pGame->isDiploVote((VoteSourceTypes)eVoteSource) : false;
@@ -577,6 +608,11 @@ void CyGame::changeDiploVote(int /*VoteSourceTypes*/ eVoteSource, int iChange)
 {
 	if (m_pGame)
 		m_pGame->changeDiploVote((VoteSourceTypes)eVoteSource, iChange);
+}
+
+bool CyGame::isCheatingEnabled() const
+{
+	return (gDLL->getChtLvl() > 0);
 }
 
 bool CyGame::isDebugMode() const
@@ -809,6 +845,11 @@ int CyGame::getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex)
 	return m_pGame ? m_pGame->getReligionGameTurnFounded((ReligionTypes) eIndex) : -1;
 }
 
+void CyGame::setReligionGameTurnFounded(int eReligion, int iGameTurn)
+{
+	if (m_pGame) m_pGame->setReligionGameTurnFounded((ReligionTypes)eReligion, iGameTurn);
+}
+
 bool CyGame::isReligionFounded(int /*ReligionTypes*/ eIndex)
 {
 	return m_pGame ? m_pGame->isReligionFounded((ReligionTypes) eIndex) : false;
@@ -1012,6 +1053,24 @@ int CyGame::calculateOptionsChecksum()
 	return m_pGame ? m_pGame->calculateOptionsChecksum() : -1;
 }
 
+
+// Rhye - start (jdog)
+
+bool CyGame::changePlayer( int playerIdx, int newCivType, int newLeader, int teamIdx, bool bIsHuman, bool bChangeGraphics )
+{
+	if(m_pGame)
+		return m_pGame->changePlayer(playerIdx,newCivType,newLeader,teamIdx,bIsHuman,bChangeGraphics);
+	return false;
+}
+
+void CyGame::convertUnits( int playerIdx )
+{
+	if(m_pGame)
+		m_pGame->convertUnits(playerIdx);
+}
+// Rhye - end
+
+
 // JS - can't access protected member declared in class CvGame
 
 bool CyGame::GetWorldBuilderMode() const				// remove once CvApp is exposed
@@ -1092,11 +1151,11 @@ void CyGame::saveReplay(int iPlayer)
 	}
 }
 
-void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv)
+void CyGame::addPlayer(int eNewPlayer, int eLeader, int eCiv, int iBirthTurn, bool bAlive, bool bMinor)
 {
 	if (m_pGame)
 	{
-		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv);
+		m_pGame->addPlayer((PlayerTypes)eNewPlayer, (LeaderHeadTypes)eLeader, (CivilizationTypes)eCiv, iBirthTurn, bAlive, bMinor);
 	}
 }
 
@@ -1152,4 +1211,177 @@ void CyGame::doControl(int iControl)
 	{
 		m_pGame->doControl((ControlTypes) iControl);
 	}
+}
+
+// BUG - MapFinder - start
+// from HOF Mod - Dianthus
+bool CyGame::canRegenerateMap() const
+{
+	return (NULL != m_pGame ? m_pGame->canRegenerateMap() : false);
+}
+
+bool CyGame::regenerateMap()
+{
+	if (canRegenerateMap() && m_pGame)
+	{
+		m_pGame->regenerateMap();
+		return true;
+	}
+	return false;
+}
+
+
+void CyGame::saveGame(std::string fileName) const
+{
+	//m_pGame->setFileType(SAVE_HOFMOD);
+	gDLL->getEngineIFace()->SaveGame((CvString &)fileName, SAVEGAME_NORMAL);
+	//m_pGame->setFileType(SAVE_NORMAL);
+}
+// BUG - MapFinder - end
+
+// BUG - EXE/DLL Paths - start
+std::string CyGame::getDLLPath() const
+{
+	return GC.getInitCore().getDLLPath();
+}
+
+std::string CyGame::getExePath() const
+{
+	return GC.getInitCore().getExePath();
+}
+// BUG - EXE/DLL Paths - end
+
+// BUFFY - Security Checks - start
+#ifdef _BUFFY
+int CyGame::checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const
+{
+	return NULL != m_pGame ? m_pGame->checkCRCs(fileName_, expectedModCRC_, expectedDLLCRC_, expectedShaderCRC_, expectedPythonCRC_, expectedXMLCRC_) : -1;
+}
+
+int CyGame::getWarningStatus() const
+{
+	return NULL != m_pGame ? m_pGame->getWarningStatus() : -1;
+}
+#endif
+// BUFFY - Security Checks - end
+
+
+bool CyGame::isNeighbors(int ePlayer1, int ePlayer2)
+{
+	return m_pGame ? m_pGame->isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2) : false;
+}
+
+int CyGame::determineWinner(int eTeam1, int eTeam2)
+{
+	return m_pGame ? m_pGame->determineWinner((TeamTypes)eTeam1, (TeamTypes)eTeam2) : eTeam1;
+}
+
+int CyGame::getXResolution() const
+{
+	return m_pGame ? m_pGame->getXResolution() : -1;
+}
+
+void CyGame::setXResolution(int iNewValue)
+{
+	if (m_pGame) m_pGame->setXResolution(iNewValue); 
+}
+
+void CyGame::changeXResolution(int iChange)
+{
+	if (m_pGame) m_pGame->changeXResolution(iChange);
+}
+
+int CyGame::getYResolution() const
+{
+	return m_pGame ? m_pGame->getYResolution() : -1;
+}
+
+void CyGame::setYResolution(int iNewValue)
+{
+	if (m_pGame) m_pGame->setYResolution(iNewValue);
+}
+
+void CyGame::changeYResolution(int iChange)
+{
+	if (m_pGame) m_pGame->changeYResolution(iChange);
+}
+
+void CyGame::addGreatPersonBornName(std::wstring sName)
+{
+	if (m_pGame) m_pGame->addGreatPersonBornName(sName);
+}
+
+bool CyGame::isGreatPersonBorn(std::wstring sName)
+{
+	return m_pGame ? m_pGame->isGreatPersonBorn(CvWString(sName)) : false;
+}
+
+void CyGame::autosave()
+{
+	if (m_pGame) m_pGame->autosave();
+}
+
+void CyGame::initialSave()
+{
+	if (m_pGame) m_pGame->autosave(true);
+}
+
+void CyGame::incrementBuildingClassCreatedCount(int iBuildingClass)
+{
+	if (m_pGame) m_pGame->incrementBuildingClassCreatedCount((BuildingClassTypes)iBuildingClass);
+}
+
+void CyGame::setCityScreenOwner(int iPlayer)
+{
+	if (m_pGame) m_pGame->setCityScreenOwner((PlayerTypes)iPlayer);
+}
+
+void CyGame::resetCityScreenOwner()
+{
+	if (m_pGame) m_pGame->resetCityScreenOwner();
+}
+
+void CyGame::setGreatPeopleNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setGreatPeopleNotifications((NotificationLevels)iNotificationLevel);
+}
+
+void CyGame::setReligionSpreadNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setReligionSpreadNotifications((NotificationLevels)iNotificationLevel);
+}
+
+void CyGame::setEventEffectNotifications(int iNotificationLevel)
+{
+	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevels)iNotificationLevel);
+}
+
+int CyGame::getPeriod(int iCivilization)
+{
+	return m_pGame ? m_pGame->getPeriod((CivilizationTypes)iCivilization) : -1;
+}
+
+void CyGame::setPeriod(int iCivilization, int iPeriod)
+{
+	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
+}
+
+int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)
+{
+	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
+}
+
+int CyGame::getFirstDiscovered(int iTech)
+{
+	return m_pGame ? m_pGame->getFirstDiscovered((TechTypes)iTech) : -1;
+}
+
+int CyGame::getFirstDiscoveredTurn(int iTech)
+{
+	return m_pGame ? m_pGame->getFirstDiscoveredTurn((TechTypes)iTech) : -1;
+}
+
+int CyGame::getMedianTechValue()
+{
+	return m_pGame ? m_pGame->getMedianTechValue() : -1;
 }

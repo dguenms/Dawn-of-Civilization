@@ -207,14 +207,14 @@ private:
 class CvNetEmpireSplit : public CvMessageData
 {
 public:
-	CvNetEmpireSplit(PlayerTypes ePlayer = NO_PLAYER, int iAreaId = -1);
+	CvNetEmpireSplit(PlayerTypes ePlayer = NO_PLAYER, int iPlayerID = -1);
 	DllExport virtual void Debug(char* szAddendum);
 	DllExport virtual void Execute();
 	DllExport virtual void PutInBuffer(FDataStreamBase* pStream);
 	DllExport virtual void SetFromBuffer(FDataStreamBase* pStream);
 private:
 	PlayerTypes m_ePlayer;
-	int m_iAreaId;
+	int m_iPlayerID;
 }; 
 
 class CvNetFoundReligion : public CvMessageData
@@ -414,6 +414,20 @@ private:
 	int m_iY;
 };
 
-
+// BUG - Reminder Mod - start
+class CvNetAddReminder : public CvMessageData
+{
+public:
+	CvNetAddReminder(PlayerTypes ePlayer = NO_PLAYER, int iGameTurn = 0, CvWString szMessage = "");
+	virtual void Debug(char* szAddendum);
+	virtual void Execute();
+	virtual void PutInBuffer(FDataStreamBase* pStream);
+	virtual void SetFromBuffer(FDataStreamBase* pStream);
+private:
+	PlayerTypes m_ePlayer;
+	int m_iGameTurn;
+	CvWString m_szMessage;
+};
+// BUG - Reminder Mod - end
 
 #endif

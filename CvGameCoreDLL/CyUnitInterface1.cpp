@@ -77,6 +77,12 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("canBombard", &CyUnit::canBombard, "bool (CyPlot* pPlot)")
 
 		.def("canPillage", &CyUnit::canPillage, "bool (CyPlot* pPlot)")
+		//SuperSpies: TSHEEP Assassin Mission
+		.def("canAssassin", &CyUnit::canAssassin, "bool (CyPlot* pPlot, bool bTestVisible)")
+		//SuperSpies: RevolutionDCM start
+		.def("canBribe", &CyUnit::canBribe, "bool (CyPlot* pPlot, bool bTestVisible)")
+		//SuperSpies: RevolutionDCM end
+		//SuperSpies: TSHEEP End
 		.def("sabotageCost", &CyUnit::sabotageCost, "int (CyPlot* pPlot)")
 		.def("sabotageProb", &CyUnit::sabotageProb, "int (CyPlot* pPlot, int /*ProbabilityTypes*/ eProbStyle)")
 		.def("canSabotage", &CyUnit::canSabotage, "bool (CyPlot* pPlot, bool bTestVisible)")
@@ -266,6 +272,7 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("getX", &CyUnit::getX, "int ()")
 		.def("getY", &CyUnit::getY, "int ()")
 		.def("setXY", &CyUnit::setXY, "int (int iX, int iY)")
+		.def("setXYOld", &CyUnit::setXYOld, "int (int iX, int iY)") //Rhye
 		.def("at", &CyUnit::at, "bool (int iX, int iY)")
 		.def("atPlot", &CyUnit::atPlot, "bool (CyPlot* pPlot)")
 		.def("plot", &CyUnit::plot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
@@ -384,6 +391,8 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 		.def("getUnitAIType", &CyUnit::getUnitAIType, "int UnitAIType () - returns the int value of the UnitAIType")
 		.def("setUnitAIType", &CyUnit::setUnitAIType, "void UnitAIType (int iUnitAIType) - sets the unit's UnitAIType")
 
+		.def("found", &CyUnit::found, "void () - founds a city") //Rhye
+
 		// Python Helper Functions
 		.def("centerCamera", &CyUnit::centerCamera, "void () - Centers the Camera on the unit")
 		.def("attackForDamage", &CyUnit::attackForDamage, "void attackForDamage(CyUnit *defender, int attakerDamageChange, int defenderDamageChange)")
@@ -391,5 +400,10 @@ void CyUnitPythonInterface1(python::class_<CyUnit>& x)
 
 		.def("getArtInfo", &CyUnit::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i, eEra)")
 		.def("getButton", &CyUnit::getButton, "std::string ()")
+
+		// Leoreth
+		.def("changeImmobileTimer", &CyUnit::changeImmobileTimer, "void (int iChange)")
+		.def("testPromotionReady", &CyUnit::testPromotionReady, "void ()")
+		.def("isExisting", &CyUnit::isExisting, "bool ()")
 		;
 }

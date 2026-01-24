@@ -259,6 +259,19 @@ bool CyUnit::canPillage(CyPlot* pPlot)
 	return m_pUnit ? m_pUnit->canPillage(pPlot->getPlot()) : false;
 }
 
+//SuperSpies: TSHEEP Assassin Mission
+bool CyUnit::canAssassin(CyPlot* pPlot, bool bTestVisible)
+{
+	return m_pUnit ? m_pUnit->canAssassin(pPlot->getPlot(), bTestVisible) : false;
+}
+//SuperSpies: TSHEEP End
+//SuperSpies: glider1 start
+bool CyUnit::canBribe(CyPlot* pPlot, bool bTestVisible)
+{
+	return m_pUnit ? m_pUnit->canBribe(pPlot->getPlot(), bTestVisible) : false;
+}
+//SuperSpies: glider1 end
+
 int CyUnit::sabotageCost(CyPlot* pPlot)
 {
 	return m_pUnit ? m_pUnit->sabotageCost(pPlot->getPlot()) : -1;
@@ -449,6 +462,12 @@ bool CyUnit::hasUpgrade(bool bSearch)
 {
 	return m_pUnit ? m_pUnit->hasUpgrade(bSearch) : false;
 }
+//Rhye - start
+void CyUnit::discountedUpgrade(int /*UnitTypes*/ eUnit, int percent)			
+{
+	m_pUnit->discountedUpgrade((UnitTypes)eUnit, percent);
+}
+//Rhye - end
 
 int /*HandicapTypes*/ CyUnit::getHandicapType()
 {
@@ -1101,6 +1120,14 @@ void CyUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow)
 		return m_pUnit->setXY(iX, iY, bGroup, bUpdate, bShow);
 }
 
+//Rhye - start
+void CyUnit::setXYOld(int iX, int iY)
+{
+	if (m_pUnit)
+		return m_pUnit->setXY(iX, iY);
+}
+//Rhye - end
+
 bool CyUnit::at(int iX, int iY)
 {
 	return m_pUnit ? m_pUnit->at(iX, iY) : false;
@@ -1640,6 +1667,14 @@ bool CyUnit::IsSelected( void )
 	return m_pUnit ? m_pUnit->IsSelected() : false;
 }
 
+//Rhye - start
+void CyUnit::found()
+{
+	if (m_pUnit)
+		m_pUnit->found();
+}
+//Rhye - end
+
 // Python Helper Functions
 void CyUnit::centerCamera()
 {
@@ -1673,4 +1708,22 @@ const CvArtInfoUnit* CyUnit::getArtInfo(int i, EraTypes eEra) const
 std::string CyUnit::getButton() const
 {
 	return m_pUnit ? m_pUnit->getButton() : "";
+}
+
+void CyUnit::changeImmobileTimer(int iChange)
+{
+	if (m_pUnit)
+	{
+		m_pUnit->changeImmobileTimer(iChange);
+	}
+}
+
+void CyUnit::testPromotionReady()
+{
+	if (m_pUnit) m_pUnit->testPromotionReady();
+}
+
+bool CyUnit::isExisting()
+{
+	return m_pUnit ? m_pUnit->isExisting() : false;
 }

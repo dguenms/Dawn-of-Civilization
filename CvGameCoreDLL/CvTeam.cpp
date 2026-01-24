@@ -22,6 +22,8 @@
 #include "CyArgsList.h"
 #include "FProfiler.h"
 
+#include "CvRhyes.h" //Rhye
+
 // Public Functions...
 
 CvTeam::CvTeam()
@@ -38,6 +40,7 @@ CvTeam::CvTeam()
 
 	m_abAtWar = new bool[MAX_TEAMS];
 	m_abHasMet = new bool[MAX_TEAMS];
+	m_abHasEverMet = new bool[MAX_TEAMS]; //Rhye
 	m_abPermanentWarPeace = new bool[MAX_TEAMS];
 	m_abOpenBorders = new bool[MAX_TEAMS];
 	m_abDefensivePact = new bool[MAX_TEAMS];
@@ -82,6 +85,7 @@ CvTeam::~CvTeam()
 	SAFE_DELETE_ARRAY(m_aiCounterespionageModAgainstTeam);
 	SAFE_DELETE_ARRAY(m_abAtWar);
 	SAFE_DELETE_ARRAY(m_abHasMet);
+	SAFE_DELETE_ARRAY(m_abHasEverMet); //Rhye
 	SAFE_DELETE_ARRAY(m_abPermanentWarPeace);
 	SAFE_DELETE_ARRAY(m_abOpenBorders);
 	SAFE_DELETE_ARRAY(m_abDefensivePact);
@@ -174,6 +178,11 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 	m_iRiverTradeCount = 0;
 	m_iEspionagePointsEver = 0;
 
+	m_iTotalTechValue = 0; // Leoreth
+	m_iSatelliteInterceptCount = 0; // Leoreth
+	m_iSatelliteAttackCount = 0; // Leoreth
+	m_iTechDifferenceModifier = 0; // Leoreth
+
 	m_bMapCentering = false;
 	m_bCapitulated = false;
 
@@ -188,6 +197,7 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 		m_aiCounterespionageTurnsLeftAgainstTeam[iI] = 0;
 		m_aiCounterespionageModAgainstTeam[iI] = 0;
 		m_abHasMet[iI] = false;
+		m_abHasEverMet[iI] = false; //Rhye
 		m_abAtWar[iI] = false;
 		m_abPermanentWarPeace[iI] = false;
 		m_abOpenBorders[iI] = false;
@@ -205,6 +215,7 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 			kLoopTeam.m_aiCounterespionageTurnsLeftAgainstTeam[getID()] = 0;
 			kLoopTeam.m_aiCounterespionageModAgainstTeam[getID()] = 0;
 			kLoopTeam.m_abHasMet[getID()] = false;
+			kLoopTeam.m_abHasEverMet[getID()] = false; //Rhye
 			kLoopTeam.m_abAtWar[getID()] = false;
 			kLoopTeam.m_abPermanentWarPeace[getID()] = false;
 			kLoopTeam.m_abOpenBorders[getID()] = false;
@@ -330,6 +341,9 @@ void CvTeam::reset(TeamTypes eID, bool bConstructorCall)
 
 		m_aeRevealedBonuses.clear();
 
+		// Sanguo Mod Performance, start, added by poyuzhe 07.26.09
+		m_aePlayerMembers.clear();
+		// Sanguo Mod Performance, end
 		AI_reset(false);
 	}
 }
@@ -609,6 +623,16 @@ void CvTeam::addTeam(TeamTypes eTeam)
 			GET_TEAM((TeamTypes)iI).AI_setEnemyPeacetimeTradeValue(getID(), ((GET_TEAM((TeamTypes)iI).AI_getEnemyPeacetimeTradeValue(getID()) + GET_TEAM((TeamTypes)iI).AI_getEnemyPeacetimeTradeValue(eTeam)) / 2));
 			GET_TEAM((TeamTypes)iI).AI_setEnemyPeacetimeGrantValue(getID(), ((GET_TEAM((TeamTypes)iI).AI_getEnemyPeacetimeGrantValue(getID()) + GET_TEAM((TeamTypes)iI).AI_getEnemyPeacetimeGrantValue(eTeam)) / 2));
 
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       09/17/09                                jdog5000      */
+/*                                                                                              */
+/* Bugfix				                                                                         */
+/************************************************************************************************/
+			GET_TEAM((TeamTypes)iI).setEspionagePointsAgainstTeam( getID(), std::max(GET_TEAM((TeamTypes)iI).getEspionagePointsAgainstTeam(getID()), GET_TEAM((TeamTypes)iI).getEspionagePointsAgainstTeam(eTeam)));
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
+
 			if (GET_TEAM((TeamTypes)iI).isAlive())
 			{
 				GET_TEAM((TeamTypes)iI).AI_setWarPlan(getID(), NO_WARPLAN, false);
@@ -675,7 +699,7 @@ void CvTeam::shareItems(TeamTypes eTeam)
 									{
 										if (GET_PLAYER((PlayerTypes)iK).getTeam() == getID())
 										{
-											GET_PLAYER((PlayerTypes)iK).processBuilding(((BuildingTypes)iJ), pLoopCity->getNumBuilding((BuildingTypes)iJ), pLoopCity->area());
+											GET_PLAYER((PlayerTypes)iK).processBuilding(((BuildingTypes)iJ), pLoopCity->getNumBuilding((BuildingTypes)iJ), pLoopCity->continentArea());
 										}
 									}
 								}
@@ -793,6 +817,12 @@ void CvTeam::shareCounters(TeamTypes eTeam)
 
 	for (iI = 0; iI < GC.getNumTechInfos(); iI++)
 	{
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       04/29/10                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 		if (GET_TEAM(eTeam).getResearchProgress((TechTypes)iI) > getResearchProgress((TechTypes)iI))
 		{
 			setResearchProgress(((TechTypes)iI), GET_TEAM(eTeam).getResearchProgress((TechTypes)iI), getLeaderID());
@@ -802,6 +832,27 @@ void CvTeam::shareCounters(TeamTypes eTeam)
 		{
 			setNoTradeTech(((TechTypes)iI), true);
 		}
+*/
+		// Overflow from techs this team already has can cause bugged behavior
+		if( !isHasTech((TechTypes)iI) )
+		{
+			if (GET_TEAM(eTeam).getResearchProgress((TechTypes)iI) > getResearchProgress((TechTypes)iI))
+			{
+				setResearchProgress(((TechTypes)iI), GET_TEAM(eTeam).getResearchProgress((TechTypes)iI), getLeaderID());
+			}
+		}
+
+		// Clear no tech trade if it is false for other team
+		// Fixes bug where if, with no tech brokering, team A trades a tech to team B, then later joins B in
+		// a permanent alliance.  Previous code would block the AB alliance from "brokering" the tech, even
+		// though A had researched it on their own.
+		if ( GET_TEAM(eTeam).isHasTech((TechTypes)iI) && !(GET_TEAM(eTeam).isNoTradeTech((TechTypes)iI)) )
+		{
+			setNoTradeTech(((TechTypes)iI), false);
+		}
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 	}
 }
 
@@ -851,7 +902,19 @@ void CvTeam::doTurn()
 
 				for (iJ = 0; iJ < MAX_CIV_TEAMS; iJ++)
 				{
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       03/01/10                     Mongoose & jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 					if (GET_TEAM((TeamTypes)iJ).isAlive())
+*/
+					// From Mongoose SDK, BarbarianPassiveTechFix
+					if (GET_TEAM((TeamTypes)iJ).isAlive() && !GET_TEAM((TeamTypes)iJ).isBarbarian() && !GET_TEAM((TeamTypes)iJ).isMinorCiv())
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 					{
 						if (GET_TEAM((TeamTypes)iJ).isHasTech((TechTypes)iI))
 						{
@@ -866,7 +929,19 @@ void CvTeam::doTurn()
 				{
 					FAssertMsg(iPossibleCount > 0, "iPossibleCount is expected to be greater than 0");
 
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       03/01/10                     Mongoose & jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 					changeResearchProgress(((TechTypes)iI), ((getResearchCost((TechTypes)iI) * ((GC.getDefineINT("BARBARIAN_FREE_TECH_PERCENT") * iCount) / iPossibleCount)) / 100), getLeaderID());
+*/
+					// From Mongoose SDK, BarbarianPassiveTechFix
+					changeResearchProgress((TechTypes)iI, std::max((getResearchCost((TechTypes)iI) * GC.getDefineINT("BARBARIAN_FREE_TECH_PERCENT") * iCount) / (100 * iPossibleCount), 1), getLeaderID());
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 				}
 			}
 		}
@@ -893,7 +968,9 @@ void CvTeam::doTurn()
 		}
 	}
 
-	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
+	//Rhye
+	//if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
+	if (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || isHasTech(GEOPOLITICS))
 	{
 		for (iI = 0; iI < GC.getNumTechInfos(); iI++)
 		{
@@ -901,6 +978,8 @@ void CvTeam::doTurn()
 		}
 
 	}
+
+	updateTechDifferenceModifier(); // Leoreth
 
 	doWarWeariness();
 
@@ -912,52 +991,67 @@ void CvTeam::doTurn()
 
 void CvTeam::updateYield()
 {
-	int iI;
-
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// GET_PLAYER((PlayerTypes)iI).updateYield();
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				GET_PLAYER((PlayerTypes)iI).updateYield();
-			}
-		}
+		GET_PLAYER(*iter).updateYield();
 	}
+	// Sanguo Mod Performance, end
 }
 
 
 void CvTeam::updatePowerHealth()
 {
-	int iI;
-
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// GET_PLAYER((PlayerTypes)iI).updatePowerHealth();
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				GET_PLAYER((PlayerTypes)iI).updatePowerHealth();
-			}
-		}
+		GET_PLAYER(*iter).updatePowerHealth();
 	}
+	// Sanguo Mod Performance, end
 }
 
 
 void CvTeam::updateCommerce()
 {
-	int iI;
-
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// GET_PLAYER((PlayerTypes)iI).updateCommerce();
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				GET_PLAYER((PlayerTypes)iI).updateCommerce();
-			}
-		}
+		GET_PLAYER(*iter).updateCommerce();
 	}
+	// Sanguo Mod Performance, end
 }
 
 
@@ -1067,6 +1161,22 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 		return false;
 	}
 
+	// Leoreth: protect recently spawned civs for ten turns to avoid early attack exploits
+	if (!GET_TEAM(eTeam).isMinorCiv() && !GET_TEAM(eTeam).isBarbarian())
+	{
+		int iGameTurn = GC.getGameINLINE().getGameTurn();
+
+		if (iGameTurn < getScenarioStartTurn() + getTurns(5))
+		{
+			return false;
+		}
+
+		if (iGameTurn < GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(10))
+		{
+			return false;
+		}
+	}
+
 	if(GC.getUSE_CAN_DECLARE_WAR_CALLBACK())
 	{
 		CyArgsList argsList;
@@ -1085,7 +1195,7 @@ bool CvTeam::canDeclareWar(TeamTypes eTeam) const
 }
 
 
-void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
+void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, bool bIgnoreDefensivePacts, bool bFromDefensivePact)
 {
 	PROFILE_FUNC();
 
@@ -1099,6 +1209,8 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 	FAssertMsg(eTeam != getID(), "eTeam is not expected to be equal with getID()");
+
+	if (eTeam == getID()) return; //Rhye
 
 	if (!isAtWar(eTeam))
 	{
@@ -1130,6 +1242,12 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 			if ((GET_PLAYER((PlayerTypes)iI).getTeam() == getID()) || (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam))
 			{
 				GET_PLAYER((PlayerTypes)iI).updatePlunder(1, false);
+				
+				// Leoreth: Manchu UP yields require peace
+				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == MANCHU)
+				{
+					GET_PLAYER((PlayerTypes)iI).updateCityPlotYield();
+				}
 			}
 		}
 
@@ -1212,27 +1330,33 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 			}
 		}
 
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
+		// Leoreth: wars triggered by defensive pacts cause no diplo penalties
+		if (!bFromDefensivePact)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+					for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
 					{
-						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+						if (GET_PLAYER((PlayerTypes)iJ).isAlive())
 						{
-							if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
+							if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 							{
-								GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR, 1);
-							}
-							else if (GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
-							{
-								if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isHasMet(eTeam))
+								if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
 								{
-									if ((GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED) && !(GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isAtWar(eTeam)))
+									GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR, 1);
+								}
+								else if (GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
+								{
+									if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).isHasMet(eTeam))
 									{
-										GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
+										// Leoreth: not for minor civs
+										//if (GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+										if (!GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isMinorCiv() && GET_TEAM(GET_PLAYER((PlayerTypes)iJ).getTeam()).AI_getAttitude(eTeam) >= ATTITUDE_PLEASED)
+										{
+											GET_PLAYER((PlayerTypes)iJ).AI_changeMemoryCount(((PlayerTypes)iI), MEMORY_DECLARED_WAR_ON_FRIEND, 1);
+										}
 									}
 								}
 							}
@@ -1313,28 +1437,33 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 					{
 						if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 						{
-							szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_DECLARED_WAR_ON", GET_TEAM(eTeam).getName().GetCString());
+							//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_DECLARED_WAR_ON", GET_TEAM(eTeam).getName().GetCString()); //Rhye
+							szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_DECLARED_WAR_ON", GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
 							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_DECLAREWAR", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 						}
 						else if (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam)
 						{
-							szBuffer = gDLL->getText("TXT_KEY_MISC_DECLARED_WAR_ON_YOU", getName().GetCString());
+							//szBuffer = gDLL->getText("TXT_KEY_MISC_DECLARED_WAR_ON_YOU", getName().GetCString()); //Rhye
+							szBuffer = gDLL->getText("TXT_KEY_MISC_DECLARED_WAR_ON_YOU", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription()); //Rhye
 							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_DECLAREWAR", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 						}
 						else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
 						{
-							szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARED_WAR", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString());
+							//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARED_WAR", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
+							szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARED_WAR", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
 							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRDECLAREWAR", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 						}
 					}
 				}
 
-				szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARES_WAR", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString());
+				//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARES_WAR", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
+				szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARES_WAR", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription());
 				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 			}
 		}
 
-		if (!(GET_TEAM(eTeam).isMinorCiv()))
+		//Rhye - start comment (defensive pacts are canceled only with the friends of the enemy, to prevent a giant rumble caused by recursive war declaring) 
+		/*if (!(GET_TEAM(eTeam).isMinorCiv()))
 		{
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -1373,24 +1502,81 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 					}
 				}
 			}
+		}*/
+		if (!GET_TEAM(eTeam).isMinorCiv() && !bIgnoreDefensivePacts)
+		{
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			{
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
+				{
+					if (GET_PLAYER((PlayerTypes)iI).getTeam() != getID() && GET_PLAYER((PlayerTypes)iI).getTeam() != eTeam)
+					{
+						if (GET_TEAM((TeamTypes)iI).isDefensivePact(eTeam) && GET_TEAM((TeamTypes)iI).isDefensivePact(getID()))
+						{
+							for (pLoopDeal = GC.getGameINLINE().firstDeal(&iLoop); pLoopDeal != NULL; pLoopDeal = GC.getGameINLINE().nextDeal(&iLoop))
+							{
+								bCancelDeal = false;
+
+								if (((pLoopDeal->getFirstPlayer() == ((PlayerTypes)iI)) && (pLoopDeal->getSecondPlayer() == ((PlayerTypes)getID()))) ||
+									((pLoopDeal->getFirstPlayer() == ((PlayerTypes)getID())) && (pLoopDeal->getSecondPlayer() == ((PlayerTypes)iI))))
+								{
+									for (pNode = pLoopDeal->headFirstTradesNode(); (pNode != NULL); pNode = pLoopDeal->nextFirstTradesNode(pNode))
+									{
+										if (pNode->m_data.m_eItemType == TRADE_DEFENSIVE_PACT)
+										{
+											bCancelDeal = true;
+										}
+									}
+
+									for (pNode = pLoopDeal->headSecondTradesNode(); (pNode != NULL); pNode = pLoopDeal->nextSecondTradesNode(pNode))
+									{
+										if (pNode->m_data.m_eItemType == TRADE_DEFENSIVE_PACT)
+										{
+											bCancelDeal = true;
+										}
+									}
+								}
+
+								if (bCancelDeal)
+								{
+									pLoopDeal->kill();
+								}
+							}
+						}
+					}
+				}
+			}
 		}
+		//Rhye - end
 
-		CvEventReporter::getInstance().changeWar(true, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(true, getID(), eTeam, bFromDefensivePact);
 
-		cancelDefensivePacts();
+		//cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled)
+
+		// Leoreth: defensive pacts are not canceled until the UN is built
+		if (GC.getGameINLINE().isDiploVote(VOTESOURCE_UNITED_NATIONS) && !bFromDefensivePact && !GET_TEAM(eTeam).isMinorCiv())
+		{
+			cancelDefensivePacts();
+		}
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
-			if (GET_TEAM((TeamTypes)iI).isAlive())
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !isMinorCiv() && !bIgnoreDefensivePacts && !GET_TEAM((TeamTypes)iI).isMinorCiv())
 			{
 				if (GET_TEAM((TeamTypes)iI).isDefensivePact(eTeam))
 				{
-					GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
+					//Rhye - start (as pacts are checked first, before vassals, recursion otherwise may lead to masters declaring war on vassals
+					//GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE);
+					if (!GET_TEAM((TeamTypes)iI).isVassal(getID()) && !isVassal((TeamTypes)iI)) 
+					{
+						GET_TEAM((TeamTypes)iI).declareWar(getID(), bNewDiplo, WARPLAN_DOGPILE, false, true);
+					}
+					//Rhye - end
 				}
 			}
 		}
 
-		GET_TEAM(eTeam).cancelDefensivePacts();
+		//GET_TEAM(eTeam).cancelDefensivePacts(); //Rhye - comment (defensive pacts aren't canceled) 
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
@@ -1400,15 +1586,69 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan)
 				{
 					if (GET_TEAM((TeamTypes)iI).isVassal(eTeam) || GET_TEAM(eTeam).isVassal((TeamTypes)iI))
 					{
-						declareWar((TeamTypes)iI, bNewDiplo, AI_getWarPlan(eTeam));
+						declareWar((TeamTypes)iI, bNewDiplo, AI_getWarPlan(eTeam), bIgnoreDefensivePacts, bFromDefensivePact);
 					}
 					else if (GET_TEAM((TeamTypes)iI).isVassal(getID()) || isVassal((TeamTypes)iI))
 					{
-						GET_TEAM((TeamTypes)iI).declareWar(eTeam, bNewDiplo, WARPLAN_DOGPILE);
+						GET_TEAM((TeamTypes)iI).declareWar(eTeam, bNewDiplo, WARPLAN_DOGPILE, bIgnoreDefensivePacts, bFromDefensivePact);
 					}
 				}
 			}
 		}
+
+		// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+		if (GC.getGameINLINE().isFinalInitialized())
+		{
+			for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
+			{
+				FAssert (iter != m_aePlayerMembers.end());
+				FAssert (*iter > -1 && *iter < MAX_PLAYERS);
+				for (iI = 0; iI < GET_TEAM(eTeam).getPlayerMemberListSize(); iI++)
+				{
+					GET_PLAYER(*iter).AI_invalidateAttitudeCache(GET_TEAM(eTeam).getPlayerMemberAt(iI));
+					GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iI)).AI_invalidateAttitudeCache(*iter);
+				}
+			}
+
+			for (iI = 0; iI < MAX_TEAMS; iI++)
+			{
+				if (GET_TEAM((TeamTypes)iI).isAtWar(getID()))
+				{
+					for (int iJ = 0; iJ < GET_TEAM(eTeam).getPlayerMemberListSize(); iJ++)
+					{
+						for (int iK = 0; iK < GET_TEAM((TeamTypes)iI).getPlayerMemberListSize(); iK++)
+						{
+							GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iJ)).AI_invalidateAttitudeCache(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iK));
+							GET_PLAYER(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iK)).AI_invalidateAttitudeCache(GET_TEAM(eTeam).getPlayerMemberAt(iJ));
+						}
+					}
+				}
+				if (GET_TEAM((TeamTypes)iI).isAtWar(eTeam))
+				{
+					for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
+					{
+						for (int iJ = 0; iJ < GET_TEAM((TeamTypes)iI).getPlayerMemberListSize(); iJ++)
+						{
+							GET_PLAYER(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iJ)).AI_invalidateAttitudeCache(*iter1);
+							GET_PLAYER(*iter1).AI_invalidateAttitudeCache(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iJ));
+						}
+					}
+				}
+			}
+
+			for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+			{
+				for (int iK = 0; iK < GET_TEAM(getID()).getPlayerMemberListSize(); iK++)
+				{
+					GET_PLAYER(GET_TEAM(getID()).getPlayerMemberAt(iK)).AI_invalidatePlotDangerCache(iI);
+				}
+				for (iJ = 0; iJ < GET_TEAM(eTeam).getPlayerMemberListSize(); iJ++)
+				{
+					GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iJ)).AI_invalidatePlotDangerCache(iI);
+				}
+			}
+		}
+		// Sanguo Mod Performance, end
 	}
 }
 
@@ -1419,6 +1659,8 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 
 	FAssertMsg(eTeam != NO_TEAM, "eTeam is not assigned a valid value");
 	FAssertMsg(eTeam != getID(), "eTeam is not expected to be equal with getID()");
+
+	if (GET_TEAM(eTeam).isBarbarian()) return;
 
 	if (isAtWar(eTeam))
 	{
@@ -1439,6 +1681,12 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 			if ((GET_PLAYER((PlayerTypes)iI).getTeam() == getID()) || (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam))
 			{
 				GET_PLAYER((PlayerTypes)iI).updatePlunder(1, false);
+
+				// Leoreth: Manchu UP yields require peace
+				if (GET_PLAYER((PlayerTypes)iI).getCivilizationType() == MANCHU)
+				{
+					GET_PLAYER((PlayerTypes)iI).updateCityPlotYield();
+				}
 			}
 		}
 
@@ -1497,32 +1745,40 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 			}
 		}
 
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
+
+		if (!GET_PLAYER((PlayerTypes)eTeam).isMinorCiv() && !GET_PLAYER((PlayerTypes)getID()).isMinorCiv()) //Rhye
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+				if (GET_PLAYER((PlayerTypes)iI).isAlive())
 				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_TEAM(eTeam).getName().GetCString());
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-				}
-				else if (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam)
-				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", getName().GetCString());
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-				}
-				else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
-				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString());
-					gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRMAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_TEAM(eTeam).getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
+					else if (GET_PLAYER((PlayerTypes)iI).getTeam() == eTeam)
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_YOU_MADE_PEACE_WITH", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription()); //Rhye
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_MAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
+					else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
+					{
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRMAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+					}
 				}
 			}
-		}
 
-		szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString());
-		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+			//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
+			szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+		} //Rhye
 
-		CvEventReporter::getInstance().changeWar(false, getID(), eTeam);
+		CvEventReporter::getInstance().changeWar(false, getID(), eTeam, false);
 
 		for (iI = 0; iI < MAX_TEAMS; iI++)
 		{
@@ -1541,6 +1797,62 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 				}
 			}
 		}
+
+		// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+		if (GC.getGameINLINE().isFinalInitialized())
+		{
+			for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
+			{
+				for (iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+				{
+					GET_PLAYER(*iter).AI_invalidatePlotDangerCache(iI);
+				}
+			}
+
+			for (iI = 0; iI < GET_TEAM(eTeam).getPlayerMemberListSize(); iI++)
+			{
+				for (int iJ = 0; iJ < GC.getMapINLINE().numPlotsINLINE(); iJ++)
+				{
+					GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iI)).AI_invalidatePlotDangerCache(iJ);
+				}
+			}
+
+			for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
+			{
+				for(iI = 0; iI < GET_TEAM(eTeam).getPlayerMemberListSize(); iI++)
+				{
+					GET_PLAYER(*iter1).AI_invalidateAttitudeCache(GET_TEAM(eTeam).getPlayerMemberAt(iI));
+					GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iI)).AI_invalidateAttitudeCache(*iter1);
+				}
+			}
+
+			for (iI = 0; iI < MAX_TEAMS; iI++)
+			{
+				if (GET_TEAM((TeamTypes)iI).isAtWar(getID()))
+				{
+					for(int iJ = 0; iJ < GET_TEAM(eTeam).getPlayerMemberListSize(); iJ++)
+					{
+						for(int iK = 0; iK < GET_TEAM((TeamTypes)iI).getPlayerMemberListSize(); iK++)
+						{
+							GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iJ)).AI_invalidateAttitudeCache(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iK));
+							GET_PLAYER(GET_TEAM((TeamTypes)iI).getPlayerMemberAt(iK)).AI_invalidateAttitudeCache(GET_TEAM(eTeam).getPlayerMemberAt(iJ));
+						}
+					}
+				}
+				if (GET_TEAM((TeamTypes)iI).isAtWar(eTeam))
+				{
+					for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
+					{
+						for(int iJ = 0; iJ < GET_TEAM(eTeam).getPlayerMemberListSize(); iJ++)
+						{
+							GET_PLAYER(GET_TEAM(eTeam).getPlayerMemberAt(iJ)).AI_invalidateAttitudeCache(*iter1);
+							GET_PLAYER(*iter1).AI_invalidateAttitudeCache(GET_TEAM(eTeam).getPlayerMemberAt(iJ));
+						}
+					}
+				}
+			}
+		}
+		// Sanguo Mod Performance, end
 
 	}
 }
@@ -1704,6 +2016,16 @@ int CvTeam::getPower(bool bIncludeVassals) const
 		}
 	}
 
+	//Rhye - start
+	if (isBarbarian()) {
+		iCount *= 2;
+		iCount /= 3;
+	}
+	else if (isMinorCiv()) {
+		iCount /= 3;
+	}
+	//Rhye - end
+
 	return iCount;
 }
 
@@ -1791,11 +2113,24 @@ int CvTeam::getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const
 
 bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
 {
+	if (isMinorCiv() || isBarbarian()) return false;
+
+	// Leoreth: Apostolic Palace has only full members
+	if ((int)eVoteSource == 1)
+	{
+		if (!isFullMember(eVoteSource))
+		{
+			return false;
+		}
+	}
+
 	return (getVotes(NO_VOTE, eVoteSource) > 0);
 }
 
 bool CvTeam::isFullMember(VoteSourceTypes eVoteSource) const
 {
+	if (isMinorCiv() || isBarbarian()) return false;
+
 	if (isForceTeamVoteEligible(eVoteSource))
 	{
 		return true;
@@ -2377,7 +2712,7 @@ int CvTeam::countEnemyDangerByArea(CvArea* pArea) const
 }
 
 
-int CvTeam::getResearchCost(TechTypes eTech) const
+int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 {
 	int iCost;
 
@@ -2385,24 +2720,345 @@ int CvTeam::getResearchCost(TechTypes eTech) const
 
 	iCost = GC.getTechInfo(eTech).getResearchCost();
 
-	iCost *= GC.getHandicapInfo(getHandicapType()).getResearchPercent();
+	//iCost *= GC.getHandicapInfo(getHandicapType()).getResearchPercent(); //Rhye
+	iCost *= GC.getHandicapInfo(getHandicapType()).getResearchPercentByID(getLeaderID()); //Rhye
 	iCost /= 100;
 
-	iCost *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getResearchPercent();
+	iCost *= getScenarioResearchModifier();
 	iCost /= 100;
+
+	iCost *= getCivilizationResearchModifier();
+	iCost /= 100;
+
+	/*iCost *= GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getResearchPercent();
+	iCost /= 100;*/
 
 	iCost *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent();
 	iCost /= 100;
 
-	iCost *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getResearchPercent();
+	// Leoreth: use tech era instead of start era to fix unintentional changes for late scenarios and make adjusting tech costs easier
+	//iCost *= GC.getEraInfo(GC.getGameINLINE().getStartEra()).getResearchPercent();
+	iCost *= GC.getEraInfo((EraTypes)GC.getTechInfo(eTech).getEra()).getResearchPercent();
 	iCost /= 100;
 
 	iCost *= std::max(0, ((GC.getDefineINT("TECH_COST_EXTRA_TEAM_MEMBER_MODIFIER") * (getNumMembers() - 1)) + 100));
 	iCost /= 100;
 
+	if (bModifiers)
+	{
+		int iModifier = 100;
+
+		iModifier += getPopulationResearchModifier();
+		//iModifier += getTechLeaderModifier();
+		iModifier += getTechDifferenceModifier();
+		iModifier += getSpreadResearchModifier(eTech);
+		iModifier += getTurnResearchModifier();
+		iModifier += getModernizationResearchModifier(eTech); // Leoreth: Japanese UP (Modernization)
+
+		iCost *= iModifier;
+		iCost /= 100;
+	}
+
 	return std::max(1, iCost);
 }
 
+int CvTeam::getCivilizationResearchModifier() const
+{
+	int iCivModifier;
+
+	iCivModifier = GET_PLAYER(getLeaderID()).getModifier(MODIFIER_RESEARCH_COST);
+
+	// nerf late game China
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() == CHINA)
+	{
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() == ERA_MEDIEVAL) iCivModifier += 25;
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE) iCivModifier += 40;
+	}
+
+	// buff late game Japan
+	else if (GET_PLAYER(getLeaderID()).getCivilizationType() == JAPAN)
+	{
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_INDUSTRIAL)
+		{
+			iCivModifier += isHuman() ? -20 : -40;
+		}
+	}
+
+	return iCivModifier;
+}
+
+int CvTeam::getScenarioResearchModifier() const
+{
+	// scale the scenario tech speed with its starting conditions
+	int iScenarioModifier = 100;
+
+	//if (getScenario() == SCENARIO_600AD) iScenarioModifier = 110;
+	//else if (getScenario() == SCENARIO_1700AD) iScenarioModifier = 125;
+
+	return iScenarioModifier;
+}
+
+int CvTeam::getPopulationResearchModifier() const
+{
+	int iModifier = 0;
+
+	return 0;
+
+	int iMultiplier;
+	int iNumCities = getNumCities();
+
+	if (!isMinorCiv() && !isBarbarian())
+	{
+		// Rhye: discount for small empires
+		if (iNumCities < 5)
+		{
+			iMultiplier = -5 * std::max(0, GET_PLAYER(getLeaderID()).getCurrentEra() - 2);
+
+			iModifier += iMultiplier * (5 - iNumCities);
+		}
+	}
+
+	return iModifier;
+}
+
+int CvTeam::getTurnResearchModifier() const
+{
+	int iModifier = 0;
+	int iTurnModifier, iAmount;
+
+	// Rhye: discount for newborn civs
+	if (!isMinorCiv() && !isBarbarian())
+	{
+		iTurnModifier = 5 * GET_PLAYER(getLeaderID()).getCurrentEra();
+
+		// edead: game speed adjustment using growth percent in XML (marathon: x3, epic: x1.5, normal: x1)
+		iTurnModifier *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+		iTurnModifier /= 100;
+
+		if (GC.getGame().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + iTurnModifier)
+		{
+			iAmount = (GET_PLAYER(getLeaderID()).getLastBirthTurn() + iTurnModifier) - GC.getGame().getGameTurn();
+
+			// edead: this should make the length of the bonus longer but not the amount
+			iAmount *= 100;
+			iAmount /= GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent();
+
+			iModifier -= iAmount;
+		}
+	}
+
+	return iModifier;
+}
+
+int CvTeam::getTechLeaderModifier() const
+{
+	int iModifier = 0;
+
+	// Leoreth: only during human autoplay
+	if (GC.getGame().getGameTurn() >= GET_PLAYER(GC.getGame().getActivePlayer()).getInitialBirthTurn())
+	{
+		return iModifier;
+	}
+
+	// Leoreth: penalty for the tech leader
+	if (GC.getGame().getTechRank(getID()) == 0 && GC.getGame().getGameTurn() >= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(30))
+	{
+		int iBestValue = getTotalTechValue();
+		int iDenominator = 0;
+		int iAverageValue = 0;
+
+		for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+			{
+				continue;
+			}
+
+			if (iI != getID() && GET_PLAYER((PlayerTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isVassal(getID()))
+			{
+				iAverageValue += GET_TEAM((TeamTypes)iI).getTotalTechValue();
+				iDenominator += 1;
+			}
+		}
+
+		// Leoreth: average is skewed for too few civs, also ruins the Babylonian UP
+		if (iDenominator > 5)
+		{
+			iAverageValue /= iDenominator;
+
+			// extra costs come in 10% increments
+			int iSurplus = (100 * iBestValue / iAverageValue - 100) / 10;
+
+			iModifier += 10 * iSurplus;
+		}
+	}
+
+	return iModifier;
+}
+
+int CvTeam::getTechDifferenceModifier() const
+{
+	return m_iTechDifferenceModifier;
+}
+
+void CvTeam::updateTechDifferenceModifier()
+{
+	int iNewModifier = calculateTechDifferenceModifier();
+
+	if (m_iTechDifferenceModifier != iNewModifier)
+	{
+		m_iTechDifferenceModifier = range(iNewModifier, m_iTechDifferenceModifier - 10, m_iTechDifferenceModifier + 10);
+	}
+}
+
+int CvTeam::calculateTechDifferenceModifier() const
+{
+	if (GET_PLAYER(getLeaderID()).getCurrentEra() <= GET_PLAYER(getLeaderID()).getStartingEra())
+	{
+		return 0;
+	}
+
+	if (GC.getGameINLINE().getMedianTechValue() == 0)
+	{
+		return 0;
+	}
+
+	if (GC.getGameINLINE().countCivTeamsAlive() < 8)
+	{
+		return 0;
+	}
+
+	if (countContacts() * 5 < GC.getGameINLINE().countCivTeamsAlive())
+	{
+		return 0;
+	}
+	
+
+	int iRelativeTechValue = 100 * getTotalTechValue() / GC.getGameINLINE().getMedianTechValue();
+	int iModifier = 0;
+
+	if (iRelativeTechValue > 125)
+	{
+		iModifier += (iRelativeTechValue - 125) / 5;
+		iModifier *= 10;
+	}
+	else if (iRelativeTechValue < 75)
+	{
+		iModifier += (iRelativeTechValue - 80) / 5;
+		iModifier *= 5;
+
+		iModifier = std::max(iModifier, -lTechBackwardsBonus[GET_PLAYER(getLeaderID()).getCurrentEra()]);
+	}
+
+	return iModifier;
+}
+
+int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
+{
+	int iModifier = 0;
+
+	int iCurrentEra = GET_PLAYER(getLeaderID()).getCurrentEra();
+	int iStartingEra = GET_PLAYER(getLeaderID()).getStartingEra();
+
+	// effect does not apply during the era you started in
+	int iLeaderPenalty = (iCurrentEra > iStartingEra) ? lTechLeaderPenalty[iCurrentEra] : 0;
+	int iBackwardsBonus = (iCurrentEra > iStartingEra) ? lTechBackwardsBonus[iCurrentEra] : 0;
+
+	// Leoreth: slow down beelining, help catch up
+	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
+	int iCivsWithTech = 0;
+	int iSpreadModifier = 0;
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
+		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM((TeamTypes)iI).isHasTech(eTech)) 
+		{
+			iCivsWithTech++;
+		}
+	}
+
+	// less than a quarter know it -> more expensive
+	// lets say there are 12 civs, then its an increase for the 1st to 3rd civ to discover something.
+	// make the max penalty 25%, have it decrease for every subsequent civ
+	// so 25% for the first civ (iCivsWithTech == 0)
+	// 0% for the fourth civ (iCivsWithTech == 3)
+	// limited to human players now
+	int iLowerThreshold = iCivsAlive / 4;
+	if (GET_PLAYER(getLeaderID()).isHuman() && iCivsWithTech < iLowerThreshold) iSpreadModifier += iLeaderPenalty * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
+
+	// more than three quarters know it -> less expensive
+	// assume there are 12 civs, then its a decrease for the 10th to 12th civ to discover something
+	// make the max gain 25%, have it decrease for every previous civ
+	// so 25% for the 12th civ (iCivsWithTech == 11)
+	// 0% for the 9th civ (iCivsWithTech == 8)
+	int iUpperThreshold = 3 * iLowerThreshold;
+	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsBonus * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
+
+	iModifier += iSpreadModifier;
+
+	return iModifier;
+}
+
+int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
+{
+	if (GET_PLAYER(getLeaderID()).getCivilizationType() != JAPAN) return 0;
+
+	bool bAllMedievalTechs = true;
+
+	for (int iI = 0; iI < GC.getNumTechInfos(); iI++)
+	{
+		if (GC.getTechInfo((TechTypes)iI).getEra() <= ERA_MEDIEVAL && !isHasTech((TechTypes)iI))
+		{
+			return 0;
+		}
+	}
+
+	int iCount = 0;
+
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
+
+		if (GET_TEAM(eTeam).isMinorCiv())
+		{
+			continue;
+		}
+
+		if (GET_TEAM(eTeam).isHasTech(eTech) && (!isHuman() || canContact(eTeam)) && (GET_TEAM(eTeam).isHuman() || GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL))
+		{
+			if (!isAtWar(eTeam))
+			{
+				iCount++;
+			}
+			else
+			{
+				int iOurSuccess = AI_getWarSuccess(eTeam);
+				int iTheirSuccess = GET_TEAM(eTeam).AI_getWarSuccess(getID());
+				if (iOurSuccess - iTheirSuccess > 20 + 10 * GET_PLAYER(getLeaderID()).getCurrentEra() + std::max(iOurSuccess, iTheirSuccess) / 10)
+				{
+					iCount++;
+				}
+			}
+		}
+	}
+
+	if (iCount >= 3)
+	{
+		// account of the base modifier that Japan receives in the global era
+		if (GET_PLAYER(getLeaderID()).getCurrentEra() >= ERA_GLOBAL)
+		{
+			return isHuman() ? -30 : -10;
+		}
+
+		return -50;
+	}
+
+	return 0;
+}
 
 int CvTeam::getResearchLeft(TechTypes eTech) const
 {
@@ -2521,6 +3177,18 @@ bool CvTeam::isMinorCiv() const
 }
 
 
+bool CvTeam::isIndependent() const
+{
+	return GET_PLAYER(getLeaderID()).isIndependent();
+}
+
+
+bool CvTeam::isNative() const
+{
+	return GET_PLAYER(getLeaderID()).isNative();
+}
+
+
 PlayerTypes CvTeam::getLeaderID() const
 {
 	int iI;
@@ -2634,6 +3302,25 @@ void CvTeam::changeNumMembers(int iChange)
 {
 	m_iNumMembers += iChange;
 	FAssert(getNumMembers() >= 0);
+	// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+	if (iChange != 0 && getNumMembers() > 0)
+	{
+		for (int iI = 0; iI < GC.getMAX_PLAYERS(); iI++)
+		{
+			if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			{
+				for (int iJ = 0; iJ < GC.getMAX_PLAYERS(); iJ++)
+				{
+					if (GET_PLAYER((PlayerTypes)iJ).isAlive() && GET_PLAYER((PlayerTypes)iJ).getTeam() != getID())
+					{
+						GET_PLAYER((PlayerTypes)iI).AI_invalidateAttitudeCache((PlayerTypes)iJ);
+						GET_PLAYER((PlayerTypes)iJ).AI_invalidateAttitudeCache((PlayerTypes)iI);
+					}
+				}
+			}
+		}
+	}
+	// Sanguo Mod Performance, end
 }
 
 
@@ -2688,6 +3375,12 @@ void CvTeam::changeEverAliveCount(int iChange)
 {
 	m_iEverAliveCount += iChange;
 	FAssert(getEverAliveCount() >= 0);
+}
+
+
+bool CvTeam::isExisting() const
+{
+	return isAlive() && getNumCities() > 0;
 }
 
 
@@ -3307,6 +4000,11 @@ bool CvTeam::isHasMet(TeamTypes eIndex)	const
 	return m_abHasMet[eIndex];
 }
 
+bool CvTeam::isHasEverMet(TeamTypes eIndex) const
+{
+	return m_abHasEverMet[eIndex];
+}
+
 void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 {
 	CvDiploParameters* pDiplo;
@@ -3353,6 +4051,19 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		if ((getID() == GC.getGameINLINE().getActiveTeam()) || (eIndex == GC.getGameINLINE().getActiveTeam()))
 		{
 			gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+
+			// Leoreth: contacting the first civilization makes espionage commerce flexible
+			gDLL->getInterfaceIFace()->setDirty(PercentButtons_DIRTY_BIT, true);
+		}
+
+		// report event to Python, along with some other key state (Leoreth: moved before diplomacy in case the event starts a war)
+		if (!isHasEverMet(eIndex))
+		{
+			CvEventReporter::getInstance().firstContact(getID(), eIndex);
+		}
+		else
+		{
+			CvEventReporter::getInstance().restoredContact(getID(), eIndex);
 		}
 
 		if (GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR))
@@ -3364,7 +4075,7 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 		}
 		else
 		{
-			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
+			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()) && getScenarioStartTurn() != GC.getGameINLINE().getGameTurn())
 			{
 				if (bNewDiplo)
 				{
@@ -3382,11 +4093,15 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 										{
 											if (GET_PLAYER((PlayerTypes)iI).isHuman())
 											{
-												pDiplo = new CvDiploParameters(getLeaderID());
-												FAssertMsg(pDiplo != NULL, "pDiplo must be valid");
-												pDiplo->setDiploComment((DiploCommentTypes)GC.getInfoTypeForString("AI_DIPLOCOMMENT_FIRST_CONTACT"));
-												pDiplo->setAIContact(true);
-												gDLL->beginDiplomacy(pDiplo, ((PlayerTypes)iI));
+												// Rhye
+												if (!isHasEverMet(GET_PLAYER((PlayerTypes)iI).getTeam())) 
+												{	
+													pDiplo = new CvDiploParameters(getLeaderID());
+													FAssertMsg(pDiplo != NULL, "pDiplo must be valid");
+													pDiplo->setDiploComment((DiploCommentTypes)GC.getInfoTypeForString("AI_DIPLOCOMMENT_FIRST_CONTACT"));
+													pDiplo->setAIContact(true);
+													gDLL->beginDiplomacy(pDiplo, ((PlayerTypes)iI));
+												}
 											}
 										}
 									}
@@ -3398,16 +4113,28 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bNewDiplo)
 			}
 		}
 
-		// report event to Python, along with some other key state
-		CvEventReporter::getInstance().firstContact(getID(), eIndex);
+		m_abHasEverMet[eIndex] = true; //Rhye
 	}
 }
+
+//Rhye - start
+void CvTeam::cutContact(TeamTypes eIndex)
+{
+	if (isHasMet(eIndex))
+	{
+		m_abHasMet[eIndex] = false;
+		GET_TEAM(eIndex).m_abHasMet[getID()] = false;
+	}
+}
+//Rhye - end
+
 
 
 bool CvTeam::isAtWar(TeamTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+
 	return m_abAtWar[eIndex];
 }
 
@@ -3438,14 +4165,29 @@ void CvTeam::setPermanentWarPeace(TeamTypes eIndex, bool bNewValue)
 
 bool CvTeam::isFreeTrade(TeamTypes eIndex) const
 {
+	if (!isHasMet(eIndex))
+	{
+		return false;
+	}
+
+	// Leoreth: Salsal Buddha effect
+	/*if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(SALSAL_BUDDHA))
+	{
+		if (!GET_PLAYER(GET_TEAM(eIndex).getLeaderID()).isMinorCiv())
+		{
+			return true;
+		}
+	}*/
+	
 	if (isAtWar(eIndex))
 	{
 		return false;
 	}
 
-	if (!isHasMet(eIndex))
+	// Porcelain Tower effect: no open borders required for trade
+	if (!GET_TEAM(eIndex).isMinorCiv() && GET_PLAYER(getLeaderID()).isHasBuildingEffect(PORCELAIN_TOWER))
 	{
-		return false;
+		return true;
 	}
 
 	return (isOpenBorders(eIndex) || GC.getGameINLINE().isFreeTrade());
@@ -3517,6 +4259,33 @@ void CvTeam::setDefensivePact(TeamTypes eIndex, bool bNewValue)
 	{
 		m_abDefensivePact[eIndex] = bNewValue;
 
+		// Leoreth: members might have defensive pact trade modifiers
+		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		{
+			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
+			if (kPlayer.getTeam() == getID())
+			{
+				if (kPlayer.getDefensivePactTradeModifier() != 0)
+				{
+					kPlayer.updateTradeRoutes();
+				}
+			}
+		}
+
+		// Leoreth: Berlaymont effect
+		if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(BERLAYMONT))
+		{
+			int iLoop;
+			for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
+			{
+				if (pLoopCity->isHasRealBuilding(BERLAYMONT))
+				{
+					pLoopCity->changeFreeSpecialist(bNewValue ? 1 : -1);
+					break;
+				}
+			}
+		}
+
 		if ((getID() == GC.getGameINLINE().getActiveTeam()) || (eIndex == GC.getGameINLINE().getActiveTeam()))
 		{
 			gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
@@ -3524,11 +4293,12 @@ void CvTeam::setDefensivePact(TeamTypes eIndex, bool bNewValue)
 
 		if (bNewValue && !GET_TEAM(eIndex).isDefensivePact(getID()))
 		{
-			CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
-
+			//CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
+			CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
 			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
 
+			//Rhye - comment this (as there are a lot more pacts now?)
 			for (int iI = 0; iI < MAX_PLAYERS; iI++)
 			{
 				CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iI);
@@ -3591,6 +4361,12 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
 	FAssertMsg(!bNewValue || !GET_TEAM(eIndex).isAVassal(), "can't become a vassal of a vassal")
+
+	//Rhye - start
+	if (isMinorCiv() || isBarbarian())
+		return;
+	//Rhye - end
+
 
 	if (isVassal(eIndex) != bNewValue)
 	{
@@ -3729,7 +4505,7 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 
 						if (GET_TEAM(eIndex).isAtWar((TeamTypes)iI))
 						{
-							declareWar(((TeamTypes)iI), false, WARPLAN_DOGPILE);
+							declareWar(((TeamTypes)iI), false, WARPLAN_DOGPILE, true);
 						}
 						else if (isAtWar((TeamTypes)iI))
 						{
@@ -3787,11 +4563,13 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 				
 				if (bCapitulated)
 				{
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_CAPITULATE_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_CAPITULATE_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_CAPITULATE_AGREEMENT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
 				}
 				else
 				{
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_AGREEMENT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
 				}
 				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szReplayMessage, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
@@ -3819,11 +4597,13 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 				
 				if (m_bCapitulated)
 				{
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
 				}
 				else
 				{
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString());
+					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
 				}
 
 				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szReplayMessage, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
@@ -3861,8 +4641,21 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 
 		if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 		{
-			CvEventReporter::getInstance().vassalState(eIndex, getID(), bNewValue);
+			CvEventReporter::getInstance().vassalState(eIndex, getID(), bNewValue, bCapitulated);
 		}
+		// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+		for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
+		{
+			for(int iI = 0; iI < GET_TEAM(eIndex).getPlayerMemberListSize(); iI++)
+			{
+				GET_PLAYER(*iter1).AI_invalidateAttitudeCache(GET_TEAM(eIndex).getPlayerMemberAt(iI));
+				GET_PLAYER(GET_TEAM(eIndex).getPlayerMemberAt(iI)).AI_invalidateAttitudeCache(*iter1);
+			}
+		}
+		// Sanguo Mod Performance, end
+		
+		//Leoreth: moved to Python
+		//GET_PLAYER((PlayerTypes)getID()).processCivNames(); //Rhye - dynamic civ names - not jdog's
 	}
 }
 
@@ -4083,6 +4876,8 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 
 	if (iChange != 0)
 	{
+		bool bFirst = GC.getGameINLINE().getProjectCreatedCount(eIndex) == 0 && iChange > 0;
+
 		GC.getGameINLINE().incrementProjectCreatedCount(eIndex, iChange);
 
 		iOldProjectCount = getProjectCount(eIndex);
@@ -4136,7 +4931,55 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 			if (kProject.isAllowsNukes())
 			{
 				GC.getGameINLINE().makeNukesValid(true);
-			}	
+			}
+
+			// Leoreth
+			if (kProject.isRevealsMap())
+			{
+				GC.getMapINLINE().setRevealedPlots(getID(), true, true);
+			}
+
+			// Leoreth
+			if (kProject.isSatelliteIntercept())
+			{
+				changeSatelliteInterceptCount(iChange);
+			}
+
+			// Leoreth
+			if (kProject.isSatelliteAttack())
+			{
+				changeSatelliteAttackCount(iChange);
+			}
+
+			// Leoreth
+			if (bFirst)
+			{
+				if (kProject.isFirstEnemyAnarchy())
+				{
+					for (iI = 0; iI < MAX_TEAMS; iI++)
+					{
+						if (GET_TEAM((TeamTypes)iI).getProjectMaking(eIndex) > 0)
+						{
+							for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+							{
+								if (GET_PLAYER((PlayerTypes)iJ).isAlive() && GET_PLAYER((PlayerTypes)iJ).getTeam() == iI)
+								{
+									GET_PLAYER((PlayerTypes)iJ).changeAnarchyTurns(getTurns(1));
+
+									if (GC.getGame().isFinalInitialized())
+									{
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY", GET_PLAYER(getLeaderID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide());
+										gDLL->getInterfaceIFace()->addMessage((PlayerTypes)iJ, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"));
+
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY_CAUSED", GC.getProjectInfo(eIndex).getTextKeyWide(), GET_PLAYER((PlayerTypes)iJ).getCivilizationAdjective());
+										gDLL->getInterfaceIFace()->addMessage(getLeaderID(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 
 			for (iI = 0; iI < MAX_PLAYERS; iI++)
 			{
@@ -4144,6 +4987,121 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 					{
+						// Leoreth
+						if (bFirst)
+						{
+							if (kProject.getFirstAirExperience() != 0)
+							{
+								GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_AIR, kProject.getFirstAirExperience());
+							}
+						}
+
+						// Leoreth
+						if (kProject.getAirExperience() != 0)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_AIR, kProject.getAirExperience());
+						}
+
+						// Leoreth
+						if (kProject.getSpecialUnit() != NO_SPECIALUNIT)
+						{
+							GET_PLAYER((PlayerTypes)iI).makeSpecialUnitValid((SpecialUnitTypes)kProject.getSpecialUnit());
+						}
+
+						// Leoreth
+						if (kProject.isGoldenAge())
+						{
+							GET_PLAYER((PlayerTypes)iI).changeGoldenAgeTurns(GET_PLAYER((PlayerTypes)iI).getGoldenAgeLength());
+						}
+
+						// Leorth
+						if (kProject.getFreePromotion() != NO_PROMOTION)
+						{
+							if (iChange > 0)
+							{
+								int iLoop;
+								for (CvUnit* pUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pUnit != NULL; pUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
+								{
+									if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(pUnit->getUnitCombatType()))
+									{
+										pUnit->setHasPromotion((PromotionTypes)kProject.getFreePromotion(), true);
+									}
+								}
+							}
+
+							for (int iJ = 0; iJ < GC.getNumUnitCombatInfos(); iJ++)
+							{
+								if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(iJ))
+								{
+									GET_PLAYER((PlayerTypes)iI).setFreePromotion((UnitCombatTypes)iJ, (PromotionTypes)kProject.getFreePromotion(), iChange > 0);
+								}
+							}
+						}
+
+						// Leoreth
+						if (eIndex == PROJECT_GOLDEN_RECORD)
+						{
+							GET_PLAYER((PlayerTypes)iI).updateCommerce(COMMERCE_CULTURE);
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_THE_INTERNET)
+						{
+							for (int iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+							{
+								if (!GC.getSpecialistInfo((SpecialistTypes)iJ).isNoGlobalEffects())
+								{
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_COMMERCE, iChange);
+								}
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_HUMAN_GENOME_PROJECT)
+						{
+							for (int iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
+							{
+								if (GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_COMMERCE) > 3)
+								{
+									GET_PLAYER((PlayerTypes)iI).changeImprovementYieldChange((ImprovementTypes)iJ, YIELD_FOOD, iChange);
+								}
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
+						{
+							int iLoop;
+							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+							{
+								pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 2);
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_GREAT_FIREWALL)
+						{
+							int iLoop;
+							for (CvCity* pCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pCity != NULL; pCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
+							{
+								pCity->changeCommerceHappinessPer(COMMERCE_ESPIONAGE, iChange * 5);
+							}
+						}
+
+						// Leoreth
+						else if (eIndex == PROJECT_LUNAR_COLONY)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeSpaceProductionModifier(100);
+							
+							for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+							{
+								if (GC.getSpecialistInfo((SpecialistTypes)iJ).isSatellite())
+								{
+									GET_PLAYER((PlayerTypes)iI).changeSpecialistExtraYield((SpecialistTypes)iJ, YIELD_PRODUCTION, iChange * 2);
+								}
+							}
+						}
+
 						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
 							bChangeProduction = false;
@@ -4169,14 +5127,12 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 
 			if (GC.getGameINLINE().isFinalInitialized() && !(gDLL->GetWorldBuilderMode()))
 			{
-				szBuffer = gDLL->getText("TXT_KEY_MISC_COMPLETES_PROJECT", getName().GetCString(), kProject.getTextKeyWide());
-				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
-
 				for (iI = 0; iI < MAX_PLAYERS; iI++)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).isAlive())
 					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_HAS_COMPLETED", getName().GetCString(), kProject.getTextKeyWide());
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_HAS_COMPLETED", getName().GetCString(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_HAS_COMPLETED", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide()); //Rhye
 						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_PROJECT_COMPLETED", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 					}
 				}
@@ -4345,6 +5301,18 @@ void CvTeam::setResearchProgress(TechTypes eIndex, int iNewValue, PlayerTypes eP
 
 	if (getResearchProgress(eIndex) != iNewValue)
 	{
+		//Rhye - start min and max turns cap
+		/*int iCost = getResearchCost(eIndex);
+		if (iNewValue > 0) {
+			if (iCost / iNewValue < 4) {
+				iNewValue = iCost/4;
+			}
+			if (iCost / iNewValue > 40) {
+				iNewValue = iCost/40;
+			}
+		}*/
+		//Rhye - end
+
 		m_paiResearchProgress[eIndex] = iNewValue;
 		FAssert(getResearchProgress(eIndex) >= 0);
 
@@ -4359,7 +5327,9 @@ void CvTeam::setResearchProgress(TechTypes eIndex, int iNewValue, PlayerTypes eP
 			int iOverflow = (100 * (getResearchProgress(eIndex) - getResearchCost(eIndex))) / std::max(1, GET_PLAYER(ePlayer).calculateResearchModifier(eIndex));
 			GET_PLAYER(ePlayer).changeOverflowResearch(iOverflow);
 			setHasTech(eIndex, true, ePlayer, true, true);
-			if (!GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS) && !GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
+			//Rhye
+			//if (!GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS) && !GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
+			if (!GC.getGameINLINE().isMPOption(MPOPTION_SIMULTANEOUS_TURNS) && (!GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) || isHasTech(GEOPOLITICS)))
 			{
 				setNoTradeTech(eIndex, true);
 			}
@@ -4370,6 +5340,18 @@ void CvTeam::setResearchProgress(TechTypes eIndex, int iNewValue, PlayerTypes eP
 
 void CvTeam::changeResearchProgress(TechTypes eIndex, int iChange, PlayerTypes ePlayer)
 {
+	//Rhye - start min and max turns cap
+	/*int iCost = getResearchCost(eIndex);
+	if (iChange > 0) {
+		if (iCost / iChange < 4) {
+			iChange = iCost/4;
+		}
+		if (iCost / iChange > 40) {
+			iChange = iCost/40;
+		}
+	}	*/
+	//Rhye - end
+
 	setResearchProgress(eIndex, (getResearchProgress(eIndex) + iChange), ePlayer);
 }
 
@@ -4666,13 +5648,11 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 	CvWString szBuffer;
 	CivicOptionTypes eCivicOptionType;
 	CivicTypes eCivicType;
-	PlayerTypes eBestPlayer;
 	BonusTypes eBonus;
 	UnitTypes eFreeUnit;
+	bool bFreeTech = false;
 	bool bReligionFounded;
 	bool bFirstBonus;
-	int iValue;
-	int iBestValue;
 	int iI, iJ, iK;
 
 	if (eIndex == NO_TECH)
@@ -4692,6 +5672,9 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 	if (isHasTech(eIndex) != bNewValue)
 	{
+		// Leoreth: update total tech value
+		changeTotalTechValue(bNewValue ? GC.getTechInfo(eIndex).getResearchCost() : -GC.getTechInfo(eIndex).getResearchCost());
+
 		if (GC.getTechInfo(eIndex).isRepeat())
 		{
 			m_paiTechCount[eIndex]++;
@@ -4751,6 +5734,26 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 					}
 				}
 			}
+
+			bool bBonusVisible = false;
+			for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
+			{
+				if (GC.getBonusInfo((BonusTypes)iI).getTechReveal() == eIndex)
+				{
+					bBonusVisible = true;
+					break;
+				}
+			}
+
+			if (GC.getGame().getGameTurn() > getScenarioStartTurn() && bBonusVisible)
+			{
+				int iLoop;
+				for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); NULL != pLoopCity; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
+				{
+					pLoopCity->updateCultureCosts();
+					pLoopCity->updateCoveredPlots(true);
+				}
+			}
 		}
 
 		processTech(eIndex, ((bNewValue) ? 1 : -1));
@@ -4787,130 +5790,23 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 			bReligionFounded = false;
 			bFirstBonus = false;
 
-			if (bFirst)
+			// Leoreth: new rules to found religions
+			ReligionTypes eReligion;
+			PlayerTypes eFoundingPlayer;
+			for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 			{
-				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
+				eReligion = (ReligionTypes)iI;
+
+				if (canFoundReligion(eReligion, eIndex))
 				{
-					CyArgsList argsList;
-					argsList.add(getID());
-					argsList.add(ePlayer);
-					argsList.add(eIndex);
-					argsList.add(bFirst);
-					long lResult=0;
-					gDLL->getPythonIFace()->callFunction(PYGameModule, "doHolyCityTech", argsList.makeFunctionArgs(), &lResult);
-					if (lResult != 1)
+					eFoundingPlayer = getFoundingPlayer(eReligion);
+
+					if (eFoundingPlayer != NO_PLAYER)
 					{
-						for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
-						{
-							if (GC.getReligionInfo((ReligionTypes)iI).getTechPrereq() == eIndex)
-							{
-								iBestValue = MAX_INT;
-								eBestPlayer = NO_PLAYER;
+						GET_PLAYER(eFoundingPlayer).foundReligion(eReligion, eReligion, true);
 
-								for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-								{
-									if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-									{
-										if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
-										{
-											iValue = 10;
-
-											iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
-
-											for (iK = 0; iK < GC.getNumReligionInfos(); iK++)
-											{
-												iValue += (GET_PLAYER((PlayerTypes)iJ).getHasReligionCount((ReligionTypes)iK) * 10);
-											}
-
-											if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-											{
-												iValue *= 10;
-											}
-
-											if (iValue < iBestValue)
-											{
-												iBestValue = iValue;
-												eBestPlayer = ((PlayerTypes)iJ);
-											}
-										}
-									}
-								}
-
-								if (eBestPlayer != NO_PLAYER)
-								{
-									GC.getGameINLINE().setReligionSlotTaken((ReligionTypes)iI, true);
-
-									if (GC.getGameINLINE().isOption(GAMEOPTION_PICK_RELIGION))
-									{
-										if (GET_PLAYER(eBestPlayer).isHuman())
-										{
-											CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_FOUND_RELIGION, iI);
-											if (NULL != pInfo)
-											{
-												gDLL->getInterfaceIFace()->addPopup(pInfo, eBestPlayer);
-											}
-										}
-										else
-										{
-											ReligionTypes eReligion = GET_PLAYER(eBestPlayer).AI_chooseReligion();
-											if (NO_RELIGION != eReligion)
-											{
-												GET_PLAYER(eBestPlayer).foundReligion(eReligion, (ReligionTypes)iI, true);
-											}
-										}
-									}
-									else
-									{
-										GET_PLAYER(eBestPlayer).foundReligion((ReligionTypes)iI, (ReligionTypes)iI, true);
-									}
-
-									bReligionFounded = true;
-									bFirstBonus = true;
-								}
-							}
-						}
-
-						for (iI = 0; iI < GC.getNumCorporationInfos(); ++iI)
-						{
-							if (GC.getCorporationInfo((CorporationTypes)iI).getTechPrereq() == eIndex)
-							{
-								if (!(GC.getGameINLINE().isCorporationFounded((CorporationTypes)iI)))
-								{
-									iBestValue = MAX_INT;
-									eBestPlayer = NO_PLAYER;
-
-									for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-									{
-										if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-										{
-											if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
-											{
-												iValue = 10;
-
-												iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Corporation (Player)");
-
-												if (GET_PLAYER((PlayerTypes)iJ).getCurrentResearch() != eIndex)
-												{
-													iValue *= 10;
-												}
-
-												if (iValue < iBestValue)
-												{
-													iBestValue = iValue;
-													eBestPlayer = ((PlayerTypes)iJ);
-												}
-											}
-										}
-									}
-
-									if (eBestPlayer != NO_PLAYER)
-									{
-										GET_PLAYER(eBestPlayer).foundCorporation((CorporationTypes)iI);
-										bFirstBonus = true;
-									}
-								}
-							}
-						}
+						bReligionFounded = true;
+						bFirstBonus = true;
 					}
 				}
 			}
@@ -4931,9 +5827,17 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 				}
 			}
 
+			int iFreeTechs = 0;
+
+			if (GC.getGameINLINE().getFirstDiscovered(eIndex) == NO_CIVILIZATION)
+			{
+				GC.getGameINLINE().setFirstDiscovered(eIndex, GET_PLAYER(getLeaderID()).getCivilizationType());
+				GC.getGameINLINE().setFirstDiscoveredTurn(eIndex, GC.getGameINLINE().getGameTurn());
+			}
+
 			if (bFirst)
 			{
-				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1)
+				if (GC.getGameINLINE().countKnownTechNumTeams(eIndex) == 1 && GC.getGameINLINE().getFirstDiscovered(eIndex) == GET_PLAYER(getLeaderID()).getCivilizationType())
 				{
 					eFreeUnit = GET_PLAYER(ePlayer).getTechFreeUnit(eIndex);
 					if (eFreeUnit != NO_UNIT)
@@ -4945,24 +5849,6 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 						{
 							pCapitalCity->createGreatPeople(eFreeUnit, false, false);
 						}
-					}
-
-					if (GC.getTechInfo(eIndex).getFirstFreeTechs() > 0)
-					{
-						bFirstBonus = true;
-
-						if (!isHuman())
-						{
-							for (iI = 0; iI < GC.getTechInfo(eIndex).getFirstFreeTechs(); iI++)
-							{
-								GET_PLAYER(ePlayer).AI_chooseFreeTech();
-							}
-						}
-						else
-						{
-							szBuffer = gDLL->getText("TXT_KEY_MISC_FIRST_TECH_CHOOSE_FREE", GC.getTechInfo(eIndex).getTextKeyWide());
-							GET_PLAYER(ePlayer).chooseTech(GC.getTechInfo(eIndex).getFirstFreeTechs(), szBuffer.GetCString());
-						}
 
 						for (iI = 0; iI < MAX_PLAYERS; iI++)
 						{
@@ -4970,33 +5856,84 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 							{
 								if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
 								{
-									szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getNameKey(), GC.getTechInfo(eIndex).getTextKeyWide());
+									szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_GREAT_PERSON", GET_PLAYER(ePlayer).getCivilizationShortDescriptionKey(), GC.getTechInfo(eIndex).getTextKeyWide(), GC.getUnitInfo(eFreeUnit).getText()); //Rhye
 								}
 								else
 								{
-									szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH", GC.getTechInfo(eIndex).getTextKeyWide());
+									szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_GREAT_PERSON", GC.getTechInfo(eIndex).getTextKeyWide(), GC.getUnitInfo(eFreeUnit).getText());
 								}
 								gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 							}
 						}
 
-						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getName(), GC.getTechInfo(eIndex).getTextKeyWide());
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_GREAT_PERSON", GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getTechInfo(eIndex).getTextKeyWide(), GC.getUnitInfo(eFreeUnit).getText());
 						GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+						
+					}
+				}
+			}
+
+			if (bNewValue && GET_PLAYER(ePlayer).getFreeTechsOnDiscovery() > 0)
+			{
+				if (GET_PLAYER(ePlayer).getFreeTechChosen() != eIndex)
+				{
+					iFreeTechs += 1;
+					szBuffer = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
+					GET_PLAYER(ePlayer).changeFreeTechsOnDiscovery(-1);
+				}
+			}
+			
+			if (iFreeTechs > 0)
+			{
+				bFirstBonus = true;
+
+				if (!isHuman())
+				{
+					for (iI = 0; iI < iFreeTechs; iI++)
+					{
+						GET_PLAYER(ePlayer).AI_chooseFreeTech();
+					}
+				}
+				else
+				{
+					GET_PLAYER(ePlayer).chooseTech(iFreeTechs, szBuffer.GetCString());
+				}
+
+				if (GC.getTechInfo(eIndex).getFirstFreeTechs() > 0)
+				{
+					for (iI = 0; iI < MAX_PLAYERS; iI++)
+					{
+						if (GET_PLAYER((PlayerTypes)iI).isAlive())
+						{
+							if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
+							{
+								//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getNameKey(), GC.getTechInfo(eIndex).getTextKeyWide()); //Rhye
+								szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getCivilizationShortDescriptionKey(), GC.getTechInfo(eIndex).getTextKeyWide()); //Rhye
+							}
+							else
+							{
+								szBuffer = gDLL->getText("TXT_KEY_MISC_UNKNOWN_FIRST_TO_TECH", GC.getTechInfo(eIndex).getTextKeyWide());
+							}
+							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_FIRSTTOTECH", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+						}
 					}
 
-					if (bFirstBonus)
+					szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_FIRST_TO_TECH", GET_PLAYER(ePlayer).getCivilizationShortDescription(), GC.getTechInfo(eIndex).getTextKeyWide());
+					GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, ePlayer, szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+				}
+			}
+
+			if (bFirstBonus)
+			{
+				for (iI = 0; iI < MAX_PLAYERS; iI++)
+				{
+					if (GET_PLAYER((PlayerTypes)iI).isAlive())
 					{
-						for (iI = 0; iI < MAX_PLAYERS; iI++)
+						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
 						{
-							if (GET_PLAYER((PlayerTypes)iI).isAlive())
+							if (GET_PLAYER((PlayerTypes)iI).isResearchingTech(eIndex))
 							{
-								if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
-								{
-									if (GET_PLAYER((PlayerTypes)iI).isResearchingTech(eIndex))
-									{
-										GET_PLAYER((PlayerTypes)iI).clearResearchQueue();
-									}
-								}
+								GET_PLAYER((PlayerTypes)iI).clearResearchQueue();
 							}
 						}
 					}
@@ -5252,7 +6189,7 @@ void CvTeam::testCircumnavigated()
 	bool bFoundVisible;
 	int iX, iY;
 
-	if (isBarbarian())
+	if (isBarbarian() || isMinorCiv()) //Leoreth: no independents
 	{
 		return;
 	}
@@ -5328,7 +6265,8 @@ void CvTeam::testCircumnavigated()
 					}
 					else if (isHasMet(GET_PLAYER((PlayerTypes)iI).getTeam()))
 					{
-						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
+						//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString()); //Rhye
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription()); //Rhye
 					}
 					else
 					{
@@ -5340,6 +6278,9 @@ void CvTeam::testCircumnavigated()
 
 			szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE", getName().GetCString());
 			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
+			
+			GC.getGameINLINE().setCircumnavigated(getID()); //Rhye
+
 		}
 	}
 }
@@ -5457,6 +6398,12 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 		if (GC.getBuildingInfo((BuildingTypes) iI).getObsoleteTech() == eTech)
 		{
 			changeObsoleteBuildingCount(((BuildingTypes)iI), iChange);
+
+			// Leoreth: obsolete vote source when wonder obsoletes
+			if (GC.getBuildingInfo((BuildingTypes)iI).getVoteSourceType() != -1)
+			{
+				GC.getGameINLINE().changeDiploVote((VoteSourceTypes)GC.getBuildingInfo((BuildingTypes)iI).getVoteSourceType(), -1);
+			}
 		}
 
 		if (GC.getBuildingInfo((BuildingTypes) iI).getSpecialBuildingType() != NO_SPECIALBUILDING)
@@ -5473,6 +6420,15 @@ void CvTeam::processTech(TechTypes eTech, int iChange)
 		for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 		{
 			changeImprovementYieldChange(((ImprovementTypes)iI), ((YieldTypes)iJ), (GC.getImprovementInfo((ImprovementTypes)iI).getTechYieldChanges(eTech, iJ) * iChange));
+		}
+	}
+
+	// Leoreth: also for builds because bonus yields on city tiles have to be updated
+	for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
+	{
+		if (GC.getBuildInfo((BuildTypes)iI).getTechPrereq() == eTech)
+		{
+			updateYield();
 		}
 	}
 
@@ -5604,6 +6560,26 @@ bool CvTeam::isFriendlyTerritory(TeamTypes eTeam) const
 	}
 
 	if (isVassal(eTeam) && isOpenBorders(eTeam))
+	{
+		return true;
+	}
+
+	return false;
+}
+
+bool CvTeam::isAccessibleTerritory(TeamTypes eTeam) const
+{
+	if (eTeam == NO_TEAM)
+	{
+		return false;
+	}
+
+	if (eTeam == getID())
+	{
+		return true;
+	}
+
+	if (isOpenBorders(eTeam))
 	{
 		return true;
 	}
@@ -5914,6 +6890,11 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iRiverTradeCount);
 	pStream->Read(&m_iEspionagePointsEver);
 
+	pStream->Read(&m_iTotalTechValue); // Leoreth
+	pStream->Read(&m_iSatelliteInterceptCount); // Leoreth
+	pStream->Read(&m_iSatelliteAttackCount); // Leoreth
+	pStream->Read(&m_iTechDifferenceModifier); // Leoreth
+
 	pStream->Read(&m_bMapCentering);
 	pStream->Read(&m_bCapitulated);
 
@@ -5930,6 +6911,7 @@ void CvTeam::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumVoteSourceInfos(), m_aiForceTeamVoteEligibilityCount);
 
 	pStream->Read(MAX_TEAMS, m_abHasMet);
+	pStream->Read(MAX_TEAMS, m_abHasEverMet); //Rhye
 	pStream->Read(MAX_TEAMS, m_abAtWar);
 	pStream->Read(MAX_TEAMS, m_abPermanentWarPeace);
 	pStream->Read(MAX_TEAMS, m_abOpenBorders);
@@ -5979,6 +6961,16 @@ void CvTeam::read(FDataStreamBase* pStream)
 		pStream->Read((int*)&eBonus);
 		m_aeRevealedBonuses.push_back(eBonus);
 	}
+	// Sanguo Mod Performance, start, added by poyuzhe 07.26.09
+	m_aePlayerMembers.clear();
+	pStream->Read(&iSize);
+	for (int i = 0; i < iSize; ++i)
+	{
+		PlayerTypes ePlayer;
+		pStream->Read((int*)&ePlayer);
+		m_aePlayerMembers.push_back(ePlayer);
+	}
+	// Sanguo Mod Performance, end
 }
 
 
@@ -6014,6 +7006,11 @@ void CvTeam::write(FDataStreamBase* pStream)
 	pStream->Write(m_iRiverTradeCount);
 	pStream->Write(m_iEspionagePointsEver);
 
+	pStream->Write(m_iTotalTechValue); // Leoreth
+	pStream->Write(m_iSatelliteInterceptCount); // Leoreth
+	pStream->Write(m_iSatelliteAttackCount); // Leoreth
+	pStream->Write(m_iTechDifferenceModifier); // Leoreth
+
 	pStream->Write(m_bMapCentering);
 	pStream->Write(m_bCapitulated);
 
@@ -6030,6 +7027,7 @@ void CvTeam::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumVoteSourceInfos(), m_aiForceTeamVoteEligibilityCount);
 
 	pStream->Write(MAX_TEAMS, m_abHasMet);
+	pStream->Write(MAX_TEAMS, m_abHasEverMet); //Rhye
 	pStream->Write(MAX_TEAMS, m_abAtWar);
 	pStream->Write(MAX_TEAMS, m_abPermanentWarPeace);
 	pStream->Write(MAX_TEAMS, m_abOpenBorders);
@@ -6071,6 +7069,13 @@ void CvTeam::write(FDataStreamBase* pStream)
 	{
 		pStream->Write(*it);
 	}
+	// Sanguo Mod Performance, start, added by poyuzhe 07.26.09
+	pStream->Write(m_aePlayerMembers.size());
+	for (std::vector<PlayerTypes>::const_iterator it = m_aePlayerMembers.begin(); it != m_aePlayerMembers.end(); ++it)
+	{
+		pStream->Write(*it);
+	}
+	// Sanguo Mod Performance, end
 }
 
 // CACHE: cache frequently used values
@@ -6135,3 +7140,269 @@ bool CvTeam::hasLaunched() const
 	return false;
 }
 
+// Sanguo Mod Performance, start, added by poyuzhe 07.26.09
+void CvTeam::setHasPlayerMember(PlayerTypes ePlayer, bool bNewValue)
+{
+	FAssert (ePlayer > -1 && ePlayer < MAX_PLAYERS);
+	if (bNewValue != isHasPlayerMember(ePlayer))
+	{
+		if (bNewValue)
+		{
+			m_aePlayerMembers.push_back(ePlayer);
+		}
+		else
+		{
+			m_aePlayerMembers.erase(find(m_aePlayerMembers.begin(), m_aePlayerMembers.end(), ePlayer));
+		}
+	}
+}
+
+bool CvTeam::isHasPlayerMember(PlayerTypes ePlayer) const
+{
+	return (find(m_aePlayerMembers.begin(), m_aePlayerMembers.end(), ePlayer) != m_aePlayerMembers.end());
+}
+
+PlayerTypes CvTeam::getPlayerMemberAt(int iIndex) const
+{
+	return m_aePlayerMembers[iIndex];
+}
+
+int CvTeam::getPlayerMemberListSize() const
+{
+	return m_aePlayerMembers.size();
+}
+// Sanguo Mod Performance, end
+
+// Leoreth
+int CvTeam::getTotalTechValue() const
+{
+	return m_iTotalTechValue;
+}
+
+void CvTeam::changeTotalTechValue(int iChange)
+{
+	m_iTotalTechValue += iChange;
+
+	GC.getGame().updateTechRanks();
+}
+
+bool CvTeam::canCutContact(TeamTypes eTeam)
+{
+	bool bResult = true;
+
+	CvPlot* pLoopPlot;
+	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
+	{
+		pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
+		if (pLoopPlot->isOwned())
+		{
+			if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == getID() && pLoopPlot->isVisible(eTeam, false)) bResult = false;
+			if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == eTeam && pLoopPlot->isVisible(getID(), false)) bResult = false;
+		}
+		if (!bResult) break;
+	}
+
+	return bResult;
+}
+
+bool CvTeam::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered) const
+{
+	int iI;
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+		{
+			if (GET_PLAYER((PlayerTypes)iI).canFoundReligion(eReligion, eTechDiscovered))
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+PlayerTypes CvTeam::getFoundingPlayer(ReligionTypes eReligion) const
+{
+	int iBestValue = MAX_INT;
+	PlayerTypes eBestPlayer = NO_PLAYER;
+
+	int iValue;
+	int iI, iJ;
+	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			{
+				iValue = 10;
+													
+				iValue += GC.getGameINLINE().getSorenRandNum(10, "Found Religion (Player)");
+
+				for (iJ = 0; iJ < GC.getNumReligionInfos(); iJ++)
+				{
+					iValue += (GET_PLAYER((PlayerTypes)iI).getHasReligionCount((ReligionTypes)iJ) * 10);
+				}
+
+				if (GET_PLAYER((PlayerTypes)iI).getCurrentResearch() != GC.getReligionInfo(eReligion).getTechPrereq())
+				{
+					iValue *= 10;
+				}
+
+				if (iValue < iBestValue)
+				{
+					iBestValue = iValue;
+					eBestPlayer = ((PlayerTypes)iI);
+				}
+			}
+		}
+	}
+
+	return eBestPlayer;
+}
+
+TeamTypes CvTeam::getMaster() const
+{
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (isVassal((TeamTypes)iI))
+		{
+			return (TeamTypes)iI;
+		}
+	}
+
+	return NO_TEAM;
+}
+
+bool CvTeam::isAtWarWithMajorPlayer() const
+{
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (isAtWar((TeamTypes)iI) && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isMinorCiv() && !GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID()).isBarbarian())
+		{
+			CvPlayer& kPlayer = GET_PLAYER(GET_TEAM((TeamTypes)iI).getLeaderID());
+			if (kPlayer.isAlive() && !kPlayer.isMinorCiv() && !kPlayer.isBarbarian())
+			{
+				return true;
+			}
+		}
+	}
+
+	return false;
+}
+
+std::set<TeamTypes> CvTeam::determineDefensivePactPartners(std::set<TeamTypes> visited) const
+{
+	std::set<TeamTypes> partners;
+	std::set<TeamTypes> theirPartners;
+
+	visited.insert(getID());
+
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (visited.count((TeamTypes)iI) == 0)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isMinorCiv())
+			{
+				if (isDefensivePact((TeamTypes)iI))
+				{
+					partners.insert((TeamTypes)iI);
+
+					theirPartners = GET_TEAM((TeamTypes)iI).determineDefensivePactPartners(visited);
+					for (std::set<TeamTypes>::iterator it = theirPartners.begin(); it != theirPartners.end(); ++it)
+					{
+						partners.insert(*it);
+					}
+				}
+			}
+		}
+	}
+
+	return partners;
+}
+
+bool CvTeam::canSatelliteIntercept() const
+{
+	return m_iSatelliteInterceptCount > 0;
+}
+
+void CvTeam::changeSatelliteInterceptCount(int iChange)
+{
+	m_iSatelliteInterceptCount += iChange;
+}
+
+bool CvTeam::canSatelliteAttack() const
+{
+	return m_iSatelliteAttackCount > 0;
+}
+
+void CvTeam::changeSatelliteAttackCount(int iChange)
+{
+	m_iSatelliteAttackCount += iChange;
+}
+
+bool CvTeam::isAllied(TeamTypes eTeam) const
+{
+	if (getID() == eTeam)
+	{
+		return true;
+	}
+
+	if (isDefensivePact(eTeam))
+	{
+		return true;
+	}
+
+	if (GET_TEAM(eTeam).isVassal(getID()))
+	{
+		return true;
+	}
+
+	if (isAVassal())
+	{
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (isVassal((TeamTypes)iI))
+			{
+				if (GET_TEAM((TeamTypes)iI).isAllied(eTeam))
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	if (GET_TEAM(eTeam).isAVassal())
+	{
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM(eTeam).isVassal((TeamTypes)iI))
+			{
+				if (isAllied((TeamTypes)iI))
+				{
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+int CvTeam::countContacts() const
+{
+	int iNumContacts = 0;
+
+	for (int iI = 0; iI < MAX_TEAMS; iI++)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isMinorCiv())
+		{
+			if (canContact((TeamTypes)iI))
+			{
+				iNumContacts++;
+			}
+		}
+	}
+
+	return iNumContacts;
+}

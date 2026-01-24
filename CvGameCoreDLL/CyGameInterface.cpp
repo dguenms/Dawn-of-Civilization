@@ -90,12 +90,14 @@ void CyGamePythonInterface()
 		.def("getNumAdvancedStartPoints", &CyGame::getNumAdvancedStartPoints)
 		.def("setNumAdvancedStartPoints", &CyGame::setNumAdvancedStartPoints)
 		.def("getStartTurn", &CyGame::getStartTurn, "int () - Returns the starting Turn (0 unless a scenario or advanced era start)")
+		.def("setStartTurn", &CyGame::setStartTurn, "void (int iNewValue)")
 		.def("getStartYear", &CyGame::getStartYear, "int () - Returns the starting year (e.g. -4000)")
 		.def("setStartYear", &CyGame::setStartYear, "void () - Sets the starting year (e.g. -4000)")
 		.def("getEstimateEndTurn", &CyGame::getEstimateEndTurn)
 		.def("setEstimateEndTurn", &CyGame::setEstimateEndTurn)
 		.def("getTurnSlice", &CyGame::getTurnSlice)
 		.def("getMinutesPlayed", &CyGame::getMinutesPlayed, "Returns the number of minutes since the game began")
+		.def("getSecondsPlayed", &CyGame::getSecondsPlayed, "int ()")
 		.def("getTargetScore", &CyGame::getTargetScore)
 		.def("setTargetScore", &CyGame::setTargetScore)
 
@@ -134,6 +136,8 @@ void CyGamePythonInterface()
 		.def("setScoreDirty", &CyGame::setScoreDirty)
 		.def("isCircumnavigated", &CyGame::isCircumnavigated, "bool () - is the globe circumnavigated?")
 		.def("makeCircumnavigated", &CyGame::makeCircumnavigated)
+		.def("getCircumnavigated", &CyGame::getCircumnavigated, "bool ()") //Rhye
+		.def("setCircumnavigated", &CyGame::setCircumnavigated, "void (int i)") //Rhye
 		.def("isDiploVote", &CyGame::isDiploVote, "bool (VoteSourceTypes)")
 		.def("changeDiploVote", &CyGame::changeDiploVote, "void (VoteSourceTypes, int)")
 		.def("isDebugMode", &CyGame::isDebugMode, "bool () - is the game in Debug Mode?")
@@ -189,6 +193,7 @@ void CyGamePythonInterface()
 		.def("getVoteOutcome", &CyGame::getVoteOutcome, "int (VoteTypes eIndex)")
 
 		.def("getReligionGameTurnFounded", &CyGame::getReligionGameTurnFounded)
+		.def("setReligionGameTurnFounded", &CyGame::setReligionGameTurnFounded, "void (int eReligion, int iGameTurn)")
 		.def("isReligionFounded", &CyGame::isReligionFounded, "bool (ReligionID) - is religion founded?")
 		.def("isReligionSlotTaken", &CyGame::isReligionSlotTaken, "bool (ReligionID) - is religion in that tech slot founded?")
 		.def("getCorporationGameTurnFounded", &CyGame::getCorporationGameTurnFounded)
@@ -231,6 +236,10 @@ void CyGamePythonInterface()
 		.def("getSorenRandNum", &CyGame::getSorenRandNum)
 		.def("calculateSyncChecksum", &CyGame::calculateSyncChecksum)
 		.def("calculateOptionsChecksum", &CyGame::calculateOptionsChecksum)
+		// Rhye - start (jdog)
+		.def("changePlayer", &CyGame::changePlayer, "bool ( int playerIdx, int newCivType, int newLeader, int teamIdx, bool bIsHuman, bool bChangeGraphics ) - change player civ or leader" )
+		.def("convertUnits", &CyGame::convertUnits, "void ( int playerIdx )")
+		// Rhye - start (jdog)
 
 		.def("GetWorldBuilderMode", &CyGame::GetWorldBuilderMode)
 		.def("isPitbossHost", &CyGame::isPitbossHost)
@@ -248,7 +257,7 @@ void CyGamePythonInterface()
 		.def("getReplayInfo", &CyGame::getReplayInfo, python::return_value_policy<python::manage_new_object>())
 		.def("hasSkippedSaveChecksum", &CyGame::hasSkippedSaveChecksum)
 		.def("saveReplay", &CyGame::saveReplay)
-		.def("addPlayer", &CyGame::addPlayer, "void (int eNewPlayer, int eLeader, int eCiv)")
+		.def("addPlayer", &CyGame::addPlayer, "void (int eNewPlayer, int eLeader, int eCiv, int iBirthTurn, bool bAlive, bool bMinor)")
 		.def("getCultureThreshold", &CyGame::getCultureThreshold, "int getCultureThreshold(CultureLevelTypes eLevel)")
 
 		.def("setPlotExtraYield", &CyGame::setPlotExtraYield, "void (int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield)")
@@ -261,6 +270,61 @@ void CyGamePythonInterface()
 
 		.def("isEventActive", &CyGame::isEventActive, "bool (int /*EventTriggerTypes*/ eTrigger)")
 		.def("doControl", &CyGame::doControl, "void (int /*ControlTypes*/ iControl)")
+
+// BUG - MapFinder - start
+		.def("canRegenerateMap", &CyGame::canRegenerateMap, "bool ()")
+		.def("regenerateMap", &CyGame::regenerateMap, "void ()")
+		
+		.def("saveGame", &CyGame::saveGame, "void saveGame(string filename)")
+// BUG - MapFinder - end
+
+// BUG - EXE/DLL Paths - start
+		.def("getDLLPath", &CyGame::getDLLPath, "string getDLLPath()")
+		.def("getExePath", &CyGame::getExePath, "string getExePath()")
+// BUG - EXE/DLL Paths - end
+
+// BUFFY - Security Checks - start
+#ifdef _BUFFY
+		.def("checkCRCs", &CyGame::checkCRCs, "checkCRCs (string, string, string, string, string, string)")
+		.def("getWarningStatus", &CyGame::getWarningStatus, "int getWarningStatus()")
+#endif
+// BUFFY - Security Checks - end
+
+		.def("isNeighbors", &CyGame::isNeighbors, "bool (int iPlayer1, int iPlayer2)")
+		.def("isCheatingEnabled", &CyGame::isCheatingEnabled, "bool ()")
+		.def("determineWinner", &CyGame::determineWinner, "int (int iTeam1, int iTeam2)")
+
+		.def("getXResolution", &CyGame::getXResolution, "int ()")
+		.def("setXResolution", &CyGame::setXResolution, "void (int iNewValue)")
+		.def("changeXResolution", &CyGame::changeXResolution, "void (int iChange)")
+		.def("getYResolution", &CyGame::getYResolution, "int ()")
+		.def("setYResolution", &CyGame::setYResolution, "void (int iNewValue)")
+		.def("changeYResolution", &CyGame::changeYResolution, "void (int iChange)")
+
+		.def("addGreatPersonBornName", &CyGame::addGreatPersonBornName, "void (string sName)")
+		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)")
+
+		.def("autosave", &CyGame::autosave, "void ()")
+		.def("initialSave", &CyGame::initialSave, "void ()")
+
+		.def("incrementBuildingClassCreatedCount", &CyGame::incrementBuildingClassCreatedCount, "void (int iBuildingClass)")
+
+		.def("setCityScreenOwner", &CyGame::setCityScreenOwner, "void (int iPlayer)")
+		.def("resetCityScreenOwner", &CyGame::resetCityScreenOwner, "void ()")
+
+		.def("setGreatPeopleNotifications", &CyGame::setGreatPeopleNotifications, "void (int iNotificationLevel)")
+		.def("setReligionSpreadNotifications", &CyGame::setReligionSpreadNotifications, "void (int iNotificationLevel)")
+		.def("setEventEffectNotifications", &CyGame::setEventEffectNotifications, "void (int iNotificationLevel)")
+
+		.def("getPeriod", &CyGame::getPeriod, "int getPeriod(int iCivilization)")
+		.def("setPeriod", &CyGame::setPeriod, "int setPeriod(int iCivilization, int iPeriod)")
+
+		.def("getCivilizationHistory", &CyGame::getCivilizationHistory, "int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)")
+
+		.def("getFirstDiscovered", &CyGame::getFirstDiscovered, "int (int iTech)")
+		.def("getFirstDiscoveredTech", &CyGame::getFirstDiscoveredTurn, "int (int iTech)")
+
+		.def("getMedianTechValue", &CyGame::getMedianTechValue, "int ()")
 		;
 
 	python::class_<CyDeal>("CyDeal")
@@ -274,5 +338,11 @@ void CyGamePythonInterface()
 		.def("getFirstTrade", &CyDeal::getFirstTrade, python::return_value_policy<python::reference_existing_object>())
 		.def("getSecondTrade", &CyDeal::getSecondTrade, python::return_value_policy<python::reference_existing_object>())
 		.def("kill", &CyDeal::kill)
+
+// BUG - Expose Deal Cancelability - start
+		.def("isCancelable", &CyDeal::isCancelable, "bool isCancelable(int /*PlayerTypes*/ eByPlayer, bool bIgnoreWaitingPeriod)")
+		.def("getCannotCancelReason", &CyDeal::getCannotCancelReason, "string getCannotCancelReason(int /*PlayerTypes*/ eByPlayer)")
+		.def("turnsToCancel", &CyDeal::turnsToCancel, "int turnsToCancel(int /*PlayerTypes*/ eByPlayer)")
+// BUG - Expose Deal Cancelability - end
 		;
 }

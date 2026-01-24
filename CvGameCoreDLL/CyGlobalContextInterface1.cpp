@@ -117,5 +117,26 @@ void CyGlobalContextPythonInterface1(python::class_<CyGlobalContext>& x)
 
 		.def("getNumActionInfos", &CyGlobalContext::getNumActionInfos, "() - Total Action Infos XML\\Units\\CIV4ActionInfos.xml")
 		.def("getActionInfo", &CyGlobalContext::getActionInfo, python::return_value_policy<python::reference_existing_object>(), "(ActionID) - CvInfo for ActionID")
+
+// BUG - DLL Info - start
+		.def("isBull", &CyGlobalContext::isBull, "bool () - returns true to mark presence of BULL")
+		.def("getBullApiVersion", &CyGlobalContext::getBullApiVersion, "int () - returns BULL Python API version")
+		.def("getBullName", &CyGlobalContext::pyGetBullName, "wstring () - returns display name of BULL")
+		.def("getBullVersion", &CyGlobalContext::pyGetBullVersion, "wstring () - returns display version of BULL")
+// BUG - DLL Info - end
+
+// BUG - BUG Info - start
+		.def("setIsBug", &CyGlobalContext::setIsBug, "void (bool bIsBug) - tells BULL that BUG is present and can receive queries for options")
+// BUG - BUG Info - end
+
+// BUFFY - DLL Info - start
+#ifdef _BUFFY
+		.def("isBuffy", &CyGlobalContext::isBuffy, "bool () - returns true to mark presence of BUFFY")
+		.def("getBuffyApiVersion", &CyGlobalContext::getBuffyApiVersion, "int () - returns BUFFY Python API version")
+		.def("getBuffyName", &CyGlobalContext::pyGetBuffyName, "wstring () - returns display name of BUFFY")
+		.def("getBuffyVersion", &CyGlobalContext::pyGetBuffyVersion, "wstring () - returns display version of BUFFY")
+#endif
+// BUFFY - DLL Info - end
+
 	;
 }

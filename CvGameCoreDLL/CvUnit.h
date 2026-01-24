@@ -34,6 +34,8 @@ struct DllExport CombatDetails					// Exposed to Python
 	int iCityDefenseModifier;
 	int iHillsAttackModifier;
 	int iHillsDefenseModifier;
+	int iPlainsAttackModifier; // Leoreth
+	int iPlainsDefenseModifier; // Leoreth
 	int iFeatureAttackModifier;
 	int iFeatureDefenseModifier;
 	int iTerrainAttackModifier;
@@ -177,6 +179,15 @@ public:
 	bool canPillage(const CvPlot* pPlot) const;																										// Exposed to Python
 	bool pillage();
 
+	//SuperSpies: TSHEEP Assassin Mission
+	bool canAssassin(const CvPlot* pPlot, bool bTestVisible) const;																										// Exposed to Python
+	//TSHEEP Other functions
+	bool awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission, int iCostModifier);
+	//SuperSpies: TSHEEP End
+	//SuperSpies: glider1 start
+	bool canBribe(const CvPlot* pPlot, bool bTestVisible) const;
+	//SuperSpies: glider1 end
+
 	bool canPlunder(const CvPlot* pPlot, bool bTestVisible = false) const;																					// Exposed to Python
 	bool plunder();
 	void updatePlunder(int iChange, bool bUpdatePlotGroups);
@@ -199,8 +210,9 @@ public:
 	bool canFound(const CvPlot* pPlot, bool bTestVisible = false) const;																		// Exposed to Python
 	bool found();
 
-	bool canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible = false) const;					// Exposed to Python
+	bool canSpread(const CvPlot* pPlot, ReligionTypes eReligion, bool bTestVisible = false, bool bAI = false) const;					// Exposed to Python
 	bool spread(ReligionTypes eReligion);
+	int getSpreadChance(ReligionTypes eReligion) const;
 
 	bool canSpreadCorporation(const CvPlot* pPlot, CorporationTypes eCorporation, bool bTestVisible = false) const;					// Exposed to Python
 	bool spreadCorporation(CorporationTypes eCorporation);
@@ -212,7 +224,7 @@ public:
 	bool canConstruct(const CvPlot* pPlot, BuildingTypes eBuilding, bool bTestVisible = false) const;				// Exposed to Python
 	bool construct(BuildingTypes eBuilding);
 
-	TechTypes getDiscoveryTech() const;																														// Exposed to Python
+	TechTypes getDiscoveryTech(TechTypes eIgnoreTech = NO_TECH) const;																														// Exposed to Python
 	int getDiscoverResearch(TechTypes eTech) const;																								// Exposed to Python
 	bool canDiscover(const CvPlot* pPlot) const;																									// Exposed to Python
 	bool discover();
@@ -256,9 +268,34 @@ public:
 	bool giveExperience();																																// Exposed to Python 
 	int getStackExperienceToGive(int iNumUnits) const;
 
+	// Leoreth
+	bool canResolveCrisis(const CvPlot* pPlot) const;
+	bool resolveCrisis();
+
+	bool canReformGovernment(const CvPlot* pPlot) const;
+	bool reformGovernment();
+
+	bool canDiplomaticMission(const CvPlot* pPlot) const;
+	bool diplomaticMission();
+
+	bool canPersecute(const CvPlot* pPlot) const;
+	bool persecute(ReligionTypes eReligion);
+
+	bool canGreatMission(const CvPlot* pPlot) const;
+	bool greatMission();
+
+	bool canSatelliteAttack(const CvPlot* pPlot) const;
+	bool satelliteAttack();
+
+	bool canRebuild(const CvPlot* pPlot) const;
+	bool rebuild();
+
+	bool isWorker() const;
+
 	int upgradePrice(UnitTypes eUnit) const;																											// Exposed to Python
 	bool upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount = 0) const;					// Exposed to Python
 	bool canUpgrade(UnitTypes eUnit, bool bTestVisible = false) const;														// Exposed to Python
+	void discountedUpgrade(UnitTypes eUnit, int percent); //Rhye
 	bool isReadyForUpgrade() const;
 	bool hasUpgrade(bool bSearch = false) const;																											// Exposed to Python
 	bool hasUpgrade(UnitTypes eUnit, bool bSearch = false) const;
@@ -319,6 +356,7 @@ public:
 	DllExport int currHitPoints() const;																	// Exposed to Python						
 	bool isHurt() const;																				// Exposed to Python						
 	DllExport bool isDead() const;																				// Exposed to Python						
+	bool isExisting() const;
 
 	void setBaseCombatStr(int iCombat);																																										// Exposed to Python
 	int baseCombatStr() const;																																										// Exposed to Python
@@ -333,6 +371,7 @@ public:
 	bool canAttack() const;																														// Exposed to Python
 	bool canAttack(const CvUnit& defender) const;
 	bool canDefend(const CvPlot* pPlot = NULL) const;																	// Exposed to Python
+	bool canDefendAgainst(const CvUnit* pAttacker, const CvPlot* pPlot = NULL) const; // Leoreth
 	bool canSiege(TeamTypes eTeam) const;																							// Exposed to Python
 
 	int airBaseCombatStr() const;																						// Exposed to Python
@@ -341,6 +380,7 @@ public:
 	DllExport float airMaxCombatStrFloat(const CvUnit* pOther) const;																			// Exposed to Python
 	DllExport float airCurrCombatStrFloat(const CvUnit* pOther) const;																		// Exposed to Python
 	int combatLimit() const;																												// Exposed to Python
+	int combatLimitAgainst(const CvUnit* pUnit) const;
 	int airCombatLimit() const;																												// Exposed to Python
 	DllExport bool canAirAttack() const;																							// Exposed to Python
 	DllExport bool canAirDefend(const CvPlot* pPlot = NULL) const;										// Exposed to Python
@@ -390,6 +430,9 @@ public:
 	int animalCombatModifier() const;																				// Exposed to Python
 	int hillsAttackModifier() const;																				// Exposed to Python
 	int hillsDefenseModifier() const;																				// Exposed to Python
+	int plainsAttackModifier() const; // Leoreth
+	int plainsDefenseModifier() const; // Leoreth
+	int riverAttackModifier() const; // Leoreth
 	int terrainAttackModifier(TerrainTypes eTerrain) const;								// Exposed to Python
 	int terrainDefenseModifier(TerrainTypes eTerrain) const;								// Exposed to Python
 	int featureAttackModifier(FeatureTypes eFeature) const;								// Exposed to Python
@@ -523,7 +566,12 @@ public:
 																																														
 	int getImmuneToFirstStrikesCount() const;																									
 	void changeImmuneToFirstStrikesCount(int iChange);																				
-																																														
+					
+	// Leoreth
+	int getNoUpgradeCount() const;
+	bool isNoUpgrade() const;
+	void changeNoUpgradeCount(int iChange);
+
 	int getExtraVisibilityRange() const;																						// Exposed to Python					
 	void changeExtraVisibilityRange(int iChange);
 
@@ -587,6 +635,18 @@ public:
 	int getExtraHillsDefensePercent() const;																									// Exposed to Python
 	void changeExtraHillsDefensePercent(int iChange);
 
+	// Leoreth
+	int getExtraPlainsAttackPercent() const;
+	void changeExtraPlainsAttackPercent(int iChange);
+
+	// Leoreth
+	int getExtraPlainsDefensePercent() const;
+	void changeExtraPlainsDefensePercent(int iChange);
+
+	// Leoreth
+	int getExtraRiverAttackPercent() const;
+	void changeExtraRiverAttackPercent(int iChange);
+
 	int getRevoltProtection() const;																									// Exposed to Python
 	void changeRevoltProtection(int iChange);
 
@@ -604,6 +664,10 @@ public:
 
 	int getKamikazePercent() const;																									// Exposed to Python
 	void changeKamikazePercent(int iChange);
+
+	// Leoreth
+	int getExtraUpkeep() const;
+	void changeExtraUpkeep(int iChange);
 
 	DllExport DirectionTypes getFacingDirection(bool checkLineOfSightProperty) const;
 	void setFacingDirection(DirectionTypes facingDirection);
@@ -668,6 +732,9 @@ public:
 	void changeExtraDomainModifier(DomainTypes eIndex, int iChange);
 
 	DllExport const CvWString getName(uint uiForm = 0) const;																// Exposed to Python
+// BUG - Unit Name - start
+	bool isDescInName() const;
+// BUG - Unit Name - end
 	DllExport const wchar* getNameKey() const;																							// Exposed to Python
 	const CvWString& getNameNoDesc() const;																				// Exposed to Python
 	void setName(const CvWString szNewValue);																			// Exposed to Python
@@ -730,6 +797,15 @@ public:
 
 	bool verifyStackValid();
 
+	// edead / Afforess (Leoreth)
+	bool canTradeUnit(PlayerTypes eReceivingPlayer);
+	void tradeUnit(PlayerTypes eReceivingPlayer);
+
+	// Leoreth
+	SpecialistTypes getSettledSpecialist() const;
+
+	int getOriginalRegion() const;
+
 	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;										// Exposed to Python
 	DllExport const TCHAR* getButton() const;										// Exposed to Python
 	DllExport int getGroupSize() const;
@@ -769,6 +845,11 @@ public:
 	virtual UnitAITypes AI_getUnitAIType() const = 0;																				// Exposed to Python
 	virtual void AI_setUnitAIType(UnitAITypes eNewValue) = 0;
     virtual int AI_sacrificeValue(const CvPlot* pPlot) const = 0;
+	virtual std::pair<CvPlot*, CvPlot*> AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission = false) = 0;
+	virtual CvCity* AI_persecutionTarget() = 0;
+
+	// Leoreth: avoid eternal loop bug
+	int m_iStuckLoopCount;
 
 protected:
 
@@ -800,6 +881,7 @@ protected:
 	int m_iAlwaysHealCount;
 	int m_iHillsDoubleMoveCount;
 	int m_iImmuneToFirstStrikesCount;
+	int m_iNoUpgradeCount; // Leoreth
 	int m_iExtraVisibilityRange;
 	int m_iExtraMoves;
 	int m_iExtraMoveDiscount;
@@ -821,6 +903,9 @@ protected:
 	int m_iExtraCityDefensePercent;
 	int m_iExtraHillsAttackPercent;
 	int m_iExtraHillsDefensePercent;
+	int m_iExtraPlainsAttackPercent; // Leoreth
+	int m_iExtraPlainsDefensePercent; // Leoreth
+	int m_iExtraRiverAttackPercent; // Leoreth
 	int m_iRevoltProtection;
 	int m_iCollateralDamageProtection;
 	int m_iPillageChange;
@@ -830,6 +915,8 @@ protected:
 	int m_iBaseCombat;
 	DirectionTypes m_eFacingDirection;
 	int m_iImmobileTimer;
+	int m_iExtraUpkeep; // Leoreth
+	int m_iOriginalRegion; // Leoreth
 
 	bool m_bMadeAttack;
 	bool m_bMadeInterception;
@@ -885,6 +972,8 @@ protected:
 	void resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition& kBattle);
 	void resolveAirCombat(CvUnit* pInterceptor, CvPlot* pPlot, CvAirMissionDefinition& kBattle);
 	void checkRemoveSelectionAfterAttack();
+
+	int getOriginalArtStyle() const;
 };
 
 #endif

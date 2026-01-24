@@ -47,8 +47,15 @@ public:
 	void beginPlayerTurn(int iGameTurn, PlayerTypes);
 	void endPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2);						
+	void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2);
+	void restoredContact(TeamTypes eTeamID1, TeamTypes eTeamID2);
 	void combatResult(CvUnit* pWinner, CvUnit* pLoser);					
+// BUG - Combat Events - start
+	void combatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
+	void combatWithdrawal(CvUnit* pAttacker, CvUnit* pDefender);
+	void combatLogCollateral(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
+	void combatLogFlanking(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
+// BUG - Combat Events - start
 	void improvementBuilt(int iImprovementType, int iX, int iY);	
 	void improvementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);	
 	void routeBuilt(int iRouteType, int iX, int iY);	
@@ -64,13 +71,23 @@ public:
 	void cityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pCity, bool bConquest, bool bTrade);
 	void cityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void cityLost(CvCity *pCity);
+	void cityGifted(CvCity* pCity); // Leoreth
+	void cityLiberated(CvCity* pCity); // Leoreth
 	void cultureExpansion( CvCity *pCity, PlayerTypes ePlayer);
 	void cityGrowth(CvCity *pCity, PlayerTypes ePlayer);
 	void cityDoTurn(CvCity *pCity, PlayerTypes ePlayer);
 	void cityBuildingUnit(CvCity* pCity, UnitTypes eUnitType);
 	void cityBuildingBuilding(CvCity* pCity, BuildingTypes eBuildingType);
+// BUG - Project Started Event - start
+	void cityBuildingProject(CvCity* pCity, ProjectTypes eProjectType);
+// BUG - Project Started Event - end
+// BUG - Process Started Event - start
+	void cityBuildingProcess(CvCity* pCity, ProcessTypes eProcessType);
+// BUG - Process Started Event - end
 	void cityRename(CvCity* pCity);
 	void cityHurry(CvCity* pCity, HurryTypes eHurry);
+	void cityCaptureGold(CvCity* pCity, PlayerTypes ePlayer, int iCaptureGold);
+	void citySacked(CvCity* pCity);
 
 	void selectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 
@@ -79,11 +96,17 @@ public:
 	void unitCreated(CvUnit *pUnit);
 	void unitBuilt(CvCity *pCity, CvUnit *pUnit);
 	void unitKilled(CvUnit *pUnit, PlayerTypes eAttacker);
+// BUG - Unit Captured Event - start
+	void unitCaptured(PlayerTypes eFromPlayer, UnitTypes eUnitType, CvUnit* pNewUnit);
+// BUG - Unit Captured Event - end
 	void unitLost(CvUnit *pUnit);
 	void unitPromoted(CvUnit *pUnit, PromotionTypes ePromotion);
+// BUG - Upgrade Unit Event - start
+	void unitUpgraded(CvUnit *pOldUnit, CvUnit *pNewUnit, int iPrice);
+// BUG - Upgrade Unit Event - end
 	DllExport void unitSelected(CvUnit *pUnit);
 	void unitRename(CvUnit* pUnit);
-	void unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer);
+	void unitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold);
 	void unitSpreadReligionAttempt(CvUnit* pUnit, ReligionTypes eReligion, bool bSuccess);
 	void unitGifted(CvUnit* pUnit, PlayerTypes eGiftingPlayer, CvPlot* pPlotLocation);
 	void unitBuildImprovement(CvUnit* pUnit, BuildTypes eBuild, bool bFinished);
@@ -108,19 +131,37 @@ public:
 
 	void goldenAge(PlayerTypes ePlayer);
 	void endGoldenAge(PlayerTypes ePlayer);
-	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam);
+	void changeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
 
 	void setPlayerAlive( PlayerTypes ePlayerID, bool bNewValue );
 	void playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
 	void playerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount);
 
-	void plotCovered(CvCity* pCity, CvPlot* pPlot);
+	void revolution(PlayerTypes ePlayerID); // edead
 
 	DllExport void chat(CvWString szString);		
 
 	void victory(TeamTypes eWinner, VictoryTypes eVictory);
 
-	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal);
+	void vassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
+
+	void tradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // Leoreth
+	void playerSlaveTrade(PlayerTypes ePlayer, int iGold); // Leoreth
+	void releasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); // Leoreth
+	void blockade(PlayerTypes ePlayer, CvCity* pCity, int iGold); // Leoreth
+	void peaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
+	void xmlLoaded(); // Leoreth
+	void fontsLoaded(); // Leoreth
+	void civicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
+	void autoplayEnded(); // Leoreth
+	void playerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
+	void playerDestroyed(PlayerTypes ePlayer); // Leoreth
+	void playerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
+	void techTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
+	void tribute(PlayerTypes eFrom, PlayerTypes eTo); // Leoreth
+	void globalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense); // Leoreth
+	void globalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature); // Leoreth
+	void buildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange); // Leoreth
 
 	DllExport void preSave();
 

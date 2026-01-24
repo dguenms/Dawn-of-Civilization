@@ -11,6 +11,10 @@
 #include "CvGameTextMgr.h"
 #include "CvMessageControl.h"
 
+// BUG - start
+#include "CvBugOptions.h"
+// BUG - end
+
 void CvGame::updateColoredPlots()
 {
 	PROFILE_FUNC();
@@ -26,7 +30,7 @@ void CvGame::updateColoredPlots()
 	CvPlot* pLoopPlot;
 	CvPlot* pBestPlot;
 	CvPlot* pNextBestPlot;
-	long lResult;
+	//long lResult; //Rhye
 	int iMaxAirRange;
 	int iRange;
 	int iDX, iDY;
@@ -42,12 +46,15 @@ void CvGame::updateColoredPlots()
 		gDLL->getEngineIFace()->clearColoredPlots(PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS);
 	}
 
-	lResult = 0;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "updateColoredPlots", NULL, &lResult);
-	if (lResult == 1)
-	{
-		return;
-	}
+	//Rhye - start
+//Speed: Modified by Kael 04/19/2007
+//	gDLL->getPythonIFace()->callFunction(PYGameModule, "updateColoredPlots", NULL, &lResult);
+//	if (lResult == 1)
+//	{
+//		return;
+//	}
+//Speed: End Modify
+	//Rhye - end
 
 	// City circles when in Advanced Start
 	if (gDLL->getInterfaceIFace()->isInAdvancedStart())
@@ -112,6 +119,20 @@ void CvGame::updateColoredPlots()
 						color.a = 0.7f;
 						gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), color, PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_BASE);
 					}
+				}
+			}
+
+			// Leoreth: display next culture plot
+			int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
+			if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS)
+			{
+				pLoopPlot = pHeadSelectedCity->getCulturePlot(iEffectiveNextCoveredPlot);
+
+				if (pLoopPlot != NULL)
+				{
+					NiColorA color(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_CULTURE_STORED")).getColor());
+					color.a = 0.7f;
+					gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), color, PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_BASE);
 				}
 			}
 		}
@@ -263,6 +284,15 @@ void CvGame::updateColoredPlots()
 						{
 							if (pHeadSelectedUnit->canFound(pLoopPlot))
 							{
+// BUFFY - Don't Recommend Plots in Fog of War - start
+#ifdef _BUFFY
+								if (!pLoopPlot->isVisible(pHeadSelectedUnit->getTeam(), false))
+								{
+									continue;
+								}
+#endif
+// BUFFY - Don't Recommend Plots in Fog of War - end
+
 								if (GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).AI_isPlotCitySite(pLoopPlot))
 								{
 									gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT")).getColor(), PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS);
@@ -837,19 +867,23 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 		return;
 	}
 
-	CyPlot* pyPlot = new CyPlot(pPlot);
-	CyArgsList argsList;
-	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in plot class
-	argsList.add(bAlt);
-	argsList.add(bShift);
-	argsList.add(bCtrl);
-	long lResult=0;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotSelectionListMove", argsList.makeFunctionArgs(), &lResult);
-	delete pyPlot;	// python fxn must not hold on to this pointer 
-	if (lResult == 1)
-	{
-		return;
-	}
+	//Rhye - start
+//Speed: Modified by Kael 04/19/2007
+//	CyPlot* pyPlot = new CyPlot(pPlot);
+//	CyArgsList argsList;
+//	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in plot class
+//	argsList.add(bAlt);
+//	argsList.add(bShift);
+//	argsList.add(bCtrl);
+//	long lResult=0;
+//	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotSelectionListMove", argsList.makeFunctionArgs(), &lResult);
+//	delete pyPlot;	// python fxn must not hold on to this pointer
+//	if (lResult == 1)
+//	{
+//		return;
+//	}
+//Speed: End Modify
+	//Rhye - end
 
 	pHeadSelectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
 
@@ -867,6 +901,10 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 		gDLL->getInterfaceIFace()->selectGroup(pHeadSelectedUnit, false, true, false);
 	}
 
+// BUG - Declare War - start
+	bool bAskToDeclareWar = getBugOptionBOOL("Actions__AskDeclareWarUnits", true, "BUG_ASK_DECLARE_WAR_UNITS");
+// BUG - Declare War - end
+
 	pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
 
 	while (pSelectedUnitNode != NULL)
@@ -875,7 +913,10 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 
 		eRivalTeam = pSelectedUnit->getDeclareWarMove(pPlot);
 
-		if (eRivalTeam != NO_TEAM)
+// BUG - Declare War - start
+		// only ask if option is off or moving into rival territory without open borders
+		if (eRivalTeam != NO_TEAM && (pPlot->getTeam() == eRivalTeam || bAskToDeclareWar))
+// BUG - Declare War - end
 		{
 			CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_DECLAREWARMOVE);
 			if (NULL != pInfo)
@@ -903,20 +944,24 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 	CvUnit* pHeadSelectedUnit;
 	CvUnit* pSelectedUnit;
 
-	CyArgsList argsList;
-	argsList.add(eMessage);	// pass in plot class
-	argsList.add(iData2);
-	argsList.add(iData3);
-	argsList.add(iData4);
-	argsList.add(iFlags);
-	argsList.add(bAlt);
-	argsList.add(bShift);
-	long lResult=0;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotSelectionListGameNetMessage", argsList.makeFunctionArgs(), &lResult);
-	if (lResult == 1)
-	{
-		return;
-	}
+	//Rhye - start
+//Speed: Modified by Kael 04/19/2007
+//	CyArgsList argsList;
+//	argsList.add(eMessage);	// pass in plot class
+//	argsList.add(iData2);
+//	argsList.add(iData3);
+//	argsList.add(iData4);
+//	argsList.add(iFlags);
+//	argsList.add(bAlt);
+//	argsList.add(bShift);
+//	long lResult=0;
+//	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotSelectionListGameNetMessage", argsList.makeFunctionArgs(), &lResult);
+//	if (lResult == 1)
+//	{
+//		return;
+//	}
+//Speed: End Modify
+	//Rhye - end
 
 	pHeadSelectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
 
@@ -955,15 +1000,37 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 			}
 			else if (eMessage == GAMEMESSAGE_DO_COMMAND)
 			{
-				pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
-
-				while (pSelectedUnitNode != NULL)
+// BUG - All Units Actions - start
+				if ((iData2 == COMMAND_DELETE) && bAlt)
 				{
+					CvPlayerAI& kPlayer = GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE());
+					int iLoop;
+					pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
 					pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
-					pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
+					UnitTypes kType = pSelectedUnit->getUnitType();
 
-					CvMessageControl::getInstance().sendDoCommand(pSelectedUnit->getID(), ((CommandTypes)iData2), iData3, iData4, bAlt);
+					for (CvUnit* pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
+					{
+						if (pLoopUnit->getUnitType() == kType)
+						{
+                            CvMessageControl::getInstance().sendDoCommand(pLoopUnit->getID(), ((CommandTypes)iData2), iData3, iData4, bAlt);
+						}
+					}
 				}
+				else
+				{
+					// unchanged
+					pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
+
+					while (pSelectedUnitNode != NULL)
+					{
+						pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+						pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
+
+						CvMessageControl::getInstance().sendDoCommand(pSelectedUnit->getID(), ((CommandTypes)iData2), iData3, iData4, bAlt);
+					}
+				}
+// BUG - All Units Actions - end
 			}
 			else if ((eMessage == GAMEMESSAGE_PUSH_MISSION) || (eMessage == GAMEMESSAGE_AUTO_MISSION))
 			{
@@ -974,7 +1041,27 @@ void CvGame::selectionListGameNetMessage(int eMessage, int iData2, int iData3, i
 
 				if (eMessage == GAMEMESSAGE_PUSH_MISSION)
 				{
-					CvMessageControl::getInstance().sendPushMission(pHeadSelectedUnit->getID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+// BUG - All Units Actions - start
+					if (((iData2 == MISSION_FORTIFY) || (iData2 == MISSION_SLEEP)) && bAlt)
+					{
+						CvPlayerAI& kPlayer = GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE());
+						int iLoop;
+						pSelectedUnitNode = gDLL->getInterfaceIFace()->headSelectionListNode();
+						pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+						UnitTypes eUnit = pSelectedUnit->getUnitType();
+
+						for(CvSelectionGroup* pLoopSelectionGroup = kPlayer.firstSelectionGroup(&iLoop); pLoopSelectionGroup; pLoopSelectionGroup = kPlayer.nextSelectionGroup(&iLoop))
+						{
+							if (pLoopSelectionGroup->allMatch(eUnit))
+                                CvMessageControl::getInstance().sendPushMission(pLoopSelectionGroup->getHeadUnit()->getID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+						}
+					}
+					else
+					{
+						// unchanged
+						CvMessageControl::getInstance().sendPushMission(pHeadSelectedUnit->getID(), ((MissionTypes)iData2), iData3, iData4, iFlags, bShift);
+					}
+// BUG - All Units Actions - end
 				}
 				else
 				{
@@ -1182,7 +1269,9 @@ void CvGame::handleAction(int iAction)
 
 	if (GC.getActionInfo(iAction).getMissionType() != NO_MISSION)
 	{
-		selectionListGameNetMessage(GAMEMESSAGE_PUSH_MISSION, GC.getActionInfo(iAction).getMissionType(), GC.getActionInfo(iAction).getMissionData(), -1, 0, false, bShift);
+// BUG - All Units Actions - start
+		selectionListGameNetMessage(GAMEMESSAGE_PUSH_MISSION, GC.getActionInfo(iAction).getMissionType(), GC.getActionInfo(iAction).getMissionData(), -1, 0, bAlt, bShift);
+// BUG - All Units Actions - end
 	}
 
 	if (GC.getActionInfo(iAction).getCommandType() != NO_COMMAND)
@@ -1222,14 +1311,18 @@ void CvGame::handleAction(int iAction)
 
 bool CvGame::canDoControl(ControlTypes eControl) const
 {
-	CyArgsList argsList;
-	argsList.add(eControl);
-	long lResult=0;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotDoControl", argsList.makeFunctionArgs(), &lResult);
-	if (lResult == 1)
-	{
-		return false;
-	}
+	//Rhye - start
+//Speed: Modified by Kael 04/19/2007
+//	CyArgsList argsList;
+//	argsList.add(eControl);
+//	long lResult=0;
+//	gDLL->getPythonIFace()->callFunction(PYGameModule, "cannotDoControl", argsList.makeFunctionArgs(), &lResult);
+//	if (lResult == 1)
+//	{
+//		return false;
+//	}
+//Speed: End Modify
+	//Rhye - end
 
 	switch (eControl)
 	{
@@ -1280,6 +1373,7 @@ bool CvGame::canDoControl(ControlTypes eControl) const
 	case CONTROL_YIELDS:
 	case CONTROL_RESOURCE_ALL:
 	case CONTROL_UNIT_ICONS:
+	case CONTROL_STABILITY_OVERLAY: //edead
 	case CONTROL_GLOBELAYER:
 	case CONTROL_SCORES:
 	case CONTROL_FREE_COLONY:
@@ -1829,6 +1923,12 @@ void CvGame::doControl(ControlTypes eControl)
 		}
 		break;
 
+	// edead: start
+	case CONTROL_STABILITY_OVERLAY:
+		gDLL->getPythonIFace()->callFunction(PYScreensModule, "toggleStabilityOverlay");
+		break;
+	// edead: end
+
 	default:
 		FAssertMsg(false, "eControl did not match any valid options");
 		break;
@@ -1987,9 +2087,10 @@ void CvGame::startFlyoutMenu(const CvPlot* pPlot, std::vector<CvFlyoutMenuData>&
 				}
 			}
 
-			if (pCity->canConscript())
+			if (pCity->canConscript()) //Leoreth
 			{
 				UnitTypes eConscriptUnit = pCity->getConscriptUnit();
+
 				if (eConscriptUnit != NO_UNIT)
 				{
 					szBuffer = gDLL->getText("TXT_KEY_DRAFT_UNIT", GC.getUnitInfo(eConscriptUnit).getDescription(), pCity->getConscriptPopulation());
@@ -2492,7 +2593,7 @@ void CvGame::nextActivePlayer(bool bForward)
 
 int CvGame::getNextSoundtrack(EraTypes eLastEra, int iLastSoundtrack) const
 {
-	EraTypes eCurEra = GET_PLAYER(getActivePlayer()).getCurrentEra();
+	EraTypes eCurEra = GET_PLAYER(getActivePlayer()).getSoundtrackEra();
 	CvEraInfo& kCurrentEra = GC.getEraInfo(eCurEra);
 	if (kCurrentEra.getNumSoundtracks() == 0)
 	{
@@ -2510,7 +2611,7 @@ int CvGame::getNextSoundtrack(EraTypes eLastEra, int iLastSoundtrack) const
 
 int CvGame::getSoundtrackSpace() const
 {
-	return std::max(1, GC.getEraInfo(GET_PLAYER(getActivePlayer()).getCurrentEra()).getSoundtrackSpace());
+	return std::max(1, GC.getEraInfo(GET_PLAYER(getActivePlayer()).getSoundtrackEra()).getSoundtrackSpace());
 }
 
 bool CvGame::isSoundtrackOverride(CvString& strSoundtrack) const

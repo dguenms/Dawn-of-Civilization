@@ -279,6 +279,12 @@ CvReligionInfo* CyGlobalContext::getReligionInfo(int i) const
 }
 
 
+CvInfoBase* CyGlobalContext::getPaganReligionInfo(int i) const
+{
+	return (i >= 0 && i < GC.getNumPaganReligionInfos()) ? &GC.getPaganReligionInfo((PaganReligionTypes)i) : NULL;
+}
+
+
 CvCorporationInfo* CyGlobalContext::getCorporationInfo(int i) const
 {
 	return (i>=0 && i<GC.getNumCorporationInfos()) ? &GC.getCorporationInfo((CorporationTypes) i) : NULL;

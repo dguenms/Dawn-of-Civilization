@@ -146,6 +146,8 @@ void CyTeamPythonInterface()
 		.def("changeExtraMoves", &CyTeam::changeExtraMoves, "void (int /*DomainTypes*/ eIndex, int iChange)")
 
 		.def("isHasMet", &CyTeam::isHasMet, "bool (int /*TeamTypes*/ eIndex)")
+		.def("cutContact", &CyTeam::cutContact, "void (int /*TeamTypes*/ eIndex)") //Rhye
+		.def("setAtWar", &CyTeam::setAtWar, "void (int /*TeamTypes*/ eIndex, bool)") //Rhye
 		.def("isAtWar", &CyTeam::isAtWar, "bool (int /*TeamTypes*/ eIndex)")
 		.def("isPermanentWarPeace", &CyTeam::isPermanentWarPeace, "bool (int /*TeamTypes*/ eIndex)")
 		.def("setPermanentWarPeace", &CyTeam::setPermanentWarPeace, "void (int /*TeamTypes*/ eIndex, bool bNewValue)")
@@ -210,7 +212,18 @@ void CyTeamPythonInterface()
 		.def("AI_shareWar", &CyTeam::AI_shareWar, "bool (TeamTypes)")
 		.def("AI_setWarPlan", &CyTeam::AI_setWarPlan, "void (int /*TeamTypes*/ eIndex, int /*WarPlanTypes*/ eNewValue)")
 		.def("AI_getAtWarCounter", &CyTeam::AI_getAtWarCounter, "int (TeamTypes)")
+		.def("AI_setAtWarCounter", &CyTeam::AI_setAtWarCounter, "void (int eTeam, int iNewValue)")
 		.def("AI_getAtPeaceCounter", &CyTeam::AI_getAtPeaceCounter, "int (TeamTypes)")
 		.def("AI_getWarSuccess", &CyTeam::AI_getWarSuccess, "int (TeamTypes)")
+
+		// Leoreth
+		.def("setOpenBorders", &CyTeam::setOpenBorders, "void (int eTeam, bool bNewValue")
+		.def("setDefensivePact", &CyTeam::setDefensivePact, "void (int eTeam, bool bNewValue")
+		.def("isCapitulated", &CyTeam::isCapitulated, "bool ()")
+		.def("canCutContact", &CyTeam::canCutContact, "bool (int eTeam)")
+		.def("getTotalTechValue", &CyTeam::getTotalTechValue, "int ()")
+		.def("changeObsoleteBuildingCount", &CyTeam::changeObsoleteBuildingCount, "void (int eBuilding, int iChange)")
+		.def("AI_getWarPlan", &CyTeam::AI_getWarPlan, "int (int eTeam)")
+		.def("isExisting", &CyTeam::isExisting, "bool ()")
 		;
 }

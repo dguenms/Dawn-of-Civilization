@@ -25,7 +25,7 @@ CySelectionGroup::CySelectionGroup(CvSelectionGroup* pSelectionGroup) : m_pSelec
 void CySelectionGroup::pushMission(MissionTypes eMission, int iData1, int iData2, int iFlags, bool bAppend, bool bManual, MissionAITypes eMissionAI, CyPlot* pMissionAIPlot, CyUnit* pMissionAIUnit)
 {
 	if (m_pSelectionGroup)
-		return m_pSelectionGroup->pushMission(eMission, iData1, iData2, iFlags, bAppend, bManual, eMissionAI, pMissionAIPlot->getPlot(), pMissionAIUnit->getUnit());
+		return m_pSelectionGroup->pushMission(eMission, iData1, iData2, iFlags, bAppend, bManual, eMissionAI, pMissionAIPlot ? pMissionAIPlot->getPlot() : NULL, pMissionAIUnit ? pMissionAIUnit->getUnit() : NULL);
 }
 
 void CySelectionGroup::pushMoveToMission(int iX, int iY)

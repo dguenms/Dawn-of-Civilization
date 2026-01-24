@@ -211,7 +211,28 @@ inline DirectionTypes directionXY(const CvPlot* pFromPlot, const CvPlot* pToPlot
 	return directionXY(dxWrap(pToPlot->getX_INLINE() - pFromPlot->getX_INLINE()), dyWrap(pToPlot->getY_INLINE() - pFromPlot->getY_INLINE()));
 }
 
+// Leoreth: parabolic decay of influence: iCenterValue at distance 0, 1 at distance iRange
+inline int distanceInfluence(int iCenterValue, int iRange, int iDistance)
+{
+	return (iCenterValue - 1) * (iDistance - iRange) * (iDistance - iRange) / (iRange * iRange) + 1;
+}
+
+inline int sgn(int x)
+{
+	return (x > 0) - (x < 0);
+}
+
+// Leoreth: multiply and divide ints without overflow as long as the result is an int
+inline int percent(int iValue, int iFactor, int iDivisor = 100)
+{
+	//FAssertMsg(iDivisor >= iFactor, "Percent calculation may overflow");
+	return (long long)iValue * (long long)iFactor / (long long)iDivisor;
+}
+
+bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization);
+
 CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
+CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
 int plotCityXY(int iDX, int iDY);																									// Exposed to Python
 int plotCityXY(const CvCity* pCity, const CvPlot* pPlot);													// Exposed to Python
 
@@ -266,6 +287,15 @@ bool isLimitedProject(ProjectTypes eProject);													// Exposed to Python
 
 __int64 getBinomialCoefficient(int iN, int iK);
 int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender);							// Exposed to Python
+/////////////////////////////////////////////////////////////////
+// ADVANCED COMABT ODDS                         PieceOfMind    //
+// BEGIN                                                       //
+/////////////////////////////////////////////////////////////////
+float getCombatOddsSpecific(CvUnit* pAttacker, CvUnit* pDefender, int n_A, int n_D);
+/////////////////////////////////////////////////////////////////
+// ADVANCED COMABT ODDS                         PieceOfMind    //
+// END                                                         //
+/////////////////////////////////////////////////////////////////
 
 int getEspionageModifier(TeamTypes eOurTeam, TeamTypes eTargetTeam);							// Exposed to Python
 
@@ -273,7 +303,8 @@ DllExport void setTradeItem(TradeData* pItem, TradeableItems eItemType = TRADE_I
 
 bool isPlotEventTrigger(EventTriggerTypes eTrigger);
 
-TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer);
+TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eIgnoreTech = NO_TECH);
+int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech);
 
 void setListHelp(wchar* szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
 void setListHelp(CvWString& szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
@@ -293,9 +324,11 @@ bool PUF_canSiege( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_isPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_canDeclareWar( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
+bool PUF_canDefendAgainst( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1); // Leoreth
 bool PUF_cannotDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefendGroupHead( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canDefendEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
+bool PUF_canDefendAgainstEnemy( const CvUnit* pUnit, int iData1, int iData2 = 1); // Leoreth
 bool PUF_canDefendPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
 bool PUF_canAirAttack( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_canAirDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
@@ -346,11 +379,51 @@ void shuffleArray(int* piShuffle, int iNum, CvRandom& rand);
 int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
 int getTurnYearForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
 
+// edead: start
+int getTurnForYear(int iTurnYear);
+int getGameTurnForYear(int iTurnYear, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
+int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
+int getTurns(int iTurns);
+// edead: end
+
+ScenarioTypes getScenario(); // Leoreth
+int getScenarioStartYear(ScenarioTypes eScenario = NO_SCENARIO); // Leoreth
+int getScenarioStartTurn(); // Leoreth
+
+BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
+UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Leoreth
+
+bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // Leoreth
+
+void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue);
+
+void log(char* format, ...);
+void log(CvWString message);
+void log(CvString logfile, CvString message);
+void logMajorError(CvWString message, int iX = -1, int iY = -1);
+char* chars(const wchar_t* wchars);
+char* chars(CvWString string);
+
+void warn(CvWString message);
+
+bool canRespawn(CivilizationTypes eCivilization);
+bool canEverRespawn(CivilizationTypes eCivilization);
+bool isCivAlive(CivilizationTypes eCivilization);
+bool validatePeriodConstant(PeriodTypes ePeriod);
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);
 void getMissionTypeString(CvWString& szString, MissionTypes eMissionType);
 void getMissionAIString(CvWString& szString, MissionAITypes eMissionAI);
 void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI);
+
+// BUG - Unit Experience - start
+/*
+ * Calculates the experience needed to reach the next level after the given level.
+ */
+int calculateExperience(int iLevel, PlayerTypes ePlayer);								// Exposed to Python
+int calculateLevel(int iExperience, PlayerTypes ePlayer);								// Exposed to Python
+// BUG - Unit Experience - end
 
 #endif

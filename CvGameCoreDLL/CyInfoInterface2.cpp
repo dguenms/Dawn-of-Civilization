@@ -58,6 +58,17 @@ void CyInfoPythonInterface2()
 
 		.def("getDerivativeCiv", &CvCivilizationInfo::getDerivativeCiv, "int ()")
 
+		.def("getIdentifier", &CvCivilizationInfo::getIdentifier, "string ()") // Leoreth
+		.def("getPaganReligion", &CvCivilizationInfo::getPaganReligion, "int ()") // Leoreth
+		.def("getImpact", &CvCivilizationInfo::getImpact, "int ()") // Leoreth
+		.def("getStartingYear", &CvCivilizationInfo::getStartingYear, "int ()") // Leoreth
+		.def("getDescriptionKeyPersistent", &CvCivilizationInfo::pyGetDescriptionKeyPersistent, "string ()") // Leoreth
+		.def("setDescriptionKeyPersistent", &CvCivilizationInfo::setDescriptionKeyPersistent, "void (string)") // Leoreth
+
+		.def("setPlayable", &CvCivilizationInfo::setPlayable, "void (bool bNewValue)") // Leoreth
+		.def("setLeader", &CvCivilizationInfo::setLeader, "void (int iLeader, bool bNewValue)") // Leoreth
+		.def("isOriginalLeader", &CvCivilizationInfo::isOriginalLeader, "bool (int iLeader)") // Leoreth
+
 		// Arrays
 
 		.def("getCivilizationBuildings", &CvCivilizationInfo::getCivilizationBuildings, "int (int i)")
@@ -107,15 +118,20 @@ void CyInfoPythonInterface2()
 		.def("getFreeUnits", &CvHandicapInfo::getFreeUnits, "int ()")
 		.def("getUnitCostPercent", &CvHandicapInfo::getUnitCostPercent, "int ()")
 		.def("getResearchPercent", &CvHandicapInfo::getResearchPercent, "int ()")
+		.def("getResearchPercentByID", &CvHandicapInfo::getResearchPercentByID, "int (int i)") //Rhye
 		.def("getDistanceMaintenancePercent", &CvHandicapInfo::getDistanceMaintenancePercent, "int ()")
+		.def("getDistanceMaintenancePercentByID", &CvHandicapInfo::getDistanceMaintenancePercentByID, "int (int i)") //Rhye
 		.def("getNumCitiesMaintenancePercent", &CvHandicapInfo::getNumCitiesMaintenancePercent, "int ()")
+		.def("getNumCitiesMaintenancePercentByID", &CvHandicapInfo::getNumCitiesMaintenancePercentByID, "int (int i)") //Rhye
 		.def("getMaxNumCitiesMaintenance", &CvHandicapInfo::getMaxNumCitiesMaintenance, "int ()")
 		.def("getColonyMaintenancePercent", &CvHandicapInfo::getColonyMaintenancePercent, "int ()")
 		.def("getMaxColonyMaintenance", &CvHandicapInfo::getMaxColonyMaintenance, "int ()")
 		.def("getCorporationMaintenancePercent", &CvHandicapInfo::getCorporationMaintenancePercent, "int ()")
 		.def("getCivicUpkeepPercent", &CvHandicapInfo::getCivicUpkeepPercent, "int ()")
+		.def("getCivicUpkeepPercentByID", &CvHandicapInfo::getCivicUpkeepPercentByID, "int (int i)") //Rhye
 		.def("getInflationPercent", &CvHandicapInfo::getInflationPercent, "int ()")
 		.def("getHealthBonus", &CvHandicapInfo::getHealthBonus, "int ()")
+		.def("getHealthBonusByID", &CvHandicapInfo::getHealthBonusByID, "int (int i)") //Rhye
 		.def("getHappyBonus", &CvHandicapInfo::getHappyBonus, "int ()")
 		.def("getAttitudeChange", &CvHandicapInfo::getAttitudeChange, "int ()")
 		.def("getNoTechTradeModifier", &CvHandicapInfo::getNoTechTradeModifier, "int ()")
@@ -158,6 +174,9 @@ void CyInfoPythonInterface2()
 		.def("getAIPerEraModifier", &CvHandicapInfo::getAIPerEraModifier, "int ()")
 		.def("getAIAdvancedStartPercent", &CvHandicapInfo::getAIAdvancedStartPercent, "int ()")
 		.def("getNumGoodies", &CvHandicapInfo::getNumGoodies, "int ()")
+
+		// Leoreth
+		.def("getBarbarianSpawnModifier", &CvHandicapInfo::getBarbarianSpawnModifier, "int ()")
 
 		// Arrays
 
@@ -273,7 +292,19 @@ void CyInfoPythonInterface2()
 		.def("getUpgradeTime", &CvImprovementInfo::getUpgradeTime, "int ()")
 		.def("getAirBombDefense", &CvImprovementInfo::getAirBombDefense, "int ()")
 		.def("getDefenseModifier", &CvImprovementInfo::getDefenseModifier, "int ()")
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       02/12/10                             jdog5000         */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+/* original bts code
 		.def("getHappiness", &CvImprovementInfo::getDefenseModifier, "int ()")
+*/
+		.def("getHappinessPercent", &CvImprovementInfo::getHappinessPercent, "int ()")
+		.def("getHealthPercent", &CvImprovementInfo::getHealthPercent, "int ()")
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 		.def("getPillageGold", &CvImprovementInfo::getPillageGold, "int ()")
 		.def("getImprovementPillage", &CvImprovementInfo::getImprovementPillage, "int ()")
 		.def("getImprovementUpgrade", &CvImprovementInfo::getImprovementUpgrade, "int ()")
@@ -292,6 +323,7 @@ void CyInfoPythonInterface2()
 		.def("isGoody", &CvImprovementInfo::isGoody, "bool ()")
 		.def("isPermanent", &CvImprovementInfo::isPermanent, "bool ()")
 		.def("isOutsideBorders", &CvImprovementInfo::isOutsideBorders, "bool ()")
+		.def("isBonusTrade", &CvImprovementInfo::isImprovementBonusTrade, "bool ()")
 
 		.def("getArtDefineTag", &CvImprovementInfo::getArtDefineTag, "string ()")
 
@@ -302,6 +334,7 @@ void CyInfoPythonInterface2()
 		.def("getRiverSideYieldChange", &CvImprovementInfo::getRiverSideYieldChange, "int (int i)")
 		.def("getHillsYieldChange", &CvImprovementInfo::getHillsYieldChange, "int (int i)")
 		.def("getIrrigatedYieldChange", &CvImprovementInfo::getIrrigatedYieldChange, "int (int i)")
+		.def("getCoastalYieldChange", &CvImprovementInfo::getCoastalYieldChange, "int (int i)") // Leoreth
 
 		.def("getTerrainMakesValid", &CvImprovementInfo::getTerrainMakesValid, "bool (int i)")
 		.def("getFeatureMakesValid", &CvImprovementInfo::getFeatureMakesValid, "bool (int i)")
@@ -324,6 +357,7 @@ void CyInfoPythonInterface2()
 		.def("getChar", &CvBonusInfo::getChar, "int ()")
 		.def("getTechReveal", &CvBonusInfo::getTechReveal, "int ()")
 		.def("getTechCityTrade", &CvBonusInfo::getTechCityTrade, "int ()")
+		.def("getTechPlayerTrade", &CvBonusInfo::getTechPlayerTrade, "int ()")
 		.def("getTechObsolete", &CvBonusInfo::getTechObsolete, "int ()")
 		.def("getAITradeModifier", &CvBonusInfo::getAITradeModifier, "int ()")
 		.def("getAIObjective", &CvBonusInfo::getAIObjective, "int ()")
@@ -345,6 +379,7 @@ void CyInfoPythonInterface2()
 		.def("getGroupRange", &CvBonusInfo::getGroupRange, "int ()")
 		.def("getGroupRand", &CvBonusInfo::getGroupRand, "int ()")
 		.def("getBonusClassType", &CvBonusInfo::getBonusClassType, "int ()")
+		.def("getAffectedCities", &CvBonusInfo::getAffectedCities, "int ()") // Leoreth
 
 		.def("isOneArea", &CvBonusInfo::isOneArea, "bool ()")
 		.def("isHills", &CvBonusInfo::isHills, "bool ()")
@@ -377,6 +412,12 @@ void CyInfoPythonInterface2()
 		.def("getDefenseModifier", &CvFeatureInfo::getDefenseModifier, "int ()")
 		.def("getAdvancedStartRemoveCost", &CvFeatureInfo::getAdvancedStartRemoveCost, "int ()")
 		.def("getTurnDamage", &CvFeatureInfo::getTurnDamage, "int ()")
+		.def("getGlobalWarmingDefense", &CvFeatureInfo::getGlobalWarmingDefense, "int ()")
+// BUG - Global Warming Mod - start
+#ifdef _MOD_GWARM
+		.def("getWarmingDefense", &CvFeatureInfo::getWarmingDefense, "int ()") //GWMod new XML field M.A.
+#endif
+// BUG - Global Warming Mod - end
 		
 		.def("isNoCoast", &CvFeatureInfo::isNoCoast, "bool ()")
 		.def("isNoRiver", &CvFeatureInfo::isNoRiver, "bool ()")
@@ -389,6 +430,7 @@ void CyInfoPythonInterface2()
 		.def("isNoImprovement", &CvFeatureInfo::isNoImprovement, "bool ()")
 		.def("isVisibleAlways", &CvFeatureInfo::isVisibleAlways, "bool ()")
 		.def("isNukeImmune", &CvFeatureInfo::isNukeImmune, "bool ()")
+		.def("getVarietyButton", &CvFeatureInfo::getVarietyButton, "string (int variety)")
 
 		// Arrays
 

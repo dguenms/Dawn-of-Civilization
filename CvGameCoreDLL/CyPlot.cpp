@@ -25,6 +25,14 @@ void CyPlot::erase()
 		m_pPlot->erase();
 }
 
+//Rhye - start
+void CyPlot::eraseAIDevelopment()
+{
+	if (m_pPlot)
+		m_pPlot->eraseAIDevelopment();
+}
+//Rhye - end
+
 NiPoint3 CyPlot::getPoint()
 {
 	return m_pPlot ? m_pPlot->getPoint() : NiPoint3(0,0,0);
@@ -91,7 +99,7 @@ bool CyPlot::isAdjacentToLand()
 
 bool CyPlot::isCoastalLand()
 {
-	return m_pPlot ? m_pPlot->isCoastalLand() : false;
+	return m_pPlot ? m_pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN()) : false;
 }
 
 bool CyPlot::isWithinTeamCityRadius(int /*TeamTypes*/ eTeam, int /*PlayerTypes*/ eIgnorePlayer)
@@ -477,6 +485,14 @@ int CyPlot::getArea()
 	return m_pPlot ? m_pPlot->getArea() : -1;
 }
 
+//Rhye - start
+void CyPlot::setArea(int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setArea(iNewValue);
+}
+//Rhye - end
+
 int CyPlot::getUpgradeProgress()
 {
 	return m_pPlot ? m_pPlot->getUpgradeProgress() : -1;
@@ -622,6 +638,7 @@ void CyPlot::setOwnerNoUnitCheck(int /*PlayerTypes*/ eNewValue)
 	if (m_pPlot)
 		m_pPlot->setOwner((PlayerTypes) eNewValue, false, true);
 }
+
 PlotTypes CyPlot::getPlotType()
 {
 	return m_pPlot ? m_pPlot->getPlotType() : NO_PLOT;
@@ -761,10 +778,20 @@ int /* BonusTypes */ CyPlot::getNonObsoleteBonusType(int /*TeamTypes*/ eTeam)
 	return m_pPlot ? m_pPlot->getNonObsoleteBonusType((TeamTypes)eTeam) : -1;
 }
 
+int /* BonusTypes */ CyPlot::getBonusVarietyType(int /*TeamTypes*/ eTeam)
+{
+	return m_pPlot ? m_pPlot->getBonusVarietyType((TeamTypes)eTeam) : -1;
+}
+
 void CyPlot::setBonusType(int /* BonusTypes */ eNewValue)
 {
 	if (m_pPlot)
 		m_pPlot->setBonusType((BonusTypes)eNewValue);
+}
+
+void CyPlot::setBonusVarietyType(int /* BonusTypes */ eNewValue)
+{
+	if (m_pPlot) m_pPlot->setBonusVarietyType((BonusTypes)eNewValue);
 }
 
 int /* ImprovementTypes */ CyPlot::getImprovementType()
@@ -868,6 +895,11 @@ bool CyPlot::hasYield()
 int CyPlot::getCulture(int /*PlayerTypes*/ eIndex)
 {
 	return m_pPlot ? m_pPlot->getCulture((PlayerTypes)eIndex) : -1;
+}
+
+int CyPlot::getCivCulture(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->getActualCulture((CivilizationTypes)iCivilization) : -1;
 }
 
 int CyPlot::countTotalCulture()
@@ -1034,4 +1066,192 @@ void CyPlot::setScriptData(std::string szNewValue)
 {
 	if (m_pPlot)
 		m_pPlot->setScriptData(szNewValue.c_str());
+}
+
+int CyPlot::getRegionID()
+{
+	return m_pPlot ? m_pPlot->getRegionID() : -1;
+}
+
+void CyPlot::setRegionID(int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setRegionID(iNewValue);
+}
+
+std::wstring CyPlot::getRegionName()
+{
+	return m_pPlot ? m_pPlot->getRegionName() : L"";
+}
+
+int CyPlot::getRegionGroup()
+{
+	return m_pPlot ? m_pPlot->getRegionGroup() : -1;
+}
+
+bool CyPlot::isCore(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->isCore((CivilizationTypes)iCivilization) : false;
+}
+
+bool CyPlot::isPlayerCore(int iPlayer)
+{
+	return m_pPlot ? m_pPlot->isCore((PlayerTypes)iPlayer) : false;
+}
+
+bool CyPlot::isOwnerCore()
+{
+	return m_pPlot ? m_pPlot->isCore() : false;
+}
+
+void CyPlot::setCore(int iCivilization, bool bNewValue)
+{
+	if (m_pPlot) m_pPlot->setCore((CivilizationTypes)iCivilization, bNewValue);
+}
+
+int CyPlot::getSettlerValue(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->getSettlerValue((CivilizationTypes)iCivilization) : -1;
+}
+
+int CyPlot::getPlayerSettlerValue(int iPlayer)
+{
+	return m_pPlot ? m_pPlot->getSettlerValue((PlayerTypes)iPlayer) : -1;
+}
+
+void CyPlot::setSettlerValue(int iCivilization, int iNewValue)
+{
+	if (m_pPlot) m_pPlot->setSettlerValue((CivilizationTypes)iCivilization, iNewValue);
+}
+
+int CyPlot::getWarValue(int iCivilization)
+{
+	return m_pPlot ? m_pPlot->getWarValue((CivilizationTypes)iCivilization) : -1;
+}
+
+int CyPlot::getPlayerWarValue(int iPlayer)
+{
+	return m_pPlot ? m_pPlot->getWarValue((PlayerTypes)iPlayer) : -1;
+}
+
+void CyPlot::setWarValue(int iCivilization, int iNewValue)
+{
+	if (m_pPlot) m_pPlot->setWarValue((CivilizationTypes)iCivilization, iNewValue);
+}
+
+int CyPlot::getSpreadFactor(int eReligion)
+{
+	return m_pPlot ? m_pPlot->getSpreadFactor((ReligionTypes)eReligion) : -1;
+}
+
+void CyPlot::setSpreadFactor(int eReligion, int iNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setSpreadFactor((ReligionTypes)eReligion, iNewValue);
+}
+
+bool CyPlot::isWithinGreatWall()
+{
+	return m_pPlot ? m_pPlot->isWithinGreatWall() : -1;
+}
+
+void CyPlot::setWithinGreatWall(bool bNewValue)
+{
+	if (m_pPlot)
+		m_pPlot->setWithinGreatWall(bNewValue);
+}
+
+void CyPlot::cameraLookAt()
+{
+	if (m_pPlot) m_pPlot->cameraLookAt();
+}
+
+int CyPlot::calculateOverallCulturePercent(int ePlayer)
+{
+	return m_pPlot ? m_pPlot->calculateOverallCulturePercent((PlayerTypes)ePlayer) : 0;
+}
+
+void CyPlot::updateCulture()
+{
+	if (m_pPlot) m_pPlot->updateCulture(true, true);
+}
+
+void CyPlot::setCultureConversion(int ePlayer, int iRate)
+{
+	if (m_pPlot) m_pPlot->setCultureConversion((PlayerTypes)ePlayer, iRate);
+}
+
+void CyPlot::resetCultureConversion()
+{
+	if (m_pPlot) m_pPlot->resetCultureConversion();
+}
+
+int CyPlot::getCultureConversionCivilization()
+{
+	return m_pPlot ? m_pPlot->getCultureConversionCivilization() : -1;
+}
+
+int CyPlot::getCultureConversionRate()
+{
+	return m_pPlot ? m_pPlot->getCultureConversionRate() : -1;
+}
+
+int CyPlot::getActualCulture(int ePlayer)
+{
+	return m_pPlot ? m_pPlot->getActualCulture((PlayerTypes)ePlayer) : -1;
+}
+
+void CyPlot::setBirthProtected(int ePlayer)
+{
+	if (m_pPlot) m_pPlot->setBirthProtected((PlayerTypes)ePlayer);
+}
+
+void CyPlot::resetBirthProtected()
+{
+	if (m_pPlot) m_pPlot->resetBirthProtected();
+}
+
+int CyPlot::getBirthProtected()
+{
+	return m_pPlot ? m_pPlot->getBirthProtected() : -1;
+}
+
+bool CyPlot::isBirthProtected()
+{
+	return m_pPlot ? m_pPlot->isBirthProtected() : -1;
+}
+
+void CyPlot::setExpansion(int ePlayer)
+{
+	if (m_pPlot) m_pPlot->setExpansion((PlayerTypes)ePlayer);
+}
+
+void CyPlot::resetExpansion()
+{
+	if (m_pPlot) m_pPlot->resetExpansion();
+}
+
+int CyPlot::getExpansion()
+{
+	return m_pPlot ? m_pPlot->getExpansion() : -1;
+}
+
+bool CyPlot::isExpansion()
+{
+	return m_pPlot ? m_pPlot->isExpansion() : -1;
+}
+
+void CyPlot::setRevealedOwner(int eTeam, int eNewValue)
+{
+	if (m_pPlot) m_pPlot->setRevealedOwner((TeamTypes)eTeam, (PlayerTypes)eNewValue);
+}
+
+int CyPlot::getContinentArea()
+{
+	return m_pPlot ? m_pPlot->getContinentArea() : -1;
+}
+
+void CyPlot::updateRevealedOwner(int eTeam)
+{
+	if (m_pPlot) m_pPlot->updateRevealedOwner((TeamTypes)eTeam);
 }

@@ -263,3 +263,58 @@ int cyGetEspionageModifier(int iOurTeam, int iTargetTeam)
 	return getEspionageModifier((TeamTypes)iOurTeam, (TeamTypes)iTargetTeam);
 }
 
+// BUG - Unit Experience - start
+int cyCalculateExperience(int iLevel, int ePlayer)
+{
+	return calculateExperience(iLevel, (PlayerTypes)ePlayer);
+}
+
+int cyCalculateLevel(int iExperience, int ePlayer)
+{
+	return calculateLevel(iExperience, (PlayerTypes)ePlayer);
+}
+// BUG - Unit Experience - end
+
+
+
+// edead: start
+int cyGetTurnForYear(int iTurnYear)
+{
+	return getTurnForYear(iTurnYear);
+}
+
+int cyGetGameTurnForYear(int iTurnYear, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)
+{
+	return getGameTurnForYear(iTurnYear, iStartYear, (CalendarTypes)eCalendar, (GameSpeedTypes)eSpeed);
+}
+
+int cyGetGameTurnForMonth(int iTurnMonth, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)
+{
+	return getGameTurnForMonth(iTurnMonth, iStartYear, (CalendarTypes)eCalendar, (GameSpeedTypes)eSpeed);
+}
+
+int cyGetTurnYearForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)
+{
+	return getTurnYearForGame(iGameTurn, iStartYear, (CalendarTypes)eCalendar, (GameSpeedTypes)eSpeed);
+}
+
+int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ eCalendar, int /*GameSpeedTypes*/ eSpeed)
+{
+	return getTurnMonthForGame(iGameTurn, iStartYear, (CalendarTypes)eCalendar, (GameSpeedTypes)eSpeed);
+}
+// edead: end
+
+void cyLog(std::string logfile, std::string message)
+{
+	log(CvString(logfile), CvString(message));
+}
+
+void cySetDirty(int iDirtyBit, bool bNewValue)
+{
+	setDirty((InterfaceDirtyBits)iDirtyBit, bNewValue);
+}
+
+bool cyValidatePeriodConstant(int iPeriod)
+{
+	return validatePeriodConstant((PeriodTypes)iPeriod);
+}

@@ -21,6 +21,7 @@ public:
 	void setPlot(CvPlot* p) { m_pPlot=p; }	// Call from C++
 	bool isNone() { return (m_pPlot==NULL); }
 	void erase();
+	void eraseAIDevelopment(); //Rhye
 	DllExport NiPoint3 getPoint();
 	int getTeam();
 	
@@ -128,6 +129,7 @@ public:
 	CyArea* area();
 	CyArea* waterArea();
 	int getArea();
+	void setArea(int iNewValue); //Rhye
 	int getFeatureVariety();
 
 	int getOwnershipDuration();
@@ -190,7 +192,9 @@ public:
 	void resetFeatureModel();
 	int /* BonusTypes */ getBonusType(int /*TeamTypes*/ eTeam); 
 	int /* BonusTypes */ getNonObsoleteBonusType(int /*TeamTypes*/ eTeam); 
+	int /* BonusTypes */ getBonusVarietyType(int /* TeamTypes */ eTeam);
 	void setBonusType(int /* BonusTypes */ eNewValue);
+	void setBonusVarietyType(int /* BonusTypes */ eNewValue);
 	int /* ImprovementTypes */ getImprovementType();
 	void setImprovementType(int /* ImprovementTypes */ eNewValue);
 	int /* RouteTypes */ getRouteType();
@@ -213,10 +217,12 @@ public:
 	bool hasYield();
 
 	int getCulture(int /*PlayerTypes*/ eIndex);
+	int getCivCulture(int iCivilization); // Leoreth
 	int countTotalCulture();																							
 	int /*TeamTypes*/ findHighestCultureTeam();
 
 	int calculateCulturePercent(int /*PlayerTypes*/ eIndex);	
+	int calculateOverallCulturePercent(int /*PlayerTypes*/ eIndex);
 	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);	
 	void setCulture(int /*PlayerTypes*/ eIndex, int iNewValue, bool bUpdate);
 	void changeCulture(int /*PlayerTypes*/ eIndex, int iChange, bool bUpdate);
@@ -258,6 +264,56 @@ public:
 
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
+
+	// Leoreth
+	int getRegionID();
+	void setRegionID(int iNewValue);
+	std::wstring getRegionName();
+
+	int getRegionGroup();
+
+	bool isCore(int iCivilization);
+	bool isPlayerCore(int iPlayer);
+	bool isOwnerCore();
+	void setCore(int iCivilization, bool bNewValue);
+
+	int getSettlerValue(int iCivilization);
+	int getPlayerSettlerValue(int iPlayer);
+	void setSettlerValue(int iCivilization, int iNewValue);
+
+	int getWarValue(int iCivilization);
+	int getPlayerWarValue(int iPlayer);
+	void setWarValue(int iCivilization, int iNewValue);
+
+	int getSpreadFactor(int eReligion);
+	void setSpreadFactor(int eReligion, int iNewValue);
+
+	bool isWithinGreatWall();
+	void setWithinGreatWall(bool bNewValue);
+	void cameraLookAt();
+	void updateCulture();
+
+	void setCultureConversion(int ePlayer, int iRate);
+	void resetCultureConversion();
+	int getCultureConversionCivilization();
+	int getCultureConversionRate();
+
+	int getActualCulture(int ePlayer);
+
+	void setBirthProtected(int ePlayer);
+	void resetBirthProtected();
+	int getBirthProtected();
+	bool isBirthProtected();
+
+	void setExpansion(int ePlayer);
+	void resetExpansion();
+	int getExpansion();
+	bool isExpansion();
+
+	void setRevealedOwner(int eTeam, int eNewValue);
+	void updateRevealedOwner(int eTeam);
+
+	int getContinentArea();
 
 private:
 	CvPlot* m_pPlot;

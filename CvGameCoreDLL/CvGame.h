@@ -24,6 +24,9 @@ public:
 	DllExport CvGame();
 	DllExport virtual ~CvGame();
 
+
+	void logMsg(char* format, ... ); //Rhye (jdog)
+
 	DllExport void init(HandicapTypes eHandicap);
 	DllExport void reset(HandicapTypes eHandicap, bool bConstructorCall = false);
 
@@ -34,7 +37,18 @@ protected:
 public:
 
 	DllExport void setInitialItems();
-	DllExport void regenerateMap();
+
+// BUG - MapFinder - start
+	DllExport bool canRegenerateMap() const;								// Exposed to Python
+	DllExport void regenerateMap();											// Exposed to Python
+// BUG - MapFinder - end
+
+// BUFFY - Security Checks - start
+#ifdef _BUFFY
+	int checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const;		// Exposed to Python
+	int getWarningStatus() const;											// Exposed to Python
+#endif
+// BUFFY - Security Checks - end
 
 	DllExport void initDiplomacy();
 	DllExport void initFreeState();
@@ -110,6 +124,7 @@ public:
 	void updateSecretaryGeneral();
 
 	DllExport int countCivPlayersAlive() const;																		// Exposed to Python
+	DllExport int countMajorPlayersAlive() const;
 	DllExport int countCivPlayersEverAlive() const;																// Exposed to Python
 	DllExport int countCivTeamsAlive() const;																			// Exposed to Python
 	DllExport int countCivTeamsEverAlive() const;																	// Exposed to Python
@@ -176,6 +191,7 @@ public:
 
 	DllExport int getTurnSlice() const;																			// Exposed to Python
 	int getMinutesPlayed() const;																	// Exposed to Python
+	int getSecondsPlayed() const;
 	void setTurnSlice(int iNewValue);
 	void changeTurnSlice(int iChange);
 
@@ -246,6 +262,8 @@ public:
 
 	bool isCircumnavigated() const;																// Exposed to Python
 	void makeCircumnavigated();																		// Exposed to Python
+	int getCircumnavigated();			//Rhye													// Exposed to Python
+	void setCircumnavigated(int i);		//Rhye
 	bool circumnavigationAvailable() const;
 
 	bool isDiploVote(VoteSourceTypes eVoteSource) const;																			// Exposed to Python
@@ -375,6 +393,7 @@ public:
 
 	int getReligionGameTurnFounded(ReligionTypes eIndex);												// Exposed to Python
 	bool isReligionFounded(ReligionTypes eIndex);																// Exposed to Python
+	void setReligionGameTurnFounded(ReligionTypes eReligion, int iGameTurn); // Leoreth
 	void makeReligionFounded(ReligionTypes eIndex, PlayerTypes ePlayer);
 
 	bool isReligionSlotTaken(ReligionTypes eReligion) const;											// Exposed to Python
@@ -434,6 +453,11 @@ public:
 	DllExport int calculateSyncChecksum();																								// Exposed to Python	
 	DllExport int calculateOptionsChecksum();																							// Exposed to Python	
 
+	
+	bool changePlayer( int playerIdx, int newCivType, int newLeader, int teamIdx, bool bIsHuman, bool bChangeGraphics ); //Rhye (jdog)
+	void convertUnits( int playerIdx ); //Rhye (jdog)
+
+
 	void addReplayMessage(ReplayMessageTypes eType = NO_REPLAY_MESSAGE, PlayerTypes ePlayer = NO_PLAYER, CvWString pszText = L"", 
 		int iPlotX = -1, int iPlotY = -1, ColorTypes eColor = NO_COLOR);
 	void clearReplayMessageMap();
@@ -445,6 +469,14 @@ public:
 	LPCWSTR getReplayMessageText(uint i) const;
 	uint getNumReplayMessages() const;
 	ColorTypes getReplayMessageColor(uint i) const;
+
+	//Leoreth
+	void updateTechRanks();
+	int getTechRank(TeamTypes eTeam) const;
+	void setTechRank(int iRank, TeamTypes eTeam);
+
+	int getMedianTechValue() const;
+	void setMedianTechValue(int iValue);
 
 	DllExport virtual void read(FDataStreamBase* pStream);
 	DllExport virtual void write(FDataStreamBase* pStream);
@@ -462,7 +494,7 @@ public:
 
 	bool hasSkippedSaveChecksum() const;
 
-	void addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv);   // Exposed to Python
+	void addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv, int iBirthTurn, bool bAlive, bool bMinor);   // Exposed to Python
 
 	bool testVictory(VictoryTypes eVictory, TeamTypes eTeam, bool* pbEndScore = NULL) const;
 
@@ -542,6 +574,48 @@ public:
 
 	DllExport void handleDiplomacySetAIComment(DiploCommentTypes eComment) const;
 
+	// Leoreth
+	bool isNeighbors(PlayerTypes ePlayer1, PlayerTypes ePlayer2) const;
+	TeamTypes determineWinner(TeamTypes eTeam1, TeamTypes eTeam2) const;
+	void autosave(bool bInitial = false);
+	bool isPlayerAutoplay(PlayerTypes ePlayer = NO_PLAYER);
+	void setCityScreenOwner(PlayerTypes ePlayer);
+	void resetCityScreenOwner();
+	PlayerTypes getCityScreenOwner() const;
+
+	bool isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevels eNotificationLevel) const;
+
+	NotificationLevels getGreatPeopleNotifications() const;
+	void setGreatPeopleNotifications(NotificationLevels eNotificationLevel);
+	bool isGreatPeopleNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+	NotificationLevels getReligionSpreadNotifications() const;
+	void setReligionSpreadNotifications(NotificationLevels eNotificationLevel);
+	bool isReligionSpreadNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+	NotificationLevels getEventEffectNotifications() const;
+	void setEventEffectNotifications(NotificationLevels eNotificationLevel);
+	bool isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const;
+
+	// Leoreth: graphics paging
+	int getXResolution() const;
+	void setXResolution(int iNewValue);
+	void changeXResolution(int iChange);
+
+	int getYResolution() const;
+	void setYResolution(int iNewValue);
+	void changeYResolution(int iChange);
+
+	PeriodTypes getPeriod(CivilizationTypes eCivilization) const;
+	void setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod);
+
+	int getCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn) const;
+	void setCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn, int iValue);
+
+	CivilizationTypes getFirstDiscovered(TechTypes eTech) const;
+	void setFirstDiscovered(TechTypes eTech, CivilizationTypes eCiv);
+
+	int getFirstDiscoveredTurn(TechTypes eTech) const;
+	void setFirstDiscoveredTurn(TechTypes eTech, int iTurn);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -565,6 +639,7 @@ protected:
 	int m_iInitTech;
 	int m_iInitWonders;
 	int m_iAIAutoPlay;
+	int m_iCircumnavigated; //Rhye
 
 	unsigned int m_uiInitialTime;
 
@@ -585,6 +660,12 @@ protected:
 	VictoryTypes m_eVictory;
 	GameStateTypes m_eGameState;
 	PlayerTypes m_eEventPlayer;
+	PlayerTypes m_eCityScreenOwner;
+
+	// Leoreth
+	NotificationLevels m_eGreatPeopleNotifications;
+	NotificationLevels m_eReligionSpreadNotifications;
+	NotificationLevels m_eEventEffectNotifications;
 
 	CvString m_szScriptData;
 
@@ -594,6 +675,13 @@ protected:
 	int* m_aiRankTeam;						// Ordered by rank...
 	int* m_aiTeamRank;						// Ordered by team ID...
 	int* m_aiTeamScore;						// Ordered by team ID...
+
+	// Leoreth
+	int* m_aiTechRankTeam;
+	char* m_aiCivPeriod;
+	char* m_aiFirstDiscovered;
+	int* m_aiFirstDiscoveredTurn;
+	int m_iMedianTechValue;
 
 	int* m_paiUnitCreatedCount;
 	int* m_paiUnitClassCreatedCount;
@@ -616,6 +704,9 @@ protected:
 
 	int** m_apaiPlayerVote;
 
+	// Leoreth
+	std::hash_map<int, std::hash_map<int, int> >* m_aiCivilizationHistory;
+
 	std::vector<CvWString> m_aszDestroyedCities;
 	std::vector<CvWString> m_aszGreatPeopleBorn;
 
@@ -630,6 +721,13 @@ protected:
 	CvReplayInfo* m_pReplayInfo;
 
 	int m_iNumSessions;
+
+	// Leoreth: graphics paging
+	int m_iLastLookatX;
+	int m_iLastLookatY;
+	int m_iXResolution;
+	int m_iYResolution;
+	bool m_bWasGraphicsPagingEnabled;
 
 	std::vector<PlotExtraYield> m_aPlotExtraYields;
 	std::vector<PlotExtraCost> m_aPlotExtraCosts;

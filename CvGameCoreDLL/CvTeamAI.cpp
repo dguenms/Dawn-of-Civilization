@@ -15,6 +15,9 @@
 #include "CyArgsList.h"
 #include "CvDLLPythonIFaceBase.h"
 
+#include "CvRhyes.h" //Rhye
+#include <set>
+
 // statics
 
 CvTeamAI* CvTeamAI::m_aTeams = NULL;
@@ -56,6 +59,10 @@ CvTeamAI::CvTeamAI()
 	m_aiEnemyPeacetimeGrantValue = new int[MAX_TEAMS];
 	m_aeWarPlan = new WarPlanTypes[MAX_TEAMS];
 
+	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+	m_aiLandTargetCache = new unsigned short[MAX_TEAMS];
+	// Sanguo Mod Performance, end
+
 
 	AI_reset(true);
 }
@@ -76,6 +83,9 @@ CvTeamAI::~CvTeamAI()
 	SAFE_DELETE_ARRAY(m_aiEnemyPeacetimeTradeValue);
 	SAFE_DELETE_ARRAY(m_aiEnemyPeacetimeGrantValue);
 	SAFE_DELETE_ARRAY(m_aeWarPlan);
+	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+	SAFE_DELETE_ARRAY(m_aiLandTargetCache);
+	// Sanguo Mod Performance, end
 }
 
 
@@ -113,6 +123,10 @@ void CvTeamAI::AI_reset(bool bConstructor)
 		m_aiEnemyPeacetimeGrantValue[iI] = 0;
 		m_aeWarPlan[iI] = NO_WARPLAN;
 
+		// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+		m_aiLandTargetCache[iI] = 0;
+		// Sanguo Mod Performance, end
+
 		if (!bConstructor && getID() != NO_TEAM)
 		{
 			TeamTypes eLoopTeam = (TeamTypes) iI;
@@ -128,6 +142,9 @@ void CvTeamAI::AI_reset(bool bConstructor)
 			kLoopTeam.m_aiEnemyPeacetimeTradeValue[getID()] = 0;
 			kLoopTeam.m_aiEnemyPeacetimeGrantValue[getID()] = 0;
 			kLoopTeam.m_aeWarPlan[getID()] = NO_WARPLAN;
+			// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+			kLoopTeam.m_aiLandTargetCache[getID()] = 0;
+			// Sanguo Mod Performance, end
 		}
 	}
 }
@@ -136,6 +153,10 @@ void CvTeamAI::AI_reset(bool bConstructor)
 void CvTeamAI::AI_doTurnPre()
 {
 	AI_doCounter();
+
+	// Sanguo Mod Performance, start, added by poyuzhe 7.31.09
+	AI_invalidateLandTargetCache();
+	// Sanguo Mod Performance, end
 
 	if (isHuman())
 	{
@@ -181,18 +202,23 @@ void CvTeamAI::AI_doTurnPost()
 
 void CvTeamAI::AI_makeAssignWorkDirty()
 {
-	int iI;
-
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// GET_PLAYER((PlayerTypes)iI).AI_makeAssignWorkDirty();
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				GET_PLAYER((PlayerTypes)iI).AI_makeAssignWorkDirty();
-			}
-		}
+		GET_PLAYER(*iter).AI_makeAssignWorkDirty();
 	}
+	// Sanguo Mod Performance, end
 }
 
 
@@ -220,41 +246,56 @@ void CvTeamAI::AI_updateAreaStragies(bool bTargets)
 
 void CvTeamAI::AI_updateAreaTargets()
 {
-	int iI;
-
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// GET_PLAYER((PlayerTypes)iI).AI_updateAreaTargets();
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				GET_PLAYER((PlayerTypes)iI).AI_updateAreaTargets();
-			}
-		}
+		GET_PLAYER(*iter).AI_updateAreaTargets();
 	}
+	// Sanguo Mod Performance, end
 }
 
 
 int CvTeamAI::AI_countFinancialTrouble() const
 {
-	int iCount;
-	int iI;
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	//int iCount;
+	//int iI;
 
-	iCount = 0;
+	//iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).AI_isFinancialTrouble())
+				// {
+					// iCount++;
+				// }
+			// }
+		// }
+	// }
+	int iCount = 0;
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).AI_isFinancialTrouble())
+		if (GET_PLAYER(*iter).AI_isFinancialTrouble())
 				{
 					iCount++;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return iCount;
 }
@@ -262,21 +303,28 @@ int CvTeamAI::AI_countFinancialTrouble() const
 
 int CvTeamAI::AI_countMilitaryWeight(CvArea* pArea) const
 {
-	int iCount;
-	int iI;
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iCount;
+	// int iI;
 
-	iCount = 0;
+	// iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iCount += GET_PLAYER((PlayerTypes)iI).AI_militaryWeight(pArea);
+			// }
+		// }
+	// }
+	int iCount = 0;
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				iCount += GET_PLAYER((PlayerTypes)iI).AI_militaryWeight(pArea);
-			}
-		}
+		iCount += GET_PLAYER(*iter).AI_militaryWeight(pArea);
 	}
+	// Sanguo Mod Performance, end
 
 	return iCount;
 }
@@ -284,21 +332,30 @@ int CvTeamAI::AI_countMilitaryWeight(CvArea* pArea) const
 
 bool CvTeamAI::AI_isAnyCapitalAreaAlone() const
 {
-	int iI;
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).AI_isCapitalAreaAlone())
+				// {
+					// return true;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).AI_isCapitalAreaAlone())
+		if (GET_PLAYER(*iter).AI_isCapitalAreaAlone())
 				{
 					return true;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return false;
 }
@@ -306,21 +363,30 @@ bool CvTeamAI::AI_isAnyCapitalAreaAlone() const
 
 bool CvTeamAI::AI_isPrimaryArea(CvArea* pArea) const
 {
-	int iI;
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// int iI;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).AI_isPrimaryArea(pArea))
+				// {
+					// return true;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).AI_isPrimaryArea(pArea))
+		if (GET_PLAYER(*iter).AI_isPrimaryArea(pArea))
 				{
 					return true;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return false;
 }
@@ -402,7 +468,7 @@ AreaAITypes CvTeamAI::AI_calculateAreaAIType(CvArea* pArea, bool bPreparingTotal
 				if (AI_getWarPlan((TeamTypes)iI) != NO_WARPLAN)
 				{
 					FAssert(((TeamTypes)iI) != getID());
-					FAssert(isHasMet((TeamTypes)iI) || GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR));
+					//FAssert(isHasMet((TeamTypes)iI) || GC.getGameINLINE().isOption(GAMEOPTION_ALWAYS_WAR));
 
 					if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_ATTACKED_RECENT)
 					{
@@ -451,23 +517,36 @@ AreaAITypes CvTeamAI::AI_calculateAreaAIType(CvArea* pArea, bool bPreparingTotal
 
 		if (bTargets)
 		{
-			for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
-			{
-				CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)iI);
-				if (kPlayer.isAlive())
-				{
-					if (kPlayer.getTeam() == getID())
+			// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+			// for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
+			// {
+				// CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)iI);
+				// if (kPlayer.isAlive())
+				// {
+					// if (kPlayer.getTeam() == getID())
+					// {
+						// if (kPlayer.AI_isDoStrategy(AI_STRATEGY_DAGGER) || kPlayer.AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
+						// {
+							// if (pArea->getCitiesPerPlayer((PlayerTypes)iPlayer) > 0)
+							// {
+								// return AREAAI_MASSING;
+							// }
+						// }
+					// }
+				// }
+			// }
+			for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 					{
+				CvPlayerAI& kPlayer = GET_PLAYER(*iter);
 						if (kPlayer.AI_isDoStrategy(AI_STRATEGY_DAGGER) || kPlayer.AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
 						{
-							if (pArea->getCitiesPerPlayer((PlayerTypes)iPlayer) > 0)
+					if (pArea->getCitiesPerPlayer(*iter) > 0)
 							{
 								return AREAAI_MASSING;
 							}
 						}
 					}
-				}
-			}
+			// Sanguo Mod Performance, end
 			if (bRecentAttack)
 			{
 				int iPower = countPowerByArea(pArea);
@@ -590,24 +669,30 @@ int CvTeamAI::AI_calculateCapitalProximity(TeamTypes eTeam) const
 	CvCity* pTheirCapitalCity;
 	int iTotalDistance;
 	int iCount;
-	int iI, iJ;
+	int /*iI,*/ iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
 	iTotalDistance = 0;
 	iCount = 0;
-	
+
 	int iMinDistance = MAX_INT;
 	int iMaxDistance = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// pOurCapitalCity = GET_PLAYER((PlayerTypes)iI).getCapitalCity();
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		pOurCapitalCity = GET_PLAYER(*iter).getCapitalCity();
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
 			{
-				pOurCapitalCity = GET_PLAYER((PlayerTypes)iI).getCapitalCity();
-
+	// Sanguo Mod Performance, end
 				if (pOurCapitalCity != NULL)
 				{
 					for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
@@ -636,7 +721,7 @@ int CvTeamAI::AI_calculateCapitalProximity(TeamTypes eTeam) const
 			}
 		}
 	}
-	
+
 	if (iCount > 0)
 	{
 		FAssert(iMaxDistance > 0);
@@ -670,17 +755,30 @@ bool CvTeamAI::AI_isWarPossible() const
 
 bool CvTeamAI::AI_isLandTarget(TeamTypes eTeam) const
 {
-	if (!AI_hasCitiesInPrimaryArea(eTeam))
+	PROFILE_FUNC();
+	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+	if (m_aiLandTargetCache[eTeam] != MAX_UNSIGNED_SHORT)
 	{
-		return false;
+		return m_aiLandTargetCache[eTeam];
 	}
-
-	if (AI_calculateAdjacentLandPlots(eTeam) < 8)
+	else
 	{
-		return false;
-	}
+		if (!AI_hasCitiesInPrimaryArea(eTeam))
+		{
+			m_aiLandTargetCache[eTeam] = 0;
+			return false;
+		}
 
-	return true;
+		if (AI_calculateAdjacentLandPlots(eTeam) < 8)
+		{
+			m_aiLandTargetCache[eTeam] = 0;
+			return false;
+		}
+
+		m_aiLandTargetCache[eTeam] = 1;
+		return true;
+	}
+	// Sanguo Mod Performance, end
 }
 
 // this determines if eTeam or any of its allies are land targets of us
@@ -773,33 +871,43 @@ int CvTeamAI::AI_getAttitudeVal(TeamTypes eTeam, bool bForced) const
 {
 	int iAttitudeVal;
 	int iCount;
-	int iI, iJ;
+	//int iI, iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
 	iAttitudeVal = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				// {
+					// if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+					// {
+						// if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
+						// {
+							// iAttitudeVal += GET_PLAYER((PlayerTypes)iI).AI_getAttitudeVal((PlayerTypes)iJ, bForced);
+							// iCount++;
+						// }
+					// }
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+		for(int iI = 0; iI < GET_TEAM(eTeam).getPlayerMemberListSize(); iI++)
 				{
-					if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-					{
-						if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
-						{
-							iAttitudeVal += GET_PLAYER((PlayerTypes)iI).AI_getAttitudeVal((PlayerTypes)iJ, bForced);
+			iAttitudeVal += GET_PLAYER(*iter1).AI_getAttitudeVal(GET_TEAM(eTeam).getPlayerMemberAt(iI), bForced);
 							iCount++;
 						}
 					}
-				}
-			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -814,33 +922,43 @@ int CvTeamAI::AI_getMemoryCount(TeamTypes eTeam, MemoryTypes eMemory) const
 {
 	int iMemoryCount;
 	int iCount;
-	int iI, iJ;
+	//int iI, iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
 	iMemoryCount = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				// {
+					// if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+					// {
+						// if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
+						// {
+							// iMemoryCount += GET_PLAYER((PlayerTypes)iI).AI_getMemoryCount(((PlayerTypes)iJ), eMemory);
+							// iCount++;
+						// }
+					// }
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+		for(int iI = 0; iI < GET_TEAM(eTeam).getPlayerMemberListSize(); iI++)
 				{
-					if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-					{
-						if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eTeam)
-						{
-							iMemoryCount += GET_PLAYER((PlayerTypes)iI).AI_getMemoryCount(((PlayerTypes)iJ), eMemory);
+			iMemoryCount += GET_PLAYER(*iter1).AI_getMemoryCount(GET_TEAM(eTeam).getPlayerMemberAt(iI), eMemory);
 							iCount++;
 						}
 					}
-				}
-			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -879,9 +997,9 @@ int CvTeamAI::AI_chooseElection(const VoteSelectionData& kVoteSelectionData) con
 				{
 					if (GET_PLAYER((PlayerTypes)iJ).getTeam() == getID())
 					{
-						PlayerVoteTypes eVote = GET_PLAYER((PlayerTypes)iJ).AI_diploVote(kVoteSelectionData.aVoteOptions[iI], eVoteSource, true);
+						PlayerVoteTypes ePlayerVote = GET_PLAYER((PlayerTypes)iJ).AI_diploVote(kVoteSelectionData.aVoteOptions[iI], eVoteSource, true);
 
-						if (eVote != PLAYER_VOTE_YES || eVote == GC.getGameINLINE().getVoteOutcome((VoteTypes)iI))
+						if (ePlayerVote != PLAYER_VOTE_YES || ePlayerVote == GC.getGameINLINE().getVoteOutcome(eVote))
 						{
 							bValid = false;
 							break;
@@ -916,17 +1034,17 @@ int CvTeamAI::AI_startWarVal(TeamTypes eTeam) const
 	iValue = AI_calculatePlotWarValue(eTeam);
 
 	iValue += (3 * AI_calculateCapitalProximity(eTeam)) / ((iValue > 0) ? 2 : 3);
-	
+
 	int iClosenessValue = AI_teamCloseness(eTeam);
 	if (iClosenessValue == 0)
 	{
 		iValue /= (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) ? 4 : 2);
 	}
 	iValue += iClosenessValue;
-	
+
 	int iOurVictoryCountdown = AI_getLowestVictoryCountdown();
 	int iTheirVictoryCountdown = GET_TEAM(eTeam).AI_getLowestVictoryCountdown();
-	
+
 	if ((iTheirVictoryCountdown != -1) && ((iOurVictoryCountdown == -1) || iTheirVictoryCountdown < iOurVictoryCountdown))
 	{
 		iValue ++;
@@ -943,7 +1061,7 @@ int CvTeamAI::AI_startWarVal(TeamTypes eTeam) const
 			iPercentOfDomination = 100 * iOurLandPercent / std::max(1, GC.getGameINLINE().getAdjustedLandPercent((VictoryTypes)iI));
 		}
 	}
-	
+
 	if (iPercentOfDomination > 75)
 	{
 		iValue *= (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) ? 6 : 4);
@@ -975,26 +1093,45 @@ int CvTeamAI::AI_startWarVal(TeamTypes eTeam) const
 		FAssert(false);
 		break;
 	}
-	
+
 	int iMaxCultureVictoryAdjustment = 1;
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if  (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if  (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if  (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_CULTURE3))
+				// {
+					// iMaxCultureVictoryAdjustment = std::max(iMaxCultureVictoryAdjustment, 8);
+				// }
+				// else if  (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_CULTURE2))
+				// {
+					// iMaxCultureVictoryAdjustment = std::max(iMaxCultureVictoryAdjustment, 3);
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				if  (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_CULTURE3))
+		if  (GET_PLAYER(*iter).AI_isDoStrategy(AI_STRATEGY_CULTURE3))
 				{
 					iMaxCultureVictoryAdjustment = std::max(iMaxCultureVictoryAdjustment, 8);
 				}
-				else if  (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_CULTURE2))
+		else if  (GET_PLAYER(*iter).AI_isDoStrategy(AI_STRATEGY_CULTURE2))
 				{
 					iMaxCultureVictoryAdjustment = std::max(iMaxCultureVictoryAdjustment, 3);
 				}
 			}
-		}
-	}	
+	// Sanguo Mod Performance, end
 	iValue /= iMaxCultureVictoryAdjustment;
+
+	// Leoreth: avoid birth protected
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isBirthProtected())
+	{
+		iValue /= 4;
+	}
 
 	return iValue;
 }
@@ -1023,7 +1160,7 @@ int CvTeamAI::AI_endWarVal(TeamTypes eTeam) const
 
 	iValue *= iTheirPower + 10;
 	iValue /= std::max(1, iOurPower + iTheirPower + 10);
-	
+
 	WarPlanTypes eWarPlan = AI_getWarPlan(eTeam);
 
 	// if we not human, do we want to continue war for strategic reasons?
@@ -1031,36 +1168,50 @@ int CvTeamAI::AI_endWarVal(TeamTypes eTeam) const
 	if (!isHuman() && iOurPower > ((120 * iTheirPower) / 100))
 	{
 		bool bDagger = false;
-		
+
 		bool bAnyFinancialTrouble = false;
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
-		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+		// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+		// for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+				// {
+					// if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_DAGGER))
+					// {
+						// bDagger = true;
+					// }
+
+					// if (GET_PLAYER((PlayerTypes)iI).AI_isFinancialTrouble())
+					// {
+						// bAnyFinancialTrouble = true;
+					// }
+				// }
+			// }
+		// }
+		for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 				{
-					if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_DAGGER))
+			if (GET_PLAYER(*iter).AI_isDoStrategy(AI_STRATEGY_DAGGER))
 					{
 						bDagger = true;
 					}
-					
-					if (GET_PLAYER((PlayerTypes)iI).AI_isFinancialTrouble())
+
+			if (GET_PLAYER(*iter).AI_isFinancialTrouble())
 					{
 						bAnyFinancialTrouble = true;
 					}
 				}
-			}
-		}
-		
+		// Sanguo Mod Performance, end
+
 		// if dagger, value peace at 90% * power ratio
 		if (bDagger)
 		{
 			iValue *= 9 * iTheirPower;
 			iValue /= 10 * iOurPower;
 		}
-		
+
 	    // for now, we will always do the land mass check for domination
-		// if we have more than half the land, then value peace at 90% * land ratio 
+		// if we have more than half the land, then value peace at 90% * land ratio
 		int iLandRatio = ((getTotalLand(true) * 100) / std::max(1, GET_TEAM(eTeam).getTotalLand(true)));
 	    if (iLandRatio > 120)
 	    {
@@ -1123,16 +1274,16 @@ int CvTeamAI::AI_endWarVal(TeamTypes eTeam) const
 	{
 		int iOurEndangeredCities = 0;
 		int iTheirEndangeredCities = 0;
-		
+
 		for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
 		{
 			CvPlayer& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-			
+
 			if (kPlayer.getTeam() == eTeam)
 			{
 				int iLoop;
 				CvCity* pTheirLoopCity;
-				
+
 				for (pTheirLoopCity = kPlayer.firstCity(&iLoop); pTheirLoopCity != NULL; pTheirLoopCity = kPlayer.nextCity(&iLoop))
 				{
 					if (pTheirLoopCity->AI_isDanger())
@@ -1146,7 +1297,7 @@ int CvTeamAI::AI_endWarVal(TeamTypes eTeam) const
 			{
 				int iLoop;
 				CvCity* pOurLoopCity;
-				
+
 				for (pOurLoopCity = kPlayer.firstCity(&iLoop); pOurLoopCity != NULL; pOurLoopCity = kPlayer.nextCity(&iLoop))
 				{
 					if (pOurLoopCity->AI_isDanger())
@@ -1211,12 +1362,20 @@ int CvTeamAI::AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const
 		}
 	}
 
-	iValue += (((iCost / 2) * (iPossibleKnownCount - iKnownCount)) / iPossibleKnownCount);
+	//iValue += (((iCost / 2) * (iPossibleKnownCount - iKnownCount)) / iPossibleKnownCount);
+	iValue += (((iCost) * (iPossibleKnownCount - iKnownCount)) / iPossibleKnownCount); // Leoreth: increase tech spread impact
 
 	iValue *= std::max(0, (GC.getTechInfo(eTech).getAITradeModifier() + 100));
 	iValue /= 100;
 
 	iValue -= (iValue % GC.getDefineINT("DIPLOMACY_VALUE_REMAINDER"));
+
+	// Leoreth: Hermitage effect
+	if (GET_PLAYER(getLeaderID()).isHasBuildingEffect(HERMITAGE))
+	{
+		iValue *= 3;
+		iValue /= 4;
+	}
 
 	if (isHuman())
 	{
@@ -1229,7 +1388,7 @@ int CvTeamAI::AI_techTradeVal(TechTypes eTech, TeamTypes eTeam) const
 }
 
 
-DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
+DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam, bool bIgnoreProgress) const
 {
 	PROFILE_FUNC();
 
@@ -1241,12 +1400,13 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 	int iI, iJ;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
-	
-	
-	if (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
+
+	//Rhye
+	//if (GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING))
+	if (!bIgnoreProgress && GC.getGameINLINE().isOption(GAMEOPTION_NO_TECH_BROKERING) && !GET_TEAM(eTeam).isHasTech(GEOPOLITICS))
 	{
 		CvTeam& kTeam = GET_TEAM(eTeam);
-		
+
 		if (!kTeam.isHasTech(eTech))
 		{
 			if (!kTeam.isHuman())
@@ -1258,16 +1418,50 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 			}
 		}
 	}
-	
+
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
+	{
+		return DENIAL_MYSTERY;
+	}
+
+	if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getLastBirthTurn() + getTurns(2)) // edead
+	{
+		return DENIAL_TECH_WHORE;
+	}
+
+	iKnownCount = 0;
+	iPossibleKnownCount = 0;
+
+	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
+	{
+		if (GET_TEAM((TeamTypes)iI).isAlive())
+		{
+			if ((iI != getID()) && (iI != eTeam))
+			{
+				if (isHasMet((TeamTypes)iI))
+				{
+					if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
+					{
+						iKnownCount++;
+					}
+
+					iPossibleKnownCount++;
+				}
+			}
+		}
+	}
+
 	if (isHuman())
 	{
 		return NO_DENIAL;
 	}
 
+	/*
 	if (isVassal(eTeam))
 	{
 		return NO_DENIAL;
 	}
+	*/
 
 	if (isAtWar(eTeam))
 	{
@@ -1281,24 +1475,37 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getTechRefuseAttitudeThreshold())
+				// {
+					// return DENIAL_ATTITUDE;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getTechRefuseAttitudeThreshold())
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getTechRefuseAttitudeThreshold())
-				{
-					return DENIAL_ATTITUDE;
-				}
-			}
+			return DENIAL_ATTITUDE;
 		}
 	}
+	// Sanguo Mod Performance, end
 
 	if (eAttitude < ATTITUDE_FRIENDLY)
 	{
-		if ((GC.getGameINLINE().getTeamRank(getID()) < (GC.getGameINLINE().countCivTeamsEverAlive() / 2)) ||
-			  (GC.getGameINLINE().getTeamRank(eTeam) < (GC.getGameINLINE().countCivTeamsEverAlive() / 2)))
+		// Leoreth: used to be /2 instead of *2/3
+		//if ((GC.getGameINLINE().getTeamRank(getID()) < (GC.getGameINLINE().countCivTeamsEverAlive() * 2 / 3)) ||
+		//	  (GC.getGameINLINE().getTeamRank(eTeam) < (GC.getGameINLINE().countCivTeamsEverAlive() * 2 / 3)))
+		
+		// Leoreth: use tech rank instead
+		if (GC.getGameINLINE().getTechRank(eTeam) < GC.getGameINLINE().countCivTeamsAlive() * 2 / 3)
 		{
 			iNoTechTradeThreshold = AI_noTechTradeThreshold();
 
@@ -1311,33 +1518,11 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eTeam) const
 			}
 		}
 
-		iKnownCount = 0;
-		iPossibleKnownCount = 0;
-
-		for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
-		{
-			if (GET_TEAM((TeamTypes)iI).isAlive())
-			{
-				if ((iI != getID()) && (iI != eTeam))
-				{
-					if (isHasMet((TeamTypes)iI))
-					{
-						if (GET_TEAM((TeamTypes)iI).isHasTech(eTech))
-						{
-							iKnownCount++;
-						}
-
-						iPossibleKnownCount++;
-					}
-				}
-			}
-		}
-
 		iTechTradeKnownPercent = AI_techTradeKnownPercent();
 
 		iTechTradeKnownPercent *= std::max(0, (GC.getHandicapInfo(GET_TEAM(eTeam).getHandicapType()).getTechTradeKnownModifier() + 100));
 		iTechTradeKnownPercent /= 100;
-		
+
 		iTechTradeKnownPercent *= AI_getTechMonopolyValue(eTech, eTeam);
 		iTechTradeKnownPercent /= 100;
 
@@ -1431,7 +1616,9 @@ int CvTeamAI::AI_mapTradeVal(TeamTypes eTeam) const
 		}
 	}
 
-	iValue /= 10;
+	// Leoreth: make maps less valuable
+	//iValue /= 10;
+	iValue /= 25;
 
 	if (GET_TEAM(eTeam).isVassal(getID()))
 	{
@@ -1456,7 +1643,7 @@ DenialTypes CvTeamAI::AI_mapTrade(TeamTypes eTeam) const
 	PROFILE_FUNC();
 
 	AttitudeTypes eAttitude;
-	int iI;
+	//int iI;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
@@ -1482,19 +1669,28 @@ DenialTypes CvTeamAI::AI_mapTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMapRefuseAttitudeThreshold())
+				// {
+					// return DENIAL_ATTITUDE;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMapRefuseAttitudeThreshold())
+		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getMapRefuseAttitudeThreshold())
 				{
 					return DENIAL_ATTITUDE;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;
 }
@@ -1517,7 +1713,7 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
-		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID())
+		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID() && !kLoopTeam.isMinorCiv()) // Leoreth: exclude wars with minor civs from vassal considerations
 		{
 			if (!kLoopTeam.isAtWar(kMasterTeam.getID()) && kLoopTeam.isAtWar(getID()))
 			{
@@ -1580,9 +1776,51 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 
 	CvTeam& kMasterTeam = GET_TEAM(eTeam);
 
+	//Leoreth: recently spawned or respawned civs won't vassalize
+	if (GC.getGame().getGameTurn() < GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(10))
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// Leoreth: not if either of them are birth protected
+	if (GET_PLAYER(getLeaderID()).isBirthProtected())
+	{
+		return DENIAL_POWER_US;
+	}
+
+	if (GET_PLAYER(kMasterTeam.getLeaderID()).isBirthProtected())
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// Leoreth: not if any city is expansion target
+	int iLoop;
+	for (CvCity* pLoopCity = GET_PLAYER(getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getLeaderID()).nextCity(&iLoop))
+	{
+		PlayerTypes eExpansionPlayer = pLoopCity->plot()->getExpansion();
+		if (eExpansionPlayer != NO_PLAYER)
+		{
+			if (eExpansionPlayer == kMasterTeam.getLeaderID())
+			{
+				return DENIAL_PEACE_NOT_POSSIBLE_YOU;
+			}
+
+			if (!isAtWar(GET_PLAYER(eExpansionPlayer).getTeam()))
+			{
+				return DENIAL_POWER_YOUR_ENEMIES;
+			}
+		}
+	}
+
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
 		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
+
+		if (kLoopTeam.isMinorCiv())
+		{
+			continue;
+		}
+
 		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID())
 		{
 			if (kLoopTeam.isAtWar(kMasterTeam.getID()) && !kLoopTeam.isAtWar(getID()))
@@ -1613,28 +1851,58 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		return NO_DENIAL;
 	}
 
+	// Leoreth: last resort
+	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() <= 1)
+	{
+		if (GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_NUKED_US) == 0 &&
+			GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_RAZED_CITY) == 0)
+		{
+			CvCity* pCapital = GET_PLAYER(getLeaderID()).getCapitalCity();
+
+			if (pCapital != NULL && GET_PLAYER(getLeaderID()).AI_isPlotThreatened(pCapital->plot(), 2))
+			{
+				if (2 * pCapital->area()->getPower(getLeaderID()) < pCapital->area()->getPower(GET_TEAM(eTeam).getLeaderID()))
+				{
+					return NO_DENIAL;
+				}
+			}
+		}
+	}
+
 	int iAttitudeModifier = 0;
 
 	if (!GET_TEAM(eTeam).isParent(getID()))
 	{
 		int iPersonalityModifier = 0;
 		int iMembers = 0;
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
+
+		for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-				{
-					iPersonalityModifier += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getVassalPowerModifier();
-					++iMembers;
-				}
-			}
+			iPersonalityModifier += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getVassalPowerModifier();
+			++iMembers;
 		}
 
 		int iTotalPower = GC.getGameINLINE().countTotalCivPower();
 		int iAveragePower = iTotalPower / std::max(1, GC.getGameINLINE().countCivTeamsAlive());
 		int iMasterPower = GET_TEAM(eTeam).getPower(false);
-		int iVassalPower = (getPower(true) * (iPowerMultiplier + iPersonalityModifier / std::max(1, iMembers))) / 100;
+		int iTotalMasterPower = GET_TEAM(eTeam).getPower(true);
+		int iRawVassalPower = getPower(true);
+		int iVassalPower = (iRawVassalPower * (iPowerMultiplier + iPersonalityModifier / std::max(1, iMembers))) / 100;
+
+		int iTotalPopulation = GC.getGameINLINE().getTotalPopulation();
+		int iMasterPopulation = GET_TEAM(eTeam).getTotalPopulation();
+		int iVassalPopulation = getTotalPopulation();
+
+		// Leoreth: do not accumulate too many vassals (strength + population instead of number of vassals)
+		if (iTotalMasterPower + iRawVassalPower > iTotalPower / 3)
+		{
+			return DENIAL_POWER_YOU;
+		}
+
+		if (iMasterPopulation + iVassalPopulation > iTotalPopulation / 3)
+		{
+			return DENIAL_POWER_YOU;
+		}
 
 		if (isAtWar(eTeam))
 		{
@@ -1680,10 +1948,14 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			}
 		}
 
+		if (GC.getGameINLINE().getGameTurn() <= GET_PLAYER(getLeaderID()).getLastBirthTurn() + getTurns(5)) // edead
+		{
+			iMasterPower /= 2;
+		}
 
 		for (int iLoopTeam = 0; iLoopTeam < MAX_CIV_TEAMS; iLoopTeam++)
 		{
-			if (iLoopTeam != getID())
+			if (iLoopTeam != getID() && !GET_TEAM((TeamTypes)iLoopTeam).isIndependent())
 			{
 				CvTeamAI& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
 
@@ -1798,43 +2070,68 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				return DENIAL_WORST_ENEMY;
 			}
 
-			if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0)
+			//if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0) //Rhye
+			if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0 && GET_PLAYER((PlayerTypes)eTeam).getCurrentEra() <= 2) //Rhye
 			{
 				return DENIAL_TOO_FAR;
 			}
+            // edead: do not allow far away vassals
+            // Leoreth: only before Exploration
+			if (!kMasterTeam.isHasTech(EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
+			{
+				return DENIAL_TOO_FAR;
+			}
+			// edead: end
+
 		}
 
 		AttitudeTypes eAttitude = AI_getAttitude(eTeam, false);
 
 		AttitudeTypes eModifiedAttitude = CvPlayerAI::AI_getAttitudeFromValue(AI_getAttitudeVal(eTeam, false) + iAttitudeModifier);
 
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
-		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+		// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+		// for (int iI = 0; iI < MAX_PLAYERS; iI++)
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+				// {
+					// if (eAttitude <= ATTITUDE_FURIOUS)
+					// {
+						// return DENIAL_ATTITUDE;
+					// }
+
+					//if (eModifiedAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getVassalRefuseAttitudeThreshold())
+					// {
+						// return DENIAL_ATTITUDE;
+					// }
+				// }
+			// }
+		// }
+		for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 				{
 					if (eAttitude <= ATTITUDE_FURIOUS)
 					{
 						return DENIAL_ATTITUDE;
 					}
 
-					if (eModifiedAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getVassalRefuseAttitudeThreshold())
+					if (eModifiedAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getVassalRefuseAttitudeThreshold())
 					{
 						return DENIAL_ATTITUDE;
 					}
 				}
-			}
-		}
+		// Sanguo Mod Performance, end
 	}
 	else
 	{
-		if (AI_getWarSuccess(eTeam) + 4 * GC.getDefineINT("WAR_SUCCESS_CITY_CAPTURING") > GET_TEAM(eTeam).AI_getWarSuccess(getID()))
+		int iMinCitiesConquered = std::min(GET_PLAYER(getLeaderID()).getNumCities(), 4);
+
+		if (AI_getWarSuccess(eTeam) + iMinCitiesConquered * GC.getDefineINT("WAR_SUCCESS_CITY_CAPTURING") > GET_TEAM(eTeam).AI_getWarSuccess(getID()))
 		{
 			return DENIAL_JOKING;
 		}
 	}
-	
+
 	return NO_DENIAL;
 }
 
@@ -1926,11 +2223,27 @@ DenialTypes CvTeamAI::AI_makePeaceTrade(TeamTypes ePeaceTeam, TeamTypes eTeam) c
 		return DENIAL_VASSAL;
 	}
 
-	if (AI_endWarVal(ePeaceTeam) > (GET_TEAM(ePeaceTeam).AI_endWarVal(getID()) * 2))
+	int iOurPeaceValue = AI_endWarVal(ePeaceTeam);
+	int iTheirPeaceValue = GET_TEAM(ePeaceTeam).AI_endWarVal(getID());
+
+	if (iOurPeaceValue > iTheirPeaceValue * 2)
 	{
 		return DENIAL_CONTACT_THEM;
 	}
-	
+
+	// Leoreth: no peace if they are an expansion target and we are winning
+	if (iTheirPeaceValue > iOurPeaceValue)
+	{
+		int iLoop;
+		for (CvCity* pLoopCity = GET_PLAYER(GET_TEAM(ePeaceTeam).getLeaderID()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(GET_TEAM(ePeaceTeam).getLeaderID()).nextCity(&iLoop))
+		{
+			if (pLoopCity->plot()->getExpansion() == getLeaderID())
+			{
+				return DENIAL_WORST_ENEMY;
+			}
+		}
+	}
+
     int iLandRatio = ((getTotalLand(true) * 100) / std::max(20, GET_TEAM(eTeam).getTotalLand(true)));
     if (iLandRatio > 250)
     {
@@ -2008,10 +2321,10 @@ int CvTeamAI::AI_declareWarTradeVal(TeamTypes eWarTeam, TeamTypes eTeam) const
 		iValue *= 150;
 		iValue /= 100 + ((50 * std::min(100, (100 * AI_getWarSuccess(eWarTeam)) / (8 + getTotalPopulation(false)))) / 100);
 	}
-	
+
 	iValue += (GET_TEAM(eTeam).getNumCities() * 20);
 	iValue += (GET_TEAM(eTeam).getTotalPopulation(true) * 15);
-	
+
 	if (isAtWar(eWarTeam))
 	{
 		switch (GET_TEAM(eTeam).AI_getAttitude(getID()))
@@ -2036,14 +2349,14 @@ int CvTeamAI::AI_declareWarTradeVal(TeamTypes eWarTeam, TeamTypes eTeam) const
 		}
 		iValue /= 100;
 	}
-	
+
 	iValue += GET_TEAM(eWarTeam).getNumNukeUnits() * 250;//Don't want to get nuked
 	iValue += GET_TEAM(eTeam).getNumNukeUnits() * 150;//Don't want to use nukes on another's behalf
 
 	if (GET_TEAM(eWarTeam).getAtWarCount(false) == 0)
 	{
 		iValue *= 2;
-	
+
 		for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
 		{
 			if (GET_TEAM((TeamTypes)iI).isAlive())
@@ -2083,7 +2396,7 @@ DenialTypes CvTeamAI::AI_declareWarTrade(TeamTypes eWarTeam, TeamTypes eTeam, bo
 	AttitudeTypes eAttitude;
 	AttitudeTypes eAttitudeThem;
 	bool bLandTarget;
-	int iI;
+	//int iI;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 	FAssertMsg(eWarTeam != getID(), "shouldn't call this function on ourselves");
@@ -2130,36 +2443,54 @@ DenialTypes CvTeamAI::AI_declareWarTrade(TeamTypes eWarTeam, TeamTypes eTeam, bo
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDeclareWarRefuseAttitudeThreshold())
+				// {
+					// return DENIAL_ATTITUDE;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDeclareWarRefuseAttitudeThreshold())
+		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDeclareWarRefuseAttitudeThreshold())
 				{
 					return DENIAL_ATTITUDE;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	eAttitudeThem = AI_getAttitude(eWarTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				//if (eAttitudeThem > GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDeclareWarThemRefuseAttitudeThreshold())
+				// {
+					// return DENIAL_ATTITUDE_THEM;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (eAttitudeThem > GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDeclareWarThemRefuseAttitudeThreshold())
+		if (eAttitudeThem > GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDeclareWarThemRefuseAttitudeThreshold())
 				{
 					return DENIAL_ATTITUDE_THEM;
 				}
 			}
-		}
-	}
-	
+	// Sanguo Mod Performance, end
+
 	if (!atWar(eWarTeam, eTeam))
 	{
 		if (GET_TEAM(eWarTeam).getNumNukeUnits() > 0)
@@ -2183,7 +2514,7 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 	PROFILE_FUNC();
 
 	AttitudeTypes eAttitude;
-	int iI;
+	//int iI;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
@@ -2201,7 +2532,7 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 	{
 		return NO_DENIAL;
 	}
-	
+
 	if (AI_getMemoryCount(eTeam, MEMORY_CANCELLED_OPEN_BORDERS) > 0)
 	{
 		return DENIAL_RECENT_CANCEL;
@@ -2214,19 +2545,14 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
+		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
 				{
 					return DENIAL_ATTITUDE;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;
 }
@@ -2234,7 +2560,48 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 {
-	return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * 3);
+	//Rhye - start
+	//return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * 3); //Rhye
+	int iModifier = 280;
+	if (isHasTech((TechTypes)ELECTRICITY) || isHasTech((TechTypes)ASSEMBLY_LINE)) {
+		iModifier = 200;
+	}
+	else if (GC.getGameINLINE().getGameTurn() > getTurnForYear(400)) 
+	{ //the last 100 turns, starting from 1900
+		iModifier = 160;
+	}
+
+	//discount if in a chain of alliances but not directly allied yet
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
+		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			if (GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI) && isDefensivePact((TeamTypes)iI))
+			{
+				iModifier -= 70;
+			}
+		}
+	}
+
+	int iNumCities = getNumCities() + GET_TEAM(eTeam).getNumCities();
+
+	// Leoreth: Amber Room effect
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(AMBER_ROOM))
+	{
+		iModifier -= 60;
+
+		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
+		{
+			iNumCities = 2 * getNumCities();
+		}
+	}
+
+	return iNumCities * std::max(iModifier, 10) / 100;
 }
 
 
@@ -2252,6 +2619,117 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 		return NO_DENIAL;
 	}
 
+	int iGameTurn = GC.getGameINLINE().getGameTurn();
+
+	// Rhye: no deal if at war with a friend (moved from CvPlayer::canTradeItem)
+	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
+		{
+			continue;
+		}
+
+		if (iI != getID() && iI != eTeam && GET_PLAYER((PlayerTypes)iI).isAlive())
+		{
+			if ((isAtWar((TeamTypes)iI) && GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI)) || (GET_TEAM((TeamTypes)eTeam).isAtWar((TeamTypes)iI) && isDefensivePact((TeamTypes)iI)))
+			{
+				return DENIAL_JOKING;
+			}
+		}
+	}
+
+	// Rhye: no world alliances until industrial era
+	if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0 && GET_PLAYER((PlayerTypes)eTeam).getCurrentEra() <= 3)
+	{
+		return DENIAL_TOO_FAR;
+	}
+
+	// Leoreth: collect all defensive pact partners and vassals in the possible coalition
+	std::set<TeamTypes> partners;
+	std::set<TeamTypes> vassals;
+
+	std::set<TeamTypes> ourPartners = determineDefensivePactPartners(std::set<TeamTypes>());
+	std::set<TeamTypes> theirPartners = GET_TEAM(eTeam).determineDefensivePactPartners(std::set<TeamTypes>());
+
+	for (std::set<TeamTypes>::iterator it = ourPartners.begin(); it != ourPartners.end(); ++it)
+	{
+		partners.insert(*it);
+	}
+
+	for (std::set<TeamTypes>::iterator it = theirPartners.begin(); it != theirPartners.end(); ++it)
+	{
+		partners.insert(*it);
+	}
+
+	bool bBerlaymont = false;
+	int iMaxEra = 0;
+	int iMaxVassals = 0;
+	for (std::set<TeamTypes>::iterator it = partners.begin(); it != partners.end(); ++it)
+	{
+
+		int iCurrentEra = GET_PLAYER(GET_TEAM(*it).getLeaderID()).getCurrentEra();
+		if (iCurrentEra > iMaxEra)
+		{
+			iMaxEra = iCurrentEra;
+		}
+
+		if (GET_PLAYER(GET_TEAM(*it).getLeaderID()).isHasBuildingEffect(BERLAYMONT))
+		{
+			bBerlaymont = true;
+		}
+
+		int iNumVassals = 0;
+		for (int iI = 0; iI < MAX_TEAMS; iI++)
+		{
+			if (GET_TEAM((TeamTypes)iI).isAlive() && !GET_TEAM((TeamTypes)iI).isMinorCiv() && GET_TEAM((TeamTypes)iI).isVassal(*it))
+			{
+				iNumVassals += 1;
+				vassals.insert((TeamTypes)iI);
+			}
+		}
+
+		if (iNumVassals > iMaxVassals)
+		{
+			iMaxVassals = iNumVassals;
+		}
+	}
+
+	// Leoreth: determine defensive pact limit
+	int iDefensivePactLimit = 2;
+
+	if (iMaxEra >= ERA_INDUSTRIAL)
+	{
+		iDefensivePactLimit += 1;
+	}
+
+	if (iMaxEra >= ERA_GLOBAL)
+	{
+		iDefensivePactLimit += 1;
+	}
+
+	if (bBerlaymont)
+	{
+		iDefensivePactLimit += 2;
+	}
+
+	// Leoreth: never more defensive pact partners than limit
+	if (partners.size() > iDefensivePactLimit)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// Leoreth: defensive pact partners and member with highest vassal count may not exceed twice the limit
+	if (partners.size() + iMaxVassals > 2 * iDefensivePactLimit)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
+	// Leoreth: sum of defensive pact partners and half of all their vassals may not exceed twice the limit
+	if (partners.size() + vassals.size() / 2 > 2 * iDefensivePactLimit)
+	{
+		return DENIAL_NO_GAIN;
+	}
+
 	if (GC.getGameINLINE().countCivTeamsAlive() == 2)
 	{
 		return DENIAL_NO_GAIN;
@@ -2264,19 +2742,31 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold())
+				// {
+					// return DENIAL_ATTITUDE;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold())
+				/// Sanguo mod / edead - start
+				if ((eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold() && iGameTurn < getTurnForYear(1906)) ||
+					(eAttitude <= (AttitudeTypes)std::max(0,GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold()-1) && iGameTurn >= getTurnForYear(1906))) //1906, the last 100 turns
+				// Sanguo mod / edead - end
 				{
 					return DENIAL_ATTITUDE;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;
 }
@@ -2287,7 +2777,7 @@ DenialTypes CvTeamAI::AI_permanentAllianceTrade(TeamTypes eTeam) const
 	PROFILE_FUNC();
 
 	AttitudeTypes eAttitude;
-	int iI;
+//	int iI;
 
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
@@ -2320,19 +2810,28 @@ DenialTypes CvTeamAI::AI_permanentAllianceTrade(TeamTypes eTeam) const
 
 	eAttitude = AI_getAttitude(eTeam);
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getPermanentAllianceRefuseAttitudeThreshold())
+				// {
+					// return DENIAL_ATTITUDE;
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getPermanentAllianceRefuseAttitudeThreshold())
+		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getPermanentAllianceRefuseAttitudeThreshold())
 				{
 					return DENIAL_ATTITUDE;
 				}
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;
 }
@@ -2348,14 +2847,21 @@ void CvTeamAI::AI_updateWorstEnemy()
 {
 	PROFILE_FUNC();
 
+	if (isMinorCiv())
+	{
+		return;
+	}
+
 	TeamTypes eBestTeam = NO_TEAM;
 	int iBestValue = MAX_INT;
+	int iOurRank = GC.getGameINLINE().getTeamRank(getID());
+	int iRankDifference = std::max(GC.getGameINLINE().countCivPlayersAlive() / 2, MAX_TEAMS / 5);
 
 	for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
 		TeamTypes eLoopTeam = (TeamTypes) iI;
 		CvTeam& kLoopTeam = GET_TEAM(eLoopTeam);
-		if (kLoopTeam.isAlive())
+		if (kLoopTeam.isAlive() && !kLoopTeam.isMinorCiv() && !kLoopTeam.isBarbarian())
 		{
 			if (iI != getID() && !kLoopTeam.isVassal(getID()))
 			{
@@ -2363,11 +2869,26 @@ void CvTeamAI::AI_updateWorstEnemy()
 				{
 					if (AI_getAttitude(eLoopTeam) < ATTITUDE_CAUTIOUS)
 					{
-						int iValue = AI_getAttitudeVal(eLoopTeam);
-						if (iValue < iBestValue)
+						// Leoreth: do not allow enemies with large power differentials
+						if (std::abs(GC.getGameINLINE().getTeamRank(eLoopTeam) - iOurRank) <= iRankDifference)
 						{
-							iBestValue = iValue;
-							eBestTeam = eLoopTeam;
+							// Leoreth: far away civs should not be enemies
+							int iModifier = 100;
+							if (GET_PLAYER(kLoopTeam.getLeaderID()).isNeighbor(getLeaderID()))
+							{
+								iModifier = 50;
+							}
+							else if (GET_PLAYER(kLoopTeam.getLeaderID()).isDistant(getLeaderID()))
+							{
+								iModifier = 250;
+							}
+
+							int iValue = AI_getAttitudeVal(eLoopTeam) * 100 * iModifier;
+							if (iValue < iBestValue)
+							{
+								iBestValue = iValue;
+								eBestTeam = eLoopTeam;
+							}
 						}
 					}
 				}
@@ -2552,6 +3073,19 @@ void CvTeamAI::AI_setWarSuccess(TeamTypes eIndex, int iNewValue)
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
+	// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+	if (m_aiWarSuccess[eIndex] != iNewValue)
+	{
+		for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
+		{
+			for(int iI = 0; iI < GET_TEAM(eIndex).getPlayerMemberListSize(); iI++)
+			{
+				GET_PLAYER(*iter1).AI_invalidateAttitudeCache(GET_TEAM(eIndex).getPlayerMemberAt(iI));
+				GET_PLAYER(GET_TEAM(eIndex).getPlayerMemberAt(iI)).AI_invalidateAttitudeCache(*iter1);
+			}
+		}
+	}
+	// Sanguo Mod Performance, end
 	m_aiWarSuccess[eIndex] = iNewValue;
 	FAssert(AI_getWarSuccess(eIndex) >= 0);
 }
@@ -2653,7 +3187,7 @@ bool CvTeamAI::AI_isSneakAttackReady(TeamTypes eIndex) const
 
 void CvTeamAI::AI_setWarPlan(TeamTypes eIndex, WarPlanTypes eNewValue, bool bWar)
 {
-	int iI;
+//	int iI;
 
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < MAX_TEAMS, "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -2668,19 +3202,28 @@ void CvTeamAI::AI_setWarPlan(TeamTypes eIndex, WarPlanTypes eNewValue, bool bWar
 
 			AI_updateAreaStragies();
 
-			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+			// for (iI = 0; iI < MAX_PLAYERS; iI++)
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+				// {
+					// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+					// {
+						// if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
+						// {
+							// GET_PLAYER((PlayerTypes)iI).AI_makeProductionDirty();
+						// }
+					// }
+				// }
+			// }
+			for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				if (GET_PLAYER((PlayerTypes)iI).isAlive())
-				{
-					if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-					{
-						if (!(GET_PLAYER((PlayerTypes)iI).isHuman()))
+				if (!(GET_PLAYER(*iter).isHuman()))
 						{
-							GET_PLAYER((PlayerTypes)iI).AI_makeProductionDirty();
-						}
-					}
+					GET_PLAYER(*iter).AI_makeProductionDirty();
 				}
 			}
+			// Sanguo Mod Performance, end
 		}
 	}
 }
@@ -2690,36 +3233,45 @@ void CvTeamAI::AI_setWarPlan(TeamTypes eIndex, WarPlanTypes eNewValue, bool bWar
 int CvTeamAI::AI_teamCloseness(TeamTypes eIndex, int iMaxDistance) const
 {
 	PROFILE_FUNC();
-	int iI, iJ;
-	
+//	int iI, iJ;
+
 	if (iMaxDistance == -1)
 	{
 		iMaxDistance = DEFAULT_PLAYER_CLOSENESS;
 	}
-	
+
 	FAssert(eIndex != getID());
 	int iValue = 0;
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
+				// {
+					// if (GET_PLAYER((PlayerTypes)iJ).isAlive())
+					// {
+						// if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eIndex)
+						// {
+							// iValue += GET_PLAYER((PlayerTypes)iI).AI_playerCloseness((PlayerTypes)iJ, iMaxDistance);
+						// }
+					// }
+				// }
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter1 = m_aePlayerMembers.begin(); iter1 != m_aePlayerMembers.end(); ++iter1)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				for (iJ = 0; iJ < MAX_PLAYERS; iJ++)
-				{
-					if (GET_PLAYER((PlayerTypes)iJ).isAlive())
-					{
-						if (GET_PLAYER((PlayerTypes)iJ).getTeam() == eIndex)
+		for(int iI = 0; iI < GET_TEAM(eIndex).getPlayerMemberListSize(); iI++)
 						{
-							iValue += GET_PLAYER((PlayerTypes)iI).AI_playerCloseness((PlayerTypes)iJ, iMaxDistance);
-						}
-					}
-				}	
-			}
+			iValue += GET_PLAYER(*iter1).AI_playerCloseness(GET_TEAM(eIndex).getPlayerMemberAt(iI), iMaxDistance);
 		}
 	}
-	
-	return iValue;	
+	// Sanguo Mod Performance, end
+
+	return iValue;
 }
 
 
@@ -2743,6 +3295,10 @@ void CvTeamAI::read(FDataStreamBase* pStream)
 
 	pStream->Read(MAX_TEAMS, (int*)m_aeWarPlan);
 	pStream->Read((int*)&m_eWorstEnemy);
+
+	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+	pStream->Read(MAX_TEAMS, m_aiLandTargetCache);
+	// Sanguo Mod Performance, end
 }
 
 
@@ -2766,6 +3322,10 @@ void CvTeamAI::write(FDataStreamBase* pStream)
 
 	pStream->Write(MAX_TEAMS, (int*)m_aeWarPlan);
 	pStream->Write(m_eWorstEnemy);
+
+	// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+	pStream->Write(MAX_TEAMS, m_aiLandTargetCache);
+	// Sanguo Mod Performance, end
 }
 
 // Protected Functions...
@@ -2774,22 +3334,29 @@ int CvTeamAI::AI_noTechTradeThreshold() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getNoTechTradeThreshold();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getNoTechTradeThreshold();
-				iCount++;
-			}
-		}
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getNoTechTradeThreshold();
+		iCount++;
 	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -2804,22 +3371,29 @@ int CvTeamAI::AI_techTradeKnownPercent() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getTechTradeKnownPercent();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getTechTradeKnownPercent();
-				iCount++;
-			}
-		}
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getTechTradeKnownPercent();
+		iCount++;
 	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -2834,22 +3408,29 @@ int CvTeamAI::AI_maxWarRand() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarRand();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarRand();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getMaxWarRand();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -2864,22 +3445,29 @@ int CvTeamAI::AI_maxWarNearbyPowerRatio() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarNearbyPowerRatio();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarNearbyPowerRatio();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getMaxWarNearbyPowerRatio();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 1)
 	{
@@ -2894,22 +3482,29 @@ int CvTeamAI::AI_maxWarDistantPowerRatio() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarDistantPowerRatio();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarDistantPowerRatio();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getMaxWarDistantPowerRatio();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 1)
 	{
@@ -2924,22 +3519,29 @@ int CvTeamAI::AI_maxWarMinAdjacentLandPercent() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarMinAdjacentLandPercent();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMaxWarMinAdjacentLandPercent();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getMaxWarMinAdjacentLandPercent();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -2954,22 +3556,29 @@ int CvTeamAI::AI_limitedWarRand() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getLimitedWarRand();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getLimitedWarRand();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getLimitedWarRand();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -2984,22 +3593,29 @@ int CvTeamAI::AI_limitedWarPowerRatio() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getLimitedWarPowerRatio();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getLimitedWarPowerRatio();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getLimitedWarPowerRatio();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -3014,22 +3630,29 @@ int CvTeamAI::AI_dogpileWarRand() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDogpileWarRand();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getDogpileWarRand();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDogpileWarRand();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -3044,22 +3667,29 @@ int CvTeamAI::AI_makePeaceRand() const
 {
 	int iRand;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iRand = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMakePeaceRand();
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				iRand += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getMakePeaceRand();
+		iRand += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getMakePeaceRand();
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 0)
 	{
@@ -3074,22 +3704,29 @@ int CvTeamAI::AI_noWarAttitudeProb(AttitudeTypes eAttitude) const
 {
 	int iProb;
 	int iCount;
-	int iI;
+//	int iI;
 
 	iProb = 0;
 	iCount = 0;
 
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// iProb += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getNoWarAttitudeProb(eAttitude);
+				// iCount++;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				iProb += GC.getLeaderHeadInfo(GET_PLAYER((PlayerTypes)iI).getPersonalityType()).getNoWarAttitudeProb(eAttitude);
+		iProb += GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getNoWarAttitudeProb(eAttitude);
 				iCount++;
 			}
-		}
-	}
+	// Sanguo Mod Performance, end
 
 	if (iCount > 1)
 	{
@@ -3110,37 +3747,16 @@ void CvTeamAI::AI_doCounter()
 		{
 			if (iI != getID())
 			{
-				AI_changeWarPlanStateCounter(((TeamTypes)iI), 1);
-
-				if (isAtWar((TeamTypes)iI))
-				{
-					AI_changeAtWarCounter(((TeamTypes)iI), 1);
-				}
-				else
-				{
-					AI_changeAtPeaceCounter(((TeamTypes)iI), 1);
-				}
-
 				if (isHasMet((TeamTypes)iI))
 				{
 					AI_changeHasMetCounter(((TeamTypes)iI), 1);
 				}
 
-				if (isOpenBorders((TeamTypes)iI))
-				{
-					AI_changeOpenBordersCounter(((TeamTypes)iI), 1);
-				}
+				AI_changeWarPlanStateCounter(((TeamTypes)iI), 1);
 
-				if (isDefensivePact((TeamTypes)iI))
+				if (isAtWar((TeamTypes)iI))
 				{
-					AI_changeDefensivePactCounter(((TeamTypes)iI), 1);
-				}
-				else
-				{
-					if (AI_getDefensivePactCounter((TeamTypes)iI) > 0)
-					{
-						AI_changeDefensivePactCounter(((TeamTypes)iI), -1);
-					}
+					AI_changeAtWarCounter(((TeamTypes)iI), 1);
 				}
 
 				if (isHasMet((TeamTypes)iI))
@@ -3148,6 +3764,32 @@ void CvTeamAI::AI_doCounter()
 					if (AI_shareWar((TeamTypes)iI))
 					{
 						AI_changeShareWarCounter(((TeamTypes)iI), 1);
+					}
+				}
+
+				// Leoreth: only starts building after making contact, and stops building while contact is interrupted
+				if (canContact((TeamTypes)iI))
+				{
+					if (!isAtWar((TeamTypes)iI))
+					{
+						AI_changeAtPeaceCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isOpenBorders((TeamTypes)iI))
+					{
+						AI_changeOpenBordersCounter(((TeamTypes)iI), 1);
+					}
+
+					if (isDefensivePact((TeamTypes)iI))
+					{
+						AI_changeDefensivePactCounter(((TeamTypes)iI), 1);
+					}
+					else
+					{
+						if (AI_getDefensivePactCounter((TeamTypes)iI) > 0)
+						{
+							AI_changeDefensivePactCounter(((TeamTypes)iI), -1);
+						}
 					}
 				}
 			}
@@ -3184,14 +3826,18 @@ void CvTeamAI::AI_doWar()
 	}
 
 	// allow python to handle it
-	CyArgsList argsList;
-	argsList.add(getID());
-	long lResult=0;
-	gDLL->getPythonIFace()->callFunction(PYGameModule, "AI_doWar", argsList.makeFunctionArgs(), &lResult);
-	if (lResult == 1)
-	{
-		return;
-	}
+	//Rhye - start
+//Speed: Modified by Kael 04/19/2007
+//	CyArgsList argsList;
+//	argsList.add(getID());
+//	long lResult=0;
+//	gDLL->getPythonIFace()->callFunction(PYGameModule, "AI_doWar", argsList.makeFunctionArgs(), &lResult);
+//	if (lResult == 1)
+//	{
+//		return;
+//	}
+//Speed: End Modify
+	//Rhye - end
 
 	for (iI = 0; iI < MAX_CIV_TEAMS; iI++)
 	{
@@ -3203,20 +3849,20 @@ void CvTeamAI::AI_doWar()
 				{
 					int iOurPower = getPower(true);
 					int iTheirPower = GET_TEAM((TeamTypes)iI).getPower(true);
-					
+
 					int iRatio = (1 + iOurPower) / (1 + iTheirPower);
-					
+
 					if (iRatio > 200)
 					{
 						iTimeModifier *= 100;
 						iTimeModifier /= iRatio - 100;
 					}
-					
+
 					iTimeModifier *= 50 + GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
 					iTimeModifier /= 150;
 					FAssert(iTimeModifier > 0);
 				}
-					
+
 				if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_ATTACKED_RECENT)
 				{
 					FAssert(isAtWar((TeamTypes)iI));
@@ -3228,7 +3874,7 @@ void CvTeamAI::AI_doWar()
 				}
 				else if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_PREPARING_LIMITED)
 				{
-					FAssert(canDeclareWar((TeamTypes)iI));
+					//FAssert(canDeclareWar((TeamTypes)iI));
 
 					if (AI_getWarPlanStateCounter((TeamTypes)iI) > ((5 * iTimeModifier) / 100))
 					{
@@ -3237,7 +3883,7 @@ void CvTeamAI::AI_doWar()
 				}
 				else if (AI_getWarPlan((TeamTypes)iI) == WARPLAN_PREPARING_TOTAL)
 				{
-					FAssert(canDeclareWar((TeamTypes)iI));
+					//FAssert(canDeclareWar((TeamTypes)iI));
 
 					if (AI_getWarPlanStateCounter((TeamTypes)iI) > ((10 * iTimeModifier) / 100))
 					{
@@ -3281,37 +3927,51 @@ void CvTeamAI::AI_doWar()
 		}
 	}
 
-	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// GET_PLAYER((PlayerTypes)iI).AI_doPeace();
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-			{
-				GET_PLAYER((PlayerTypes)iI).AI_doPeace();
-			}
-		}
+		GET_PLAYER(*iter).AI_doPeace();
 	}
-	
+	// Sanguo Mod Performance, end
+
 	int iNumMembers = getNumMembers();
 	int iHighUnitSpendingPercent = 0;
 	int iLowUnitSpendingPercent = 0;
-	
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
-		{
-			if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+
+	// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+	// for (iI = 0; iI < MAX_PLAYERS; iI++)
+	// {
+		// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+			// {
+				// int iUnitSpendingPercent = (GET_PLAYER((PlayerTypes)iI).calculateUnitCost() * 100) / std::max(1, GET_PLAYER((PlayerTypes)iI).calculatePreInflatedCosts());
+				// iHighUnitSpendingPercent += (std::max(0, iUnitSpendingPercent - 7) / 2);
+				// iLowUnitSpendingPercent += iUnitSpendingPercent;
+			// }
+		// }
+	// }
+	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 			{
-				int iUnitSpendingPercent = (GET_PLAYER((PlayerTypes)iI).calculateUnitCost() * 100) / std::max(1, GET_PLAYER((PlayerTypes)iI).calculatePreInflatedCosts());
+				int iUnitSpendingPercent = (GET_PLAYER(*iter).calculateUnitCost() * 100) / std::max(1, GET_PLAYER(*iter).calculatePreInflatedCosts());
 				iHighUnitSpendingPercent += (std::max(0, iUnitSpendingPercent - 7) / 2);
 				iLowUnitSpendingPercent += iUnitSpendingPercent;
-			}			
-		}
-	}
-	
+			}
+	// Sanguo Mod Performance, end
+
 	iHighUnitSpendingPercent /= iNumMembers;
 	iLowUnitSpendingPercent /= iNumMembers;
-	
+
 	// if at war, check for making peace
 	if (getAtWarCount(true) > 0) // XXX
 	{
@@ -3376,51 +4036,76 @@ void CvTeamAI::AI_doWar()
 	else if (getAnyWarPlanCount(true) == 0)
 	{
 		bool bAggressive = GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI);
-		
+
 		int iFinancialTroubleCount = 0;
 		int iDaggerCount = 0;
 		int iGetBetterUnitsCount = 0;
 		bool bFinalWar = false;
-		for (iI = 0; iI < MAX_PLAYERS; iI++)
+
+		// Sanguo Mod Performance start, added by poyuzhe 07.29.09
+		// for (iI = 0; iI < MAX_PLAYERS; iI++)
+		// {
+			// if (GET_PLAYER((PlayerTypes)iI).isAlive())
+			// {
+				// if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
+				// {
+					// if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_DAGGER))
+					// {
+						// iDaggerCount++;
+						// bAggressive = true;
+					// }
+					// if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_GET_BETTER_UNITS))
+					// {
+						// iGetBetterUnitsCount++;
+					// }
+
+					// if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
+					// {
+						// bFinalWar = true;
+					// }
+
+					// if (GET_PLAYER((PlayerTypes)iI).AI_isFinancialTrouble())
+					// {
+						// iFinancialTroubleCount++;
+					// }
+				// }
+			// }
+		// }
+		for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
 		{
-			if (GET_PLAYER((PlayerTypes)iI).isAlive())
-			{
-				if (GET_PLAYER((PlayerTypes)iI).getTeam() == getID())
-				{
-					if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_DAGGER))
+			if (GET_PLAYER(*iter).AI_isDoStrategy(AI_STRATEGY_DAGGER))
 					{
 						iDaggerCount++;
 						bAggressive = true;
 					}
-					if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_GET_BETTER_UNITS))
+					if (GET_PLAYER(*iter).AI_isDoStrategy(AI_STRATEGY_GET_BETTER_UNITS))
 					{
 						iGetBetterUnitsCount++;
 					}
-					
-					if (GET_PLAYER((PlayerTypes)iI).AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
+
+					if (GET_PLAYER(*iter).AI_isDoStrategy(AI_STRATEGY_FINAL_WAR))
 					{
 						bFinalWar = true;
 					}
-					
-					if (GET_PLAYER((PlayerTypes)iI).AI_isFinancialTrouble())
+
+					if (GET_PLAYER(*iter).AI_isFinancialTrouble())
 					{
 						iFinancialTroubleCount++;
 					}
 				}
-			}
-		}
+		// Sanguo Mod Performance, end
 
 	    // if random in this range is 0, we go to war of this type (so lower numbers are higher probablity)
 		// average of everyone on our team
 		int iMaxWarRand = AI_maxWarRand();
 	    int iLimitedWarRand = AI_limitedWarRand();
 	    int iDogpileWarRand = AI_dogpileWarRand();
-	    
+
 	    int iNumVassals = getVassalCount();
-	    
+
 	    iMaxWarRand *= iNumMembers;
 	    iMaxWarRand /= (iNumMembers + iNumVassals);
-	    
+
 	    if (bFinalWar)
 	    {
 	    	iMaxWarRand /= 4;
@@ -3428,14 +4113,14 @@ void CvTeamAI::AI_doWar()
 
 	    iLimitedWarRand *= iNumMembers;
 	    iLimitedWarRand /= (iNumMembers + iNumVassals);
-	    
+
 	    iDogpileWarRand *= iNumMembers;
 	    iDogpileWarRand /= (iNumMembers + iNumVassals);
-	    
+
 	    int iWarRandThreshold = iHighUnitSpendingPercent * (GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) ? 4 : 2);
 	    iWarRandThreshold /= 3;
 	    iWarRandThreshold += GC.getGameINLINE().isOption(GAMEOPTION_AGGRESSIVE_AI) ? 1 : 0;
-		
+
 		// we oppose war if half the non-dagger teammates in financial trouble
 		bool bFinancesOpposeWar = false;
 		if ((iFinancialTroubleCount - iDaggerCount) >= std::max(1, getNumMembers() / 2 ))
@@ -3461,7 +4146,7 @@ void CvTeamAI::AI_doWar()
 			{
 				bFinancesProLimitedWar = true;
 			}
-			
+
 			// do we like dogpile wars?
 			if (iDogpileWarRand < 100)
 			{
@@ -3469,7 +4154,7 @@ void CvTeamAI::AI_doWar()
 			}
 		}
 		bool bFinancialProWar = (bFinancesProMaxWar || bFinancesProLimitedWar || bFinancesProDogpileWar);
-		
+
 		// overall war check (quite frequently true)
 		bool bMakeWarChecks = false;
 		if (iGetBetterUnitsCount * 3 < iNumMembers * 2)
@@ -3487,7 +4172,7 @@ void CvTeamAI::AI_doWar()
 				}
 			}
 		}
-		
+
 		if (bMakeWarChecks)
 		{
 			iOurPower = getPower(true);
@@ -3522,7 +4207,7 @@ void CvTeamAI::AI_doWar()
 										if (iNoWarRoll >= AI_noWarAttitudeProb(AI_getAttitude((TeamTypes)iI)))
 										{
 											int iDefensivePower = (GET_TEAM((TeamTypes)iI).getDefensivePower() * 2) / 3;
-											
+
 											if (iDefensivePower < ((iOurPower * ((iPass > 1) ? AI_maxWarDistantPowerRatio() : AI_maxWarNearbyPowerRatio())) / 100))
 											{
 												// XXX make sure they share an area....
@@ -3558,8 +4243,16 @@ void CvTeamAI::AI_doWar()
 					}
 				}
 			}
-			else if ((bFinancesProMaxWar || !bFinancesOpposeWar) &&
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                       01/02/09                                jdog5000      */
+/*                                                                                              */
+/* Bugfix                                                                                       */
+/************************************************************************************************/
+			else if ((bFinancesProLimitedWar || !bFinancesOpposeWar) &&
 				(GC.getGameINLINE().getSorenRandNum(iLimitedWarRand, "AI Limited War") == 0))
+/************************************************************************************************/
+/* UNOFFICIAL_PATCH                        END                                                  */
+/************************************************************************************************/
 			{
 				iNoWarRoll = GC.getGameINLINE().getSorenRandNum(100, "AI No War") - 10;
 				iNoWarRoll = range(iNoWarRoll + (bAggressive ? 10 : 0) + (bFinancesProLimitedWar ? 10 : 0), 0, 99);
@@ -3680,20 +4373,20 @@ void CvTeamAI::AI_doWar()
 //returns true if war is veto'd by rolls.
 bool CvTeamAI::AI_performNoWarRolls(TeamTypes eTeam)
 {
-	
+
 	if (GC.getGameINLINE().getSorenRandNum(100, "AI Declare War 1") > GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIDeclareWarProb())
 	{
 		return true;
 	}
-	
+
 	if (GC.getGameINLINE().getSorenRandNum(100, "AI No War") <= AI_noWarAttitudeProb(AI_getAttitude(eTeam)))
 	{
-		return true;		
+		return true;
 	}
-	
-	
-	
-	return false;	
+
+
+
+	return false;
 }
 
 int CvTeamAI::AI_getAttitudeWeight(TeamTypes eTeam)
@@ -3714,10 +4407,10 @@ int CvTeamAI::AI_getAttitudeWeight(TeamTypes eTeam)
 		iAttitudeWeight = 50;
 		break;
 	case ATTITUDE_FRIENDLY:
-		iAttitudeWeight = 100;			
+		iAttitudeWeight = 100;
 		break;
 	}
-	
+
 	return iAttitudeWeight;
 }
 
@@ -3736,16 +4429,16 @@ int CvTeamAI::AI_getLowestVictoryCountdown() const
 	{
 		iBestVictoryCountdown = -1;
 	}
-	return iBestVictoryCountdown;	
+	return iBestVictoryCountdown;
 }
 
 int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 {
 	int iValue = 0;
 	int iI;
-	
+
 	bool bWarPlan = (getAnyWarPlanCount(eTeam) > 0);
-	
+
 	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
 	{
 		UnitTypes eLoopUnit = ((UnitTypes)GC.getUnitClassInfo((UnitClassTypes)iI).getDefaultUnitIndex());
@@ -3758,11 +4451,11 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 				{
 					iValue += 50;
 				}
-				
+
 				if (GC.getUnitInfo(eLoopUnit).getPrereqAndTech() == eTech)
 				{
 					int iNavalValue = 0;
-					
+
 					int iCombatRatio = (GC.getUnitInfo(eLoopUnit).getCombat() * 100) / std::max(1, GC.getGameINLINE().getBestLandUnitCombat());
 					if (iCombatRatio > 50)
 					{
@@ -3796,6 +4489,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 
 					case UNITAI_EXPLORE:
 					case UNITAI_MISSIONARY:
+					case UNITAI_PERSECUTOR:
 						break;
 
 					case UNITAI_PROPHET:
@@ -3804,6 +4498,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 					case UNITAI_GENERAL:
 					case UNITAI_MERCHANT:
 					case UNITAI_ENGINEER:
+					case UNITAI_STATESMAN:
 						break;
 
 					case UNITAI_SPY:
@@ -3860,11 +4555,15 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 						iValue += bWarPlan ? 40 : 20;
 						break;
 
+					case UNITAI_SATELLITE:
+						iValue += 50;
+						break;
+
 					default:
 						FAssert(false);
 						break;
 					}
-					
+
 					if (iNavalValue > 0)
 					{
 						if (AI_isAnyCapitalAreaAlone())
@@ -3892,7 +4591,7 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 			}
 			if (isWorldWonderClass((BuildingClassTypes)kLoopBuilding.getBuildingClassType()))
 			{
-				if (!(GC.getGameINLINE().isBuildingClassMaxedOut((BuildingClassTypes)kLoopBuilding.getBuildingClassType())))
+				if (!(GC.getGameINLINE().isBuildingClassMaxedOut((BuildingClassTypes)kLoopBuilding.getBuildingClassType())) && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).canConstruct((BuildingTypes)iI, false, false, false, true))
 				{
 					iValue += 50;
 				}
@@ -3917,33 +4616,33 @@ int CvTeamAI::AI_getTechMonopolyValue(TechTypes eTech, TeamTypes eTeam) const
 			}
 		}
 	}
-	
+
 	return iValue;
-	
-	
+
+
 }
 
 bool CvTeamAI::AI_isWaterAreaRelevant(CvArea* pArea)
 {
 	int iTeamCities = 0;
 	int iOtherTeamCities = 0;
-	
+
 	if (GC.getMap().findBiggestArea(true) == pArea)
 	{
 		return true;
 	}
-	
+
 	//An area is deemed relevant if it has at least 2 cities of our and different teams.
-	
+
 	for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
 	{
 		CvPlayerAI& kPlayer = GET_PLAYER((PlayerTypes)iPlayer);
-		
+
 		if ((iTeamCities < 2 && (kPlayer.getTeam() == getID())) || (iOtherTeamCities < 2 && (kPlayer.getTeam() != getID())))
 		{
 			int iLoop;
 			CvCity* pLoopCity;
-			
+
 			for (pLoopCity = kPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kPlayer.nextCity(&iLoop))
 			{
 				if (pLoopCity->plot()->isAdjacentToArea(pArea->getID()))
@@ -3964,7 +4663,7 @@ bool CvTeamAI::AI_isWaterAreaRelevant(CvArea* pArea)
 							break;
 						}
 					}
-				}				
+				}
 			}
 		}
 		if (iTeamCities >= 2 && iOtherTeamCities >= 2)
@@ -3975,4 +4674,13 @@ bool CvTeamAI::AI_isWaterAreaRelevant(CvArea* pArea)
 	return false;
 }
 
+// Sanguo Mod Performance start, added by poyuzhe 07.22.09
+void CvTeamAI::AI_invalidateLandTargetCache()
+{
+	for (int i = 0; i < MAX_TEAMS; ++i)
+	{
+		m_aiLandTargetCache[i] = MAX_UNSIGNED_SHORT;
+	}
+}
+// Sanguo Mod Performance, end
 // Private Functions...

@@ -197,10 +197,17 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 				if ((pFirstList != NULL) && (pFirstList->getLength() > 0))
 				{
 					GET_PLAYER(getFirstPlayer()).AI_changePeacetimeTradeValue(getSecondPlayer(), iValue);
+					// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+					GET_PLAYER(getFirstPlayer()).AI_invalidateAttitudeCache(getSecondPlayer());
+					GET_PLAYER(getSecondPlayer()).AI_invalidateAttitudeCache(getFirstPlayer());
+					// Sanguo Mod Performance, end
 				}
 				else
 				{
 					GET_PLAYER(getFirstPlayer()).AI_changePeacetimeGrantValue(getSecondPlayer(), iValue);
+					// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+					GET_PLAYER(getFirstPlayer()).AI_invalidateAttitudeCache(getSecondPlayer());
+					// Sanguo Mod Performance, end
 				}
 			}
 			if ((pFirstList != NULL) && (pFirstList->getLength() > 0))
@@ -210,24 +217,73 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 				if ((pSecondList != NULL) && (pSecondList->getLength() > 0))
 				{
 					GET_PLAYER(getSecondPlayer()).AI_changePeacetimeTradeValue(getFirstPlayer(), iValue);
+					// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+					GET_PLAYER(getFirstPlayer()).AI_invalidateAttitudeCache(getSecondPlayer());
+					GET_PLAYER(getSecondPlayer()).AI_invalidateAttitudeCache(getFirstPlayer());
+					// Sanguo Mod Performance, end
 				}
 				else
 				{
 					GET_PLAYER(getSecondPlayer()).AI_changePeacetimeGrantValue(getFirstPlayer(), iValue);
+					// Sanguo Mod Performance start, added by poyuzhe 07.26.09
+					GET_PLAYER(getSecondPlayer()).AI_invalidateAttitudeCache(getFirstPlayer());
+					// Sanguo Mod Performance, end
 				}
 			}
 		}
 	}
 
+	bool bFirstSlaves = false;
+	bool bSecondSlaves = false;
+	int iFirstGold = 0;
+	int iSecondGold = 0;
+	bool bFirstPeace = false;
+	bool bSecondPeace = false;
+	bool bFirstTrade = false;
+	bool bSecondTrade = false;
+	bool bFirstSurrender = false;
+	bool bSecondSurrender = false;
+
 	if (pFirstList != NULL)
 	{
 		for (pNode = pFirstList->head(); pNode; pNode = pFirstList->next(pNode))
 		{
+			// Leoreth: to prevent a crash caused by a war triggered by tech trades and the subsequent peace treaty
+			if (atWar(eFirstTeam, eSecondTeam))
+			{
+				break;
+			}
+
 			bSave = startTrade(pNode->m_data, getFirstPlayer(), getSecondPlayer());
 
 			if (bSave)
 			{
 				insertAtEndFirstTrades(pNode->m_data);
+			}
+
+			switch (pNode->m_data.m_eItemType)
+			{
+			case TRADE_PEACE_TREATY:
+				bFirstPeace = true;
+				break;
+			case TRADE_SLAVE:
+				bFirstTrade = true;
+				bFirstSlaves = true;
+				break;
+			case TRADE_GOLD:
+				bFirstTrade = true;
+				iFirstGold += pNode->m_data.m_iData;
+				break;
+			case TRADE_GOLD_PER_TURN:
+			case TRADE_VASSAL:
+			case TRADE_TECHNOLOGIES:
+			case TRADE_RESOURCES:
+			case TRADE_CITIES:
+				bFirstTrade = true;
+				break;
+			case TRADE_SURRENDER:
+				bFirstSurrender = true;
+				break;
 			}
 		}
 	}
@@ -236,12 +292,79 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 	{
 		for (pNode = pSecondList->head(); pNode; pNode = pSecondList->next(pNode))
 		{
+			// Leoreth: to prevent a crash caused by a war triggered by tech trades and the subsequent peace treaty
+			if (atWar(eFirstTeam, eSecondTeam))
+			{
+				break;
+			}
+
 			bSave = startTrade(pNode->m_data, getSecondPlayer(), getFirstPlayer());
 
 			if (bSave)
 			{
 				insertAtEndSecondTrades(pNode->m_data);
 			}
+
+			switch (pNode->m_data.m_eItemType)
+			{
+			case TRADE_PEACE_TREATY:
+				bSecondPeace = true;
+				break;
+			case TRADE_SLAVE:
+				bSecondTrade = true;
+				bSecondSlaves = true;
+				break;
+			case TRADE_GOLD:
+				bSecondTrade = true;
+				iSecondGold += pNode->m_data.m_iData;
+				break;
+			case TRADE_GOLD_PER_TURN:
+			case TRADE_VASSAL:
+			case TRADE_TECHNOLOGIES:
+			case TRADE_RESOURCES:
+			case TRADE_CITIES:
+				bSecondTrade = true;
+				break;
+			case TRADE_SURRENDER:
+				bSecondSurrender = true;
+				break;
+			}
+		}
+	}
+
+	// Python Event
+	if (bFirstSlaves)
+	{
+		CvEventReporter::getInstance().playerSlaveTrade(getFirstPlayer(), iSecondGold);
+	}
+
+	if (bSecondSlaves)
+	{
+		CvEventReporter::getInstance().playerSlaveTrade(getSecondPlayer(), iFirstGold);
+	}
+
+	if (bFirstPeace && bSecondPeace)
+	{
+		if (bSecondTrade && !bFirstTrade)
+		{
+			CvEventReporter::getInstance().tribute(getSecondPlayer(), getFirstPlayer());
+		}
+
+		if (bFirstTrade && !bSecondTrade)
+		{
+			CvEventReporter::getInstance().tribute(getFirstPlayer(), getSecondPlayer());
+		}
+	}
+	else
+	{
+		if (bSecondSurrender && !bFirstTrade)
+		{
+			CvEventReporter::getInstance().tribute(getSecondPlayer(), getFirstPlayer());
+		}
+
+		if (bFirstSurrender && !bSecondTrade)
+		{
+			CvEventReporter::getInstance().tribute(getFirstPlayer(), getSecondPlayer());
 		}
 	}
 
@@ -425,7 +548,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 	for (pNode = headFirstTradesNode(); (pNode != NULL); pNode = nextFirstTradesNode(pNode))
 	{
-		if (isVassal(pNode->m_data.m_eItemType))
+		/*if (isVassal(pNode->m_data.m_eItemType))
 		{
 			if (eByPlayer == getSecondPlayer())
 			{
@@ -436,7 +559,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 				return true;
 			}
-		}
+		}*/
 
 		if (pNode->m_data.m_eItemType == TRADE_SURRENDER)
 		{
@@ -459,7 +582,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 	for (pNode = headSecondTradesNode(); (pNode != NULL); pNode = nextSecondTradesNode(pNode))
 	{
-		if (isVassal(pNode->m_data.m_eItemType))
+		/*if (isVassal(pNode->m_data.m_eItemType))
 		{
 			if (eByPlayer == getFirstPlayer())
 			{
@@ -470,7 +593,7 @@ bool CvDeal::isUncancelableVassalDeal(PlayerTypes eByPlayer, CvWString* pszReaso
 
 				return true;
 			}
-		}
+		}*/
 
 		if (pNode->m_data.m_eItemType == TRADE_SURRENDER)
 		{
@@ -688,6 +811,7 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 	CvPlot* pLoopPlot;
 	bool bSave;
 	int iI;
+	CvUnit* pUnit; // edead
 
 	bSave = false;
 
@@ -696,6 +820,8 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 	case TRADE_TECHNOLOGIES:
 		GET_TEAM(GET_PLAYER(eToPlayer).getTeam()).setHasTech(((TechTypes)trade.m_iData), true, eToPlayer, true, true);
 		GET_TEAM(GET_PLAYER(eToPlayer).getTeam()).setNoTradeTech(((TechTypes)trade.m_iData), true);
+
+		CvEventReporter::getInstance().techTraded(eFromPlayer, eToPlayer, (TechTypes)trade.m_iData);
 
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
@@ -729,6 +855,20 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 			pCity->doTask(TASK_GIFT, eToPlayer);
 		}
 		break;
+
+	// edead: start Relic trade based on Afforess' Advanced Diplomacy (Leoreth)
+	case TRADE_SLAVE:
+        pUnit = GET_PLAYER(eFromPlayer).getUnit(trade.m_iData);
+        if (pUnit != NULL)
+        {
+			if (pUnit->isCargo()) // Leoreth: should fix the invisible slave bug
+			{
+				pUnit->unload();
+			}
+            pUnit->tradeUnit(eToPlayer);
+        }
+        break;
+	// edead: end
 
 	case TRADE_GOLD:
 		GET_PLAYER(eFromPlayer).changeGold(-(trade.m_iData));
@@ -786,6 +926,7 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 
 	case TRADE_PEACE:
 		GET_TEAM(GET_PLAYER(eFromPlayer).getTeam()).makePeace((TeamTypes)trade.m_iData);
+		CvEventReporter::getInstance().peaceBrokered(eToPlayer, eFromPlayer, GET_TEAM((TeamTypes)trade.m_iData).getLeaderID());
 		break;
 
 	case TRADE_WAR:
@@ -905,6 +1046,7 @@ void CvDeal::endTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eToP
 
 	case TRADE_CITIES:
 	case TRADE_GOLD:
+	case TRADE_SLAVE: // edead
 		FAssert(false);
 		break;
 

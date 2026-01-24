@@ -263,6 +263,11 @@ bool CyTeam::isEverAlive()
 	return m_pTeam ? m_pTeam->isEverAlive() : false;
 }
 
+bool CyTeam::isExisting()
+{
+	return m_pTeam ? m_pTeam->isExisting() : false;
+}
+
 int CyTeam::getNumCities()
 {
 	return m_pTeam ? m_pTeam->getNumCities() : -1;
@@ -622,6 +627,20 @@ bool CyTeam::isHasMet(int /*TeamTypes*/ eIndex)
 	return m_pTeam ? m_pTeam->isHasMet((TeamTypes)eIndex) : false;
 }
 
+//Rhye - start
+void CyTeam::cutContact(int /*TeamTypes*/ eIndex)
+{
+	if (m_pTeam)
+		m_pTeam->cutContact((TeamTypes)eIndex);
+}
+
+void CyTeam::setAtWar(int /*TeamTypes*/ iIndex, bool bNewValue )
+{
+	if (m_pTeam)
+		m_pTeam->setAtWar((TeamTypes)iIndex, bNewValue);
+}
+//Rhye - end
+
 bool CyTeam::isAtWar(int /*TeamTypes*/ iIndex)
 {
 	if (iIndex == NO_TEAM) return false;
@@ -963,6 +982,14 @@ int CyTeam::AI_getAtWarCounter(int /*TeamTypes*/ eTeam) const
 	return m_pTeam ? m_pTeam->AI_getAtWarCounter((TeamTypes)eTeam) : -1;
 }
 
+void CyTeam::AI_setAtWarCounter(int /*TeamTypes*/ eTeam, int iNewValue)
+{
+	if (m_pTeam)
+	{
+		m_pTeam->AI_setAtWarCounter((TeamTypes)eTeam, iNewValue);
+	}
+}
+
 int CyTeam::AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const
 {
 	return m_pTeam ? m_pTeam->AI_getAtPeaceCounter((TeamTypes)eTeam) : -1;
@@ -971,4 +998,42 @@ int CyTeam::AI_getAtPeaceCounter(int /*TeamTypes*/ eTeam) const
 int CyTeam::AI_getWarSuccess(int /*TeamTypes*/ eIndex) const
 {
 	return m_pTeam ? m_pTeam->AI_getWarSuccess((TeamTypes)eIndex) : -1;
+}
+
+// Leoreth
+void CyTeam::setOpenBorders(int eTeam, bool bNewValue)
+{
+	if (m_pTeam)
+		m_pTeam->setOpenBorders((TeamTypes)eTeam, bNewValue);
+}
+
+void CyTeam::setDefensivePact(int eTeam, bool bNewValue)
+{
+	if (m_pTeam)
+		m_pTeam->setDefensivePact((TeamTypes)eTeam, bNewValue);
+}
+
+bool CyTeam::isCapitulated()
+{
+	return m_pTeam ? m_pTeam->isCapitulated() : false;
+}
+
+bool CyTeam::canCutContact(int eTeam)
+{
+	return m_pTeam ? m_pTeam->canCutContact((TeamTypes)eTeam) : false;
+}
+
+int CyTeam::getTotalTechValue()
+{
+	return m_pTeam ? m_pTeam->getTotalTechValue() : -1;
+}
+
+void CyTeam::changeObsoleteBuildingCount(int eBuilding, int iChange)
+{
+	if (m_pTeam) m_pTeam->changeObsoleteBuildingCount((BuildingTypes)eBuilding, iChange);
+}
+
+int CyTeam::AI_getWarPlan(int eTeam)
+{
+	return m_pTeam ? m_pTeam->AI_getWarPlan((TeamTypes)eTeam) : -1;
 }

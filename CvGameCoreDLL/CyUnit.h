@@ -81,6 +81,13 @@ public:
 	bool canBombard(CyPlot* pPlot);
 	bool canPillage(CyPlot* pPlot);
 
+	//SuperSpies: TSHEEP Assassin Mission
+	bool canAssassin(CyPlot* pPlot, bool bTestVisible);
+	//SuperSpies: glider1 start - Bribe Mission
+	bool canBribe(CyPlot* pPlot, bool bTestVisible);
+	//SuperSpies: glider1  end
+	//SuperSpies: TSHEEP End
+	
 	int sabotageCost(CyPlot* pPlot);
 	int sabotageProb(CyPlot* pPlot, int /*ProbabilityTypes*/ eProbStyle);
 	bool canSabotage(CyPlot* pPlot, bool bTestVisible);
@@ -128,6 +135,7 @@ public:
 	bool upgradeAvailable(int /*UnitTypes*/ eFromUnit, int /*UnitClassTypes*/ eToUnitClass, int iCount);
 	bool canUpgrade(int /*UnitTypes*/ eUnit, bool bTestVisible);			
 	bool hasUpgrade(bool bSearch);
+	void discountedUpgrade(int /*UnitTypes*/ eUnit, int percent); //Rhye
 
 	int /*HandicapTypes*/ getHandicapType();
 	int /*CivilizationTypes*/ getCivilizationType();
@@ -276,6 +284,7 @@ public:
 	int getX();
 	int getY();
 	void setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow);
+	void setXYOld(int iX, int iY); //Rhye
 	bool at(int iX, int iY);
 	bool atPlot(CyPlot* pPlot);
 	CyPlot* plot();
@@ -393,6 +402,7 @@ public:
 	int /*UnitAITypes*/ getUnitAIType();
 	void setUnitAIType(int /*UnitAITypes*/ iNewValue);
 
+	void found(); //Rhye
 	const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;
 	std::string getButton() const;
 
@@ -401,6 +411,12 @@ public:
 	void centerCamera();
 	void attackForDamage(CyUnit *defender, int attakerDamageChange, int defenderDamageChange);
 	void rangeStrike(int iX, int iY);
+
+	// Leoreth
+
+	void changeImmobileTimer(int iChange);
+	void testPromotionReady();
+	bool isExisting();
 
 protected:
 	CvUnit* m_pUnit;
