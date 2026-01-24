@@ -18326,7 +18326,8 @@ bool CvUnitAI::AI_choke(int iRange)
 			CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iX, iY);
 			if (pLoopPlot != NULL)
 			{
-				if (isEnemy(pLoopPlot->getTeam()))
+				// Leoreth: don't choke different domain or independents
+				if (pLoopPlot->isWater() != plot()->isWater() && pLoopPlot->isOwned() && !GET_PLAYER(pLoopPlot->getOwner()).isMinorCiv() && isEnemy(pLoopPlot->getTeam()))
 				{
 					CvCity* pWorkingCity = pLoopPlot->getWorkingCity();
 					if ((pWorkingCity != NULL) && (pWorkingCity->getTeam() == pLoopPlot->getTeam()))
