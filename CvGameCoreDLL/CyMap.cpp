@@ -1,157 +1,145 @@
-//
-// Python wrapper class for CvMap 
-// 
+// Python wrapper class for CvMap
 
 #include "CvGameCoreDLL.h"
-#include "cyMap.h"
-#include "CyPlot.h"
+#include "CyMap.h"
 #include "CvMap.h"
-#include "CyCity.h"
 #include "CySelectionGroup.h"
-#include "CyUnit.h"
 #include "CyArea.h"
-#include "CvGlobals.h"
 #include "CvMapGenerator.h"
-#include "CvInitCore.h"
+#include "CvGame.h" // advc.savem
+#include "CvReplayInfo.h" // advc.savem
 
-CyMap::CyMap() : m_pMap(NULL)
-{
-	m_pMap = &GC.getMapINLINE();
-}
-
-CyMap::CyMap(CvMap* pMap) : m_pMap(pMap)
-{
-
-}
 
 void CyMap::erasePlots()
 {
-	if (m_pMap)
-		m_pMap->erasePlots();
+	m_kMap.erasePlots();
 }
 
 void CyMap::setRevealedPlots(int /*TeamTypes*/ eTeam, bool bNewValue, bool bTerrainOnly)
 {
-	if (m_pMap)
-		m_pMap->setRevealedPlots((TeamTypes) eTeam, bNewValue, bTerrainOnly);
+	m_kMap.setRevealedPlots((TeamTypes) eTeam, bNewValue, bTerrainOnly);
 }
 
 void CyMap::setAllPlotTypes(int /*PlotTypes*/ ePlotType)
 {
-	if (m_pMap)
-		m_pMap->setAllPlotTypes((PlotTypes) ePlotType);
+	m_kMap.setAllPlotTypes((PlotTypes) ePlotType);
 }
 
 void CyMap::updateVisibility()
 {
-	if (m_pMap)
-		m_pMap->updateVisibility();
+	m_kMap.updateVisibility();
 }
 
 CyPlot* CyMap::syncRandPlot(int iFlags, int iArea, int iMinUnitDistance, int iTimeout)
 {
-	return m_pMap ? new CyPlot(m_pMap->syncRandPlot(iFlags, iArea, iMinUnitDistance, iTimeout)) : NULL;
+	// advc: No longer takes an area id
+	CvArea* pArea = m_kMap.getArea(iArea);
+	return new CyPlot(m_kMap.syncRandPlot(/* advc.enum: */(RandPlotFlags)iFlags,
+			pArea, iMinUnitDistance, iTimeout));
 }
 
-CyCity* CyMap::findCity(int iX, int iY, int /*PlayerTypes*/ eOwner, int /*TeamTypes*/ eTeam, bool bSameArea, bool bCoastalOnly, int /*TeamTypes*/ eTeamAtWarWith, int /*DirectionTypes*/ eDirection, CyCity* pSkipCity)
+CyCity* CyMap::findCity(int iX, int iY, int /*PlayerTypes*/ eOwner, int /*TeamTypes*/ eTeam, bool bSameArea, bool bCoastalOnly,
+	int /*TeamTypes*/ eTeamAtWarWith, int /*DirectionTypes*/ eDirection, CyCity* pSkipCity)
 {
-	return m_pMap ? new CyCity(m_pMap->findCity(iX, iY, (PlayerTypes)eOwner, (TeamTypes)eTeam, bSameArea, bCoastalOnly, ((TeamTypes)eTeamAtWarWith), (DirectionTypes)eDirection, pSkipCity->getCity())) : NULL;
+	return new CyCity(m_kMap.findCity(iX, iY, (PlayerTypes)eOwner, (TeamTypes)eTeam, bSameArea, bCoastalOnly,
+			((TeamTypes)eTeamAtWarWith), (DirectionTypes)eDirection, pSkipCity->getCity()));
 }
 
 CySelectionGroup* CyMap::findSelectionGroup(int iX, int iY, int /*PlayerTypes*/ eOwner, bool bReadyToSelect, bool bWorkers)
 {
-	return m_pMap ? new CySelectionGroup(m_pMap->findSelectionGroup(iX, iY, (PlayerTypes)eOwner, bReadyToSelect, bWorkers)) : NULL;
+	return new CySelectionGroup(m_kMap.findSelectionGroup(iX, iY, (PlayerTypes)eOwner, bReadyToSelect, bWorkers));
 }
 
 CyArea* CyMap::findBiggestArea(bool bWater)
 {
-	return m_pMap ? new CyArea(m_pMap->findBiggestArea(bWater)) : NULL;
+	return new CyArea(m_kMap.findBiggestArea(bWater));
 }
 
 int CyMap::getMapFractalFlags()
 {
-	return m_pMap ? m_pMap->getMapFractalFlags() : -1;
+	return m_kMap.getMapFractalFlags();
 }
 
 bool CyMap::findWater(CyPlot* pPlot, int iRange, bool bFreshWater)
 {
-	return m_pMap ? m_pMap->findWater(pPlot->getPlot(), iRange, bFreshWater) : false;
+	return m_kMap.findWater(pPlot->getPlot(), iRange, bFreshWater);
 }
 
 bool CyMap::isPlot(int iX, int iY)
 {
-	return m_pMap ? m_pMap->isPlotINLINE(iX, iY) : false;
+	return m_kMap.isPlot(iX, iY);
 }
 
 int CyMap::numPlots()
 {
-	return m_pMap ? m_pMap->numPlotsINLINE() : -1;
+	return m_kMap.numPlots();
 }
 
 int CyMap::plotNum(int iX, int iY)
 {
-	return m_pMap ? m_pMap->plotNumINLINE(iX, iY) : -1;
+	return m_kMap.plotNum(iX, iY);
 }
 
 int CyMap::plotX(int iIndex)
 {
-	return m_pMap ? m_pMap->plotX(iIndex) : -1;
+	// advc: Cut from deleted CvMap::plotX
+	return iIndex % m_kMap.getGridWidth();
 }
 
 int CyMap::plotY(int iIndex)
 {
-	return m_pMap ? m_pMap->plotY(iIndex) : -1;
+	// advc: Cut from deleted CvMap::plotY
+	return iIndex / m_kMap.getGridWidth();
 }
 
-int CyMap::getGridWidth() 
+int CyMap::getGridWidth()
 {
-	return m_pMap->getGridWidthINLINE();
+	return m_kMap.getGridWidth();
 }
 
 int CyMap::getGridHeight()
 {
-	return m_pMap->getGridHeightINLINE();
+	return m_kMap.getGridHeight();
 }
 
 int CyMap::getLandPlots()
 {
-	return m_pMap ? m_pMap->getLandPlots() : -1;
+	return m_kMap.getLandPlots();
 }
 
 int CyMap::getOwnedPlots()
 {
-	return m_pMap ? m_pMap->getOwnedPlots() : -1;
+	return m_kMap.getOwnedPlots();
 }
 
 int CyMap::getTopLatitude()
 {
-	return m_pMap ? m_pMap->getTopLatitude() : -1;
+	return m_kMap.getTopLatitude();
 }
 
 int CyMap::getBottomLatitude()
 {
-	return m_pMap ? m_pMap->getBottomLatitude() : -1;
+	return m_kMap.getBottomLatitude();
 }
 
 int CyMap::getNextRiverID()
 {
-	return m_pMap ? m_pMap->getNextRiverID() : -1;
+	return m_kMap.getNextRiverID();
 }
 
 void CyMap::incrementNextRiverID()
 {
-	if (m_pMap)
-		m_pMap->incrementNextRiverID();
+	m_kMap.incrementNextRiverID();
 }
 
 bool CyMap::isWrapX()
 {
-	return m_pMap ? m_pMap->isWrapXINLINE() : false;
+	return m_kMap.isWrapX();
 }
 
 bool CyMap::isWrapY()
 {
-	return m_pMap ? m_pMap->isWrapYINLINE() : false;
+	return m_kMap.isWrapY();
 }
 
 std::wstring CyMap::getMapScriptName()
@@ -161,196 +149,243 @@ std::wstring CyMap::getMapScriptName()
 
 WorldSizeTypes CyMap::getWorldSize()
 {
-	return m_pMap ? m_pMap->getWorldSize() : NO_WORLDSIZE;
+	return m_kMap.getWorldSize();
 }
 
 ClimateTypes CyMap::getClimate()
 {
-	return m_pMap ? m_pMap->getClimate() : NO_CLIMATE;
+	return m_kMap.getClimate();
 }
 
 SeaLevelTypes CyMap::getSeaLevel()
 {
-	return m_pMap ? m_pMap->getSeaLevel() : NO_SEALEVEL;
+	return m_kMap.getSeaLevel();
 }
 
 int CyMap::getNumCustomMapOptions()
 {
-	return m_pMap ? m_pMap->getNumCustomMapOptions() : 0;
+	return m_kMap.getNumCustomMapOptions();
 }
 
 CustomMapOptionTypes CyMap::getCustomMapOption(int iOption)
 {
-	return m_pMap ? m_pMap->getCustomMapOption(iOption) : NO_CUSTOM_MAPOPTION;
+	return m_kMap.getCustomMapOption(iOption);
 }
-
+// advc.190b:
+std::wstring CyMap::getNonDefaultCustomMapOptionDesc(int iOption)
+{
+	return m_kMap.getNonDefaultCustomMapOptionDesc(iOption);
+}
+// advc.savem:
+std::wstring CyMap::getSettingsString()
+{
+	PlayerTypes const eActivePlayer = GC.getGame().getActivePlayer();
+	if (eActivePlayer == NO_PLAYER)
+		return L"";
+	CvReplayInfo tmpReplay;
+	tmpReplay.createInfo(eActivePlayer);
+	CvWString szSettings;
+	tmpReplay.appendSettingsMsg(szSettings, eActivePlayer);
+	return szSettings; // by value
+}
 int CyMap::getNumBonuses(int /* BonusTypes */ eIndex)
 {
-	return m_pMap ? m_pMap->getNumBonuses((BonusTypes)eIndex) : -1;
+	return m_kMap.getNumBonuses((BonusTypes)eIndex);
 }
 
 int CyMap::getNumBonusesOnLand(int /* BonusTypes */ eIndex)
 {
-	return m_pMap ? m_pMap->getNumBonusesOnLand((BonusTypes)eIndex) : -1;
+	return m_kMap.getNumBonusesOnLand((BonusTypes)eIndex);
 }
 
 CyPlot* CyMap::plotByIndex(int iIndex)
 {
-	return m_pMap ? new CyPlot(m_pMap->plotByIndexINLINE(iIndex)) : NULL;
+	return new CyPlot(m_kMap.plotByIndex(iIndex));
 }
 
-int CyMap::plotIndex(int iX, int iY)
-{
-	return m_pMap ? m_pMap->plotIndex(iX, iY) : -1;
-}
-
-//
-// static version
-//
-CyPlot* CyMap::sPlotByIndex(int iIndex)
+CyPlot* CyMap::sPlotByIndex(int iIndex) // static version
 {
 	static CyPlot plot;
-	if (m_pMap)
-	{
-		plot.setPlot(m_pMap->plotByIndexINLINE(iIndex));
-		return &plot;
-	}
-	return NULL;
+	plot.setPlot(m_kMap.plotByIndex(iIndex));
+	return &plot;
 }
 
-CyPlot* CyMap::plot(int iX, int iY) 
+// doc
+int CyMap::plotIndex(int iX, int iY)
 {
-	return new CyPlot(m_pMap->plotINLINE(iX, iY));
+    return m_kMap.plotIndex(iX, iY);
 }
 
-//
-// static version
-//
-CyPlot* CyMap::sPlot(int iX, int iY) 
+CyPlot* CyMap::plot(int iX, int iY)
+{
+	return new CyPlot(m_kMap.plot(iX, iY));
+}
+
+CyPlot* CyMap::sPlot(int iX, int iY) // static version
 {
 	static CyPlot p;
-	p.setPlot(m_pMap->plotINLINE(iX, iY));
+	p.setPlot(m_kMap.plot(iX, iY));
 	return &p;
 }
 
 CyPlot* CyMap::pointToPlot(float fX, float fY)
 {
-	return m_pMap ? new CyPlot(m_pMap->pointToPlot(fX, fY)) : NULL;
+	return new CyPlot(m_kMap.pointToPlot(fX, fY));
 }
 
 int CyMap::getIndexAfterLastArea()
 {
-	return m_pMap ? m_pMap->getIndexAfterLastArea() : -1;
+	return m_kMap.getIndexAfterLastArea();
 }
 
 int CyMap::getNumAreas()
 {
-	return m_pMap ? m_pMap->getNumAreas() : -1;
+	return m_kMap.getNumAreas();
 }
 
 int CyMap::getNumLandAreas()
 {
-	return m_pMap ? m_pMap->getNumLandAreas() : -1;
+	return m_kMap.getNumLandAreas();
 }
 
 CyArea* CyMap::getArea(int iID)
 {
-	return m_pMap ? new CyArea(m_pMap->getArea(iID)) : NULL;
+	return new CyArea(m_kMap.getArea(iID));
 }
 
 void CyMap::recalculateAreas()
 {
-	if (m_pMap)
-		m_pMap->recalculateAreas();
+	m_kMap.recalculateAreas();
 }
 
 void CyMap::resetPathDistance()
 {
-	if (m_pMap)
-		m_pMap->resetPathDistance();
+	m_kMap.resetPathDistance();
 }
 
 int CyMap::calculatePathDistance(CyPlot* pSource, CyPlot* pDest)
 {
-	if (m_pMap)
-		return m_pMap->calculatePathDistance(pSource->getPlot(), pDest->getPlot());
-	return -1;
+	return m_kMap.calculatePathDistance(pSource->getPlot(), pDest->getPlot());
 }
 
 void CyMap::rebuild(int iGridW, int iGridH, int iPrimeMeridian, int iEquator, int iTopLatitude, int iBottomLatitude, bool bWrapX, bool bWrapY, WorldSizeTypes eWorldSize, ClimateTypes eClimate, SeaLevelTypes eSeaLevel, int iNumCustomMapOptions, CustomMapOptionTypes * aeCustomMapOptions)
 {
-	if (m_pMap)
-	{
-		m_pMap->rebuild(iGridW, iGridH, iPrimeMeridian, iEquator, iTopLatitude, iBottomLatitude, bWrapX, bWrapY, eWorldSize, eClimate, eSeaLevel, iNumCustomMapOptions, aeCustomMapOptions);
-	}
+	m_kMap.rebuild(iGridW, iGridH, iPrimeMeridian, iEquator, iTopLatitude, iBottomLatitude, bWrapX, bWrapY, eWorldSize, eClimate, eSeaLevel, iNumCustomMapOptions, aeCustomMapOptions);
 }
 
 void CyMap::regenerateGameElements()
 {
-	if (m_pMap)
-	{
-		CvMapGenerator* pMapGen = &CvMapGenerator::GetInstance();
-		pMapGen->eraseRivers();
-		pMapGen->eraseFeatures();
-		pMapGen->eraseBonuses();
-		pMapGen->eraseGoodies();
-		pMapGen->addGameElements();
-	}
+	CvMapGenerator* pMapGen = &CvMapGenerator::GetInstance();
+	pMapGen->eraseRivers();
+	pMapGen->eraseFeatures();
+	pMapGen->eraseBonuses();
+	pMapGen->eraseGoodies();
+	pMapGen->addGameElements();
 }
 
 void CyMap::updateFog()
 {
-	if (m_pMap)
-	{
-		m_pMap->updateFog();
-	}
+	m_kMap.updateFog();
 }
 
 void CyMap::updateMinimapColor()
 {
-	if (m_pMap)
-	{
-		m_pMap->updateMinimapColor();
-	}
+	m_kMap.updateMinimapColor();
 }
 
 void CyMap::updateMinOriginalStartDist(CyArea* pArea)
 {
-	if (m_pMap)
-	{
-		m_pMap->updateMinOriginalStartDist(pArea->getArea());
-	}
+	m_kMap.updateMinOriginalStartDist(pArea->getArea());
 }
 
+// <advc.enum> Moved from CyGame
+int CyMap::getPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield) // K-Mod
+{
+	CvPlot const* pPlot = m_kMap.plot(iX, iY);
+	if (pPlot == NULL)
+		return 0;
+	return m_kMap.getPlotExtraYield(*pPlot, (YieldTypes)eYield);
+}
+
+void CyMap::setPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield)
+{
+	CvPlot* pPlot = m_kMap.plot(iX, iY);
+	if (pPlot == NULL)
+		return;
+	m_kMap.setPlotExtraYield(*pPlot, (YieldTypes)eYield, iExtraYield);
+}
+
+void CyMap::changePlotExtraCost(int iX, int iY, int iCost)
+{
+	CvPlot* pPlot = m_kMap.plot(iX, iY);
+	if (pPlot == NULL)
+		return;
+	m_kMap.changePlotExtraCost(*pPlot, iCost);
+} // </advc.enum>
+
+// <advc.002a>
+void CyMap::setMinimapShowUnits(bool b)
+{
+	m_kMap.getMinimapSettings().setShowUnits(b);
+}
+
+void CyMap::setMinimapWaterAlpha(float f)
+{
+	m_kMap.getMinimapSettings().setWaterAlpha(f);
+}
+
+void CyMap::setMinimapLandAlpha(float f)
+{
+	m_kMap.getMinimapSettings().setLandAlpha(f);
+}
+
+bool CyMap::isMinimapShowUnits()
+{
+	return m_kMap.getMinimapSettings().isShowUnits();
+}
+
+float CyMap::getMinimapWaterAlpha()
+{
+	return m_kMap.getMinimapSettings().getWaterAlpha();
+}
+
+float CyMap::getMinimapLandAlpha()
+{
+	return m_kMap.getMinimapSettings().getLandAlpha();
+} // </advc.002a>
+
+// doc
 int CyMap::getPrimeMeridian()
 {
-	return m_pMap ? m_pMap->getPrimeMeridian() : -1;
+    return m_kMap.getPrimeMeridian();
 }
 
+// doc
 int CyMap::getEquator()
 {
-	return m_pMap ? m_pMap->getEquator() : -1;
+    return m_kMap.getEquator();
 }
 
+// doc
 void CyMap::updateCulture()
 {
-	if (m_pMap)
-	{
-		m_pMap->updateCulture();
-	}
+    m_kMap.updateCulture();
 }
 
+// doc
 int CyMap::maxStepDistance()
 {
-	return m_pMap ? m_pMap->maxStepDistance() : -1;
+    return m_kMap.maxStepDistance();
 }
 
+// doc
 int CyMap::maxPlotDistance()
 {
-	return m_pMap ? m_pMap->maxPlotDistance() : -1;
+    return m_kMap.maxPlotDistance();
 }
 
+// doc
 int CyMap::getScenario()
 {
-	return m_pMap ? m_pMap->getScenario() : -1;
+    return m_kMap.getScenario();
 }

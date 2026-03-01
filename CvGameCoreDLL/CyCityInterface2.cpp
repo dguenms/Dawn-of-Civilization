@@ -1,40 +1,19 @@
-#pragma component (mintypeinfo, on)
-
 #include "CvGameCoreDLL.h"
-#include "CyCity.h"
-#include "CyPlot.h"
-#include "CyArea.h"
-#include "CvInfos.h"
 
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
-
-//
-// published python interface for CyCity
-//
+// kekm.34/advc: Added in order to reduce the size of CyCityInterface1.cpp
 
 void CyCityPythonInterface2(python::class_<CyCity>& x)
 {
-	OutputDebugString("Python Extension Module - CyCityPythonInterface2\n");
+	printToConsole("Python Extension Module - CyCityPythonInterface2\n");
 
-	x
-// BUG - Production Decay - start
-		.def("getUnitProductionTime", &CyCity::getUnitProductionTime, "int (int /*UnitTypes*/ eIndex)")
-		.def("setUnitProductionTime", &CyCity::setUnitProductionTime, "int (int /*UnitTypes*/ eIndex, int iNewValue)")
-		.def("changeUnitProductionTime", &CyCity::changeUnitProductionTime, "int (int /*UnitTypes*/ eIndex, int iChange)")
-		.def("isUnitProductionDecay", &CyCity::isUnitProductionDecay, "bool (int /*UnitTypes*/ eIndex)")
-		.def("getUnitProductionDecay", &CyCity::getUnitProductionDecay, "int (int /*UnitTypes*/ eIndex)")
-		.def("getUnitProductionDecayTurns", &CyCity::getUnitProductionDecayTurns, "int (int /*UnitTypes*/ eIndex)")
-// BUG - Production Decay - end
-// BUG - Project Production - start
-		.def("getProjectProduction", &CyCity::getProjectProduction, "int (int /*ProjectTypes*/ eIndex)")
-		.def("setProjectProduction", &CyCity::setProjectProduction, "void (int /*ProjectTypes*/ eIndex, int iNewValue)")
-		.def("changeProjectProduction", &CyCity::changeProjectProduction, "void (int /*ProjectTypes*/ eIndex, int iChange)")
-// BUG - Project Production - end
+	x	/*  advc: Arbitrarily moved these from CyCityInterface1.cpp so
+			that nothing breaks if a few more functions are added there. */
 		.def("getGreatPeopleUnitRate", &CyCity::getGreatPeopleUnitRate, "int (int /*UnitTypes*/ iIndex)")
 		.def("getGreatPeopleUnitProgress", &CyCity::getGreatPeopleUnitProgress, "int (int /*UnitTypes*/ iIndex)")
 		.def("setGreatPeopleUnitProgress", &CyCity::setGreatPeopleUnitProgress, "int (int /*UnitTypes*/ iIndex, int iNewValue)")
 		.def("changeGreatPeopleUnitProgress", &CyCity::changeGreatPeopleUnitProgress, "int (int /*UnitTypes*/ iIndex, int iChange)")
+		// advc.001c:
+		.def("GPProjection", &CyCity::GPProjection, "int (int /*UnitTypes*/ iIndex)")
 		.def("getSpecialistCount", &CyCity::getSpecialistCount, "int (int /*SpecialistTypes*/ eIndex)")
 		.def("alterSpecialistCount", &CyCity::alterSpecialistCount, "int (int /*SpecialistTypes*/ eIndex, int iChange)")
 		.def("getMaxSpecialistCount", &CyCity::getMaxSpecialistCount, "int (int /*SpecialistTypes*/ eIndex)")
@@ -64,9 +43,9 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 
 		.def("isWorkingPlotByIndex", &CyCity::isWorkingPlotByIndex, "bool (iIndex) - true if a worker is working this city's plot iIndex")
 		.def("isWorkingPlot", &CyCity::isWorkingPlot, "bool (iIndex) - true if a worker is working this city's pPlot")
-		.def("alterWorkingPlot", &CyCity::alterWorkingPlot, "void (iIndex)")	
-		.def("isHasRealBuilding", &CyCity::isHasRealBuilding, "bool (BuildingID) - real building or a free one?") //Rhye
-		.def("setHasRealBuilding", &CyCity::setHasRealBuilding, "(BuildingID, bAdd) - if bAdd = 1 the building is Added, 0 it is removed") //Rhye
+		.def("alterWorkingPlot", &CyCity::alterWorkingPlot, "void (iIndex)")
+		.def("isHasRealBuilding", &CyCity::isHasRealBuilding, "bool (BuildingID) - real building or a free one?") // rfc
+		.def("setHasRealBuilding", &CyCity::setHasRealBuilding, "(BuildingID, bAdd) - if bAdd = 1 the building is Added, 0 it is removed") // rfc
 		.def("getNumRealBuilding", &CyCity::getNumRealBuilding, "int (BuildingID) - get # real building of this type")
 		.def("setNumRealBuilding", &CyCity::setNumRealBuilding, "(BuildingID, iNum) - Sets number of buildings in this city of BuildingID type")
 		.def("getNumFreeBuilding", &CyCity::getNumFreeBuilding, "int (BuildingID) - # of free Building ID (ie: from a Wonder)")
@@ -77,7 +56,7 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("isActiveCorporation", &CyCity::isActiveCorporation, "bool (CorporationID) - does city have active CorporationID?")
 		.def("getTradeCity", &CyCity::getTradeCity, python::return_value_policy<python::manage_new_object>(), "CyCity (int iIndex) - remove SpecialistType[iIndex]")
 		.def("getTradeRoutes", &CyCity::getTradeRoutes, "int ()")
-		.def("getReligionCount", &CyCity::getReligionCount, "int ()") // edead
+		.def("getReligionCount", &CyCity::getReligionCount, "int ()") // doc (edead)
 
 		.def("clearOrderQueue", &CyCity::clearOrderQueue, "void ()")
 		.def("pushOrder", &CyCity::pushOrder, "void (OrderTypes eOrder, int iData1, int iData2, bool bSave, bool bPop, bool bAppend, bool bForce)")
@@ -100,7 +79,7 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 
 		.def("getBuildingYieldChange", &CyCity::getBuildingYieldChange, "int (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield)")
 		.def("setBuildingYieldChange", &CyCity::setBuildingYieldChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)")
-		.def("changeBuildingYieldChange", &CyCity::changeBuildingYieldChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)")
+		.def("changeBuildingYieldChange", &CyCity::changeBuildingYieldChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange)") // doc
 		.def("getBuildingCommerceChange", &CyCity::getBuildingCommerceChange, "int (int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce)")
 		.def("setBuildingCommerceChange", &CyCity::setBuildingCommerceChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce, int iChange)")
 		.def("getBuildingHappyChange", &CyCity::getBuildingHappyChange, "int (int /*BuildingClassTypes*/ eBuildingClass)")
@@ -108,72 +87,71 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getBuildingHealthChange", &CyCity::getBuildingHealthChange, "int (int /*BuildingClassTypes*/ eBuildingClass)")
 		.def("setBuildingHealthChange", &CyCity::setBuildingHealthChange, "void (int /*BuildingClassTypes*/ eBuildingClass, int iChange)")
 
-		// Leoreth
 		.def("getLiberationPlayer", &CyCity::getLiberationPlayer, "int ()")
 		.def("liberate", &CyCity::liberate, "void ()")
 
-		.def("changeBuildingCommerceChange", &CyCity::changeBuildingCommerceChange, "void (int eBuildingClass, int eCommerce, int iChange)")
-		.def("updateBuildingCommerce", &CyCity::updateBuildingCommerce, "void ()")
+		.def("changeBuildingCommerceChange", &CyCity::changeBuildingCommerceChange, "void (int eBuildingClass, int eCommerce, int iChange)") // doc
+		.def("updateBuildingCommerce", &CyCity::updateBuildingCommerce, "void ()") // doc
 
-		.def("getRegionID", &CyCity::getRegionID, "int ()")
-		.def("setWeLoveTheKingDay", &CyCity::setWeLoveTheKingDay, "void (bool bNewValue)")
-		.def("isMongolUP", &CyCity::isMongolUP, "bool ()")
-		.def("setMongolUP", &CyCity::setMongolUP, "void (bool bNewValue)")
-		.def("getGameTurnPlayerLost", &CyCity::getGameTurnPlayerLost, "int (int ePlayer)")
-		.def("getGameTurnCivLost", &CyCity::getGameTurnCivLost, "int (int iCivilizations)")
-		.def("calculateOverallCulturePercent", &CyCity::calculateOverallCulturePercent, "int (int ePlayer)")
-		.def("getNextCoveredPlot", &CyCity::getNextCoveredPlot, "int ()")
-		.def("getCulturePlotIndex", &CyCity::getCulturePlotIndex, "int (int i)")
-		.def("getCulturePlot", &CyCity::getCulturePlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* (int i)")
-		.def("getCultureCost", &CyCity::getCultureCost, "int (int i)")
-		.def("getEffectiveNextCoveredPlot", &CyCity::getEffectiveNextCoveredPlot, "int ()")
-		.def("isCoveredBeforeExpansion", &CyCity::isCoveredBeforeExpansion, "bool (int i)")
-		.def("updateCultureCosts", &CyCity::updateCultureCosts, "void ()")
-		.def("updateCoveredPlots", &CyCity::updateCoveredPlots, "void ()")
-		.def("updateGreatWall", &CyCity::updateGreatWall, "void ()")
-		.def("replaceReligion", &CyCity::replaceReligion, "void (int eOldReligion, int eNewReligion)")
-		.def("removeReligion", &CyCity::removeReligion, "void (int eReligion)")
-		.def("spreadReligion", &CyCity::spreadReligion, "void (int eReligion)")
-		.def("setBuildingOriginalOwner", &CyCity::setBuildingOriginalOwner, "void (int eBuilding, int eCivilization)")
-		.def("setBuildingOriginalTime", &CyCity::setBuildingOriginalTime, "void (int eBuilding, int iYear)")
-		.def("triggerMeltdown", &CyCity::triggerMeltdown, "void (int eBuilding)")
-		.def("isColony", &CyCity::isColony, "bool ()")
-		.def("hasBonusEffect", &CyCity::hasBonusEffect, "bool ()")
-		.def("getCultureRank", &CyCity::getCultureRank, "int ()")
-		.def("isHasBuildingEffect", &CyCity::isHasBuildingEffect, "bool (int eBuilding)")
-		.def("getStabilityPopulation", &CyCity::getStabilityPopulation, "int ()")
-		.def("setStabilityPopulation", &CyCity::setStabilityPopulation, "void (int iNewValue)")
-		.def("getModifiedCultureRate", &CyCity::getModifiedCultureRate, "int ()")
-		.def("getModifiedCultureRateTimes100", &CyCity::getModifiedCultureRateTimes100, "int ()")
-		.def("getNumActiveWorldWonders", &CyCity::getNumActiveWorldWonders, "int ()")
-		.def("isCore", &CyCity::isCore, "bool (int iCivilization)")
-		.def("isPlayerCore", &CyCity::isPlayerCore, "bool (int iPlayer)")
-		.def("isOwnerCore", &CyCity::isOwnerCore, "bool ()")
-		.def("getActualCulture", &CyCity::getActualCulture, "int (int iPlayer)")
-		.def("getTotalPopulationLoss", &CyCity::getTotalPopulationLoss, "int ()")
-		.def("countSatellites", &CyCity::countSatellites, "int ()")
-		.def("getSatelliteSlots", &CyCity::getSatelliteSlots, "int ()")
-		.def("getArea", &CyCity::getArea, "int ()")
-		.def("rebuild", &CyCity::rebuild, "bool (int iEra)")
-		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)")
-		.def("getArea", &CyCity::getArea, "int ()")
-		.def("rebuild", &CyCity::rebuild, "bool ()")
-		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)")
-		.def("getPreviousCiv", &CyCity::getPreviousCiv, "int ()")
-		.def("getOriginalCiv", &CyCity::getOriginalCiv, "int ()")
-		.def("setOriginalCiv", &CyCity::setOriginalCiv, "void (int iCivilization)")
-		.def("setEverOwned", &CyCity::setEverOwned, "void (int iCivilization, bool bNewValue)")
-		.def("setGameTurnFounded", &CyCity::setGameTurnFounded, "void (int iNewValue)")
-		.def("setGameTurnAcquired", &CyCity::setGameTurnAcquired, "void (int iNewValue)")
-		.def("isEverOwnedCiv", &CyCity::isEverOwnedCiv, "bool (int iCivilization)")
-		.def("setCivCulture", &CyCity::setCivCulture, "void (int iCivilization, int iNewValue)")
-		.def("isOriginalOwner", &CyCity::isOriginalOwner, "bool (int iPlayer)")
-		.def("getCorporationBadHappiness", &CyCity::getCorporationBadHappiness, "int ()")
-		.def("getCorporationCount", &CyCity::getCorporationCount, "int ()")
-		.def("doPlotCulture", &CyCity::doPlotCulture, "void (bool bUpdate, int ePlayer, int iCultureRate, bool bOwned)")
-		.def("AI_updateAssignWork", &CyCity::AI_updateAssignWork, "void ()")
-		.def("getHurryPercentAnger", &CyCity::getHurryPercentAnger, "int ()")
-		.def("getConscriptPercentAnger", &CyCity::getConscriptPercentAnger, "int ()")
-		.def("canBeSelected", &CyCity::canBeSelected, "bool ()")
+		.def("getRegionID", &CyCity::getRegionID, "int ()") // doc
+		.def("setWeLoveTheKingDay", &CyCity::setWeLoveTheKingDay, "void (bool bNewValue)") // doc
+		.def("isMongolUP", &CyCity::isMongolUP, "bool ()") // doc
+		.def("setMongolUP", &CyCity::setMongolUP, "void (bool bNewValue)") // doc
+		.def("getGameTurnPlayerLost", &CyCity::getGameTurnPlayerLost, "int (int ePlayer)") // doc
+		.def("getGameTurnCivLost", &CyCity::getGameTurnCivLost, "int (int iCivilizations)") // doc
+		.def("calculateOverallCulturePercent", &CyCity::calculateOverallCulturePercent, "int (int ePlayer)") // doc
+		.def("getNextCoveredPlot", &CyCity::getNextCoveredPlot, "int ()") // doc
+		.def("getCulturePlotIndex", &CyCity::getCulturePlotIndex, "int (int i)") // doc
+		.def("getCulturePlot", &CyCity::getCulturePlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* (int i)") // doc
+		.def("getCultureCost", &CyCity::getCultureCost, "int (int i)") // doc
+		.def("getEffectiveNextCoveredPlot", &CyCity::getEffectiveNextCoveredPlot, "int ()") // doc
+		.def("isCoveredBeforeExpansion", &CyCity::isCoveredBeforeExpansion, "bool (int i)") // doc
+		.def("updateCultureCosts", &CyCity::updateCultureCosts, "void ()") // doc
+		.def("updateCoveredPlots", &CyCity::updateCoveredPlots, "void ()") // doc
+		.def("updateGreatWall", &CyCity::updateGreatWall, "void ()") // doc
+		.def("replaceReligion", &CyCity::replaceReligion, "void (int eOldReligion, int eNewReligion)") // doc
+		.def("removeReligion", &CyCity::removeReligion, "void (int eReligion)") // doc
+		.def("spreadReligion", &CyCity::spreadReligion, "void (int eReligion)") // doc
+		.def("setBuildingOriginalOwner", &CyCity::setBuildingOriginalOwner, "void (int eBuilding, int eCivilization)") // doc
+		.def("setBuildingOriginalTime", &CyCity::setBuildingOriginalTime, "void (int eBuilding, int iYear)") // doc
+		.def("triggerMeltdown", &CyCity::triggerMeltdown, "void (int eBuilding)") // doc
+		.def("isColony", &CyCity::isColony, "bool ()") // doc
+		.def("hasBonusEffect", &CyCity::hasBonusEffect, "bool ()") // doc
+		.def("getCultureRank", &CyCity::getCultureRank, "int ()") // doc
+		.def("isHasBuildingEffect", &CyCity::isHasBuildingEffect, "bool (int eBuilding)") // doc
+		.def("getStabilityPopulation", &CyCity::getStabilityPopulation, "int ()") // doc
+		.def("setStabilityPopulation", &CyCity::setStabilityPopulation, "void (int iNewValue)") // doc
+		.def("getModifiedCultureRate", &CyCity::getModifiedCultureRate, "int ()") // doc
+		.def("getModifiedCultureRateTimes100", &CyCity::getModifiedCultureRateTimes100, "int ()") // doc
+		.def("getNumActiveWorldWonders", &CyCity::getNumActiveWorldWonders, "int ()") // doc
+		.def("isCore", &CyCity::isCore, "bool (int iCivilization)") // doc
+		.def("isPlayerCore", &CyCity::isPlayerCore, "bool (int iPlayer)") // doc
+		.def("isOwnerCore", &CyCity::isOwnerCore, "bool ()") // doc
+		.def("getActualCulture", &CyCity::getActualCulture, "int (int iPlayer)") // doc
+		.def("getTotalPopulationLoss", &CyCity::getTotalPopulationLoss, "int ()") // doc
+		.def("countSatellites", &CyCity::countSatellites, "int ()") // doc
+		.def("getSatelliteSlots", &CyCity::getSatelliteSlots, "int ()") // doc
+		.def("getArea", &CyCity::getArea, "int ()") // doc
+		.def("rebuild", &CyCity::rebuild, "bool (int iEra)") // doc
+		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)") // doc
+		.def("getArea", &CyCity::getArea, "int ()") // doc
+		.def("rebuild", &CyCity::rebuild, "bool ()") // doc
+		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)") // doc
+		.def("getPreviousCiv", &CyCity::getPreviousCiv, "int ()") // doc
+		.def("getOriginalCiv", &CyCity::getOriginalCiv, "int ()") // doc
+		.def("setOriginalCiv", &CyCity::setOriginalCiv, "void (int iCivilization)") // doc
+		.def("setEverOwned", &CyCity::setEverOwned, "void (int iCivilization, bool bNewValue)") // doc
+		.def("setGameTurnFounded", &CyCity::setGameTurnFounded, "void (int iNewValue)") // doc
+		.def("setGameTurnAcquired", &CyCity::setGameTurnAcquired, "void (int iNewValue)") // doc
+		.def("isEverOwnedCiv", &CyCity::isEverOwnedCiv, "bool (int iCivilization)") // doc
+		.def("setCivCulture", &CyCity::setCivCulture, "void (int iCivilization, int iNewValue)") // doc
+		.def("isOriginalOwner", &CyCity::isOriginalOwner, "bool (int iPlayer)") // doc
+		.def("getCorporationBadHappiness", &CyCity::getCorporationBadHappiness, "int ()") // doc
+		.def("getCorporationCount", &CyCity::getCorporationCount, "int ()") // doc
+		.def("doPlotCulture", &CyCity::doPlotCulture, "void (bool bUpdate, int ePlayer, int iCultureRate, bool bOwned)") // doc
+		.def("AI_updateAssignWork", &CyCity::AI_updateAssignWork, "void ()") // doc
+		.def("getHurryPercentAnger", &CyCity::getHurryPercentAnger, "int ()") // doc
+		.def("getConscriptPercentAnger", &CyCity::getConscriptPercentAnger, "int ()") // doc
+		.def("canBeSelected", &CyCity::canBeSelected, "bool ()") // doc
 		;
 }

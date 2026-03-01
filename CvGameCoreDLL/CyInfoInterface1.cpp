@@ -1,16 +1,16 @@
 #include "CvGameCoreDLL.h"
-#include "CvInfos.h"
+#include "CvInfo_All.h"
 
 //
 // Python interface for info classes (formerly structs)
 // These are simple enough to be exposed directly - no wrappers
 //
-
+// advc.003e: Added template parameters 'boost::noncopyable'
 void CyInfoPythonInterface1()
 {
-	OutputDebugString("Python Extension Module - CyInfoPythonInterface1\n");
+	printToConsole("Python Extension Module - CyInfoPythonInterface1\n");
 
-	python::class_<CvInfoBase>("CvInfoBase")
+	python::class_<CvInfoBase, boost::noncopyable>("CvInfoBase")
 
 		.def("isGraphicalOnly", &CvInfoBase::isGraphicalOnly, "bool ()")
 
@@ -26,37 +26,35 @@ void CyInfoPythonInterface1()
 		.def("getHelp", &CvInfoBase::pyGetHelp, "wstring ()")
 		.def("isMatchForLink", &CvInfoBase::isMatchForLink, "bool (string)")
 
-		// Leoreth
-		.def("setDescription", &CvInfoBase::setDescription, "void (string)")
+		.def("setDescription", &CvInfoBase::setDescription, "void (string)") // doc
 		;
 
-	python::class_<CvScalableInfo>("CvScalableInfo")
-		.def("setScale", &CvScalableInfo::setScale, "void (float fScale)")
+	python::class_<CvScalableInfo, boost::noncopyable>("CvScalableInfo")
 		.def("getScale", &CvScalableInfo::getScale, "float  ()")
 		;
 
-	python::class_<CvSpecialistInfo, python::bases<CvInfoBase> >("CvSpecialistInfo")
+	python::class_<CvSpecialistInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvSpecialistInfo")
 		.def("getGreatPeopleUnitClass", &CvSpecialistInfo::getGreatPeopleUnitClass, "int ()")
 		.def("getGreatPeopleRateChange", &CvSpecialistInfo::getGreatPeopleRateChange, "int ()")
 		.def("getMissionType", &CvSpecialistInfo::getMissionType, "int ()")
 
 		.def("isVisible", &CvSpecialistInfo::isVisible, "bool ()")
-		
+
 		.def("getYieldChange", &CvSpecialistInfo::getYieldChange, "int (int i)")
 		.def("getCommerceChange", &CvSpecialistInfo::getCommerceChange, "int (int i)")
 		.def("getExperience", &CvSpecialistInfo::getExperience, "int ()")
 		.def("getFlavorValue", &CvSpecialistInfo::getFlavorValue, "int (int i)")
 
-		.def("getCultureLevelYieldChange", &CvSpecialistInfo::getCultureLevelYieldChange, "int (CultureLevelTypes eCultureLevel)")
-		.def("getCultureLevelCommerceChange", &CvSpecialistInfo::getCultureLevelCommerceChange, "int (CultureLevelTypes eCultureLevel, CommerceTypes eCommerce")
-		.def("getCultureLevelGreatPeopleRateChange", &CvSpecialistInfo::getCultureLevelGreatPeopleRateChange, "int (CultureLevelTypes eCultureLevel")
+		.def("getCultureLevelYieldChange", &CvSpecialistInfo::getCultureLevelYieldChange, "int (CultureLevelTypes eCultureLevel)") // doc
+		.def("getCultureLevelCommerceChange", &CvSpecialistInfo::getCultureLevelCommerceChange, "int (CultureLevelTypes eCultureLevel, CommerceTypes eCommerce") // doc
+		.def("getCultureLevelGreatPeopleRateChange", &CvSpecialistInfo::getCultureLevelGreatPeopleRateChange, "int (CultureLevelTypes eCultureLevel") // doc
 
 		.def("getTexture", &CvSpecialistInfo::getTexture, "string ()")
 
-		.def("isSatellite", &CvSpecialistInfo::isSatellite, "bool ()")
+		.def("isSatellite", &CvSpecialistInfo::isSatellite, "bool ()") // doc
 		;
 
-	python::class_<CvTechInfo, python::bases<CvInfoBase> >("CvTechInfo")
+	python::class_<CvTechInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvTechInfo")
 		.def("getAdvisorType", &CvTechInfo::getAdvisorType, "int ()")
 		.def("getAIWeight", &CvTechInfo::getAIWeight, "int ()")
 		.def("getAITradeModifier", &CvTechInfo::getAITradeModifier, "int ()")
@@ -94,6 +92,7 @@ void CyInfoPythonInterface1()
 		.def("isIgnoreIrrigation", &CvTechInfo::isIgnoreIrrigation, "bool ()")
 		.def("isWaterWork", &CvTechInfo::isWaterWork, "bool ()")
 		.def("isRiverTrade", &CvTechInfo::isRiverTrade, "bool ()")
+		.def("isNoFearForSafety", &CvTechInfo::py_isNoFearForSafety, "bool ()") // advc.500c
 
 		.def("getQuote", &CvTechInfo::getQuote, "wstring ()")
 		.def("getSound", &CvTechInfo::getSound, "string ()")
@@ -101,18 +100,22 @@ void CyInfoPythonInterface1()
 
 		.def("getDomainExtraMoves", &CvTechInfo::getDomainExtraMoves, "int (int i)")
 		.def("getFlavorValue", &CvTechInfo::getFlavorValue, "int (int i)")
-		.def("getPrereqOrTechs", &CvTechInfo::getPrereqOrTechs, "int (int i)")
-		.def("getPrereqAndTechs", &CvTechInfo::getPrereqAndTechs, "int (int i)")
+		// advc.003t: py_...
+		.def("getPrereqOrTechs", &CvTechInfo::py_getPrereqOrTechs, "int (int i)")
+		.def("getPrereqAndTechs", &CvTechInfo::py_getPrereqAndTechs, "int (int i)")
 
+		.def("getCommerceModifier", &CvTechInfo::getCommerceModifier, "int (int i)") // K-Mod
+		.def("getSpecialistExtraCommerce", &CvTechInfo::getSpecialistExtraCommerce, "int (int i)") // K-Mod
 		.def("isCommerceFlexible", &CvTechInfo::isCommerceFlexible, "bool (int i)")
 		.def("isTerrainTrade", &CvTechInfo::isTerrainTrade, "bool (int i)")
 		;
 
-	python::class_<CvPromotionInfo, python::bases<CvInfoBase> >("CvPromotionInfo")
+	python::class_<CvPromotionInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvPromotionInfo")
 
 		.def("getPrereqPromotion", &CvPromotionInfo::getPrereqPromotion, "int ()")
 		.def("getPrereqOrPromotion1", &CvPromotionInfo::getPrereqOrPromotion1, "int ()")
 		.def("getPrereqOrPromotion2", &CvPromotionInfo::getPrereqOrPromotion2, "int ()")
+		.def("getPrereqOrPromotion3", &CvPromotionInfo::getPrereqOrPromotion3, "int ()") // K-Mod
 		.def("getActionInfoIndex", &CvPromotionInfo::getActionInfoIndex, "int ()")
 
 		.def("getTechPrereq", &CvPromotionInfo::getTechPrereq, "int ()")
@@ -148,7 +151,7 @@ void CyInfoPythonInterface1()
 		.def("getKamikazePercent", &CvPromotionInfo::getKamikazePercent, "int ()")
 
 		.def("isLeader", &CvPromotionInfo::isLeader, "bool ()")
-		.def("isBlitz", &CvPromotionInfo::isBlitz, "bool ()")
+		.def("getBlitz", &CvPromotionInfo::getBlitz, "int ()") // advc.164
 		.def("isAmphib", &CvPromotionInfo::isAmphib, "bool ()")
 		.def("isRiver", &CvPromotionInfo::isRiver, "bool ()")
 		.def("isEnemyRoute", &CvPromotionInfo::isEnemyRoute, "bool ()")
@@ -172,7 +175,7 @@ void CyInfoPythonInterface1()
 		.def("getUnitCombat", &CvPromotionInfo::getUnitCombat, "bool (int i)")
 		;
 
-	python::class_<CvMissionInfo, python::bases<CvInfoBase> >("CvMissionInfo")
+	python::class_<CvMissionInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvMissionInfo")
 		.def("getTime", &CvMissionInfo::getTime, "int ()")
 
 		.def("isSound", &CvMissionInfo::isSound, "bool ()")
@@ -183,7 +186,7 @@ void CyInfoPythonInterface1()
 		.def("getWaypoint", &CvMissionInfo::getWaypoint, "string ()")
 		;
 
-	python::class_<CvActionInfo>("CvActionInfo")
+	python::class_<CvActionInfo, boost::noncopyable>("CvActionInfo")
 		.def("getMissionData", &CvActionInfo::getMissionData, "int ()")
 		.def("getCommandData", &CvActionInfo::getCommandData, "int ()")
 		.def("getAutomateType", &CvActionInfo::getAutomateType, "int ()")
@@ -192,6 +195,7 @@ void CyInfoPythonInterface1()
 		.def("getMissionType", &CvActionInfo::getMissionType, "int ()")
 		.def("getCommandType", &CvActionInfo::getCommandType, "int ()")
 		.def("getControlType", &CvActionInfo::getControlType, "int ()")
+		.def("getAutomateType", &CvActionInfo::getAutomateType, "int ()") // advc.004k
 
 		.def("isConfirmCommand", &CvActionInfo::isConfirmCommand, "bool ()")
 		.def("isVisible", &CvActionInfo::isVisible, "bool ()")
@@ -200,7 +204,7 @@ void CyInfoPythonInterface1()
 		.def("getButton", &CvActionInfo::getButton, "string ()")
 		;
 
-	python::class_<CvUnitInfo, python::bases<CvInfoBase, CvScalableInfo> >("CvUnitInfo")
+	python::class_<CvUnitInfo, boost::noncopyable, python::bases<CvInfoBase, CvScalableInfo> >("CvUnitInfo")
 
 		.def("getAIWeight", &CvUnitInfo::getAIWeight, "int ()")
 		.def("getProductionCost", &CvUnitInfo::getProductionCost, "int ()")
@@ -279,15 +283,8 @@ void CyInfoPythonInterface1()
 		.def("isAnimal", &CvUnitInfo::isAnimal, "bool ()")
 		.def("isFoodProduction", &CvUnitInfo::isFoodProduction, "bool ()")
 		.def("isNoBadGoodies", &CvUnitInfo::isNoBadGoodies, "bool ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                       03/20/10                       Afforess & jdog5000    */
-/*                                                                                              */
-/* Bugfix                                                                                       */
-/************************************************************************************************/
+		// UNOFFICIAL_PATCH, Bugfix, 03/20/10, Afforess & jdog5000:
 		.def("isOnlyDefensive", &CvUnitInfo::isOnlyDefensive, "bool ()")
-/************************************************************************************************/
-/* UNOFFICIAL_PATCH                        END                                                  */
-/************************************************************************************************/
 		.def("isNoCapture", &CvUnitInfo::isNoCapture, "bool ()")
 		.def("isRivalTerritory", &CvUnitInfo::isRivalTerritory, "bool ()")
 		.def("isMilitaryHappiness", &CvUnitInfo::isMilitaryHappiness, "bool ()")
@@ -307,7 +304,7 @@ void CyInfoPythonInterface1()
 		.def("isFirstStrikeImmune", &CvUnitInfo::isFirstStrikeImmune, "bool ()")
 		.def("isNoDefensiveBonus", &CvUnitInfo::isNoDefensiveBonus, "bool ()")
 		.def("isIgnoreBuildingDefense", &CvUnitInfo::isIgnoreBuildingDefense, "bool ()")
-		.def("isCanMoveImpassable", &CvUnitInfo::isCanMoveImpassable, "bool ()")
+		.def("isCanMoveImpassable", &CvUnitInfo::canMoveImpassable, "bool ()")
 		.def("isCanMoveAllTerrain", &CvUnitInfo::isCanMoveAllTerrain, "bool ()")
 		.def("isFlatMovementCost", &CvUnitInfo::isFlatMovementCost, "bool ()")
 		.def("isIgnoreTerrainCost", &CvUnitInfo::isIgnoreTerrainCost, "bool ()")
@@ -320,20 +317,20 @@ void CyInfoPythonInterface1()
 		.def("isLineOfSight", &CvUnitInfo::isLineOfSight, "bool ()")
 		.def("isHiddenNationality", &CvUnitInfo::isHiddenNationality, "bool ()")
 		.def("isAlwaysHostile", &CvUnitInfo::isAlwaysHostile, "bool ()")
-		.def("isPersecute", &CvUnitInfo::isPersecute, "bool ()")
-		.def("isSlave", &CvUnitInfo::isSlave, "bool ()")
+		.def("isPersecute", &CvUnitInfo::isPersecute, "bool ()") // doc
+		.def("isSlave", &CvUnitInfo::isSlave, "bool ()") // doc
 
 		.def("getUnitMaxSpeed", &CvUnitInfo::getUnitMaxSpeed, "float ()")
 		.def("getUnitPadTime", &CvUnitInfo::getUnitPadTime, "float ()")
-		
-// BUG - Unit Experience - start
-		.def("canAcquireExperience", &CvUnitInfo::canAcquireExperience, "int ()")
-// BUG - Unit Experience - end
 
 		// Arrays
-
-		.def("getPrereqAndTechs", &CvUnitInfo::getPrereqAndTechs, "int (int i)")
-		.def("getPrereqOrBonuses", &CvUnitInfo::getPrereqOrBonuses, "int (int i)")
+		// advc.003t: py_...
+		.def("getPrereqAndTechs", &CvUnitInfo::py_getPrereqAndTechs, "int (int i)")
+		.def("getPrereqOrBonuses", &CvUnitInfo::py_getPrereqOrBonuses, "int (int i)")
+		// <advc.905b>
+		.def("getSpeedBonuses", &CvUnitInfo::py_getSpeedBonuses, "int (int i)")
+		.def("getExtraMoves", &CvUnitInfo::py_getExtraMoves, "int (int i)")
+		// </advc.905b>
 		.def("getProductionTraits", &CvUnitInfo::getProductionTraits, "int (int i)")
 		.def("getFlavorValue", &CvUnitInfo::getFlavorValue, "int (int i)")
 		.def("getTerrainAttackModifier", &CvUnitInfo::getTerrainAttackModifier, "int (int i)")
@@ -362,6 +359,7 @@ void CyInfoPythonInterface1()
 		.def("getFlankingStrikeUnitClass", &CvUnitInfo::getFlankingStrikeUnitClass, "int (int i)")
 		.def("getGreatPeoples", &CvUnitInfo::getGreatPeoples, "bool (int i)")
 		.def("getBuildings", &CvUnitInfo::getBuildings, "bool (int i)")
+		// advc.003t:
 		.def("getForceBuildings", &CvUnitInfo::getForceBuildings, "bool (int i)")
 		.def("getTerrainImpassable", &CvUnitInfo::getTerrainImpassable, "bool (int i)")
 		.def("getFeatureImpassable", &CvUnitInfo::getFeatureImpassable, "bool (int i)")
@@ -378,7 +376,7 @@ void CyInfoPythonInterface1()
 		.def("getArtInfo", &CvUnitInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i, bool bLate)")
 		;
 
-	python::class_<CvSpecialUnitInfo, python::bases<CvInfoBase> >("CvSpecialUnitInfo")
+	python::class_<CvSpecialUnitInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvSpecialUnitInfo")
 		.def("isValid", &CvSpecialUnitInfo::isValid, "bool ()")
 		.def("isCityLoad", &CvSpecialUnitInfo::isCityLoad, "bool ()")
 
@@ -386,11 +384,11 @@ void CyInfoPythonInterface1()
 		.def("getProductionTraits", &CvSpecialUnitInfo::getProductionTraits, "int (int i)")
 		;
 
-	python::class_<CvCivicOptionInfo, python::bases<CvInfoBase> >("CvCivicOptionInfo")
+	python::class_<CvCivicOptionInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvCivicOptionInfo")
 		.def("getTraitNoUpkeep", &CvCivicOptionInfo::getTraitNoUpkeep, "bool (int i)")
 		;
 
-	python::class_<CvCivicInfo, python::bases<CvInfoBase> >("CvCivicInfo")
+	python::class_<CvCivicInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvCivicInfo")
 
 		.def("getCivicOptionType", &CvCivicInfo::getCivicOptionType, "int ()")
 		.def("getAnarchyLength", &CvCivicInfo::getAnarchyLength, "int ()")
@@ -404,6 +402,7 @@ void CyInfoPythonInterface1()
 		.def("getNumCitiesMaintenanceModifier", &CvCivicInfo::getNumCitiesMaintenanceModifier, "int ()")
 		.def("getCorporationMaintenanceModifier", &CvCivicInfo::getCorporationMaintenanceModifier, "int ()")
 		.def("getExtraHealth", &CvCivicInfo::getExtraHealth, "int ()")
+		.def("getExtraHappiness", &CvCivicInfo::getExtraHappiness, "int ()") // K-Mod
 		.def("getFreeExperience", &CvCivicInfo::getFreeExperience, "int ()")
 		.def("getWorkerSpeedModifier", &CvCivicInfo::getWorkerSpeedModifier, "int ()")
 		.def("getImprovementUpgradeRateModifier", &CvCivicInfo::getImprovementUpgradeRateModifier, "int ()")
@@ -415,6 +414,8 @@ void CyInfoPythonInterface1()
 		.def("getGoldPerUnit", &CvCivicInfo::getGoldPerUnit, "int ()")
 		.def("getGoldPerMilitaryUnit", &CvCivicInfo::getGoldPerMilitaryUnit, "int ()")
 		.def("getHappyPerMilitaryUnit", &CvCivicInfo::getHappyPerMilitaryUnit, "int ()")
+		// advc.912c:
+		.def("getLuxuryModifier", &CvCivicInfo::getLuxuryModifier, "int ()")
 		.def("getLargestCityHappiness", &CvCivicInfo::getLargestCityHappiness, "int ()")
 		.def("getWarWearinessModifier", &CvCivicInfo::getWarWearinessModifier, "int ()")
 		.def("getFreeSpecialist", &CvCivicInfo::getFreeSpecialist, "int ()")
@@ -430,7 +431,8 @@ void CyInfoPythonInterface1()
 		.def("getExpInBorderModifier", &CvCivicInfo::getExpInBorderModifier, "bool ()")
 
 		.def("isMilitaryFoodProduction", &CvCivicInfo::isMilitaryFoodProduction, "bool ()")
-		.def("isNoUnhealthyPopulation", &CvCivicInfo::isNoUnhealthyPopulation, "bool ()")
+		//.def("isNoUnhealthyPopulation", &CvCivicInfo::isNoUnhealthyPopulation, "bool ()")
+		.def("getUnhealthyPopulationModifier", &CvCivicInfo::getUnhealthyPopulationModifier, "int ()") // K-Mod
 		.def("isBuildingOnlyHealthy", &CvCivicInfo::isBuildingOnlyHealthy, "bool ()")
 		.def("isNoForeignTrade", &CvCivicInfo::isNoForeignTrade, "bool ()")
 		.def("isNoCorporations", &CvCivicInfo::isNoCorporations, "bool ()")
@@ -459,15 +461,15 @@ void CyInfoPythonInterface1()
 		.def("getImprovementYieldChanges", &CvCivicInfo::getImprovementYieldChanges, "int (int i, int j)")
 		;
 
-	python::class_<CvUnitClassInfo, python::bases<CvInfoBase> >("CvUnitClassInfo")
+	python::class_<CvUnitClassInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvUnitClassInfo")
 		.def("getMaxGlobalInstances", &CvUnitClassInfo::getMaxGlobalInstances, "int ()")
 		.def("getMaxTeamInstances", &CvUnitClassInfo::getMaxTeamInstances, "int ()")
 		.def("getMaxPlayerInstances", &CvUnitClassInfo::getMaxPlayerInstances, "int ()")
 		.def("getInstanceCostModifier", &CvUnitClassInfo::getInstanceCostModifier, "int ()")
-		.def("getDefaultUnitIndex", &CvUnitClassInfo::getDefaultUnitIndex, "int ()")
+		.def("getDefaultUnitIndex", &CvUnitClassInfo::getDefaultUnit, "int ()")
 		;
 
-	python::class_<CvBuildingInfo, python::bases<CvInfoBase, CvScalableInfo> >("CvBuildingInfo")
+	python::class_<CvBuildingInfo, boost::noncopyable, python::bases<CvInfoBase, CvScalableInfo> >("CvBuildingInfo")
 
 		.def("getBuildingClassType", &CvBuildingInfo::getBuildingClassType, "int ()")
 		.def("getVictoryPrereq", &CvBuildingInfo::getVictoryPrereq, "int ()")
@@ -520,7 +522,8 @@ void CyInfoPythonInterface1()
 		.def("getGlobalSpaceProductionModifier", &CvBuildingInfo::getGlobalSpaceProductionModifier, "int ()")
 		.def("getTradeRoutes", &CvBuildingInfo::getTradeRoutes, "int ()")
 		.def("getCoastalTradeRoutes", &CvBuildingInfo::getCoastalTradeRoutes, "int ()")
-		.def("getGlobalTradeRoutes", &CvBuildingInfo::getGlobalTradeRoutes, "int ()")
+		// advc.310: Renamed; was getGlobalTradeRoutes.
+		.def("getAreaTradeRoutes", &CvBuildingInfo::getAreaTradeRoutes, "int ()")
 		.def("getTradeRouteModifier", &CvBuildingInfo::getTradeRouteModifier, "int ()")
 		.def("getForeignTradeRouteModifier", &CvBuildingInfo::getForeignTradeRouteModifier, "int ()")
 		.def("getAssetValue", &CvBuildingInfo::getAssetValue, "int ()")
@@ -531,7 +534,7 @@ void CyInfoPythonInterface1()
 		.def("getReligionType", &CvBuildingInfo::getReligionType, "int ()")
 		.def("getStateReligion", &CvBuildingInfo::getStateReligion, "int ()")
 		.def("getPrereqReligion", &CvBuildingInfo::getPrereqReligion, "int ()")
-		.def("getPrereqCivic", &CvBuildingInfo::getPrereqCivic, "int ()")
+		.def("getPrereqCivic", &CvBuildingInfo::getPrereqCivic, "int ()") // doc
 		.def("getPrereqCorporation", &CvBuildingInfo::getPrereqCorporation, "int ()")
 		.def("getFoundsCorporation", &CvBuildingInfo::getFoundsCorporation, "int ()")
 		.def("getGlobalReligionCommerce", &CvBuildingInfo::getGlobalReligionCommerce, "int ()")
@@ -552,14 +555,14 @@ void CyInfoPythonInterface1()
 		.def("getFreeTechs", &CvBuildingInfo::getFreeTechs, "int ()")
 		.def("getDefenseModifier", &CvBuildingInfo::getDefenseModifier, "int ()")
 		.def("getBombardDefenseModifier", &CvBuildingInfo::getBombardDefenseModifier, "int ()")
-		.def("getUnignorableBombardDefenseModifier", &CvBuildingInfo::getUnignorableBombardDefenseModifier, "int ()")
+		.def("getUnignorableBombardDefenseModifier", &CvBuildingInfo::getUnignorableBombardDefenseModifier, "int ()") // doc
 		.def("getAllCityDefenseModifier", &CvBuildingInfo::getAllCityDefenseModifier, "int ()")
 		.def("getEspionageDefenseModifier", &CvBuildingInfo::getEspionageDefenseModifier, "int ()")
 		.def("getMissionType", &CvBuildingInfo::getMissionType, "int ()")
 		.def("getVoteSourceType", &CvBuildingInfo::getVoteSourceType, "int ()")
-		.def("getCultureCommerceModifier", &CvBuildingInfo::getCultureCommerceModifier, "int (CommerceTypes eCommerce)")
-		.def("getCultureGreatPeopleRateModifier", &CvBuildingInfo::getCultureGreatPeopleRateModifier, "int ()")
-		.def("getCultureTradeRouteModifier", &CvBuildingInfo::getCultureTradeRouteModifier, "int ()")
+		.def("getCultureCommerceModifier", &CvBuildingInfo::getCultureCommerceModifier, "int (CommerceTypes eCommerce)") // doc
+		.def("getCultureGreatPeopleRateModifier", &CvBuildingInfo::getCultureGreatPeopleRateModifier, "int ()") // doc
+		.def("getCultureTradeRouteModifier", &CvBuildingInfo::getCultureTradeRouteModifier, "int ()") // doc
 
 		.def("isTeamShare", &CvBuildingInfo::isTeamShare, "bool ()")
 		.def("isWater", &CvBuildingInfo::isWater, "bool ()")
@@ -574,7 +577,8 @@ void CyInfoPythonInterface1()
 		.def("isGoldenAge", &CvBuildingInfo::isGoldenAge, "bool ()")
 		.def("isMapCentering", &CvBuildingInfo::isMapCentering, "bool ()")
 		.def("isNoUnhappiness", &CvBuildingInfo::isNoUnhappiness, "bool ()")
-		.def("isNoUnhealthyPopulation", &CvBuildingInfo::isNoUnhealthyPopulation, "bool ()")
+		//.def("isNoUnhealthyPopulation", &CvBuildingInfo::isNoUnhealthyPopulation, "bool ()")
+		.def("getUnhealthyPopulationModifier", &CvBuildingInfo::getUnhealthyPopulationModifier, "int ()") // K-Mod
 		.def("isBuildingOnlyHealthy", &CvBuildingInfo::isBuildingOnlyHealthy, "bool ()")
 		.def("isNeverCapture", &CvBuildingInfo::isNeverCapture, "bool ()")
 		.def("isNukeImmune", &CvBuildingInfo::isNukeImmune, "bool ()")
@@ -590,63 +594,71 @@ void CyInfoPythonInterface1()
 		.def("getMovie", &CvBuildingInfo::getMovie, "string ()")
 		.def("getMovieDefineTag", &CvBuildingInfo::getMovieDefineTag, "string ()")
 
-		// Leoreth
-		.def("getOrPrereqReligion", &CvBuildingInfo::getOrPrereqReligion, "int ()")
-		.def("getOrStateReligion", &CvBuildingInfo::getOrStateReligion, "int ()")
-		.def("isPagan", &CvBuildingInfo::isPagan, "bool ()")
+		.def("getOrPrereqReligion", &CvBuildingInfo::getOrPrereqReligion, "int ()") // doc
+		.def("getOrStateReligion", &CvBuildingInfo::getOrStateReligion, "int ()") // doc
+		.def("isPagan", &CvBuildingInfo::isPagan, "bool ()") // doc
 
 		// Arrays
 
-		.def("getYieldChange", &CvBuildingInfo::getYieldChange, "int (int i)")
-		.def("getYieldModifier", &CvBuildingInfo::getYieldModifier, "int (int i)")
-		.def("getPowerYieldModifier", &CvBuildingInfo::getPowerYieldModifier, "int (int i)")
-		.def("getPowerCommerceModifier", &CvBuildingInfo::getPowerCommerceModifier, "int (int i)")
-		.def("getGlobalYieldModifier", &CvBuildingInfo::getGlobalYieldModifier, "int (int i)")
-		.def("getSeaPlotYieldChange", &CvBuildingInfo::getSeaPlotYieldChange, "int (int i)")
-		.def("getRiverPlotYieldChange", &CvBuildingInfo::getRiverPlotYieldChange, "int (int i)")
-		.def("getGlobalSeaPlotYieldChange", &CvBuildingInfo::getGlobalSeaPlotYieldChange, "int (int i)")
-		.def("getCommerceChange", &CvBuildingInfo::getCommerceChange, "int (int i)")
-		.def("getObsoleteSafeCommerceChange", &CvBuildingInfo::getObsoleteSafeCommerceChange, "int (int i)")
-		.def("getCommerceChangeDoubleTime", &CvBuildingInfo::getCommerceChangeDoubleTime, "int (int i)")
-		.def("getCommerceModifier", &CvBuildingInfo::getCommerceModifier, "int (int i)")
-		.def("getGlobalCommerceModifier", &CvBuildingInfo::getGlobalCommerceModifier, "int (int i)")
-		.def("getStateReligionCommerce", &CvBuildingInfo::getStateReligionCommerce, "int (int i)")
-		.def("getCommerceHappiness", &CvBuildingInfo::getCommerceHappiness, "int (int i)")
-		.def("getReligionChange", &CvBuildingInfo::getReligionChange, "int (int i)")
-		.def("getSpecialistCount", &CvBuildingInfo::getSpecialistCount, "int (int i)")
-		.def("getFreeSpecialistCount", &CvBuildingInfo::getFreeSpecialistCount, "int (int i)")
-		.def("getBonusHealthChanges", &CvBuildingInfo::getBonusHealthChanges, "int (int i)")
-		.def("getBonusHappinessChanges", &CvBuildingInfo::getBonusHappinessChanges, "int (int i)")
-		.def("getBonusProductionModifier", &CvBuildingInfo::getBonusProductionModifier, "int (int i)")
-		.def("getUnitCombatFreeExperience", &CvBuildingInfo::getUnitCombatFreeExperience, "int (int i)")
-		.def("getDomainFreeExperience", &CvBuildingInfo::getDomainFreeExperience, "int (int i)")
-		.def("getDomainProductionModifier", &CvBuildingInfo::getDomainProductionModifier, "int (int i)")
-		.def("getPrereqAndTechs", &CvBuildingInfo::getPrereqAndTechs, "int (int i)")
-		.def("getPrereqOrBonuses", &CvBuildingInfo::getPrereqOrBonuses, "int (int i)")
-		.def("getProductionTraits", &CvBuildingInfo::getProductionTraits, "int (int i)")
-		.def("getHappinessTraits", &CvBuildingInfo::getHappinessTraits, "int (int i)")
-		.def("getBuildingHappinessChanges", &CvBuildingInfo::getBuildingHappinessChanges, "int (int i)")
-		.def("getPrereqNumOfBuildingClass", &CvBuildingInfo::getPrereqNumOfBuildingClass, "int (int i)")
-		.def("getFlavorValue", &CvBuildingInfo::getFlavorValue, "int (int i)")
-		.def("getImprovementFreeSpecialist", &CvBuildingInfo::getImprovementFreeSpecialist, "int (int i)")
+		.def("getYieldChange", &CvBuildingInfo::py_getYieldChange, "int (int i)")
+		.def("getYieldModifier", &CvBuildingInfo::py_getYieldModifier, "int (int i)")
+		.def("getPowerYieldModifier", &CvBuildingInfo::py_getPowerYieldModifier, "int (int i)")
+		.def("getPowerCommerceModifier", &CvBuildingInfo::py_getPowerCommerceModifier, "int (int i)")
+		.def("getGlobalYieldModifier", &CvBuildingInfo::py_getGlobalYieldModifier, "int (int i)")
+		.def("getSeaPlotYieldChange", &CvBuildingInfo::py_getSeaPlotYieldChange, "int (int i)")
+		.def("getRiverPlotYieldChange", &CvBuildingInfo::py_getRiverPlotYieldChange, "int (int i)")
+		.def("getGlobalSeaPlotYieldChange", &CvBuildingInfo::py_getGlobalSeaPlotYieldChange, "int (int i)")
+		.def("getCommerceChange", &CvBuildingInfo::py_getCommerceChange, "int (int i)")
+		.def("getObsoleteSafeCommerceChange", &CvBuildingInfo::py_getObsoleteSafeCommerceChange, "int (int i)")
+		.def("getCommerceChangeDoubleTime", &CvBuildingInfo::py_getCommerceChangeDoubleTime, "int (int i)")
+		.def("getCommerceModifier", &CvBuildingInfo::py_getCommerceModifier, "int (int i)")
+		.def("getGlobalCommerceModifier", &CvBuildingInfo::py_getGlobalCommerceModifier, "int (int i)")
+		.def("getStateReligionCommerce", &CvBuildingInfo::py_getStateReligionCommerce, "int (int i)")
+		.def("getCommerceHappiness", &CvBuildingInfo::py_getCommerceHappiness, "int (int i)")
+		.def("getReligionChange", &CvBuildingInfo::py_getReligionChange, "int (int i)")
+		.def("getSpecialistCount", &CvBuildingInfo::py_getSpecialistCount, "int (int i)")
+		.def("getFreeSpecialistCount", &CvBuildingInfo::py_getFreeSpecialistCount, "int (int i)")
+		.def("getBonusHealthChanges", &CvBuildingInfo::py_getBonusHealthChanges, "int (int i)")
+		.def("getBonusHappinessChanges", &CvBuildingInfo::py_getBonusHappinessChanges, "int (int i)")
+		.def("getBonusProductionModifier", &CvBuildingInfo::py_getBonusProductionModifier, "int (int i)")
+		.def("getUnitCombatFreeExperience", &CvBuildingInfo::py_getUnitCombatFreeExperience, "int (int i)")
+		.def("getDomainFreeExperience", &CvBuildingInfo::py_getDomainFreeExperience, "int (int i)")
+        .def("getDomainProductionModifier", &CvBuildingInfo::py_getDomainProductionModifier, "int (int i)")
+        .def("getPrereqAndTechs", &CvBuildingInfo::py_getPrereqAndTechs, "int (int i)") // doc
+        .def("getPrereqOrBonuses", &CvBuildingInfo::py_getPrereqOrBonuses, "int (int i)") // doc
+        .def("getProductionTraits", &CvBuildingInfo::py_getProductionTraits, "int (int i)") // doc
+        .def("getHappinessTraits", &CvBuildingInfo::py_getHappinessTraits, "int (int i)") // doc
+        .def("getBuildingHappinessChanges", &CvBuildingInfo::py_getBuildingHappinessChanges, "int (int i)") // doc
+        .def("getPrereqNumOfBuildingClass", &CvBuildingInfo::py_getPrereqNumOfBuildingClass, "int (int i)") // doc
+        .def("getFlavorValue", &CvBuildingInfo::py_getFlavorValue, "int (int i)") // doc
+        .def("getImprovementFreeSpecialist", &CvBuildingInfo::py_getImprovementFreeSpecialist, "int (int i)") // doc
 
-		.def("isCommerceFlexible", &CvBuildingInfo::isCommerceFlexible, "bool (int i)")
-		.def("isCommerceChangeOriginalOwner", &CvBuildingInfo::isCommerceChangeOriginalOwner, "bool (int i)")
-		.def("isBuildingClassNeededInCity", &CvBuildingInfo::isBuildingClassNeededInCity, "bool (int i)")
+		.def("getPrereqAndTechs", &CvBuildingInfo::py_getPrereqAndTechs, "int (int i)")
+		.def("getPrereqOrBonuses", &CvBuildingInfo::py_getPrereqOrBonuses, "int (int i)")
+		.def("getProductionTraits", &CvBuildingInfo::py_getProductionTraits, "int (int i)")
+		.def("getHappinessTraits", &CvBuildingInfo::py_getHappinessTraits, "int (int i)")
+		.def("getBuildingHappinessChanges", &CvBuildingInfo::py_getBuildingHappinessChanges, "int (int i)")
+		.def("getPrereqNumOfBuildingClass", &CvBuildingInfo::py_getPrereqNumOfBuildingClass, "int (int i)")
+		.def("getFlavorValue", &CvBuildingInfo::py_getFlavorValue, "int (int i)")
+		.def("getImprovementFreeSpecialist", &CvBuildingInfo::py_getImprovementFreeSpecialist, "int (int i)")
 
-		.def("getSpecialistYieldChange", &CvBuildingInfo::getSpecialistYieldChange, "int (int i, int j)")
-		.def("getBonusYieldModifier", &CvBuildingInfo::getBonusYieldModifier, "int (int i, int j)")
+		.def("isCommerceFlexible", &CvBuildingInfo::py_isCommerceFlexible, "bool (int i)")
+		.def("isCommerceChangeOriginalOwner", &CvBuildingInfo::py_isCommerceChangeOriginalOwner, "bool (int i)")
+		.def("isBuildingClassNeededInCity", &CvBuildingInfo::py_isBuildingClassNeededInCity, "bool (int i)")
+
+		.def("getSpecialistYieldChange", &CvBuildingInfo::py_getSpecialistYieldChange, "int (int i, int j)")
+		.def("getBonusYieldModifier", &CvBuildingInfo::py_getBonusYieldModifier, "int (int i, int j)")
 
 		.def("getArtInfo", &CvBuildingInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>())
 		;
 
-	python::class_<CvSpecialBuildingInfo, python::bases<CvInfoBase> >("CvSpecialBuildingInfo")
+	python::class_<CvSpecialBuildingInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvSpecialBuildingInfo")
 		.def("getObsoleteTech", &CvSpecialBuildingInfo::getObsoleteTech, "int ()")
 		.def("getTechPrereq", &CvSpecialBuildingInfo::getTechPrereq, "int ()")
 		.def("isValid", &CvSpecialBuildingInfo::isValid, "bool ()")
 
 		// Arrays
 
-		.def("getProductionTraits", &CvSpecialBuildingInfo::getProductionTraits, "int (int i)")
+		.def("getProductionTraits", &CvSpecialBuildingInfo::py_getProductionTraits, "int (int i)")
 		;
 }

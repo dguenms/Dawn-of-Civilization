@@ -7,9 +7,6 @@
 // abstract class containing CvInterface functions that the DLL needs
 //
 
-//#include "CvStructs.h"
-#include "LinkedList.h"
-
 class CvUnit;
 class CvCity;
 class CvPlot;
@@ -65,6 +62,11 @@ public:
 	virtual int getSymbolID(int iSymbol) = 0;
 	virtual CLLNode<IDInfo>* deleteSelectionListNode(CLLNode<IDInfo>* pNode) = 0;
 	virtual CLLNode<IDInfo>* nextSelectionListNode(CLLNode<IDInfo>* pNode) = 0;
+	// <advc.003s> Workaround for missing const qualifiers
+	CLLNode<IDInfo> const* nextSelectionListNode(CLLNode<IDInfo> const* pNode) const
+	{
+		return const_cast<CvDLLInterfaceIFaceBase*>(this)->nextSelectionListNode(const_cast<CLLNode<IDInfo>*>(pNode));
+	} // </advc.003s>
 	virtual int getLengthSelectionList() = 0;
 	virtual CLLNode<IDInfo>* headSelectionListNode() = 0;
 
@@ -76,11 +78,33 @@ public:
 	virtual CvCity* getHeadSelectedCity() = 0;
 	virtual bool isCitySelection() = 0;
 	virtual CLLNode<IDInfo>* nextSelectedCitiesNode(CLLNode<IDInfo>* pNode) = 0;
+	// <advc> Workaround for missing const qualifiers
+	CLLNode<IDInfo> const* nextSelectedCitiesNode(CLLNode<IDInfo> const* pNode) const
+	{
+		return const_cast<CvDLLInterfaceIFaceBase*>(this)->nextSelectedCitiesNode(const_cast<CLLNode<IDInfo>*>(pNode));
+	} // </advc>
 	virtual CLLNode<IDInfo>* headSelectedCitiesNode() = 0;
+	// <advc.127> Renamed from "addMessage", protected, default values removed.
+protected:
+	virtual void addMessageExternal(PlayerTypes, bool, int, CvWString, LPCTSTR,
+			InterfaceMessageTypes, LPCSTR, ColorTypes, int, int, bool, bool) = 0;
+public:
+	/*	K-Mod - block messages from being send to AI players
+		(because the game doesn't ever clear AI messages). */
+	/*	(Had been named "addHumanMessage" in K-Mod;
+		Definition moved into CvDLLInterfaceIFaceBase.cpp.) */ // </advc.127>
+	void addMessage(PlayerTypes ePlayer, bool bForce, int iLength, CvWString szString,
+			LPCTSTR pszSound = NULL, InterfaceMessageTypes eType = MESSAGE_TYPE_INFO,
+			LPCSTR pszIcon = NULL, ColorTypes eFlashColor = NO_COLOR,
+			int iFlashX = -1, int iFlashY = -1,
+			bool bShowOffScreenArrows = false, bool bShowOnScreenArrows = false);
+	// advc: Wrapper for passing iFlashX, iFlashY more conveniently
+	void addMessage(PlayerTypes ePlayer, bool bForce, int iLength,
+			CvWString szString, CvPlot const& kPlot,
+			LPCTSTR pszSound = NULL, InterfaceMessageTypes eType = MESSAGE_TYPE_INFO,
+			LPCSTR pszIcon = NULL, ColorTypes eFlashColor = NO_COLOR,
+			bool bShowOffScreenArrows = true, bool bShowOnScreenArrows = true);
 
-	virtual void addMessage(PlayerTypes ePlayer, bool bForce, int iLength, CvWString szString, LPCTSTR pszSound = NULL,
-		InterfaceMessageTypes eType = MESSAGE_TYPE_INFO, LPCSTR pszIcon = NULL, ColorTypes eFlashColor = NO_COLOR,
-		int iFlashX = -1, int iFlashY = -1, bool bShowOffScreenArrows = false, bool bShowOnScreenArrows = false) = 0;
 	virtual void addCombatMessage(PlayerTypes ePlayer, CvWString szString) = 0;
 	virtual void addQuestMessage(PlayerTypes ePlayer, CvWString szString, int iQuestId) = 0;
 	virtual void showMessage(CvTalkingHeadMessage& msg) = 0;
@@ -158,7 +182,7 @@ public:
 
 	virtual void showDetails(bool bPasswordOnly = false) = 0;
 	virtual void showAdminDetails() = 0;
-	
+
 	virtual void toggleClockAlarm(bool bValue, int iHour = 0, int iMin = 0) = 0;
 	virtual bool isClockAlarmOn() = 0;
 
@@ -166,36 +190,36 @@ public:
 	virtual bool isExitingToMainMenu() = 0;
 	virtual void exitingToMainMenu(const char* szLoadFile=NULL) = 0;
 	virtual void setWorldBuilder(bool bTurnOn) = 0;
-	
+
 	virtual int getFontLeftJustify() = 0;
 	virtual int getFontRightJustify() = 0;
 	virtual int getFontCenterJustify() = 0;
 	virtual int getFontCenterVertically() = 0;
 	virtual int getFontAdditive() = 0;
 
-	virtual void popupSetHeaderString( CvPopup* pPopup, CvWString szText, uint uiFlags = DLL_FONT_CENTER_JUSTIFY ) = 0;
-	virtual void popupSetBodyString( CvPopup* pPopup, CvWString szText, uint uiFlags = DLL_FONT_LEFT_JUSTIFY, char *szName = NULL, CvWString szHelpText = "" ) = 0;
-	virtual void popupLaunch( CvPopup* pPopup, bool bCreateOkButton = true, PopupStates bState = POPUPSTATE_QUEUED, int iNumPixelScroll = 0 ) = 0;
-	virtual void popupSetPopupType( CvPopup* pPopup, PopupEventTypes ePopupType, LPCTSTR szArtFileName = NULL ) = 0;
-	virtual void popupSetStyle( CvPopup* pPopup, const char* styleId ) = 0;
+	virtual void popupSetHeaderString(CvPopup* pPopup, CvWString szText, uint uiFlags = DLL_FONT_CENTER_JUSTIFY) = 0;
+	virtual void popupSetBodyString(CvPopup* pPopup, CvWString szText, uint uiFlags = DLL_FONT_LEFT_JUSTIFY, char *szName = NULL, CvWString szHelpText = "") = 0;
+	virtual void popupLaunch(CvPopup* pPopup, bool bCreateOkButton = true, PopupStates bState = POPUPSTATE_QUEUED, int iNumPixelScroll = 0) = 0;
+	virtual void popupSetPopupType(CvPopup* pPopup, PopupEventTypes ePopupType, LPCTSTR szArtFileName = NULL) = 0;
+	virtual void popupSetStyle(CvPopup* pPopup, const char* styleId) = 0;
 
-	virtual void popupAddDDS( CvPopup* pPopup, const char* szIconFilename, int iWidth = 0, int iHeight = 0, CvWString szHelpText = "") = 0;
+	virtual void popupAddDDS(CvPopup* pPopup, const char* szIconFilename, int iWidth = 0, int iHeight = 0, CvWString szHelpText = "") = 0;
 
-	virtual void popupAddSeparator( CvPopup* pPopup, int iSpace = 0) = 0;
+	virtual void popupAddSeparator(CvPopup* pPopup, int iSpace = 0) = 0;
 
-	virtual void popupAddGenericButton( CvPopup* pPopup, CvWString szText, const char* szIcon = 0, int iButtonId = -1, WidgetTypes eWidgetType = WIDGET_GENERAL, int iData1 = MAX_INT, int iData2 = MAX_INT, 
-		bool bOption = true, PopupControlLayout ctrlLayout = POPUP_LAYOUT_CENTER, unsigned int textJustifcation = DLL_FONT_LEFT_JUSTIFY ) = 0;
+	virtual void popupAddGenericButton(CvPopup* pPopup, CvWString szText, const char* szIcon = 0, int iButtonId = -1, WidgetTypes eWidgetType = WIDGET_GENERAL, int iData1 = MAX_INT, int iData2 = MAX_INT,
+		bool bOption = true, PopupControlLayout ctrlLayout = POPUP_LAYOUT_CENTER, unsigned int textJustifcation = DLL_FONT_LEFT_JUSTIFY) = 0;
 
-	virtual void popupCreateEditBox( CvPopup* pPopup, CvWString szDefaultString = "", WidgetTypes eWidgetType = WIDGET_GENERAL, CvWString szHelpText = "", int iGroup = 0, 
-		PopupControlLayout ctrlLayout = POPUP_LAYOUT_STRETCH, unsigned int preferredCharWidth = 0, unsigned int maxCharCount = 256 ) = 0;
-	virtual void popupEnableEditBox( CvPopup* pPopup, int iGroup = 0, bool bEnable = false ) = 0;
+	virtual void popupCreateEditBox(CvPopup* pPopup, CvWString szDefaultString = "", WidgetTypes eWidgetType = WIDGET_GENERAL, CvWString szHelpText = "", int iGroup = 0,
+		PopupControlLayout ctrlLayout = POPUP_LAYOUT_STRETCH, unsigned int preferredCharWidth = 0, unsigned int maxCharCount = 256) = 0;
+	virtual void popupEnableEditBox(CvPopup* pPopup, int iGroup = 0, bool bEnable = false) = 0;
 
-	virtual void popupCreateRadioButtons( CvPopup * pPopup, int iNumButtons, int iGroup = 0, WidgetTypes eWidgetType = WIDGET_GENERAL, PopupControlLayout ctrlLayout = POPUP_LAYOUT_CENTER ) = 0;
-	virtual void popupSetRadioButtonText( CvPopup * pPopup, int iRadioButtonID, CvWString szText, int iGroup = 0, CvWString szHelpText = "" ) = 0;
+	virtual void popupCreateRadioButtons(CvPopup * pPopup, int iNumButtons, int iGroup = 0, WidgetTypes eWidgetType = WIDGET_GENERAL, PopupControlLayout ctrlLayout = POPUP_LAYOUT_CENTER) = 0;
+	virtual void popupSetRadioButtonText(CvPopup * pPopup, int iRadioButtonID, CvWString szText, int iGroup = 0, CvWString szHelpText = "") = 0;
 
-	virtual void popupCreateCheckBoxes( CvPopup* pPopup, int iNumBoxes, int iGroup = 0, WidgetTypes eWidgetType = WIDGET_GENERAL, PopupControlLayout ctrlLayout = POPUP_LAYOUT_CENTER ) = 0;
-	virtual void popupSetCheckBoxText( CvPopup* pPopup, int iCheckBoxID, CvWString szText, int iGroup = 0, CvWString szHelpText = "") = 0;
-	virtual void popupSetCheckBoxState( CvPopup* pPopup, int iCheckBoxID, bool bChecked, int iGroup = 0 ) = 0;
+	virtual void popupCreateCheckBoxes(CvPopup* pPopup, int iNumBoxes, int iGroup = 0, WidgetTypes eWidgetType = WIDGET_GENERAL, PopupControlLayout ctrlLayout = POPUP_LAYOUT_CENTER) = 0;
+	virtual void popupSetCheckBoxText(CvPopup* pPopup, int iCheckBoxID, CvWString szText, int iGroup = 0, CvWString szHelpText = "") = 0;
+	virtual void popupSetCheckBoxState(CvPopup* pPopup, int iCheckBoxID, bool bChecked, int iGroup = 0) = 0;
 
 	virtual void popupSetAsCancelled(CvPopup* pPopup) = 0;
 	virtual bool popupIsDying(CvPopup* pPopup) = 0;

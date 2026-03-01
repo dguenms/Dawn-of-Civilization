@@ -1,21 +1,19 @@
 //
-// Python wrapper class for CyGameTextMgr 
-// 
+// Python wrapper class for CyGameTextMgr
+//
 #include "CvGameCoreDLL.h"
 #include "CvGameTextMgr.h"
 #include "CyGameTextMgr.h"
-#include "CyCity.h"
 #include "CyDeal.h"
-#include "CyUnit.h"
 
-CyGameTextMgr::CyGameTextMgr() : 
+CyGameTextMgr::CyGameTextMgr() :
 m_pGameTextMgr(NULL)
 {
 	m_pGameTextMgr = &CvGameTextMgr::GetInstance();
 }
 
-CyGameTextMgr::CyGameTextMgr(CvGameTextMgr* pGameTextMgr) : 
-m_pGameTextMgr(m_pGameTextMgr)
+CyGameTextMgr::CyGameTextMgr(CvGameTextMgr* pGameTextMgr) :
+m_pGameTextMgr(pGameTextMgr) // kmodx
 {}
 
 void CyGameTextMgr::Reset()
@@ -86,6 +84,15 @@ std::wstring CyGameTextMgr::getUnitHelp(int iUnit, bool bCivilopediaText, bool b
 	return szBuffer.getCString();
 }
 
+// advc.069:
+std::wstring CyGameTextMgr::getBasicUnitHelp(int iUnit, bool bCivilopediaText) {
+
+	CvWStringBuffer szBuffer;
+	GAMETEXT.setBasicUnitHelp(szBuffer, (UnitTypes)iUnit, bCivilopediaText);
+	return szBuffer.getCString();
+}
+
+
 std::wstring CyGameTextMgr::getSpecificUnitHelp(CyUnit* pUnit, bool bOneLine, bool bShort)
 {
 	CvWStringBuffer szBuffer;
@@ -94,6 +101,15 @@ std::wstring CyGameTextMgr::getSpecificUnitHelp(CyUnit* pUnit, bool bOneLine, bo
 		GAMETEXT.setUnitHelp(szBuffer, pUnit->getUnit(), bOneLine, bShort);
 	}
 	return szBuffer.getCString();
+}
+
+// advc.004:
+std::wstring CyGameTextMgr::getHurtUnitStrength(CyUnit* pUnit)
+{
+	CvWString szBuffer;
+	if (pUnit != NULL && pUnit->getUnit() != NULL)
+		GAMETEXT.setHurtUnitStrength(szBuffer, *pUnit->getUnit());
+	return szBuffer.c_str();
 }
 
 std::wstring CyGameTextMgr::getBuildingHelp(int iBuilding, bool bCivilopediaText, bool bStrategyText, bool bTechChooserText, CyCity* pCity)

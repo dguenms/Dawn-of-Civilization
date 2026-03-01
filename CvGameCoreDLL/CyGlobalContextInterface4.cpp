@@ -7,16 +7,13 @@
 #include "CyMap.h"
 #include "CyPlayer.h"
 #include "CyGame.h"
-#include "CyGlobalContext.h"
-#include "CvRandom.h"
-//#include "CvStructs.h"
-#include "CvInfos.h"
+#include "CvInfo_All.h"
 #include "CyTeam.h"
 
 
 void CyGlobalContextPythonInterface4(python::class_<CyGlobalContext>& x)
 {
-	OutputDebugString("Python Extension Module - CyGlobalContextPythonInterface1\n");
+	printToConsole("Python Extension Module - CyGlobalContextPythonInterface1\n");
 
 	x
 		.def("getNumMissionInfos", &CyGlobalContext::getNumMissionInfos, "() - Total Mission Infos XML\\Units\\CIV4MissionInfos.xml")
@@ -43,10 +40,10 @@ void CyGlobalContextPythonInterface4(python::class_<CyGlobalContext>& x)
 		.def("getNumReligionInfos", &CyGlobalContext::getNumReligionInfos, "() - Total Religion Infos XML\\GameInfo\\CIV4ReligionInfos.xml")
 		.def("getReligionInfo", &CyGlobalContext::getReligionInfo, python::return_value_policy<python::reference_existing_object>(), "(ReligionID) - CvInfo for ReligionID")
 
-		.def("getNumPaganReligionInfos", &CyGlobalContext::getNumPaganReligionInfos, "() - Total Pagan Religion Infos")
-		.def("getPaganReligionInfo", &CyGlobalContext::getPaganReligionInfo, python::return_value_policy<python::reference_existing_object>(), "(PaganReligionID) - CvInfo for PaganReligionID")
+        .def("getNumPaganReligionInfos", &CyGlobalContext::getNumPaganReligionInfos, "() - Total Pagan Religion Infos")
+        .def("getPaganReligionInfo", &CyGlobalContext::getPaganReligionInfo, python::return_value_policy<python::reference_existing_object>(), "(PaganReligionID) - CvInfo for PaganReligionID")
 
-		.def("getNumCorporationInfos", &CyGlobalContext::getNumCorporationInfos, "() - Total Religion Infos XML\\GameInfo\\CIV4CorporationInfos.xml")
+		.def("getNumCorporationInfos", &CyGlobalContext::getNumCorporationInfos, "() - Total Corporation Infos XML\\GameInfo\\CIV4CorporationInfos.xml")
 		.def("getCorporationInfo", &CyGlobalContext::getCorporationInfo, python::return_value_policy<python::reference_existing_object>(), "(CorporationID) - CvInfo for CorporationID")
 
 		.def("getNumVictoryInfos", &CyGlobalContext::getNumVictoryInfos, "() - Total Victory Infos XML\\GameInfo\\CIV4VictoryInfos.xml")
@@ -87,9 +84,9 @@ void CyGlobalContextPythonInterface4(python::class_<CyGlobalContext>& x)
 
 		.def("getNumPlayerColorInfos", &CyGlobalContext::getNumPlayerColorInfos, "int () - Returns number of PlayerColorInfos")
 		.def("getPlayerColorInfo", &CyGlobalContext::getPlayerColorInfo, python::return_value_policy<python::reference_existing_object>(), "PlayerColorInfo (int id)")
-
-		.def("getNumQuestInfos", &CyGlobalContext::getNumQuestInfos, "int () - Returns number of QuestInfos")
-		.def("getQuestInfo", &CyGlobalContext::getQuestInfo, python::return_value_policy<python::reference_existing_object>(), "QuestInfo () - Returns info object")
+		// advc.003j:
+		/*.def("getNumQuestInfos", &CyGlobalContext::getNumQuestInfos, "int () - Returns number of QuestInfos")
+		.def("getQuestInfo", &CyGlobalContext::getQuestInfo, python::return_value_policy<python::reference_existing_object>(), "QuestInfo () - Returns info object")*/
 
 		.def("getNumTutorialInfos", &CyGlobalContext::getNumTutorialInfos, "int () - Returns number of TutorialInfos")
 		.def("getTutorialInfo", &CyGlobalContext::getTutorialInfo, python::return_value_policy<python::reference_existing_object>(), "TutorialInfo () - Returns info object")

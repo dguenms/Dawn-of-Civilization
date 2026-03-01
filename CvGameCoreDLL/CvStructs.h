@@ -5,12 +5,14 @@
 
 // structs.h
 
-//#include "CvEnums.h"
-#include "CvString.h"
+// <advc.071>
+class CvPlot;
+class CvUnit;
+// </advc.071>
 
 // XXX these should not be in the DLL per se (if the user changes them, we are screwed...)
 
-struct DllExport XYCoords
+struct XYCoords
 {
 	XYCoords(int x=0, int y=0) : iX(x), iY(y) {}
 	int iX;
@@ -24,10 +26,19 @@ struct DllExport XYCoords
 	bool operator>  (const XYCoords xy) const { return ((iY > xy.iY) || (iY == xy.iY && iX > xy.iX)); }
 };
 
-struct DllExport IDInfo
+struct IDInfo
 {
+	/*	advc.opt: Default owner changed from NO_PLAYER to Barbarians so that
+		the owner doesn't need to be checked before calling FFreeListTrashArray::getAt. */
+	IDInfo(PlayerTypes eOwner = BARBARIAN_PLAYER, int iID = FFreeList::INVALID_INDEX) :
+		eOwner(eOwner), iID(iID)
+	{	/*	advc: Not worth slowing down assert builds I think. I've had it enabled
+			for quite some time. It's fine currently and not likely to break I think. */
+		//FAssert(iID != FFreeList::INVALID_INDEX || eOwner == BARBARIAN_PLAYER);
+	}
+	void validateOwner(); // advc.opt
+	bool isIDSet() const { return iID != FFreeList::INVALID_INDEX; } // advc
 
-	IDInfo(PlayerTypes eOwner=NO_PLAYER, int iID=FFreeList::INVALID_INDEX) : eOwner(eOwner), iID(iID) {}
 	PlayerTypes eOwner;
 	int iID;
 
@@ -35,44 +46,70 @@ struct DllExport IDInfo
 	{
 		return (eOwner == info.eOwner && iID == info.iID);
 	}
+	// K-Mod
+	bool operator!= (const IDInfo& info) const { return !(*this==info); }
+	bool operator< (const IDInfo& a) const
+	{
+		return eOwner < a.eOwner || (eOwner == a.eOwner && iID < a.iID);
+	} // K-Mod end
 
 	void reset()
 	{
-		eOwner = NO_PLAYER;
+		//eOwner = NO_PLAYER;
+		eOwner = BARBARIAN_PLAYER; // advc.opt
 		iID = FFreeList::INVALID_INDEX;
 	}
 };
 
-struct DllExport GameTurnInfo				// Exposed to Python
+struct GameTurnInfo				// Exposed to Python
 {
 	int iMonthIncrement;
 	int iNumGameTurnsPerIncrement;
 };
 
-struct DllExport OrderData					// Exposed to Python
+struct OrderData					// Exposed to Python
 {
+	INIT_STRUCT_PADDING(OrderData);
 	OrderTypes eOrderType;
 	int iData1;
 	int iData2;
 	bool bSave;
 };
 
-struct DllExport MissionData				// Exposed to Python
+struct MissionData				// Exposed to Python
 {
+	INIT_STRUCT_PADDING(MissionData);
 	MissionTypes eMissionType;
 	int iData1;
 	int iData2;
-	int iFlags;
+	MovementFlags eFlags;
 	int iPushTurn;
+	bool bModified; // advc.011b
 };
+// <advc.011b> Needed for savegame compatibility
+struct MissionDataLegacy { MissionTypes eMissionType; int iData1; int iData2;
+	MovementFlags eFlags; int iPushTurn; }; // </advc.011b>
 
-struct DllExport TradeData					// Exposed to Python
+struct TradeData					// Exposed to Python
 {
-	TradeableItems m_eItemType;				//	What type of item is this
-	int m_iData;											//	Any additional data?
-	bool m_bOffering;									//	Is this item up for grabs?
-	bool m_bHidden;										//	Are we hidden?
+	// <advc> To replace global setTradeItem (CvGameCoreUtils)
+	TradeData(TradeableItems eItem = NO_TRADE_ITEM, int iData = -1,
+		bool bOffering = false, bool bHidden = false)
+	{
+		INIT_STRUCT_PADDING_INL();
+		m_eItemType = eItem;
+		m_iData = iData;
+		m_bOffering = bOffering;
+		m_bHidden = bHidden;
+	} // </advc>
+	TradeableItems m_eItemType;	//	What type of item is this
+	int m_iData;				//	Any additional data?
+	bool m_bOffering;			//	Is this item up for grabs?
+	bool m_bHidden;				//	Are we hidden?
 };
+/*	advc.003k: Memory layout probably mustn't change b/c CLinkList<TradeData>
+	occurs in the parameter lists of some exported functions */
+BOOST_STATIC_ASSERT(sizeof(TradeData) == 12);
 
 struct EventTriggeredData
 {
@@ -100,6 +137,10 @@ struct EventTriggeredData
 
 struct VoteSelectionSubData
 {
+	VoteSelectionSubData(VoteTypes eVote = NO_VOTE) // advc: Ensure initialization
+	:	eVote(eVote), ePlayer(NO_PLAYER),
+		iCityId(FFreeList::INVALID_INDEX), eOtherPlayer(NO_PLAYER)
+	{}
 	VoteTypes eVote;
 	PlayerTypes ePlayer;
 	int iCityId;
@@ -108,7 +149,9 @@ struct VoteSelectionSubData
 };
 
 struct VoteSelectionData
-{
+{	// advc:
+	VoteSelectionData(VoteSourceTypes eVS = NO_VOTESOURCE)
+	:	eVoteSource(eVS), iId(FFreeList::INVALID_INDEX) {}
 	int iId;
 	VoteSourceTypes eVoteSource;
 	std::vector<VoteSelectionSubData> aVoteOptions;
@@ -120,7 +163,9 @@ struct VoteSelectionData
 };
 
 struct VoteTriggeredData
-{
+{	// advc:
+	VoteTriggeredData(VoteSourceTypes eVS = NO_VOTESOURCE)
+	:	eVoteSource(eVS), iId(FFreeList::INVALID_INDEX) {}
 	int iId;
 	VoteSourceTypes eVoteSource;
 	VoteSelectionSubData kVoteOption;
@@ -142,7 +187,8 @@ struct EventMessage
 	std::wstring getDescription() const { return szDescription;	}
 };
 
-struct PlotExtraYield
+// advc.enum: obsolete
+/*struct PlotExtraYield
 {
 	int m_iX;
 	int m_iY;
@@ -151,7 +197,6 @@ struct PlotExtraYield
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 };
-
 struct PlotExtraCost
 {
 	int m_iX;
@@ -161,31 +206,24 @@ struct PlotExtraCost
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 };
-
 typedef std::vector< std::pair<BuildingClassTypes, int> > BuildingChangeArray;
-
-struct BuildingYieldChange
-{
+struct BuildingYieldChange {
 	BuildingClassTypes eBuildingClass;
 	YieldTypes eYield;
 	int iChange;
-
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 };
-
-struct BuildingCommerceChange
-{
+struct BuildingCommerceChange {
 	BuildingClassTypes eBuildingClass;
 	CommerceTypes eCommerce;
 	int iChange;
-
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
-};
+};*/
 
 
-struct DllExport FOWVis
+struct FOWVis
 {
 	uint uiCount;
 	POINT* pOffsets;  // array of "Offset" points
@@ -278,24 +316,24 @@ enum BattleTimeTypes
 //  STRUCT:      CvBattleRound
 //!  \brief		Represents a single round within a battle.
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-class DllExport CvBattleRound
+class CvBattleRound
 {
 public:
 	CvBattleRound();
 	bool isValid() const;
 
-	bool isRangedRound() const;
+	DllExport bool isRangedRound() const;
 	void setRangedRound(bool value);
 
-	int getWaveSize() const;
-	void setWaveSize(int size);
+	DllExport int getWaveSize() const;
+	DllExport void setWaveSize(int size);
 
-	int getNumKilled(BattleUnitTypes unitType) const;
-	void setNumKilled(BattleUnitTypes unitType, int value);
+	DllExport int getNumKilled(BattleUnitTypes unitType) const;
+	DllExport void setNumKilled(BattleUnitTypes unitType, int value);
 	void addNumKilled(BattleUnitTypes unitType, int increment);
 
-	int getNumAlive(BattleUnitTypes unitType) const;
-	void setNumAlive(BattleUnitTypes unitType, int value);
+	DllExport int getNumAlive(BattleUnitTypes unitType) const;
+	DllExport void setNumAlive(BattleUnitTypes unitType, int value);
 
 private:
 	int		m_aNumKilled[BATTLE_UNIT_COUNT];		//!< The number of units killed during this round for both sides
@@ -312,64 +350,72 @@ typedef std::vector<CvBattleRound> CvBattleRoundVector;		//!< Type declaration f
 //  CLASS:      CvMissionDefinition
 //!  \brief		Base mission definition struct
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-class DllExport CvMissionDefinition
+class CvMissionDefinition
 {
 public:
 	CvMissionDefinition();
 
-	MissionTypes getMissionType() const;
+	DllExport MissionTypes getMissionType() const;
 	void setMissionType(MissionTypes missionType);
 
-	float getMissionTime() const;
+	DllExport float getMissionTime() const;
 	void setMissionTime(float time);
 
-	CvUnit *getUnit(BattleUnitTypes unitType) const;
+	DllExport CvUnit *getUnit(BattleUnitTypes unitType) const;
 	void setUnit(BattleUnitTypes unitType, CvUnit *unit);
 
-	const CvPlot *getPlot() const;
+	DllExport const CvPlot *getPlot() const;
 	void setPlot(const CvPlot *plot);
 
 protected:
-	MissionTypes		m_eMissionType;			//!< The type of event
-	CvUnit *			m_aUnits[BATTLE_UNIT_COUNT];		//!< The units involved
-	float				m_fMissionTime;			//!< The amount of time that the event will take
-	const CvPlot *		m_pPlot;					//!< The plot associated with the event
+	MissionTypes		m_eMissionType;					//!< The type of event
+	CvUnit *			m_aUnits[BATTLE_UNIT_COUNT];	//!< The units involved
+	float				m_fMissionTime;					//!< The amount of time that the event will take
+	const CvPlot *		m_pPlot;						//!< The plot associated with the event
+};
+
+// advc:
+class NukeMissionDef : public CvMissionDefinition
+{
+public:
+	NukeMissionDef(CvPlot const& kPlot, CvUnit& kNuke, bool bIntercept,
+			int iBaseTime); // advc.002m
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //  STRUCT:     CvBattleDefinition
 //!  \brief		A definition passed to CvBattleManager to start a battle between units
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-class DllExport CvBattleDefinition : public CvMissionDefinition
+class CvBattleDefinition : public CvMissionDefinition
 {
 public:
 	CvBattleDefinition();
-	CvBattleDefinition( const CvBattleDefinition & kCopy );
-
-	int getDamage(BattleUnitTypes unitType, BattleTimeTypes timeType) const;
+	DllExport CvBattleDefinition(const CvBattleDefinition & kCopy);
+	DllExport ~CvBattleDefinition();
+	DllExport int getDamage(BattleUnitTypes unitType, BattleTimeTypes timeType) const;
 	void setDamage(BattleUnitTypes unitType, BattleTimeTypes timeType, int damage);
 	void addDamage(BattleUnitTypes unitType, BattleTimeTypes timeType, int increment);
-	
-	int getFirstStrikes(BattleUnitTypes unitType) const;
+
+	DllExport int getFirstStrikes(BattleUnitTypes unitType) const;
 	void setFirstStrikes(BattleUnitTypes unitType, int firstStrikes);
 	void addFirstStrikes(BattleUnitTypes unitType, int increment);
-	
-	bool isAdvanceSquare() const;
+
+	DllExport bool isAdvanceSquare() const;
 	void setAdvanceSquare(bool advanceSquare);
 
 	int getNumRangedRounds() const;
 	void setNumRangedRounds(int count);
 	void addNumRangedRounds(int increment);
-	
+
 	int getNumMeleeRounds() const;
 	void setNumMeleeRounds(int count);
 	void addNumMeleeRounds(int increment);
 
-	int getNumBattleRounds() const;
-	void clearBattleRounds();
-	CvBattleRound &getBattleRound(int index);
-	const CvBattleRound &getBattleRound(int index) const;
-	void addBattleRound(const CvBattleRound &round);
+	DllExport int getNumBattleRounds() const;
+	DllExport void clearBattleRounds();
+	DllExport CvBattleRound &getBattleRound(int index);
+	DllExport const CvBattleRound &getBattleRound(int index) const;
+	DllExport void addBattleRound(const CvBattleRound &round);
 	void setBattleRound(int index, const CvBattleRound &round);
 
 private:
@@ -388,21 +434,21 @@ private:
 //  CLASS:      CvAirMissionDefinition
 //!  \brief		A definition passed to CvAirMissionManager to start an air mission
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-class DllExport CvAirMissionDefinition : public CvMissionDefinition
+class CvAirMissionDefinition : public CvMissionDefinition
 {
 public:
 	CvAirMissionDefinition();
-	CvAirMissionDefinition( const CvAirMissionDefinition & kCopy );
+	DllExport CvAirMissionDefinition(const CvAirMissionDefinition & kCopy);
 
-	int getDamage(BattleUnitTypes unitType) const;
+	DllExport int getDamage(BattleUnitTypes unitType) const;
 	void setDamage(BattleUnitTypes unitType, int damage);
-	bool isDead(BattleUnitTypes unitType) const;
+	DllExport bool isDead(BattleUnitTypes unitType) const;
 
 private:
 	int					m_aDamage[BATTLE_UNIT_COUNT];		//!< The ending damage of the units
 };
 
-struct DllExport CvWidgetDataStruct
+struct CvWidgetDataStruct
 {
 	int m_iData1;										//	The first bit of data
 	int m_iData2;										//	The second piece of data
@@ -412,13 +458,17 @@ struct DllExport CvWidgetDataStruct
 	WidgetTypes m_eWidgetType;			//	What the 'type' of this widget is (for parsing help and executing actions)
 };
 
+/*	advc (note, fwiw): I've noticed while inspecting disassembly that the EXE
+	calls the auto-generated copy ctor of this struct. */
 struct DllExport CvPlotIndicatorData
 {
-	CvPlotIndicatorData() : m_eVisibility(PLOT_INDICATOR_VISIBLE_ALWAYS), m_bFlashing(false), m_pUnit(NULL), m_bTestEnemyVisibility(false), m_bVisibleOnlyIfSelected(false), m_bPersistentRotation(false)
-	{
-	}
-	CvString m_strIcon;
-	CvString m_strLabel;
+	CvPlotIndicatorData()
+	:	m_eVisibility(PLOT_INDICATOR_VISIBLE_ALWAYS), m_bFlashing(false), m_pUnit(NULL),
+		m_bTestEnemyVisibility(false), m_bVisibleOnlyIfSelected(false),
+		m_bPersistentRotation(false)
+	{}
+	CvString m_szIcon;
+	CvString m_szLabel;
 	NiColor m_kColor;
 	CvWString m_strHelpText;
 	PlotIndicatorVisibilityFlags m_eVisibility;
@@ -432,7 +482,10 @@ struct DllExport CvPlotIndicatorData
 
 struct DllExport CvGlobeLayerData
 {
-	CvGlobeLayerData(GlobeLayerTypes eType) : m_eType(eType), m_bGlobeViewRequired(true), m_bShouldCitiesZoom(false), m_iNumOptions(0) { }
+	CvGlobeLayerData(GlobeLayerTypes eType)
+	:	m_eType(eType), m_bGlobeViewRequired(true), m_bShouldCitiesZoom(false),
+		m_iNumOptions(0)
+	{}
 	GlobeLayerTypes m_eType;
 	CvString m_strName;
 	CvString m_strButtonHelpTag;
@@ -444,7 +497,9 @@ struct DllExport CvGlobeLayerData
 
 struct DllExport CvFlyoutMenuData
 {
-	CvFlyoutMenuData(FlyoutTypes eType, int iId, int iX, int iY, const wchar* strTitle) : m_eFlyout(eType), m_iID(iId), m_iX(iX), m_iY(iY), m_strTitle(strTitle) { }
+	CvFlyoutMenuData(FlyoutTypes eType, int iId, int iX, int iY, wchar const* szTitle)
+	:	m_eFlyout(eType), m_iID(iId), m_iX(iX), m_iY(iY), m_strTitle(szTitle)
+	{}
 	FlyoutTypes m_eFlyout;
 	int m_iID;
 	int m_iX;
@@ -452,38 +507,67 @@ struct DllExport CvFlyoutMenuData
 	CvWString m_strTitle;
 };
 
-struct DllExport CvStatBase
+struct CvStatBase
 {
-	CvStatBase(const char* strKey) : m_strKey(strKey) { }
-	virtual ~CvStatBase() { }
+	CvStatBase(const char* szKey) : m_strKey(szKey) {}
+	virtual ~CvStatBase() {}
 	CvString m_strKey;
 };
 
-struct DllExport CvStatInt : public CvStatBase
+struct CvStatInt : public CvStatBase
 {
-	CvStatInt(const char* strKey, int iValue) : CvStatBase(strKey), m_iValue(iValue) { }
+	CvStatInt(char const* szKey, int iValue)
+	:	CvStatBase(szKey), m_iValue(iValue)
+	{}
 	int m_iValue;
 };
 
-struct DllExport CvStatString : public CvStatBase
+struct CvStatString : public CvStatBase
 {
-	CvStatString(const char* strKey, const char* strValue) : CvStatBase(strKey), m_strValue(strValue) { }
+	CvStatString(char const* szKey, const char* szValue)
+	:	CvStatBase(szKey), m_strValue(szValue)
+	{}
 	CvString m_strValue;
 };
 
-struct DllExport CvStatFloat : public CvStatBase
+struct CvStatFloat : public CvStatBase
 {
-	CvStatFloat(const char* strKey, float fValue) : CvStatBase(strKey), m_fValue(fValue) { }
+	CvStatFloat(char const* szKey, float fValue)
+	:	CvStatBase(szKey), m_fValue(fValue)
+	{}
 	float m_fValue;
 };
 
 struct DllExport CvWBData
 {
-	CvWBData(int iId, const wchar* strHelp, const char* strButton) : m_iId(iId), m_strHelp(strHelp), m_strButton(strButton) { }
+	CvWBData(int iId, wchar const* szHelp, char const* szButton)
+	:	m_iId(iId), m_strHelp(szHelp), m_strButton(szButton)
+	{}
 	int m_iId;
 	CvWString m_strHelp;
 	CvString m_strButton;
 };
-
+// advc.071:
+struct FirstContactData
+{
+	FirstContactData(CvPlot const* pAt1, CvPlot const* pAt2 = NULL,
+			CvUnit const* pUnit1 = NULL, CvUnit const* pUnit2 = NULL);
+	FirstContactData() : u1(), u2(), x1(-1), x2(-1), y1(-1), y2(-1) {}
+	IDInfo u1, u2;
+	int x1, y1, x2, y2;
+};
+// advc.072:
+struct DealItemData
+{
+	DealItemData() : eGivePlayer(NO_PLAYER), eReceivePlayer(NO_PLAYER),
+			eItemType(TRADE_ITEM_NONE), iData(-1), iDeal(-1) {}
+	DealItemData(PlayerTypes eGivePlayer, PlayerTypes eReceivePlayer,
+			TradeableItems eItemType, int iData, int iDeal) :
+			eGivePlayer(eGivePlayer), eReceivePlayer(eReceivePlayer),
+			eItemType(eItemType), iData(iData), iDeal(iDeal) {}
+	PlayerTypes eGivePlayer, eReceivePlayer;
+	TradeableItems eItemType;
+	int iData, iDeal;
+};
 
 #endif	// CVSTRUCTS_H

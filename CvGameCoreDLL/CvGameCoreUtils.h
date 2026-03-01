@@ -1,415 +1,250 @@
 #pragma once
 
-// utils.h
-
 #ifndef CIV4_GAMECORE_UTILS_H
 #define CIV4_GAMECORE_UTILS_H
 
-
-//#include "CvStructs.h"
-#include "CvGlobals.h"
-#include "CvMap.h"
-
-#ifndef _USRDLL
-// use non inline functions when not in the dll
-#define getMapINLINE	getMap
-#define getGridHeightINLINE	getGridHeight
-#define getGridWidthINLINE	getGridWidth
-#define isWrapYINLINE	isWrapY
-#define isWrapXINLINE	isWrapX
-#define plotINLINE	plot
-#define getX_INLINE	getX
-#define getY_INLINE	getY
-
-#endif
-
 class CvPlot;
 class CvCity;
+class CvCityAI; // advc.003u
 class CvUnit;
+class CvUnitAI; // advc.003u
+class CvSelectionGroup;
 class CvString;
 class CvRandom;
 class FAStarNode;
 class FAStar;
-class CvInfoBase;
 
+/*	advc:
+ +	All functions dealing with arithmetics moved to ArithmeticUtils.h
+	except getSign (now in CvPlot.cpp) and any functions involving randomness.
+ +	Distance functions moved into CvMap.h.
+ +	Shuffle functions moved to CvRandom.
+ +	advc.opt: getCity, getUnit moved to CvPlayer.h. CvCity::fromIDInfo and
+	CvUnit::fromIDInfo as alternatives in files that don't include CvPlayer.h.
+ +	Unit cycling functions moved to CvSelectionGroup, CvUnit.
+ +	Asset score functions moved to CvGame; no longer exposed to Python.
+ +	isPromotionValid moved to CvUnitInfo, finalImprovementUpgrade to CvImprovementInfo,
+	getEspionageModifier to CvTeam, getWorldSizeMaxConscript to CvGame (as getMaxConscript;
+	no longer exposed to Python).
+ +	advc.003w: Moved some two dozen functions to CvInfo classes;
+	mostly functions dealing with building and unit class limitations.
+	Removed isTechRequiredForProject.
+ +	getCombatOdds, LFBgetCombatOdds moved to CombatOdds.
+ +	advc.pf: FAStar functions moved into new header FAStarFunc.h
+ What's left here are (non-arithmetic) things that people (such as myself)
+ have been too lazy to find a proper place for. */
 
-#ifndef SQR
-#define SQR(x) ( (x)*(x))
-#endif
-
-#undef max
-#undef min
-
-//sign function taken from FirePlace - JW
-template<class T> __forceinline T getSign( T x ) { return (( x < 0 ) ? T(-1) : x > 0 ? T(1) : T(0)); };
-
-inline int range(int iNum, int iLow, int iHigh)
+// advc:
+namespace std11
 {
-	FAssertMsg(iHigh >= iLow, "High should be higher than low");
-
-	if (iNum < iLow)
-	{
-		return iLow;
-	}
-	else if (iNum > iHigh)
-	{
-		return iHigh;
-	}
-	else
-	{
-		return iNum;
-	}
-}
-
-inline float range(float fNum, float fLow, float fHigh)
+// Erik: "Back-ported" from C++11
+template<class ForwardIt, class T>
+void iota(ForwardIt first, ForwardIt last, T value)
 {
-	FAssertMsg(fHigh >= fLow, "High should be higher than low");
-
-	if (fNum < fLow)
+	while (first != last)
 	{
-		return fLow;
-	}
-	else if (fNum > fHigh)
-	{
-		return fHigh;
-	}
-	else
-	{
-		return fNum;
+		*first++ = value;
+		value++;
 	}
 }
+};
 
-inline int coordDistance(int iFrom, int iTo, int iRange, bool bWrap)
+/*	advc: Based K-Mod code in CvPlayer::getNextGroupInCycle; I find myself using
+	this pattern from time to time:
+	When a function optionally returns an additional value through a
+	pointer argument that can be NULL, then define a local reference that
+	refers to the same memory as the pointer arg - unless the pointer arg
+	is NULL, in which case a local dummy variable is referenced instead. */
+#define LOCAL_REF(T, localRefVarName, pointerArgName, tInitialVal) \
+	T localRefVarName##_local = tInitialVal; /* dummy */ \
+	T& localRefVarName = (pointerArgName == NULL ? localRefVarName##_local : *pointerArgName); \
+	localRefVarName = tInitialVal; /* ensure initialization */
+
+void contestedPlots(std::vector<CvPlot*>& r, TeamTypes t1, TeamTypes t2); // advc.035
+// advc.130h:
+template<typename T> void removeDuplicates(std::vector<T>& v)
 {
-	if (bWrap && (abs(iFrom - iTo) > (iRange / 2)))
+	std::set<T> aeTmp(v.begin(), v.end());
+	v.assign(aeTmp.begin(), aeTmp.end());
+}
+
+// advc.004w:
+void applyColorToString(CvWString& s, char const* szColor, bool bLink = false);
+
+float colorDifference(NiColorA const& c1, NiColorA const& c2); // advc.002i
+
+// <advc> Replacing (unused) tables in CvGlobals for single-step rotation
+inline DirectionTypes rotateDirClockw(DirectionTypes eDir,
+	int i45DegRotations = 1) // Mustn't be less than -NUM_DIRECTION_TYPES
+{
+	/*	Could also try
+		return static_cast<DirectionTypes>((eDir + i45DegRotations) & (NUM_DIRECTION_TYPES - 1));
+		... but I guess the optimizer will handle it. */
+	return static_cast<DirectionTypes>((eDir + i45DegRotations
+			+ NUM_DIRECTION_TYPES) // To avoid negative remainder
+			% NUM_DIRECTION_TYPES);
+}
+
+inline DirectionTypes rotateDirCounterClockw(DirectionTypes eDir,
+	int i45DegRotations = 1)
+{
+	return rotateDirClockw(eDir, -i45DegRotations);
+} // </advc>
+inline CardinalDirectionTypes getOppositeCardinalDirection(CardinalDirectionTypes eDir)		// Exposed to Python
+{
+	return (CardinalDirectionTypes)((eDir + 2) % NUM_CARDINALDIRECTION_TYPES);
+}
+DirectionTypes cardinalDirectionToDirection(CardinalDirectionTypes eCard);					// Exposed to Python
+DllExport inline bool isCardinalDirection(DirectionTypes eDirection)						// Exposed to Python
+{
+	switch (eDirection)
 	{
-		return (iRange - abs(iFrom - iTo));
+	case DIRECTION_EAST:
+	case DIRECTION_NORTH:
+	case DIRECTION_SOUTH:
+	case DIRECTION_WEST:
+		return true;
 	}
-
-	return abs(iFrom - iTo);
+	return false;
 }
-
-inline int wrapCoordDifference(int iDiff, int iRange, bool bWrap)
-{
-	if (bWrap)
-	{
-		if (iDiff > (iRange / 2))
-		{
-			return (iDiff - iRange);
-		}
-		else if (iDiff < -(iRange / 2))
-		{
-			return (iDiff + iRange);
-		}
-	}
-
-	return iDiff;
-}
-
-inline int xDistance(int iFromX, int iToX)
-{
-	return coordDistance(iFromX, iToX, GC.getMapINLINE().getGridWidthINLINE(), GC.getMapINLINE().isWrapXINLINE());
-}
-
-inline int yDistance(int iFromY, int iToY)
-{
-	return coordDistance(iFromY, iToY, GC.getMapINLINE().getGridHeightINLINE(), GC.getMapINLINE().isWrapYINLINE());
-}
-
-inline int dxWrap(int iDX)																													// Exposed to Python
-{
-	return wrapCoordDifference(iDX, GC.getMapINLINE().getGridWidthINLINE(), GC.getMapINLINE().isWrapXINLINE());
-}
-
-inline int dyWrap(int iDY)																													// Exposed to Python
-{
-	return wrapCoordDifference(iDY, GC.getMapINLINE().getGridHeightINLINE(), GC.getMapINLINE().isWrapYINLINE());
-}
-
-// 4 | 4 | 3 | 3 | 3 | 4 | 4
-// -------------------------
-// 4 | 3 | 2 | 2 | 2 | 3 | 4
-// -------------------------
-// 3 | 2 | 1 | 1 | 1 | 2 | 3
-// -------------------------
-// 3 | 2 | 1 | 0 | 1 | 2 | 3
-// -------------------------
-// 3 | 2 | 1 | 1 | 1 | 2 | 3
-// -------------------------
-// 4 | 3 | 2 | 2 | 2 | 3 | 4
-// -------------------------
-// 4 | 4 | 3 | 3 | 3 | 4 | 4
-//
-// Returns the distance between plots according to the pattern above...
-inline int plotDistance(int iX1, int iY1, int iX2, int iY2)													// Exposed to Python
-{
-	int iDX;
-	int iDY;
-
-	iDX = xDistance(iX1, iX2);
-	iDY = yDistance(iY1, iY2);
-
-	return (std::max(iDX, iDY) + (std::min(iDX, iDY) / 2));
-}
-
-// 3 | 3 | 3 | 3 | 3 | 3 | 3
-// -------------------------
-// 3 | 2 | 2 | 2 | 2 | 2 | 3
-// -------------------------
-// 3 | 2 | 1 | 1 | 1 | 2 | 3
-// -------------------------
-// 3 | 2 | 1 | 0 | 1 | 2 | 3
-// -------------------------
-// 3 | 2 | 1 | 1 | 1 | 2 | 3
-// -------------------------
-// 3 | 2 | 2 | 2 | 2 | 2 | 3
-// -------------------------
-// 3 | 3 | 3 | 3 | 3 | 3 | 3
-//
-// Returns the distance between plots according to the pattern above...
-inline int stepDistance(int iX1, int iY1, int iX2, int iY2)													// Exposed to Python
-{
-	return std::max(xDistance(iX1, iX2), yDistance(iY1, iY2));
-}
-
-inline CvPlot* plotDirection(int iX, int iY, DirectionTypes eDirection)							// Exposed to Python
-{
-	if(eDirection == NO_DIRECTION)
-	{
-		return GC.getMapINLINE().plotINLINE(iX, iY);
-	}
-	else
-	{
-		return GC.getMapINLINE().plotINLINE((iX + GC.getPlotDirectionX()[eDirection]), (iY + GC.getPlotDirectionY()[eDirection]));
-	}
-}
-
-inline CvPlot* plotCardinalDirection(int iX, int iY, CardinalDirectionTypes eCardinalDirection)	// Exposed to Python
-{
-	return GC.getMapINLINE().plotINLINE((iX + GC.getPlotCardinalDirectionX()[eCardinalDirection]), (iY + GC.getPlotCardinalDirectionY()[eCardinalDirection]));
-}
-
-inline CvPlot* plotXY(int iX, int iY, int iDX, int iDY)																// Exposed to Python
-{
-	return GC.getMapINLINE().plotINLINE((iX + iDX), (iY + iDY));
-}
-
-inline DirectionTypes directionXY(int iDX, int iDY)																		// Exposed to Python
-{
-	if ((abs(iDX) > DIRECTION_RADIUS) || (abs(iDY) > DIRECTION_RADIUS))
-	{
-		return NO_DIRECTION;
-	}
-	else
-	{
-		return GC.getXYDirection((iDX + DIRECTION_RADIUS), (iDY + DIRECTION_RADIUS));
-	}
-}
-
-inline DirectionTypes directionXY(const CvPlot* pFromPlot, const CvPlot* pToPlot)			// Exposed to Python
-{
-	return directionXY(dxWrap(pToPlot->getX_INLINE() - pFromPlot->getX_INLINE()), dyWrap(pToPlot->getY_INLINE() - pFromPlot->getY_INLINE()));
-}
-
-// Leoreth: parabolic decay of influence: iCenterValue at distance 0, 1 at distance iRange
-inline int distanceInfluence(int iCenterValue, int iRange, int iDistance)
-{
-	return (iCenterValue - 1) * (iDistance - iRange) * (iDistance - iRange) / (iRange * iRange) + 1;
-}
-
-inline int sgn(int x)
-{
-	return (x > 0) - (x < 0);
-}
-
-// Leoreth: multiply and divide ints without overflow as long as the result is an int
-inline int percent(int iValue, int iFactor, int iDivisor = 100)
-{
-	//FAssertMsg(iDivisor >= iFactor, "Percent calculation may overflow");
-	return (long long)iValue * (long long)iFactor / (long long)iDivisor;
-}
-
-bool isHumanVictoryWonder(BuildingTypes eBuilding, int eWonder, CivilizationTypes eCivilization);
-
-CvPlot* plotCity(int iX, int iY, int iIndex);																			// Exposed to Python
-CvPlot* plotCity3(int iX, int iY, int iIndex); // Leoreth
-int plotCityXY(int iDX, int iDY);																									// Exposed to Python
-int plotCityXY(const CvCity* pCity, const CvPlot* pPlot);													// Exposed to Python
-
-CardinalDirectionTypes getOppositeCardinalDirection(CardinalDirectionTypes eDir);	// Exposed to Python 
-DirectionTypes cardinalDirectionToDirection(CardinalDirectionTypes eCard);				// Exposed to Python
-DllExport bool isCardinalDirection(DirectionTypes eDirection);															// Exposed to Python
-DllExport DirectionTypes estimateDirection(int iDX, int iDY);																// Exposed to Python
+DirectionTypes estimateDirection(int iDX, int iDY);											// Exposed to Python
 DllExport DirectionTypes estimateDirection(const CvPlot* pFromPlot, const CvPlot* pToPlot);
-DllExport float directionAngle(DirectionTypes eDirection);
 
-DllExport bool atWar(TeamTypes eTeamA, TeamTypes eTeamB);												// Exposed to Python
-bool isPotentialEnemy(TeamTypes eOurTeam, TeamTypes eTheirTeam);			// Exposed to Python
+// advc: Moved from CvXMLLoadUtility. (CvHotKeyInfo might be an even better place?)
+namespace hotkeyDescr
+{
+	CvWString keyStringFromKBCode(TCHAR const* szDescr);
+	CvWString hotKeyFromDescription(TCHAR const* szDescr,
+			bool bShift = false, bool bAlt = false, bool bCtrl = false);
+}
 
-DllExport CvCity* getCity(IDInfo city);	// Exposed to Python
-DllExport CvUnit* getUnit(IDInfo unit);	// Exposed to Python
+bool atWar(TeamTypes eTeamA, TeamTypes eTeamB);												// Exposed to Python
+//isPotentialEnemy(TeamTypes eOurTeam, TeamTypes eTheirTeam); // advc: Use CvTeamAI::AI_mayAttack instead
 
-bool isBeforeUnitCycle(const CvUnit* pFirstUnit, const CvUnit* pSecondUnit);
-bool isPromotionValid(PromotionTypes ePromotion, UnitTypes eUnit, bool bLeader);	// Exposed to Python
+int estimateCollateralWeight(const CvPlot* pPlot, TeamTypes eAttackTeam, TeamTypes eDefenseTeam = NO_TEAM); // K-Mod
 
-int getPopulationAsset(int iPopulation);								// Exposed to Python
-int getLandPlotsAsset(int iLandPlots);									// Exposed to Python
-int getPopulationPower(int iPopulation);								// Exposed to Python
-int getPopulationScore(int iPopulation);								// Exposed to Python
-int getLandPlotsScore(int iLandPlots);									// Exposed to Python
-int getTechScore(TechTypes eTech);											// Exposed to Python
-int getWonderScore(BuildingClassTypes eWonderClass);		// Exposed to Python
-
-ImprovementTypes finalImprovementUpgrade(ImprovementTypes eImprovement, int iCount = 0);		// Exposed to Python
-
-int getWorldSizeMaxConscript(CivicTypes eCivic);								// Exposed to Python
-
-bool isReligionTech(TechTypes eTech);														// Exposed to Python
-
-bool isTechRequiredForUnit(TechTypes eTech, UnitTypes eUnit);							// Exposed to Python
-bool isTechRequiredForBuilding(TechTypes eTech, BuildingTypes eBuilding);	// Exposed to Python
-bool isTechRequiredForProject(TechTypes eTech, ProjectTypes eProject);		// Exposed to Python
-
-bool isWorldUnitClass(UnitClassTypes eUnitClass);											// Exposed to Python
-bool isTeamUnitClass(UnitClassTypes eUnitClass);											// Exposed to Python
-bool isNationalUnitClass(UnitClassTypes eUnitClass);									// Exposed to Python
-bool isLimitedUnitClass(UnitClassTypes eUnitClass);										// Exposed to Python
-
-bool isWorldWonderClass(BuildingClassTypes eBuildingClass);						// Exposed to Python
-bool isTeamWonderClass(BuildingClassTypes eBuildingClass);						// Exposed to Python
-bool isNationalWonderClass(BuildingClassTypes eBuildingClass);				// Exposed to Python
-bool isLimitedWonderClass(BuildingClassTypes eBuildingClass);					// Exposed to Python
-int limitedWonderClassLimit(BuildingClassTypes eBuildingClass);
-
-bool isWorldProject(ProjectTypes eProject);														// Exposed to Python
-bool isTeamProject(ProjectTypes eProject);														// Exposed to Python
-bool isLimitedProject(ProjectTypes eProject);													// Exposed to Python
-
-__int64 getBinomialCoefficient(int iN, int iK);
-int getCombatOdds(CvUnit* pAttacker, CvUnit* pDefender);							// Exposed to Python
-/////////////////////////////////////////////////////////////////
-// ADVANCED COMABT ODDS                         PieceOfMind    //
-// BEGIN                                                       //
-/////////////////////////////////////////////////////////////////
-float getCombatOddsSpecific(CvUnit* pAttacker, CvUnit* pDefender, int n_A, int n_D);
-/////////////////////////////////////////////////////////////////
-// ADVANCED COMABT ODDS                         PieceOfMind    //
-// END                                                         //
-/////////////////////////////////////////////////////////////////
-
-int getEspionageModifier(TeamTypes eOurTeam, TeamTypes eTargetTeam);							// Exposed to Python
-
+/*	advc (note): Still used in the DLL by CvPlayer::buildTradeTable, but mostly deprecated.
+	Use the TradeData constructor instead. */
 DllExport void setTradeItem(TradeData* pItem, TradeableItems eItemType = TRADE_ITEM_NONE, int iData = 0);
 
-bool isPlotEventTrigger(EventTriggerTypes eTrigger);
+/*	advc: Unused. Thought about moving these to CvGameTextMgr,
+	but that'll lead to more header inclusions. */
+//void setListHelp(wchar* szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
+void setListHelp(CvWString& szBuffer, wchar const* szStart, wchar const* szItem,
+		wchar const* szSeparator, bool& bFirst); // advc: bool&
+void setListHelp(CvWStringBuffer& szBuffer, wchar const* szStart, wchar const* szItem,
+		wchar const* szSeparator, bool& bFirst); // advc: bool&
+/*	<advc> Add variants for items that can go into one list only when a value
+	matches the most recently added item. (This stuff should really be wrapped
+	into a class.) */
+void setListHelp(CvWString& szBuffer, wchar const* szStart, wchar const* szItem,
+		wchar const* szSeparator, int& iLastListID, int iListID);
+void setListHelp(CvWStringBuffer& szBuffer, wchar const* szStart, wchar const* szItem,
+		wchar const* szSeparator, int& iLastListID, int iListID); // </advc>
 
-TechTypes getDiscoveryTech(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eIgnoreTech = NO_TECH);
-int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech);
+// PlotUnitFunc's...  (advc: Parameters iData1, iData2 renamed)
+bool PUF_isGroupHead(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isPlayer(CvUnit const* pUnit, int iOwner, int iForTeam = NO_TEAM);
+bool PUF_isTeam(CvUnit const* pUnit, int iTeam, int iDummy = -1);
+bool PUF_isCombatTeam(CvUnit const* pUnit, int iTeam, int iForTeam);
+bool PUF_isOtherPlayer(CvUnit const* pUnit, int iPlayer, int iDummy = -1);
+bool PUF_isOtherTeam(CvUnit const* pUnit, int iPlayer, int iDummy = -1);
+bool PUF_canDefend(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_canDefendAgainst( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1); // doc
+bool PUF_cannotDefend(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_canDefendGroupHead(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_canDefendPotentialEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile = false);
+bool PUF_canDefendEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile = false);
+bool PUF_canDefendAgainstEnemy( const CvUnit* pUnit, int iData1, int iData2 = 1); // doc // TODO: needed?
+bool PUF_isPotentialEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile = false);
+bool PUF_isEnemy(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile = false);
+bool PUF_canDeclareWar(CvUnit const* pUnit, int iPlayer, BOOL iAlwaysHostile = false);
+// advc.ctr:
+bool PUF_isEnemyCityAttacker(CvUnit const* pUnit, int iPlayer, int iAssumePeaceTeam = NO_TEAM);
+bool PUF_isVisible(CvUnit const* pUnit, int iPlayer, int iDummy = -1);
+bool PUF_isVisibleDebug(CvUnit const* pUnit, int iTargetPlayer, int iDummy = -1);
+bool PUF_isLethal(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1); // advc.298
+bool PUF_canSiege(CvUnit const* pUnit, int iTargetPlayer, int iDummy = -1);
+bool PUF_canAirAttack(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_canAirDefend(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isAirIntercept(CvUnit const* pUnit, int iDummy1, int iDummy2); // K-Mod
+bool PUF_isFighting(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isAnimal(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isMilitaryHappiness(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isInvestigate(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isCounterSpy(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isSpy(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isDomainType(CvUnit const* pUnit, int iDomain, int iDummy = -1);
+bool PUF_isUnitType(CvUnit const* pUnit, int iUnit, int iDummy = -1);
+bool PUF_isUnitAIType(CvUnit const* pUnit, int iUnitAI, int iDummy = -1);
+bool PUF_isMissionAIType(CvUnit const* pUnit, int iMissionAI, int iDummy = -1); // K-Mod
+bool PUF_isCityAIType(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isNotCityAIType(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+bool PUF_isSelected(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+//bool PUF_isNoMission(const CvUnit* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+// advc.113b:
+bool PUF_isMissionPlotWorkingCity(CvUnit const* pUnit, int iCity, int iOwner);
+bool PUF_isFiniteRange(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+// bbai start
+bool PUF_isAvailableUnitAITypeGroupie(CvUnit const* pUnit, int iUnitAI, int iDummy);
+bool PUF_isFiniteRangeAndNotJustProduced(CvUnit const* pUnit, int iDummy1 = -1, int iDummy2 = -1);
+// bbai end
 
-void setListHelp(wchar* szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
-void setListHelp(CvWString& szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
-void setListHelp(CvWStringBuffer& szBuffer, const wchar* szStart, const wchar* szItem, const wchar* szSeparator, bool bFirst);
-
-// PlotUnitFunc's...
-bool PUF_isGroupHead( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isPlayer( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isTeam( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isCombatTeam(const CvUnit* pUnit, int iData1, int iData2);
-bool PUF_isOtherPlayer( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isOtherTeam( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isVisible( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isVisibleDebug( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_canSiege( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_canDeclareWar( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_canDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_canDefendAgainst( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1); // Leoreth
-bool PUF_cannotDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_canDefendGroupHead( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_canDefendEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_canDefendAgainstEnemy( const CvUnit* pUnit, int iData1, int iData2 = 1); // Leoreth
-bool PUF_canDefendPotentialEnemy( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_canAirAttack( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_canAirDefend( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isFighting( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isAnimal( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isMilitaryHappiness( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isInvestigate( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isCounterSpy( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isSpy( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isUnitType( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isDomainType( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isUnitAIType( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isCityAIType( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isNotCityAIType( const CvUnit* pUnit, int iData1, int iData2 = -1);
-bool PUF_isSelected( const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_makeInfoBarDirty(CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isNoMission(const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-bool PUF_isFiniteRange(const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
-
-// FAStarFunc...
-int potentialIrrigation(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int checkFreshWater(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int changeIrrigated(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int pathDestValid(int iToX, int iToY, const void* pointer, FAStar* finder);
-int pathHeuristic(int iFromX, int iFromY, int iToX, int iToY);
-int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int pathValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int stepDestValid(int iToX, int iToY, const void* pointer, FAStar* finder);
-int stepHeuristic(int iFromX, int iFromY, int iToX, int iToY);
-int stepValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int stepCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int stepAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int routeValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int borderValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int areaValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int joinArea(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int plotGroupValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
-int countPlotGroup(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder);
+bool PUF_makeInfoBarDirty(CvUnit* pUnit, int iDummy1 = -1, int iDummy2 = -1);
 
 int baseYieldToSymbol(int iNumYieldTypes, int iYieldStack);
+//bool isPickableName(const TCHAR* szName); // advc.003j
 
-bool isPickableName(const TCHAR* szName);
+/*  advc: Hash based on kInputs. Plot index of capital factored in for
+	increased range if ePlayer given. (ePlayer is ignored if it has no capital.) */
+int intHash(std::vector<int> const& kInputs, PlayerTypes ePlayer = NO_PLAYER);
 
-DllExport int* shuffle(int iNum, CvRandom& rand);
-void shuffleArray(int* piShuffle, int iNum, CvRandom& rand);
+// <advc.003g>
+namespace fmath
+{
+	/*	See intHash about the parameters.
+		Result between 0 and 1. Returns float b/c CvRandom uses float (not double).
+		(Similar but more narrow: CvUnitAI::AI_unitBirthmarkHash, AI_unitPlotHash) */
+	inline float hash(std::vector<int> const& kInputs, PlayerTypes ePlayer = NO_PLAYER)
+	{
+		/*  Use ASyncRand to avoid the overhead of creating a new object?
+			Or use stdlib's rand/srand? I don't think it matters. */
+		/*CvRandom& rng = GC.getASyncRand();
+		rng.reset(hashVal);*/
+		CvRandom rng;
+		rng.init(intHash(kInputs, ePlayer));
+		return rng.getFloat();
+	}
+	// For hashing just a single input
+	inline float hash(int iInputs, PlayerTypes ePlayer = NO_PLAYER)
+	{
+		std::vector<int> inputs;
+		inputs.push_back(iInputs);
+		return hash(inputs, ePlayer);
+	}
+} // </advc.003g>
 
 int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
 int getTurnYearForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
 
-// edead: start
-int getTurnForYear(int iTurnYear);
-int getGameTurnForYear(int iTurnYear, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
-int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed);
-int getTurns(int iTurns);
-// edead: end
+int getTurnForYear(int iTurnYear); // doc (edead)
+int getGameTurnForYear(int iTurnYear, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed); // doc (edead)
+int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar, GameSpeedTypes eSpeed); // doc (edead)
+int getTurns(int iTurns); // doc (edead)
 
-ScenarioTypes getScenario(); // Leoreth
-int getScenarioStartYear(ScenarioTypes eScenario = NO_SCENARIO); // Leoreth
-int getScenarioStartTurn(); // Leoreth
+ScenarioTypes getScenario(); // doc
+int getScenarioStartYear(ScenarioTypes eScenario = NO_SCENARIO); // doc
+int getScenarioStartTurn(); // doc
 
-BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // Leoreth
-UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // Leoreth
+BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding); // doc
+UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // doc
 
-bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // Leoreth
+bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // doc
 
-void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue);
-
-void log(char* format, ...);
-void log(CvWString message);
-void log(CvString logfile, CvString message);
-void logMajorError(CvWString message, int iX = -1, int iY = -1);
-char* chars(const wchar_t* wchars);
-char* chars(CvWString string);
-
-void warn(CvWString message);
-
-bool canRespawn(CivilizationTypes eCivilization);
-bool canEverRespawn(CivilizationTypes eCivilization);
-bool isCivAlive(CivilizationTypes eCivilization);
-bool validatePeriodConstant(PeriodTypes ePeriod);
+bool canRespawn(CivilizationTypes eCivilization); // doc
+bool canEverRespawn(CivilizationTypes eCivilization); // doc
+bool isCivAlive(CivilizationTypes eCivilization); // doc
+bool validatePeriodConstant(PeriodTypes ePeriod); // doc
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
@@ -417,13 +252,5 @@ void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);
 void getMissionTypeString(CvWString& szString, MissionTypes eMissionType);
 void getMissionAIString(CvWString& szString, MissionAITypes eMissionAI);
 void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI);
-
-// BUG - Unit Experience - start
-/*
- * Calculates the experience needed to reach the next level after the given level.
- */
-int calculateExperience(int iLevel, PlayerTypes ePlayer);								// Exposed to Python
-int calculateLevel(int iExperience, PlayerTypes ePlayer);								// Exposed to Python
-// BUG - Unit Experience - end
 
 #endif

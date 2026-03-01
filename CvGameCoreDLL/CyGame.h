@@ -2,12 +2,9 @@
 
 #ifndef CyGame_h
 #define CyGame_h
-//
-// Python wrapper class for CvGame 
-// SINGLETON
-// updated 6-5
 
-//#include "CvEnums.h"
+// Python wrapper class for CvGame
+// SINGLETON
 
 class CvGame;
 class CvGameAI;
@@ -20,16 +17,17 @@ class CyPlot;
 class CyGame
 {
 public:
-	CyGame();
-	CyGame(CvGame* pGame);			// Call from C++
-	CyGame(CvGameAI* pGame);			// Call from C++;
-	CvGame* getGame() { return m_pGame;	}	// Call from C++
-	bool isNone() { return (m_pGame==NULL); }
+	CyGame(CvGame& kGame) : m_kGame(kGame) {} // Call from C++
+	/*CyGame(CvGameAI const& kGame);
+	CvGame const& getGame() { return m_kGame;	}*/ // advc: unused
+	CyGame() : m_kGame(GC.getGame()) {}
+	bool isNone() { return /*(m_pGame==NULL)*/ false; } // advc: Initialization is guaranteed
 
 	void updateScore(bool bForce);
 	void cycleCities(bool bForward, bool bAdd);
 	void cycleSelectionGroups(bool bClear, bool bForward, bool bWorkers);
 	bool cyclePlotUnits(CyPlot* pPlot, bool bForward, bool bAuto, int iCount);
+	CyUnit* getNextUnitInCycle(bool bForward, bool bWorkers); // advc.154
 
 	void selectionListMove(CyPlot* pPlot, bool bAlt, bool bShift, bool bCtrl);
 	void selectionListGameNetMessage(int eMessage, int iData2, int iData3, int iData4, int iFlags, bool bAlt, bool bShift);
@@ -42,7 +40,7 @@ public:
 
 	int getAdjustedPopulationPercent(int /*VictoryTypes*/ eVictory);
 	int getAdjustedLandPercent(int /* VictoryTypes*/ eVictory);
-
+	bool isDiploVictoryValid(); // advc.178
 	bool isTeamVote(int /*VoteTypes*/ eVote) const;
 	bool isChooseElection(int /*VoteTypes*/ eVote) const;
 	bool isTeamVoteEligible(int /*TeamTypes*/ eTeam, int /*VoteSourceTypes*/ eVoteSource) const;
@@ -64,9 +62,9 @@ public:
 	int countKnownTechNumTeams(int /*TechTypes*/ eTech);
 	int getNumFreeBonuses(int /*BuildingTypes*/ eBuilding);
 
-	int countReligionLevels(int /*ReligionTypes*/ eReligion);	
+	int countReligionLevels(int /*ReligionTypes*/ eReligion);
 	int calculateReligionPercent(int /* ReligionTypes*/ eReligion);
-	int countCorporationLevels(int /*CorporationTypes*/ eCorporation);	
+	int countCorporationLevels(int /*CorporationTypes*/ eCorporation);
 
 	int goldenAgeLength();
 	int victoryDelay(int /*VictoryTypes*/ eVictory);
@@ -91,7 +89,7 @@ public:
 	void setGameTurn(int iNewValue);
 	int getTurnYear(int iGameTurn);
 	int getGameTurnYear();
-	
+
 	int getElapsedGameTurns();
 	int getMaxTurns() const;
 	void setMaxTurns(int iNewValue);
@@ -101,14 +99,14 @@ public:
 	int getNumAdvancedStartPoints() const;
 	void setNumAdvancedStartPoints(int iNewValue);
 	int getStartTurn() const;
-	void setStartTurn(int iNewValue); // Leoreth
+	void setStartTurn(int iNewValue); // doc
 	int getStartYear() const;
 	void setStartYear(int iNewValue);
 	int getEstimateEndTurn() const;
 	void setEstimateEndTurn(int iNewValue);
 	int getTurnSlice() const;
 	int getMinutesPlayed() const;
-	int getSecondsPlayed() const;
+	int getSecondsPlayed() const; // doc
 	int getTargetScore() const;
 	void setTargetScore(int iNewValue);
 
@@ -143,12 +141,20 @@ public:
 	int getAIAutoPlay() const;
 	void setAIAutoPlay(int iNewValue);
 
+	int getGlobalWarmingIndex() const;	// K-Mod
+	int getGlobalWarmingChances() const;	// K-Mod
+	int getGwEventTally() const;		// K-Mod
+	int calculateGlobalPollution() const; // K-Mod
+	int calculateGwLandDefence(int /* PlayerTypes */ ePlayer) const; // K-Mod
+	int calculateGwSustainabilityThreshold(int /* PlayerTypes */ ePlayer) const; // K-Mod
+	int calculateGwSeverityRating() const;
+
 	bool isScoreDirty() const;
 	void setScoreDirty(bool bNewValue);
 	bool isCircumnavigated() const;
 	void makeCircumnavigated();
-	int getCircumnavigated(); //Rhye
-	void setCircumnavigated(int i); //Rhye
+	int getCircumnavigated(); // rfc
+	void setCircumnavigated(int iNewValue); // rfc
 	bool isDiploVote(int /*VoteSourceTypes*/ eVoteSource) const;
 	void changeDiploVote(int /*VoteSourceTypes*/ eVoteSource, int iChange);
 	bool isDebugMode() const;
@@ -162,28 +168,30 @@ public:
 	bool isSimultaneousTeamTurns();
 
 	bool isFinalInitialized();
-
+	void setScreenDimensions(int iWidth, int iHeight); // advc.061
 	int /*PlayerTypes*/ getActivePlayer();
 	void setActivePlayer(int /*PlayerTypes*/ eNewValue, bool bForceHotSeat);
 	int getPausePlayer();
 	bool isPaused();
 	int /*UnitTypes*/ getBestLandUnit();
 	int getBestLandUnitCombat();
-	
+
 	int /*TeamTypes*/ getWinner();
 	int /*VictoryTypes*/ getVictory();
 	void setWinner(int /*TeamTypes*/ eNewWinner, int /*VictoryTypes*/ eNewVictory);
 	int /*GameStateTypes*/ getGameState();
 	int /*HandicapTypes*/ getHandicapType();
+	int /*HandicapTypes*/ getAIHandicap(); // advc.708
 	CalendarTypes getCalendar() const;
 	int /*EraTypes*/ getStartEra();
-	int /*GameSpeedTypes*/ getGameSpeedType();	
+	int /*GameSpeedTypes*/ getGameSpeedType();
 	/*PlayerTypes*/ int getRankPlayer(int iRank);
 	int getPlayerRank(int /*PlayerTypes*/ iIndex);
 	int getPlayerScore(int /*PlayerTypes*/ iIndex);
 	int /*TeamTypes*/ getRankTeam(int iRank);
 	int getTeamRank(int /*TeamTypes*/ iIndex);
 	int getTeamScore(int /*TeamTypes*/ iIndex);
+	void setVictoryValid(int /*VictoryTypes*/ iVictory, bool bValid); // advc
 	bool isOption(int /*GameOptionTypes*/ eIndex);
 	void setOption(int /*GameOptionTypes*/ eIndex, bool bEnabled);
 	bool isMPOption(int /*MultiplayerOptionTypes*/ eIndex);
@@ -204,7 +212,7 @@ public:
 	int getVoteOutcome(int /*VoteTypes*/ eIndex);
 
 	int getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex);
-	void setReligionGameTurnFounded(int eReligion, int iGameTurn);
+	void setReligionGameTurnFounded(int eReligion, int iGameTurn); // doc
 	bool isReligionFounded(int /*ReligionTypes*/ eIndex);
 	bool isReligionSlotTaken(int /*ReligionTypes*/ eIndex);
 	int getCorporationGameTurnFounded(int /*CorporationTypes*/ eIndex);
@@ -245,10 +253,6 @@ public:
 	int getSorenRandNum(int iNum, TCHAR* pszLog);
 	int calculateSyncChecksum();
 	int calculateOptionsChecksum();
-	// Rhye - start (jdog)
-	bool changePlayer( int playerIdx, int newCivType, int newLeader, int teamIdx, bool bIsHuman, bool bChangeGraphics );
-	void convertUnits( int playerIdx );
-	// Rhye - end
 	bool GetWorldBuilderMode() const;				// remove once CvApp is exposed
 	bool isPitbossHost() const;				// remove once CvApp is exposed
 	int getCurrentLanguage() const;				// remove once CvApp is exposed
@@ -267,11 +271,18 @@ public:
 
 	void saveReplay(int iPlayer);
 
-	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv, int iBirthTurn, bool bAlive, bool bMinor);
+	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv);
+
+	// BETTER_BTS_AI_MOD, Debug, 8/1/08, jdog5000:
+	void changeHumanPlayer(int /*PlayerTypes*/ eNewHuman);
+
 	int getCultureThreshold(int /*CultureLevelTypes*/ eLevel);
-	void setPlotExtraYield(int iX, int iY, int /*YieldTypes*/ eYield, int iExtraYield);
+
+	// (advc.enum: deprecated x3)
+	int getPlotExtraYield(int iX, int iY, int eYield); // K-Mod
+	void setPlotExtraYield(int iX, int iY, int eYield, int iExtraYield);
 	void changePlotExtraCost(int iX, int iY, int iExtraCost);
-	
+
 	bool isCivEverActive(int /*CivilizationTypes*/ eCivilization);
 	bool isLeaderEverActive(int /*LeaderHeadTypes*/ eLeader);
 	bool isUnitEverActive(int /*UnitTypes*/ eUnit);
@@ -280,65 +291,69 @@ public:
 	bool isEventActive(int /*EventTriggerTypes*/ eTrigger);
 	void doControl(int iControl);
 
-// BUG - MapFinder - start
-	bool canRegenerateMap() const;
-	bool regenerateMap();
+	void setCityBarWidth(bool bWide); // advc.095
+	void saveGame(std::string szFileName); // BULL - AutoSave
+	bool useKModAI(); // advc.104
+	int getBarbarianStartTurn(); // advc.300
+	std::wstring SPaHPointsForSettingsScreen(); // advc.250b
+	int getDifficultyForEndScore(); // advc.250
+	// <advc.703>
+	int getMaxChapters();
+	int getCurrentChapter();
+	int getChapterStart(int chapter);
+	int getChapterEnd(int chapter);
+	int getChapterScore(int chapter);
+	int getChapterScoreTurn(int chapter);
+	int getChapterCiv(int chapter);
+	std::wstring chapterScoreBreakdown();
+	std::wstring riseScoreBreakdown();
+	// </advc.703>
+	// <advc.706>
+	bool isRFInterlude();
+	bool isRFBlockPopups(); // </advc.706>
+	void reportCurrentLayer(int iLayer); // advc.004m
+	bool isCivLeaderSetupKnown(); // advc.190c
+	bool isScenario(); // advc.052
 
-	void saveGame(std::string fileName) const;
-// BUG - MapFinder - end
+    bool isNeighbors(int /*PlayerTypes*/ ePlayer1, int /*PlayerTypes*/ ePlayer2); // doc
+    bool isCheatingEnabled() const; // doc
+    int determineWinner(int /*TeamTypes*/ eTeam1, int /*TeamTypes*/ eTeam2); // doc
 
-// BUG - EXE/DLL Paths - start
-	std::string getDLLPath() const;
-	std::string getExePath() const;
-// BUG - EXE/DLL Paths - end
+    int getXResolution() const; // doc
+    void setXResolution(int iNewValue); // doc
+    void changeXResolution(int iChange); // doc
 
-// BUFFY - Security Checks - start
-#ifdef _BUFFY
-	int checkCRCs(std::string fileName_, std::string expectedModCRC_, std::string expectedDLLCRC_, std::string expectedShaderCRC_, std::string expectedPythonCRC_, std::string expectedXMLCRC_) const;
-	int getWarningStatus() const;
-#endif
-// BUFFY - Security Checks - end
+    int getYResolution() const; // doc
+    void setYResolution(int iNewValue); // doc
+    void changeYResolution(int iChange); // doc
 
-	// Leoreth
-	bool isNeighbors(int /*PlayerTypes*/ ePlayer1, int /*PlayerTypes*/ ePlayer2);
-	bool isCheatingEnabled() const;
-	int determineWinner(int /*TeamTypes*/ eTeam1, int /*TeamTypes*/ eTeam2);
+    void addGreatPersonBornName(std::wstring sName); // doc
+    bool isGreatPersonBorn(std::wstring sName); // doc
 
-	int getXResolution() const;
-	void setXResolution(int iNewValue);
-	void changeXResolution(int iChange);
+    void autosave(); // doc
+    void initialSave(); // doc
 
-	int getYResolution() const;
-	void setYResolution(int iNewValue);
-	void changeYResolution(int iChange);
+    void incrementBuildingClassCreatedCount(int iBuildingClass); // doc
 
-	void addGreatPersonBornName(std::wstring sName);
-	bool isGreatPersonBorn(std::wstring sName);
+    void setCityScreenOwner(int iPlayer); // doc
+    void resetCityScreenOwner(); // doc
 
-	void autosave();
-	void initialSave();
+    void setGreatPeopleNotifications(int iNotificationLevel); // doc
+    void setReligionSpreadNotifications(int iNotificationLevel); // doc
+    void setEventEffectNotifications(int iNotificationLevel); // doc
 
-	void incrementBuildingClassCreatedCount(int iBuildingClass);
+    int getPeriod(int iCivilization); // doc
+    void setPeriod(int iCivilization, int iPeriod); // doc
 
-	void setCityScreenOwner(int iPlayer);
-	void resetCityScreenOwner();
+    int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn); // doc
 
-	void setGreatPeopleNotifications(int iNotificationLevel);
-	void setReligionSpreadNotifications(int iNotificationLevel);
-	void setEventEffectNotifications(int iNotificationLevel);
+    int getFirstDiscovered(int iTech); // doc
+    int getFirstDiscoveredTurn(int iTech); // doc
 
-	int getPeriod(int iCivilization);
-	void setPeriod(int iCivilization, int iPeriod);
-
-	int getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn);
-
-	int getFirstDiscovered(int iTech);
-	int getFirstDiscoveredTurn(int iTech);
-
-	int getMedianTechValue();
+    int getMedianTechValue(); // doc
 
 protected:
-	CvGame* m_pGame;
+	CvGame& m_kGame; // advc: was pointer
 };
 
 #endif	// #ifndef CyGame

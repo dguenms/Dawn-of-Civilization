@@ -3,30 +3,28 @@
 #ifndef CyCity_h
 #define CyCity_h
 //
-// Python wrapper class for CvCity 
-// 
-
-//#include "CvEnums.h"
-#include <string>
-#include <boost/python/tuple.hpp>
-namespace python = boost::python;
+// Python wrapper class for CvCity
+//
 
 struct OrderData;
 class CvCity;
 class CyPlot;
 class CyArea;
 class CyUnit;
+
 class CyCity
 {
 public:
 	CyCity();
-	DllExport CyCity(CvCity* pCity);		// Call from C++
-	CvCity* getCity() { return m_pCity;	}	// Call from C++
+	DllExport CyCity(CvCity* pCity); // Call from C++
+	CyCity(CvCityAI* pCity); // advc.003u
+	CyCity(CvCity const& kCity); // advc.003y
+	CvCity* getCity(); // Call from C++  // advc.003u: Definition moved to CyCity.cpp
 	bool isNone() { return (m_pCity==NULL); }
 	void kill();
 
 	void createGreatPeople(int /*UnitTypes*/ eGreatPersonUnit, bool bIncrementThreshold, bool bIncrementExperience);
-	
+
 	void doTask(int /*TaskTypes*/ eTask, int iData1, int iData2, bool bOption);
 	void chooseProduction(int /*UnitTypes*/ eTrainUnit, int /*BuildingTypes*/ eConstructBuilding, int /*ProjectTypes*/ eCreateProject, bool bFinish, bool bFront);
 	int getCityPlotIndex(CyPlot* pPlot);
@@ -48,17 +46,17 @@ public:
 	bool isNationalWondersMaxed();
 	bool isBuildingsMaxed();
 
-	bool canTrain( int iUnit, bool bContinue, bool bTestVisible);
-	bool canConstruct( int iBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost);
-	bool canCreate( int iProject, bool bContinue, bool bTestVisible );
-	bool canMaintain( int iProcess, bool bContinue );
+	bool canTrain(int iUnit, bool bContinue, bool bTestVisible);
+	bool canConstruct(int iBuilding, bool bContinue, bool bTestVisible, bool bIgnoreCost);
+	bool canCreate(int iProject, bool bContinue, bool bTestVisible);
+	bool canMaintain(int iProcess, bool bContinue);
 	bool canJoin();
 	int getFoodTurnsLeft();
 	bool isProduction();
 	bool isProductionLimited();
 	bool isProductionUnit();
 	bool isProductionBuilding();
-	bool isProductionProject();																	 
+	bool isProductionProject();
 	bool isProductionProcess();
 
 	bool canContinueProduction(OrderData order);
@@ -72,7 +70,7 @@ public:
 	int /*ProcessTypes*/ getProductionProcess();
 	std::wstring getProductionName();
 	std::wstring getProductionNameKey();
-	int getGeneralProductionTurnsLeft();
+	//int getGeneralProductionTurnsLeft(); // advc: redundant
 	bool isFoodProduction();
 	int getFirstUnitOrder(int /*UnitTypes*/ eUnit);
 	int getFirstProjectOrder(int /*ProjectTypes*/ eProject);
@@ -83,20 +81,23 @@ public:
 	int getProductionNeeded();
 	int getProductionTurnsLeft();
 	int getUnitProductionTurnsLeft(int /*UnitTypes*/ iUnit, int iNum);
-	int getBuildingProductionTurnsLeft(int /*BuildingTypes*/ iBuilding, int iNum);								
-	int getProjectProductionTurnsLeft(int /*ProjectTypes*/ eProject, int iNum);								 
+	int getBuildingProductionTurnsLeft(int /*BuildingTypes*/ iBuilding, int iNum);
+	int getProjectProductionTurnsLeft(int /*ProjectTypes*/ eProject, int iNum);
 	void setProduction(int iNewValue);
 	void changeProduction(int iChange);
 	int getProductionModifier();
 	int getCurrentProductionDifference(bool bIgnoreFood, bool bOverflow);
 	int getUnitProductionModifier(int /*UnitTypes*/ iUnit);
 	int getBuildingProductionModifier(int /*BuildingTypes*/ iBuilding);
-	int getProjectProductionModifier(int /*ProjectTypes*/ eProject);											 
+	int getProjectProductionModifier(int /*ProjectTypes*/ eProject);
 
 	int getExtraProductionDifference(int iExtra);
 
 	bool canHurry(int /*HurryTypes*/ iHurry, bool bTestVisible);
 	void hurry(int /*HurryTypes*/ iHurry);
+	int minPlotProduction(); // advc.064b
+	// advc.064:
+	int getHurryOverflow(int /*HurryTypes*/ iHurry, bool bProduction, bool bIncludeCurrent);
 	int /*UnitTypes*/ getConscriptUnit();
 	int getConscriptPopulation();
 	int conscriptMinCityPopulation();
@@ -105,8 +106,8 @@ public:
 	void conscript(bool bForce);
 	int getBonusHealth(int /*BonusTypes*/ iBonus);
 	int getBonusHappiness(int /*BonusTypes*/ iBonus);
-	int getBonusPower(int /*BonusTypes*/ eBonus, bool bDirty);										 
-	int getBonusYieldRateModifier(int /*YieldTypes*/ eIndex, int /*BonusTypes*/ eBonus);	 
+	int getBonusPower(int /*BonusTypes*/ eBonus, bool bDirty);
+	int getBonusYieldRateModifier(int /*YieldTypes*/ eIndex, int /*BonusTypes*/ eBonus);
 	int /* HandicapTypes */ getHandicapType();
 	int /* CivilizationTypes */ getCivilizationType();
 	int /*LeaderHeadTypes*/ getPersonalityType();
@@ -120,7 +121,6 @@ public:
 
 	bool isCapital();
 	bool isCoastal(int iMinWaterSize);
-	bool isCoastalOld(); //Rhye
 	bool isDisorder();
 	bool isHolyCityByType(int /*ReligionTypes*/ iIndex);
 	bool isHolyCity();
@@ -139,17 +139,17 @@ public:
 	int extraPopulation();
 	int extraSpecialists();
 	int extraFreeSpecialists();
-	int unhealthyPopulation(bool bNoAngry, int iExtra);										 
-	int totalGoodBuildingHealth();																		 
-	int totalBadBuildingHealth();																			 
+	int unhealthyPopulation(bool bNoAngry, int iExtra);
+	int totalGoodBuildingHealth();
+	int totalBadBuildingHealth();
 	int goodHealth();
 	int badHealth(bool bNoAngry);
-	int healthRate(bool bNoAngry, int iExtra);															 
-	int foodConsumption(bool bNoAngry, int iExtra);												 
+	int healthRate(bool bNoAngry, int iExtra);
+	int foodConsumption(bool bNoAngry, int iExtra);
 	int foodDifference(bool bBottom);
 	int growthThreshold();
 	int productionLeft();
-	int hurryCost(bool bExtra);																						 
+	int hurryCost(bool bExtra);
 	int hurryGold(int /*HurryTypes*/ iHurry);
 	int hurryPopulation(int /*HurryTypes*/ iHurry);
 	int hurryProduction(int /*HurryTypes*/ iHurry);
@@ -159,10 +159,12 @@ public:
 
 	int cultureDistance(int iDX, int iDY);
 	int cultureStrength(int /*PlayerTypes*/ ePlayer);
-	int cultureGarrison(int /*PlayerTypes*/ ePlayer);	
-	bool hasBuilding(int /*BuildingTypes*/ iIndex); //Rhye
-	bool hasActiveBuilding(int /*BuildingTypes*/ iIndex); //Rhye
-	int getNumBuilding(int /*BuildingTypes*/ iIndex);
+	int cultureGarrison(int /*PlayerTypes*/ ePlayer);
+	float revoltProbability(); // advc.ctr
+	bool canCultureFlip(); // advc.ctr
+    bool hasBuilding(int /*BuildingTypes*/ eBuilding); // rfc
+    bool hasActiveBuilding(int /*BuildingTypes*/ eBuilding); // rfc
+    int getNumBuilding(int /*BuildingTypes*/ iIndex);
 	bool isHasBuilding(int /*BuildingTypes*/ iIndex);		// This is a function to help modders out, since it was replaced with getNumBuildings() in the C++
 	int getNumActiveBuilding(int /*BuildingTypes*/ iIndex);
 	int getID();
@@ -182,10 +184,10 @@ public:
 	int getPopulation();
 	void setPopulation(int iNewValue);
 	void changePopulation(int iChange);
-	long getRealPopulation();
+	int getRealPopulation();
 
-	int getRegionID(); //Leoreth
-	void setWeLoveTheKingDay(bool bNewValue); //Leoreth
+	int getRegionID(); // doc
+	void setWeLoveTheKingDay(bool bNewValue); // doc
 
 	int getHighestPopulation();
 	void setHighestPopulation(int iNewValue);
@@ -197,11 +199,6 @@ public:
 	int getTotalGreatPeopleRateModifier();
 	void changeBaseGreatPeopleRate(int iChange);
 	int getGreatPeopleRateModifier();
-// BUG - Building Additional Great People - start
-	int getAdditionalGreatPeopleRateByBuilding(int /*BuildingTypes*/ iBuilding);
-	int getAdditionalBaseGreatPeopleRateByBuilding(int /*BuildingTypes*/ iBuilding);
-	int getAdditionalGreatPeopleRateModifierByBuilding(int /*BuildingTypes*/ iBuilding);
-// BUG - Building Additional Great People - end
 	int getGreatPeopleProgress();
 	void changeGreatPeopleProgress(int iChange);
 	int getNumWorldWonders();
@@ -209,20 +206,16 @@ public:
 	int getNumNationalWonders();
 	int getNumBuildings();
 	bool isGovernmentCenter();
-// BUG - Building Saved Maintenance - start
-	int getSavedMaintenanceByBuilding(int /*BuildingTypes*/ iBuilding) const;
-	int getSavedMaintenanceTimes100ByBuilding(int /*BuildingTypes*/ iBuilding) const;
-// BUG - Building Saved Maintenance - end
 	int getMaintenance() const;
 	int getMaintenanceTimes100() const;
-	int calculateDistanceMaintenance() const;														 
-	int calculateDistanceMaintenanceTimes100() const;														 
-	int calculateNumCitiesMaintenance() const;													 
-	int calculateNumCitiesMaintenanceTimes100() const;													 
-	int calculateColonyMaintenanceTimes100() const;													 
-	int calculateColonyMaintenance() const;													 
-	int calculateCorporationMaintenanceTimes100() const;													 
-	int calculateCorporationMaintenance() const;													 
+	int calculateDistanceMaintenance() const;
+	int calculateDistanceMaintenanceTimes100() const;
+	int calculateNumCitiesMaintenance() const;
+	int calculateNumCitiesMaintenanceTimes100() const;
+	int calculateColonyMaintenanceTimes100() const;
+	int calculateColonyMaintenance() const;
+	int calculateCorporationMaintenanceTimes100() const;
+	int calculateCorporationMaintenance() const;
 	int getMaintenanceModifier();
 	int getWarWearinessModifier();
 	int getHurryAngerModifier();
@@ -240,12 +233,6 @@ public:
 	int getFeatureGoodHealth();
 	int getFeatureBadHealth();
 	int getBuildingHealth(int iBuilding);
-// BUG - Building Additional Health - start
-	int getAdditionalHealthByBuilding(int /*BuildingTypes*/ eBuilding);
-	int getAdditionalGoodHealthByBuilding(int /*BuildingTypes*/ eBuilding);
-	int getAdditionalBadHealthByBuilding(int /*BuildingTypes*/ eBuilding);
-	int getAdditionalSpoiledFoodByBuilding(int /*BuildingTypes*/ eBuilding);
-// BUG - Building Additional Health - end
 	int getPowerGoodHealth();
 	int getPowerBadHealth();
 	int getBonusGoodHealth();
@@ -255,12 +242,6 @@ public:
 	int getBuildingGoodHappiness();
 	int getBuildingBadHappiness();
 	int getBuildingHappiness(int iBuilding);
-// BUG - Building Additional Happiness - start
-	int getAdditionalHappinessByBuilding(int /*BuildingTypes*/ eBuilding);
-	int getAdditionalGoodHappinessByBuilding(int /*BuildingTypes*/ eBuilding);
-	int getAdditionalBadHappinessByBuilding(int /*BuildingTypes*/ eBuilding);
-	int getAdditionalAngryPopulationByBuilding(int /*BuildingTypes*/ eBuilding);
-// BUG - Building Additional Happiness - end
 	int getExtraBuildingGoodHappiness();
 	int getExtraBuildingBadHappiness();
 	int getFeatureGoodHappiness();
@@ -284,7 +265,8 @@ public:
 	int getHappinessTimer();
 	void changeHappinessTimer(int iChange);
 	bool isNoUnhappiness();
-	bool isNoUnhealthyPopulation();
+	// bool isNoUnhealthyPopulation();
+	int getUnhealthyPopulationModifier(); // K-Mod
 
 	bool isBuildingOnlyHealthy();
 
@@ -303,14 +285,9 @@ public:
 	void changeExtraTradeRoutes(int iChange);
 	int getTradeRouteModifier();
 	int getForeignTradeRouteModifier();
+	int getTradeCultureRateTimes100(int iLevel) const; // K-Mod
 	int getBuildingDefense();
-// BUG - Building Additional Defense - start
-	int getAdditionalDefenseByBuilding(int /*BuildingTypes*/ eBuilding);
-// BUG - Building Additional Defense - end
 	int getBuildingBombardDefense();
-// BUG - Building Additional Bombard Defense - start
-	int getAdditionalBombardDefenseByBuilding(int /*BuildingTypes*/ eBuilding);
-// BUG - Building Additional Bombard Defense - end
 	int getFreeExperience();
 	int getCurrAirlift();
 	int getMaxAirlift();
@@ -328,7 +305,7 @@ public:
 	int getTotalDefense(bool bIgnoreBuilding);
 	int getDefenseModifier(bool bIgnoreBuilding);
 
-	int visiblePopulation(void);
+	int visiblePopulation();
 
 	int getOccupationTimer();
 	bool isOccupation();
@@ -337,14 +314,14 @@ public:
 	int getCultureUpdateTimer();
 	void changeCultureUpdateTimer(int iChange);
 	bool isNeverLost();
-	void setNeverLost(int iNewValue);
+	void setNeverLost(bool bNewValue);
 	bool isBombarded();
-	void setBombarded(int iNewValue);
+	void setBombarded(bool bNewValue);
 	bool isDrafted();
-	void setDrafted(int iNewValue);
+	void setDrafted(bool bNewValue);
 	bool isAirliftTargeted();
-	void setAirliftTargeted(int iNewValue);
-	bool isWeLoveTheKingDay(); //Rhye
+	void setAirliftTargeted(bool bNewValue);
+	bool isWeLoveTheKingDay(); // rfc
 	bool isCitizensAutomated();
 	void setCitizensAutomated(bool bNewValue);
 	bool isProductionAutomated();
@@ -352,15 +329,16 @@ public:
 	bool isWallOverride() const;
 	void setWallOverride(bool bOverride);
 	void setCitySizeBoost(int iBoost);
-	void setInfoDirty(bool bNewValue); // edead
-	void setLayoutDirty(bool bNewValue); // edead
+	void setInfoDirty(bool bNewValue); // doc (edead)
+	void setLayoutDirty(bool bNewValue); // doc (edead)
 	bool isPlundered();
 	void setPlundered(bool bNewValue);
 	int /*PlayerTypes*/getOwner();
 	int /*TeamTypes*/getTeam();
-	int getPreviousCiv();
-	int getOriginalCiv();
+	int getPreviousCiv(); // doc
+	int getOriginalCiv(); // doc
 	int /*CultureLevelTypes*/ getCultureLevel();
+	int getNumPartisanUnits(int /*PlayerTypes*/ ePartisanPlayer); // advc.003y
 	int getCultureThreshold();
 	int getSeaPlotYield(int /*YieldTypes*/ eIndex);
 	int getRiverPlotYield(int /*YieldTypes*/ eIndex);
@@ -372,21 +350,9 @@ public:
 	int getBaseYieldRateModifier(int /*YieldTypes*/ eIndex, int iExtra);
 	int getYieldRate(int /*YieldTypes*/ eIndex);
 	int getYieldRateModifier(int /*YieldTypes*/ eIndex);
-	
-// BUG - Building Additional Yield - start
-	int getAdditionalYieldByBuilding(int /*YieldTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-	int getAdditionalBaseYieldRateByBuilding(int /*YieldTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-	int getAdditionalYieldRateModifierByBuilding(int /*YieldTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-// BUG - Building Additional Yield - end
-
 	int getTradeYield(int /*YieldTypes*/ eIndex);
 	int totalTradeModifier();
 
-// BUG - Fractional Trade Routes - start
-#ifdef _MOD_FRACTRADE
-	int calculateTradeProfitTimes100(CyCity* pCity);
-#endif
-// BUG - Fractional Trade Routes - end
 	int calculateTradeProfit(CyCity* pCity);
 	int calculateTradeYield(int /*YieldTypes*/ eIndex, int iTradeProfit);
 
@@ -401,13 +367,7 @@ public:
 	int getTotalCommerceRateModifier(int /*CommerceTypes*/ eIndex);
 	int getProductionToCommerceModifier(int /*CommerceTypes*/ eIndex);
 	int getBuildingCommerce(int /*CommerceTypes*/ eIndex);
-	int getBuildingCommerceByBuilding(int /*CommerceTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);	
-// BUG - Building Additional Commerce - start
-	int getAdditionalCommerceByBuilding(int /*CommerceTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-	int getAdditionalCommerceTimes100ByBuilding(int /*CommerceTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-	int getAdditionalBaseCommerceRateByBuilding(int /*CommerceTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-	int getAdditionalCommerceRateModifierByBuilding(int /*CommerceTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
-// BUG - Building Additional Commerce - end
+	int getBuildingCommerceByBuilding(int /*CommerceTypes*/ eIndex, int /*BuildingTypes*/ iBuilding);
 	int getSpecialistCommerce(int /*CommerceTypes*/ eIndex);
 	void changeSpecialistCommerce(int /*CommerceTypes*/ eIndex, int iChange);
 	int getReligionCommerce(int /*CommerceTypes*/ eIndex);
@@ -422,13 +382,13 @@ public:
 	int getCommerceHappiness();
 	int getDomainFreeExperience(int /*DomainTypes*/ eIndex);
 	int getDomainProductionModifier(int /*DomainTypes*/ eIndex);
-	int getCivCulture(int iCivilization); // Leoreth
+	int getCivCulture(int iCivilization); // doc
 	int getCulture(int /*PlayerTypes*/ eIndex);
 	int getCultureTimes100(int /*PlayerTypes*/ eIndex);
 	int countTotalCultureTimes100();
 	PlayerTypes findHighestCulture();
-	int calculateCulturePercent(int eCivilization);
-	int calculateOverallCulturePercent(int ePlayer); // Leoreth
+	int calculateCulturePercent(int eCivilization); // doc
+	int calculateOverallCulturePercent(int ePlayer); // doc
 	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);
 	void setCulture(int /*PlayerTypes*/ eIndex, int iNewValue, bool bPlots);
 	void setCultureTimes100(int /*PlayerTypes*/ eIndex, int iNewValue, bool bPlots);
@@ -437,10 +397,10 @@ public:
 
 	bool isTradeRoute(int /*PlayerTypes*/ eIndex);
 	bool isEverOwned(int /*PlayerTypes*/ eIndex);
-	bool isEverOwnedCiv(int iCivilization);
+	bool isEverOwnedCiv(int iCivilization); // doc
 
-	bool isRevealed(int /*TeamTypes*/ eIndex, bool bDebug);	
-	void setRevealed(int /*TeamTypes*/ eIndex, bool bNewValue);	
+	bool isRevealed(int /*TeamTypes*/ eIndex, bool bDebug);
+	void setRevealed(int /*TeamTypes*/ eIndex, bool bNewValue);
 	bool getEspionageVisibility(int /*TeamTypes*/ eIndex);
 	std::wstring getName();
 	std::wstring getNameForm(int iForm);
@@ -458,33 +418,25 @@ public:
 	int getBuildingProductionTime(int /*BuildingTypes*/ eIndex);
 	void setBuildingProductionTime(int /*BuildingTypes*/ eIndex, int iNewValue);
 	void changeBuildingProductionTime(int /*BuildingTypes*/ eIndex, int iChange);
-// BUG - Production Decay - start
-	bool isBuildingProductionDecay(int /*BuildingTypes*/ eIndex);
-	int getBuildingProductionDecay(int /*BuildingTypes*/ eIndex);
-	int getBuildingProductionDecayTurns(int /*BuildingTypes*/ eIndex);
-// BUG - Production Decay - end
 	int getBuildingOriginalOwner(int /*BuildingTypes*/ iIndex);
 	int getBuildingOriginalTime(int /*BuildingTypes*/ iIndex);
 	int getUnitProduction(int iIndex);
 	void setUnitProduction(int iIndex, int iNewValue);
 	void changeUnitProduction(int /*UnitTypes*/ iIndex, int iChange);
-// BUG - Production Decay - start
+	// BULL - Production Decay - start (advc.094)
 	int getUnitProductionTime(int /*UnitTypes*/ eIndex);
-	void setUnitProductionTime(int /*UnitTypes*/ eIndex, int iNewValue);
-	void changeUnitProductionTime(int /*UnitTypes*/ eIndex, int iChange);
+	bool isBuildingProductionDecay(int /*BuildingTypes*/ eIndex);
+	int getBuildingProductionDecay(int /*BuildingTypes*/ eIndex);
+	int getBuildingProductionDecayTurns(int /*BuildingTypes*/ eIndex);
 	bool isUnitProductionDecay(int /*UnitTypes*/ eIndex);
 	int getUnitProductionDecay(int /*UnitTypes*/ eIndex);
 	int getUnitProductionDecayTurns(int /*UnitTypes*/ eIndex);
-// BUG - Production Decay - end
-// BUG - Project Production - start
-	int getProjectProduction(int /*ProjectTypes*/ iIndex);
-	void setProjectProduction(int /*ProjectTypes*/ iIndex, int iNewValue);
-	void changeProjectProduction(int /*ProjectTypes*/ iIndex, int iChange);
-// BUG - Project Production - end
+	// BULL - Production Decay - end
 	int getGreatPeopleUnitRate(int /*UnitTypes*/ iIndex);
 	int getGreatPeopleUnitProgress(int /*UnitTypes*/ iIndex);
 	void setGreatPeopleUnitProgress(int /*UnitTypes*/ iIndex, int iNewValue);
 	void changeGreatPeopleUnitProgress(int /*UnitTypes*/ iIndex, int iChange);
+	int GPProjection(int /*UnitTypes*/ iIndex); // advc.001c
 	int getSpecialistCount(int /*SpecialistTypes*/ eIndex);
 	void alterSpecialistCount(int /*SpecialistTypes*/ eIndex, int iChange);
 	int getMaxSpecialistCount(int /*SpecialistTypes*/ eIndex);
@@ -503,20 +455,20 @@ public:
 	void changeReligionInfluence(int /*ReligionTypes*/ iIndex, int iChange);
 
 	int getCurrentStateReligionHappiness();
-	int getStateReligionHappiness(int /*ReligionTypes*/ eIndex);	
+	int getStateReligionHappiness(int /*ReligionTypes*/ eIndex);
 	void changeStateReligionHappiness(int /*ReligionTypes*/ eIndex, int iChange);
 
-	int getUnitCombatFreeExperience(int /*UnitCombatTypes*/ eIndex);	
-	int getFreePromotionCount(int /*PromotionTypes*/ eIndex);	
+	int getUnitCombatFreeExperience(int /*UnitCombatTypes*/ eIndex);
+	int getFreePromotionCount(int /*PromotionTypes*/ eIndex);
 	bool isFreePromotion(int /*PromotionTypes*/ eIndex);
-	int getSpecialistFreeExperience() const;	
-	int getEspionageDefenseModifier() const;	
+	int getSpecialistFreeExperience() const;
+	int getEspionageDefenseModifier() const;
 
 	bool isWorkingPlotByIndex(int iIndex);
 	bool isWorkingPlot(CyPlot* pPlot);
 	void alterWorkingPlot(int iIndex);
-	bool isHasRealBuilding(int /*BuildingTypes*/ iIndex); //Rhye
-	void setHasRealBuilding(int /*BuildingTypes*/ iIndex, bool bNewValue); //Rhye
+	bool isHasRealBuilding(int /*BuildingTypes*/ eBuilding); // rfc
+	void setHasRealBuilding(int /*BuildingTypes*/ eBuilding, bool bNewValue); // rfc
 	int getNumRealBuilding(int /*BuildingTypes*/ iIndex);
 	void setNumRealBuilding(int /*BuildingTypes*/ iIndex, int iNewValue);
 	int getNumFreeBuilding(int /*BuildingTypes*/ iIndex);
@@ -527,7 +479,7 @@ public:
 	bool isActiveCorporation(int /*CorporationTypes*/ eCorporation);
 	CyCity* getTradeCity(int iIndex);
 	int getTradeRoutes();
-	int getReligionCount(); // edead
+	int getReligionCount(); // doc (edead)
 
 	void clearOrderQueue();
 	void pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bool bPop, bool bAppend, bool bForce);
@@ -540,7 +492,7 @@ public:
 
 	int getBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield) const;
 	void setBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange);
-	void changeBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange);
+	void changeBuildingYieldChange(int /*BuildingClassTypes*/ eBuildingClass, int /*YieldTypes*/ eYield, int iChange); // doc
 	int getBuildingCommerceChange(int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce) const;
 	void setBuildingCommerceChange(int /*BuildingClassTypes*/ eBuildingClass, int /*CommerceTypes*/ eCommerce, int iChange);
 	int getBuildingHappyChange(int /*BuildingClassTypes*/ eBuildingClass) const;
@@ -548,76 +500,76 @@ public:
 	int getBuildingHealthChange(int /*BuildingClassTypes*/ eBuildingClass) const;
 	void setBuildingHealthChange(int /*BuildingClassTypes*/ eBuildingClass, int iChange);
 
-	void updateBuildingCommerce(); // Leoreth
+	void updateBuildingCommerce(); // doc
 
 	int getLiberationPlayer(bool bConquest);
 	void liberate(bool bConquest);
 
-	void changeBuildingCommerceChange(int eBuildingClass, int eCommerce, int iChange);
+    void changeBuildingCommerceChange(int eBuildingClass, int eCommerce, int iChange); // doc
 
-	bool AI_avoidGrowth();
+	//bool AI_avoidGrowth();
 	bool AI_isEmphasize(int iEmphasizeType);
 	int AI_countBestBuilds(CyArea* pArea);
 	int AI_cityValue();
-	void AI_updateAssignWork(); // Leoreth
+	int AI_neededFloatingDefenders(); // advc.001n
+	void AI_updateAssignWork(); // doc
 
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
-	// Leoreth
-	bool isMongolUP() const;
-	void setMongolUP(bool bNewValue);
-	int getGameTurnPlayerLost(int ePlayer);
-	int getGameTurnCivLost(int iCivilization);
-	int getNextCoveredPlot() const;
-	int getEffectiveNextCoveredPlot() const;
-	bool isCoveredBeforeExpansion(int i) const;
-	int getCulturePlotIndex(int i) const;
-	CyPlot* getCulturePlot(int i) const;
-	int getCultureCost(int i) const;
-	void updateCultureCosts();
-	void updateCoveredPlots();
-	void updateGreatWall();
-	void replaceReligion(int eOldReligion, int eNewReligion);
-	void removeReligion(int eReligion);
-	void spreadReligion(int eReligion);
-	void setBuildingOriginalOwner(int eBuilding, int eCivilization);
-	void setBuildingOriginalTime(int eBuilding, int iYear);
-	void triggerMeltdown(int eBuilding);
-	bool isColony();
-	bool hasBonusEffect(int iBonus);
-	int getCultureRank();
-	bool isHasBuildingEffect(int eBuilding);
-	int getStabilityPopulation();
-	void setStabilityPopulation(int iNewValue);
-	int getModifiedCultureRateTimes100();
-	int getModifiedCultureRate();
-	int getNumActiveWorldWonders();
-	bool isCore(int iCivilization);
-	bool isPlayerCore(int iPlayer);
-	bool isOwnerCore();
-	int getActualCulture(int iPlayer);
-	int getTotalPopulationLoss();
-	int countSatellites();
-	int getSatelliteSlots();
-	int getArea();
-	bool rebuild(int iEra);
-	bool isValidBuildingLocation(int eBuilding);
-	void setOriginalCiv(int iCivilization);
-	void setEverOwned(int iCivilization, bool bNewValue);
-	void setGameTurnFounded(int iNewValue);
-	void setGameTurnAcquired(int iNewValue);
-	void setCivCulture(int iCiv, int iNewValue);
-	bool isOriginalOwner(int iPlayer);
-	int getCorporationBadHappiness();
-	int getCorporationCount();
-	void doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned);
-	int getHurryPercentAnger();
-	int getConscriptPercentAnger();
-	bool canBeSelected();
+	bool isMongolUP() const; // doc
+	void setMongolUP(bool bNewValue); // doc
+	int getGameTurnPlayerLost(int ePlayer); // doc
+	int getGameTurnCivLost(int iCivilization); // doc
+	int getNextCoveredPlot() const; // doc
+	int getEffectiveNextCoveredPlot() const; // doc
+	bool isCoveredBeforeExpansion(int i) const; // doc
+	int getCulturePlotIndex(int i) const; // doc
+	CyPlot* getCulturePlot(int i) const; // doc
+	int getCultureCost(int i) const; // doc
+	void updateCultureCosts(); // doc
+	void updateCoveredPlots(); // doc
+	void updateGreatWall(); // doc
+	void replaceReligion(int eOldReligion, int eNewReligion); // doc
+	void removeReligion(int eReligion); // doc
+	void spreadReligion(int eReligion); // doc
+	void setBuildingOriginalOwner(int eBuilding, int eCivilization); // doc
+	void setBuildingOriginalTime(int eBuilding, int iYear); // doc
+	void triggerMeltdown(int eBuilding); // doc
+	bool isColony(); // doc
+	bool hasBonusEffect(int iBonus); // doc
+	int getCultureRank(); // doc
+	bool isHasBuildingEffect(int eBuilding); // doc
+	int getStabilityPopulation(); // doc
+	void setStabilityPopulation(int iNewValue); // doc
+	int getModifiedCultureRateTimes100(); // doc
+	int getModifiedCultureRate(); // doc
+	int getNumActiveWorldWonders(); // doc
+	bool isCore(int iCivilization); // doc
+	bool isPlayerCore(int iPlayer); // doc
+	bool isOwnerCore(); // doc
+	int getActualCulture(int iPlayer); // doc
+	int getTotalPopulationLoss(); // doc
+	int countSatellites(); // doc
+	int getSatelliteSlots(); // doc
+	int getArea(); // doc
+	bool rebuild(int iEra); // doc
+	bool isValidBuildingLocation(int eBuilding); // doc
+	void setOriginalCiv(int iCivilization); // doc
+	void setEverOwned(int iCivilization, bool bNewValue); // doc
+	void setGameTurnFounded(int iNewValue); // doc
+	void setGameTurnAcquired(int iNewValue); // doc
+	void setCivCulture(int iCiv, int iNewValue); // doc
+	bool isOriginalOwner(int iPlayer); // doc
+	int getCorporationBadHappiness(); // doc
+	int getCorporationCount(); // doc
+	void doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned); // doc
+	int getHurryPercentAnger(); // doc
+	int getConscriptPercentAnger(); // doc
+	bool canBeSelected(); // doc
 
 private:
-	CvCity* m_pCity;
+	CvCityAI* m_pCity; // advc.003u: was CvCity*
 };
 
 #endif	// CyCity_h

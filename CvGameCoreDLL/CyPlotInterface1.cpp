@@ -1,11 +1,6 @@
 #include "CvGameCoreDLL.h"
-#include "CyPlot.h"
-#include "CyCity.h"
-#include "CyArea.h"
-#include "CyUnit.h"
 #include "CvPlot.h"
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
+#include "CyArea.h"
 
 //
 // published python interface for CyPlot
@@ -13,7 +8,7 @@
 
 void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 {
-	OutputDebugString("Python Extension Module - CyPlotPythonInterface1\n");
+	printToConsole("Python Extension Module - CyPlotPythonInterface1\n");
 
 	x
 		.def("isNone", &CyPlot::isNone, "bool ()")
@@ -35,7 +30,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("shareAdjacentArea", &CyPlot::shareAdjacentArea, "bool (CyPlot)")
 		.def("isAdjacentToLand", &CyPlot::isAdjacentToLand, "bool ()")
 		.def("isCoastalLand", &CyPlot::isCoastalLand, "bool ()")
-		
+
 		.def("isWithinTeamCityRadius", &CyPlot::isWithinTeamCityRadius, "bool (int /*TeamTypes*/ eTeam, int /*PlayerTypes*/ eIgnorePlayer)")
 
 		.def("isLake", &CyPlot::isLake, "bool ()")
@@ -55,8 +50,9 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("canHaveBonus", &CyPlot::canHaveBonus, "bool (int /*BonusTypes*/ eBonus, bool bIgnoreLatitude)")
 		.def("canHaveImprovement", &CyPlot::canHaveImprovement, "bool (int (ImprovementTypes) eImprovement, int (TeamTypes) eTeam, bool bPotential)")
 		.def("canBuild", &CyPlot::canBuild, "bool (int (BuildTypes) eBuild, int (PlayerTypes) ePlayer, bool bTestVisible)")
-		.def("getBuildTime", &CyPlot::getBuildTime, "int (int /*BuildTypes*/ eBuild)")
-		.def("getBuildTurnsLeft", &CyPlot::getBuildTurnsLeft, "int (int (BuildTypes) eBuild, int iNowExtra, int iThenExtra)")
+		// advc.251: ePlayer added to these two
+		.def("getBuildTime", &CyPlot::getBuildTime, "int (int /*BuildTypes*/ eBuild, int /PlayerTypes*/ ePlayer)")
+		.def("getBuildTurnsLeft", &CyPlot::getBuildTurnsLeft, "int (int (BuildTypes) eBuild, int /*ePlayerTypes*/ ePlayer, int iNowExtra, int iThenExtra)")
 		.def("getFeatureProduction", &CyPlot::getFeatureProduction, "int (int (BuildTypes) eBuild, int (TeamTypes) eTeam, CvCity** ppCity)")
 
 		.def("getBestDefender", &CyPlot::getBestDefender, python::return_value_policy<python::manage_new_object>(), "CyUnit* (int (PlayerTypes) eOwner, int (PlayerTypes) eAttackingPlayer, CvUnit* pAttacker, bool bTestAtWar, bool bTestPotentialEnemy, bool bTestCanMove)")
@@ -91,7 +87,8 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("isRevealedGoody", &CyPlot::isRevealedGoody, "bool (int (TeamTypes) eTeam)")
 
 		.def("isCity", &CyPlot::isCity, "bool ()")
-		.def("isFriendlyCity", &CyPlot::isFriendlyCity, "bool (CyUnit* pUnit, bool bCheckImprovement)")
+		// advc: CvPlot no longer has such a function
+		//.def("isFriendlyCity", &CyPlot::isFriendlyCity, "bool (CyUnit* pUnit, bool bCheckImprovement)")
 		.def("isEnemyCity", &CyPlot::isEnemyCity, "bool (CyUnit* pUnit)")
 		.def("isOccupation", &CyPlot::isOccupation, "bool ()")
 		.def("isBeingWorked", &CyPlot::isBeingWorked, "bool ()")
@@ -101,7 +98,8 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("isVisibleEnemyDefender", &CyPlot::isVisibleEnemyDefender, "bool (CyUnit* pUnit)")
 		.def("getNumDefenders", &CyPlot::getNumDefenders, "int (int /*PlayerTypes*/ ePlayer)")
 		.def("getNumVisibleEnemyDefenders", &CyPlot::getNumVisibleEnemyDefenders, "int (CyUnit* pUnit)")
-		.def("getNumVisiblePotentialEnemyDefenders", &CyPlot::getNumVisiblePotentialEnemyDefenders, "int (CyUnit* pUnit)")
+		 // advc: No longer exposed
+		//.def("getNumVisiblePotentialEnemyDefenders", &CyPlot::getNumVisiblePotentialEnemyDefenders, "int (CyUnit* pUnit)")
 		.def("isVisibleEnemyUnit", &CyPlot::isVisibleEnemyUnit, "bool (int /*PlayerTypes*/ ePlayer)")
 		.def("isVisibleOtherUnit", &CyPlot::isVisibleOtherUnit, "bool (int /*PlayerTypes*/ ePlayer)")
 		.def("isFighting", &CyPlot::isFighting, "bool ()")
@@ -121,6 +119,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getX", &CyPlot::getX, "int ()")
 		.def("getY", &CyPlot::getY, "int ()")
 		.def("at", &CyPlot::at, "bool (int iX, int iY)")
+		.def("setLatitude", &CyPlot::setLatitude, "void (int)") // advc.tsl
 		.def("getLatitude", &CyPlot::getLatitude, "int ()")
 		.def("area", &CyPlot::area, python::return_value_policy<python::manage_new_object>(), "CyArea* ()")
 		.def("waterArea", &CyPlot::waterArea, python::return_value_policy<python::manage_new_object>(), "CyArea* ()")
@@ -149,7 +148,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("changeForceUnownedTimer", &CyPlot::changeForceUnownedTimer, "void (int iChange)")
 
 		.def("getCityRadiusCount", &CyPlot::getCityRadiusCount, "int ()")
-		.def("isCityRadius", &CyPlot::isCityRadius, "int ()")
+		.def("isCityRadius", &CyPlot::isCityRadius, "bool ()")
 
 		.def("isStartingPlot", &CyPlot::isStartingPlot, "bool ()")
 		.def("setStartingPlot", &CyPlot::setStartingPlot, "void (bool bNewValue)")
@@ -234,7 +233,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 
 		.def("getRevealedOwner", &CyPlot::getRevealedOwner, "int (int (TeamTypes) eTeam, bool bDebug)")
 		.def("getRevealedTeam", &CyPlot::getRevealedTeam, "int (int /*TeamTypes*/ eTeam, bool bDebug)")
-		
+
 		.def("isRiverCrossing", &CyPlot::isRiverCrossing, "bool (DirectionTypes eIndex)")
 
 		.def("isRevealed", &CyPlot::isRevealed, "bool (int /*TeamTypes*/ eTeam, bool bDebug)")
@@ -242,7 +241,8 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getRevealedImprovementType", &CyPlot::getRevealedImprovementType, "int (int /*TeamTypes*/ eTeam, bool bDebug)")
 		.def("getRevealedRouteType", &CyPlot::getRevealedRouteType, "int (int /*TeamTypes*/ eTeam, bool bDebug)")
 		.def("getBuildProgress", &CyPlot::getBuildProgress, "int (int /*BuildTypes*/ eBuild)")
-		.def("changeBuildProgress", &CyPlot::changeBuildProgress, "bool (int /*BuildTypes*/ eBuild, int iChange, int /*TeamTypes*/ eTeam)")
+		// advc.251: Last param now ePlayer
+		.def("changeBuildProgress", &CyPlot::changeBuildProgress, "bool (int /*BuildTypes*/ eBuild, int iChange, int /*PlayerTypes*/ ePlayer)")
 
 		.def("getCultureRangeCities", &CyPlot::getCultureRangeCities, "int (int /*PlayerTypes*/ eOwnerIndex, int iRangeIndex)")
 		.def("isCultureRangeCity", &CyPlot::isCultureRangeCity, "bool (int /*PlayerTypes*/ eOwnerIndex, int iRangeIndex)")
@@ -298,4 +298,20 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getContinentArea", &CyPlot::getContinentArea, "int ()")
 		.def("updateRevealedOwner", &CyPlot::updateRevealedOwner, "void (int eTeam)")
 	;
+
+	// advc.enum: For CyMap::syncRandPlot
+	python::enum_<int>("RandPlotTypes")
+		.value("RANDPLOT_ANY", RANDPLOT_ANY)
+		.value("RANDPLOT_LAND", RANDPLOT_LAND)
+		.value("RANDPLOT_UNOWNED", RANDPLOT_UNOWNED)
+		.value("RANDPLOT_ADJACENT_UNOWNED", RANDPLOT_ADJACENT_UNOWNED)
+		.value("RANDPLOT_ADJACENT_LAND", RANDPLOT_ADJACENT_LAND)
+		.value("RANDPLOT_PASSABLE", RANDPLOT_PASSABLE)
+		.value("RANDPLOT_ADJACENT_LAND", RANDPLOT_ADJACENT_LAND)
+		.value("RANDPLOT_NOT_VISIBLE_TO_CIV", RANDPLOT_NOT_VISIBLE_TO_CIV)
+		/* <advc.300> */
+		.value("RANDPLOT_HABITABLE", RANDPLOT_HABITABLE)
+		.value("RANDPLOT_WATERSOURCE", RANDPLOT_WATERSOURCE)
+		/* </advc.300> */
+		;
 }

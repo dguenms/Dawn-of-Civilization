@@ -2,13 +2,18 @@
 #define CIV4_DLL_PYTHON_EVENTS_H
 
 class CyArgsList;
+enum CallbackDefines; // advc.003y
 
 class CvDllPythonEvents
 {
 public:
+	// <advc.003y>
+	CvDllPythonEvents();
+	~CvDllPythonEvents();
+	void initCallbackGuards(); // </advc.003y>
 	void reportGenericEvent(const char* szEventName, void *pyArgs);
 	bool reportKbdEvent(int evt, int key, int iCursorX, int iCursorY);
-	bool reportMouseEvent(int evt, int iCursorX, int iCursorY, bool bInterfaceConsumed=false);												
+	bool reportMouseEvent(int evt, int iCursorX, int iCursorY, bool bInterfaceConsumed=false);
 	void reportModNetMessage(int iData1, int iData2, int iData3, int iData4, int iData5);
 
 	void reportInit();
@@ -24,18 +29,12 @@ public:
 	void reportBeginPlayerTurn(int iGameTurn, PlayerTypes);
 	void reportEndPlayerTurn(int iGameTurn, PlayerTypes);
 
-	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);	
-	void reportRestoredContact(TeamTypes iTeamID1, TeamTypes iTeamID2);
-	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);					
-// BUG - Combat Events - start
-	void reportCombatRetreat(CvUnit* pAttacker, CvUnit* pDefender);
-	void reportCombatWithdrawal(CvUnit* pAttacker, CvUnit* pDefender);
-	void reportCombatLogCollateral(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
-	void reportCombatLogFlanking(CvUnit* pAttacker, CvUnit* pDefender, int iDamage);
-// BUG - Combat Events - start
-	void reportImprovementBuilt(int iImprovementType, int iX, int iY);	
-	void reportImprovementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);	
-	void reportRouteBuilt(int iRouteType, int iX, int iY);	
+	void reportFirstContact(TeamTypes iTeamID1, TeamTypes iTeamID2);
+	void reportRestoredContact(TeamTypes iTeamID1, TeamTypes iTeamID2); // doc
+	void reportCombatResult(CvUnit* pWinner, CvUnit* pLoser);
+	void reportImprovementBuilt(int iImprovementType, int iX, int iY);
+	void reportImprovementDestroyed(int iImprovementType, int iPlayer, int iX, int iY);
+	void reportRouteBuilt(int iRouteType, int iX, int iY);
 
 	void reportPlotRevealed(CvPlot *pPlot, TeamTypes eTeam);
 	void reportPlotFeatureRemoved(CvPlot *pPlot, FeatureTypes eFeature, CvCity* pCity);
@@ -48,39 +47,27 @@ public:
 	void reportCityAcquired(PlayerTypes eOldOwner, PlayerTypes ePlayer, CvCity* pOldCity, bool bConquest, bool bTrade);
 	void reportCityAcquiredAndKept(PlayerTypes ePlayer, CvCity* pCity);
 	void reportCityLost(CvCity *pCity);
-	void reportCityGifted(CvCity* pCity); // Leoreth
-	void reportCityLiberated(CvCity* pCity); // Leoreth
+	void reportCityGifted(CvCity* pCity); // doc
+	void reportCityLiberated(CvCity* pCity); // doc
 	void reportCultureExpansion(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityGrowth(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityProduction(CvCity *pCity, PlayerTypes ePlayer);
 	void reportCityBuildingUnit(CvCity *pCity, UnitTypes eUnitType);
 	void reportCityBuildingBuilding(CvCity *pCity, BuildingTypes eBuildingType);
-// BUG - Project Started Event - start
-	void reportCityBuildingProject(CvCity* pCity, ProjectTypes eProjectType);
-// BUG - Project Started Event - end
-// BUG - Process Started Event - start
-	void reportCityBuildingProcess(CvCity* pCity, ProcessTypes eProcessType);
-// BUG - Process Started Event - end
 	void reportCityRename(CvCity *pCity);
 	void reportCityHurry(CvCity *pCity, HurryTypes eHurry);
-	void reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold);
-	void reportCitySacked(CvCity* pCity);
+	void reportCityCaptureGold(CvCity *pCity, PlayerTypes ePlayer, int iCaptureGold); // doc
+	void reportCitySacked(CvCity* pCity); // doc
 
 	void reportSelectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission);
 
-	void reportUnitMove(CvPlot* pPlot, CvUnit* pUnit, CvPlot* pOldPlot);					
-	void reportUnitSetXY(CvPlot* pPlot, CvUnit* pUnit);					
+	void reportUnitMove(CvPlot* pPlot, CvUnit* pUnit, CvPlot* pOldPlot);
+	void reportUnitSetXY(CvPlot* pPlot, CvUnit* pUnit);
 	void reportUnitCreated(CvUnit *pUnit);
 	void reportUnitBuilt(CvCity *pCity, CvUnit *pUnit);
-	void reportUnitKilled(CvUnit *pUnit, PlayerTypes eAttacker);			
-// BUG - Upgrade Unit Event - start
-	void reportUnitCaptured(PlayerTypes eFromPlayer, UnitTypes eUnitType, CvUnit* pNewUnit);
-// BUG - Upgrade Unit Event - end
+	void reportUnitKilled(CvUnit *pUnit, PlayerTypes eAttacker);
 	void reportUnitLost(CvUnit *pUnit);
 	void reportUnitPromoted(CvUnit* pUnit, PromotionTypes ePromotion);
-// BUG - Upgrade Unit Event - start
-	void reportUnitUpgraded(CvUnit* pOldUnit, CvUnit* pNewUnit, int iPrice);
-// BUG - Upgrade Unit Event - end
 	void reportUnitSelected(CvUnit *pUnit);
 	void reportUnitRename(CvUnit *pUnit);
 	void reportUnitPillage(CvUnit* pUnit, ImprovementTypes eImprovement, RouteTypes eRoute, PlayerTypes ePlayer, int iPillagedGold);
@@ -109,29 +96,29 @@ public:
 	void reportGoldenAge(PlayerTypes ePlayer);
 	void reportEndGoldenAge(PlayerTypes ePlayer);
 	void reportChangeWar(bool bWar, TeamTypes eTeam, TeamTypes eOtherTeam, bool bFromDefensivePact);
-	void reportChat(CvWString szString);				
+	void reportChat(CvWString szString);
 	void reportVictory(TeamTypes eNewWinner, VictoryTypes eNewVictory);
 
 	void reportVassalState(TeamTypes eMaster, TeamTypes eVassal, bool bVassal, bool bCapitulated);
-	void reportRevolution(PlayerTypes ePlayerID); //edead
+	void reportRevolution(PlayerTypes ePlayerID); // doc (edead)
 
-	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); //Leoreth
-	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); //Leoreth
-	void reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); //Leoreth
-	void reportBlockade(PlayerTypes ePlayer, CvCity* pCity, int iGold); // Leoreth
-	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // Leoreth
-	void reportXMLLoaded(); // Leoreth
-	void reportFontsLoaded(); // Leoreth
-	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // Leoreth
-	void reportAutoplayEnded(); // Leoreth
-	void reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // Leoreth
-	void reportPlayerDestroyed(PlayerTypes ePlayer); // Leoreth
-	void reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // Leoreth
-	void reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // Leoreth
-	void reportTribute(PlayerTypes eFrom, PlayerTypes eTo); // Leoreth
-	void reportGlobalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense); // Leoreth
-	void reportGlobalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature); // Leoreth
-	void reportBuildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange); // Leoreth
+	void reportTradeMission(UnitTypes unitID, PlayerTypes ePlayer, int iX, int iY, int iGold); // doc
+	void reportPlayerSlaveTrade(PlayerTypes ePlayer, int iGold); // doc
+	void reportReleasedCivilization(PlayerTypes ePlayer, CivilizationTypes eReleasedCivilization); // doc
+	void reportBlockade(PlayerTypes ePlayer, CvCity* pCity, int iGold); // doc
+	void reportPeaceBrokered(PlayerTypes eBroker, PlayerTypes ePlayer1, PlayerTypes ePlayer2); // doc
+	void reportXMLLoaded(); // doc
+	void reportFontsLoaded(); // doc
+	void reportCivicChanged(PlayerTypes ePlayer, CivicTypes eOldCivic, CivicTypes eNewCivic); // doc
+	void reportAutoplayEnded(); // doc
+	void reportPlayerCivAssigned(PlayerTypes ePlayer, CivilizationTypes eNewCivilization); // doc
+	void reportPlayerDestroyed(PlayerTypes ePlayer); // doc
+	void reportPlayerSwitch(PlayerTypes eOldPlayer, PlayerTypes eNewPlayer); // doc
+	void reportTechTraded(PlayerTypes eFrom, PlayerTypes eTo, TechTypes eTech); // doc
+	void reportTribute(PlayerTypes eFrom, PlayerTypes eTo); // doc
+	void reportGlobalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense); // doc
+	void reportGlobalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature); // doc
+	void reportBuildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange); // doc
 
 	void reportSetPlayerAlive(PlayerTypes ePlayerID, bool bNewValue);
 	void reportPlayerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion);
@@ -140,6 +127,13 @@ public:
 	void preSave();
 
 private:
+	// <advc.003y>
+	bool* m_abUseCallback;
+
+	bool isUse(CallbackDefines eCallback) const
+	{
+		return (m_abUseCallback == NULL ? false : m_abUseCallback[eCallback]);
+	} // </advc.003y>
 	bool preEvent();
 	bool postEvent(CyArgsList& eventData);
 };

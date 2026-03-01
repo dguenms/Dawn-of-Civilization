@@ -1,5 +1,5 @@
 #include "CvGameCoreDLL.h"
 
 //
-// File responsbile for building project PCH
+// File responsible for building project PCH
 //

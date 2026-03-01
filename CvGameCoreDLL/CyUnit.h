@@ -2,11 +2,10 @@
 
 #ifndef CyUnit_h
 #define CyUnit_h
+
 //
 // Python wrapper class for CvUnit
-// 
-
-//#include "CvEnums.h"
+//
 
 class CyArea;
 class CyPlot;
@@ -14,12 +13,13 @@ class CyCity;
 class CvUnit;
 class CySelectionGroup;
 class CvArtInfoUnit;
-//class CyUnitEntity;
+
 class CyUnit
 {
 public:
 	CyUnit();
 	DllExport CyUnit(CvUnit* pUnit);		// Call from C++
+	CyUnit(CvUnit const& kUnit); // advc.003y
 	CvUnit* getUnit() { return m_pUnit;	};	// Call from C++
 	const CvUnit* getUnit() const { return m_pUnit;	};	// Call from C++
 	bool isNone() { return (m_pUnit==NULL); }
@@ -39,10 +39,10 @@ public:
 
 	bool canEnterTerritory(int /*TeamTypes*/ eTeam, bool bIgnoreRightOfPassage);
 	bool canEnterArea(int /*TeamTypes*/ eTeam, CyArea* pArea, bool bIgnoreRightOfPassage);
-	int /*TeamTypes*/ getDeclareWarMove(CyPlot* pPlot);																						 
-	bool canMoveInto(CyPlot* pPlot, bool bAttack, bool bDeclareWar, bool bIgnoreLoad); 
-	bool canMoveOrAttackInto(CyPlot* pPlot, bool bDeclareWar);		 
-	bool canMoveThrough(CyPlot* pPlot);		 
+	int /*TeamTypes*/ getDeclareWarMove(CyPlot* pPlot);
+	bool canMoveInto(CyPlot* pPlot, bool bAttack, bool bDeclareWar, bool bIgnoreLoad);
+	bool canMoveOrAttackInto(CyPlot* pPlot, bool bDeclareWar);
+	//bool canMoveThrough(CyPlot* pPlot);
 	bool jumpToNearestValidPlot();
 
 	bool canAutomate(AutomateTypes eAutomate);
@@ -100,7 +100,7 @@ public:
 	int stealPlansProb( CyPlot* pPlot, int /*ProbabilityTypes*/ eProbStyle);
 	bool canStealPlans( CyPlot* pPlot, bool bTestVisible);
 
-	bool IsSelected( void );
+	bool IsSelected();
 
 	bool canFound(CyPlot* pPlot, bool bTestVisible);
 	bool canSpread(CyPlot* pPlot, int /*ReligionTypes*/ eReligion, bool bTestVisible);
@@ -128,18 +128,18 @@ public:
 	int canGiveExperience(CyPlot* pPlot) const;
 	bool giveExperience();
 
-	bool canPromote(int /*PromotionTypes*/ ePromotion, int iLeaderUnitId);		 
-	void promote(int /*PromotionTypes*/ ePromotion, int iLeaderUnitId);				 
+	bool canPromote(int /*PromotionTypes*/ ePromotion, int iLeaderUnitId);
+	void promote(int /*PromotionTypes*/ ePromotion, int iLeaderUnitId);
 
 	int upgradePrice(int /*UnitTypes*/ eUnit);
 	bool upgradeAvailable(int /*UnitTypes*/ eFromUnit, int /*UnitClassTypes*/ eToUnitClass, int iCount);
-	bool canUpgrade(int /*UnitTypes*/ eUnit, bool bTestVisible);			
+	bool canUpgrade(int /*UnitTypes*/ eUnit, bool bTestVisible);
 	bool hasUpgrade(bool bSearch);
 	void discountedUpgrade(int /*UnitTypes*/ eUnit, int percent); //Rhye
 
 	int /*HandicapTypes*/ getHandicapType();
 	int /*CivilizationTypes*/ getCivilizationType();
-	int /*SpecialUnitTypes*/ getSpecialUnitType();													 
+	int /*SpecialUnitTypes*/ getSpecialUnitType();
 	int /*UnitTypes*/ getCaptureUnitType(int /*CivilizationTypes*/ eCivilization);
 	int /*UnitCombatTypes*/ getUnitCombatType();
 	int /*DomainTypes*/ getDomainType();
@@ -196,7 +196,7 @@ public:
 	float currCombatStrFloat(CyPlot* pPlot, CyUnit* pAttacker);
 
 	bool canFight();
-	bool canAttack();																				 
+	bool canAttack();
 	bool canDefend(CyPlot* pPlot);
 	bool canSiege(int /*TeamTypes*/ eTeam);
 
@@ -207,22 +207,22 @@ public:
 	float airCurrCombatStrFloat(CyUnit* pOther);
 	int combatLimit();
 	int airCombatLimit();
-	bool canAirAttack();																				 
-	bool canAirDefend(CyPlot* pPlot);																				 
+	bool canAirAttack();
+	bool canAirDefend(CyPlot* pPlot);
 	int airCombatDamage( CyUnit* pDefender);
 	CyUnit* bestInterceptor( CyPlot* pPlot);
 
-	bool isAutomated();																		 
-	bool isWaiting();																		 
-	bool isFortifyable();																		 
+	bool isAutomated();
+	bool isWaiting();
+	bool isFortifyable();
 	int fortifyModifier();
 	int experienceNeeded();
 	int attackXPValue();
 	int defenseXPValue();
-	int maxXPValue();																				
+	int maxXPValue();
 	int firstStrikes();
-	int chanceFirstStrikes();																 
-	int maxFirstStrikes();																		 
+	int chanceFirstStrikes();
+	int maxFirstStrikes();
 	bool isRanged();
 	bool alwaysInvisible();
 	bool immuneToFirstStrikes();
@@ -234,7 +234,7 @@ public:
 	bool ignoreTerrainCost();
 	bool isNeverInvisible();
 	bool isInvisible(int /*TeamTypes*/ eTeam, bool bDebug);
-	bool isNukeImmune();											 
+	bool isNukeImmune();
 
 	int maxInterceptionProbability();
 	int currInterceptionProbability();
@@ -262,14 +262,14 @@ public:
 	int airBombBaseRate();
 	int airBombCurrRate();
 
-	int /*SpecialUnitTypes*/ specialCargo();													 
-	int /*DomainTypes*/ domainCargo();																 
+	int /*SpecialUnitTypes*/ specialCargo();
+	int /*DomainTypes*/ domainCargo();
 	int cargoSpace();
 	void changeCargoSpace(int iChange);
 	bool isFull();
-	int cargoSpaceAvailable(int /*SpecialUnitTypes*/ eSpecialCargo, int /*DomainTypes*/ eDomainCargo);	 
+	int cargoSpaceAvailable(int /*SpecialUnitTypes*/ eSpecialCargo, int /*DomainTypes*/ eDomainCargo);
 	bool hasCargo();
-	bool canCargoAllMove();
+	//bool canCargoAllMove();
 	int getUnitAICargo(UnitAITypes eUnitAI);
 	int getID();
 
@@ -290,7 +290,7 @@ public:
 	CyPlot* plot();
 	CyArea* area();
 	CyPlot* getReconPlot();
-	void setReconPlot(CyPlot* pNewValue);										 
+	void setReconPlot(CyPlot* pNewValue);
 
 	int getGameTurnCreated();
 
@@ -302,8 +302,8 @@ public:
 	void changeMoves(int iChange);
 	void finishMoves();
 	int getExperience();
-	void setExperience(int iNewValue, int iMax);	 
-	void changeExperience(int iChange, int iMax, bool bFromCombat, bool bInBorders, bool bUpdateGlobal);	 
+	void setExperience(int iNewValue, int iMax);
+	void changeExperience(int iChange, int iMax, bool bFromCombat, bool bInBorders, bool bUpdateGlobal);
 	int getLevel();
 	void setLevel(int iNewLevel);
 	void changeLevel(int iChange);
@@ -312,15 +312,15 @@ public:
 	void rotateFacingDirectionCounterClockwise();
 	int getCargo();
 	int getFortifyTurns();
-	int getBlitzCount();			
-	bool isBlitz();																								 
+	int getBlitzCount();
+	bool isBlitz();
 	int getAmphibCount();
-	bool isAmphib();																								 
+	bool isAmphib();
 	int getRiverCount();
-	bool isRiver();		
-	bool isEnemyRoute();							 
-	bool isAlwaysHeal();				 
-	bool isHillsDoubleMove();				 
+	bool isRiver();
+	bool isEnemyRoute();
+	bool isAlwaysHeal();
+	bool isHillsDoubleMove();
 
 	int getExtraVisibilityRange();
 	int getExtraMoves();
@@ -329,7 +329,7 @@ public:
 	int getExtraIntercept();
 	int getExtraEvasion();
 	int getExtraFirstStrikes();
-	int getExtraChanceFirstStrikes();															 
+	int getExtraChanceFirstStrikes();
 	int getExtraWithdrawal();
 	int getExtraCollateralDamage();
 	int getExtraEnemyHeal();
@@ -338,7 +338,7 @@ public:
 
 	int getSameTileHeal();
 	int getAdjacentTileHeal();
-	
+
 	int getExtraCombatPercent();
 	int getExtraCityAttackPercent();
 	int getExtraCityDefensePercent();
@@ -354,13 +354,13 @@ public:
 	int getImmobileTimer() const;
 	void setImmobileTimer(int iNewValue);
 
-	bool isMadeAttack();																							 
-	void setMadeAttack(bool bNewValue);															 
-	bool isMadeInterception();																							 
-	void setMadeInterception(bool bNewValue);															 
+	bool isMadeAttack();
+	void setMadeAttack(bool bNewValue);
+	bool isMadeInterception();
+	void setMadeInterception(bool bNewValue);
 
-	bool isPromotionReady();																					 
-	void setPromotionReady(bool bNewValue);													 
+	bool isPromotionReady();
+	void setPromotionReady(bool bNewValue);
 	int getOwner();
 	int getVisualOwner();
 	int getCombatOwner(int /* TeamTypes*/ iForTeam);
@@ -401,6 +401,7 @@ public:
 
 	int /*UnitAITypes*/ getUnitAIType();
 	void setUnitAIType(int /*UnitAITypes*/ iNewValue);
+	bool isWorker(); // advc.154
 
 	void found(); //Rhye
 	const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;

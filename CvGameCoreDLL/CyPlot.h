@@ -3,37 +3,38 @@
 #ifndef CyPlot_h
 #define CyPlot_h
 
-//#include "CvEnums.h"
-
 //
 // Python wrapper class for CvPlot
-// 
+//
 class CyArea;
 class CvPlot;
 class CyUnit;
 class CyCity;
+
 class CyPlot
 {
 public:
-	DllExport CyPlot();	
+	CyPlot();
 	DllExport CyPlot(CvPlot*);			// Call from C++
+	CyPlot(CvPlot const*); // advc.003y
+	CyPlot(CvPlot const&); // advc.003y
 	CvPlot* getPlot() { return m_pPlot; }	// Call from C++
 	void setPlot(CvPlot* p) { m_pPlot=p; }	// Call from C++
 	bool isNone() { return (m_pPlot==NULL); }
 	void erase();
-	void eraseAIDevelopment(); //Rhye
+	void eraseAIDevelopment(); // rfc
 	DllExport NiPoint3 getPoint();
 	int getTeam();
-	
+
 	void nukeExplosion(int iRange, CyUnit* pNukeUnit);
-	
+
 	bool isConnectedTo(CyCity* pCity);
 	bool isConnectedToCapital(int /*PlayerTypes*/ ePlayer);
 	int getPlotGroupConnectedBonus(int /*PlayerTypes*/ ePlayer, int /*BonusTypes*/ eBonus);
 	bool isPlotGroupConnectedBonus(int /*PlayerTypes*/ ePlayer, int /*BonusTypes*/ eBonus);
 	bool isAdjacentPlotGroupConnectedBonus(int /*PlayerTypes*/ ePlayer, int /*BonusTypes*/ eBonus);
 
-	void updateVisibility();					
+	void updateVisibility();
 	bool isAdjacentToArea(CyArea* pArea);
 	bool shareAdjacentArea(CyPlot* pPlot);
 	bool isAdjacentToLand();
@@ -41,14 +42,14 @@ public:
 
 	bool isWithinTeamCityRadius(int /*TeamTypes*/ eTeam, int /*PlayerTypes*/ eIgnorePlayer);
 
-	bool isLake();																												
+	bool isLake();
 	bool isFreshWater();
 	bool isPotentialIrrigation();
 	bool canHavePotentialIrrigation();
 	bool isIrrigationAvailable(bool bIgnoreSelf);
 
-	bool isRiverSide();																												
-	bool isRiver();																												
+	bool isRiverSide();
+	bool isRiver();
 	bool isRiverConnection(int /*DirectionTypes*/ eDirection);
 
 	int getNearestLandArea();
@@ -58,8 +59,9 @@ public:
 	bool canHaveBonus(int /*BonusTypes*/ eBonus, bool bIgnoreLatitude);
 	bool canHaveImprovement(int /* ImprovementTypes */ eImprovement, int /*TeamTypes*/ eTeam, bool bPotential);
 	bool canBuild(int /*BuildTypes*/ eBuild, int /*PlayerTypes*/ ePlayer, bool bTestVisible);
-	int getBuildTime(int /*BuildTypes*/ eBuild);
-	int getBuildTurnsLeft(int /*BuildTypes*/ eBuild, int iNowExtra, int iThenExtra);
+	// advc.251: Param ePlayer added to these two functions
+	int getBuildTime(int /*BuildTypes*/ eBuild, int /*PlayerTypes*/ ePlayer);
+	int getBuildTurnsLeft(int /*BuildTypes*/ eBuild, int /*PlayerTypes*/ ePlayer, int iNowExtra, int iThenExtra);
 	int getFeatureProduction(int /*BuildTypes*/ eBuild, int /*TeamTypes*/ eTeam, CyCity* ppCity);
 
 	CyUnit* getBestDefender(int /*PlayerTypes*/ eOwner, int /*PlayerTypes*/ eAttackingPlayer, CyUnit* pAttacker, bool bTestAtWar, bool bTestPotentialEnemy, bool bTestCanMove);
@@ -76,7 +78,7 @@ public:
 	bool isAdjacentPlayer(int /*PlayerTypes*/ ePlayer, bool bLandOnly);
 	bool isAdjacentTeam(int /*TeamTypes*/ eTeam, bool bLandOnly);
 	bool isWithinCultureRange(int /*PlayerTypes*/ ePlayer);
-	int getNumCultureRangeCities(int /*PlayerTypes*/ ePlayer);										
+	int getNumCultureRangeCities(int /*PlayerTypes*/ ePlayer);
 	int /*PlayerTypes*/ calculateCulturalOwner();
 
 	bool isOwned();
@@ -95,8 +97,9 @@ public:
 	bool isRevealedGoody(int /*TeamTypes*/ eTeam);
 
 	bool isCity();
-	bool isFriendlyCity(CyUnit* pUnit, bool bCheckImprovement);														
-	bool isEnemyCity(CyUnit* pUnit);															
+	// advc: CvPlot no longer has such a function
+	//bool isFriendlyCity(CyUnit* pUnit, bool bCheckImprovement);
+	bool isEnemyCity(CyUnit* pUnit);
 	bool isOccupation();
 	bool isBeingWorked();
 
@@ -105,7 +108,7 @@ public:
 	bool isVisibleEnemyDefender(CyUnit* pUnit);
 	int getNumDefenders(int /*PlayerTypes*/ ePlayer);
 	int getNumVisibleEnemyDefenders(CyUnit* pUnit);
-	int getNumVisiblePotentialEnemyDefenders(CyUnit* pUnit);
+	//int getNumVisiblePotentialEnemyDefenders(CyUnit* pUnit); // advc: No longer exposed
 	bool isVisibleEnemyUnit(int /*PlayerTypes*/ ePlayer);
 	bool isVisibleOtherUnit(int /*PlayerTypes*/ ePlayer);
 	bool isFighting();
@@ -125,11 +128,12 @@ public:
 	int getX();
 	int getY();
 	bool at(int iX, int iY);
-	int getLatitude();																							
+	void setLatitude(int iLatitude); // advc.tsl
+	int getLatitude();
 	CyArea* area();
 	CyArea* waterArea();
 	int getArea();
-	void setArea(int iNewValue); //Rhye
+	void setArea(int iNewValue); // rfc
 	int getFeatureVariety();
 
 	int getOwnershipDuration();
@@ -153,7 +157,7 @@ public:
 	void changeForceUnownedTimer(int iChange);
 
 	int getCityRadiusCount();
-	int isCityRadius();
+	bool isCityRadius();
 
 	bool isStartingPlot();
 	void setStartingPlot(bool bNewValue);
@@ -185,16 +189,16 @@ public:
 	void setTerrainType(int /*TerrainTypes*/ eNewValue, bool bRecalculate, bool bRebuildGraphics);
 	int /*FeatureTypes*/ getFeatureType();
 	void setFeatureType(int /*FeatureTypes*/ eNewValue, int iVariety);
-	void setFeatureDummyVisibility(std::string dummyTag, bool show); 
+	void setFeatureDummyVisibility(std::string dummyTag, bool show);
 	void addFeatureDummyModel(std::string dummyTag, std::string modelTag);
 	void setFeatureDummyTexture(std::string dummyTag, std::string textureTag);
 	std::string pickFeatureDummyTag(int mouseX, int mouseY);
 	void resetFeatureModel();
-	int /* BonusTypes */ getBonusType(int /*TeamTypes*/ eTeam); 
-	int /* BonusTypes */ getNonObsoleteBonusType(int /*TeamTypes*/ eTeam); 
-	int /* BonusTypes */ getBonusVarietyType(int /* TeamTypes */ eTeam);
+	int /* BonusTypes */ getBonusType(int /*TeamTypes*/ eTeam);
+	int /* BonusTypes */ getNonObsoleteBonusType(int /*TeamTypes*/ eTeam);
+    int /* BonusTypes */ getBonusVarietyType(int /* TeamTypes */ eTeam); // doc
 	void setBonusType(int /* BonusTypes */ eNewValue);
-	void setBonusVarietyType(int /* BonusTypes */ eNewValue);
+	void setBonusVarietyType(int /* BonusTypes */ eNewValue); // doc
 	int /* ImprovementTypes */ getImprovementType();
 	void setImprovementType(int /* ImprovementTypes */ eNewValue);
 	int /* RouteTypes */ getRouteType();
@@ -212,18 +216,19 @@ public:
 	int calculateNatureYield(YieldTypes eIndex, TeamTypes eTeam, bool bIgnoreFeature = false);
 	int calculateBestNatureYield(YieldTypes eIndex, TeamTypes eTeam);
 	int calculateTotalBestNatureYield(TeamTypes eTeam);
-	int calculateImprovementYieldChange(int /*ImprovementTypes*/ eImprovement, YieldTypes eYield, int /*PlayerTypes*/ ePlayer, bool bOptimal);
+	int calculateImprovementYieldChange(int /*ImprovementTypes*/ eImprovement, YieldTypes eYield,
+			int /*PlayerTypes*/ ePlayer, bool bOptimal);
 	int calculateYield(YieldTypes eIndex, bool bDisplay);
 	bool hasYield();
 
 	int getCulture(int /*PlayerTypes*/ eIndex);
-	int getCivCulture(int iCivilization); // Leoreth
-	int countTotalCulture();																							
+	int getCivCulture(int iCivilization); // doc
+	int countTotalCulture();
 	int /*TeamTypes*/ findHighestCultureTeam();
 
-	int calculateCulturePercent(int /*PlayerTypes*/ eIndex);	
-	int calculateOverallCulturePercent(int /*PlayerTypes*/ eIndex);
-	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);	
+	int calculateCulturePercent(int /*PlayerTypes*/ eIndex);
+	int calculateOverallCulturePercent(int /*PlayerTypes*/ eIndex); // doc
+	int calculateTeamCulturePercent(int /*TeamTypes*/ eIndex);
 	void setCulture(int /*PlayerTypes*/ eIndex, int iNewValue, bool bUpdate);
 	void changeCulture(int /*PlayerTypes*/ eIndex, int iChange, bool bUpdate);
 
@@ -250,10 +255,11 @@ public:
 	int /* ImprovementTypes */ getRevealedImprovementType(int /*TeamTypes*/ eTeam, bool bDebug);
 	int /* RouteTypes */ getRevealedRouteType(int /*TeamTypes*/ eTeam, bool bDebug);
 	int getBuildProgress(int /*BuildTypes*/ eBuild);
-	bool changeBuildProgress(int /*BuildTypes*/ eBuild, int iChange, int /*TeamTypes*/ eTeam);
+	// advc.251: Last param now ePlayer
+	bool changeBuildProgress(int /*BuildTypes*/ eBuild, int iChange, int /*PlayerTypes*/ ePlayer);
 
-	int getCultureRangeCities(int /*PlayerTypes*/ eOwnerIndex, int iRangeIndex);
-	bool isCultureRangeCity(int /*PlayerTypes*/ eOwnerIndex, int iRangeIndex);
+	int getCultureRangeCities(int /*PlayerTypes*/ eOwnerIndex, /*CultureLevelTypes*/int eRangeIndex);
+	bool isCultureRangeCity(int /*PlayerTypes*/ eOwnerIndex, /*CultureLevelTypes*/int eRangeIndex);
 
 	int getInvisibleVisibilityCount(int /*TeamTypes*/ eTeam, int /*InvisibleTypes*/ eInvisible);
 	bool isInvisibleVisible(int /*TeamTypes*/ eTeam, int /*InvisibleTypes*/ eInvisible);
@@ -265,55 +271,54 @@ public:
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 
-	// Leoreth
-	int getRegionID();
-	void setRegionID(int iNewValue);
-	std::wstring getRegionName();
+	int getRegionID(); // doc
+	void setRegionID(int iNewValue); // doc
+	std::wstring getRegionName(); // doc
 
-	int getRegionGroup();
+	int getRegionGroup(); // doc
 
-	bool isCore(int iCivilization);
-	bool isPlayerCore(int iPlayer);
-	bool isOwnerCore();
-	void setCore(int iCivilization, bool bNewValue);
+	bool isCore(int iCivilization); // doc
+	bool isPlayerCore(int iPlayer); // doc
+	bool isOwnerCore(); // doc
+	void setCore(int iCivilization, bool bNewValue); // doc
 
-	int getSettlerValue(int iCivilization);
-	int getPlayerSettlerValue(int iPlayer);
-	void setSettlerValue(int iCivilization, int iNewValue);
+	int getSettlerValue(int iCivilization); // doc
+	int getPlayerSettlerValue(int iPlayer); // doc
+	void setSettlerValue(int iCivilization, int iNewValue); // doc
 
-	int getWarValue(int iCivilization);
-	int getPlayerWarValue(int iPlayer);
-	void setWarValue(int iCivilization, int iNewValue);
+	int getWarValue(int iCivilization); // doc
+	int getPlayerWarValue(int iPlayer); // doc
+	void setWarValue(int iCivilization, int iNewValue); // doc
 
-	int getSpreadFactor(int eReligion);
-	void setSpreadFactor(int eReligion, int iNewValue);
+	int getSpreadFactor(int eReligion); // doc
+	void setSpreadFactor(int eReligion, int iNewValue); // doc
 
-	bool isWithinGreatWall();
-	void setWithinGreatWall(bool bNewValue);
-	void cameraLookAt();
-	void updateCulture();
+	bool isWithinGreatWall(); // doc
+	void setWithinGreatWall(bool bNewValue); // doc
+	void cameraLookAt(); // doc
+	void updateCulture(); // doc
 
-	void setCultureConversion(int ePlayer, int iRate);
-	void resetCultureConversion();
-	int getCultureConversionCivilization();
-	int getCultureConversionRate();
+	void setCultureConversion(int ePlayer, int iRate); // doc
+	void resetCultureConversion(); // doc
+	int getCultureConversionCivilization(); // doc
+	int getCultureConversionRate(); // doc
 
-	int getActualCulture(int ePlayer);
+	int getActualCulture(int ePlayer); // doc
 
-	void setBirthProtected(int ePlayer);
-	void resetBirthProtected();
-	int getBirthProtected();
-	bool isBirthProtected();
+	void setBirthProtected(int ePlayer); // doc
+	void resetBirthProtected(); // doc
+	int getBirthProtected(); // doc
+	bool isBirthProtected(); // doc
 
-	void setExpansion(int ePlayer);
-	void resetExpansion();
-	int getExpansion();
-	bool isExpansion();
+	void setExpansion(int ePlayer); // doc
+	void resetExpansion(); // doc
+	int getExpansion(); // doc
+	bool isExpansion(); // doc
 
-	void setRevealedOwner(int eTeam, int eNewValue);
-	void updateRevealedOwner(int eTeam);
+	void setRevealedOwner(int eTeam, int eNewValue); // doc
+	void updateRevealedOwner(int eTeam); // doc
 
-	int getContinentArea();
+	int getContinentArea(); // doc
 
 private:
 	CvPlot* m_pPlot;

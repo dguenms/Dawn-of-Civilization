@@ -6,8 +6,10 @@
 //
 // abstract interface for FXml functions used by DLL
 //
+
 class FXml;
 class FXmlSchemaCache;
+
 class CvDLLXmlIFaceBase
 {
 public:

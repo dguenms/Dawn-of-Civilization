@@ -1,3 +1,4 @@
+// TODO: deleted by advciv: double check where this needs merging
 #pragma once
 
 #ifndef CvDLLEventReporterIFaceBase_h
@@ -18,8 +19,8 @@ class CvDLLEventReporterIFaceBase
 public:
 	virtual void genericEvent(const char* szEventName, void* pythonArgs=NULL) = 0;
 
-	virtual void mouseEvent(int evt, const POINT& ptCursor) = 0;												
-	virtual void kbdEvent(int evt, int key) = 0;											
+	virtual void mouseEvent(int evt, const POINT& ptCursor) = 0;
+	virtual void kbdEvent(int evt, int key) = 0;
 
 	virtual void gameEnd() = 0;
 
@@ -29,11 +30,11 @@ public:
 	virtual void beginPlayerTurn(int iGameTurn, PlayerTypes) = 0;
 	virtual void endPlayerTurn(int iGameTurn, PlayerTypes) = 0;
 
-	virtual void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2) = 0;						
-	virtual void combatResult(CvUnit* pWinner, CvUnit* pLoser) = 0;					
-	virtual void improvementBuilt(int iImprovementType, int iX, int iY) = 0;	
-	virtual void improvementDestroyed(int iImprovementType, int iPlayer, int iX, int iY) = 0;	
-	virtual void routeBuilt(int RouteType, int iX, int iY) = 0;	
+	virtual void firstContact(TeamTypes eTeamID1, TeamTypes eTeamID2) = 0;
+	virtual void combatResult(CvUnit* pWinner, CvUnit* pLoser) = 0;
+	virtual void improvementBuilt(int iImprovementType, int iX, int iY) = 0;
+	virtual void improvementDestroyed(int iImprovementType, int iPlayer, int iX, int iY) = 0;
+	virtual void routeBuilt(int RouteType, int iX, int iY) = 0;
 
 	virtual void plotRevealed(CvPlot *pPlot, TeamTypes eTeam) = 0;
 	virtual void plotFeatureRemoved(CvPlot *pPlot, FeatureTypes eFeature, CvCity* pCity) = 0;
@@ -57,11 +58,11 @@ public:
 
 	virtual void selectionGroupPushMission(CvSelectionGroup* pSelectionGroup, MissionTypes eMission) = 0;
 
-	virtual void unitMove(CvPlot* pPlot, CvUnit* pUnit, CvPlot* pOldPlot) = 0;					
-	virtual void unitSetXY(CvPlot* pPlot, CvUnit* pUnit) = 0;					
+	virtual void unitMove(CvPlot* pPlot, CvUnit* pUnit, CvPlot* pOldPlot) = 0;
+	virtual void unitSetXY(CvPlot* pPlot, CvUnit* pUnit) = 0;
 	virtual void unitCreated(CvUnit *pUnit) = 0;
 	virtual void unitBuilt(CvCity *pCity, CvUnit *pUnit) = 0;
-	virtual void unitKilled(CvUnit *pUnit, PlayerTypes eAttacker) = 0;				
+	virtual void unitKilled(CvUnit *pUnit, PlayerTypes eAttacker) = 0;
 	virtual void unitLost(CvUnit *pUnit) = 0;
 	virtual void unitPromoted(CvUnit *pUnit, PromotionTypes ePromotion) = 0;
 	virtual void unitSelected(CvUnit *pUnit) = 0;
@@ -78,7 +79,7 @@ public:
 	virtual void buildingBuilt(CvCity *pCity, BuildingTypes eBuilding) = 0;
 	virtual void projectBuilt(CvCity *pCity, ProjectTypes eProject) = 0;
 
-	virtual void techAcquired(TechTypes eType, TeamTypes eTeam, PlayerTypes ePlayer, bool bAnnounce) = 0;		
+	virtual void techAcquired(TechTypes eType, TeamTypes eTeam, PlayerTypes ePlayer, bool bAnnounce) = 0;
 	virtual void techSelected(TechTypes eTech, PlayerTypes ePlayer) = 0;
 
 	virtual void religionFounded(ReligionTypes eType, PlayerTypes ePlayer) = 0;
@@ -97,7 +98,7 @@ public:
 	virtual void playerChangeStateReligion(PlayerTypes ePlayerID, ReligionTypes eNewReligion, ReligionTypes eOldReligion) = 0;
 	virtual void playerGoldTrade(PlayerTypes eFromPlayer, PlayerTypes eToPlayer, int iAmount) = 0;
 
-	virtual void chat(char *szString) = 0;		
+	virtual void chat(char *szString) = 0;
 
 	virtual void victory(TeamTypes eNewWinner, VictoryTypes eNewVictory) = 0;
 

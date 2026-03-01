@@ -1,29 +1,29 @@
 #include "CvGameCoreDLL.h"
 #include "CvTalkingHeadMessage.h"
-#include "CvGameAI.h"
-#include "CvGlobals.h"
+#include "CvGame.h"
 
-CvTalkingHeadMessage::CvTalkingHeadMessage(int iMessageTurn, int iLen, LPCWSTR pszDesc, LPCTSTR pszSound, InterfaceMessageTypes eType, LPCTSTR pszIcon, ColorTypes eColor, int iX, int iY, bool bShowOffScreenArrows, bool bShowOnScreenArrows) :
-	m_iTurn(iMessageTurn),
-	m_szDescription(pszDesc),
-	m_szSound(pszSound),
-	m_szIcon(pszIcon),
-	m_iLength(iLen),
-	m_eFlashColor(eColor),
-	m_iFlashX(iX),
-	m_iFlashY(iY),
-	m_bOffScreenArrows(bShowOffScreenArrows),
-	m_bOnScreenArrows(bShowOnScreenArrows),
-	m_eMessageType(eType),
-	m_eFromPlayer(NO_PLAYER),
-	m_eTarget(NO_CHATTARGET),
-	m_bShown(false)
-{
-}
+CvTalkingHeadMessage::CvTalkingHeadMessage(int iMessageTurn, int iLen,
+	LPCWSTR pszDesc, LPCTSTR pszSound, InterfaceMessageTypes eType,
+	LPCTSTR pszIcon, ColorTypes eColor, int iX, int iY,
+	bool bShowOffScreenArrows, bool bShowOnScreenArrows) :
+m_iTurn(iMessageTurn),
+m_szDescription(pszDesc),
+m_szSound(pszSound),
+m_szIcon(pszIcon),
+m_iLength(iLen),
+m_eFlashColor(eColor),
+m_iFlashX(iX),
+m_iFlashY(iY),
+m_bOffScreenArrows(bShowOffScreenArrows),
+m_bOnScreenArrows(bShowOnScreenArrows),
+m_eMessageType(eType),
+m_eFromPlayer(NO_PLAYER),
+m_eTarget(NO_CHATTARGET),
+m_bShown(false),
+m_bSoundPlayed(false) // advc.106b
+{}
 
-CvTalkingHeadMessage::~CvTalkingHeadMessage(void)
-{
-}
+CvTalkingHeadMessage::~CvTalkingHeadMessage() {}
 
 
 void CvTalkingHeadMessage::read(FDataStreamBase& stream)
@@ -48,6 +48,9 @@ void CvTalkingHeadMessage::read(FDataStreamBase& stream)
 	stream.Read(&iType);
 	m_eTarget = (ChatTargetTypes)iType;
 	stream.Read(&m_bShown);
+	/*  advc.106b: I don't think we ever want to play a sound after loading
+		a savegame */
+	m_bSoundPlayed = true;
 }
 
 void CvTalkingHeadMessage::write(FDataStreamBase& stream) const
@@ -61,10 +64,12 @@ void CvTalkingHeadMessage::write(FDataStreamBase& stream) const
 	stream.Write(m_iFlashY);
 	stream.Write(m_bOffScreenArrows);
 	stream.Write(m_bOnScreenArrows);
+	REPRO_TEST_BEGIN_WRITE("CvTalkingHeadMessage");
 	stream.Write(m_iTurn);
 	stream.Write(m_eMessageType);
 	stream.Write(m_eFromPlayer);
 	stream.Write(m_eTarget);
+	REPRO_TEST_END_WRITE();
 	stream.Write(m_bShown);
 }
 
@@ -80,7 +85,10 @@ void CvTalkingHeadMessage::setDescription(CvWString pszDescription)
 
 const CvString& CvTalkingHeadMessage::getSound() const
 {
-	return (m_szSound);
+	/*  advc.106b: A hack that relies on the EXE triggering the sound after calling
+		getSound */
+	m_bSoundPlayed = true;
+	return m_szSound;
 }
 
 void CvTalkingHeadMessage::setSound(LPCTSTR pszSound)
@@ -199,9 +207,31 @@ void CvTalkingHeadMessage::setTarget(ChatTargetTypes eType)
 	m_eTarget = eType;
 }
 
-int CvTalkingHeadMessage::getExpireTurn()
+int CvTalkingHeadMessage::getExpireTurn(/* advc.700: */ bool bHuman)
 {
 	int iExpireTurn = getTurn();
+	/*  <advc.700> Quicker expiration for AI. Note that messages are delivered to
+		the AI only with GAMEOPTION_RISE_FALL. */
+	if (!bHuman)
+	{
+		switch(m_eMessageType)
+		{
+		case MESSAGE_TYPE_INFO: iExpireTurn += 1; break;
+		case MESSAGE_TYPE_COMBAT_MESSAGE: iExpireTurn += 2; break;
+		case MESSAGE_TYPE_MINOR_EVENT: iExpireTurn += 10; break;
+		case MESSAGE_TYPE_QUEST:
+			iExpireTurn = GC.getGame().getGameTurn() + 1;
+			break;
+		case MESSAGE_TYPE_MAJOR_EVENT:
+		case MESSAGE_TYPE_MAJOR_EVENT_LOG_ONLY: // advc.106b
+			iExpireTurn += 50;
+			break;
+		default:
+			iExpireTurn = GC.getGame().getGameTurn() - 1;
+			break;
+		}
+		return iExpireTurn;
+	} // </advc.700>
 	switch (m_eMessageType)
 	{
 	case MESSAGE_TYPE_INFO:
@@ -210,7 +240,7 @@ int CvTalkingHeadMessage::getExpireTurn()
 	case MESSAGE_TYPE_CHAT:
 		iExpireTurn += 20;
 		break;
-    case MESSAGE_TYPE_COMBAT_MESSAGE:
+	case MESSAGE_TYPE_COMBAT_MESSAGE:
 		iExpireTurn += 20;
 		break;
 	case MESSAGE_TYPE_MINOR_EVENT:
@@ -218,18 +248,24 @@ int CvTalkingHeadMessage::getExpireTurn()
 		break;
 	case MESSAGE_TYPE_QUEST:
 	case MESSAGE_TYPE_MAJOR_EVENT:
+	case MESSAGE_TYPE_MAJOR_EVENT_LOG_ONLY: // advc.106b
 		// never expires
-		iExpireTurn = GC.getGameINLINE().getGameTurn() + 1;
+		//iExpireTurn = GC.getGame().getGameTurn() + 1;
+		iExpireTurn += 100; // advc.106b
 		break;
 	case MESSAGE_TYPE_DISPLAY_ONLY:
 		// never saved
-		iExpireTurn = GC.getGameINLINE().getGameTurn() - 1;
+		iExpireTurn = GC.getGame().getGameTurn() - 1;
 		break;
+	// <advc.106b>
+	case MESSAGE_TYPE_EOT:
+		iExpireTurn++;
+		break; // </advc.106b>
 	default:
 		FAssert(false);
 		break;
 	}
-	return (iExpireTurn);
+	return iExpireTurn;
 }
 
 bool CvTalkingHeadMessage::getShown() const
@@ -240,4 +276,10 @@ bool CvTalkingHeadMessage::getShown() const
 void CvTalkingHeadMessage::setShown(bool bShown)
 {
 	m_bShown = bShown;
+}
+
+// advc.106b:
+bool CvTalkingHeadMessage::getSoundPlayed() const
+{
+	return m_bSoundPlayed;
 }

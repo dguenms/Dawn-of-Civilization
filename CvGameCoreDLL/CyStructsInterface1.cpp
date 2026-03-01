@@ -1,7 +1,5 @@
 #include "CvGameCoreDLL.h"
 #include "CvUnit.h"
-//#include "CvStructs.h"
-#include "CvInfos.h"
 
 //
 // Python interface for structs
@@ -11,7 +9,7 @@
 
 void CyStructsPythonInterface1()
 {
-	OutputDebugString("Python Extension Module - CyStructsPythonInterface1\n");
+	printToConsole("Python Extension Module - CyStructsPythonInterface1\n");
 
 	python::class_<NiPoint3>("NiPoint3")
 		.def(python::init<float, float, float>())	// ctor which takes 3 floats
@@ -66,7 +64,7 @@ void CyStructsPythonInterface1()
 		.def_readwrite("eMissionType", &MissionData::eMissionType)
 		.def_readwrite("iData1", &MissionData::iData1)
 		.def_readwrite("iData2", &MissionData::iData2)
-		.def_readwrite("iFlags", &MissionData::iFlags)
+		.def_readwrite("iFlags", &MissionData::eFlags)
 		.def_readwrite("iPushTurn", &MissionData::iPushTurn)
 		;
 
@@ -121,7 +119,7 @@ void CyStructsPythonInterface1()
 		.def("getOptionAt", &PBGameSetupData::getOptionAt)
 		.def("getMPOptionAt", &PBGameSetupData::getMPOptionAt)
 		;
-		
+
 	python::class_<PBPlayerSetupData>("PBPlayerSetupData")
 		.def_readwrite("iWho", &PBPlayerSetupData::iWho)
 		.def_readwrite("iCiv", &PBPlayerSetupData::iCiv)
@@ -139,7 +137,7 @@ void CyStructsPythonInterface1()
 		.def_readwrite("bClaimed", &PBPlayerAdminData::bClaimed)
 		.def_readwrite("bTurnActive", &PBPlayerAdminData::bTurnActive)
 		;
-	//Added ST
+
 	python::class_<CombatDetails>("CombatDetails")
 		.def_readwrite("iExtraCombatPercent", &CombatDetails::iExtraCombatPercent)
 		.def_readwrite("iAnimalCombatModifierTA", &CombatDetails::iAnimalCombatModifierTA)
@@ -150,6 +148,11 @@ void CyStructsPythonInterface1()
 		.def_readwrite("iAIBarbarianCombatModifierTB", &CombatDetails::iAIBarbarianCombatModifierTB)
 		.def_readwrite("iBarbarianCombatModifierAB", &CombatDetails::iBarbarianCombatModifierAB)
 		.def_readwrite("iAIBarbarianCombatModifierAB", &CombatDetails::iAIBarbarianCombatModifierAB)
+		// <advc.313>
+		.def_readwrite("iBarbarianCityAttackModifier", &CombatDetails::iBarbarianCityAttackModifier)
+		.def_readwrite("iSeaBarbarianModifierTB", &CombatDetails::iSeaBarbarianModifierTB)
+		.def_readwrite("iSeaBarbarianModifierAB", &CombatDetails::iSeaBarbarianModifierAB)
+		// </advc.313>
 		.def_readwrite("iPlotDefenseModifier", &CombatDetails::iPlotDefenseModifier)
 		.def_readwrite("iFortifyModifier", &CombatDetails::iFortifyModifier)
 		.def_readwrite("iCityDefenseModifier", &CombatDetails::iCityDefenseModifier)
@@ -164,7 +167,8 @@ void CyStructsPythonInterface1()
 		.def_readwrite("iTerrainDefenseModifier", &CombatDetails::iTerrainDefenseModifier)
 		.def_readwrite("iCityAttackModifier", &CombatDetails::iCityAttackModifier)
 		.def_readwrite("iDomainDefenseModifier", &CombatDetails::iDomainDefenseModifier)
-		.def_readwrite("iCityBarbarianDefenseModifier", &CombatDetails::iCityBarbarianDefenseModifier)
+		// advc.313: Replaced above
+		//.def_readwrite("iCityBarbarianDefenseModifier", &CombatDetails::iCityBarbarianDefenseModifier)
 		.def_readwrite("iClassDefenseModifier", &CombatDetails::iClassDefenseModifier)
 		.def_readwrite("iClassAttackModifier", &CombatDetails::iClassAttackModifier)
 		.def_readwrite("iCombatModifierT", &CombatDetails::iCombatModifierT)

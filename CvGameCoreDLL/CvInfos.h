@@ -1,3 +1,4 @@
+// TODO: merge with individual header files
 #pragma once
 
 //  $Header:
@@ -957,7 +958,7 @@ public:
 
 	float getUnitMaxSpeed() const;					// Exposed to Python
 	float getUnitPadTime() const;					// Exposed to Python
-	
+
 // BUG - Unit Experience - start
 	bool canAcquireExperience() const;				// Exposed to Python
 // BUG - Unit Experience - end
@@ -3356,7 +3357,7 @@ public:
 	int getWarmingDefense() const;						// Exposed to Python
 #endif
 // BUG - Global Warming Mod - end
-	
+
 	bool isNoCoast() const;						// Exposed to Python
 	bool isNoRiver() const;						// Exposed to Python
 	bool isNoAdjacent() const;				// Exposed to Python
@@ -3393,7 +3394,7 @@ public:
 
 	DllExport const CvArtInfoFeature* getArtInfo() const;
 	const TCHAR* getButton() const;
-	
+
 	const TCHAR* getVarietyButton(int variety) const; // Exposed to Python
 
 	bool read(CvXMLLoadUtility* pXML);
@@ -3412,10 +3413,10 @@ protected:
 	int m_iAdvancedStartRemoveCost;
 	int m_iTurnDamage;
 	int m_iGlobalWarmingDefense; // Leoreth
-	
-	bool m_bNoCoast;				
-	bool m_bNoRiver;					
-	bool m_bNoAdjacent;			
+
+	bool m_bNoCoast;
+	bool m_bNoRiver;
+	bool m_bNoAdjacent;
 	bool m_bRequiresFlatlands;
 	bool m_bRequiresRiver;
 	bool m_bAddsFreshWater;

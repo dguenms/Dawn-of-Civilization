@@ -46,8 +46,8 @@ public:
 
 private:
 	// disable copy and assignment
-	CDialogTemplate( const CDialogTemplate& );
-	CDialogTemplate& operator=( const CDialogTemplate& );
+	CDialogTemplate(const CDialogTemplate&);
+	CDialogTemplate& operator=(const CDialogTemplate&);
 
 	void AddStandardComponent(WORD type, LPCSTR caption, DWORD style,
 		DWORD exStyle, int x, int y, int w, int h, WORD id);

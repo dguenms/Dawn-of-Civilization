@@ -1,7 +1,7 @@
 //
 //	FILE:	 CyMapGenerator.h
 //	AUTHOR:  Mustafa Thamer
-//	PURPOSE: 
+//	PURPOSE:
 //			Python wrapper class for CvMapGenerator
 //
 //-----------------------------------------------------------------------------
@@ -11,10 +11,8 @@
 
 #include "CvGameCoreDLL.h"
 #include "CyMapGenerator.h"
-#include "CvGlobals.h"
-#include "CvDLLPythonIFaceBase.h"
 #include "CvMapGenerator.h"
-#include "CyPlot.h"
+#include "CvDLLPythonIFaceBase.h"
 
 CyMapGenerator::CyMapGenerator() : m_pMapGenerator(NULL)
 {
@@ -25,12 +23,12 @@ CyMapGenerator::CyMapGenerator(CvMapGenerator* pMapGenerator) : m_pMapGenerator(
 {
 }
 
-bool CyMapGenerator::canPlaceBonusAt(int /*BonusTypes*/ eBonus, int iX, int iY, bool bIgnoreLatitude)	 
+bool CyMapGenerator::canPlaceBonusAt(int /*BonusTypes*/ eBonus, int iX, int iY, bool bIgnoreLatitude)
 {
 	return m_pMapGenerator ? m_pMapGenerator->canPlaceBonusAt((BonusTypes)eBonus, iX, iY, bIgnoreLatitude) : false;
 }
 
-bool CyMapGenerator::canPlaceGoodyAt(int /*ImprovementTypes*/ eImprovement, int iX, int iY)	 
+bool CyMapGenerator::canPlaceGoodyAt(int /*ImprovementTypes*/ eImprovement, int iX, int iY)
 {
 	return m_pMapGenerator ? m_pMapGenerator->canPlaceGoodyAt((ImprovementTypes)eImprovement, iX, iY) : false;
 }

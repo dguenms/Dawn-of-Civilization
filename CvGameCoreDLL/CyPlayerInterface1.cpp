@@ -1,15 +1,7 @@
-#pragma component (mintypeinfo, on)
-
 #include "CvGameCoreDLL.h"
 #include "CyPlayer.h"
-#include "CyUnit.h"
-#include "CyCity.h"
-#include "CyPlot.h"
 #include "CySelectionGroup.h"
 #include "CyArea.h"
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
-//# include <boost/python/scope.hpp>
 
 //
 // published python interface for CyPlayer
@@ -17,12 +9,17 @@
 
 void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 {
-	OutputDebugString("Python Extension Module - CyPlayerPythonInterface1\n");
+	printToConsole("Python Extension Module - CyPlayerPythonInterface1\n");
 
 	// set the docstring of the current module scope
 	python::scope().attr("__doc__") = "Civilization IV Player Class";
 	x
 		.def("isNone", &CyPlayer::isNone, "checks for a null player")
+		// CHANGE_PLAYER, 08/27/08, jdog5000: START
+		.def("changeLeader", &CyPlayer::changeLeader, "void ( int /*LeaderHeadTypes*/ eNewLeader) - change leader of player")
+		.def("changeCiv", &CyPlayer::changeCiv, "void ( int /*CivilizationTypes*/ eNewCiv ) - change civilization of player")
+		.def("setIsHuman", &CyPlayer::setIsHuman, "void ( bool bNewValue ) - set whether player is human")
+		// CHANGE_PLAYER: END
 		.def("startingPlotRange", &CyPlayer::startingPlotRange, "int ()")
 		.def("startingPlotWithinRange", &CyPlayer::startingPlotWithinRange, "bool (CyPlot *pPlot, int /*PlayerTypes*/ ePlayer, int iRange, int iPass)")
 
@@ -40,26 +37,26 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("killUnits", &CyPlayer::killUnits, "void ()")
 		.def("hasTrait", &CyPlayer::hasTrait, "bool hasTrait(int /*TraitTypes*/ iIndex) - returns True if player is the Trait Type.")
 		.def("isHuman", &CyPlayer::isHuman, "bool ()")
+		// <advc.127>
+		.def("isHumanDisabled", &CyPlayer::isHumanDisabled, "bool ()")
+		.def("isAutoPlayJustEnded", &CyPlayer::isAutoPlayJustEnded, "bool ()")
+		// </advc.127>
 		.def("isBarbarian", &CyPlayer::isBarbarian, "bool () - returns True if player is a Barbarian")
 		.def("getName", &CyPlayer::getName, "str ()")
-		//Rhye (jdog) -  start ---------------------
-		.def("setName", &CyPlayer::setName, "void(std::wstring szNewValue)" )																														// Exposed to Python
-		//Rhye (jdog) -  end -----------------------
-		.def("getNameForm", &CyPlayer::getNameForm, "str ()")
+		.def("getNameForm", &CyPlayer::getNameForm, "str (int)")
 		.def("getNameKey", &CyPlayer::getNameKey, "str ()")
-		.def("getCivilizationDescription", &CyPlayer::getCivilizationDescription, "str() - returns the Civilization Description String")
-		//Rhye (jdog) -  start ---------------------
-		.def("setCivName", &CyPlayer::setCivName, "void(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)" )																														// Exposed to Python
-		.def("setCivDescription", &CyPlayer::setCivDescription, "void(std::wstring szNewDesc)" )// Exposed to Python
-		.def("setCivShortDescription", &CyPlayer::setCivShortDescription, "void(std::wstring szNewShortDesc)" )
-		.def("setCivAdjective", &CyPlayer::setCivAdjective, "void(std::wstring szNewAdjective)" )
-		//Rhye (jdog) -  end -----------------------
-		.def("getCivilizationShortDescription", &CyPlayer::getCivilizationShortDescription, "str() - returns the short Civilization Description")
+		.def("setName", &CyPlayer::setName, "void(std::wstring szNewValue)") // rfc
+		.def("getCivilizationDescription", &CyPlayer::getCivilizationDescription, "str (int) - returns the Civilization Description String")
+		.def("getCivilizationShortDescription", &CyPlayer::getCivilizationShortDescription, "str (int) - returns the short Civilization Description")
 		.def("getCivilizationDescriptionKey", &CyPlayer::getCivilizationDescriptionKey, "str() - returns the Civilization Description String")
 		.def("getCivilizationShortDescriptionKey", &CyPlayer::getCivilizationShortDescriptionKey, "str() - returns the short Civilization Description")
 		.def("getCivilizationAdjective", &CyPlayer::getCivilizationAdjective, "str() - returns the Civilization name in adjective form")
 		.def("getCivilizationAdjectiveKey", &CyPlayer::getCivilizationAdjectiveKey, "str() - returns the Civilization name in adjective form")
-		.def("getFlagDecal", &CyPlayer::getFlagDecal, "str() - returns the Civilization flag decal")
+        .def("setCivName", &CyPlayer::setCivName, "void(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)" ) // rfc
+        .def("setCivDescription", &CyPlayer::setCivDescription, "void(std::wstring szNewDesc)" ) // rfc
+        .def("setCivShortDescription", &CyPlayer::setCivShortDescription, "void(std::wstring szNewShortDesc)" ) // rfc
+        .def("setCivAdjective", &CyPlayer::setCivAdjective, "void(std::wstring szNewAdjective)" ) // rfc
+        .def("getFlagDecal", &CyPlayer::getFlagDecal, "str() - returns the Civilization flag decal")
 		.def("isWhiteFlag", &CyPlayer::isWhiteFlag, "bool () - Whether or not this player is using a custom texture flag (set in WBS)")
 		.def("getStateReligionName", &CyPlayer::getStateReligionName, "str() - returns the name of the Civilizations State Religion")
 		.def("getBestAttackUnitName", &CyPlayer::getBestAttackUnitName, "str () - returns the name of the best attack unit")
@@ -79,8 +76,8 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("countUnimprovedBonuses", &CyPlayer::countUnimprovedBonuses, "int (int (CyArea* pArea, CyPlot* pFromPlot) - ")
 		.def("countCityFeatures", &CyPlayer::countCityFeatures, "int (int /*FeatureTypes*/ eFeature) - Returns ?")
 		.def("countNumBuildings", &CyPlayer::countNumBuildings, "int (int /*BuildingTypes*/ eBuilding) - Returns the number of buildings?")
-		.def("countPotentialForeignTradeCities", &CyPlayer::countPotentialForeignTradeCities, "int (CyArea* pIgnoreArea) - Returns the number of potential foreign trade cities")
-		.def("countPotentialForeignTradeCitiesConnected", &CyPlayer::countPotentialForeignTradeCitiesConnected, "int () - Returns the number of potential foreign trade cities which are also connected to this player's capital")
+		//.def("countPotentialForeignTradeCities", &CyPlayer::countPotentialForeignTradeCities, "int (CyArea* pIgnoreArea) - Returns the number of potential foreign trade cities")
+		//.def("countPotentialForeignTradeCitiesConnected", &CyPlayer::countPotentialForeignTradeCitiesConnected, "int () - Returns the number of potential foreign trade cities which are also connected to this player's capital")
 
 		.def("canContact", &CyPlayer::canContact, "bool (int ePlayer)")
 		.def("contact", &CyPlayer::contact, "void (int ePlayer)")
@@ -122,6 +119,8 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("canBuild", &CyPlayer::canBuild, "bool (CyPlot* pPlot, int (BuildTypes) eBuild, bool bTestEra, bool bTestVisible)")
 
 		.def("calculateTotalYield", &CyPlayer::calculateTotalYield, "int (int /*YieldTypes*/ eYield) - Returns the total sum of all city yield")
+		// advc.001: For Financial Advisor
+		.def("calculateCurrentTotalYield", &CyPlayer::calculateCurrentTotalYield, "int (int /*YieldTypes*/ eYield) - Returns the total sum of all city yield excluding cities currently in disorder")
 		.def("calculateTotalExports", &CyPlayer::calculateTotalExports, "int (int /*YieldTypes*/ eYield) - Returns the total sum of all city gold generated for other civs via trade routes")
 		.def("calculateTotalImports", &CyPlayer::calculateTotalImports, "int (int /*YieldTypes*/ eYield) - Returns the total sum of all city gold generated for this civ via trade routes with others")
 
@@ -139,7 +138,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("calculateGoldRate", &CyPlayer::calculateGoldRate, "int ()")
 		.def("calculateTotalCommerce", &CyPlayer::calculateTotalCommerce, "int ()")
 		.def("calculateResearchRate", &CyPlayer::calculateResearchRate, "int (int /*TechTypes*/ eTech)")
-		.def("calculateBaseNetResearch", &CyPlayer::calculateBaseNetResearch, "int ()")
+		.def("calculatePollution", &CyPlayer::calculatePollution, "int (int /*PollutionFlags*/ iTypes)") // K-Mod
+		.def("getGwPercentAnger", &CyPlayer::getGwPercentAnger, "int ()") // K-Mod
+		//.def("calculateBaseNetResearch", &CyPlayer::calculateBaseNetResearch, "int ()")
 		.def("calculateResearchModifier", &CyPlayer::calculateResearchModifier, "int (int /*TechTypes*/ eTech)")
 		.def("isResearch", &CyPlayer::isResearch, "bool ()")
 		.def("canEverResearch", &CyPlayer::canEverResearch, "bool (int /*TechTypes*/ iIndex)")
@@ -149,11 +150,25 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("isNoResearchAvailable", &CyPlayer::isNoResearchAvailable, "bool ()")
 		.def("getResearchTurnsLeft", &CyPlayer::getResearchTurnsLeft, "int (int /*TechTypes*/ eTech, bool bOverflow)")
 
+		.def("canSeeResearch", &CyPlayer::canSeeResearch, "bool (int /*PlayerTypes*/ ePlayer)") // K-Mod
+		.def("canSeeDemographics", &CyPlayer::canSeeDemographics, "bool (int /*PlayerTypes*/ ePlayer)") // K-Mod
+		// advc.091:
+		.def("hasEverSeenDemographics", &CyPlayer::hasEverSeenDemographics, "bool (int /*PlayerTypes*/ iPlayer)")
+
 		.def("isCivic", &CyPlayer::isCivic, "bool (int (CivicTypes) eCivic)")
 		.def("canDoCivics", &CyPlayer::canDoCivics, "bool (int (CivicTypes) eCivic)")
-		.def("canRevolution", &CyPlayer::canRevolution, "bool (int (CivicTypes*) paeNewCivics)")
-		.def("revolution", &CyPlayer::revolution, "void (int (CivicTypes*) paeNewCivics, bool bForce)")
+		 /*	<advc> For compatibility with BtS Python code. int param is needed but ignored.
+			Corresponds to CvPlayer::canDoAnyRevolution. */
+		.def("canRevolution", &CyPlayer::canRevolution, "bool (int iDummy)")
+		 // Proper can-revolution function:
+		.def("canAdopt", &CyPlayer::canAdopt, "bool (int* (CivicTypes*) paeNewCivics)") // </advc.001>
+		.def("revolution", &CyPlayer::revolution, "void (int* (CivicTypes*) paeNewCivics, bool bForce)")
 		.def("getCivicPercentAnger", &CyPlayer::getCivicPercentAnger, "int (int /*CivicTypes*/ eCivic)")
+		// <advc.130n>
+		.def("getFavoriteCivic", &CyPlayer::getFavoriteCivic, "CivicTypes ()")
+		.def("isFavoriteCivicKnown", &CyPlayer::isFavoriteCivicKnown, "bool ()")
+		.def("getFavoriteReligion", &CyPlayer::getFavoriteReligion, "ReligionTypes ()")
+		.def("isFavoriteReligionKnown", &CyPlayer::isFavoriteReligionKnown, "bool ()") // </advc.130n>
 
 		.def("canDoReligion", &CyPlayer::canDoReligion, "int (int /*ReligionTypes*/ eReligion)")
 		.def("canChangeReligion", &CyPlayer::canChangeReligion, "bool ()")
@@ -181,9 +196,10 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 
 		.def("getStartingPlot", &CyPlayer::getStartingPlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
 		.def("setStartingPlot", &CyPlayer::setStartingPlot, "void (CyPlot*, bool) - sets the player's starting plot")
+		.def("forceRandomWBStart", &CyPlayer::forceRandomWBStart, "void forceRandomWBStart()") // advc.027
 		.def("getTotalPopulation", &CyPlayer::getTotalPopulation, "int ()")
 		.def("getAveragePopulation", &CyPlayer::getAveragePopulation, "int ()")
-		.def("getRealPopulation", &CyPlayer::getRealPopulation, "long int ()")
+		.def("getRealPopulation", &CyPlayer::getRealPopulation, "int ()") // advc: int, not long
 
 		.def("getTotalLand", &CyPlayer::getTotalLand, "int ()")
 		.def("getTotalLandScored", &CyPlayer::getTotalLandScored, "int ()")
@@ -208,6 +224,12 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getEspionageSpending", &CyPlayer::getEspionageSpending, "int (PlayerTypes eIndex)")
 		.def("canDoEspionageMission", &CyPlayer::canDoEspionageMission, "bool (EspionageMissionTypes eMission, PlayerTypes eTargetPlayer, CyPlot* pPlot, int iExtraData)")
 		.def("getEspionageMissionCost", &CyPlayer::getEspionageMissionCost, "int (EspionageMissionTypes eMission, PlayerTypes eTargetPlayer, CyPlot* pPlot, int iExtraData)")
+		// <advc.120d>
+		.def("getEspionageGoldQuantity", &CyPlayer::getEspionageGoldQuantity, "int (EspionageMissionTypes eMission, PlayerTypes eTargetPlayer, CyCity* pPlot)")
+		.def("getStealCostTech", &CyPlayer::getStealCostTech, "int (PlayerTypes eTargetPlayer)")
+		.def("canSeeTech", &CyPlayer::canSeeTech, "bool (PlayerTypes eTargetPlayer)")
+		.def("canSpy", &CyPlayer::canSpy, "bool ()")
+		// </advc.120d>
 		.def("doEspionageMission", &CyPlayer::doEspionageMission, "void (EspionageMissionTypes eMission, PlayerTypes eTargetPlayer, CyPlot* pPlot, int iExtraData, CyUnit* pUnit)")
 		.def("getEspionageSpendingWeightAgainstTeam", &CyPlayer::getEspionageSpendingWeightAgainstTeam, "int (TeamTypes eIndex)")
 		.def("setEspionageSpendingWeightAgainstTeam", &CyPlayer::setEspionageSpendingWeightAgainstTeam, "void (TeamTypes eIndex, int iValue)")
@@ -219,7 +241,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("changeGoldenAgeTurns", &CyPlayer::changeGoldenAgeTurns, "void (int iChange)")
 		.def("getNumUnitGoldenAges", &CyPlayer::getNumUnitGoldenAges, "int ()")
 		.def("changeNumUnitGoldenAges", &CyPlayer::changeNumUnitGoldenAges, "void (int iChange)")
-		.def("setNumUnitGoldenAges", &CyPlayer::setNumUnitGoldenAges, "void (int iNewValue)")
+		.def("setNumUnitGoldenAges", &CyPlayer::setNumUnitGoldenAges, "void (int iNewValue)") // doc
 		.def("getAnarchyTurns", &CyPlayer::getAnarchyTurns, "int ()")
 		.def("isAnarchy", &CyPlayer::isAnarchy, "bool ()")
 		.def("changeAnarchyTurns", &CyPlayer::changeAnarchyTurns, "void ()")
@@ -227,12 +249,12 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getMaxAnarchyTurns", &CyPlayer::getMaxAnarchyTurns, "int ()")
 		.def("getAnarchyModifier", &CyPlayer::getAnarchyModifier, "int ()")
 		.def("getGoldenAgeModifier", &CyPlayer::getGoldenAgeModifier, "int ()")
-		.def("changeGoldenAgeModifier", &CyPlayer::changeGoldenAgeModifier, "void (int iChange)") // edead
+		.def("changeGoldenAgeModifier", &CyPlayer::changeGoldenAgeModifier, "void (int iChange)") // doc (edead)
 		.def("getHurryModifier", &CyPlayer::getHurryModifier, "int ()")
 		.def("createGreatPeople", &CyPlayer::createGreatPeople, "void (int /*UnitTypes*/ eGreatPersonUnit, bool bIncrementThreshold, int iX, int iY)")
 		.def("getGreatPeopleCreated", &CyPlayer::getGreatPeopleCreated, "int ()")
 		.def("getGreatGeneralsCreated", &CyPlayer::getGreatGeneralsCreated, "int ()")
-		.def("getGreatSpiesCreated", &CyPlayer::getGreatSpiesCreated, "int ()")
+		.def("getGreatSpiesCreated", &CyPlayer::getGreatSpiesCreated, "int ()") // doc
 		.def("getGreatPeopleThresholdModifier", &CyPlayer::getGreatPeopleThresholdModifier, "int ()")
 		.def("getGreatGeneralsThresholdModifier", &CyPlayer::getGreatGeneralsThresholdModifier, "int ()")
 		.def("getGreatPeopleRateModifier", &CyPlayer::getGreatPeopleRateModifier, "int ()")
@@ -271,8 +293,9 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 
 		.def("getMaxConscript", &CyPlayer::getMaxConscript, "int ()")
 		.def("getOverflowResearch", &CyPlayer::getOverflowResearch, "int ()")
-		.def("isNoUnhealthyPopulation", &CyPlayer::isNoUnhealthyPopulation, "bool ()")
-		.def("getExpInBorderModifier", &CyPlayer::getExpInBorderModifier, "bool ()")
+		//.def("isNoUnhealthyPopulation", &CyPlayer::isNoUnhealthyPopulation, "bool ()")
+		.def("getUnhealthyPopulationModifier", &CyPlayer::getUnhealthyPopulationModifier, "int ()") // K-Mod
+		.def("getExpInBorderModifier", &CyPlayer::getExpInBorderModifier, "int ()")
 		.def("isBuildingOnlyHealthy", &CyPlayer::isBuildingOnlyHealthy, "bool ()")
 
 		.def("getDistanceMaintenanceModifier", &CyPlayer::getDistanceMaintenanceModifier, "int ()")
@@ -283,9 +306,6 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getLevelExperienceModifier", &CyPlayer::getLevelExperienceModifier, "int ()")
 
 		.def("getExtraHealth", &CyPlayer::getExtraHealth, "int ()")
-// BUG - start
-		.def("changeExtraHealth", &CyPlayer::changeExtraHealth, "void (int iChange)")
-// BUG - end
 		.def("getBuildingGoodHealth", &CyPlayer::getBuildingGoodHealth, "int ()")
 		.def("getBuildingBadHealth", &CyPlayer::getBuildingBadHealth, "int ()")
 
@@ -304,11 +324,11 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("changeCoastalTradeRoutes", &CyPlayer::changeCoastalTradeRoutes, "void (int iChange)")
 		.def("getTradeRoutes", &CyPlayer::getTradeRoutes, "int ()")
 		.def("getConversionTimer", &CyPlayer::getConversionTimer, "int ()")
-		.def("setConversionTimer", &CyPlayer::setConversionTimer, "void (int iNewValue)") // edead
-		.def("changeConversionTimer", &CyPlayer::changeConversionTimer, "void (int iChange)") // edead
+		.def("setConversionTimer", &CyPlayer::setConversionTimer, "void (int iNewValue)") // doc (edead)
+		.def("changeConversionTimer", &CyPlayer::changeConversionTimer, "void (int iChange)") // doc (edead)
 		.def("getRevolutionTimer", &CyPlayer::getRevolutionTimer, "int ()")
-		.def("setRevolutionTimer", &CyPlayer::setRevolutionTimer, "void (int iNewValue)") // edead
-		.def("changeRevolutionTimer", &CyPlayer::changeRevolutionTimer, "void (int iChange)") // edead
+		.def("setRevolutionTimer", &CyPlayer::setRevolutionTimer, "void (int iNewValue)") // doc (edead)
+		.def("changeRevolutionTimer", &CyPlayer::changeRevolutionTimer, "void (int iChange)") // doc (edead)
 
 		.def("isStateReligion", &CyPlayer::isStateReligion, "bool ()")
 		.def("isNoNonStateReligionSpread", &CyPlayer::isNoNonStateReligionSpread, "bool ()")
@@ -337,15 +357,17 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("isEverAlive", &CyPlayer::isEverAlive, "bool ()")
 		.def("isExtendedGame", &CyPlayer::isExtendedGame, "bool ()")
 		.def("isFoundedFirstCity", &CyPlayer::isFoundedFirstCity, "bool ()")
+		// advc.078:
+		.def("isAnyGPPEver", &CyPlayer::isAnyGPPEver, "bool ()")
 
 		.def("isStrike", &CyPlayer::isStrike, "bool ()")
-		.def("setStrike", &CyPlayer::setStrike, "void (bool bNewValue)") // edead
+		.def("setStrike", &CyPlayer::setStrike, "void (bool bNewValue)") // doc (edead)
 
 		.def("getID", &CyPlayer::getID, "int ()")
 		.def("getHandicapType", &CyPlayer::getHandicapType, "int ()")
-		.def("setHandicapType", &CyPlayer::setHandicapType, "void (int /*HandicapTypes*/ eHandicap)") //Rhye
+		.def("setHandicapType", &CyPlayer::setHandicapType, "void (int /*HandicapTypes*/ eHandicap)") // rfc
 		.def("getCivilizationType", &CyPlayer::getCivilizationType, "int ()")
-		.def("setCivilizationType", &CyPlayer::setCivilizationType, "void (int /*CivilizationTypes*/ iNewValue)") // edead
+		.def("setCivilizationType", &CyPlayer::setCivilizationType, "void (int /*CivilizationTypes*/ iNewValue)") // doc (edead)
 		.def("getLeaderType", &CyPlayer::getLeaderType, "int ()")
 		.def("getPersonalityType", &CyPlayer::getPersonalityType, "int ()")
 		.def("setPersonalityType", &CyPlayer::setPersonalityType, "void (int /*LeaderHeadTypes*/ eNewValue)")
@@ -366,9 +388,11 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("getYieldRateModifier", &CyPlayer::getYieldRateModifier, "int (YieldTypes eIndex)")
 		.def("getCapitalYieldRateModifier", &CyPlayer::getCapitalYieldRateModifier, "int (YieldTypes eIndex)")
 		.def("getExtraYieldThreshold", &CyPlayer::getExtraYieldThreshold, "int (YieldTypes eIndex)")
+		// advc.908a:
+		.def("getExtraYieldNaturalThreshold", &CyPlayer::getExtraYieldNaturalThreshold, "int (YieldTypes eIndex)")
 		.def("getTradeYieldModifier", &CyPlayer::getTradeYieldModifier, "int (YieldTypes eIndex)")
 		.def("getFreeCityCommerce", &CyPlayer::getFreeCityCommerce, "int (CommerceTypes eIndex)")
-		.def("changeFreeCityCommerce", &CyPlayer::changeFreeCityCommerce, "void (CommerceTypes eIndex, int iChange)") // edead
+		.def("changeFreeCityCommerce", &CyPlayer::changeFreeCityCommerce, "void (CommerceTypes eIndex, int iChange)") // doc (edead)
 		.def("getCommercePercent", &CyPlayer::getCommercePercent, "int (CommerceTypes eIndex)")
 		.def("setCommercePercent", &CyPlayer::setCommercePercent, "int (CommerceTypes eIndex, int iNewValue)")
 		.def("changeCommercePercent", &CyPlayer::changeCommercePercent, "int (CommerceTypes eIndex, int iChange)")
@@ -458,12 +482,7 @@ void CyPlayerPythonInterface1(python::class_<CyPlayer>& x)
 		.def("nextSelectionGroup", &CyPlayer::nextSelectionGroup, "tuple(CySelectionGroup, int iterOut) (int iterIn, bool bReverse) - gets the next selectionGroup")
 		.def("getNumSelectionGroups", &CyPlayer::getNumSelectionGroups, "int ()")
 		.def("getSelectionGroup", &CyPlayer::getSelectionGroup, python::return_value_policy<python::manage_new_object>(), "CvSelectionGroup* (int iID)")
-
-		.def("trigger", &CyPlayer::trigger, "void (/*EventTriggerTypes*/int eEventTrigger)")
-		.def("getEventOccured", &CyPlayer::getEventOccured, python::return_value_policy<python::reference_existing_object>(), "EventTriggeredData* (int /*EventTypes*/ eEvent)")
-		.def("resetEventOccured", &CyPlayer::resetEventOccured, "void (int /*EventTypes*/ eEvent)")
-		.def("getEventTriggered", &CyPlayer::getEventTriggered, python::return_value_policy<python::reference_existing_object>(), "EventTriggeredData* (int iID)")
-		.def("initTriggeredData", &CyPlayer::initTriggeredData, python::return_value_policy<python::reference_existing_object>(), "EventTriggeredData* (int eEventTrigger, bool bFire, int iCityId, int iPlotX, int iPlotY, PlayerTypes eOtherPlayer, int iOtherPlayerCityId, ReligionTypes eReligion, CorporationTypes eCorporation, int iUnitId, BuildingTypes eBuilding)")
-		.def("getEventTriggerWeight", &CyPlayer::getEventTriggerWeight, "int getEventTriggerWeight(int eEventTrigger)")
+		/*	kekm.34: Moved functions related to random events to CyPlayerInterface2.cpp
+			to keep the size of the module's debug info in check */
 		;
 }

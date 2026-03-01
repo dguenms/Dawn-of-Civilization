@@ -1,11 +1,6 @@
 #include "CvGameCoreDLL.h"
 #include "CySelectionGroup.h"
-#include "CyPlot.h"
 #include "CyArea.h"
-#include "CyUnit.h"
-//#include "CvStructs.h"
-//# include <boost/python/manage_new_object.hpp>
-//# include <boost/python/return_value_policy.hpp>
 
 //
 // published python interface for CySelectionGroup
@@ -13,7 +8,7 @@
 
 void CySelectionGroupInterface()
 {
-	OutputDebugString("Python Extension Module - CySelectionGroupInterface\n");
+	printToConsole("Python Extension Module - CySelectionGroupInterface\n");
 
 	python::class_<CySelectionGroup>("CySelectionGroup")
 		.def("isNone", &CySelectionGroup::isNone, "bool () - is this CySelectionGroup instance valid?")
@@ -47,7 +42,8 @@ void CySelectionGroupInterface()
 		.def("isInvisible", &CySelectionGroup::isInvisible, "bool (int eTeam)")
 		.def("countNumUnitAIType", &CySelectionGroup::countNumUnitAIType, "int (int (UnitAITypes) eUnitAI")
 		.def("hasWorker", &CySelectionGroup::hasWorker, "bool ()")
-
+		// BETTER_BTS_AI_MOD, General AI, 11/30/08, jdog5000:
+		.def("isStranded", &CySelectionGroup::isStranded, "bool ()")
 		.def("at", &CySelectionGroup::at, "bool (iX, iY) - is the group at plot iX, iY?")
 		.def("atPlot", &CySelectionGroup::atPlot, "bool (CyPlot* pPlot) - is the group at pPlot?")
 		.def("plot", &CySelectionGroup::plot, python::return_value_policy<python::manage_new_object>(), "CyPlot () - get plot that the group is on")
@@ -71,7 +67,6 @@ void CySelectionGroupInterface()
 		.def("getPathFirstPlot", &CySelectionGroup::getPathFirstPlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
 		.def("getPathEndTurnPlot", &CySelectionGroup::getPathEndTurnPlot, python::return_value_policy<python::manage_new_object>(), "CyPlot* ()")
 		.def("generatePath", &CySelectionGroup::generatePath, "bool (CyPlot* pFromPlot, CyPlot* pToPlot, int iFlags, bool bReuse, int* piPathTurns)")
-		.def("resetPath", &CySelectionGroup::resetPath, "void ()")
 
 		.def("getNumUnits", &CySelectionGroup::getNumUnits, "int ()")			// JS Help!
 		.def("clearMissionQueue", &CySelectionGroup::clearMissionQueue, "void ()")

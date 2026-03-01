@@ -3,10 +3,11 @@
 #ifndef CvDLLIniParserIFaceBase_h
 #define CvDLLIniParserIFaceBase_h
 
+class FIniParser;
+
 //
 // abstract interface for FIniParser functions used by DLL
 //
-class FIniParser;
 class CvDLLIniParserIFaceBase
 {
 public:

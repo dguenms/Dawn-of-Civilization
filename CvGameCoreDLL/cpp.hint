@@ -1,0 +1,62 @@
+// advc.003s: At least in Visual Studio 2010, the FOR_EACH macros aren't parsed properly by the code editor unless this hint file is present. Placing the hint file in the project directory is, unfortunately, not working for me. Even with the hint file, statement completion (Ctrl+Space) ignores the variables declared through the first macro argument.
+
+#define FOR_EACH_DEAL(pDeal)
+#define FOR_EACH_DEAL_VAR(pDeal)
+
+#define FOR_EACH_AREA(pArea)
+#define FOR_EACH_AREA_VAR(pArea)
+
+#define FOR_EACH_CITY(pCity, kOwner)
+#define FOR_EACH_CITYAI(pCity, kOwner)
+#define FOR_EACH_CITY_VAR(pCity, kOwner)
+#define FOR_EACH_CITYAI_VAR(pCity, kOwner)
+
+#define FOR_EACH_UNIT(pCity, kOwner)
+#define FOR_EACH_UNITAI(pCity, kOwner)
+#define FOR_EACH_UNIT_VAR(pCity, kOwner)
+#define FOR_EACH_UNITAI_VAR(pCity, kOwner)
+
+#define FOR_EACH_GROUP(pCity, kOwner)
+#define FOR_EACH_GROUPAI(pCity, kOwner)
+#define FOR_EACH_GROUP_VAR(pCity, kOwner)
+#define FOR_EACH_GROUPAI_VAR(pCity, kOwner)
+
+#define FOR_EACH_ENUM(TypeName)
+#define FOR_EACH_ENUM2(TypeName, eVar)
+#define FOR_EACH_ENUM_RAND(TypeName)
+#define FOR_EACH_ENUM_REV(TypeName)
+
+#define FOR_EACH_NON_DEFAULT_ENUM(kEnumMapSeq, EnumPrefix)
+#define FOR_EACH_NON_DEFAULT_PAIR(kEnumMap, EnumPrefix, ValueType)
+#define FOR_EACH_KEY(eKey)
+#define FOR_EACH_OUTER_KEY(eOuterKey)
+
+#define FOR_EACH_UNIT_IN(pUnit, kUnitListWrapper)
+#define FOR_EACH_UNITAI_IN(pUnit, kUnitListWrapper)
+#define FOR_EACH_UNIT_VAR_IN(pUnit, kUnitListWrapper)
+#define FOR_EACH_UNITAI_VAR_IN(pUnit, kUnitListWrapper)
+
+#define FOR_EACH_TRADE_ITEM(pItemVar, itemList)
+#define FOR_EACH_TRADE_ITEM_VAR(pItemVar, kItemList)
+#define FOR_EACH_TRADE_ITEM2(pItemVar, itemList)
+#define FOR_EACH_TRADE_ITEM_VAR2(pItemVar, kItemList)
+
+#define FOR_EACH_ADJ_PLOT(kCenterPlot)
+#define FOR_EACH_ADJ_PLOT_VAR(kCenterPlot)
+#define FOR_EACH_ADJ_PLOT2(pLoopPlot, kCenterPlot)
+#define FOR_EACH_ADJ_PLOT_VAR2(pLoopPlot, kCenterPlot)
+#define FOR_EACH_ORTH_ADJ_PLOT(kCenterPlot)
+#define FOR_EACH_ORTH_ADJ_PLOT_VAR(kCenterPlot)
+#define FOR_EACH_ORTH_ADJ_PLOT2(pLoopPlot, kCenterPlot)
+#define FOR_EACH_ORTH_ADJ_PLOT_VAR2(pLoopPlot, kCenterPlot)
+#define FOR_EACH_DIAG_ADJ_PLOT(kCenterPlot)
+#define FOR_EACH_DIAG_ADJ_PLOT_VAR(kCenterPlot)
+#define FOR_EACH_DIAG_ADJ_PLOT2(pLoopPlot, kCenterPlot)
+#define FOR_EACH_DIAG_ADJ_PLOT_VAR2(pLoopPlot, kCenterPlot)
+#define FOR_EACH_ADJ_PLOT_RAND(kCenterPlot, kRand)
+#define FOR_EACH_ADJ_PLOT_VAR_RAND(kCenterPlot, kRand)
+#define FOR_EACH_ADJ_PLOT_RAND2(pLoopPlot, kCenterPlot, kRand)
+#define FOR_EACH_ADJ_PLOT_VAR_RAND2(pLoopPlot, kCenterPlot, kRand)
+
+#define ENUM_START(Name, PREFIX)
+#define ENUM_END(Name, PREFIX)

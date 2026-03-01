@@ -1,5 +1,5 @@
 #pragma once
-
+/* original bts code
 #ifdef USE_MEMMANAGER
 #if 0
 void* operator new(size_t size);
@@ -20,3 +20,4 @@ void* reallocMem(void* a, unsigned int uiBytes, const char* pcFile, int iLine);
 #define realloc(a, b) reallocMem(a, b, __FILE__, __LINE__)
 #define _msize(a) memSize(a)
 #endif
+*/ // disabled by K-Mod

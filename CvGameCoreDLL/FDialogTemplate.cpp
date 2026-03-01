@@ -7,6 +7,9 @@
 #include <tchar.h>
 #include "CvGameCoreDLLUndefNew.h"
 
+// advc.make: Some int-to-short conversions here that are probably harmless
+#pragma warning(disable: 244) // "type conversion: possible loss of data"
+
 CDialogTemplate::CDialogTemplate(LPCSTR caption, DWORD style, int x, int y, int w, int h,
 								 LPCSTR font, WORD fontSize)
 {

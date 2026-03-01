@@ -1,41 +1,10 @@
 #include "CvGameCoreDLL.h"
 #include "CvDLLEntity.h"
-#include "CvDLLEntityIFaceBase.h"
-#include "CvGlobals.h"
 
-CvDLLEntity::CvDLLEntity() : m_pEntity(NULL)
-{
-
-}
-
-CvDLLEntity::~CvDLLEntity()
-{
-
-}
-
-void CvDLLEntity::removeEntity()
-{
-	gDLL->getEntityIFace()->removeEntity(getEntity());
-}
 
 void CvDLLEntity::setup()
 {
-	gDLL->getEntityIFace()->setup(getEntity());
-}
-
-void CvDLLEntity::setVisible(bool bVis)
-{
-	gDLL->getEntityIFace()->setVisible(getEntity(), bVis);
-}
-
-void CvDLLEntity::createCityEntity(CvCity* pCity)
-{
-	gDLL->getEntityIFace()->createCityEntity(pCity);
-}
-
-void CvDLLEntity::createUnitEntity(CvUnit* pUnit)
-{
-	gDLL->getEntityIFace()->createUnitEntity(pUnit);
+	gDLL->getEntityIFace()->setup(getGenericEntity());
 }
 
 void CvDLLEntity::destroyEntity()
@@ -43,52 +12,74 @@ void CvDLLEntity::destroyEntity()
 	gDLL->getEntityIFace()->destroyEntity(m_pEntity);
 }
 
-bool CvDLLEntity::IsSelected() const
+void CvDLLEntity::removeEntity()
 {
-	return gDLL->getEntityIFace()->IsSelected(getEntity());
+	gDLL->getEntityIFace()->removeEntity(getGenericEntity());
 }
 
-void CvDLLEntity::PlayAnimation(AnimationTypes eAnim, float fSpeed, bool bQueue, int iLayer, float fStartPct, float fEndPct)
+void CvDLLEntity::setVisible(bool b)
 {
-	gDLL->getEntityIFace()->PlayAnimation(getEntity(), eAnim, fSpeed, bQueue, iLayer, fStartPct, fEndPct);
+	gDLL->getEntityIFace()->setVisible(getGenericEntity(), b);
+}
+
+void CvDLLEntity::setEntity(CvEntity* pEntity)
+{
+	m_pEntity = pEntity;
+}
+
+void CvDLLEntity::PlayAnimation(AnimationTypes eAnim, float fSpeed, bool bQueue,
+	int iLayer, float fStartPct, float fEndPct)
+{
+	gDLL->getEntityIFace()->PlayAnimation(getGenericEntity(), eAnim, fSpeed, bQueue,
+			iLayer, fStartPct, fEndPct);
 }
 
 void CvDLLEntity::StopAnimation(AnimationTypes eAnim)
 {
-	gDLL->getEntityIFace()->StopAnimation(getEntity(), eAnim);
+	gDLL->getEntityIFace()->StopAnimation(getGenericEntity(), eAnim);
 }
 
-void CvDLLEntity::MoveTo( const CvPlot * pkPlot )
+void CvDLLCityEntity::createEntity(CvCity* pCity)
 {
-	gDLL->getEntityIFace()->MoveTo(getUnitEntity(), pkPlot );
+	gDLL->getEntityIFace()->createCityEntity(pCity);
 }
 
-void CvDLLEntity::QueueMove( const CvPlot * pkPlot )
+void CvDLLUnitEntity::createEntity(CvUnit* pUnit)
 {
-	gDLL->getEntityIFace()->QueueMove(getUnitEntity(), pkPlot );
+	gDLL->getEntityIFace()->createUnitEntity(pUnit);
 }
 
-void CvDLLEntity::ExecuteMove( float fTimeToExecute, bool bCombat )
+void CvDLLUnitEntity::MoveTo(CvPlot const* pPlot)
 {
-	gDLL->getEntityIFace()->ExecuteMove(getUnitEntity(), fTimeToExecute, bCombat );
+	gDLL->getEntityIFace()->MoveTo(getEntity(), pPlot);
 }
 
-void CvDLLEntity::SetPosition( const CvPlot * pkPlot )
+void CvDLLUnitEntity::QueueMove(CvPlot const* pPlot)
 {
-	gDLL->getEntityIFace()->SetPosition(getUnitEntity(), pkPlot );
+	gDLL->getEntityIFace()->QueueMove(getEntity(), pPlot);
 }
 
-void CvDLLEntity::NotifyEntity( MissionTypes eMission )
+void CvDLLUnitEntity::ExecuteMove(float fTimeToExecute, bool bCombat)
 {
-	gDLL->getEntityIFace()->NotifyEntity( getUnitEntity(), eMission );
+	gDLL->getEntityIFace()->ExecuteMove(getEntity(), fTimeToExecute, bCombat);
 }
 
-void CvDLLEntity::SetSiegeTower(bool show)
+void CvDLLUnitEntity::SetPosition(CvPlot const* pPlot)
 {
-	gDLL->getEntityIFace()->SetSiegeTower( getUnitEntity(), show );
+	gDLL->getEntityIFace()->SetPosition(getEntity(), pPlot);
 }
 
-bool CvDLLEntity::GetSiegeTower()
+void CvDLLUnitEntity::NotifyEntity(MissionTypes eMission)
 {
-	return gDLL->getEntityIFace()->GetSiegeTower(getUnitEntity());
+	gDLL->getEntityIFace()->NotifyEntity(getEntity(), eMission);
+}
+
+void CvDLLUnitEntity::SetSiegeTower(bool bShow)
+{
+	gDLL->getEntityIFace()->SetSiegeTower(getEntity(), bShow);
+}
+
+bool CvDLLUnitEntity::GetSiegeTower()
+{
+	return gDLL->getEntityIFace()->GetSiegeTower(getEntity());
 }
