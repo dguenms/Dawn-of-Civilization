@@ -7023,7 +7023,9 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	// Leoreth: Javanese UP: double yield from food improvements on islands
 	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == JAVA && area()->getNumTiles() <= 30)
 	{
-		if (GC.getImprovementInfo(eImprovement).getYieldChange(YIELD_FOOD) > 0 || (getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && GC.getImprovementInfo(eImprovement).getImprovementBonusYield(getBonusType(GET_PLAYER(ePlayer).getTeam()), YIELD_FOOD) > 0))
+		if (GC.getImprovementInfo(eImprovement).getYieldChange(YIELD_FOOD) > 0 || 
+			(GC.getImprovementInfo(eImprovement).getIrrigatedYieldChange(YIELD_FOOD) > 0 && isIrrigated()) ||
+			(getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && GC.getImprovementInfo(eImprovement).getImprovementBonusYield(getBonusType(GET_PLAYER(ePlayer).getTeam()), YIELD_FOOD) > 0))
 		{
 			iYield *= 2;
 		}
