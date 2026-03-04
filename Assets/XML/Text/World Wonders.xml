@@ -1362,7 +1362,7 @@
 		<Spanish>[ICON_BULLET]+1 [ICON_PRODUCTION] per [ICON_HAPPY] from resources</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Tag>>
+		<Tag>TXT_KEY_BUILDING_PRAMBANAN_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Prambanan[COLOR_REVERT] generates additional production from happiness resources. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
 		<French>[COLOR_BUILDING_TEXT]Prambanan[COLOR_REVERT] generates additional production from happiness resources. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
 		<German>[COLOR_BUILDING_TEXT]Prambanan[COLOR_REVERT] generates additional production from happiness resources. It also increases its city's chance of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
