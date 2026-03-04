@@ -93,18 +93,9 @@ BOOL APIENTRY DllMain(HANDLE hModule,
 	switch( ul_reason_for_call ) {
 	case DLL_PROCESS_ATTACH:
 		{
-			//Rhye
-			#ifdef _DEBUG 
-			MessageBox(0,"DLL Attaching", "Message",0); 
-			#endif
-			//Rhye
 
 // BUG - EXE/DLL Paths - start
 		dllModule = hModule;
-
-#ifdef _DEBUG
-		MessageBox(0, "DLL attached", "Message", 0);
-#endif
 // BUG - EXE/DLL Paths - end
 
 		// The DLL is being loaded into the virtual address space of the current process as a result of the process starting up 
