@@ -243,13 +243,13 @@ def nativeConquerors(iGameTurn, iPlayer):
 		return
 	
 	if year() >= year(dBirth[iAztecs]):
-		if none(data.dFirstContactConquerors[iCiv] for iCiv in (iMaya, iToltecs, iAztecs)):
+		if none(data.dFirstContactConquerors[iCiv] or player(iCiv).isExisting() for iCiv in (iMaya, iToltecs, iAztecs)):
 			if checkNativeConquerors(iPlayer, tMesoamericanContactZone):
 				for iCiv in (iMaya, iToltecs, iAztecs):
 					data.dFirstContactConquerors[iCiv] = True
 	
 	if year() >= year(dBirth[iInca]):
-		if not data.dFirstContactConquerors[iInca]:
+		if not data.dFirstContactConquerors[iInca] and not players(iInca).isExisting():
 			if checkNativeConquerors(iPlayer, tAndeanContactZone):
 				data.dFirstContactConquerors[iInca] = True
 	
