@@ -432,10 +432,11 @@ def changeConquerorPlotTypes(iConquerorPlayer, iTargetPlayer):
 
 @handler("BeginGameTurn")
 def changeConquerorPlotTypesLate(iGameTurn):
-	for iCiv in lBioNewWorld:
-		if not data.dFirstContactConquerors[iCiv]:
-			for tile, type in dConquerorPlotTypes[iCiv]:
-				plot(tile).setPlotType(type, True, True)
+	if iGameTurn == year(1650):
+		for iCiv in lBioNewWorld:
+			if not data.dFirstContactConquerors[iCiv]:
+				for tile, type in dConquerorPlotTypes[iCiv]:
+					plot(tile).setPlotType(type, True, True)
 
 
 @handler("cityAcquired")
