@@ -4976,7 +4976,6 @@ dGreatPeople = {
 			"Turgut Reis", # 16th
 			"Kara Mustafa", # 17th
 			iIndustrial, 
-			"Muhammad Ali", # 19th
 			"Omar Latas", # 19th
 			"Osman Nuri", # 19th
 			iGlobal,
