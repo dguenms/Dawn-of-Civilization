@@ -8905,13 +8905,15 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 		break;
 
 	case UNITAI_WORKER:
-		for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
+		/*for (iI = 0; iI < GC.getNumBuildInfos(); iI++)
 		{
 			if (GC.getUnitInfo(eUnit).getBuilds(iI))
 			{
 				iValue += 50;
 			}
-		}
+		}*/
+		// Leoreth: disregard builds and focus on work rate
+		iValue += GC.getUnitInfo(eUnit).getWorkRate() * 2;
 		iValue += (GC.getUnitInfo(eUnit).getMoves() * 100);
 		break;
 
