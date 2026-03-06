@@ -249,7 +249,7 @@ def nativeConquerors(iGameTurn, iPlayer):
 					data.dFirstContactConquerors[iCiv] = True
 	
 	if year() >= year(dBirth[iInca]):
-		if not data.dFirstContactConquerors[iInca] and not players(iInca).isExisting():
+		if not data.dFirstContactConquerors[iInca] and not player(iInca).isExisting():
 			if checkNativeConquerors(iPlayer, tAndeanContactZone):
 				data.dFirstContactConquerors[iInca] = True
 	
