@@ -28,9 +28,15 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 	destroyedCities, cededCities = secedingCities.split(lambda city: bRazeMinorCities and canBeRazed(city))
 	
 	for city in destroyedCities:
+		cityPlot = plot(city)
 		cn.clearChanges(city)
 		player(iBarbarian).disband(city)
-		plot(city).setCulture(iPlayer, 0, True)
+		cityPlot.setCulture(iPlayer, 0, True)
+		
+		# free up ruins for Indraprastha spawn
+		if location(cityPlot) == tDelhi:
+			cityPlot.setImprovementType(-1)
+			
 	
 	# determine who has the best claim on each city
 	dClaimedCities = appenddict()
