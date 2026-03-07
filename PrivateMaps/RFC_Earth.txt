@@ -61701,12 +61701,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=47
+	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=136,y=48
-	BonusType=BONUS_WHALE
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
