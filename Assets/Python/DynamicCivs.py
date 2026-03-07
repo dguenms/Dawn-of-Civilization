@@ -1748,7 +1748,7 @@ def specificAdjective(iPlayer):
 	
 	elif iCiv == iSwahili:
 		if iEra >= iGlobal:
-			return "TXT_KEY_CIV_RUS_TANZANIAN"
+			return "TXT_KEY_CIV_SWAHILI_TANZANIAN"
 			
 	elif iCiv == iMali:
 		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
