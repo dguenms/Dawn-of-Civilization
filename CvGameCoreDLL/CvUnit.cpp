@@ -4994,7 +4994,7 @@ bool CvUnit::bombard()
 	// Leoreth: recently born civilizations receive reduced bombard damage on their territory
 	if (pTargetPlot->isBirthProtected() && pTargetPlot->getBirthProtected() != getOwnerINLINE())
 	{
-		iBombardModifier -= 50;
+		iBombardModifier -= (100 + iBombardModifier) / 2; // make sure this never reduces to -100 but still has an impact in the presence of defensive buildings
 	}
 
 	pBombardCity->changeDefenseModifier(-(bombardRate() * std::max(0, 100 + iBombardModifier)) / 100);
