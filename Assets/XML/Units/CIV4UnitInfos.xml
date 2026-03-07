@@ -410,6 +410,16 @@
 					<bTerrainImpassable>1</bTerrainImpassable>
 				</TerrainImpassable>
 			</TerrainImpassables>
+			<TerrainPassableTechs>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<PassableTech>TECH_REFRIGERATION</PassableTech>
+				</TerrainPassableTech>
+				<TerrainPassableTech>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<PassableTech>TECH_THERMODYNAMICS</PassableTech>
+				</TerrainPassableTech>
+			</TerrainPassableTechs>
 			<iAsset>4</iAsset>
 			<UnitMeshGroups>
 				<iGroupSize>4</iGroupSize>
