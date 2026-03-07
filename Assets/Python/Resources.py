@@ -119,7 +119,7 @@ dResourcesDict = {
 	(33, 37)  : (1600,  iCow),      # Venezuela
 	(24, 50)  : (1600,  iCow),      # Alabama
 	(15, 46)  : (1600,  iCow),      # Mexico
-	(37, 10)  : (1600,  iCow),      # Argentina
+	(36, 9)   : (1600,  iCow),      # Argentina
 	(39, 11)  : (1600,  iCow),      # Argentina
 	(16, 48)  : (1600,  iHorse),    # Mexico
 	(28, 53)  : (1600,  iHorse),    # Carolinas
