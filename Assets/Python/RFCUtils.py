@@ -219,6 +219,9 @@ def convertPlotCulture(tPlot, iPlayer, iPercent, bOwner):
 	plot = plot_(tPlot)
 	city = city_(tPlot)
 	
+	if bOwned:
+		plot.setRevealed(player(iPlayer).getTeam(), True, False, player(iPlayer).getTeam())
+	
 	if city:
 		iTotalConvertedCulture = 0
 		for iLoopPlayer in players.all().without(iPlayer):
