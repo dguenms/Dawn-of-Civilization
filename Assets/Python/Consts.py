@@ -1237,7 +1237,10 @@ lLateColonyCivs = lTradingCompanyCivs + [iGermany]
 
 lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRus]
 
-(i3000BC, i600AD, i1700AD) = range(3)
+iNumScenarios = 4
+(i3000BC, i600AD, i1500AD, i1700AD) = range(4)
+
+lScenarioStartYears = [-3000, 600, 1500, 1700]
 
 # Stability overlay and editor
 iNumPlotStabilityTypes = 4

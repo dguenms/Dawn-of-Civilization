@@ -163,6 +163,21 @@ def setupScenario():
 			"Ra-Kedet": "Alexandreia",
 			"Seleukeia": "Tysfwn",
 		}
+		
+	elif scenario() == i1500AD:
+		dRelocated = {
+			"Jiaohe": "Turpan",
+			"Mayapan": "Uuc Yabnal",
+			"Oguaa": "Elmina",
+			"Pagan": "Awa",
+			"Raga": "Tehran",
+			"Tarragona": "Barcelona",
+			"Tus": "Sanabad",
+			"Yashodharapura": "Phnom Penh",
+		}
+		dRenamed = {
+			"Byzantion": "Constantinopolis",
+		}
 	
 	elif scenario() == i1700AD:
 		dRelocated = {
@@ -173,6 +188,7 @@ def setupScenario():
 			"Kalhu": "Al-Mawsil",
 			"Khersonesos": "Kaffa",
 			"Kissonde": "Lwanda",
+			"Oguaa": "Elmina",
 			"Pagan": "Awa",
 			"Pushkalavati": "Peshawar",
 			"Raga": "Tehran",

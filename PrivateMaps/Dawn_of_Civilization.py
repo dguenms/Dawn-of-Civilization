@@ -9,6 +9,7 @@ import Rise, RegionMap
 lStartingDates = [
 	"3000 BC",
 	"600 AD",
+	"1500 AD",
 	"1700 AD",
 ]
 

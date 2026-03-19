@@ -16,25 +16,27 @@ dPeriods600AD = {
 	iCelts : iPeriodInsularCelts,
 }
 
-dPeriods1700AD = {
+dPeriods1500AD = {
 	iChina : iPeriodMing,
-	iIndia : iPeriodMaratha,
-	iCelts : iPeriodInsularCelts,
 	iDravidia : iPeriodVijayanagara,
 	iNorse : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,
 	iMoors : iPeriodMorocco,
 	iSpain : iPeriodSpain,
+	iOttomans : iPeriodOttomanConstantinople,
+}
+
+dPeriods1700AD = {
+	iIndia : iPeriodMaratha,
 	iHolyRome : iPeriodAustria,
 	iEngland : iPeriodUnitedKingdom,
 	iInca : iPeriodPeru,
-	iOttomans : iPeriodOttomanConstantinople,
 	iManchuria : iPeriodQing,
 }
 
 dScenarioPeriods = {
-	-3000: {},
 	600: dPeriods600AD,
+	1500: dPeriods1500AD,
 	1700: dPeriods1700AD,
 }
 

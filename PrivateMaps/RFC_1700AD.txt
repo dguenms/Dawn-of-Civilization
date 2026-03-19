@@ -2798,6 +2798,33 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=61,y=31
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_NETHERLANDS
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_NETHERLANDS
+		CityName=Elmina
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_PROTESTANT_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
+		ReligionType=RELIGION_PROTESTANTISM
+		CorporationType=CORPORATION_TRADING_COMPANY
+		BeginCulture
+			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
+		EndCulture
+		YearFounded=1480
+		YearAcquired=1635
+		PreviousOwner=CIVILIZATION_PORTUGAL
+	EndCity
+EndPlot
+BeginPlot
+	x=61,y=32
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
@@ -3047,33 +3074,6 @@ EndPlot
 BeginPlot
 	x=61,y=66
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
-	x=62,y=31
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_NETHERLANDS
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_NETHERLANDS
-		CityName=Ussher Fort
-		CityPopulation=3
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_PROTESTANT_TEMPLE
-		ReligionType=RELIGION_CATHOLICISM
-		ReligionType=RELIGION_PROTESTANTISM
-		CorporationType=CORPORATION_TRADING_COMPANY
-		BeginCulture
-			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
-		EndCulture
-		YearFounded=1480
-		YearAcquired=1635
-		PreviousOwner=CIVILIZATION_PORTUGAL
-	EndCity
 EndPlot
 BeginPlot
 	x=62,y=32
@@ -10321,7 +10321,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Turfan
+		CityName=Turpan
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -11135,8 +11135,8 @@ BeginPlot
 		YearFounded=-1095
 		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_INDEPENDENT
-		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_CHINA
+		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
 BeginPlot
@@ -11319,7 +11319,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MANCHU
-		CityName=Xi'an
+		CityName=Chang'an
 		CityPopulation=8
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -11835,8 +11835,8 @@ BeginPlot
 		YearFounded=-210
 		YearAcquired=1640
 		PreviousOwner=CIVILIZATION_INDEPENDENT
-		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_CHINA
+		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
 BeginPlot
@@ -11920,6 +11920,38 @@ BeginPlot
 	x=125,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MANCHU_BANNERMAN
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
@@ -11933,38 +11965,6 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
-		UnitOwner=CIVILIZATION_MANCHU
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_MANCHU_BANNERMAN
 		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginUnit
@@ -12272,7 +12272,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MANCHU
-		CityName=Shenyang
+		CityName=Mukden
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_FORGE
@@ -12284,9 +12284,9 @@ BeginPlot
 		YearFounded=-300
 		YearAcquired=1620
 		PreviousOwner=CIVILIZATION_BARBARIAN
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_KOREA
 		PreviousOwner=CIVILIZATION_MONGOL
-		PreviousOwner=CIVILIZATION_CHINA
 	EndCity
 EndPlot
 BeginPlot

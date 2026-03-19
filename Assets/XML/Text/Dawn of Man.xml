@@ -50,6 +50,14 @@
 		<Spanish>It is the year 1195 AD. The Aztec peoples have founded the city of Tenochtitlan at Lake Texcoco in the Valley of Mexico. Through clever use of irrigation systems, Tenochtitlan can become the largest metropolis of Mesoamerica and dominate the surrounding cities.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_AZTECS_1500AD</Tag>
+		<English>It is the year 1500 AD. Tenochtitlan is the largest city in the Americas, and the Aztec Triple Alliance has expanded outside of the Valley of Mexico, becoming the unchallenged hegemon of Mesoamerica.</English>
+		<French>It is the year 1500 AD. Tenochtitlan is the largest city in the Americas, and the Aztec Triple Alliance has expanded outside of the Valley of Mexico, becoming the unchallenged hegemon of Mesoamerica.</French>
+		<German>It is the year 1500 AD. Tenochtitlan is the largest city in the Americas, and the Aztec Triple Alliance has expanded outside of the Valley of Mexico, becoming the unchallenged hegemon of Mesoamerica.</German>
+		<Italian>It is the year 1500 AD. Tenochtitlan is the largest city in the Americas, and the Aztec Triple Alliance has expanded outside of the Valley of Mexico, becoming the unchallenged hegemon of Mesoamerica.</Italian>
+		<Spanish>It is the year 1500 AD. Tenochtitlan is the largest city in the Americas, and the Aztec Triple Alliance has expanded outside of the Valley of Mexico, becoming the unchallenged hegemon of Mesoamerica.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_BABYLONIA</Tag>
 		<English>It is the year 3000 BC. The fertile crescent of Mesopotamia is home of the first urbanized cultures in the history of mankind and known as the cradle of civilization. Though the cities of Sumer and Akkad are thriving, with the emergence of Babylon, they will soon be overshadowed by the greatest metropolis of its time.</English>
 		<French>Nous sommes en l'an 3000 av. J.-C. Le croissant fertile, en M&#233;sopotamie, voit se d&#233;velopper les premi&#232;res soci&#233;t&#233;s urbaines de l'histoire de l'humanit&#233;. Dans ce berceau de la civilisation, les villes de Sumer et d'Akkad sont prosp&#232;res, mais elles seront bient&#244;t &#233;clips&#233;es par la m&#233;tropole la plus grande et la plus importante de son temps : Babylone.</French>
@@ -72,6 +80,14 @@
 		<German>It is the year 849 AD. Pyu city-states and Mon kingdoms thrive along the Irrawaddy valley, but have been vulnerable to incursions from the surrounding highlands. The arrival of the Bamar people leads to the establishment of the Bagan Kingdom, ushering in a new era of stability and religious architecture.</German>
 		<Italian>It is the year 849 AD. Pyu city-states and Mon kingdoms thrive along the Irrawaddy valley, but have been vulnerable to incursions from the surrounding highlands. The arrival of the Bamar people leads to the establishment of the Bagan Kingdom, ushering in a new era of stability and religious architecture.</Italian>
 		<Spanish>It is the year 849 AD. Pyu city-states and Mon kingdoms thrive along the Irrawaddy valley, but have been vulnerable to incursions from the surrounding highlands. The arrival of the Bamar people leads to the establishment of the Bagan Kingdom, ushering in a new era of stability and religious architecture.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BURMA_1500AD</Tag>
+		<English>It is the year 1500 AD. After the collapse of the Pagan Kingdom, Burma has fractured into the Hanthawaddy and Ava Kingdoms. Can a strong dynasty emerge to unite Burma and even expand into surrounding South East Asia?</English>
+		<French>It is the year 1500 AD. After the collapse of the Pagan Kingdom, Burma has fractured into the Hanthawaddy and Ava Kingdoms. Can a strong dynasty emerge to unite Burma and even expand into surrounding South East Asia?</French>
+		<German>It is the year 1500 AD. After the collapse of the Pagan Kingdom, Burma has fractured into the Hanthawaddy and Ava Kingdoms. Can a strong dynasty emerge to unite Burma and even expand into surrounding South East Asia?</German>
+		<Italian>It is the year 1500 AD. After the collapse of the Pagan Kingdom, Burma has fractured into the Hanthawaddy and Ava Kingdoms. Can a strong dynasty emerge to unite Burma and even expand into surrounding South East Asia?</Italian>
+		<Spanish>It is the year 1500 AD. After the collapse of the Pagan Kingdom, Burma has fractured into the Hanthawaddy and Ava Kingdoms. Can a strong dynasty emerge to unite Burma and even expand into surrounding South East Asia?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_BURMA_1700AD</Tag>
@@ -138,6 +154,14 @@
 		<Spanish>It is the year 600 AD. After the Han Dynasty had collapsed, civil war between the Chinese kingdoms ensued. Only 11 years ago Emperor Wen of Sui managed to reunite China and reclaim the Mandate of Heaven. But the power of the Sui Dynasty is not completely consolidated, and the old challenges of China remain.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_CHINA_1500AD</Tag>
+		<English>It is the year 1500 AD. The Ming Dynasty has expelled the Mongols and presided over another Chinese golden age. After the long and prosperous reign of the Yongle Emperor, the dynasty is in decline again. Can another outside threat challenge it?</English>
+		<French>It is the year 1500 AD. The Ming Dynasty has expelled the Mongols and presided over another Chinese golden age. After the long and prosperous reign of the Yongle Emperor, the dynasty is in decline again. Can another outside threat challenge it?</French>
+		<German>It is the year 1500 AD. The Ming Dynasty has expelled the Mongols and presided over another Chinese golden age. After the long and prosperous reign of the Yongle Emperor, the dynasty is in decline again. Can another outside threat challenge it?</German>
+		<Italian>It is the year 1500 AD. The Ming Dynasty has expelled the Mongols and presided over another Chinese golden age. After the long and prosperous reign of the Yongle Emperor, the dynasty is in decline again. Can another outside threat challenge it?</Italian>
+		<Spanish>It is the year 1500 AD. The Ming Dynasty has expelled the Mongols and presided over another Chinese golden age. After the long and prosperous reign of the Yongle Emperor, the dynasty is in decline again. Can another outside threat challenge it?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_CHINA_1700AD</Tag>
 		<English>It is the year 1700 AD. After the Ming Dynasty has collapsed under peasant revolts, the Jurchens of Manchuria have conquered China and established the Qing Dynasty. With Manchuria and Tibet under imperial control, China has reached the greatest extent in history, and the rule of the Kangxi Emperor promises another golden era.</English>
 		<French>Nous sommes en l'An 1700 ap. J.-C. Apr&#232;s que des r&#233;voltes paysannes ont fait tomber la dynastie Ming, les J&#252;rchen de Mandchourie ont conquis la Chine et &#233;tabli la dynastie Qing. Avec la Mandchourie et le Tibet sous contr&#244;le imp&#233;rial, la Chine a atteint sa plus grande ampleur territoriale jusqu'ici. Le r&#232;gne de l'empereur Kangxi s'annonce comme un nouvel &#226;ge d'or.</French>
@@ -162,6 +186,14 @@
 		<Spanish>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_CONGO_1500AD</Tag>
+		<English>It is the year 1500 AD. Contact with the Portuguese has opened the Kingdom of Kongo to the wider world. Is the adoption of Christianity and centralization of the kingdom enough to maintain independence and resist European interests?</English>
+		<French>It is the year 1500 AD. Contact with the Portuguese has opened the Kingdom of Kongo to the wider world. Is the adoption of Christianity and centralization of the kingdom enough to maintain independence and resist European interests?</French>
+		<German>It is the year 1500 AD. Contact with the Portuguese has opened the Kingdom of Kongo to the wider world. Is the adoption of Christianity and centralization of the kingdom enough to maintain independence and resist European interests?</German>
+		<Italian>It is the year 1500 AD. Contact with the Portuguese has opened the Kingdom of Kongo to the wider world. Is the adoption of Christianity and centralization of the kingdom enough to maintain independence and resist European interests?</Italian>
+		<Spanish>It is the year 1500 AD. Contact with the Portuguese has opened the Kingdom of Kongo to the wider world. Is the adoption of Christianity and centralization of the kingdom enough to maintain independence and resist European interests?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_CONGO_1700AD</Tag>
 		<English>It is the year 1700 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and often the slave trade remains as the only viable source of income.</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. La guerre avec les Portugais ainsi que des luttes intestines ont affaibli le royaume du Kongo au point d'en faire essentiellement une colonie. Le royaume accuse un retard sur les plans scientifique et &#233;conomique, et le commerce des esclaves demeure souvent la seule source fiable de revenu.</French>
@@ -170,20 +202,20 @@
 		<Spanish>It is the year 1700 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and often the slave trade remains as the only viable source of income.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_DENMARK_1700AD</Tag>
-		<English>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</English>
-		<French>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</French>
-		<German>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</German>
-		<Italian>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</Italian>
-		<Spanish>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_DOM_DRAVIDIA</Tag>
 		<English>It is the year 300 BC. With the development of their Sangam literature, the Dravidian culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</English>
 		<French>Nous sommes en l'an 300 av. J.-C. Avec le d&#233;veloppement de la litt&#233;rature Sangam, la culture dravidienne prend son envol dans le sud de l'Inde. Situ&#233;es &#224; mi-chemin entre la Chine et Rome, et disposant de pr&#233;cieuses &#233;pices, les dynasties locales de Chera, de Pandya et de Chola sont des hauts lieux du commerce.</French>
 		<German>It is the year 300 BC. With the development of their Sangam literature, the Dravidian culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</German>
 		<Italian>It is the year 300 BC. With the development of their Sangam literature, the Dravidian culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</Italian>
 		<Spanish>It is the year 300 BC. With the development of their Sangam literature, the Dravidian culture rises to the south of India. Their position close to both China and Rome as well as the availability of valuable spices have made the local dynasties of the Cheras, Pandyans and Cholas affluent centers of trade.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_DRAVIDIA_1500AD</Tag>
+		<English>It is the year 1500 AD. The expansion of Muslim powers into Southern India has been halted with the collapse of the Tughluq dynasty. The city of Vijayanagara is one of the largest in the world, and its empire is expanding into the Deccan Sultanates. Can it preserve Hindu sovereignty?</English>
+		<French>It is the year 1500 AD. The expansion of Muslim powers into Southern India has been halted with the collapse of the Tughluq dynasty. The city of Vijayanagara is one of the largest in the world, and its empire is expanding into the Deccan Sultanates. Can it preserve Hindu sovereignty?</French>
+		<German>It is the year 1500 AD. The expansion of Muslim powers into Southern India has been halted with the collapse of the Tughluq dynasty. The city of Vijayanagara is one of the largest in the world, and its empire is expanding into the Deccan Sultanates. Can it preserve Hindu sovereignty?</German>
+		<Italian>It is the year 1500 AD. The expansion of Muslim powers into Southern India has been halted with the collapse of the Tughluq dynasty. The city of Vijayanagara is one of the largest in the world, and its empire is expanding into the Deccan Sultanates. Can it preserve Hindu sovereignty?</Italian>
+		<Spanish>It is the year 1500 AD. The expansion of Muslim powers into Southern India has been halted with the collapse of the Tughluq dynasty. The city of Vijayanagara is one of the largest in the world, and its empire is expanding into the Deccan Sultanates. Can it preserve Hindu sovereignty?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_DRAVIDIA_1700AD</Tag>
@@ -202,12 +234,28 @@
 		<Spanish>It is the year 3000 BC. The Egyptian civilization coalesces under the recent unification of the Kingdoms of Lower and Upper Egypt. The fertile banks of the Nile make Egypt one of the wealthiest regions of the world. It is time to use this wealth to build monuments and establish a culture the world has never seen before.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_EGYPT_1500AD</Tag>
+		<English>It is the year 1500 AD. Mamluk Egypt has long drawn its wealth from its stewardship of the Muslim holy sites and trade with Europe. The rise of the Ottoman Empire has undermined both its supremacy in the Muslim world and its trade connections with the west. Now that the Christian powers are establishing their own trade networks, the source of Mamluk power is threatenend.</English>
+		<French>It is the year 1500 AD. Mamluk Egypt has long drawn its wealth from its stewardship of the Muslim holy sites and trade with Europe. The rise of the Ottoman Empire has undermined both its supremacy in the Muslim world and its trade connections with the west. Now that the Christian powers are establishing their own trade networks, the source of Mamluk power is threatenend.</French>
+		<German>It is the year 1500 AD. Mamluk Egypt has long drawn its wealth from its stewardship of the Muslim holy sites and trade with Europe. The rise of the Ottoman Empire has undermined both its supremacy in the Muslim world and its trade connections with the west. Now that the Christian powers are establishing their own trade networks, the source of Mamluk power is threatenend.</German>
+		<Italian>It is the year 1500 AD. Mamluk Egypt has long drawn its wealth from its stewardship of the Muslim holy sites and trade with Europe. The rise of the Ottoman Empire has undermined both its supremacy in the Muslim world and its trade connections with the west. Now that the Christian powers are establishing their own trade networks, the source of Mamluk power is threatenend.</Italian>
+		<Spanish>It is the year 1500 AD. Mamluk Egypt has long drawn its wealth from its stewardship of the Muslim holy sites and trade with Europe. The rise of the Ottoman Empire has undermined both its supremacy in the Muslim world and its trade connections with the west. Now that the Christian powers are establishing their own trade networks, the source of Mamluk power is threatenend.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_ENGLAND</Tag>
 		<English>It is the year 829 AD. After the migration of Germanic peoples to Britain, the island has been divided between several Celtic, Norse and Anglo-Saxon kingdoms. Recently the King of Wessex has been crowned Bretwalda and thus ruler of all of England. Now unified, the English people can turn their eyes from their island across the sea and gain rule of the waves.</English>
 		<French>Nous sommes en l'an 829 ap. J.-C. Depuis la migration des peuples germaniques en Grande-Bretagne, l'&#238;le est partag&#233;e entre plusieurs royaumes celtiques, nordiques et anglo-saxons. Or, le roi du Wessex est maintenant parvenu &#224; dominer l'Angleterre et &#224; recevoir le titre de Bretwalda. Leur unification permettra aux Anglais de diriger leur regard au-del&#224; de l'&#238;le et de prendre le contr&#244;le des mers.</French>
 		<German>It is the year 829 AD. After the migration of Germanic peoples to Britain, the island has been divided between several Celtic, Norse and Anglo-Saxon kingdoms. Recently the King of Wessex has been crowned Bretwalda and thus ruler of all of England. Now unified, the English people can turn their eyes from their island across the sea and gain rule of the waves.</German>
 		<Italian>It is the year 829 AD. After the migration of Germanic peoples to Britain, the island has been divided between several Celtic, Norse and Anglo-Saxon kingdoms. Recently the King of Wessex has been crowned Bretwalda and thus ruler of all of England. Now unified, the English people can turn their eyes from their island across the sea and gain rule of the waves.</Italian>
 		<Spanish>It is the year 829 AD. After the migration of Germanic peoples to Britain, the island has been divided between several Celtic, Norse and Anglo-Saxon kingdoms. Recently the King of Wessex has been crowned Bretwalda and thus ruler of all of England. Now unified, the English people can turn their eyes from their island across the sea and gain rule of the waves.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ENGLAND_1500AD</Tag>
+		<English>It is the year 1500 AD. England has come out of the devastating War of the Roses with the competent and stable Tudor dynasty in power. Losing its continental possessions has oriented England away from Europe and strengthened its commercial and naval power. As such, it is well positioned to take advantage of the recent discovery of the New World.</English>
+		<French>It is the year 1500 AD. England has come out of the devastating War of the Roses with the competent and stable Tudor dynasty in power. Losing its continental possessions has oriented England away from Europe and strengthened its commercial and naval power. As such, it is well positioned to take advantage of the recent discovery of the New World.</French>
+		<German>It is the year 1500 AD. England has come out of the devastating War of the Roses with the competent and stable Tudor dynasty in power. Losing its continental possessions has oriented England away from Europe and strengthened its commercial and naval power. As such, it is well positioned to take advantage of the recent discovery of the New World.</German>
+		<Italian>It is the year 1500 AD. England has come out of the devastating War of the Roses with the competent and stable Tudor dynasty in power. Losing its continental possessions has oriented England away from Europe and strengthened its commercial and naval power. As such, it is well positioned to take advantage of the recent discovery of the New World.</Italian>
+		<Spanish>It is the year 1500 AD. England has come out of the devastating War of the Roses with the competent and stable Tudor dynasty in power. Losing its continental possessions has oriented England away from Europe and strengthened its commercial and naval power. As such, it is well positioned to take advantage of the recent discovery of the New World.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ENGLAND_1700AD</Tag>
@@ -226,12 +274,28 @@
 		<Spanish>It is the year 295 BC. The Ethiopian highlands are exceptionally fertile due to its temperate climate, but also quite remote from other civilizations. This changes when the major trade routes between the Roman Empire and Indians shift to the Red Sea, allowing the Ethiopian kingdom of Aksum to flourish.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_ETHIOPIA_1500AD</Tag>
+		<English>It is the year 1500 AD. The Ethiopian Empire continues as the oldest Christian power in Africa. Internal strife and degradation of royal authority have left the empire weak, and it is surrounded by hostile Muslim states. At this moment, the dynamic Adal Sultanate is preparing an invasion with the support of the rising Ottomans.</English>
+		<French>It is the year 1500 AD. The Ethiopian Empire continues as the oldest Christian power in Africa. Internal strife and degradation of royal authority have left the empire weak, and it is surrounded by hostile Muslim states. At this moment, the dynamic Adal Sultanate is preparing an invasion with the support of the rising Ottomans.</French>
+		<German>It is the year 1500 AD. The Ethiopian Empire continues as the oldest Christian power in Africa. Internal strife and degradation of royal authority have left the empire weak, and it is surrounded by hostile Muslim states. At this moment, the dynamic Adal Sultanate is preparing an invasion with the support of the rising Ottomans.</German>
+		<Italian>It is the year 1500 AD. The Ethiopian Empire continues as the oldest Christian power in Africa. Internal strife and degradation of royal authority have left the empire weak, and it is surrounded by hostile Muslim states. At this moment, the dynamic Adal Sultanate is preparing an invasion with the support of the rising Ottomans.</Italian>
+		<Spanish>It is the year 1500 AD. The Ethiopian Empire continues as the oldest Christian power in Africa. Internal strife and degradation of royal authority have left the empire weak, and it is surrounded by hostile Muslim states. At this moment, the dynamic Adal Sultanate is preparing an invasion with the support of the rising Ottomans.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_FRANCE</Tag>
 		<English>It is the year 496 AD. After the collapse of the Western Roman Empire, Christian Europe is divided into small kingdoms. Under Clovis I of the Merovingian dynasty, the Frankish kingdom now has united the Franks and Gallo-Romans, laying the foundation to reclaim Rome's legacy and building a new Catholic Europe.</English>
 		<French>It is the year 496 AD. After the collapse of the Western Roman Empire, Christian Europe is divided into small kingdoms. Under Clovis I of the Merovingian dynasty, the Frankish kingdom now has united the Franks and Gallo-Romans, laying the foundation to reclaim Rome's legacy and building a new Catholic Europe.</French>
 		<German>It is the year 496 AD. After the collapse of the Western Roman Empire, Christian Europe is divided into small kingdoms. Under Clovis I of the Merovingian dynasty, the Frankish kingdom now has united the Franks and Gallo-Romans, laying the foundation to reclaim Rome's legacy and building a new Catholic Europe.</German>
 		<Italian>It is the year 496 AD. After the collapse of the Western Roman Empire, Christian Europe is divided into small kingdoms. Under Clovis I of the Merovingian dynasty, the Frankish kingdom now has united the Franks and Gallo-Romans, laying the foundation to reclaim Rome's legacy and building a new Catholic Europe.</Italian>
 		<Spanish>It is the year 496 AD. After the collapse of the Western Roman Empire, Christian Europe is divided into small kingdoms. Under Clovis I of the Merovingian dynasty, the Frankish kingdom now has united the Franks and Gallo-Romans, laying the foundation to reclaim Rome's legacy and building a new Catholic Europe.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_FRANCE_1500AD</Tag>
+		<English>It is the year 1500 AD. After its victory in the Hundred Years War, France has centralized and consolidated its power. Its wealth and military strength has put it in conflict with the Hasburgs, who control the Holy Roman Empire. The wealthy Italian cities present the immediate prize for whoever can defeat the other leading Catholic power.</English>
+		<French>It is the year 1500 AD. After its victory in the Hundred Years War, France has centralized and consolidated its power. Its wealth and military strength has put it in conflict with the Hasburgs, who control the Holy Roman Empire. The wealthy Italian cities present the immediate prize for whoever can defeat the other leading Catholic power.</French>
+		<German>It is the year 1500 AD. After its victory in the Hundred Years War, France has centralized and consolidated its power. Its wealth and military strength has put it in conflict with the Hasburgs, who control the Holy Roman Empire. The wealthy Italian cities present the immediate prize for whoever can defeat the other leading Catholic power.</German>
+		<Italian>It is the year 1500 AD. After its victory in the Hundred Years War, France has centralized and consolidated its power. Its wealth and military strength has put it in conflict with the Hasburgs, who control the Holy Roman Empire. The wealthy Italian cities present the immediate prize for whoever can defeat the other leading Catholic power.</Italian>
+		<Spanish>It is the year 1500 AD. After its victory in the Hundred Years War, France has centralized and consolidated its power. Its wealth and military strength has put it in conflict with the Hasburgs, who control the Holy Roman Empire. The wealthy Italian cities present the immediate prize for whoever can defeat the other leading Catholic power.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_FRANCE_600AD</Tag>
@@ -290,6 +354,14 @@
 		<Spanish>It is the year 843 AD. The Treaty of Verdun brings the final separation of the Frankish Empire into West and East Francia. The eastern half is dominated by German peoples, and not only would its German kings break with the Romantic Frankish culture, but also claim its imperial title and the continuation of the Holy Roman Empire.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_HOLY_ROME_1500AD</Tag>
+		<English>It is the year 1500 AD. The decentralized politics of the Holy Roman Empire have fragmented it into hundreds of constituent polities. At the same time, the Habsburg dynasty has taken hold of the Imperial throne. With so much power resting in its Catholic office, how will the Habsburgs react to increasing religious sectarianism?</English>
+		<French>It is the year 1500 AD. The decentralized politics of the Holy Roman Empire have fragmented it into hundreds of constituent polities. At the same time, the Habsburg dynasty has taken hold of the Imperial throne. With so much power resting in its Catholic office, how will the Habsburgs react to increasing religious sectarianism?</French>
+		<German>It is the year 1500 AD. The decentralized politics of the Holy Roman Empire have fragmented it into hundreds of constituent polities. At the same time, the Habsburg dynasty has taken hold of the Imperial throne. With so much power resting in its Catholic office, how will the Habsburgs react to increasing religious sectarianism?</German>
+		<Italian>It is the year 1500 AD. The decentralized politics of the Holy Roman Empire have fragmented it into hundreds of constituent polities. At the same time, the Habsburg dynasty has taken hold of the Imperial throne. With so much power resting in its Catholic office, how will the Habsburgs react to increasing religious sectarianism?</Italian>
+		<Spanish>It is the year 1500 AD. The decentralized politics of the Holy Roman Empire have fragmented it into hundreds of constituent polities. At the same time, the Habsburg dynasty has taken hold of the Imperial throne. With so much power resting in its Catholic office, how will the Habsburgs react to increasing religious sectarianism?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_AUSTRIA_1700AD</Tag>
 		<English>It is the year 1700 AD. Despite the setbacks during the Thirty Years War, the victory at the Siege of Vienna allowed the Habsburg Monarchy to drive back the Turks and secure their holdings in the Balkans. The beginning of the Austrian baroque let arts and architecture flourish, but the weakness of the Spanish line may lead to another war soon ...</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. Malgr&#233; les revers subis pendant la Guerre de Trente Ans, la victoire lors du Si&#232;ge de Vienne a permis &#224; la monarchie des Habsbourg de repousser l'envahisseur turc et de consolider ses possessions dans les Balkans. Parall&#232;lement, la p&#233;riode baroque en Autriche d&#233;bute, permettant aux arts et &#224; l'architecture de prosp&#233;rer. Mais la faiblesse de la lign&#233;e espagnole des Habsbourg risque de causer une nouvelle guerre...</French>
@@ -304,6 +376,14 @@
 		<German>It is the year 1150 AD. Manco Capac has just founded the Kingdom of Cuzco, the first Incan kingdom. Even in the harsh environment of the Andes and lacking suitable pack animals, they set out to create an empire never seen before in the Americas.</German>
 		<Italian>It is the year 1150 AD. Manco Capac has just founded the Kingdom of Cuzco, the first Incan kingdom. Even in the harsh environment of the Andes and lacking suitable pack animals, they set out to create an empire never seen before in the Americas.</Italian>
 		<Spanish>It is the year 1150 AD. Manco Capac has just founded the Kingdom of Cuzco, the first Incan kingdom. Even in the harsh environment of the Andes and lacking suitable pack animals, they set out to create an empire never seen before in the Americas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_INCA_1500AD</Tag>
+		<English>It is the year 1500 AD. The Inca Empire stretches along most of the Andean coast and has become the greatest native empire in the history of the Americas. Its sophisticated road and messaging system enables the rule of its Four Regions by the Sapa Inca. The recent conquest of the Kingdom of Chimor destroyed its only peer competitor and left no one to challenge it, at least in the Americas.</English>
+		<French>It is the year 1500 AD. The Inca Empire stretches along most of the Andean coast and has become the greatest native empire in the history of the Americas. Its sophisticated road and messaging system enables the rule of its Four Regions by the Sapa Inca. The recent conquest of the Kingdom of Chimor destroyed its only peer competitor and left no one to challenge it, at least in the Americas.</French>
+		<German>It is the year 1500 AD. The Inca Empire stretches along most of the Andean coast and has become the greatest native empire in the history of the Americas. Its sophisticated road and messaging system enables the rule of its Four Regions by the Sapa Inca. The recent conquest of the Kingdom of Chimor destroyed its only peer competitor and left no one to challenge it, at least in the Americas.</German>
+		<Italian>It is the year 1500 AD. The Inca Empire stretches along most of the Andean coast and has become the greatest native empire in the history of the Americas. Its sophisticated road and messaging system enables the rule of its Four Regions by the Sapa Inca. The recent conquest of the Kingdom of Chimor destroyed its only peer competitor and left no one to challenge it, at least in the Americas.</Italian>
+		<Spanish>It is the year 1500 AD. The Inca Empire stretches along most of the Andean coast and has become the greatest native empire in the history of the Americas. Its sophisticated road and messaging system enables the rule of its Four Regions by the Sapa Inca. The recent conquest of the Kingdom of Chimor destroyed its only peer competitor and left no one to challenge it, at least in the Americas.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_INDIA</Tag>
@@ -354,6 +434,14 @@
 		<Spanish>It is the year 1167 AD. For too long has Italy been under the rule of German kings, but now the Lombard cities have risen up and thanks to Papal support, achieved de facto independence. The Italian city states, though often feuding with each other, are centers of science, culture and commerce and can now reap the benefits of their skills to usher in a Renaissance of European culture.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_ITALY_1500AD</Tag>
+		<English>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</English>
+		<French>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</French>
+		<German>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</German>
+		<Italian>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</Italian>
+		<Spanish>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_JAPAN</Tag>
 		<English>It is the year 525 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</English>
 		<French>Nous sommes en l'an 525 ap. J.-C. Depuis la Cor&#233;e, le bouddhisme est introduit dans le proto-&#201;tat japonais de la province de Yamato. Cela ouvre la porte &#224; l'influence culturelle des dynasties chinoise Sui et Tang, menant &#224; une centralisation du pouvoir en un empire du Japon.</French>
@@ -368,6 +456,14 @@
 		<German>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</German>
 		<Italian>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</Italian>
 		<Spanish>It is the year 600 AD. The early Japanese polity centered around the Yamato province is introduced to Buddhism from Korea. This allows the spread of Chinese influences from the Sui and Tang dynasties to Japan, followed by a centralization of power into the Empire of Japan.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_JAPAN_1500AD</Tag>
+		<English>It is the year 1500 AD. Since the Onin War, the Muromachi Shogunate has been descending into a sequence of internal conflicts. In this Warring States Period, power is increasingly in the hands of local daimyos vying for power. Can one of them rise to unite Japan again?</English>
+		<French>It is the year 1500 AD. Since the Onin War, the Muromachi Shogunate has been descending into a sequence of internal conflicts. In this Warring States Period, power is increasingly in the hands of local daimyos vying for power. Can one of them rise to unite Japan again?</French>
+		<German>It is the year 1500 AD. Since the Onin War, the Muromachi Shogunate has been descending into a sequence of internal conflicts. In this Warring States Period, power is increasingly in the hands of local daimyos vying for power. Can one of them rise to unite Japan again?</German>
+		<Italian>It is the year 1500 AD. Since the Onin War, the Muromachi Shogunate has been descending into a sequence of internal conflicts. In this Warring States Period, power is increasingly in the hands of local daimyos vying for power. Can one of them rise to unite Japan again?</Italian>
+		<Spanish>It is the year 1500 AD. Since the Onin War, the Muromachi Shogunate has been descending into a sequence of internal conflicts. In this Warring States Period, power is increasingly in the hands of local daimyos vying for power. Can one of them rise to unite Japan again?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_JAPAN_1700AD</Tag>
@@ -386,6 +482,14 @@
 		<Spanish>It is the year 716 AD. Intensifying trade across the Strait of Malacca brings the island of Java into the Indian cultural sphere. The introduction of Hinduism and Buddhism prompts the construction of monumental temple complexes, supported by extensive agricultural use of the limited land on the island. Can Java dominate the wider archipelago?</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_JAVA_1500AD</Tag>
+		<English>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</English>
+		<French>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</French>
+		<German>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</German>
+		<Italian>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</Italian>
+		<Spanish>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_KHMER</Tag>
 		<English>It is the year 50 AD. The people of Cambodia have begun to harness the enormous water resources provided by recurring monsoons and the vast Bassac and Mekong rivers. With their developing mastery of hydraulic engineering, Khmer population centers and religious monuments can exceed any previous city in the tropics.</English>
 		<French>It is the year 50 AD. The people of Cambodia have begun to harness the enormous water resources provided by recurring monsoons and the vast Bassac and Mekong rivers. With their developing mastery of hydraulic engineering, Khmer population centers and religious monuments can exceed any previous city in the tropics.</French>
@@ -402,6 +506,14 @@
 		<Spanish>It is the year 600 AD. The Chenla Kingdom around the Bassac and Mekong rivers is the first unified state in Cambodia, being connected with both India and China. With their developing mastery of hydraulic engineering, Khmer population centers and religious monuments can exceed any previous city in the tropics.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_KHMER_1500AD</Tag>
+		<English>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</English>
+		<French>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</French>
+		<German>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</German>
+		<Italian>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</Italian>
+		<Spanish>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA</Tag>
 		<English>It is the year 50 BC. The three Korean kingdoms of Silla, Baekje and Goguryeo form on the Korean peninsula, the first step of centralization of power away from their predecessor chiefdoms. The Chinese are close; Korea will have to adapt their more advanced organization without abandoning its own sovereignty.</English>
 		<French>Nous sommes en l'an 50 av. J.-C. Les trois royaumes de Silla, Baekje et Goguryeo se forment sur la p&#233;ninsule cor&#233;enne, ce qui constitue la premi&#232;re &#233;tape d'une centralisation des pouvoirs apr&#232;s une &#232;re de conf&#233;d&#233;rations de chefferies. Les Chinois sont proches; la Cor&#233;e devra s'adapter &#224; leur organisation sup&#233;rieure sans pour autant compromettre sa propre souverainet&#233;.</French>
@@ -416,6 +528,14 @@
 		<German>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</German>
 		<Italian>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</Italian>
 		<Spanish>It is the year 600 AD. The three Korean kingdoms still thrive and Goguryeo has reached its greatest territorial extent. But now that China is reunited again, they have to be careful to protect their independence for the future.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KOREA_1500AD</Tag>
+		<English>It is the year 1500 AD. Under the Joseon dynasty, Korea is experiencing an era of successful administration and cultural and scientific progress. Can Korea preserve this peaceful coexistence with its larger neighbours?</English>
+		<French>It is the year 1500 AD. Under the Joseon dynasty, Korea is experiencing an era of successful administration and cultural and scientific progress. Can Korea preserve this peaceful coexistence with its larger neighbours?</French>
+		<German>It is the year 1500 AD. Under the Joseon dynasty, Korea is experiencing an era of successful administration and cultural and scientific progress. Can Korea preserve this peaceful coexistence with its larger neighbours?</German>
+		<Italian>It is the year 1500 AD. Under the Joseon dynasty, Korea is experiencing an era of successful administration and cultural and scientific progress. Can Korea preserve this peaceful coexistence with its larger neighbours?</Italian>
+		<Spanish>It is the year 1500 AD. Under the Joseon dynasty, Korea is experiencing an era of successful administration and cultural and scientific progress. Can Korea preserve this peaceful coexistence with its larger neighbours?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA_1700AD</Tag>
@@ -450,6 +570,14 @@
 		<Spanish>It is the year 600 AD. The people of Sumatra and the Malay peninsula are uniquely positioned to profit from the wealth passing through the Strait of Malacca. Trade with the outside world connects them to the Greater Indian cultural sphere. Can they build a trade empire to reap the riches of both international trade and its own tropical goods?</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_MALAYA_1500AD</Tag>
+		<English>It is the year 1500 AD. With the disintegration of the Majapahit Empire, the Malay people have restored control of the straits. After its conversion to Islam, the Sultanate of Malacca gained access to Muslim scholars and administrators, which helped turn it into the most successful state in the region, ushering in an new Islamic age in Indonesia.</English>
+		<French>It is the year 1500 AD. With the disintegration of the Majapahit Empire, the Malay people have restored control of the straits. After its conversion to Islam, the Sultanate of Malacca gained access to Muslim scholars and administrators, which helped turn it into the most successful state in the region, ushering in an new Islamic age in Indonesia.</French>
+		<German>It is the year 1500 AD. With the disintegration of the Majapahit Empire, the Malay people have restored control of the straits. After its conversion to Islam, the Sultanate of Malacca gained access to Muslim scholars and administrators, which helped turn it into the most successful state in the region, ushering in an new Islamic age in Indonesia.</German>
+		<Italian>It is the year 1500 AD. With the disintegration of the Majapahit Empire, the Malay people have restored control of the straits. After its conversion to Islam, the Sultanate of Malacca gained access to Muslim scholars and administrators, which helped turn it into the most successful state in the region, ushering in an new Islamic age in Indonesia.</Italian>
+		<Spanish>It is the year 1500 AD. With the disintegration of the Majapahit Empire, the Malay people have restored control of the straits. After its conversion to Islam, the Sultanate of Malacca gained access to Muslim scholars and administrators, which helped turn it into the most successful state in the region, ushering in an new Islamic age in Indonesia.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_MALI</Tag>
 		<English>It is the year 300 AD. Sub-Saharan Africa is still underdeveloped compared to the rest of the Old World. But the emerging Kingdom of Ghana controls rich gold mines, attracting the attention of its surrounding neighbors. If it can defend against foreign attempts to seize its riches by force, Ghana has the opportunity to truly become the richest civilization on Earth.</English>
 		<French>It is the year 300 AD. Sub-Saharan Africa is still underdeveloped compared to the rest of the Old World. But the emerging Kingdom of Ghana controls rich gold mines, attracting the attention of its surrounding neighbors. If it can defend against foreign attempts to seize its riches by force, Ghana has the opportunity to truly become the richest civilization on Earth.</French>
@@ -464,6 +592,14 @@
 		<German>It is the year 600 AD. The Ghana Empire has emerged as one of the first developed states of Sub-Saharan Africa, drawing its wealth from its rich gold mines and the trade in copper and salt. Intensifying contact with the civilizations north of the Sahara is going to bring both military threats and new religious ideas. Can Ghana prevail and prosper from its riches?</German>
 		<Italian>It is the year 600 AD. The Ghana Empire has emerged as one of the first developed states of Sub-Saharan Africa, drawing its wealth from its rich gold mines and the trade in copper and salt. Intensifying contact with the civilizations north of the Sahara is going to bring both military threats and new religious ideas. Can Ghana prevail and prosper from its riches?</Italian>
 		<Spanish>It is the year 600 AD. The Ghana Empire has emerged as one of the first developed states of Sub-Saharan Africa, drawing its wealth from its rich gold mines and the trade in copper and salt. Intensifying contact with the civilizations north of the Sahara is going to bring both military threats and new religious ideas. Can Ghana prevail and prosper from its riches?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MALI_1500AD</Tag>
+		<English>It is the year 1500 AD. The Songhai Empire has conquered Mali and is the undisputed ruler of the Niger region. Eclipsing its predecessor in military power, the Songhai still maintain its trade network, mining wealth and religious devotion.</English>
+		<French>It is the year 1500 AD. The Songhai Empire has conquered Mali and is the undisputed ruler of the Niger region. Eclipsing its predecessor in military power, the Songhai still maintain its trade network, mining wealth and religious devotion.</French>
+		<German>It is the year 1500 AD. The Songhai Empire has conquered Mali and is the undisputed ruler of the Niger region. Eclipsing its predecessor in military power, the Songhai still maintain its trade network, mining wealth and religious devotion.</German>
+		<Italian>It is the year 1500 AD. The Songhai Empire has conquered Mali and is the undisputed ruler of the Niger region. Eclipsing its predecessor in military power, the Songhai still maintain its trade network, mining wealth and religious devotion.</Italian>
+		<Spanish>It is the year 1500 AD. The Songhai Empire has conquered Mali and is the undisputed ruler of the Niger region. Eclipsing its predecessor in military power, the Songhai still maintain its trade network, mining wealth and religious devotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MAYA</Tag>
@@ -498,12 +634,28 @@
 		<Spanish>It is the year 711 AD. The Berbers and Arabs of the Maghreb have crossed the Strait of Gibraltar and defeated the Visigoths to establish the Emirate of Cordoba in Al-Andalus, driving the Iberian Christians to the northern coast of Asturias.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_MOORS_1500AD</Tag>
+		<English>It is the year 1500 AD. With the Sultanate of Granada conquered, the Christian kingdoms have completed their reconquista of the Iberian peninsula. In Morocco, the Saadi dynasty has been established in face of further Christian expansion. Can they defend the Maghreb and continue to be a threat to Christian Europe?</English>
+		<French>It is the year 1500 AD. With the Sultanate of Granada conquered, the Christian kingdoms have completed their reconquista of the Iberian peninsula. In Morocco, the Saadi dynasty has been established in face of further Christian expansion. Can they defend the Maghreb and continue to be a threat to Christian Europe?</French>
+		<German>It is the year 1500 AD. With the Sultanate of Granada conquered, the Christian kingdoms have completed their reconquista of the Iberian peninsula. In Morocco, the Saadi dynasty has been established in face of further Christian expansion. Can they defend the Maghreb and continue to be a threat to Christian Europe?</German>
+		<Italian>It is the year 1500 AD. With the Sultanate of Granada conquered, the Christian kingdoms have completed their reconquista of the Iberian peninsula. In Morocco, the Saadi dynasty has been established in face of further Christian expansion. Can they defend the Maghreb and continue to be a threat to Christian Europe?</Italian>
+		<Spanish>It is the year 1500 AD. With the Sultanate of Granada conquered, the Christian kingdoms have completed their reconquista of the Iberian peninsula. In Morocco, the Saadi dynasty has been established in face of further Christian expansion. Can they defend the Maghreb and continue to be a threat to Christian Europe?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_MUGHALS</Tag>
 		<English>It is the year 1206 AD. Although Muslim rulers have occasionally raided India for centuries, the foundation of the Delhi Sultanate by Muhammad of Ghor marks the establishment of Islam as a political power on the subcontinent. Their successors, including the Muslim Mughal dynasty, would spread their faith all over India and erect its greatest architectural wonders since ancient times.</English>
 		<French>Nous sommes en l'an 1206 ap. J.-C. Bien que des souverains musulmans fassent occasionnellement des incursions en Inde depuis des si&#232;cles, c'est la fondation du Sultanat de Delhi par Muhammad Gh&#251;r&#238; qui marque l'implantation de l'islam comme puissance politique dans le sous-continent. Les successeurs du sultanat, y compris la dynastie moghole, propageront la foi musulmane partout &#224; travers l'Inde et &#233;rigeront des merveilles architecturales sans &#233;gales depuis l'Antiquit&#233;.</French>
 		<German>It is the year 1206 AD. Although Muslim rulers have occasionally raided India for centuries, the foundation of the Delhi Sultanate by Muhammad of Ghor marks the establishment of Islam as a political power on the subcontinent. Their successors, including the Muslim Mughal dynasty, would spread their faith all over India and erect its greatest architectural wonders since ancient times.</German>
 		<Italian>It is the year 1206 AD. Although Muslim rulers have occasionally raided India for centuries, the foundation of the Delhi Sultanate by Muhammad of Ghor marks the establishment of Islam as a political power on the subcontinent. Their successors, including the Muslim Mughal dynasty, would spread their faith all over India and erect its greatest architectural wonders since ancient times.</Italian>
 		<Spanish>It is the year 1206 AD. Although Muslim rulers have occasionally raided India for centuries, the foundation of the Delhi Sultanate by Muhammad of Ghor marks the establishment of Islam as a political power on the subcontinent. Their successors, including the Muslim Mughal dynasty, would spread their faith all over India and erect its greatest architectural wonders since ancient times.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_MUGHALS_1500AD</Tag>
+		<English>It is the year 1500 AD. After pushing deep into the south of India, the Tughluq dynasty collapsed, sending the Delhi Sultanate into a cycle of collapse and conquest by foreign dynasties. It has by now been reduced to its core territories in the north. Can another foreign dynasty restore it to dominance?</English>
+		<French>It is the year 1500 AD. After pushing deep into the south of India, the Tughluq dynasty collapsed, sending the Delhi Sultanate into a cycle of collapse and conquest by foreign dynasties. It has by now been reduced to its core territories in the north. Can another foreign dynasty restore it to dominance?</French>
+		<German>It is the year 1500 AD. After pushing deep into the south of India, the Tughluq dynasty collapsed, sending the Delhi Sultanate into a cycle of collapse and conquest by foreign dynasties. It has by now been reduced to its core territories in the north. Can another foreign dynasty restore it to dominance?</German>
+		<Italian>It is the year 1500 AD. After pushing deep into the south of India, the Tughluq dynasty collapsed, sending the Delhi Sultanate into a cycle of collapse and conquest by foreign dynasties. It has by now been reduced to its core territories in the north. Can another foreign dynasty restore it to dominance?</Italian>
+		<Spanish>It is the year 1500 AD. After pushing deep into the south of India, the Tughluq dynasty collapsed, sending the Delhi Sultanate into a cycle of collapse and conquest by foreign dynasties. It has by now been reduced to its core territories in the north. Can another foreign dynasty restore it to dominance?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_MUGHALS_1700AD</Tag>
@@ -546,6 +698,22 @@
 		<Spanish>It is the year 600 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Norse have to turn to lands across the sea. Not only the coasts of the North Sea, but also those of the Mediterranean and even the New World make good targets for either plunder or settlement.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_NORSE_1500AD</Tag>
+		<English>It is the year 1500 AD. Denmark has presided over the powerful Kalmar Union for over a hundred years. However, the discovery of the New World threatens its commercial power in the Baltic Sea. As Sweden asserts its independence from the union, is Denmark on the decline?</English>
+		<French>It is the year 1500 AD. Denmark has presided over the powerful Kalmar Union for over a hundred years. However, the discovery of the New World threatens its commercial power in the Baltic Sea. As Sweden asserts its independence from the union, is Denmark on the decline?</French>
+		<German>It is the year 1500 AD. Denmark has presided over the powerful Kalmar Union for over a hundred years. However, the discovery of the New World threatens its commercial power in the Baltic Sea. As Sweden asserts its independence from the union, is Denmark on the decline?</German>
+		<Italian>It is the year 1500 AD. Denmark has presided over the powerful Kalmar Union for over a hundred years. However, the discovery of the New World threatens its commercial power in the Baltic Sea. As Sweden asserts its independence from the union, is Denmark on the decline?</Italian>
+		<Spanish>It is the year 1500 AD. Denmark has presided over the powerful Kalmar Union for over a hundred years. However, the discovery of the New World threatens its commercial power in the Baltic Sea. As Sweden asserts its independence from the union, is Denmark on the decline?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NORSE_1700AD</Tag>
+		<English>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</English>
+		<French>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</French>
+		<German>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</German>
+		<Italian>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</Italian>
+		<Spanish>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_NUBIA</Tag>
 		<English>It is the year 2200 BC. On the Upper Nile, the Nubian culture of Kerma develops alongside its northern neighbor Egypt. Nubia provides Egypt with valuable goods like gold, incense, and ivory. Its archers are equally valued as mercenaries. Can Nubia leverage them to become a threat to Egypt itself?</English>
 		<French>It is the year 2200 BC. On the Upper Nile, the Nubian culture of Kerma develops alongside its northern neighbor Egypt. Nubia provides Egypt with valuable goods like gold, incense, and ivory. Its archers are equally valued as mercenaries. Can Nubia leverage them to become a threat to Egypt itself?</French>
@@ -586,6 +754,14 @@
 		<Spanish>It is the year 1025 AD. After the Christianization of the West Slavs in 966, the first Polish ruler is coronated as king. Fertile lands promise urban growth, while pagan neighbors to the north and declining Orthodox polities to the east offer opportunities for expansion.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_POLAND_1500AD</Tag>
+		<English>It is the year 1500 AD. The Jagiellonian union brought Poland and Lithuania together into the largest state of Europe. Combined with the conquest of Ruthenia, these vast territories enabled profitable agriculture and empowered the nobility, which enjoys its Golden Liberty and independence from the crown.</English>
+		<French>It is the year 1500 AD. The Jagiellonian union brought Poland and Lithuania together into the largest state of Europe. Combined with the conquest of Ruthenia, these vast territories enabled profitable agriculture and empowered the nobility, which enjoys its Golden Liberty and independence from the crown.</French>
+		<German>It is the year 1500 AD. The Jagiellonian union brought Poland and Lithuania together into the largest state of Europe. Combined with the conquest of Ruthenia, these vast territories enabled profitable agriculture and empowered the nobility, which enjoys its Golden Liberty and independence from the crown.</German>
+		<Italian>It is the year 1500 AD. The Jagiellonian union brought Poland and Lithuania together into the largest state of Europe. Combined with the conquest of Ruthenia, these vast territories enabled profitable agriculture and empowered the nobility, which enjoys its Golden Liberty and independence from the crown.</Italian>
+		<Spanish>It is the year 1500 AD. The Jagiellonian union brought Poland and Lithuania together into the largest state of Europe. Combined with the conquest of Ruthenia, these vast territories enabled profitable agriculture and empowered the nobility, which enjoys its Golden Liberty and independence from the crown.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_POLAND_1700AD</Tag>
 		<English>It is the year 1700 AD. Cossack uprisings and the Swedish deluge have severely weakened the Polish-Lithuanian Commonwealth, and the decentralized political system is incapable of reform. Encircled by the growing powers of Prussia, Austria and Russia, the very independence of Poland is in danger ...</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. Les soul&#232;vements cosaques d'une part, et le D&#233;luge su&#233;dois de l'autre, ont grandement affaibli la r&#233;publique des Deux Nations, dont le syst&#232;me politique d&#233;centralis&#233; s'av&#232;re peu propice aux r&#233;formes. Les puissances montantes que sont la Prusse, l'Autriche et la Russie menacent l'ind&#233;pendance m&#234;me de la Pologne...</French>
@@ -608,6 +784,14 @@
 		<German>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in an excellent position to send ships to ports all over the world and control the trade of all of Europe, Africa and Asia.</German>
 		<Italian>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in an excellent position to send ships to ports all over the world and control the trade of all of Europe, Africa and Asia.</Italian>
 		<Spanish>It is the year 1128 AD. Portugal has just defeated Spain and gained independence. Situated at the western end of Europe, the kingdom is in an excellent position to send ships to ports all over the world and control the trade of all of Europe, Africa and Asia.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_PORTUGAL_1500AD</Tag>
+		<English>It is the year 1500 AD. Portugal is the home of capable navigators. With the end of the reconquista, its eyes have been turned to the outside. The discovery of a sea route to India via the east, and the new land of Brazil in the west, promises a new era of wealth for the Kingdom of Portugal.</English>
+		<French>It is the year 1500 AD. Portugal is the home of capable navigators. With the end of the reconquista, its eyes have been turned to the outside. The discovery of a sea route to India via the east, and the new land of Brazil in the west, promises a new era of wealth for the Kingdom of Portugal.</French>
+		<German>It is the year 1500 AD. Portugal is the home of capable navigators. With the end of the reconquista, its eyes have been turned to the outside. The discovery of a sea route to India via the east, and the new land of Brazil in the west, promises a new era of wealth for the Kingdom of Portugal.</German>
+		<Italian>It is the year 1500 AD. Portugal is the home of capable navigators. With the end of the reconquista, its eyes have been turned to the outside. The discovery of a sea route to India via the east, and the new land of Brazil in the west, promises a new era of wealth for the Kingdom of Portugal.</Italian>
+		<Spanish>It is the year 1500 AD. Portugal is the home of capable navigators. With the end of the reconquista, its eyes have been turned to the outside. The discovery of a sea route to India via the east, and the new land of Brazil in the west, promises a new era of wealth for the Kingdom of Portugal.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_PORTUGAL_1700AD</Tag>
@@ -634,6 +818,14 @@
 		<Spanish>It is the year 1263 AD. The arrival of the Mongols in Europe has collapsed the Kievan Rus and devastated much of the Russian lands. The relatively minor city of Moscow has been spared and enjoys friendly relations with the Mongol Golden Horde. This puts it in an ideal position to surpass the old centers of the Rus, and eventually lay claim to dominance over all Russia, and even becoming the Heir to Rome.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_RUSSIA_1500AD</Tag>
+		<English>It is the year 1500 AD. Under the rule of Ivan III, the Grand Duchy of Moscow has tripled its territory. Novgorod has been defeated, and the Golden Horde is on the decline. Is the end of Christian Constantinople a sign that Moscow is the Third Rome?</English>
+		<French>It is the year 1500 AD. Under the rule of Ivan III, the Grand Duchy of Moscow has tripled its territory. Novgorod has been defeated, and the Golden Horde is on the decline. Is the end of Christian Constantinople a sign that Moscow is the Third Rome?</French>
+		<German>It is the year 1500 AD. Under the rule of Ivan III, the Grand Duchy of Moscow has tripled its territory. Novgorod has been defeated, and the Golden Horde is on the decline. Is the end of Christian Constantinople a sign that Moscow is the Third Rome?</German>
+		<Italian>It is the year 1500 AD. Under the rule of Ivan III, the Grand Duchy of Moscow has tripled its territory. Novgorod has been defeated, and the Golden Horde is on the decline. Is the end of Christian Constantinople a sign that Moscow is the Third Rome?</Italian>
+		<Spanish>It is the year 1500 AD. Under the rule of Ivan III, the Grand Duchy of Moscow has tripled its territory. Novgorod has been defeated, and the Golden Horde is on the decline. Is the end of Christian Constantinople a sign that Moscow is the Third Rome?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_RUSSIA_1700AD</Tag>
 		<English>It is the year 1700 AD. Under the rule of Peter the Great Russia is on the path of modernization. Sweden has just been defeated and the foundation of Sankt-Peterburg secured a window to the west for Russia. With the advance into Siberia, the Russian Empire is now the largest in the world.</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. Sous le r&#232;gne de Pierre le Grand, la Russie est sur la voie de la modernisation. &#192; l'ouest, la Su&#232;de vient d'&#234;tre vaincue, et la fondation de Saint-P&#233;tersbourg a solidifi&#233; le contr&#244;le de la r&#233;gion. &#192; l'est, la colonisation de la Sib&#233;rie fait de l'Empire russe le plus grand au monde.</French>
@@ -658,6 +850,14 @@
 		<Spanish>It is the year 718 AD. Arabs from the Ummayad Caliphate have overrun almost all of Iberia and put an end to Visigoth rule. Now the Spanish Kingdom of Asturias is founded in the mountainous north, seeking to restore Christian control over Iberia and expand it beyond.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_SPAIN_1500AD</Tag>
+		<English>It is the year 1500 AD. The Kingdom of Castile completed the reconquista of Spain in the same year that Christopher Columbus discovered the New World in the west. The reconquista must continue with a conquest of the New World.</English>
+		<French>It is the year 1500 AD. The Kingdom of Castile completed the reconquista of Spain in the same year that Christopher Columbus discovered the New World in the west. The reconquista must continue with a conquest of the New World.</French>
+		<German>It is the year 1500 AD. The Kingdom of Castile completed the reconquista of Spain in the same year that Christopher Columbus discovered the New World in the west. The reconquista must continue with a conquest of the New World.</German>
+		<Italian>It is the year 1500 AD. The Kingdom of Castile completed the reconquista of Spain in the same year that Christopher Columbus discovered the New World in the west. The reconquista must continue with a conquest of the New World.</Italian>
+		<Spanish>It is the year 1500 AD. The Kingdom of Castile completed the reconquista of Spain in the same year that Christopher Columbus discovered the New World in the west. The reconquista must continue with a conquest of the New World.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_SPAIN_1700AD</Tag>
 		<English>It is the year 1700 AD. The Spanish Empire is in a state of decline. Income from the American colonies is diminishing, the cultural flourishing of the last century has come to an end, and now the ruling Habsburg dynasty is about to die out. The conflict over the Spanish succession is about to consume Europe ...</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. L'Empire espagnol est en d&#233;clin. Les revenus tir&#233;s des colonies en Am&#233;rique diminuent, l'&#226;ge d'or culturel du si&#232;cle dernier a pris fin, et la dynastie des Habsbourg est sur le point de s'&#233;teindre. La succession d'Espagne va provoquer un conflit qui risque d'embraser l'Europe...</French>
@@ -674,12 +874,28 @@
 		<Spanish>It is the year 957 AD. Muslim traders have been frequenting the Swahili coast for centuries, when an exiled Persian noble arrives to found the Sultanate of Kilwa. The Swahili peoples are excellent navigators, and with its fortuitous position Kilwa can eclipse rivals like Mogadishu and become the new master of the Indian Ocean trade.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_SWAHILI_1500AD</Tag>
+		<English>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</English>
+		<French>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</French>
+		<German>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</German>
+		<Italian>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</Italian>
+		<Spanish>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_SWEDEN</Tag>
 		<English>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</English>
 		<French>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</French>
 		<German>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</German>
 		<Italian>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</Italian>
 		<Spanish>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_SWEDEN_1500AD</Tag>
+		<English>It is the year 1500 AD. Danish control of the Kalmar Union has disadvantaged Sweden for a long time, and at this point the union is fraying. Swedish nobles are asserting their own power, and it is only a matter of time until the elect their own king. Can Sweden succeed Denmark as the leading power in the Baltic Sea?</English>
+		<French>It is the year 1500 AD. Danish control of the Kalmar Union has disadvantaged Sweden for a long time, and at this point the union is fraying. Swedish nobles are asserting their own power, and it is only a matter of time until the elect their own king. Can Sweden succeed Denmark as the leading power in the Baltic Sea?</French>
+		<German>It is the year 1500 AD. Danish control of the Kalmar Union has disadvantaged Sweden for a long time, and at this point the union is fraying. Swedish nobles are asserting their own power, and it is only a matter of time until the elect their own king. Can Sweden succeed Denmark as the leading power in the Baltic Sea?</German>
+		<Italian>It is the year 1500 AD. Danish control of the Kalmar Union has disadvantaged Sweden for a long time, and at this point the union is fraying. Swedish nobles are asserting their own power, and it is only a matter of time until the elect their own king. Can Sweden succeed Denmark as the leading power in the Baltic Sea?</Italian>
+		<Spanish>It is the year 1500 AD. Danish control of the Kalmar Union has disadvantaged Sweden for a long time, and at this point the union is fraying. Swedish nobles are asserting their own power, and it is only a matter of time until the elect their own king. Can Sweden succeed Denmark as the leading power in the Baltic Sea?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_SWEDEN_1700AD</Tag>
@@ -698,6 +914,14 @@
 		<Spanish>It is the year 1238 AD. Tai peoples have migrated into the area surrounding the Chao Phraya river since the 8th century, but their various kingdoms have been forced to accept the suzerainty of the dominant Khmer Empire. Now the Sukhotai Kingdom has dealt a decisive defeat to the Khmer and sacked their capital of Angkor, establishing its hegemony over South East Asia.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_THAILAND_1500AD</Tag>
+		<English>It is the year 1500 AD. Ayutthaya has succeeded the earlier Sukhotai Kingdom. With its coastal location directly on the Chao Phraya, the capital city of Ayutthaya is perfectly situated the benefit from increased European contacts and grow into one of the largest cities in the world.</English>
+		<French>It is the year 1500 AD. Ayutthaya has succeeded the earlier Sukhotai Kingdom. With its coastal location directly on the Chao Phraya, the capital city of Ayutthaya is perfectly situated the benefit from increased European contacts and grow into one of the largest cities in the world.</French>
+		<German>It is the year 1500 AD. Ayutthaya has succeeded the earlier Sukhotai Kingdom. With its coastal location directly on the Chao Phraya, the capital city of Ayutthaya is perfectly situated the benefit from increased European contacts and grow into one of the largest cities in the world.</German>
+		<Italian>It is the year 1500 AD. Ayutthaya has succeeded the earlier Sukhotai Kingdom. With its coastal location directly on the Chao Phraya, the capital city of Ayutthaya is perfectly situated the benefit from increased European contacts and grow into one of the largest cities in the world.</Italian>
+		<Spanish>It is the year 1500 AD. Ayutthaya has succeeded the earlier Sukhotai Kingdom. With its coastal location directly on the Chao Phraya, the capital city of Ayutthaya is perfectly situated the benefit from increased European contacts and grow into one of the largest cities in the world.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_THAILAND_1700AD</Tag>
 		<English>It is the year 1700 AD. With excellent relations with the new European powers in South Asia and controlling one of the largest cities in the world, the Kingdom of Ayutthaya is in an advantageous condition. However, the threat from their Burmese neighbors is beginning to grow and even the Europeans might consider colonization ...</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. Le royaume d'Ayutthaya b&#233;n&#233;ficie d'excellentes relations avec les Europ&#233;ens &#233;tablis en Asie, et contr&#244;le l'une des villes les plus peupl&#233;es du monde. Cette posture avantageuse est toutefois menac&#233;e par le voisin birman, ainsi que par la possibilit&#233; d'une expansion coloniale europ&#233;enne...</French>
@@ -712,6 +936,14 @@
 		<German>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</German>
 		<Italian>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</Italian>
 		<Spanish>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TIBET_1500AD</Tag>
+		<English>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</English>
+		<French>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</French>
+		<German>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</German>
+		<Italian>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</Italian>
+		<Spanish>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_TOLTECS</Tag>
@@ -746,12 +978,36 @@
 		<Spanish>It is the year 600 AD. After throwing off their domination by the Rouran Khaganate, the Turks have taken control of the Central Asian steppes. Both China and the Middle East are open for raids and conquests, and the Silk Road promises vast riches to whoever controls it.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKESTAN_1500AD</Tag>
+		<English>It is the year 1500 AD. The Timurid Empire was the last successful Turkish state, but after a long decline its power has been fully broken with the emergence of the Safavids in Persia. The leading Turkic people are now the Uzbeks, who continue to rule from a reduced base in Bukhara and Samarkand.</English>
+		<French>It is the year 1500 AD. The Timurid Empire was the last successful Turkish state, but after a long decline its power has been fully broken with the emergence of the Safavids in Persia. The leading Turkic people are now the Uzbeks, who continue to rule from a reduced base in Bukhara and Samarkand.</French>
+		<German>It is the year 1500 AD. The Timurid Empire was the last successful Turkish state, but after a long decline its power has been fully broken with the emergence of the Safavids in Persia. The leading Turkic people are now the Uzbeks, who continue to rule from a reduced base in Bukhara and Samarkand.</German>
+		<Italian>It is the year 1500 AD. The Timurid Empire was the last successful Turkish state, but after a long decline its power has been fully broken with the emergence of the Safavids in Persia. The leading Turkic people are now the Uzbeks, who continue to rule from a reduced base in Bukhara and Samarkand.</Italian>
+		<Spanish>It is the year 1500 AD. The Timurid Empire was the last successful Turkish state, but after a long decline its power has been fully broken with the emergence of the Safavids in Persia. The leading Turkic people are now the Uzbeks, who continue to rule from a reduced base in Bukhara and Samarkand.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKESTAN_1700AD</Tag>
+		<English>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</English>
+		<French>Nous sommes en l'an 1700 ap. J.-C. Avec la mont&#233;e de la dynastie s&#233;f&#233;vide, la domination des Timourides en tant que principal empire turc au Moyen-Orient est chose du pass&#233;. Depuis, des tribus ouzb&#232;kes ont envahi la Transoxiane et captur&#233; ses cit&#233;s prosp&#232;res, &#233;tablissant ainsi le khanat de Boukhara.</French>
+		<German>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</German>
+		<Italian>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Italian>
+		<Spanish>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_TURKEY</Tag>
 		<English>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</English>
 		<French>Nous sommes en l'an 1280 ap. J.-C. Depuis l'effondrement de l'Empire seldjoukide, les Turcs d'Anatolie sont divis&#233;s en plusieurs petits beyliks. Or, Byzance est faible, et comme le Beylik ottoman est dirig&#233; par un chef fort, la fondation d'un empire semble &#224; port&#233;e de main. En prenant le Bosphore, les Ottomans auront l'opportunit&#233; d'&#233;tendre leur domination sur trois continents.</French>
 		<German>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</German>
 		<Italian>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</Italian>
 		<Spanish>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKEY_1500AD</Tag>
+		<English>It is the year 1500 AD. Having finally conquered Christian Constantinople and fended off a European crusade, the Ottoman Empire is fully in control of the crossroads of Europe and Asia. Now the Balkans, Mesopotamia, and even Egypt are open to Ottoman conquest. Can anyone halt their relentless expansion?</English>
+		<French>It is the year 1500 AD. Having finally conquered Christian Constantinople and fended off a European crusade, the Ottoman Empire is fully in control of the crossroads of Europe and Asia. Now the Balkans, Mesopotamia, and even Egypt are open to Ottoman conquest. Can anyone halt their relentless expansion?</French>
+		<German>It is the year 1500 AD. Having finally conquered Christian Constantinople and fended off a European crusade, the Ottoman Empire is fully in control of the crossroads of Europe and Asia. Now the Balkans, Mesopotamia, and even Egypt are open to Ottoman conquest. Can anyone halt their relentless expansion?</German>
+		<Italian>It is the year 1500 AD. Having finally conquered Christian Constantinople and fended off a European crusade, the Ottoman Empire is fully in control of the crossroads of Europe and Asia. Now the Balkans, Mesopotamia, and even Egypt are open to Ottoman conquest. Can anyone halt their relentless expansion?</Italian>
+		<Spanish>It is the year 1500 AD. Having finally conquered Christian Constantinople and fended off a European crusade, the Ottoman Empire is fully in control of the crossroads of Europe and Asia. Now the Balkans, Mesopotamia, and even Egypt are open to Ottoman conquest. Can anyone halt their relentless expansion?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_TURKEY_1700AD</Tag>
@@ -762,14 +1018,6 @@
 		<Spanish>It is the year 1700 AD. With the defeat at the Siege of Vienna, the military expansion of the Ottoman Empire has come to an end and it is on the defensive against the growing power of Austria and Russia. This change in the balance of power leads to increased cultural contact and exchange with the Europeans and a flowering of Ottoman culture.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_UZBEKISTAN</Tag>
-		<English>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</English>
-		<French>Nous sommes en l'an 1700 ap. J.-C. Avec la mont&#233;e de la dynastie s&#233;f&#233;vide, la domination des Timourides en tant que principal empire turc au Moyen-Orient est chose du pass&#233;. Depuis, des tribus ouzb&#232;kes ont envahi la Transoxiane et captur&#233; ses cit&#233;s prosp&#232;res, &#233;tablissant ainsi le khanat de Boukhara.</French>
-		<German>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</German>
-		<Italian>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Italian>
-		<Spanish>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_DOM_VIETNAM</Tag>
 		<English>It is the year 938 AD. Vietnam is an ancient culture, but until recently it has seen long periods of domination by its powerful neighbor China. This history has left a legacy of Chinese culture and forms of government, and at the same time created a tradition of military resistance and guerilla warfare. Now it is Vietnam's time to turn its attention southward.</English>
 		<French>It is the year 938 AD. Vietnam is an ancient culture, but until recently it has seen long periods of domination by its powerful neighbor China. This history has left a legacy of Chinese culture and forms of government, and at the same time created a tradition of military resistance and guerilla warfare. Now it is Vietnam's time to turn its attention southward.</French>
@@ -778,11 +1026,27 @@
 		<Spanish>It is the year 938 AD. Vietnam is an ancient culture, but until recently it has seen long periods of domination by its powerful neighbor China. This history has left a legacy of Chinese culture and forms of government, and at the same time created a tradition of military resistance and guerilla warfare. Now it is Vietnam's time to turn its attention southward.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_VIETNAM_1500AD</Tag>
+		<English>It is the year 1500 AD. After successfully defeating the Ming occupation, Vietnam is ruled by the energetic L&#234; dynasty. Plagued by economic problems, overpopulation, and devastation from war, Vietnam turns its attention south, trying to solve its troubles at the expense of the Champa Kingdom.</English>
+		<French>It is the year 1500 AD. After successfully defeating the Ming occupation, Vietnam is ruled by the energetic L&#234; dynasty. Plagued by economic problems, overpopulation, and devastation from war, Vietnam turns its attention south, trying to solve its troubles at the expense of the Champa Kingdom.</French>
+		<German>It is the year 1500 AD. After successfully defeating the Ming occupation, Vietnam is ruled by the energetic L&#234; dynasty. Plagued by economic problems, overpopulation, and devastation from war, Vietnam turns its attention south, trying to solve its troubles at the expense of the Champa Kingdom.</German>
+		<Italian>It is the year 1500 AD. After successfully defeating the Ming occupation, Vietnam is ruled by the energetic L&#234; dynasty. Plagued by economic problems, overpopulation, and devastation from war, Vietnam turns its attention south, trying to solve its troubles at the expense of the Champa Kingdom.</Italian>
+		<Spanish>It is the year 1500 AD. After successfully defeating the Ming occupation, Vietnam is ruled by the energetic L&#234; dynasty. Plagued by economic problems, overpopulation, and devastation from war, Vietnam turns its attention south, trying to solve its troubles at the expense of the Champa Kingdom.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_VIETNAM_1700AD</Tag>
 		<English>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</English>
 		<French>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</French>
 		<German>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</German>
 		<Italian>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</Italian>
 		<Spanish>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
 	</TEXT>
 </Civ4GameText>

@@ -463,16 +463,18 @@ def has_civic(identifier, iCivic):
 
 
 def scenarioStart():
-	return turn() == scenarioStartTurn()
+	return not game.isFinalInitialized() or turn() == scenarioStartTurn()
 
 
 def scenarioStartTurn():
+	if not game.isFinalInitialized():
+		return getGameTurnForYear(scenarioStartYear(), -3000, game.getCalendar(), game.getGameSpeedType())
+	
 	return getTurnForYear(scenarioStartYear())
 
 
 def scenarioStartYear():
-	lStartYears = [-3000, 600, 1700]
-	return lStartYears[scenario()]
+	return lScenarioStartYears[scenario()]
 
 
 def scenario():

@@ -20,7 +20,6 @@ encoding = "utf-8"
 ### Dictionaries with text keys
 
 dDefaultInsertNames = {
-	iNorse : "TXT_KEY_CIV_NORSE_SCANDINAVIA",
 	iKhmer : "TXT_KEY_CIV_KHMER_CAMBODIAN",
 	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARTICLE",
 	iDravidia : "TXT_KEY_CIV_DRAVIDIA_TAMIL_NADU",
@@ -597,6 +596,10 @@ dStartingLeaders = [
 {
 	iChina : iTaizong,
 },
+# 1500 AD
+{
+	
+},
 # 1700 AD
 {
 	iChina : iHongwu,
@@ -619,7 +622,8 @@ dStartingLeaders = [
 	iRussia : iPeter,
 	iOttomans : iSuleiman,
 	iNetherlands : iWilliam,
-}]
+},
+]
 
 ### Event handlers
 
@@ -1106,9 +1110,9 @@ def specificName(iPlayer):
 	
 			if not isCurrentCapital(iPlayer, "Byzantion"):
 				return capitalName(iPlayer)
-	
+			
 	elif iCiv == iMali:
-		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
+		if getColumn(iPlayer) >= 8 and isCurrentCapital(iPlayer, "Gawgaw"):
 			return "TXT_KEY_CIV_MALI_SONGHAI"
 		
 		if iEra <= iClassical:
@@ -1152,11 +1156,12 @@ def specificName(iPlayer):
 		if capital in plots.region(rAnatolia):
 			return "TXT_KEY_CIV_TURKS_RUM"
 			
-		if iEra >= iRenaissance and not tPlayer.isAVassal():
-			if bEmpire:
-				return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
+		if not tPlayer.isAVassal():
+			if iEra >= iRenaissance or not isControlled(iPlayer, plots.region(rPersia)):
+				if bEmpire:
+					return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
 				
-			return capitalName(iPlayer)
+				return capitalName(iPlayer)
 		
 	elif iCiv == iArabia:
 		if bResurrected:
@@ -1315,7 +1320,7 @@ def specificName(iPlayer):
 			return capitalName(iPlayer)
 			
 	elif iCiv == iThailand:
-		if getColumn(iPlayer) < 9:
+		if getColumn(iPlayer) < 9 and scenarioStartYear() < 1500:
 			return "TXT_KEY_CIV_THAILAND_SUKHOTHAI"
 		
 		if iEra <= iRenaissance:
@@ -1786,7 +1791,7 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_EGYPT_COPTIC"
 			
 	elif iCiv == iMali:
-		if iEra >= iRenaissance and isCurrentCapital(iPlayer, "Gawgaw"):
+		if getColumn(iPlayer) >= 8 and isCurrentCapital(iPlayer, "Gawgaw"):
 			return "TXT_KEY_CIV_MALI_SONGHAI"
 		
 		if iEra <= iClassical:
@@ -2696,6 +2701,8 @@ def leader(iPlayer):
 	elif iCiv == iDravidia:
 		if iEra >= iRenaissance: return iKrishnaDevaRaya
 		
+		if scenarioStartYear() >= 1500: return iKrishnaDevaRaya
+		
 	elif iCiv == iByzantium:
 		if year() >= year(1000): return iBasil
 	
@@ -2709,6 +2716,8 @@ def leader(iPlayer):
 		if iEra >= iGlobal: return iGerhardsen
 		
 		if iEra >= iRenaissance: return iChristian
+		
+		if scenarioStartYear() >= 1500: return iChristian
 		
 		if getColumn(iPlayer) >= 8 and capital in cities.rectangle(tNorway): return iHaakon
 		
@@ -2829,6 +2838,8 @@ def leader(iPlayer):
 		if not bMonarchy and iEra >= iIndustrial: return iAtaturk
 		
 		if iEra >= iRenaissance: return iSuleiman
+		
+		if scenarioStartYear() >= 1500: return iSuleiman
 				
 	elif iCiv == iThailand:
 		if iEra >= iIndustrial: return iMongkut
