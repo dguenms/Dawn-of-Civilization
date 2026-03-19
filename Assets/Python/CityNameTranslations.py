@@ -14668,7 +14668,10 @@ name_translations = {
 		iChinese: "Jinbian",
 		iGreek: "Pnom Pench",
 		iJapanese: "Punonpen",
-		iKhmerian: _,
+		iKhmerian: (
+			translate("Chaktomuk", iBefore=iMedieval),
+			_,
+		),
 		iKorean: "Peunompen",
 		iPersian: "Pnom Pen",
 		iSpanish: "Nom Pen",
