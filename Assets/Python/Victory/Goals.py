@@ -265,7 +265,10 @@ class Goal(Describable):
 				self.state = state
 				
 				if self.state == SUCCESS:
-					self.iSuccessTurn = turn()
+					if game.isFinalInitialized():
+						self.iSuccessTurn = turn()
+					else:
+						self.iSuccessTurn = scenarioStartTurn()
 	
 	def succeed(self):
 		self.set_state(SUCCESS)
