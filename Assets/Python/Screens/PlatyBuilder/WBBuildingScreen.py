@@ -148,6 +148,7 @@ class WBBuildingScreen:
 			iClass = BuildingInfo.getBuildingClassType()
 			if CvPlatyBuilderScreen.bHideInactive:
 				if gc.getCivilizationInfo(pCity.getCivilizationType()).getCivilizationBuildings(iClass) != i: continue
+				if not pCity.isHasBuilding(i) and not pCity.canConstruct(i, True, False, True): continue
 			if isNationalWonderClass(iClass):
 				lNational.append([BuildingInfo.getDescription(), i])
 			elif isTeamWonderClass(iClass):
