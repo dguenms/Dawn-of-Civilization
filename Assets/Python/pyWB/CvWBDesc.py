@@ -1511,9 +1511,11 @@ class CvCityDesc:
 			self.iYearAcquired = scenarioStartYear()
 		
 		if self.iYearFounded:
-			self.city.setGameTurnFounded(year(self.iYearFounded))
+			iGameTurnFounded = getGameTurnForYear(self.iYearFounded, -3000, game.getCalendar(), game.getGameSpeedType())
+			self.city.setGameTurnFounded(iGameTurnFounded)
 		if self.iYearAcquired:
-			self.city.setGameTurnAcquired(year(self.iYearAcquired))
+			iGameTurnAcquired = getGameTurnForYear(self.iYearAcquired, -3000, game.getCalendar(), game.getGameSpeedType())
+			self.city.setGameTurnAcquired(iGameTurnAcquired)
 		if self.originalOwner:
 			iOriginalOwnerCiv = Civ(CvUtil.findInfoTypeNum(gc.getCivilizationInfo, gc.getNumCivilizationInfos(), self.originalOwner))
 			if iOriginalOwnerCiv >= 0:
