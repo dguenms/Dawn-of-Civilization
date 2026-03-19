@@ -107,6 +107,15 @@ def initBirths():
 
 @handler("GameStart")
 def initCamera():
+	city = capital(active())
+	if city:
+		unit = units.at(city).owner(active()).land().first()
+		if unit:
+			interface.selectUnit(unit, True, False, False)
+			
+		plot(city).cameraLookAt()
+		return
+	
 	plots.capital(active()).cameraLookAt()
 
 
