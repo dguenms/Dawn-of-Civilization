@@ -576,7 +576,7 @@ BeginPlot
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginCity
@@ -613,7 +613,11 @@ BeginPlot
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_PORTUGUESE_CARRACK
+		UnitOwner=CIVILIZATION_PORTUGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginCity
@@ -649,7 +653,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_PORTUGAL
-		CityName=Ribeira Grande
+		CityName=Praia
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -739,6 +743,10 @@ BeginPlot
 	x=54,y=50
 	RouteType=ROUTE_ROAD
 	BeginUnit
+		UnitType=UNIT_GALLEON
+		UnitOwner=CIVILIZATION_PORTUGAL
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_GALLEASS
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
@@ -751,27 +759,27 @@ BeginPlot
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginUnit
@@ -821,11 +829,15 @@ BeginPlot
 	x=54,y=53
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_GALLEON
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
+		UnitOwner=CIVILIZATION_SPAIN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginCity
@@ -845,17 +857,18 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_SPAIN, Culture=100
 		EndCulture
+		YearFounded=820
 	EndCity
 EndPlot
 BeginPlot
 	x=54,y=65
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginCity
@@ -933,11 +946,15 @@ BeginPlot
 	x=56,y=49
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_GALLEON
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
+		UnitOwner=CIVILIZATION_SPAIN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginCity
@@ -1042,43 +1059,43 @@ BeginPlot
 	x=57,y=51
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_LANCER
+		UnitType=UNIT_SPANISH_CONQUISTADOR
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LANCER
+		UnitType=UNIT_SPANISH_CONQUISTADOR
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
@@ -1103,7 +1120,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=Toledo
+		CityName=Madrid
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -1138,11 +1155,11 @@ BeginPlot
 	x=57,y=54
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginCity
@@ -1340,15 +1357,19 @@ BeginPlot
 	x=58,y=59
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_GALLEON
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_CARAVEL
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginCity
@@ -1379,11 +1400,15 @@ BeginPlot
 	x=58,y=64
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_GALLEASS
+		UnitType=UNIT_GALLEON
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_GALLEASS
+		UnitType=UNIT_GALLEON
+		UnitOwner=CIVILIZATION_ENGLAND
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CARAVEL
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
@@ -1399,23 +1424,23 @@ BeginPlot
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
@@ -1474,11 +1499,11 @@ BeginPlot
 	x=58,y=67
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginCity
@@ -1581,15 +1606,15 @@ BeginPlot
 	x=59,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_GALLEASS
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginCity
@@ -1784,7 +1809,7 @@ BeginPlot
 	x=61,y=31
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginCity
@@ -1833,11 +1858,11 @@ BeginPlot
 	x=61,y=52
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_SPANISH_TERCIO
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
 	BeginCity
@@ -1892,7 +1917,23 @@ BeginPlot
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_PIKEMAN
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
@@ -1900,23 +1941,7 @@ BeginPlot
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_FRANCE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_FRANCE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_FRANCE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_FRANCE
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
@@ -2052,11 +2077,11 @@ BeginPlot
 	x=62,y=64
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginCity
@@ -2220,11 +2245,11 @@ BeginPlot
 	x=63,y=57
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginCity
@@ -2314,15 +2339,15 @@ BeginPlot
 	x=64,y=55
 	RouteType=ROUTE_ROMAN_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_GALLEASS
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
 	BeginCity
@@ -2407,11 +2432,11 @@ BeginPlot
 	x=65,y=62
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginCity
@@ -2611,11 +2636,11 @@ BeginPlot
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginCity
@@ -2664,7 +2689,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_PORTUGAL
-		CityName=Malobo
+		CityName=São Tomé
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -2915,17 +2940,17 @@ BeginPlot
 	x=68,y=59
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_HOLY_ROMAN
-		CityName=Freising
-		CityPopulation=4
+		CityName=Regensburg
+		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -2957,11 +2982,11 @@ BeginPlot
 	x=68,y=63
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginCity
@@ -3210,19 +3235,19 @@ BeginPlot
 	x=69,y=56
 	RouteType=ROUTE_ROMAN_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_ITALIAN_LANTERNA
 		UnitOwner=CIVILIZATION_ITALY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_ITALIAN_LANTERNA
 		UnitOwner=CIVILIZATION_ITALY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_ITALIAN_LANTERNA
 		UnitOwner=CIVILIZATION_ITALY
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_ITALIAN_LANTERNA
 		UnitOwner=CIVILIZATION_ITALY
 	EndUnit
 	BeginUnit
@@ -3502,31 +3527,35 @@ BeginPlot
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_HOLY_ROMAN_LANDSKNECHT
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_HOLY_ROMAN_LANDSKNECHT
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_HOLY_ROMAN_LANDSKNECHT
+		UnitOwner=CIVILIZATION_HOLY_ROMAN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HOLY_ROMAN_LANDSKNECHT
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginUnit
@@ -3734,13 +3763,14 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_POLAND, Culture=100
 		EndCulture
+		YearFounded=1000
 	EndCity
 EndPlot
 BeginPlot
 	x=73,y=71
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_COG
+		UnitType=UNIT_GALLEASS
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginUnit
@@ -3748,11 +3778,31 @@ BeginPlot
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_COG
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SWEDEN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SWEDEN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SWEDEN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SWEDEN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_SWEDEN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginUnit
@@ -3761,30 +3811,6 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_PIKEMAN
-		UnitOwner=CIVILIZATION_SWEDEN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_SWEDEN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_SWEDEN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_SWEDEN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_SWEDEN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWEDEN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginUnit
@@ -3809,7 +3835,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SWEDEN
-		CityName=Birka
+		CityName=Stockholm
 		CityPopulation=6
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_SWEDISH_SOLDATTORP
@@ -3892,11 +3918,11 @@ BeginPlot
 	x=74,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -4094,7 +4120,7 @@ BeginPlot
 	x=74,y=74
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginCity
@@ -4199,11 +4225,11 @@ BeginPlot
 	x=76,y=51
 	RouteType=ROUTE_ROMAN_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -4229,11 +4255,11 @@ BeginPlot
 	x=76,y=54
 	RouteType=ROUTE_ROMAN_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -4422,11 +4448,11 @@ BeginPlot
 	x=77,y=71
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginCity
@@ -4637,11 +4663,11 @@ BeginPlot
 	x=79,y=52
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -4685,55 +4711,11 @@ BeginPlot
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LANCER
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_LANCER
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LANCER
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
@@ -4905,14 +4887,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_SWAHILI
+		CityOwner=CIVILIZATION_NATIVE
 		CityName=Sofala
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -4923,11 +4905,10 @@ BeginPlot
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_SWAHILI_ISLAND_FORT
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_SWAHILI, Culture=100
+			Civilization=CIVILIZATION_NATIVE, Culture=100
 		EndCulture
 	EndCity
 EndPlot
@@ -5103,11 +5084,7 @@ BeginPlot
 	x=82,y=52
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_OTTOMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -5157,11 +5134,11 @@ BeginPlot
 	x=82,y=68
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginCity
@@ -5313,10 +5290,9 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=55
-	BonusType=NONE
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -5343,11 +5319,11 @@ BeginPlot
 	x=83,y=58
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -5731,15 +5707,27 @@ BeginPlot
 	x=85,y=66
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
+		UnitOwner=CIVILIZATION_RUSSIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_STRELETS
+		UnitOwner=CIVILIZATION_RUSSIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RUSSIAN_STRELETS
+		UnitOwner=CIVILIZATION_RUSSIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginUnit
@@ -5748,18 +5736,6 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_HORSE_ARCHER
-		UnitOwner=CIVILIZATION_RUSSIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_RUSSIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_RUSSIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginUnit
@@ -5928,20 +5904,102 @@ BeginPlot
 	x=86,y=50
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_LANCER
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_LANCER
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_LANCER
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_COUNTER
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_COUNTER
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+		UnitAIType=UNITAI_ATTACK_CITY
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Halab
+		CityOwner=CIVILIZATION_OTTOMAN
+		CityName=Halep
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -5953,7 +6011,7 @@ BeginPlot
 		ReligionType=RELIGION_ORTHODOXY
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_INDEPENDENT, Culture=250
+			Civilization=CIVILIZATION_OTTOMAN, Culture=100
 		EndCulture
 	EndCity
 EndPlot
@@ -5965,11 +6023,11 @@ BeginPlot
 	x=86,y=54
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_OTTOMAN_JANISSARY
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -6140,12 +6198,12 @@ BeginPlot
 	x=87,y=72
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_RUSSIA
-		CityName=Novokholmogory
+		CityName=Arkhangelsk
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
@@ -6193,20 +6251,16 @@ BeginPlot
 	x=88,y=51
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Musil
+		CityOwner=CIVILIZATION_OTTOMAN
+		CityName=Musul
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -6217,7 +6271,7 @@ BeginPlot
 		BuildingType=BUILDING_SPIRAL_MINARET
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
+			Civilization=CIVILIZATION_OTTOMAN, Culture=100
 		EndCulture
 	EndCity
 EndPlot
@@ -6286,20 +6340,16 @@ BeginPlot
 	x=89,y=47
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
+		UnitType=UNIT_OTTOMAN_JANISSARY
+		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Baghdad
+		CityOwner=CIVILIZATION_OTTOMAN
+		CityName=Bagdat
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -6312,7 +6362,7 @@ BeginPlot
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_INDEPENDENT, Culture=250
+			Civilization=CIVILIZATION_OTTOMAN, Culture=250
 		EndCulture
 	EndCity
 EndPlot
@@ -6345,7 +6395,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Mtskheta
+		CityName=Tp'ilisi
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -6357,17 +6407,21 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=100
 		EndCulture
+		YearFounded=450
+		YearAcquired=1320
+		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
 BeginPlot
 	x=89,y=67
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_RUSSIAN_STRELETS
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginCity
@@ -6429,11 +6483,11 @@ BeginPlot
 	x=90,y=52
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginCity
@@ -6605,27 +6659,27 @@ BeginPlot
 	x=93,y=48
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
@@ -6683,11 +6737,11 @@ BeginPlot
 	x=93,y=51
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginCity
@@ -6733,11 +6787,11 @@ BeginPlot
 	x=94,y=45
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginCity
@@ -6896,16 +6950,16 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BonusType=NONE
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_IRAN
-		CityName=Sanabad
+		CityName=Mashhad
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -6942,11 +6996,11 @@ BeginPlot
 	x=98,y=48
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_IRANIAN_QIZILBASH
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
 	BeginCity
@@ -8859,11 +8913,11 @@ BeginPlot
 	x=119,y=31
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_MALAY_DJONG
 		UnitOwner=CIVILIZATION_MALAYS
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_MALAY_DJONG
 		UnitOwner=CIVILIZATION_MALAYS
 	EndUnit
 	BeginUnit
@@ -9331,7 +9385,7 @@ BeginPlot
 	x=121,y=42
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_COG
+		UnitType=UNIT_GALLEASS
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginUnit
@@ -9339,7 +9393,7 @@ BeginPlot
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
+		UnitType=UNIT_COG
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginUnit
@@ -9661,11 +9715,11 @@ BeginPlot
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_TREBUCHET
+		UnitType=UNIT_BOMBARD
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_TREBUCHET
+		UnitType=UNIT_BOMBARD
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginCity
@@ -10470,11 +10524,11 @@ BeginPlot
 	x=130,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginCity
@@ -10538,7 +10592,11 @@ BeginPlot
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_KOREAN_HWACHA
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_KOREA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
@@ -10550,7 +10608,15 @@ BeginPlot
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitType=UNIT_KOREAN_HWACHA
+		UnitOwner=CIVILIZATION_KOREA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN
+		UnitOwner=CIVILIZATION_KOREA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_PIKEMAN
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
@@ -10574,19 +10640,7 @@ BeginPlot
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_KOREA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_KOREA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_KOREA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitType=UNIT_HEAVY_SWORDSMAN
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
 	BeginUnit
@@ -10595,7 +10649,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_KOREA
-		CityName=Namgyeong
+		CityName=Hanseong
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
@@ -10822,7 +10876,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_JAPAN
-		CityName=Heian-kyou
+		CityName=Kyouto
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
