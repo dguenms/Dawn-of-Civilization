@@ -319,10 +319,8 @@ BeginPlot
 		CityName=Kitu
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_INTI_TEMPLE
 		BeginCulture
-			Civilization=CIVILIZATION_INCA, Culture=50
+			Civilization=CIVILIZATION_INCA, Culture=10
 		EndCulture
 		YearFounded=890
 		YearAcquired=1450
