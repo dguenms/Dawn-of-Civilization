@@ -10293,7 +10293,78 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=24
-	ImprovementType=IMPROVEMENT_HAMLET
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_COG
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_COG
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_GALLEY
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_GALLEY
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_SWORDSMAN
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_JAVANESE_LANTAKA
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_JAVANESE_LANTAKA
+		UnitOwner=CIVILIZATION_JAVA
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_JAVA
+		CityName=Kotagede
+		CityPopulation=8
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_JAVANESE_CANDI
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_ARENA
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_JEWELLER
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BOROBUDUR
+		BuildingType=BUILDING_PRAMBANAN
+		ReligionType=RELIGION_ISLAM
+		BeginCulture
+			Civilization=CIVILIZATION_JAVA, Culture=250
+		EndCulture
+		YearFounded=732
+	EndCity
 EndPlot
 BeginPlot
 	x=125,y=25
@@ -10546,81 +10617,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=25
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_COG
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_COG
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_JAVANESE_LANTAKA
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_JAVANESE_LANTAKA
-		UnitOwner=CIVILIZATION_JAVA
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_JAVA
-		CityName=Wilwatikta
-		CityPopulation=12
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_JAVANESE_CANDI
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_ARENA
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_JEWELLER
-		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_ISLAMIC_MONASTERY
-		BuildingType=BUILDING_HINDU_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		BuildingType=BUILDING_BOROBUDUR
-		BuildingType=BUILDING_PRAMBANAN
-		ReligionType=RELIGION_ISLAM
-		ReligionType=RELIGION_HINDUISM
-		ReligionType=RELIGION_BUDDHISM
-		BeginCulture
-			Civilization=CIVILIZATION_JAVA, Culture=500
-		EndCulture
-	EndCity
 EndPlot
 BeginPlot
 	x=126,y=44
