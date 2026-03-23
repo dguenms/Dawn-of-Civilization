@@ -1508,7 +1508,7 @@ class CvCityDesc:
 		if not self.iYearFounded:
 			self.iYearFounded = scenarioStartYear()
 		if not self.iYearAcquired:
-			self.iYearAcquired = scenarioStartYear()
+			self.iYearAcquired = self.iYearFounded
 		
 		if self.iYearFounded:
 			iGameTurnFounded = getGameTurnForYear(self.iYearFounded, -3000, game.getCalendar(), game.getGameSpeedType())
