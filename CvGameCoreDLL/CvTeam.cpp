@@ -4367,7 +4367,6 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 		return;
 	//Rhye - end
 
-
 	if (isVassal(eIndex) != bNewValue)
 	{
 		for (int i = 0; i < MAX_PLAYERS; i++)

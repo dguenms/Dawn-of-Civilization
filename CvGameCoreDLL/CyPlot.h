@@ -315,6 +315,8 @@ public:
 
 	int getContinentArea();
 
+	void setWorkingCity(CyCity* pCity);
+
 private:
 	CvPlot* m_pPlot;
 };

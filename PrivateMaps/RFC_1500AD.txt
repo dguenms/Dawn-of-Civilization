@@ -50,7 +50,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Tonallan
+		CityName=Ts'intsuntsani
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -5589,7 +5589,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Hersonisos
+		CityName=Kefe
 		CityPopulation=1
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -8565,6 +8565,9 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=500
 		EndCulture
+		YearFounded=-490
+		YearAcquired=1000
+		PreviousOwner=CIVILIZATION_INDIA
 	EndCity
 EndPlot
 BeginPlot
@@ -8597,7 +8600,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Toshali
+		CityName=Kataka
 		CityPopulation=8
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY

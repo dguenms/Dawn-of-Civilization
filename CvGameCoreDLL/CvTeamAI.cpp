@@ -1851,8 +1851,18 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		return NO_DENIAL;
 	}
 
+	// Leoreth: new world civilizations are too eager to vassalize
+	if (GET_PLAYER(getLeaderID()).getCurrentEra() < ERA_RENAISSANCE && GET_PLAYER(kMasterTeam.getLeaderID()).getCurrentEra() >= ERA_RENAISSANCE)
+	{
+		CivilizationTypes eCivilization = GET_PLAYER(getLeaderID()).getCivilizationType();
+		if (eCivilization == MAYA || eCivilization == TOLTECS || eCivilization == INCA || eCivilization == AZTECS)
+		{
+			return DENIAL_TOO_FAR;
+		}
+	}
+
 	// Leoreth: last resort
-	if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() <= 1)
+	/*if (isAtWar(eTeam) && GET_PLAYER(getLeaderID()).countCoreCities() <= 1)
 	{
 		if (GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_NUKED_US) == 0 &&
 			GET_PLAYER(getLeaderID()).AI_getMemoryAttitude(GET_TEAM(eTeam).getLeaderID(), MEMORY_RAZED_CITY) == 0)
@@ -1867,7 +1877,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				}
 			}
 		}
-	}
+	}*/
 
 	int iAttitudeModifier = 0;
 
@@ -2071,13 +2081,13 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			}
 
 			//if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0) //Rhye
-			if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0 && GET_PLAYER((PlayerTypes)eTeam).getCurrentEra() <= 2) //Rhye
+			if (!AI_hasCitiesInPrimaryArea(eTeam) && AI_calculateAdjacentLandPlots(eTeam) == 0 && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCurrentEra() <= ERA_MEDIEVAL) //Rhye
 			{
 				return DENIAL_TOO_FAR;
 			}
             // edead: do not allow far away vassals
             // Leoreth: only before Exploration
-			if (!kMasterTeam.isHasTech(EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
+			if (!kMasterTeam.isHasTech(EXPLORATION) && GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isDistant(getLeaderID()))
 			{
 				return DENIAL_TOO_FAR;
 			}

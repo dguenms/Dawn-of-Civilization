@@ -297,5 +297,6 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getBonusVarietyType", &CyPlot::getBonusVarietyType, "int ()")
 		.def("getContinentArea", &CyPlot::getContinentArea, "int ()")
 		.def("updateRevealedOwner", &CyPlot::updateRevealedOwner, "void (int eTeam)")
+		.def("setWorkingCity", &CyPlot::setWorkingCity, "void (CvCity pCity)")
 	;
 }

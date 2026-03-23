@@ -599,7 +599,7 @@ void CvPlayerAI::AI_doPeace()
 			{
 				if (canContact((PlayerTypes)iI) && AI_isWillingToTalk((PlayerTypes)iI))
 				{
-					if (!(GET_TEAM(getTeam()).isHuman()) && (GET_PLAYER((PlayerTypes)iI).isHuman() || !(GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHuman())))
+					if (!GET_TEAM(getTeam()).isHuman() && (GET_PLAYER((PlayerTypes)iI).isHuman() || !(GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHuman())))
 					{
 						if (GET_TEAM(getTeam()).isAtWar(GET_PLAYER((PlayerTypes)iI).getTeam()))
 						{
@@ -617,7 +617,7 @@ void CvPlayerAI::AI_doPeace()
 
 										setTradeItem(&item, TRADE_SURRENDER);
 
-										if (canTradeItem((PlayerTypes)iI, item, true))
+										if (canTradeItem((PlayerTypes)iI, item, true) && GET_TEAM(getTeam()).AI_surrenderTrade(GET_PLAYER((PlayerTypes)iI).getTeam()) == NO_DENIAL)
 										{
 											ourList.clear();
 											theirList.clear();
