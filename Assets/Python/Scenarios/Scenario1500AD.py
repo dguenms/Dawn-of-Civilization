@@ -351,6 +351,11 @@ def updateData():
 	data.civs[iTurks].iResurrections = 1
 	
 	team(iHolyRome).changeResearchProgress(iAcademia, scale(600), slot(iHolyRome))
+	if not player(iHolyRome).isHuman():
+		player(iHolyRome).pushResearch(iAcademia, True)
+	
+	for worker in units.owner(iRussia).type(iWorker):
+		worker.setMoves(0)
 
 
 def setupGoals(iCiv, goals):
