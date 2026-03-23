@@ -376,6 +376,7 @@ scenario1500AD = Scenario(
 	dCivilizationDescriptions = {
 		iTurks: "TXT_KEY_CIV_UZBEKS_DESC",
 		iNorse: "TXT_KEY_CIV_DENMARK_DESC",
+		iMisr: "TXT_KEY_CIV_EGYPT_DESC",
 	},
 	
 	dRevealed = {
