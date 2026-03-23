@@ -483,11 +483,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_JAVA_1500AD</Tag>
-		<English>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</English>
-		<French>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</French>
-		<German>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</German>
-		<Italian>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</Italian>
-		<Spanish>It is the year 1500 AD. The once powerful Kingdom of Majapahit has been reduced to its core territory in eastern Java. The spread of Islam to Indonesia has led to the rise of new sultanates in the region. Can Java restore its previous reach in this new world?</Spanish>
+		<English>It is the year 1500 AD. Chinese, Arab, and Malay Muslims have been in Java since the time of Zheng He's expedition. As one of its earliest Islamic states, the Demak Sultanate in the south of the island used to be a vassal of Majapahit. Now that its former overlord is on the decline, Islam is on the ascendancy in Java.</English>
+		<French>It is the year 1500 AD. Chinese, Arab, and Malay Muslims have been in Java since the time of Zheng He's expedition. As one of its earliest Islamic states, the Demak Sultanate in the south of the island used to be a vassal of Majapahit. Now that its former overlord is on the decline, Islam is on the ascendancy in Java.</French>
+		<German>It is the year 1500 AD. Chinese, Arab, and Malay Muslims have been in Java since the time of Zheng He's expedition. As one of its earliest Islamic states, the Demak Sultanate in the south of the island used to be a vassal of Majapahit. Now that its former overlord is on the decline, Islam is on the ascendancy in Java.</German>
+		<Italian>It is the year 1500 AD. Chinese, Arab, and Malay Muslims have been in Java since the time of Zheng He's expedition. As one of its earliest Islamic states, the Demak Sultanate in the south of the island used to be a vassal of Majapahit. Now that its former overlord is on the decline, Islam is on the ascendancy in Java.</Italian>
+		<Spanish>It is the year 1500 AD. Chinese, Arab, and Malay Muslims have been in Java since the time of Zheng He's expedition. As one of its earliest Islamic states, the Demak Sultanate in the south of the island used to be a vassal of Majapahit. Now that its former overlord is on the decline, Islam is on the ascendancy in Java.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KHMER</Tag>
@@ -504,14 +504,6 @@
 		<German>It is the year 600 AD. The Chenla Kingdom around the Bassac and Mekong rivers is the first unified state in Cambodia, being connected with both India and China. With their developing mastery of hydraulic engineering, Khmer population centers and religious monuments can exceed any previous city in the tropics.</German>
 		<Italian>It is the year 600 AD. The Chenla Kingdom around the Bassac and Mekong rivers is the first unified state in Cambodia, being connected with both India and China. With their developing mastery of hydraulic engineering, Khmer population centers and religious monuments can exceed any previous city in the tropics.</Italian>
 		<Spanish>It is the year 600 AD. The Chenla Kingdom around the Bassac and Mekong rivers is the first unified state in Cambodia, being connected with both India and China. With their developing mastery of hydraulic engineering, Khmer population centers and religious monuments can exceed any previous city in the tropics.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_DOM_KHMER_1500AD</Tag>
-		<English>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</English>
-		<French>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</French>
-		<German>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</German>
-		<Italian>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</Italian>
-		<Spanish>It is the year 1500 AD. The dominance of the Khmer Empire in Southeast Asia is long past. The rising Thai Ayutthaya Kingdom has dealt a decisive defeat to the Khmer and sacked their capital. The remaining rump state must try to survive among its stronger neighbours.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KOREA</Tag>
@@ -874,14 +866,6 @@
 		<Spanish>It is the year 957 AD. Muslim traders have been frequenting the Swahili coast for centuries, when an exiled Persian noble arrives to found the Sultanate of Kilwa. The Swahili peoples are excellent navigators, and with its fortuitous position Kilwa can eclipse rivals like Mogadishu and become the new master of the Indian Ocean trade.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_SWAHILI_1500AD</Tag>
-		<English>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</English>
-		<French>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</French>
-		<German>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</German>
-		<Italian>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</Italian>
-		<Spanish>It is the year 1500 AD. The Kilwa Sultanate is on the decline after a series of weak rulers, just as Christian traders are arriving in the Indian Ocean. Can the Swahili coast retain its independence and control of the trade with Asia?</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_DOM_SWEDEN</Tag>
 		<English>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</English>
 		<French>It is the year 1252 AD. The Kingdom of Sweden is consolidating as a separate power center within the Norse cultural sphere. Unlike Denmark and Norway, Sweden is oriented towards the east, where control over the Baltic Sea promises wealth and power. To achieve it, the small kingdom must challenge its German, Polish, and Russian rivals.</French>
@@ -936,14 +920,6 @@
 		<German>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</German>
 		<Italian>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</Italian>
 		<Spanish>It is the year 630 AD. The Tibetan clans around Lhasa have been united, and the current weakness of the neighboring Chinese Tang and Indian Pala empires opens the opportunity to expand your empire from the Tibetan highlands and spread Buddhist teaching in the whole world.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_DOM_TIBET_1500AD</Tag>
-		<English>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</English>
-		<French>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</French>
-		<German>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</German>
-		<Italian>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</Italian>
-		<Spanish>It is the year 1500 AD. The collapse of the Mongol Yuan dynasty restored independent rule in Tibet. Still largely isolated from the rest of the world, Tibet remains dedicated to its own branch of Buddhism.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_TOLTECS</Tag>
