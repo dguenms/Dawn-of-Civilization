@@ -2487,6 +2487,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
+	x=65,y=34
+	ImprovementType=IMPROVEMENT_FARM
+EndPlot
+BeginPlot
 	x=65,y=35
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
@@ -3060,6 +3064,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=59
+	ImprovementType=IMPROVEMENT_COTTAGE
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=68,y=60
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
@@ -3085,12 +3094,10 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_HOLY_ROMAN, Culture=100
 		EndCulture
+		YearFounded=179
+		YearAcquired=843
+		PreviousOwner=CIVILIZATION_ROME
 	EndCity
-EndPlot
-BeginPlot
-	x=68,y=60
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=68,y=61
@@ -3503,13 +3510,14 @@ BeginPlot
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Napule
-		CityPopulation=10
+		CityPopulation=9
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
 		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
@@ -4082,7 +4090,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=55
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_WINDMILL
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -4352,6 +4360,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
+	x=75,y=56
+	ImprovementType=IMPROVEMENT_FARM
+EndPlot
+BeginPlot
 	x=75,y=58
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
@@ -4484,6 +4496,10 @@ EndPlot
 BeginPlot
 	x=76,y=56
 	ImprovementType=IMPROVEMENT_MINE
+EndPlot
+BeginPlot
+	x=76,y=57
+	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=76,y=58
@@ -5014,6 +5030,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=80,y=34
+	ImprovementType=IMPROVEMENT_FARM
+EndPlot
+BeginPlot
 	x=80,y=39
 	ImprovementType=IMPROVEMENT_FARM
 EndPlot
@@ -5295,6 +5315,10 @@ EndPlot
 BeginPlot
 	x=82,y=27
 	ImprovementType=IMPROVEMENT_MINE
+EndPlot
+BeginPlot
+	x=82,y=32
+	ImprovementType=IMPROVEMENT_WINDMILL
 EndPlot
 BeginPlot
 	x=82,y=33
@@ -5816,6 +5840,7 @@ EndPlot
 BeginPlot
 	x=84,y=47
 	ImprovementType=IMPROVEMENT_HAMLET
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=84,y=51
@@ -5945,6 +5970,7 @@ EndPlot
 BeginPlot
 	x=85,y=48
 	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=85,y=49
@@ -6167,6 +6193,7 @@ EndPlot
 BeginPlot
 	x=86,y=49
 	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=86,y=50
@@ -6619,7 +6646,7 @@ BeginPlot
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Sanaa
-		CityPopulation=6
+		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -6807,7 +6834,7 @@ BeginPlot
 	BeginCity
 		CityOwner=CIVILIZATION_IRAN
 		CityName=Tabriz
-		CityPopulation=6
+		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -7281,7 +7308,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=48
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=97,y=49
@@ -7967,6 +7994,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=44
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -8145,7 +8173,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=40
-	ImprovementType=IMPROVEMENT_COTTAGE
+	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=106,y=42
@@ -8409,10 +8437,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
-	x=108,y=51
-	ImprovementType=IMPROVEMENT_PASTURE
-EndPlot
-BeginPlot
 	x=108,y=54
 	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
@@ -8571,11 +8595,6 @@ EndPlot
 BeginPlot
 	x=110,y=46
 	ImprovementType=IMPROVEMENT_MINE
-EndPlot
-BeginPlot
-	x=110,y=49
-	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=110,y=56
@@ -9091,7 +9110,7 @@ BeginPlot
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Awa
-		CityPopulation=6
+		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -9132,7 +9151,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=53
-	ImprovementType=IMPROVEMENT_WINDMILL
+	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
 	x=117,y=55
@@ -9491,6 +9510,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=119,y=54
+	ImprovementType=IMPROVEMENT_WINDMILL
+EndPlot
+BeginPlot
+	x=119,y=55
+	ImprovementType=IMPROVEMENT_FARM
+EndPlot
+BeginPlot
 	x=119,y=61
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -9517,7 +9544,6 @@ BeginPlot
 		BuildingType=BUILDING_STABLE
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=50
 		EndCulture
 		YearFounded=1235
@@ -10406,7 +10432,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=55
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -10639,6 +10665,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=57
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot

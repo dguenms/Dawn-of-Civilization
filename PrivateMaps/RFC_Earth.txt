@@ -52949,6 +52949,7 @@ BeginPlot
 	x=117,y=53
 	isNOfRiver
 	RiverWEDirection=1
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -53431,7 +53432,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
