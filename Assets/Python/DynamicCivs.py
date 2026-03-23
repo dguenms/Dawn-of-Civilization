@@ -1197,7 +1197,10 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_JAVA_INDONESIA"
 		
 		if iReligion == iIslam:
-			return "TXT_KEY_CIV_JAVA_MATARAM"
+			if iEra >= iRenaissance:
+				return "TXT_KEY_CIV_JAVA_MATARAM"
+				
+			return "TXT_KEY_CIV_JAVA_DEMAK"
 			
 		if iEra <= iRenaissance:
 			if bEmpire:
@@ -1671,15 +1674,14 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ARABIA_ABBASID"
 			
 	elif iCiv == iMoors:
-		if bEmpire:
-			if iEra == iMedieval:
-				if bTheocracy:
-					return "TXT_KEY_CIV_MOORS_ALMORAVID"
-					
-				return "TXT_KEY_CIV_MOORS_ALMOHAD"
+		if tPlayer.isHasTech(iCartography):
+			return "TXT_KEY_CIV_MOORS_SAADI"
 				
-			elif iEra == iRenaissance:
-				return "TXT_KEY_CIV_MOORS_SAADI"
+		if bEmpire:
+			if bTheocracy:
+				return "TXT_KEY_CIV_MOORS_ALMORAVID"
+					
+			return "TXT_KEY_CIV_MOORS_ALMOHAD"
 			
 		if not capital in plots.region(rIberia):
 			return "TXT_KEY_CIV_MOORS_MOROCCAN"
@@ -2279,17 +2281,17 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if bCityStates:
 			return "TXT_KEY_CIV_MOORS_TAIFAS"
 			
-		if iReligion == iIslam and capital in plots.region(rIberia):
-			if bEmpire:
+		if iReligion == iIslam:
+			if bEmpire and capital in plots.region(rIberia):
 				return "TXT_KEY_CALIPHATE_OF"
+			
+			if bTheocracy:
+				return "TXT_KEY_CALIPHATE_ADJECTIVE"
+			
+			if iEra >= iGlobal:
+				return "TXT_KEY_KINGDOM_OF"
 				
 			return "TXT_KEY_CIV_MOORS_EMIRATE_OF"
-			
-		if bEmpire and iEra <= iRenaissance:
-			if iReligion == iIslam and bTheocracy:
-				return "TXT_KEY_CALIPHATE_ADJECTIVE"
-				
-			return "TXT_KEY_EMPIRE_ADJECTIVE"
 	
 	elif iCiv == iJava:
 		if iReligion == iIslam:

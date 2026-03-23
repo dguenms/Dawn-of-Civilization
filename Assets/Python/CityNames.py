@@ -167,11 +167,14 @@ def setupScenario():
 	elif scenario() == i1500AD:
 		dRelocated = {
 			"Jiaohe": "Turpan",
+			"Khersonesos": "Kaffa",
 			"Mayapan": "Uuc Yabnal",
 			"Oguaa": "Elmina",
 			"Pagan": "Awa",
 			"Raga": "Tehran",
+			"Santa Isabel": u"São Tomé",
 			"Tarragona": "Barcelona",
+			"Toshali": "Kataka",
 			"Tus": "Sanabad",
 			"Yashodharapura": "Phnom Penh",
 		}
@@ -198,6 +201,7 @@ def setupScenario():
 			"Sukadana": "Pontianak",
 			"Tarragona": "Barcelona",
 			"Tarsus": "Adana",
+			"Tonallan": "Tzintzuntzan",
 			"Ujjain": "Dhar",
 			"Yarghol": "Turpan",
 			"Yashodharapura": "Phnom Penh",

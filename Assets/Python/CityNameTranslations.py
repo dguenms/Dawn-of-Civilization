@@ -16751,7 +16751,7 @@ name_translations = {
 		iArabic: "Seyouna",
 		iPortuguese: _,
 	},
-	"Sendai": {
+	"Sendai": {  # relocated from Yonezawa
 		iChinese: "Xiantai",
 		iJapanese: _,
 		iKorean: "Seontae",
@@ -18976,7 +18976,7 @@ name_translations = {
 		iDutch: relocate("Surabaya"),
 		iJavanese: (
 			relocate("Surabaya", iAfter=iRenaissance),
-			translate("Wilwatikta", bCapital=True),
+			translate("Wilwatikta", bCapital=True, iReligion=iBuddhism),
 			_,
 		),
 	},
@@ -20807,9 +20807,20 @@ name_translations = {
 		iDravidian: "Yogyakartta",
 		iDutch: "Jogjakarta",
 		iJapanese: "Jokujakaruta",
-		iJavanese: _,
+		iJavanese: (
+			translate("Kotagede", bCapital=True, iReligion=iIslam, iBefore=iRenaissance),
+			_,
+		),
 		iPersian: "Jogjakarta",
 		iRussian: "Dzhokyakarta",
+	},
+	"Yonezawa": {
+		iChinese: "Mize",
+		iJapanese: (
+			relocate("Sendai", iAfter=iRenaissance),
+			_,
+		),
+		iKorean: "Yonejawa",
 	},
 	"Yongmingcheng": {
 		iChinese: (
