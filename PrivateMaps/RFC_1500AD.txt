@@ -4108,7 +4108,6 @@ BeginPlot
 		CityOwner=CIVILIZATION_OTTOMAN
 		CityName=Belgrad
 		CityPopulation=6
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -4432,7 +4431,6 @@ BeginPlot
 		CityOwner=CIVILIZATION_OTTOMAN
 		CityName=Atina
 		CityPopulation=4
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
