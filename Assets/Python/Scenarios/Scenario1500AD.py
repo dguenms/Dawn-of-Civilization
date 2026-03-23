@@ -45,17 +45,6 @@ lCivilizations = [
 		dAttitudes={iChina: 2},
 	),
 	Civilization(
-		iKhmer,
-		iLeader=iSuryavarman,
-		iStateReligion=iBuddhism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iKinship],
-		techs=techs.column(7).including(iCropRotation),
-		dAttitudes={iThailand: -2},
-		dMemories={
-			iThailand: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
-		},
-	),
-	Civilization(
 		iMali,
 		iLeader=iMansaMusa,
 		iStateReligion=iIslam,
@@ -116,14 +105,6 @@ lCivilizations = [
 		dMemories={
 			iIran: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
 		},
-	),
-	Civilization(
-		iTibet,
-		iLeader=iLobsangGyatso,
-		iStateReligion=iBuddhism,
-		iGold=50,
-		lCivics=[iDespotism, iTheocracy, iSlavery, iRedistribution, iMonasticism, iHegemony],
-		techs=techs.column(7).including(iPaper, iDoctrine),
 	),
 	Civilization(
 		iMoors,
@@ -199,14 +180,6 @@ lCivilizations = [
 		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iMonasticism, iThalassocracy],
 		techs=techs.column(8).including(iGunpowder, iPrinting, iJudiciary),
 		dAttitudes={iChina: 2},
-	),
-	Civilization(
-		iSwahili,
-		iLeader=iDawud,
-		iStateReligion=iIslam,
-		iGold=50,
-		lCivics=[iMonarchy, iCitizenship, iSlavery, iMerchantTrade, iClergy, iThalassocracy],
-		techs=techs.column(7).including(iCommune, iCompass, iPatronage),
 	),
 	Civilization(
 		iMisr,

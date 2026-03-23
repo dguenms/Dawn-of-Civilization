@@ -5368,14 +5368,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_SWAHILI
+		CityOwner=CIVILIZATION_NATIVE
 		CityName=Msumbiji
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -5384,62 +5384,32 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_SWAHILI, Culture=50
+			Civilization=CIVILIZATION_NATIVE, Culture=50
 		EndCulture
+		YearFounded=900
+		YearAcquired=1480
+		PreviousOwner=CIVILIZATION_SWAHILI
 	EndCity
 EndPlot
 BeginPlot
 	x=84,y=23
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_SWAHILI_DHOW
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SWAHILI_DHOW
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_SWAHILI
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_SWAHILI
+		CityOwner=CIVILIZATION_NATIVE
 		CityName=Kilwa
 		CityPopulation=6
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -5450,13 +5420,12 @@ BeginPlot
 		BuildingType=BUILDING_ARENA
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_MARKET
-		BuildingType=BUILDING_SWAHILI_ISLAND_FORT
 		BuildingType=BUILDING_COFFEEHOUSE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_SWAHILI, Culture=100
+			Civilization=CIVILIZATION_NATIVE, Culture=100
 		EndCulture
 	EndCity
 EndPlot
@@ -5469,14 +5438,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_SWAHILI
+		UnitOwner=CIVILIZATION_NATIVE
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_SWAHILI
+		CityOwner=CIVILIZATION_NATIVE
 		CityName=Malindi
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -5489,7 +5458,7 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_SWAHILI, Culture=50
+			Civilization=CIVILIZATION_NATIVE, Culture=50
 		EndCulture
 	EndCity
 EndPlot
@@ -8061,28 +8030,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
-	x=109,y=50
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_TIBET
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_TIBET
-		CityName=Kyakyaru
-		CityPopulation=2
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_TIBETAN_GOMPA
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		ReligionType=RELIGION_BUDDHISM
-		BeginCulture
-			Civilization=CIVILIZATION_TIBET, Culture=50
-		EndCulture
-	EndCity
-EndPlot
-BeginPlot
 	x=109,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -8373,37 +8320,24 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_TIBET
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_TIBET
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_TIBET
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_TIBETAN_KHAMPA
-		UnitOwner=CIVILIZATION_TIBET
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_TIBETAN_KHAMPA
-		UnitOwner=CIVILIZATION_TIBET
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_TIBET
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_TIBET
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_TIBET
-		CityName=Rasa
+		CityOwner=CIVILIZATION_INDEPENDENT2
+		CityName=Lasa
 		CityPopulation=6
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
@@ -8415,7 +8349,7 @@ BeginPlot
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_TIBET, Culture=250
+			Civilization=CIVILIZATION_INDEPENDENT2, Culture=250
 		EndCulture
 	EndCity
 EndPlot
@@ -8477,34 +8411,34 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=115,y=53
-	ImprovementType=IMPROVEMENT_QUARRY
-EndPlot
-BeginPlot
 	x=115,y=56
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_CHINESE_FIRELANCER
-		UnitOwner=CIVILIZATION_CHINA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_CHINA
+		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Yumen
-		CityPopulation=4
+		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_CHINESE_TAIXUE
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		ReligionType=RELIGION_BUDDHISM
-		ReligionType=RELIGION_CONFUCIANISM
+		YearFounded=-200
+		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
+		PreviousOwner=CIVILIZATION_TURKS
+		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_TIBET
 	EndCity
 EndPlot
 BeginPlot
@@ -8569,33 +8503,6 @@ BeginPlot
 	x=116,y=49
 	ImprovementType=IMPROVEMENT_WINDMILL
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=116,y=52
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_TIBET
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_TIBET
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_TIBET
-		CityName=Mgolog
-		CityPopulation=4
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_TIBETAN_GOMPA
-		BuildingType=BUILDING_BUDDHIST_TEMPLE
-		BuildingType=BUILDING_BUDDHIST_MONASTERY
-		ReligionType=RELIGION_BUDDHISM
-		BeginCulture
-			Civilization=CIVILIZATION_TIBET, Culture=100
-		EndCulture
-	EndCity
 EndPlot
 BeginPlot
 	x=116,y=56
@@ -9164,14 +9071,6 @@ EndPlot
 BeginPlot
 	x=120,y=26
 	ImprovementType=IMPROVEMENT_PLANTATION
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
 EndPlot
 BeginPlot
 	x=120,y=27
@@ -9319,44 +9218,39 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_KHMER_BALLISTA_ELEPHANT
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_KHMER_BALLISTA_ELEPHANT
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_HEAVY_SWORDSMAN
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_KHMER
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER
-		UnitOwner=CIVILIZATION_KHMER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_KHMER
+		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Chaktomuk
 		CityPopulation=5
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_KHMER_BARAY
+		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
 		BuildingType=BUILDING_BUDDHIST_MONASTERY
@@ -9364,7 +9258,7 @@ BeginPlot
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_KHMER, Culture=250
+			Civilization=CIVILIZATION_INDEPENDENT2, Culture=250
 		EndCulture
 	EndCity
 EndPlot
