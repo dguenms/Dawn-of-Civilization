@@ -2879,6 +2879,7 @@ BeginPlot
 		YearFounded=-300
 		YearAcquired=1470
 		PreviousOwner=CIVILIZATION_PHOENICIA
+		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
 	EndCity
 EndPlot
@@ -5451,6 +5452,7 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_HOLY_ROMAN, Culture=100
 		EndCulture
+		YearFounded=106
 		YearAcquired=1698
 		PreviousOwner=CIVILIZATION_CELT
 		PreviousOwner=CIVILIZATION_OTTOMAN
