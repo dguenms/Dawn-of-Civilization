@@ -511,7 +511,7 @@ class Scenario(object):
 			player(iCiv).changeGreatPeopleCreated(iGreatPeople)
 		
 		for iCiv, iGreatGenerals in self.dGreatGeneralsCreated.items():
-			player(iCiv).changeGreatPeopleCreated(iGreatGenerals)
+			player(iCiv).changeGreatGeneralsCreated(iGreatGenerals)
 	
 	def adjustColonists(self):
 		iStartTurn = scenarioStartTurn()
