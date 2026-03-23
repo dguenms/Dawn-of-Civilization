@@ -485,6 +485,22 @@ scenario1500AD = Scenario(
 		iPortugal : 3,
 	},
 	
+	lInitialWars = [
+		(iOttomans, iMisr, WarPlanTypes.WARPLAN_TOTAL),
+	],
+	
+	lWorkingCities = [
+		(tBeijing, [(125, 54)]),
+		(tChangan, [(119, 52)]),
+		(tKunming, [(119, 46)]),
+		(tCairo, [(78, 41)]),
+		(tMilan, [(68, 57)]),
+		(tDelhi, [(107, 45)]),
+		(tConstantinople, [(80, 53)]),
+		(tPersepolis, [(93, 47)]),
+		(tPataliputra, [(111, 44)]),
+	],
+	
 	lAllGoalsFailed = [iChina, iDravidia, iEthiopia, iKorea, iKhmer, iMali, iMalays, iJapan, iNorse, iTurks, iTibet, iMoors, iJava, iSwahili, iMisr, iItaly, iAztecs],
 	lGoalsSucceeded = [(iSpain, 0), (iBurma, 0), (iVietnam, 0), (iPoland, 0), (iMughals, 0), (iRussia, 0)],
 	setupGoals = setupGoals,

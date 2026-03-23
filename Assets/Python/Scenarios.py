@@ -1,9 +1,15 @@
 from Core import *
+from Events import handler
 
 from Scenario3000BC import scenario3000BC
 from Scenario600AD import scenario600AD
 from Scenario1500AD import scenario1500AD
 from Scenario1700AD import scenario1700AD
+
+
+@handler("GameStart")
+def updateCityWork():
+	getScenario().updateCityWork()
 
 
 SCENARIOS = {

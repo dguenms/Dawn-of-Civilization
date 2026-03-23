@@ -360,6 +360,7 @@ class Scenario(object):
 		self.dColonistsAlreadyGiven = kwargs.get("dColonistsAlreadyGiven", {})
 		
 		self.lInitialWars = kwargs.get("lInitialWars", [])
+		self.lWorkingCities = kwargs.get("lWorkingCities", [])
 		
 		self.lAllGoalsFailed = kwargs.get("lAllGoalsFailed", [])
 		self.lGoalsSucceeded = kwargs.get("lGoalsSucceeded", [])
@@ -478,7 +479,6 @@ class Scenario(object):
 		self.updateLastTurnAlive()
 		self.updateNames()
 		self.updateCityNames()
-		self.updateCityWork()
 	
 	def adjustTerritories(self):
 		for city in cities.all():
@@ -560,6 +560,10 @@ class Scenario(object):
 		cn.updateAllNames()
 	
 	def updateCityWork(self):
+		for tCity, tTiles in self.lWorkingCities:
+			for tTile in tTiles:
+				plot(tTile).setWorkingCity(city_(tCity))
+		
 		for city in cities.all():
 			city.AI_updateAssignWork()
 	
