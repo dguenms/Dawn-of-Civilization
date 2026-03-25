@@ -11,7 +11,8 @@ from Scenarios import SCENARIOS
 dRelocatedCapitals = CivDict({
 	iPhoenicia : tCarthage,
 	iMongols : tBeijing,
-	iOttomans : tConstantinople
+	iOttomans : tConstantinople,
+	iManchuria : tBeijing,
 })
 
 dCapitalInfrastructure = CivDict({

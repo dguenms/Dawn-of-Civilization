@@ -82,11 +82,12 @@ iPeriodAustria :		(71, 59),	# Vienna
 
 # new capital locations if changed during the game
 dNewCapitals = CivDict({
-iJapan :	(140, 54),	# Tokyo
-iHolyRome :	(71, 59),	# Vienna
-iItaly :	(68, 53),	# Rome
-iMongols :	(125, 56),	# Khanbaliq
-iOttomans :	(79, 55),	# Istanbul
+iJapan :		(140, 54),	# Tokyo
+iHolyRome :		(71, 59),	# Vienna
+iItaly :		(68, 53),	# Rome
+iMongols :		(125, 56),	# Khanbaliq
+iOttomans :		(79, 55),	# Istanbul
+iManchuria :	(125, 56),	# Beijing
 })
 
 # new capital locations on respawn
