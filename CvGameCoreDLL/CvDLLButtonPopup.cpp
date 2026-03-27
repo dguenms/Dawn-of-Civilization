@@ -1499,7 +1499,7 @@ bool CvDLLButtonPopup::launchRazeCityPopup(CvPopup* pPopup, CvPopupInfo &info)
 	}
 	if (bSpare)
 	{
-		int iSpareCost = 2 * pNewCity->getBuildingDamage() + iCaptureGold;
+		int iSpareCost = pNewCity->getSpareCost(iCaptureGold);
 		szBuffer = gDLL->getText("TXT_KEY_POPUP_SPARE_CITY", iSpareCost);
 		gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, NULL, 5, WIDGET_GENERAL);
 	}

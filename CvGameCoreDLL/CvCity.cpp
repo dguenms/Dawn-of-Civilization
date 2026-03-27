@@ -19924,10 +19924,13 @@ void CvCity::sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold)
 	CvEventReporter::getInstance().citySacked(this);
 }
 
+int CvCity::getSpareCost(int iCaptureGold) const
+{
+	return 2 * getBuildingDamage() + iCaptureGold + getTurns(25 * getTotalPopulationLoss() + 20 * getOccupationTimer());
+}
+
 void CvCity::spare(int iCaptureGold)
 {
-	int iSpareGold = 2 * getBuildingDamage() + iCaptureGold;
-
 	if (getOccupationTimer() > 0)
 	{
 		changeOccupationTimer(-(1 + getOccupationTimer() / 2), false);
@@ -19936,7 +19939,7 @@ void CvCity::spare(int iCaptureGold)
 	setBuildingDamage(getBuildingDamage() / 3);
 	changeTotalPopulationLoss(-(1 + getTotalPopulationLoss() / 2));
 				
-	GET_PLAYER(getOwnerINLINE()).changeGold(-iSpareGold);
+	GET_PLAYER(getOwnerINLINE()).changeGold(-getSpareCost(iCaptureGold));
 
 	completeAcquisition(0);
 }

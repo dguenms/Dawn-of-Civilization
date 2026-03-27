@@ -1368,7 +1368,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity, CivilizationTypes ePreviousCiv, P
 
 			if (iGold > 0)
 			{
-				int iSpareCost = 2 * pCity->getBuildingDamage() + iCaptureGold;
+				int iSpareCost = pCity->getSpareCost(iCaptureGold);
 				int iCostRatio = 100 * iSpareCost / iGold;
 				
 				if (iCostRatio >= 50)

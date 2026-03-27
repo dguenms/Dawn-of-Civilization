@@ -5234,7 +5234,11 @@ bool CvPlayer::canSpare(const CvCity* pCity, PlayerTypes eHighestCulturePlayer, 
 		return false;
 	}
 
-	int iSpareCost = pCity->getBuildingDamage() * 2 + iCaptureGold;
+	int iSpareCost = pCity->getSpareCost(iCaptureGold);
+	if (iSpareCost == 0)
+	{
+		return false;
+	}
 
 	if (getGold() < iSpareCost)
 	{

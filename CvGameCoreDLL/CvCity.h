@@ -1192,6 +1192,8 @@ public:
 
 	int getRebuildProduction() const;
 
+	int getSpareCost(int iCaptureGold) const;
+
 	void sack(PlayerTypes eHighestCulturePlayer, int iCaptureGold);
 	void spare(int iCaptureGold);
 	void raze(int iCaptureGold);
