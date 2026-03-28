@@ -2494,6 +2494,7 @@ BeginPlot
 		EndCulture
 		YearFounded=40
 		YearAcquired=500
+		PreviousOwner=CIVILIZATION_CELT
 		PreviousOwner=CIVILIZATION_ROME
 	EndCity
 EndPlot
@@ -3866,6 +3867,7 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
+		PreviousOwner=CIVILIZATION_MISR
 	EndCity
 EndPlot
 BeginPlot
@@ -4317,7 +4319,7 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
@@ -5352,7 +5354,7 @@ BeginPlot
 		YearAcquired=1550
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BARBARIAN
@@ -5924,6 +5926,7 @@ BeginPlot
 		YearFounded=-330
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_EGYPT
@@ -6162,7 +6165,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-3000
 		YearAcquired=1515
-		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_GREECE
@@ -6412,6 +6415,7 @@ BeginPlot
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_PERSIA
@@ -6522,7 +6526,7 @@ BeginPlot
 		YearFounded=900
 		YearAcquired=1415
 		PreviousOwner=CIVILIZATION_BARBARIAN
-		PreviousOwner=CIVILIZATION_RUSSIA
+		PreviousOwner=CIVILIZATION_RUS
 	EndCity
 EndPlot
 BeginPlot
@@ -6654,7 +6658,9 @@ BeginPlot
 			Civilization=CIVILIZATION_RUSSIA, Culture=100
 		EndCulture
 		YearFounded=600
-		YearAcquired=860
+		YearAcquired=1667
+		PreviousOwner=CIVILIZATION_RUS
+		PreviousOwner=CIVILIZATION_POLAND
 	EndCity
 EndPlot
 BeginPlot
@@ -7112,7 +7118,9 @@ BeginPlot
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_BABYLONIA
+		PreviousOwner=CIVILIZATION_ASSYRIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_GREECE
@@ -7245,7 +7253,9 @@ BeginPlot
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_BABYLONIA
+		PreviousOwner=CIVILIZATION_ASSYRIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_GREECE
@@ -7425,6 +7435,7 @@ BeginPlot
 		YearFounded=-900
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_ARABIA
+		PreviousOwner=CIVILIZATION_MISR
 	EndCity
 EndPlot
 BeginPlot
@@ -7499,6 +7510,7 @@ BeginPlot
 		YearFounded=-300
 		YearAcquired=1695
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_RUS
 		PreviousOwner=CIVILIZATION_ITALY
 		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_OTTOMAN
@@ -7614,6 +7626,7 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 	EndCity
 EndPlot
 BeginPlot
