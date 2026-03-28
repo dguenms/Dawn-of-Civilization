@@ -2502,7 +2502,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>0.6</fScale>
-			<fInterfaceScale>0.08</fInterfaceScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Mazdaist_Temple/pavillon.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Mazdaist_Temple/mazdaist_temple.dds</Button>
