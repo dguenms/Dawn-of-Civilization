@@ -7024,7 +7024,7 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 	if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getCivilizationType() == JAVA && !isWater() && area()->getNumTiles() <= 30)
 	{
 		if (GC.getImprovementInfo(eImprovement).getYieldChange(YIELD_FOOD) > 0 || 
-			(GC.getImprovementInfo(eImprovement).getIrrigatedYieldChange(YIELD_FOOD) > 0 && isIrrigated()) ||
+			(GC.getImprovementInfo(eImprovement).getIrrigatedYieldChange(YIELD_FOOD) > 0 && isIrrigationAvailable()) ||
 			(getBonusType(GET_PLAYER(ePlayer).getTeam()) != NO_BONUS && GC.getImprovementInfo(eImprovement).getImprovementBonusYield(getBonusType(GET_PLAYER(ePlayer).getTeam()), YIELD_FOOD) > 0))
 		{
 			iYield *= 2;
