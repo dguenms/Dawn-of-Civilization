@@ -5054,7 +5054,6 @@ BeginPlot
 		CityOwner=CIVILIZATION_MISR
 		CityName=Al-Uqsur
 		CityPopulation=8
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
