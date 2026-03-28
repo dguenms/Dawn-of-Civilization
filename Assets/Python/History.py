@@ -501,13 +501,35 @@ def earlyTradingCompany(iTech, iTeam, iPlayer):
 	if data.civs[iPlayer].iResurrections > 0:
 		return
 
-	lCivs = [iSpain, iPortugal]
 	lTechs = [iExploration, iFirearms]
+	if iTech not in lTechs:
+		return
 	
-	if civ(iPlayer) in lCivs:
-		if iTech in lTechs and all(team(iTeam).isHasTech(iTech) for iTech in lTechs):
-			if not player(iPlayer).isHuman() and not team(iTeam).isAVassal():
-				handleColonialAcquisition(iPlayer)
+	checkEarlyTradingCompany(iPlayer)
+
+
+@handler("BeginPlayerTurn")
+def immediateEarlyTradingCompany(iGameTurn, iPlayer):
+	if scenario() == i1500AD and iGameTurn == scenarioStartTurn():
+		checkEarlyTradingCompany(iPlayer)
+
+
+def checkEarlyTradingCompany(iPlayer):
+	if player(iPlayer).isHuman():
+		return
+	
+	if team(iPlayer).isAVassal():
+		return
+	
+	lCivs = [iSpain, iPortugal]
+	if civ(iPlayer) not in lCivs:
+		return
+	
+	lTechs = [iExploration, iFirearms]
+	if not all(team(iPlayer).isHasTech(iTech) for iTech in lTechs):
+		return
+	
+	handleColonialAcquisition(iPlayer)
 
 
 @handler("techAcquired")
