@@ -4661,11 +4661,11 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		updateExtraBuildingHappiness();
 		updateExtraBuildingHealth();
 
-		// Byzantine UP: +1 espionage in capital per 100 gold in treasury and +1 gold per 100 culture in capital
+		// Byzantine UP: +1 espionage in capital per 100 gold in treasury and +1 gold per 200 culture in capital
 		if (getCivilizationType() == BYZANTIUM && eBuilding == 0)
 		{
-			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, std::max(0, iChange * GET_PLAYER(getOwnerINLINE()).getGold() / 100));
-			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_GOLD, std::max(0, iChange * getCulture(getOwnerINLINE()) / 100));
+			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_ESPIONAGE, std::max(0, iChange * GET_PLAYER(getOwnerINLINE()).getGold() / getTurns(100)));
+			setBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_GOLD, std::max(0, iChange * getCulture(getOwnerINLINE()) / getTurns(200)));
 		}
 
 		// Leoreth: special wonder effects
@@ -12383,7 +12383,7 @@ void CvCity::setCultureTimes100(CivilizationTypes eCivilization, int iNewValue)
 		// Byzantine UP: +1 gold per 200 culture in capital
 		if (eCivilization == BYZANTIUM && getCivilizationType() == BYZANTIUM && isCapital())
 		{
-			int iGoldChange = iNewValue / 20000 - iOldValue / 20000;
+			int iGoldChange = iNewValue / getTurns(20000) - iOldValue / getTurns(20000);
 			if (iGoldChange != 0)
 			{
 				changeBuildingCommerceChange((BuildingClassTypes)0, COMMERCE_GOLD, iGoldChange);
