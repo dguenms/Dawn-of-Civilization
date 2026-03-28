@@ -3624,12 +3624,15 @@ bool CvUnit::shouldLoadOnMove(const CvPlot* pPlot) const
 		break;
 	}
 
-	if (m_pUnitInfo->getTerrainImpassable(pPlot->getTerrainType()))
+	if (m_pUnitInfo->getTerrainImpassable(pPlot->getTerrainType()) && (pPlot->getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(pPlot->getFeatureType()).isMakesPassable()))
 	{
 		TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
 		if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 		{
-			return true;
+			if ((pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || !canEnterTerritory(pPlot->getTeam()))
+			{
+				return true;
+			}
 		}
 	}
 
