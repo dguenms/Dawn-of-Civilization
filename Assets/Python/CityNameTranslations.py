@@ -13869,6 +13869,7 @@ name_translations = {
 		iEnglish: "Hormuz",
 		iFrench: _,
 		iGerman: "Hormus",
+		iPersian: "Hormoz",
 		iPortuguese: _,
 		iSpanish: _,
 		iTurkish: u"Hürmüz",
