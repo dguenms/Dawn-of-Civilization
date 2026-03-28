@@ -949,6 +949,8 @@ def republicName(iPlayer):
 	if iCiv == iNetherlands and isCommunist(iPlayer): return "TXT_KEY_CIV_NETHERLANDS_ARTICLE"
 	
 	if iCiv == iTurks: return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
+	
+	if iCiv == iSwahili: return specificName(iPlayer)
 
 	return short(iPlayer)
 	
