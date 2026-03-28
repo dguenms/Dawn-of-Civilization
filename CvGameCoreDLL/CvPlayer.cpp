@@ -9339,7 +9339,7 @@ void CvPlayer::setGold(int iNewValue)
 		// Byzantine UP: +1 espionage in capital per 100 gold in treasury
 		if (getCivilizationType() == BYZANTIUM && getNumCities() > 0)
 		{
-			int iEspionageChange = iNewValue / 100 - iOldValue / 100;
+			int iEspionageChange = iNewValue / getTurns(100) - iOldValue / getTurns(100);
 
 			if (iEspionageChange != 0)
 			{
