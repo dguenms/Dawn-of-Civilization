@@ -1430,8 +1430,8 @@ BeginPlot
 		EndCulture
 		YearFounded=-100
 		YearAcquired=1490
-		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_CELT
+		PreviousOwner=CIVILIZATION_ROME
 	EndCity
 EndPlot
 BeginPlot
@@ -2070,6 +2070,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-50
 		YearAcquired=510
+		PreviousOwner=CIVILIZATION_CELT
 		PreviousOwner=CIVILIZATION_ROME
 	EndCity
 EndPlot
@@ -2847,9 +2848,9 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
-		PreviousOwner=CIVILIZATION_MISR
 	EndCity
 EndPlot
 BeginPlot
@@ -3313,8 +3314,8 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
@@ -3507,7 +3508,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Napule
+		CityName=Napoli
 		CityPopulation=9
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -4064,8 +4065,8 @@ BeginPlot
 		YearAcquired=969
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BARBARIAN
 	EndCity
@@ -4121,7 +4122,6 @@ BeginPlot
 			Civilization=CIVILIZATION_OTTOMAN, Culture=100
 		EndCulture
 		YearFounded=-280
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_CELT
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_ROME
@@ -4543,7 +4543,6 @@ BeginPlot
 			Civilization=CIVILIZATION_POLAND, Culture=100
 		EndCulture
 		YearFounded=1300
-		YearAcquired=1300
 	EndCity
 EndPlot
 BeginPlot
@@ -4683,7 +4682,6 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_SWEDEN, Culture=50
 		EndCulture
-		YearFounded=1500
 	EndCity
 EndPlot
 BeginPlot
@@ -4868,7 +4866,6 @@ BeginPlot
 		EndCulture
 		YearFounded=-3000
 		YearAcquired=909
-		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_GREECE
@@ -5206,7 +5203,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=50
 		EndCulture
 		YearFounded=1390
-		YearAcquired=1390
 	EndCity
 EndPlot
 BeginPlot
@@ -6305,7 +6301,7 @@ BeginPlot
 			Civilization=CIVILIZATION_OTTOMAN, Culture=100
 		EndCulture
 		YearFounded=-3000
-		YearAcquired=1500
+		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_ASSYRIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
@@ -6589,7 +6585,6 @@ BeginPlot
 			Civilization=CIVILIZATION_OTTOMAN, Culture=100
 		EndCulture
 		YearFounded=-615
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_ASSYRIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_GREECE
@@ -6692,7 +6687,6 @@ BeginPlot
 			Civilization=CIVILIZATION_OTTOMAN, Culture=250
 		EndCulture
 		YearFounded=760
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_IRAN
 		PreviousOwner=CIVILIZATION_MONGOL
@@ -6843,7 +6837,6 @@ BeginPlot
 			Civilization=CIVILIZATION_IRAN, Culture=100
 		EndCulture
 		YearFounded=-720
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_MONGOL
@@ -7076,7 +7069,6 @@ BeginPlot
 			Civilization=CIVILIZATION_IRAN, Culture=500
 		EndCulture
 		YearFounded=-1600
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_MONGOL
@@ -7115,7 +7107,6 @@ BeginPlot
 			Civilization=CIVILIZATION_IRAN, Culture=250
 		EndCulture
 		YearFounded=-795
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_GREECE
@@ -7174,7 +7165,6 @@ BeginPlot
 			Civilization=CIVILIZATION_IRAN, Culture=250
 		EndCulture
 		YearFounded=-2000
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_MONGOL
@@ -7346,7 +7336,6 @@ BeginPlot
 			Civilization=CIVILIZATION_IRAN, Culture=100
 		EndCulture
 		YearFounded=-330
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_PERSIA
@@ -7398,7 +7387,6 @@ BeginPlot
 			Civilization=CIVILIZATION_IRAN, Culture=100
 		EndCulture
 		YearFounded=-550
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_ARABIA
 	EndCity
@@ -7466,7 +7454,6 @@ BeginPlot
 			Civilization=CIVILIZATION_TURKS, Culture=250
 		EndCulture
 		YearFounded=-500
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
@@ -7600,7 +7587,6 @@ BeginPlot
 			Civilization=CIVILIZATION_TURKS, Culture=250
 		EndCulture
 		YearFounded=-795
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_MONGOL
@@ -8131,7 +8117,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
 		EndCulture
 		YearFounded=-100
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_TURKS
@@ -8503,7 +8488,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
 		EndCulture
 		YearFounded=-200
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_KUSHANS
 		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
@@ -9247,6 +9231,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-400
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -9278,6 +9263,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-600
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -9482,6 +9468,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-280
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -9663,6 +9650,7 @@ BeginPlot
 		YearFounded=-1095
 		YearAcquired=1368
 		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -9892,6 +9880,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-1095
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -9968,6 +9957,7 @@ BeginPlot
 		EndCulture
 		YearFounded=700
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10033,7 +10023,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=500
 		EndCulture
 		YearFounded=400
-		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_JAVA
 	EndCity
 EndPlot
@@ -10258,6 +10247,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-500
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10419,6 +10409,7 @@ BeginPlot
 		YearFounded=-210
 		YearAcquired=1368
 		PreviousOwner=CIVILIZATION_INDEPENDENT
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10484,6 +10475,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-360
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10596,6 +10588,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-1050
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10726,6 +10719,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-571
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10797,6 +10791,7 @@ BeginPlot
 		EndCulture
 		YearFounded=-200
 		YearAcquired=1368
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
@@ -10859,6 +10854,7 @@ BeginPlot
 		YearAcquired=1368
 		PreviousOwner=CIVILIZATION_BARBARIAN
 		PreviousOwner=CIVILIZATION_KOREA
+		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot

@@ -80,7 +80,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1540
-		YearAcquired=1540
 	EndCity
 EndPlot
 BeginPlot
@@ -171,7 +170,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1595
-		YearAcquired=1595
 	EndCity
 EndPlot
 BeginPlot
@@ -376,7 +374,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1515
-		YearAcquired=1515
 	EndCity
 EndPlot
 BeginPlot
@@ -433,7 +430,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1535
-		YearAcquired=1535
 	EndCity
 EndPlot
 BeginPlot
@@ -461,7 +457,6 @@ BeginPlot
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
 		YearFounded=1671
-		YearAcquired=1671
 	EndCity
 EndPlot
 BeginPlot
@@ -529,7 +524,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=100
 		EndCulture
 		YearFounded=1535
-		YearAcquired=1535
 	EndCity
 EndPlot
 BeginPlot
@@ -654,7 +648,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1535
-		YearAcquired=1535
 	EndCity
 EndPlot
 BeginPlot
@@ -817,7 +810,6 @@ BeginPlot
 			Civilization=CIVILIZATION_FRANCE, Culture=50
 		EndCulture
 		YearFounded=1640
-		YearAcquired=1640
 	EndCity
 EndPlot
 BeginPlot
@@ -875,7 +867,6 @@ BeginPlot
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
 		YearFounded=1625
-		YearAcquired=1625
 	EndCity
 EndPlot
 BeginPlot
@@ -911,7 +902,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1540
-		YearAcquired=1540
 	EndCity
 EndPlot
 BeginPlot
@@ -1000,7 +990,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1550
-		YearAcquired=1550
 	EndCity
 EndPlot
 BeginPlot
@@ -1024,7 +1013,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1565
-		YearAcquired=1565
 	EndCity
 EndPlot
 BeginPlot
@@ -1062,7 +1050,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1510
-		YearAcquired=1510
 	EndCity
 EndPlot
 BeginPlot
@@ -1123,7 +1110,6 @@ BeginPlot
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
 		YearFounded=1630
-		YearAcquired=1630
 	EndCity
 EndPlot
 BeginPlot
@@ -1179,7 +1165,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SPAIN, Culture=50
 		EndCulture
 		YearFounded=1535
-		YearAcquired=1535
 	EndCity
 EndPlot
 BeginPlot
@@ -1263,7 +1248,6 @@ BeginPlot
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
 		YearFounded=1585
-		YearAcquired=1585
 	EndCity
 EndPlot
 BeginPlot
@@ -1290,7 +1274,6 @@ BeginPlot
 			Civilization=CIVILIZATION_FRANCE, Culture=50
 		EndCulture
 		YearFounded=1665
-		YearAcquired=1665
 	EndCity
 EndPlot
 BeginPlot
@@ -1341,7 +1324,6 @@ BeginPlot
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
 		YearFounded=1615
-		YearAcquired=1615
 	EndCity
 EndPlot
 BeginPlot
@@ -1368,7 +1350,6 @@ BeginPlot
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
 		YearFounded=1555
-		YearAcquired=1555
 	EndCity
 EndPlot
 BeginPlot
@@ -1424,7 +1405,6 @@ BeginPlot
 			Civilization=CIVILIZATION_PORTUGAL, Culture=100
 		EndCulture
 		YearFounded=1555
-		YearAcquired=1555
 	EndCity
 EndPlot
 BeginPlot
@@ -1541,7 +1521,6 @@ BeginPlot
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
 		YearFounded=1450
-		YearAcquired=1450
 	EndCity
 EndPlot
 BeginPlot
@@ -1633,7 +1612,6 @@ BeginPlot
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
 		YearFounded=1425
-		YearAcquired=1425
 	EndCity
 EndPlot
 BeginPlot
@@ -1727,7 +1705,6 @@ BeginPlot
 			Civilization=CIVILIZATION_FRANCE, Culture=50
 		EndCulture
 		YearFounded=1659
-		YearAcquired=1659
 	EndCity
 EndPlot
 BeginPlot
@@ -4284,7 +4261,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=1490
-		YearAcquired=1490
 	EndCity
 EndPlot
 BeginPlot
@@ -4829,7 +4805,6 @@ BeginPlot
 			Civilization=CIVILIZATION_CONGO, Culture=100
 		EndCulture
 		YearFounded=1390
-		YearAcquired=1390
 	EndCity
 EndPlot
 BeginPlot
@@ -5006,7 +4981,6 @@ BeginPlot
 			Civilization=CIVILIZATION_NETHERLANDS, Culture=50
 		EndCulture
 		YearFounded=1653
-		YearAcquired=1653
 	EndCity
 EndPlot
 BeginPlot
@@ -5315,7 +5289,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SWEDEN, Culture=250
 		EndCulture
 		YearFounded=1250
-		YearAcquired=1250
 	EndCity
 EndPlot
 BeginPlot
@@ -5623,7 +5596,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SWEDEN, Culture=100
 		EndCulture
 		YearFounded=1620
-		YearAcquired=1620
 	EndCity
 EndPlot
 BeginPlot
@@ -5814,7 +5786,6 @@ BeginPlot
 			Civilization=CIVILIZATION_POLAND, Culture=250
 		EndCulture
 		YearFounded=1300
-		YearAcquired=1300
 	EndCity
 EndPlot
 BeginPlot
@@ -6000,7 +5971,6 @@ BeginPlot
 			Civilization=CIVILIZATION_SWEDEN, Culture=100
 		EndCulture
 		YearFounded=1550
-		YearAcquired=1550
 	EndCity
 EndPlot
 BeginPlot
@@ -6566,7 +6536,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=25
 		EndCulture
 		YearFounded=1390
-		YearAcquired=1390
 	EndCity
 EndPlot
 BeginPlot
@@ -6921,7 +6890,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=1635
-		YearAcquired=1635
 		PreviousOwner=CIVILIZATION_ETHIOPIA
 	EndCity
 EndPlot
@@ -7036,7 +7004,6 @@ BeginPlot
 			Civilization=CIVILIZATION_PORTUGAL, Culture=50
 		EndCulture
 		YearFounded=1505
-		YearAcquired=1505
 	EndCity
 EndPlot
 BeginPlot
@@ -7573,7 +7540,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=100
 		EndCulture
 		YearFounded=100
-		YearAcquired=100
 	EndCity
 EndPlot
 BeginPlot
@@ -7684,7 +7650,6 @@ BeginPlot
 			Civilization=CIVILIZATION_RUSSIA, Culture=100
 		EndCulture
 		YearFounded=1260
-		YearAcquired=1260
 	EndCity
 EndPlot
 BeginPlot
@@ -7717,7 +7682,6 @@ BeginPlot
 			Civilization=CIVILIZATION_RUSSIA, Culture=100
 		EndCulture
 		YearFounded=1220
-		YearAcquired=1220
 	EndCity
 EndPlot
 BeginPlot
@@ -9014,7 +8978,6 @@ BeginPlot
 			Civilization=CIVILIZATION_RUSSIA, Culture=50
 		EndCulture
 		YearFounded=1585
-		YearAcquired=1585
 	EndCity
 EndPlot
 BeginPlot
@@ -9136,7 +9099,6 @@ BeginPlot
 			Civilization=CIVILIZATION_RUSSIA, Culture=50
 		EndCulture
 		YearFounded=1595
-		YearAcquired=1595
 	EndCity
 EndPlot
 BeginPlot
@@ -9537,7 +9499,6 @@ BeginPlot
 			Civilization=CIVILIZATION_DRAVIDIA, Culture=50
 		EndCulture
 		YearFounded=1525
-		YearAcquired=1525
 	EndCity
 EndPlot
 BeginPlot
@@ -9752,7 +9713,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=200
 		EndCulture
 		YearFounded=1590
-		YearAcquired=1590
 		PreviousOwner=CIVILIZATION_MUGHALS
 	EndCity
 EndPlot
@@ -9843,7 +9803,6 @@ BeginPlot
 			Civilization=CIVILIZATION_ENGLAND, Culture=50
 		EndCulture
 		YearFounded=1645
-		YearAcquired=1645
 		PreviousOwner=CIVILIZATION_INDIA
 	EndCity
 EndPlot
@@ -10089,7 +10048,6 @@ BeginPlot
 			Civilization=CIVILIZATION_RUSSIA, Culture=50
 		EndCulture
 		YearFounded=1605
-		YearAcquired=1605
 	EndCity
 EndPlot
 BeginPlot
@@ -10556,7 +10514,6 @@ BeginPlot
 			Civilization=CIVILIZATION_BURMA, Culture=100
 		EndCulture
 		YearFounded=1030
-		YearAcquired=1030
 	EndCity
 EndPlot
 BeginPlot
@@ -10972,7 +10929,6 @@ BeginPlot
 			Civilization=CIVILIZATION_THAILAND, Culture=250
 		EndCulture
 		YearFounded=1350
-		YearAcquired=1350
 	EndCity
 EndPlot
 BeginPlot
@@ -11636,7 +11592,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=123,y=39
-
 	BonusType=BONUS_IRON
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -12341,7 +12296,6 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=1605
-		YearAcquired=1605
 		PreviousOwner=CIVILIZATION_JAVA
 	EndCity
 EndPlot
@@ -12775,7 +12729,6 @@ BeginPlot
 			Civilization=CIVILIZATION_JAPAN, Culture=100
 		EndCulture
 		YearFounded=1050
-		YearAcquired=1050
 	EndCity
 EndPlot
 BeginPlot
@@ -12900,7 +12853,6 @@ BeginPlot
 			Civilization=CIVILIZATION_JAPAN, Culture=250
 		EndCulture
 		YearFounded=520
-		YearAcquired=520
 	EndCity
 EndPlot
 BeginPlot
@@ -12967,7 +12919,6 @@ BeginPlot
 			Civilization=CIVILIZATION_JAPAN, Culture=100
 		EndCulture
 		YearFounded=520
-		YearAcquired=520
 	EndCity
 EndPlot
 BeginPlot

@@ -1218,7 +1218,8 @@ class CvCityDesc:
 		if not bDevelopmentOnly or city.getGameTurnFounded() != game.getGameTurn():
 			f.write("\t\tYearFounded=%s\n" % gc.getGame().getTurnYear(city.getGameTurnFounded()))
 		if not bDevelopmentOnly or city.getGameTurnAcquired() != game.getGameTurn():
-			f.write("\t\tYearAcquired=%s\n" % gc.getGame().getTurnYear(city.getGameTurnAcquired()))
+			if city.getGameTurnAcquired() != city.getGameTurnFounded():
+				f.write("\t\tYearAcquired=%s\n" % gc.getGame().getTurnYear(city.getGameTurnAcquired()))
 		if not bDevelopmentOnly or city.getOriginalCiv() != city.getCivilizationType():
 			f.write("\t\tPreviousOwner=%s\n" % gc.getCivilizationInfo(city.getOriginalCiv()).getType())
 		for iCiv in range(gc.getNumCivilizationInfos()):
