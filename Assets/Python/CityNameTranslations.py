@@ -1104,14 +1104,19 @@ name_translations = {
 	},
 	"Alicante": {
 		iArabic: "Al-Laqant",
+		iCeltic: found("Cartagena"),
 		iChinese: "Alikante",
 		iGreek: (
 			found("Hemeroskopeion"),
 			"Akra Leuka",
 		),
-		iLatin: "Lucentum",
+		iLatin: (
+			found("Cartagena"),
+			"Lucentum",
+		),
 		iLocal: "Alacant", # Catalan
 		iModernGreek: "Alikante",
+		iPhoenician: found("Cartagena"),
 		iRussian: "Alikante",
 		iSpanish: _,
 	},
@@ -3923,7 +3928,7 @@ name_translations = {
 		iFrench: _,
 		iLocal: "Tendira",
 	},
-	"Cartagena": {  # founded on Mursiyya
+	"Cartagena": {  # founded on Alicante
 		iArabic: "Al-Qartajanna",
 		iByzantine: "Carthago Spartaria",
 		iCeltic: "Mastia",
@@ -12596,11 +12601,8 @@ name_translations = {
 	},
 	"Mursiyya": {
 		iArabic: _,
-		iCeltic: found("Cartagena"),
 		iFrench: "Murcie",
 		iGreek: found("Helike"),
-		iLatin: found("Cartagena"),
-		iPhoenician: found("Cartagena"),
 		iPortuguese: u"Múrcia",
 		iSpanish: "Murcia",
 	},
