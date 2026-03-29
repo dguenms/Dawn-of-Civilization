@@ -516,6 +516,12 @@ def createAllResources():
 # Leoreth: bonus removal alerts by edead
 def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RESOURCE", removeTextKey="TXT_KEY_MISC_EVENT_RESOURCE_EXHAUSTED"):
 	"""Creates a bonus resource and alerts the plot owner"""
+	
+	# Java special case
+	if (iX, iY) == (125, 24):
+		if plot_(iX, iY).isCity():
+			iX, iY = 126, 25
+	
 	plot = plot_(iX, iY)
 	
 	iRemovedBonus = plot.getBonusType(-1) # for alert
