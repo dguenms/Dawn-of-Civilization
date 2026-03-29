@@ -10408,6 +10408,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=52
+	BonusType=BONUS_TOBACCO
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -10416,7 +10417,6 @@ BeginPlot
 	x=23,y=53
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_TOBACCO
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
