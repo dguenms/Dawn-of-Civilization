@@ -9904,10 +9904,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
-	x=122,y=23
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
 	x=122,y=24
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
@@ -10664,10 +10660,6 @@ BeginPlot
 	x=126,y=57
 	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=127,y=23
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=127,y=24

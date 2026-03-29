@@ -3864,10 +3864,10 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
-		PreviousOwner=CIVILIZATION_MISR
 	EndCity
 EndPlot
 BeginPlot
@@ -4319,8 +4319,8 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
@@ -5167,10 +5167,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=73,y=46
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
 	x=73,y=56
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
@@ -5354,8 +5350,8 @@ BeginPlot
 		YearAcquired=1550
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BARBARIAN
 	EndCity
@@ -5926,10 +5922,10 @@ BeginPlot
 		YearFounded=-330
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_ROME
 	EndCity
 EndPlot
@@ -6415,9 +6411,9 @@ BeginPlot
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_ARABIA
-		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_ROME
 	EndCity
@@ -7118,12 +7114,12 @@ BeginPlot
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
-		PreviousOwner=CIVILIZATION_MISR
-		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_ASSYRIA
+		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_TURKS
@@ -7253,12 +7249,12 @@ BeginPlot
 		YearAcquired=1515
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_ARABIA
-		PreviousOwner=CIVILIZATION_MISR
-		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_ASSYRIA
+		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_EGYPT
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_TURKS
@@ -7510,10 +7506,10 @@ BeginPlot
 		YearFounded=-300
 		YearAcquired=1695
 		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_RUS
 		PreviousOwner=CIVILIZATION_ITALY
 		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_OTTOMAN
+		PreviousOwner=CIVILIZATION_RUS
 		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
 EndPlot
@@ -11208,7 +11204,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Phnom Penh
+		CityName=Chaktomuk
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
@@ -11509,6 +11505,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
+	x=123,y=23
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=123,y=24
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
@@ -11535,8 +11535,6 @@ BeginPlot
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
-		BuildingType=BUILDING_BOROBUDUR
-		BuildingType=BUILDING_PRAMBANAN
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_BUDDHISM
@@ -12076,6 +12074,8 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_ISLAMIC_MONASTERY
+		BuildingType=BUILDING_BOROBUDUR
+		BuildingType=BUILDING_PRAMBANAN
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
@@ -12124,10 +12124,6 @@ BeginPlot
 	x=126,y=57
 	ImprovementType=IMPROVEMENT_COTTAGE
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=127,y=23
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=127,y=24
@@ -12214,6 +12210,10 @@ BeginPlot
 		YearAcquired=1520
 		PreviousOwner=CIVILIZATION_JAVA
 	EndCity
+EndPlot
+BeginPlot
+	x=128,y=25
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=128,y=45
