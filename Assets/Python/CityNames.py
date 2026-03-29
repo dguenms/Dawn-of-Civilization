@@ -171,15 +171,18 @@ def setupScenario():
 			"Mayapan": "Uuc Yabnal",
 			"Oguaa": "Elmina",
 			"Pagan": "Awa",
+			"Patala": "Thatta",
 			"Raga": "Tehran",
 			"Santa Isabel": u"São Tomé",
 			"Tarragona": "Barcelona",
+			"Tonallan": "Tzintzuntzan",
 			"Toshali": "Kataka",
 			"Tus": "Sanabad",
 			"Yashodharapura": "Phnom Penh",
 		}
 		dRenamed = {
 			"Byzantion": "Constantinopolis",
+			"Ra-Kedet": "Alexandreia",
 		}
 	
 	elif scenario() == i1700AD:
@@ -287,13 +290,17 @@ class Languages(object):
 		for iLanguage in getPrimaryLanguages(iPrimaryIdentifier):
 			# print "yield primary: %s" % iLanguage
 			yield iLanguage
+			
+		bOriginalMinor = self.city and is_minor(Civ(self.city.getOriginalCiv()))
+		bNonlocalMajor = not is_minor(self.identifier) and self.plot.getSettlerValue(self.iCiv) > 0 and (not self.city or self.city.getOriginalCiv() == self.iCiv)
+		
+		if bOriginalMinor or bNonlocalMajor:
+			for iLanguage in getLocalLanguages(self.tile):
+				# print "yield local for original minor or nonlocal major: %s" % iLanguage
+				yield iLanguage
 		
 		local_languages = self.getLocalLanguages()
 		local_civs = self.getValidLanguageCivs(local_languages)
-		
-		if not is_minor(self.identifier) and self.plot.getSettlerValue(self.iCiv) > 0 and (not self.city or self.city.getOriginalCiv() == self.iCiv):
-			for iLanguage in getLocalLanguages(self.tile):
-				yield iLanguage
 		
 		if self.plot.getRegionID() in lAmerica and civ(self.identifier) in dCivGroups[iCivGroupAmerica] and True not in data.dFirstContactConquerors.values():
 			local_civs = local_civs.group(iCivGroupAmerica)
@@ -308,7 +315,7 @@ class Languages(object):
 				# print "yield similar for %s: %s" % (infos.civ(iSimilarCiv).getText(), iLanguage)
 				yield iLanguage
 		
-		for iLanguage in getLocalLanguages(self.tile):
+		for iLanguage in local_languages:
 			# print "yield local: %s" % iLanguage
 			yield iLanguage
 		

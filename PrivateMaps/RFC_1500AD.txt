@@ -1280,6 +1280,7 @@ BeginPlot
 		EndCulture
 		YearFounded=100
 		YearAcquired=900
+		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_CELT
 	EndCity
 EndPlot
@@ -1812,7 +1813,6 @@ BeginPlot
 			Civilization=CIVILIZATION_MOORS, Culture=100
 		EndCulture
 		YearFounded=900
-		PreviousOwner=CIVILIZATION_MOORS
 	EndCity
 EndPlot
 BeginPlot
@@ -2292,9 +2292,9 @@ BeginPlot
 		YearFounded=-300
 		YearAcquired=700
 		PreviousOwner=CIVILIZATION_PHOENICIA
+		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BARBARIAN
-		PreviousOwner=CIVILIZATION_BYZANTIUM
 	EndCity
 EndPlot
 BeginPlot
@@ -2554,7 +2554,7 @@ BeginPlot
 			Civilization=CIVILIZATION_HOLY_ROMAN, Culture=250
 		EndCulture
 		YearFounded=50
-		YearFounded=843
+		YearAcquired=843
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_FRANCE
 	EndCity
@@ -2766,7 +2766,6 @@ BeginPlot
 		EndCulture
 		YearFounded=810
 		YearAcquired=840
-		PreviousOwner=CIVILIZATION_HOLY_ROMAN
 	EndCity
 EndPlot
 BeginPlot
@@ -2848,9 +2847,9 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_SPAIN
+		PreviousOwner=CIVILIZATION_MISR
 	EndCity
 EndPlot
 BeginPlot
@@ -3039,7 +3038,6 @@ BeginPlot
 		YearAcquired=1250
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_HOLY_ROMAN
-		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_BARBARIAN
 	EndCity
 EndPlot
@@ -3315,7 +3313,7 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_ROME
@@ -4066,7 +4064,7 @@ BeginPlot
 		YearAcquired=969
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_EGYPT
+		PreviousOwner=CIVILIZATION_MISR
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BARBARIAN
@@ -5369,10 +5367,10 @@ BeginPlot
 		YearFounded=-2000
 		YearAcquired=1400
 		PreviousOwner=CIVILIZATION_HITTITES
-		PreviousOwner=CIVILIZATION_PERSIA
-		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BYZANTIUM
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
 EndPlot
@@ -5590,8 +5588,8 @@ BeginPlot
 		YearFounded=-700
 		YearAcquired=1461
 		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BYZANTIUM
+		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
 EndPlot
@@ -6133,6 +6131,7 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=1400
+		PreviousOwner=CIVILIZATION_INDEPENDENT
 	EndCity
 EndPlot
 BeginPlot
@@ -6309,13 +6308,13 @@ BeginPlot
 		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_ASSYRIA
-		PreviousOwner=CIVILIZATION_HITTITES
-		PreviousOwner=CIVILIZATION_PERSIA
-		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_ROME
 		PreviousOwner=CIVILIZATION_BYZANTIUM
-		PreviousOwner=CIVILIZATION_TURKS
+		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_HITTITES
 		PreviousOwner=CIVILIZATION_MISR
+		PreviousOwner=CIVILIZATION_PERSIA
+		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
 EndPlot
 BeginPlot
@@ -6743,6 +6742,7 @@ BeginPlot
 		EndCulture
 		YearFounded=450
 		YearAcquired=1320
+		PreviousOwner=CIVILIZATION_INDEPENDENT2
 		PreviousOwner=CIVILIZATION_ARABIA
 		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
@@ -6900,7 +6900,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Astrakhan
+		CityName=Hajji Tarkhan
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -6970,7 +6970,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Kazan
+		CityName=Qashan
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -7348,9 +7348,9 @@ BeginPlot
 		YearFounded=-330
 		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_GREECE
+		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_TURKS
-		PreviousOwner=CIVILIZATION_MONGOL
 	EndCity
 EndPlot
 BeginPlot
@@ -7603,8 +7603,8 @@ BeginPlot
 		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_PERSIA
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_PERSIA
 	EndCity
 EndPlot
 BeginPlot
@@ -8505,9 +8505,9 @@ BeginPlot
 		YearFounded=-200
 		YearAcquired=1500
 		PreviousOwner=CIVILIZATION_KUSHANS
-		PreviousOwner=CIVILIZATION_TURKS
 		PreviousOwner=CIVILIZATION_CHINA
 		PreviousOwner=CIVILIZATION_MONGOL
+		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
 EndPlot
 BeginPlot
@@ -8797,7 +8797,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT2
-		CityName=Lasa
+		CityName=Rasa
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -8899,9 +8899,9 @@ BeginPlot
 		YearFounded=-200
 		YearAcquired=1368
 		PreviousOwner=CIVILIZATION_CHINA
-		PreviousOwner=CIVILIZATION_TURKS
 		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_TIBET
+		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
 EndPlot
 BeginPlot
@@ -9118,6 +9118,7 @@ BeginPlot
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=500
 		EndCulture
 		YearFounded=1310
+		PreviousOwner=CIVILIZATION_BURMA
 	EndCity
 EndPlot
 BeginPlot
@@ -10071,6 +10072,7 @@ BeginPlot
 		EndCulture
 		YearFounded=400
 		YearAcquired=1100
+		PreviousOwner=CIVILIZATION_INDEPENDENT
 		PreviousOwner=CIVILIZATION_KHMER
 	EndCity
 EndPlot
@@ -10899,6 +10901,7 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=100
 		EndCulture
+		PreviousOwner=CIVILIZATION_INDEPENDENT2
 		PreviousOwner=CIVILIZATION_JAVA
 	EndCity
 EndPlot
