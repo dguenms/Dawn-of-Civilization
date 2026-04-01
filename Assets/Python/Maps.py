@@ -239,6 +239,21 @@ def exportBaseSettlerMap():
 	map.export()
 
 
+def exportPlotMap(name, func):
+	map = FileMap("%s.csv" % name)
+	
+	def value(p):
+		v = func(p)
+		if v == -1:
+			return None
+		return str(v)
+	
+	values = [(location(p), value(p)) for p in plots.all()]
+	
+	map.create(values)
+	map.export()
+
+
 def markUnnamedTiles():
 	for (x, y), name in city_names:
 		p = plot(x, y)
