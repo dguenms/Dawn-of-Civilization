@@ -1270,9 +1270,13 @@ class PlotFactory:
 			return self.none()
 		return self.area(dExpansionArea, dExpansionAreaExceptions, identifier)
 
-	def respawn(self, identifier):
+	def respawn(self, identifier, iPeriod=None):
 		if identifier in dRespawnArea:
 			return self.area(dRespawnArea, dRespawnAreaExceptions, identifier)
+		if iPeriod is None:
+			iPeriod = period(identifier)
+		if iPeriod in dPeriodCoreArea:
+			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.birth(identifier)
 	
 	def capital(self, identifier):
