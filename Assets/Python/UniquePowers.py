@@ -108,6 +108,9 @@ def resetMongolPower(bWar, iTeam, iOtherTeam):
 
 @handler("improvementBuilt")
 def americanImprovementPower(iImprovement, x, y):
+	if scenarioStartTurn():
+		return
+	
 	improved = plot(x, y)
 	if iImprovement >= 0 and improved.isOwned() and civ(improved) == iAmerica and not improved.isWater():
 		if improved.getBonusType(improved.getTeam()) >= 0 and infos.improvement(iImprovement).isImprovementBonusTrade(improved.getBonusType(improved.getTeam())) and not infos.improvement(iImprovement).isActsAsCity():

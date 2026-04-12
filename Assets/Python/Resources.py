@@ -166,7 +166,7 @@ dResourcesDict = {
 	(37, 12)  : (1700,  iHorse),    # Argentina
 	(79, 70)  : (1700,  iFish),     # Ingria
 	(81, 30)  : (1700,  iBanana),   # Central Africa
-	(21, 40)  : (1700,  iBanana),   # Guatemala
+	(21, 41)  : (1700,  iBanana),   # Guatemala
 	(33, 42)  : (1700,  iCoffee),   # Hispaniola
 	(46, 25)  : (1700,  iCoffee),	# Eastern Brazil
 	(46, 22)  : (1700,  iCoffee),   # Southern Brazil
@@ -189,7 +189,7 @@ dResourcesDict = {
 	(74, 12)  : (1750,  iWine),     # South Africa
 	(41, 17)  : (1750,  iWine),     # Southern Brazil
 	(128, 62) : (1800,  iCorn),     # Manchuria
-	(80, 63)  : (1800,  iPotato),   # Belarus
+	(82, 69)  : (1800,  iPotato),   # Russia
 	(87, 65)  : (1800,  iPotato),   # Russia
 	(124, 51) : (1800,  iPotato),   # China
 	(139, 11) : (1800,  iSheep),    # Australia
@@ -197,7 +197,7 @@ dResourcesDict = {
 	(47, 22)  : (1800,  iCitrus),   # Southern Brazil
 	(41, 18)  : (1800,  iCitrus),   # Southern Brazil
 	(78, 16)  : (1800,  iCitrus),   # South Africa
-	(80, 14)  : (1800,  iSugar),	# Natal
+	(79, 12)  : (1800,  iSugar),	# Natal
 	(85, 25)  : (1800,  iSpices),   # Zanzibar (nutmeg)
 	(37, 39)  : (1800,  iSpices),   # Grenada (nutmeg)
 	(93, 27)  : (1800,  iSpices),   # Seychelles (cinnamon)
@@ -285,7 +285,6 @@ dRemovedResourcesDict = {
 	(59, 51)  :  400, # Silver in Spain
 	(83, 48)  :  500, # Clams in Phoenicia
 	(83, 47)  :  500, # Dye (murex) in Phoenicia
-	(73, 46)  :  500, # Dye (murex) in Cyrenaica
 	(68, 47)  :  500, # Dye (murex) in Tunisia
 	(70, 50)  :  500, # Dye (murex) in Italy
 	(61, 48)  :  500, # Dye (murex) in Algeria
@@ -462,11 +461,6 @@ def setupScenarioResources():
 	setup()
 	iStartTurn = scenarioStartTurn()
 	
-	for iTurn, lResources in dRemovedResources:
-		if iTurn <= iStartTurn:
-			for x, y in lResources:
-				removeResource(x, y)
-	
 	for iTurn, lResources in dResources:
 		if iTurn <= iStartTurn:
 			for (x, y), iResource in lResources:
@@ -476,6 +470,16 @@ def setupScenarioResources():
 		if year(dBirth[iCiv]) <= iStartTurn and any(iEnd >= iStartTurn for iStart, iEnd in dResurrections[iCiv]):
 			for (x, y), iResource in lResources:
 				createResource(x, y, iResource)
+	
+	for iCivGroup, lResources in dCivGroupResources:
+		for (x, y), iResource, iYear in lResources:
+			if year(iYear) <= iStartTurn:
+				createResource(x, y, iResource)
+	
+	for iTurn, lResources in dRemovedResources:
+		if iTurn <= iStartTurn:
+			for x, y in lResources:
+				removeResource(x, y)
 	
 	for iTurn, lFeatures in dFeatures:
 		if iTurn <= iStartTurn:
@@ -500,10 +504,6 @@ def setupScenarioResources():
 			for (x, y), iPlotType in lPlots:
 				plot(x, y).setPlotType(iPlotType, True, True)
 	
-	for iCivGroup, lResources in dCivGroupResources:
-		for (x, y), iResource, iYear in lResources:
-			if year(iYear) <= iStartTurn:
-				createResource(x, y, iResource)
 
 
 def createAllResources():

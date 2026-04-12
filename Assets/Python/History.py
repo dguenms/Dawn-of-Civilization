@@ -439,6 +439,9 @@ def recordExplorationTurn(iTech, iTeam, iPlayer):
 
 @handler("techAcquired")
 def spanishExplorers(iTech, iTeam, iPlayer):
+	if scenarioStartTurn():
+		return
+	
 	if iTech == iCartography:
 		if civ(iPlayer) == iSpain and not player(iPlayer).isHuman():
 			city = cities.owner(iPlayer).coastal().minimum(CyCity.getX)

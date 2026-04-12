@@ -134,6 +134,14 @@
 		<Spanish>Papal States</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ITALY_SARDINIA_PIEDMONT</Tag>
+		<English>Sardinia-Piedmont</English>
+		<French>Sardinia-Piedmont</French>
+		<German>Sardinia-Piedmont</German>
+		<Italian>Sardinia-Piedmont</Italian>
+		<Spanish>Sardinia-Piedmont</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ITALY_ADJECTIVE</Tag>
 		<English>Italian</English>
 		<French>

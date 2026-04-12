@@ -35,7 +35,7 @@ lCivilizations = [
 		iStateReligion=iConfucianism,
 		lCivics=[iDespotism, iBureaucracy, iCasteSystem, iRegulatedTrade, iSyncretism, iIsolationism],
 		techs=techs.column(10).without(iExploration, iOptics, iAcademia),
-		dAttitudes={iChina: 2}
+		dAttitudes={iManchuria: 2}
 	),
 	Civilization(
 		iJapan,
@@ -406,7 +406,7 @@ scenario1700AD = Scenario(
 	},
 	
 	dColonistsAlreadyGiven = {
-		iNorse : 1,
+		iSweden : 1,
 		iSpain : 7,
 		iFrance : 3,
 		iEngland : 3,

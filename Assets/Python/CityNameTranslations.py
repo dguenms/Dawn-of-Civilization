@@ -2034,7 +2034,6 @@ name_translations = {
 			translate("Inwa", iAfter=iGlobal),
 			_,
 		),
-		iIndian: "Ratanapura",
 		iPortuguese: "Ava",
 	},
 	"Awarna": {  # founded on Halikarnassos
@@ -3550,7 +3549,7 @@ name_translations = {
 		),
 		iDravidian: "Pukkara",
 		iDutch: "Boechara",
-		iEnglish: "Bokhara",
+		iEnglish: "Bukhara",
 		iFrench: "Boukhara",
 		iGreek: u"Poukhára",
 		iItalian: "Buchara",
@@ -8989,7 +8988,10 @@ name_translations = {
 	"Kandarpapura": {
 		iChinese: "Shunhua",
 		iIndian: _,
-		iVietnamese: "Hue",
+		iVietnamese: (
+			translate("Hue", iAfter=iIndustrial),
+			"Phu Xuan",
+		),
 	},
 	"Kandyagash": {
 		iRussian: _,
@@ -11645,6 +11647,7 @@ name_translations = {
 	},
 	"Mandalay": {  # relocated from Pagan
 		iBurmese: _,
+		iEnglish: _,
 		iIndian: "Ratanapura",
 	},
 	"Mandheera": {
@@ -12928,6 +12931,10 @@ name_translations = {
 		iSwedish: "Karsji",
 		iTurkish: _,
 	},
+	"Nashik": {
+		iIndian: _,
+		iPersian: "Gulshanabad",
+	},
 	"Nassau": {
 		iDutch: _,
 		iEnglish: _,
@@ -14034,7 +14041,7 @@ name_translations = {
 		iIndian: "Silvassa",
 		iPortuguese: _,
 	},
-	"Padang": {
+	"Padang": {  # relocated from Pagaruyung
 		iArabic: "Badangh",
 		iChinese: "Badong",
 		iDravidian: "Patan",
@@ -16817,7 +16824,7 @@ name_translations = {
 		iArabic: "Kerker",
 		iNubian: _,
 	},
-	"Sevastopol": {  # founded on Kersonesos
+	"Sevastopol": {  # founded on Khersonesos
 		iDutch: "Sebastopol",
 		iEnglish: "Sebastopol",
 		iFrench: u"Sébastopol",
@@ -19089,6 +19096,7 @@ name_translations = {
 	"Tumasik": {
 		iArabic: "Tamasukh",
 		iChinese: "Danmaxi",
+		iEnglish: rename("Singapura"),
 		iItalian: "Chiamassie",
 		iMalay: (
 			rename("Singapura", iAfter=iRenaissance),
@@ -19295,11 +19303,20 @@ name_translations = {
 		iFrench: _,
 	},
 	u"Þróndheimr": {
+		iChinese: "Telonghemu",
+		iDutch: "Trondheim",
+		iGerman: (
+			translate("Trondheim", iAfter=iIndustrial),
+			"Drontheim",
+		),
+		iLatin: "Nidrosia",
 		iNordic: (
 			translate("Trondhjem", iPeriod=iPeriodDenmark),
 			translate("Trondheim", iPeriod=iPeriodNorway),
 			_,
 		),
+		iSwedish: "Trondheim",
+		iTurkish: "Trondheim",
 	},
 	
 	### U ###
@@ -20637,6 +20654,11 @@ name_translations = {
 			relocate("Turpan", iAfter=iRenaissance),
 			_,
 		),
+	},
+	"Yarkant": {
+		iChinese: "Shaju",
+		iEnglish: "Yarkand",
+		iTurkish: _,
 	},
 	"Yashkul": {
 		iMongol: found("Saqsin"),

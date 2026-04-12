@@ -5845,8 +5845,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=55
-	BonusType=BONUS_SPICES
-	BonusVarietyType=BONUS_SPICES_SAFFRON
 	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
@@ -6302,8 +6300,8 @@ BeginPlot
 		EndCulture
 		YearFounded=-3000
 		PreviousOwner=CIVILIZATION_INDEPENDENT
-		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_ASSYRIA
+		PreviousOwner=CIVILIZATION_BABYLONIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_GREECE
 		PreviousOwner=CIVILIZATION_HITTITES
@@ -7273,7 +7271,6 @@ EndPlot
 BeginPlot
 	x=96,y=51
 	ImprovementType=IMPROVEMENT_PLANTATION
-	BonusType=BONUS_COTTON
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -7680,6 +7677,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
+	x=102,y=50
+	ImprovementType=IMPROVEMENT_ORCHARD
+EndPlot
+BeginPlot
 	x=102,y=55
 	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
@@ -7784,7 +7785,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=42
-	BonusType=BONUS_COTTON
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -8154,8 +8154,13 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=106,y=39
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=106,y=40
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
 	x=106,y=42
@@ -8246,13 +8251,8 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
-	x=107,y=39
-	ImprovementType=IMPROVEMENT_PLANTATION
-	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
 	x=107,y=40
-	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=107,y=41
@@ -9129,11 +9129,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=52
-	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=117,y=53
 	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=117,y=55
@@ -9987,6 +9984,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
+	x=123,y=23
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=123,y=24
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
@@ -10747,6 +10748,10 @@ EndPlot
 BeginPlot
 	x=128,y=24
 	ImprovementType=IMPROVEMENT_HAMLET
+EndPlot
+BeginPlot
+	x=128,y=25
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=128,y=27

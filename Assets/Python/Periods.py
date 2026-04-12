@@ -34,6 +34,20 @@ dPeriods1700AD = {
 	iManchuria : iPeriodQing,
 }
 
+dPeriods1815AD = {
+	iChina : iPeriodMing,
+	iIndia : iPeriodMaratha,
+	iFrance : iPeriodNationalFrance,
+	iNorse : iPeriodDenmark,
+	iTurks : iPeriodUzbeks,
+	iMoors : iPeriodMorocco,
+	iSpain : iPeriodSpain,
+	iHolyRome : iPeriodAustria,
+	iEngland : iPeriodUnitedKingdom,
+	iOttomans : iPeriodOttomanConstantinople,
+	iManchuria : iPeriodQing,
+}
+
 dScenarioPeriods = {
 	600: dPeriods600AD,
 	1500: dPeriods1500AD,

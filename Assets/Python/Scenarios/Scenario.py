@@ -229,6 +229,8 @@ WONDER_ORIGINAL_BUILDERS = {
 	iBorobudur : (iJava, 825),
 	iPrambanan : (iJava, 850),
 	iEscorial : (iSpain, 1584),
+	iChapultepecCastle : (iSpain, 1785),
+	iLasLajasSanctuary : (iSpain, 1764),
 	iMezquita : (iMoors, 785),
 	iNotreDame : (iFrance, 1260),
 	iVersailles : (iFrance, 1661),
@@ -236,6 +238,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iKrakDesChevaliers : (iFrance, 1140),
 	iWatPreahPisnulok : (iKhmer, 1113),
 	iOxfordUniversity : (iEngland, 1096),
+	iBellRockLighthouse : (iEngland, 1810),
 	iProtestantShrine : (iHolyRome, 1503),
 	iSaintThomasChurch : (iHolyRome, 1496),
 	iSaintSophia : (iRus, 1031),
@@ -254,12 +257,14 @@ WONDER_ORIGINAL_BUILDERS = {
 	iTajMahal : (iMughals, 1653),
 	iRedFort : (iMughals, 1648),
 	iKremlin : (iRussia, 1495),
+	iHermitage : (iRussia, 1764),
 	iSaintBasilsCathedral : (iRussia, 1561),
 	iTopkapiPalace : (iOttomans, 1465),
 	iBlueMosque : (iOttomans, 1616),
 	iImageOfTheWorldSquare : (iIran, 1629),
 	iBourse : (iNetherlands, 1602),
 	iAmberRoom : (iGermany, 1700),
+	iBrandenburgGate : (iGermany, 1791),
 }
 
 DEFAULT_CIV_DESCRIPTIONS = {}
@@ -327,14 +332,16 @@ class Revealed(object):
 	def __init__(self, *args, **kwargs):
 		self.lLandRegions = kwargs.get("lLandRegions", [])
 		self.lCoastRegions = kwargs.get("lCoastRegions", [])
+		self.lSeaRegions = kwargs.get("lSeaRegions", [])
 		self.lSeaAreas = kwargs.get("lSeaAreas", [])
 	
 	def getArea(self):	
 		landPlots = plots.regions(*self.lLandRegions).where(CyPlot.isOwned)
-		coastPlots = plots.regions(*self.lCoastRegions).coastal().expand(1).water()
+		coastPlots = plots.regions(*self.lCoastRegions).coastal().expand(1).sea()
+		seaRegionPlots = plots.regions(*self.lSeaRegions).water()
 		seaPlots = plots.sum(plots.rectangle(*tArea) for tArea in self.lSeaAreas).water()
 		
-		return landPlots + coastPlots + seaPlots
+		return landPlots + coastPlots + seaRegionPlots + seaPlots
 			
 
 class Scenario(object):

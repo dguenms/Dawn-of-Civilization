@@ -25,6 +25,7 @@
 				<LoadingTime>25</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -127,6 +128,7 @@
 				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -213,6 +215,7 @@
 				<LoadingTime>35</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>8</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -305,6 +308,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -382,6 +386,7 @@
 				<LoadingTime>25</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -457,6 +462,7 @@
 			<LoadingTimes>
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>6</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -571,6 +577,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -667,6 +674,7 @@
 				<LoadingTime>40</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>12</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -755,6 +763,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -833,6 +842,7 @@
 			<StartingYear>330</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -937,6 +947,7 @@
 				<LoadingTime>50</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>20</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -1041,6 +1052,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -1142,6 +1154,7 @@
 			<StartingYear>-600</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>2</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -1255,6 +1268,7 @@
 			<StartingYear>-2070</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -1374,6 +1388,7 @@
 				<LoadingTime>40</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>10</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -1455,6 +1470,7 @@
 			<StartingYear>-300</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>2</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -1562,6 +1578,7 @@
 			<Identifier>EGY</Identifier>
 			<StartingYear>-3000</StartingYear>
 			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -1688,6 +1705,7 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -1793,6 +1811,7 @@
 			<StartingYear>-295</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>2</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -1912,6 +1931,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -2015,6 +2035,7 @@
 			<LoadingTimes>
 				<LoadingTime>30</LoadingTime>
 				<LoadingTime>20</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2136,6 +2157,7 @@
 			<StartingYear>-1600</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -2267,6 +2289,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -2364,6 +2387,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -2435,6 +2459,7 @@
 			<LoadingTimes>
 				<LoadingTime>6</LoadingTime>
 				<LoadingTime>2</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2541,6 +2566,7 @@
 				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -2625,6 +2651,7 @@
 			<StartingYear>-1500</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -2741,6 +2768,7 @@
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -2844,6 +2872,7 @@
 				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -2942,6 +2971,7 @@
 			<StartingYear>525</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -3052,6 +3082,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -3145,6 +3176,7 @@
 			<StartingYear>50</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -3254,6 +3286,7 @@
 				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -3349,6 +3382,7 @@
 			<StartingYear>-50</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>2</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -3452,6 +3486,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -3517,6 +3552,7 @@
 			<StartingYear>500</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -3609,6 +3645,7 @@
 			<StartingYear>300</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -3728,6 +3765,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -3825,6 +3863,7 @@
 			<StartingYear>-400</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -3938,6 +3977,7 @@
 				<LoadingTime>35</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>8</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -4029,6 +4069,7 @@
 				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -4112,6 +4153,7 @@
 			<LoadingTimes>
 				<LoadingTime>12</LoadingTime>
 				<LoadingTime>6</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4209,6 +4251,7 @@
 			<LoadingTimes>
 				<LoadingTime>6</LoadingTime>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4322,6 +4365,7 @@
 				<LoadingTime>6</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -4425,6 +4469,7 @@
 			<Identifier>NAT</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -4535,6 +4580,7 @@
 			<LoadingTimes>
 				<LoadingTime>25</LoadingTime>
 				<LoadingTime>12</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4650,6 +4696,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -4760,6 +4807,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -4835,6 +4883,7 @@
 			<LoadingTimes>
 				<LoadingTime>12</LoadingTime>
 				<LoadingTime>6</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4935,6 +4984,7 @@
 			<StartingYear>-850</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -5059,6 +5109,7 @@
 				<LoadingTime>4</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -5179,6 +5230,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
@@ -5286,6 +5338,7 @@
 			<LoadingTimes>
 				<LoadingTime>8</LoadingTime>
 				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5404,6 +5457,7 @@
 			<StartingYear>-509</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -5527,6 +5581,7 @@
 				<LoadingTime>1</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -5606,6 +5661,7 @@
 			<LoadingTimes>
 				<LoadingTime>12</LoadingTime>
 				<LoadingTime>5</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5703,6 +5759,7 @@
 			<LoadingTimes>
 				<LoadingTime>6</LoadingTime>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -5805,6 +5862,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
@@ -5889,6 +5947,7 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -5960,6 +6019,7 @@
 			<LoadingTimes>
 				<LoadingTime>20</LoadingTime>
 				<LoadingTime>8</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -6041,6 +6101,7 @@
 			<LoadingTimes>
 				<LoadingTime>15</LoadingTime>
 				<LoadingTime>8</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -6147,6 +6208,7 @@
 			<LoadingTimes>
 				<LoadingTime>4</LoadingTime>
 				<LoadingTime>1</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -6275,6 +6337,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -6345,6 +6408,7 @@
 			<StartingYear>552</StartingYear>
 			<LoadingTimes>
 				<LoadingTime>4</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -6440,6 +6504,7 @@
 				<LoadingTime>2</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -6515,6 +6580,7 @@
 			<Identifier>ZUL</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -6606,6 +6672,7 @@
 			<Identifier>MIN</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -6828,6 +6895,7 @@
 			<Identifier>MIN</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
@@ -7056,6 +7124,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
@@ -7247,6 +7316,7 @@
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
+				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
@@ -7359,6 +7429,7 @@
 			<Identifier>BAR</Identifier>
 			<StartingYear>0</StartingYear>
 			<LoadingTimes>
+				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>

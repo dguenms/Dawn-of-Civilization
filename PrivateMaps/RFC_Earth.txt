@@ -13977,6 +13977,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=46
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14442,7 +14443,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=46
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46089,6 +46089,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=50
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -46544,8 +46546,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=50
-	BonusType=BONUS_SPICES
-	BonusVarietyType=BONUS_SPICES_SAFFRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -47860,12 +47860,14 @@ BeginPlot
 	x=106,y=39
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	BonusType=BONUS_COTTON
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=106,y=40
+	BonusType=BONUS_GEMS
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48321,14 +48323,13 @@ BeginPlot
 	x=107,y=39
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_COTTON
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=107,y=40
-	BonusType=BONUS_GEMS
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -52941,7 +52942,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=52
-	FeatureType=FEATURE_FOREST, FeatureVariety=1
+	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -52949,7 +52950,6 @@ BeginPlot
 	x=117,y=53
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_SHEEP
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -53432,6 +53432,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot

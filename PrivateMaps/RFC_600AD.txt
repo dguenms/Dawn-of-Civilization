@@ -2061,6 +2061,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=38
+	BonusType=NONE
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARCHER
@@ -2128,6 +2129,10 @@ EndPlot
 BeginPlot
 	x=108,y=56
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=109,y=39
+	BonusType=BONUS_IRON
 EndPlot
 BeginPlot
 	x=109,y=45

@@ -216,6 +216,42 @@ def setupScenario():
 			"Ra-Kedet": "Alexandreia",
 		}
 	
+	elif scenario() == i1815AD:
+		dRelocated = {
+			"Ayutthaya": "Bangkok",
+			"Birnin Kebbi": "Sakkwato",
+			"Chaiya": "Surat Thani",
+			"Chalchihuites": "Guadalajara",
+			"Chan Chan": "Truhillu",
+			"Fuerte Recabarren": u"Concepción",
+			"Juneau": "Sitka",
+			"Kalhu": "Al-Mawsil",
+			"Khersonesos": "Sevastopol",
+			"Kissonde": "Lwanda",
+			"Kupang": "Dili",
+			"Oguaa": "Elmina",
+			"Pagan": "Mandalay",
+			"Patala": "Thatta",
+			"Raga": "Tehran",
+			"Ravenna": "Venezia",
+			"Soba": "Khartoum",
+			"Sofala": "Beira",
+			"Sukadana": "Pontianak",
+			"Tarragona": "Barcelona",
+			"Tarsus": "Adana",
+			"Tumasik": "Singapura",
+			"Tyras": "Odesa",
+			"Uitenhage": "Port Elizabeth",
+			"Ujjain": "Dhar",
+			"Yashodharapura": "Phnom Penh",
+		}
+		
+		dRenamed = {
+			"Byzantion": "Constantinopolis",
+			"Indraprastha": "Delhi",
+			"Ra-Kedet": "Alexandreia",
+		}
+	
 	data.dRelocatedCities.update(dRelocated)
 	data.dRenamedCities.update(dRenamed)
 

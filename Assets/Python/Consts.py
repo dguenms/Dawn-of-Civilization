@@ -1107,7 +1107,7 @@ rSouthernCone, rAntarctica, rHinduKush, rRussia, rVolga) = range(iNumRegions)
 
 iNumWaterRegions = 86
 (rMediterraneanSea, rBlackSea, rCaspianSea, rBalticSea, rNorthSea, rAtlanticOcean, rCaribbeanSea, rGulfOfMexico, rHudsonBay, rArcticOcean,
-rRedSea, rArabianSea, rPersianGulf, rGulfOfBengal, rIndianOcean, rAustralasianSea, rSouthChinaSea, rEastChinaSea, rSeaOfJapan, rSeaOfOkhotsk, 
+rRedSea, rArabianSea, rPersianGulf, rBayOfBengal, rIndianOcean, rAustralasianSea, rSouthChinaSea, rEastChinaSea, rSeaOfJapan, rSeaOfOkhotsk, 
 rBeringSea, rPacificOcean, rSouthernOcean, rVanern, rVattern, rInari, rPaijanne, rOulu, rSaimaa, rPeipus, 
 rLadoga, rOnega, rVan, rSevan, rUrmia, rAralSea, rTengiz, rBalkhash, rIssykKul, rAlakol, 
 rZaysan, rUvs, rKhovsgol, rBaikal, rTaymyr, rHulun, rQinghai, rLopNur, rSiling, rDongting, 
@@ -1116,7 +1116,7 @@ rRweru, rTanganyika, rMweru, rBangweulu, rRukwa, rMalawi, rGreatBear, rTidee, rA
 rDubawt, rBaker, rWinnipeg, rSuperior, rMichigan, rHuron, rErie, rLakeOntario, rMistassini, rLobstick, 
 rGreatSalt, rNicaragua, rTiticaca, rMarChiquita, rKhanka, rZabuye) = range(100, 100 + iNumWaterRegions)
 
-lEuropeProper = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe]
+lEuropeProper = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe, rRussia, rVolga]
 lEuropeAsia = [rEuropeanArctic, rUrals, rSiberia]
 lMiddleEast = [rAnatolia, rCaucasus, rLevant, rMesopotamia, rArabia, rPersia, rKhorasan, rTransoxiana]
 lIndia = [rSindh, rPunjab, rRajputana, rHindustan, rBengal, rDeccan, rDravida]
@@ -1237,10 +1237,10 @@ lLateColonyCivs = lTradingCompanyCivs + [iGermany]
 
 lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRus]
 
-iNumScenarios = 4
-(i3000BC, i600AD, i1500AD, i1700AD) = range(4)
+iNumScenarios = 5
+(i3000BC, i600AD, i1500AD, i1700AD, i1815AD) = range(iNumScenarios)
 
-lScenarioStartYears = [-3000, 600, 1500, 1700]
+lScenarioStartYears = [-3000, 600, 1500, 1700, 1815]
 
 # Stability overlay and editor
 iNumPlotStabilityTypes = 4

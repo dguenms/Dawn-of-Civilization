@@ -18,6 +18,14 @@
 		<Spanish>It is the year 1776 AD. Discontent with foreign domination, the people in the American colonies have risen up in revolution to found their own nation. However, their fledgling republic is still in danger of being reclaimed by European colonial powers and has to surpass its former masters to fulfill its manifest destiny.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_AMERICA_1815AD</Tag>
+		<English>It is the year 1815 AD. Despite the devastating sack of Washington, the recent war with Britain affirmed the recognition of the United States as a sovereign nation. The Napoleonic Wars ended up working in America's favour, with Napoleon's sale Louisiana more than doubling the territories of the United States, leaving the west of the continent wide open for settlement.</English>
+		<French>It is the year 1815 AD. Despite the devastating sack of Washington, the recent war with Britain affirmed the recognition of the United States as a sovereign nation. The Napoleonic Wars ended up working in America's favour, with Napoleon's sale Louisiana more than doubling the territories of the United States, leaving the west of the continent wide open for settlement.</French>
+		<German>It is the year 1815 AD. Despite the devastating sack of Washington, the recent war with Britain affirmed the recognition of the United States as a sovereign nation. The Napoleonic Wars ended up working in America's favour, with Napoleon's sale Louisiana more than doubling the territories of the United States, leaving the west of the continent wide open for settlement.</German>
+		<Italian>It is the year 1815 AD. Despite the devastating sack of Washington, the recent war with Britain affirmed the recognition of the United States as a sovereign nation. The Napoleonic Wars ended up working in America's favour, with Napoleon's sale Louisiana more than doubling the territories of the United States, leaving the west of the continent wide open for settlement.</Italian>
+		<Spanish>It is the year 1815 AD. Despite the devastating sack of Washington, the recent war with Britain affirmed the recognition of the United States as a sovereign nation. The Napoleonic Wars ended up working in America's favour, with Napoleon's sale Louisiana more than doubling the territories of the United States, leaving the west of the continent wide open for settlement.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_ARABIA</Tag>
 		<English>It is the year 622 AD. The founding of Islam unites the Arabian people under the banner of the Caliphate. Arabia's direct neighbors, the Byzantine Empire and Sassanid Persia, are weakened from their recent wars. It is the right time to expand the House of Islam into their wealthy possessions, forming a melting pot of cultures that will bring culture and science to new heights.</English>
 		<French>Nous sommes en l'an 622 ap. J.-C. La fondation de l'islam permet d'unir les peuples d'Arabie sous la banni&#232;re du califat. Les voisins imm&#233;diats des Arabes, l'Empire byzantin et la Perse sassanide, sont affaiblis par leurs guerres r&#233;centes. Le moment est id&#233;al pour propager l'islam &#224; travers leurs contr&#233;es riches et ainsi cr&#233;er un m&#233;lange de cultures capable d'emmener les arts et les sciences vers de nouveaux sommets.</French>
@@ -32,6 +40,14 @@
 		<German>It is the year 1810 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</German>
 		<Italian>It is the year 1810 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</Italian>
 		<Spanish>It is the year 1810 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ARGENTINA_1815AD</Tag>
+		<English>It is the year 1815 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</English>
+		<French>Nous sommes en l'an 1815 ap. J.-C. Encourag&#233; par la faiblesse de l'Empire espagnol et les id&#233;aux de la R&#233;volution fran&#231;aise, le peuple de la Vice-royaut&#233; du R&#237;o de la Plata a renvers&#233; son vice-roi et lanc&#233; une r&#233;volution afin de cr&#233;er la R&#233;publique argentine.</French>
+		<German>It is the year 1815 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</German>
+		<Italian>It is the year 1815 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</Italian>
+		<Spanish>It is the year 1815 AD. Spurred by the weakness of the Spanish Empire and the ideals of the French Revolution, the people in the Viceroyalty of the Rio de la Plata have overthrown their viceroy and started a revolution to form the Argentine Republic.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_ASSYRIA</Tag>
@@ -96,6 +112,14 @@
 		<German>It is the year 1700 AD. Under King Bayinnaung, the Toungoo dynasty had dominated South East Asia. After his death, his empire collapsed and the dynasty barely recovered. Now Burma is beset by instability and external attacks - can it again rise to become the hegemon of Indochina?</German>
 		<Italian>It is the year 1700 AD. Under King Bayinnaung, the Toungoo dynasty had dominated South East Asia. After his death, his empire collapsed and the dynasty barely recovered. Now Burma is beset by instability and external attacks - can it again rise to become the hegemon of Indochina?</Italian>
 		<Spanish>It is the year 1700 AD. Under King Bayinnaung, the Toungoo dynasty had dominated South East Asia. After his death, his empire collapsed and the dynasty barely recovered. Now Burma is beset by instability and external attacks - can it again rise to become the hegemon of Indochina?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_BURMA_1815AD</Tag>
+		<English>It is the year 1815 AD. After inconclusive wars with Ayutthaya, the Konbaung dynasty of Burma was faced with several invasions by the powerful Qing dynasty. It barely managed to defeat all of these incursions, and instead turned its attention west towards India. However, this expansion brings it in conflict with another world power - the rising British Empire.</English>
+		<French>It is the year 1815 AD. After inconclusive wars with Ayutthaya, the Konbaung dynasty of Burma was faced with several invasions by the powerful Qing dynasty. It barely managed to defeat all of these incursions, and instead turned its attention west towards India. However, this expansion brings it in conflict with another world power - the rising British Empire.</French>
+		<German>It is the year 1815 AD. After inconclusive wars with Ayutthaya, the Konbaung dynasty of Burma was faced with several invasions by the powerful Qing dynasty. It barely managed to defeat all of these incursions, and instead turned its attention west towards India. However, this expansion brings it in conflict with another world power - the rising British Empire.</German>
+		<Italian>It is the year 1815 AD. After inconclusive wars with Ayutthaya, the Konbaung dynasty of Burma was faced with several invasions by the powerful Qing dynasty. It barely managed to defeat all of these incursions, and instead turned its attention west towards India. However, this expansion brings it in conflict with another world power - the rising British Empire.</Italian>
+		<Spanish>It is the year 1815 AD. After inconclusive wars with Ayutthaya, the Konbaung dynasty of Burma was faced with several invasions by the powerful Qing dynasty. It barely managed to defeat all of these incursions, and instead turned its attention west towards India. However, this expansion brings it in conflict with another world power - the rising British Empire.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_BYZANTIUM</Tag>
@@ -178,6 +202,14 @@
 		<Spanish>It is the year 1814 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_COLOMBIA_1815AD</Tag>
+		<English>It is the year 1815 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</English>
+		<French>It is the year 1815 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</French>
+		<German>It is the year 1815 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</German>
+		<Italian>It is the year 1815 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Italian>
+		<Spanish>It is the year 1815 AD. War in Europe weakened their grip on Latin America, and new ideas of nationalism and democracy raised calls for self-determination in New Granada. With the victories of Sim&#243;n Bol&#237;var in Venezuela, the way has been paved for Colombian independence.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_CONGO</Tag>
 		<English>It is the year 1390 AD. The Kingdom of Kongo emerges after the unification of several tribal polities in the Congo delta just when European powers start to expand their influence in Africa. It must try to keep its independence by both religious and economic means.</English>
 		<French>Nous sommes en l'an 1390 ap. J.-C. Le royaume du Kongo na&#238;t de l'unification de tribus &#233;tablies dans le delta du fleuve Congo. Au m&#234;me moment, les Europ&#233;ens commencent &#224; s'int&#233;resser &#224; l'Afrique. Le Kongo devra user de strat&#233;gies religieuses et &#233;conomiques afin de conserver son ind&#233;pendance.</French>
@@ -200,6 +232,14 @@
 		<German>It is the year 1700 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and often the slave trade remains as the only viable source of income.</German>
 		<Italian>It is the year 1700 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and often the slave trade remains as the only viable source of income.</Italian>
 		<Spanish>It is the year 1700 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and often the slave trade remains as the only viable source of income.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_CONGO_1815AD</Tag>
+		<English>It is the year 1815 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and the British ban on the slave trade is threatening its only remaining source of income.</English>
+		<French>It is the year 1815 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and the British ban on the slave trade is threatening its only remaining source of income.</French>
+		<German>It is the year 1815 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and the British ban on the slave trade is threatening its only remaining source of income.</German>
+		<Italian>It is the year 1815 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and the British ban on the slave trade is threatening its only remaining source of income.</Italian>
+		<Spanish>It is the year 1815 AD. Continued warfare with the Portuguese and internal rebellions have weakened the Kingdom of Kongo to the point of effective colonization. The kingdom is still lagging behind scientifically and economically, and the British ban on the slave trade is threatening its only remaining source of income.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_DRAVIDIA</Tag>
@@ -266,6 +306,14 @@
 		<Spanish>It is the year 1700 AD. The Glorious Revolution has restored stability to the British thrones and paved the way to the Acts of Union. With its colonial holdings in the Americas and India growing, the British crown will be able to establish a world-wide empire and challenge the French dominance over Europe.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_ENGLAND_1815AD</Tag>
+		<English>It is the year 1815 AD. The British Empire stands as the primary victor of the Napoleonic Wars and is unchallenged as the world's first global empire. Turning its attention from European affairs, Britain is ready to leverage its naval dominance into a commercial empire that spans all the world's continents.</English>
+		<French>It is the year 1815 AD. The British Empire stands as the primary victor of the Napoleonic Wars and is unchallenged as the world's first global empire. Turning its attention from European affairs, Britain is ready to leverage its naval dominance into a commercial empire that spans all the world's continents.</French>
+		<German>It is the year 1815 AD. The British Empire stands as the primary victor of the Napoleonic Wars and is unchallenged as the world's first global empire. Turning its attention from European affairs, Britain is ready to leverage its naval dominance into a commercial empire that spans all the world's continents.</German>
+		<Italian>It is the year 1815 AD. The British Empire stands as the primary victor of the Napoleonic Wars and is unchallenged as the world's first global empire. Turning its attention from European affairs, Britain is ready to leverage its naval dominance into a commercial empire that spans all the world's continents.</Italian>
+		<Spanish>It is the year 1815 AD. The British Empire stands as the primary victor of the Napoleonic Wars and is unchallenged as the world's first global empire. Turning its attention from European affairs, Britain is ready to leverage its naval dominance into a commercial empire that spans all the world's continents.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_ETHIOPIA</Tag>
 		<English>It is the year 295 BC. The Ethiopian highlands are exceptionally fertile due to its temperate climate, but also quite remote from other civilizations. This changes when the major trade routes between the Roman Empire and Indians shift to the Red Sea, allowing the Ethiopian kingdom of Aksum to flourish.</English>
 		<French>Nous sommes en l'an 295 av. J.-C. Les plateaux d'&#201;thiopie sont exceptionnellement fertiles gr&#226;ce &#224; leur climat temp&#233;r&#233;, mais ils souffrent de leur &#233;loignement par rapport aux autres civilisations. Cela change lorsque les routes commerciales entre l'Empire romain et l'Inde se d&#233;placent vers la mer Rouge, permettant au royaume &#233;thiopien d'Aksoum de prosp&#233;rer.</French>
@@ -314,12 +362,28 @@
 		<Spanish>It is the year 1700 AD. France under the rule of Louis XIV is at the height of its power and the dominating cultural and military power in continental Europe. After extending its borders and winning the Thirty Years War, the impeding end of the Spanish Habsburgs presents another opportunity to expand French power.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_FRANCE_1815AD</Tag>
+		<English>It is the year 1815 AD. The Napoleonic Era has proven the military excellence of France and revolutionized European government and society. Even though it was ultimately defeated by a coalition of the other powers of Europe, France managed to avoid a punitive peace and was restored as a monarchy within Europe's new order. Still it remains the continent's leader in scientific, cultural and societal progress.</English>
+		<French>It is the year 1815 AD. The Napoleonic Era has proven the military excellence of France and revolutionized European government and society. Even though it was ultimately defeated by a coalition of the other powers of Europe, France managed to avoid a punitive peace and was restored as a monarchy within Europe's new order. Still it remains the continent's leader in scientific, cultural and societal progress.</French>
+		<German>It is the year 1815 AD. The Napoleonic Era has proven the military excellence of France and revolutionized European government and society. Even though it was ultimately defeated by a coalition of the other powers of Europe, France managed to avoid a punitive peace and was restored as a monarchy within Europe's new order. Still it remains the continent's leader in scientific, cultural and societal progress.</German>
+		<Italian>It is the year 1815 AD. The Napoleonic Era has proven the military excellence of France and revolutionized European government and society. Even though it was ultimately defeated by a coalition of the other powers of Europe, France managed to avoid a punitive peace and was restored as a monarchy within Europe's new order. Still it remains the continent's leader in scientific, cultural and societal progress.</Italian>
+		<Spanish>It is the year 1815 AD. The Napoleonic Era has proven the military excellence of France and revolutionized European government and society. Even though it was ultimately defeated by a coalition of the other powers of Europe, France managed to avoid a punitive peace and was restored as a monarchy within Europe's new order. Still it remains the continent's leader in scientific, cultural and societal progress.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_GERMANY</Tag>
 		<English>It is the year 1701 AD. Since the Westphalian Peace of 1648, the Holy Roman Empire is nothing but a loose organization of states. While the power of the Emperor concentrates in his Austrian holdings, the Electorate of Brandenburg-Prussia elevated itself to the Kingdom of Prussia, seeking to unite the German nation under its own hegemony.</English>
 		<French>Nous sommes en l'an 1701 ap. J.-C. Depuis la paix de Westphalie en 1648, le Saint-Empire romain germanique n'est plus qu'une organisation l&#226;che de petits &#201;tats. Tandis que l'empereur concentre son pouvoir dans ses possessions autrichiennes, l'&#201;tat de Brandebourg-Prusse obtient le titre de royaume de Prusse. Cette nouvelle puissance cherchera d&#233;sormais &#224; unir la nation allemande sous sa propre h&#233;g&#233;monie.</French>
 		<German>It is the year 1701 AD. Since the Westphalian Peace of 1648, the Holy Roman Empire is nothing but a loose organization of states. While the power of the Emperor concentrates in his Austrian holdings, the Electorate of Brandenburg-Prussia elevated itself to the Kingdom of Prussia, seeking to unite the German nation under its own hegemony.</German>
 		<Italian>It is the year 1701 AD. Since the Westphalian Peace of 1648, the Holy Roman Empire is nothing but a loose organization of states. While the power of the Emperor concentrates in his Austrian holdings, the Electorate of Brandenburg-Prussia elevated itself to the Kingdom of Prussia, seeking to unite the German nation under its own hegemony.</Italian>
 		<Spanish>It is the year 1701 AD. Since the Westphalian Peace of 1648, the Holy Roman Empire is nothing but a loose organization of states. While the power of the Emperor concentrates in his Austrian holdings, the Electorate of Brandenburg-Prussia elevated itself to the Kingdom of Prussia, seeking to unite the German nation under its own hegemony.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_GERMANY_1815AD</Tag>
+		<English>It is the year 1815 AD. Due to its success in the 18th century, the Kingdom of Prussia is now regarded as a great power of Europe. The aftermath of the Napoleonic Wars has awakened a new national identity in the German lands, pitting Prussia against Austria for hegemony over the new German Confederation. Can Prussia lead a unified Germany?</English>
+		<French>It is the year 1815 AD. Due to its success in the 18th century, the Kingdom of Prussia is now regarded as a great power of Europe. The aftermath of the Napoleonic Wars has awakened a new national identity in the German lands, pitting Prussia against Austria for hegemony over the new German Confederation. Can Prussia lead a unified Germany?</French>
+		<German>It is the year 1815 AD. Due to its success in the 18th century, the Kingdom of Prussia is now regarded as a great power of Europe. The aftermath of the Napoleonic Wars has awakened a new national identity in the German lands, pitting Prussia against Austria for hegemony over the new German Confederation. Can Prussia lead a unified Germany?</German>
+		<Italian>It is the year 1815 AD. Due to its success in the 18th century, the Kingdom of Prussia is now regarded as a great power of Europe. The aftermath of the Napoleonic Wars has awakened a new national identity in the German lands, pitting Prussia against Austria for hegemony over the new German Confederation. Can Prussia lead a unified Germany?</Italian>
+		<Spanish>It is the year 1815 AD. Due to its success in the 18th century, the Kingdom of Prussia is now regarded as a great power of Europe. The aftermath of the Napoleonic Wars has awakened a new national identity in the German lands, pitting Prussia against Austria for hegemony over the new German Confederation. Can Prussia lead a unified Germany?</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_GREECE</Tag>
@@ -362,12 +426,20 @@
 		<Spanish>It is the year 1500 AD. The decentralized politics of the Holy Roman Empire have fragmented it into hundreds of constituent polities. At the same time, the Habsburg dynasty has taken hold of the Imperial throne. With so much power resting in its Catholic office, how will the Habsburgs react to increasing religious sectarianism?</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_DOM_AUSTRIA_1700AD</Tag>
+		<Tag>TXT_KEY_DOM_HOLY_ROME_1700AD</Tag>
 		<English>It is the year 1700 AD. Despite the setbacks during the Thirty Years War, the victory at the Siege of Vienna allowed the Habsburg Monarchy to drive back the Turks and secure their holdings in the Balkans. The beginning of the Austrian baroque let arts and architecture flourish, but the weakness of the Spanish line may lead to another war soon ...</English>
 		<French>Nous sommes en l'an 1700 ap. J.-C. Malgr&#233; les revers subis pendant la Guerre de Trente Ans, la victoire lors du Si&#232;ge de Vienne a permis &#224; la monarchie des Habsbourg de repousser l'envahisseur turc et de consolider ses possessions dans les Balkans. Parall&#232;lement, la p&#233;riode baroque en Autriche d&#233;bute, permettant aux arts et &#224; l'architecture de prosp&#233;rer. Mais la faiblesse de la lign&#233;e espagnole des Habsbourg risque de causer une nouvelle guerre...</French>
 		<German>It is the year 1700 AD. Despite the setbacks during the Thirty Years War, the victory at the Siege of Vienna allowed the Habsburg Monarchy to drive back the Turks and secure their holdings in the Balkans. The beginning of the Austrian baroque let arts and architecture flourish, but the weakness of the Spanish line may lead to another war soon ...</German>
 		<Italian>It is the year 1700 AD. Despite the setbacks during the Thirty Years War, the victory at the Siege of Vienna allowed the Habsburg Monarchy to drive back the Turks and secure their holdings in the Balkans. The beginning of the Austrian baroque let arts and architecture flourish, but the weakness of the Spanish line may lead to another war soon ...</Italian>
 		<Spanish>It is the year 1700 AD. Despite the setbacks during the Thirty Years War, the victory at the Siege of Vienna allowed the Habsburg Monarchy to drive back the Turks and secure their holdings in the Balkans. The beginning of the Austrian baroque let arts and architecture flourish, but the weakness of the Spanish line may lead to another war soon ...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_HOLY_ROME_1815AD</Tag>
+		<English>It is the year 1815 AD. Despite being on the winning side of the Napoleonic Wars, the power of the Austrian Emperors has been fundamentally undermined with the dissolution of the Holy Roman Empire. In this new age, the power of states derives from national identity, which challenges Austria's multi-ethnic empire and confronts it with the threat of a unified Germany led by Prussia.</English>
+		<French>It is the year 1815 AD. Despite being on the winning side of the Napoleonic Wars, the power of the Austrian Emperors has been fundamentally undermined with the dissolution of the Holy Roman Empire. In this new age, the power of states derives from national identity, which challenges Austria's multi-ethnic empire and confronts it with the threat of a unified Germany led by Prussia.</French>
+		<German>It is the year 1815 AD. Despite being on the winning side of the Napoleonic Wars, the power of the Austrian Emperors has been fundamentally undermined with the dissolution of the Holy Roman Empire. In this new age, the power of states derives from national identity, which challenges Austria's multi-ethnic empire and confronts it with the threat of a unified Germany led by Prussia.</German>
+		<Italian>It is the year 1815 AD. Despite being on the winning side of the Napoleonic Wars, the power of the Austrian Emperors has been fundamentally undermined with the dissolution of the Holy Roman Empire. In this new age, the power of states derives from national identity, which challenges Austria's multi-ethnic empire and confronts it with the threat of a unified Germany led by Prussia.</Italian>
+		<Spanish>It is the year 1815 AD. Despite being on the winning side of the Napoleonic Wars, the power of the Austrian Emperors has been fundamentally undermined with the dissolution of the Holy Roman Empire. In this new age, the power of states derives from national identity, which challenges Austria's multi-ethnic empire and confronts it with the threat of a unified Germany led by Prussia.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_INCA</Tag>
@@ -410,6 +482,14 @@
 		<Spanish>It is the year 1700 AD. Sixteen years ago, Shivaji Bhosle has established the Maratha Kingdom, the first Hindu state to challenge Mughal hegemony over Northern India. With Mughal power declining, now is the time to break Muslim domination of the subcontinent for good.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_INDIA_1815AD</Tag>
+		<English>It is the year 1815 AD. After its initial expansion, the Maratha Empire has fractured into a loose confederacy. Since then, infighting, external wars, and famine have weakened Maratha power. In the following Anglo-Maratha wars, the British East India Company has taken control of much of India, threatening to dominate the subcontinent entirely.</English>
+		<French>It is the year 1815 AD. After its initial expansion, the Maratha Empire has fractured into a loose confederacy. Since then, infighting, external wars, and famine have weakened Maratha power. In the following Anglo-Maratha wars, the British East India Company has taken control of much of India, threatening to dominate the subcontinent entirely.</French>
+		<German>It is the year 1815 AD. After its initial expansion, the Maratha Empire has fractured into a loose confederacy. Since then, infighting, external wars, and famine have weakened Maratha power. In the following Anglo-Maratha wars, the British East India Company has taken control of much of India, threatening to dominate the subcontinent entirely.</German>
+		<Italian>It is the year 1815 AD. After its initial expansion, the Maratha Empire has fractured into a loose confederacy. Since then, infighting, external wars, and famine have weakened Maratha power. In the following Anglo-Maratha wars, the British East India Company has taken control of much of India, threatening to dominate the subcontinent entirely.</Italian>
+		<Spanish>It is the year 1815 AD. After its initial expansion, the Maratha Empire has fractured into a loose confederacy. Since then, infighting, external wars, and famine have weakened Maratha power. In the following Anglo-Maratha wars, the British East India Company has taken control of much of India, threatening to dominate the subcontinent entirely.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_IRAN</Tag>
 		<English>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</English>
 		<French>It is the year 1501 AD. After the fall of the Sassanid dynasty to Arab conquerors during the Islamic expansion, Persia has been ruled by various foreign dynasties. Now Ismail I, grandmaster of the Twelver Shi'a Safaviyya order, has taken the opportunity to conquer Tabriz, proclaim himself Shahanshah, and restore native rule over Iran.</French>
@@ -426,6 +506,14 @@
 		<Spanish>It is the year 1700 AD. The Safavid Dynasty, which has ruled Persia since 1501 AD, is losing authority over its territory. The time is ripe for a competent warlord to seize control and humiliate the neighboring Turks, Uzbeks and Mughals ...</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_IRAN_1815AD</Tag>
+		<English>It is the year 1815 AD. Iran has stabilized under the Qajar dynasty, but the situation is not the same as under the powerful Safavids and Afsharids. In addition to the traditional enemies of the Ottomans, the expanding Russian Empire has arrived in the region. It has already wrested the Caucasus from Iran, and its drive for conquest does not appear satisfied.</English>
+		<French>It is the year 1815 AD. Iran has stabilized under the Qajar dynasty, but the situation is not the same as under the powerful Safavids and Afsharids. In addition to the traditional enemies of the Ottomans, the expanding Russian Empire has arrived in the region. It has already wrested the Caucasus from Iran, and its drive for conquest does not appear satisfied.</French>
+		<German>It is the year 1815 AD. Iran has stabilized under the Qajar dynasty, but the situation is not the same as under the powerful Safavids and Afsharids. In addition to the traditional enemies of the Ottomans, the expanding Russian Empire has arrived in the region. It has already wrested the Caucasus from Iran, and its drive for conquest does not appear satisfied.</German>
+		<Italian>It is the year 1815 AD. Iran has stabilized under the Qajar dynasty, but the situation is not the same as under the powerful Safavids and Afsharids. In addition to the traditional enemies of the Ottomans, the expanding Russian Empire has arrived in the region. It has already wrested the Caucasus from Iran, and its drive for conquest does not appear satisfied.</Italian>
+		<Spanish>It is the year 1815 AD. Iran has stabilized under the Qajar dynasty, but the situation is not the same as under the powerful Safavids and Afsharids. In addition to the traditional enemies of the Ottomans, the expanding Russian Empire has arrived in the region. It has already wrested the Caucasus from Iran, and its drive for conquest does not appear satisfied.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_ITALY</Tag>
 		<English>It is the year 1167 AD. For too long has Italy been under the rule of German kings, but now the Lombard cities have risen up and thanks to Papal support, achieved de facto independence. The Italian city states, though often feuding with each other, are centers of science, culture and commerce and can now reap the benefits of their skills to usher in a Renaissance of European culture.</English>
 		<French>Nous sommes en l'an 1167 ap. J.-C. L'Italie a trop longtemps &#233;t&#233; sous le joug des rois allemands. &#192; pr&#233;sent, les cit&#233;s lombardes se sont soulev&#233;es et, gr&#226;ce au soutien pontifical, sont parvenues de facto &#224; l'ind&#233;pendance. Les cit&#233;s-&#201;tats italiennes, bien que souvent en conflit entre elles, sont aussi des hauts lieux de la science, de l'art et du commerce, et peuvent d&#233;sormais r&#233;colter le fruit de leurs talents pour inaugurer une Renaissance de la culture europ&#233;enne.</French>
@@ -440,6 +528,14 @@
 		<German>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</German>
 		<Italian>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</Italian>
 		<Spanish>It is the year 1500 AD. The Italian republics are nominally part of the Holy Roman Empire, but its weakness has left them functionally independent. Despite their internal conflicts and threats from abroad, cities like Rome, Venice, Milan, and Florence have become centers of art and commerce, laying the foundations for a European Renaissance.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_ITALY_1815AD</Tag>
+		<English>It is the year 1815 AD. The Congress of Vienna has restored a divided Italy, with large regions still under Austrian control. However, the Napoleonic Wars have created a feeling of Italian nationalism, and the Kingdom of Sardinia-Piedmont is eager to capitalize on it to create the Kingdom of Italy.</English>
+		<French>It is the year 1815 AD. The Congress of Vienna has restored a divided Italy, with large regions still under Austrian control. However, the Napoleonic Wars have created a feeling of Italian nationalism, and the Kingdom of Sardinia-Piedmont is eager to capitalize on it to create the Kingdom of Italy.</French>
+		<German>It is the year 1815 AD. The Congress of Vienna has restored a divided Italy, with large regions still under Austrian control. However, the Napoleonic Wars have created a feeling of Italian nationalism, and the Kingdom of Sardinia-Piedmont is eager to capitalize on it to create the Kingdom of Italy.</German>
+		<Italian>It is the year 1815 AD. The Congress of Vienna has restored a divided Italy, with large regions still under Austrian control. However, the Napoleonic Wars have created a feeling of Italian nationalism, and the Kingdom of Sardinia-Piedmont is eager to capitalize on it to create the Kingdom of Italy.</Italian>
+		<Spanish>It is the year 1815 AD. The Congress of Vienna has restored a divided Italy, with large regions still under Austrian control. However, the Napoleonic Wars have created a feeling of Italian nationalism, and the Kingdom of Sardinia-Piedmont is eager to capitalize on it to create the Kingdom of Italy.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_JAPAN</Tag>
@@ -472,6 +568,14 @@
 		<German>It is the year 1700 AD. Under the Tokugawa Shogunate, Japan has been at peace for almost a century now. But contact with European traders threatens to disturb the achieved balance again, and even the complete seclusion under the Sakoku cannot preserve it forever. Japan will have to open itself to the world ...</German>
 		<Italian>It is the year 1700 AD. Under the Tokugawa Shogunate, Japan has been at peace for almost a century now. But contact with European traders threatens to disturb the achieved balance again, and even the complete seclusion under the Sakoku cannot preserve it forever. Japan will have to open itself to the world ...</Italian>
 		<Spanish>It is the year 1700 AD. Under the Tokugawa Shogunate, Japan has been at peace for almost a century now. But contact with European traders threatens to disturb the achieved balance again, and even the complete seclusion under the Sakoku cannot preserve it forever. Japan will have to open itself to the world ...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_JAPAN_1815AD</Tag>
+		<English>It is the year 1815 AD. The Tokugawa Shogunate has brought peace and stability to Japan. As Western powers establish themselves in Asia, their ideas and technologies begin entering the country, and Japan is at risk of being left behind. The isolation of the country from the outside world is becoming more and more unsustainable.</English>
+		<French>It is the year 1815 AD. The Tokugawa Shogunate has brought peace and stability to Japan. As Western powers establish themselves in Asia, their ideas and technologies begin entering the country, and Japan is at risk of being left behind. The isolation of the country from the outside world is becoming more and more unsustainable.</French>
+		<German>It is the year 1815 AD. The Tokugawa Shogunate has brought peace and stability to Japan. As Western powers establish themselves in Asia, their ideas and technologies begin entering the country, and Japan is at risk of being left behind. The isolation of the country from the outside world is becoming more and more unsustainable.</German>
+		<Italian>It is the year 1815 AD. The Tokugawa Shogunate has brought peace and stability to Japan. As Western powers establish themselves in Asia, their ideas and technologies begin entering the country, and Japan is at risk of being left behind. The isolation of the country from the outside world is becoming more and more unsustainable.</Italian>
+		<Spanish>It is the year 1815 AD. The Tokugawa Shogunate has brought peace and stability to Japan. As Western powers establish themselves in Asia, their ideas and technologies begin entering the country, and Japan is at risk of being left behind. The isolation of the country from the outside world is becoming more and more unsustainable.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_JAVA</Tag>
@@ -536,6 +640,14 @@
 		<German>It is the year 1700 AD. The Kingdom of Joseon has faced both invasion from Japan and the Manchu, who now control the entire Chinese Empire. Now a period of relative peace and economic and cultural renaissance has begun, but with two powerful neighbors and Western imperialism on the rise, it can only last for so long ...</German>
 		<Italian>It is the year 1700 AD. The Kingdom of Joseon has faced both invasion from Japan and the Manchu, who now control the entire Chinese Empire. Now a period of relative peace and economic and cultural renaissance has begun, but with two powerful neighbors and Western imperialism on the rise, it can only last for so long ...</Italian>
 		<Spanish>It is the year 1700 AD. The Kingdom of Joseon has faced both invasion from Japan and the Manchu, who now control the entire Chinese Empire. Now a period of relative peace and economic and cultural renaissance has begun, but with two powerful neighbors and Western imperialism on the rise, it can only last for so long ...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_KOREA_1815AD</Tag>
+		<English>It is the year 1815 AD. Its isolation from the outside world has earned Joseon Korea the title of Hermit Kingdom. However, expanding powers from Europe, as well as its old rival Japan, may soon come to end its seclusion by force. Korea can only survive if it overcomes its inward stagnation.</English>
+		<French>It is the year 1815 AD. Its isolation from the outside world has earned Joseon Korea the title of Hermit Kingdom. However, expanding powers from Europe, as well as its old rival Japan, may soon come to end its seclusion by force. Korea can only survive if it overcomes its inward stagnation.</French>
+		<German>It is the year 1815 AD. Its isolation from the outside world has earned Joseon Korea the title of Hermit Kingdom. However, expanding powers from Europe, as well as its old rival Japan, may soon come to end its seclusion by force. Korea can only survive if it overcomes its inward stagnation.</German>
+		<Italian>It is the year 1815 AD. Its isolation from the outside world has earned Joseon Korea the title of Hermit Kingdom. However, expanding powers from Europe, as well as its old rival Japan, may soon come to end its seclusion by force. Korea can only survive if it overcomes its inward stagnation.</Italian>
+		<Spanish>It is the year 1815 AD. Its isolation from the outside world has earned Joseon Korea the title of Hermit Kingdom. However, expanding powers from Europe, as well as its old rival Japan, may soon come to end its seclusion by force. Korea can only survive if it overcomes its inward stagnation.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_KUSHANS</Tag>
@@ -610,6 +722,14 @@
 		<Spanish>It is the year 1810 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_MEXICO_1815AD</Tag>
+		<English>It is the year 1815 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</English>
+		<French>It is the year 1815 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</French>
+		<German>It is the year 1815 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</German>
+		<Italian>It is the year 1815 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Italian>
+		<Spanish>It is the year 1815 AD. Political instability and warfare in the European motherland have strengthened calls for independence in New Spain. Now that even former loyalists have joined the republican cause, the Mexican Republic has established itself.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_MONGOLIA</Tag>
 		<English>It is the year 1190 AD. For centuries, the peoples of the Mongolian steppe were too divided to pose an actual threat to the world. Now that Temujin has managed to unify all Mongolian tribes under his command, everything has changed, and soon both Orient and Occident will tremble in fear before his armies.</English>
 		<French>Nous sommes en l'an 1190 ap. J.-C. Pendant des si&#232;cles, les peuples mongols de la steppe eurasienne &#233;taient trop divis&#233;s pour poser une menace r&#233;elle au reste du monde. Maintenant que Tem&#252;jin est parvenu &#224; unifier toutes les tribus mongoles sous son commandement, tout a chang&#233;, et tant l'Orient que l'Occident s'appr&#234;tent &#224; trembler de peur &#224; l'approche de ses arm&#233;es.</French>
@@ -674,6 +794,14 @@
 		<Spanish>It is the year 1700 AD. Since their independence at the end of the Eighty Years war, the Netherlands have entered a Golden Age and become the European center of trade, industry, culture and science. This wealth however has created envy in the rising neighboring powers of France and Great Britain, and the Dutch will need to keep their colonial empire together to maintain their wealth.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_NETHERLANDS_1815AD</Tag>
+		<English>It is the year 1815 AD. For the first time, all the Low Countries are ruled by the Kingdom of the Netherlands. At the same time, the Dutch dominance of global trade has been ceded to the British, along with many former colonies. The new source of Dutch overseas wealth is now the archipelago of Indonesia.</English>
+		<French>It is the year 1815 AD. For the first time, all the Low Countries are ruled by the Kingdom of the Netherlands. At the same time, the Dutch dominance of global trade has been ceded to the British, along with many former colonies. The new source of Dutch overseas wealth is now the archipelago of Indonesia.</French>
+		<German>It is the year 1815 AD. For the first time, all the Low Countries are ruled by the Kingdom of the Netherlands. At the same time, the Dutch dominance of global trade has been ceded to the British, along with many former colonies. The new source of Dutch overseas wealth is now the archipelago of Indonesia.</German>
+		<Italian>It is the year 1815 AD. For the first time, all the Low Countries are ruled by the Kingdom of the Netherlands. At the same time, the Dutch dominance of global trade has been ceded to the British, along with many former colonies. The new source of Dutch overseas wealth is now the archipelago of Indonesia.</Italian>
+		<Spanish>It is the year 1815 AD. For the first time, all the Low Countries are ruled by the Kingdom of the Netherlands. At the same time, the Dutch dominance of global trade has been ceded to the British, along with many former colonies. The new source of Dutch overseas wealth is now the archipelago of Indonesia.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_NORSE</Tag>
 		<English>It is the year 551 AD. The scarcity of food makes the inhabitants of Scandinavia excellent sailors that rely on fishing and trade. Their home kingdoms still can't sustain further population growth, and the Norse have to turn to lands across the sea. Not only the coasts of the North Sea, but also the Mediterranean and even the New World make good targets for plunder or settlement.</English>
 		<French>Nous sommes en l'an 551 ap. J.-C. La raret&#233; de la nourriture en Scandinavie a fait de ses habitants d'excellents marins, qui comptent avant tout sur la p&#234;che et le commerce. Comme leurs royaumes ne peuvent supporter une plus grande croissance d&#233;mographique, les Vikings se tournent vers les terres au-del&#224; des mers. Les c&#244;tes de la mer du Nord, mais aussi celles de la M&#233;diterran&#233;e et m&#234;me du Nouveau Monde, seront la cible de pillage et de peuplement.</French>
@@ -704,6 +832,14 @@
 		<German>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</German>
 		<Italian>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</Italian>
 		<Spanish>It is the year 1700 AD. The last century has been disastrous for the Kingdom of Denmark. After the ascension of the dynamic Kingdom of Sweden, it has lost its status as the dominant power of Scandinavia and the Baltic Sea. Still, its personal union with Norway is intact and it retains the valuable sound dues. Can it reclaim its position?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_NORSE_1815AD</Tag>
+		<English>It is the year 1815 AD. During the Napoleonic Wars, Denmark had been forced into an alliance with France, with disastrous consequences after the French defeat. In the resulting peace, Norway was lost to its long time rival Sweden. Denmark is now reduced to a minor power limited to its core territory.</English>
+		<French>It is the year 1815 AD. During the Napoleonic Wars, Denmark had been forced into an alliance with France, with disastrous consequences after the French defeat. In the resulting peace, Norway was lost to its long time rival Sweden. Denmark is now reduced to a minor power limited to its core territory.</French>
+		<German>It is the year 1815 AD. During the Napoleonic Wars, Denmark had been forced into an alliance with France, with disastrous consequences after the French defeat. In the resulting peace, Norway was lost to its long time rival Sweden. Denmark is now reduced to a minor power limited to its core territory.</German>
+		<Italian>It is the year 1815 AD. During the Napoleonic Wars, Denmark had been forced into an alliance with France, with disastrous consequences after the French defeat. In the resulting peace, Norway was lost to its long time rival Sweden. Denmark is now reduced to a minor power limited to its core territory.</Italian>
+		<Spanish>It is the year 1815 AD. During the Napoleonic Wars, Denmark had been forced into an alliance with France, with disastrous consequences after the French defeat. In the resulting peace, Norway was lost to its long time rival Sweden. Denmark is now reduced to a minor power limited to its core territory.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_NUBIA</Tag>
@@ -794,6 +930,14 @@
 		<Spanish>It is the year 1700 AD. In the last century, Portugal has regained its independence from the Spanish crown. Many of its colonial possessions have been lost to the Dutch, but Brazil is still under Portuguese control and promises wealth for the future.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_PORTUGAL_1815AD</Tag>
+		<English>It is the year 1815 AD. The events of the Napoleonic Wars have shown the weakness of Portugal, which had been invaded by France and Spain multiple times. The royal court had been forced to flee the mainland and retreat to Brazil, where it still remains. The kingdom was only saved by British assistance, and many are beginning to call Portugal its colony.</English>
+		<French>It is the year 1815 AD. The events of the Napoleonic Wars have shown the weakness of Portugal, which had been invaded by France and Spain multiple times. The royal court had been forced to flee the mainland and retreat to Brazil, where it still remains. The kingdom was only saved by British assistance, and many are beginning to call Portugal its colony.</French>
+		<German>It is the year 1815 AD. The events of the Napoleonic Wars have shown the weakness of Portugal, which had been invaded by France and Spain multiple times. The royal court had been forced to flee the mainland and retreat to Brazil, where it still remains. The kingdom was only saved by British assistance, and many are beginning to call Portugal its colony.</German>
+		<Italian>It is the year 1815 AD. The events of the Napoleonic Wars have shown the weakness of Portugal, which had been invaded by France and Spain multiple times. The royal court had been forced to flee the mainland and retreat to Brazil, where it still remains. The kingdom was only saved by British assistance, and many are beginning to call Portugal its colony.</Italian>
+		<Spanish>It is the year 1815 AD. The events of the Napoleonic Wars have shown the weakness of Portugal, which had been invaded by France and Spain multiple times. The royal court had been forced to flee the mainland and retreat to Brazil, where it still remains. The kingdom was only saved by British assistance, and many are beginning to call Portugal its colony.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_ROME</Tag>
 		<English>It is the year 509 BC. The Latin people have just founded the city of Rome. Situated at a favorable position and governed by a superior political system, it is fated to control the whole Italian peninsula. Most of its neighboring regions in Europe are still barbaric and uncivilized. The city of Carthage is its only rival on the way to rule and civilize the whole Mediterranean.</English>
 		<French>Nous sommes en l'an 509 av. J.-C. Les Latins viennent de fonder la ville de Rome. Sa situation g&#233;ographique et son syst&#232;me politique sup&#233;rieur destinent la cit&#233; &#224; dominer toute la p&#233;ninsule italienne. Les r&#233;gions avoisinantes en Europe sont encore barbares et peu civilis&#233;es, et la cit&#233; de Carthage est la seule vraie rivale de Rome pour le contr&#244;le de toute la M&#233;diterran&#233;e.</French>
@@ -824,6 +968,14 @@
 		<German>It is the year 1700 AD. Under the rule of Peter the Great Russia is on the path of modernization. Sweden has just been defeated and the foundation of Sankt-Peterburg secured a window to the west for Russia. With the advance into Siberia, the Russian Empire is now the largest in the world.</German>
 		<Italian>It is the year 1700 AD. Under the rule of Peter the Great Russia is on the path of modernization. Sweden has just been defeated and the foundation of Sankt-Peterburg secured a window to the west for Russia. With the advance into Siberia, the Russian Empire is now the largest in the world.</Italian>
 		<Spanish>It is the year 1700 AD. Under the rule of Peter the Great Russia is on the path of modernization. Sweden has just been defeated and the foundation of Sankt-Peterburg secured a window to the west for Russia. With the advance into Siberia, the Russian Empire is now the largest in the world.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_RUSSIA_1815AD</Tag>
+		<English>It is the year 1815 AD. Next to the British, Russia emerges as the principal victor of the Napoleonic Wars. Never defeated by Napoleon, its arduous defense against the Grande Arm&#233;e is credited with the beginning of Napoleon's downfall. Russia has been richly rewarded with control of Poland, Finland, and the Caucasus, and the final recognition as a western great power.</English>
+		<French>It is the year 1815 AD. Next to the British, Russia emerges as the principal victor of the Napoleonic Wars. Never defeated by Napoleon, its arduous defense against the Grande Arm&#233;e is credited with the beginning of Napoleon's downfall. Russia has been richly rewarded with control of Poland, Finland, and the Caucasus, and the final recognition as a western great power.</French>
+		<German>It is the year 1815 AD. Next to the British, Russia emerges as the principal victor of the Napoleonic Wars. Never defeated by Napoleon, its arduous defense against the Grande Arm&#233;e is credited with the beginning of Napoleon's downfall. Russia has been richly rewarded with control of Poland, Finland, and the Caucasus, and the final recognition as a western great power.</German>
+		<Italian>It is the year 1815 AD. Next to the British, Russia emerges as the principal victor of the Napoleonic Wars. Never defeated by Napoleon, its arduous defense against the Grande Arm&#233;e is credited with the beginning of Napoleon's downfall. Russia has been richly rewarded with control of Poland, Finland, and the Caucasus, and the final recognition as a western great power.</Italian>
+		<Spanish>It is the year 1815 AD. Next to the British, Russia emerges as the principal victor of the Napoleonic Wars. Never defeated by Napoleon, its arduous defense against the Grande Arm&#233;e is credited with the beginning of Napoleon's downfall. Russia has been richly rewarded with control of Poland, Finland, and the Caucasus, and the final recognition as a western great power.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_RUTHENIA</Tag>
@@ -858,6 +1010,14 @@
 		<Spanish>It is the year 1700 AD. The Spanish Empire is in a state of decline. Income from the American colonies is diminishing, the cultural flourishing of the last century has come to an end, and now the ruling Habsburg dynasty is about to die out. The conflict over the Spanish succession is about to consume Europe ...</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_SPAIN_1815AD</Tag>
+		<English>It is the year 1815 AD. Nowhere have the Napoleonic Wars been as drawn out and brutal as the Peninsular theater. Spain has suffered greatly from the conflict, and the local devastation is compounded by the permanent loss of its colonies in the American mainland. The war also changed the political landscape, and the Kingdom is now deeply divided between liberal and royalist factions.</English>
+		<French>It is the year 1815 AD. Nowhere have the Napoleonic Wars been as drawn out and brutal as the Peninsular theater. Spain has suffered greatly from the conflict, and the local devastation is compounded by the permanent loss of its colonies in the American mainland. The war also changed the political landscape, and the Kingdom is now deeply divided between liberal and royalist factions.</French>
+		<German>It is the year 1815 AD. Nowhere have the Napoleonic Wars been as drawn out and brutal as the Peninsular theater. Spain has suffered greatly from the conflict, and the local devastation is compounded by the permanent loss of its colonies in the American mainland. The war also changed the political landscape, and the Kingdom is now deeply divided between liberal and royalist factions.</German>
+		<Italian>It is the year 1815 AD. Nowhere have the Napoleonic Wars been as drawn out and brutal as the Peninsular theater. Spain has suffered greatly from the conflict, and the local devastation is compounded by the permanent loss of its colonies in the American mainland. The war also changed the political landscape, and the Kingdom is now deeply divided between liberal and royalist factions.</Italian>
+		<Spanish>It is the year 1815 AD. Nowhere have the Napoleonic Wars been as drawn out and brutal as the Peninsular theater. Spain has suffered greatly from the conflict, and the local devastation is compounded by the permanent loss of its colonies in the American mainland. The war also changed the political landscape, and the Kingdom is now deeply divided between liberal and royalist factions.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_SWAHILI</Tag>
 		<English>It is the year 957 AD. Muslim traders have been frequenting the Swahili coast for centuries, when an exiled Persian noble arrives to found the Sultanate of Kilwa. The Swahili peoples are excellent navigators, and with its fortuitous position Kilwa can eclipse rivals like Mogadishu and become the new master of the Indian Ocean trade.</English>
 		<French>It is the year 957 AD. Muslim traders have been frequenting the Swahili coast for centuries, when an exiled Persian noble arrives to found the Sultanate of Kilwa. The Swahili peoples are excellent navigators, and with its fortuitous position Kilwa can eclipse rivals like Mogadishu and become the new master of the Indian Ocean trade.</French>
@@ -890,6 +1050,14 @@
 		<Spanish>It is the year 1700 AD. The Kingdom of Sweden is the most formidable of the Scandinavian powers and has managed to establish an empire by acquiring Finland. Still, its expansion has also created enemies, and rivals like Denmark-Norway, Poland and especially Russia might seek to curb Swedish power ...</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_SWEDEN_1815AD</Tag>
+		<English>It is the year 1815 AD. The Napoleonic Wars brought drastic changes to Sweden. After initially losing its possessions in Finland to Russia, Sweden ended up electing a French marshal as its king, and nevertheless joined the coalition against France. The reward was the eventual personal union with Norway to compensate for the loss of Finland.</English>
+		<French>It is the year 1815 AD. The Napoleonic Wars brought drastic changes to Sweden. After initially losing its possessions in Finland to Russia, Sweden ended up electing a French marshal as its king, and nevertheless joined the coalition against France. The reward was the eventual personal union with Norway to compensate for the loss of Finland.</French>
+		<German>It is the year 1815 AD. The Napoleonic Wars brought drastic changes to Sweden. After initially losing its possessions in Finland to Russia, Sweden ended up electing a French marshal as its king, and nevertheless joined the coalition against France. The reward was the eventual personal union with Norway to compensate for the loss of Finland.</German>
+		<Italian>It is the year 1815 AD. The Napoleonic Wars brought drastic changes to Sweden. After initially losing its possessions in Finland to Russia, Sweden ended up electing a French marshal as its king, and nevertheless joined the coalition against France. The reward was the eventual personal union with Norway to compensate for the loss of Finland.</Italian>
+		<Spanish>It is the year 1815 AD. The Napoleonic Wars brought drastic changes to Sweden. After initially losing its possessions in Finland to Russia, Sweden ended up electing a French marshal as its king, and nevertheless joined the coalition against France. The reward was the eventual personal union with Norway to compensate for the loss of Finland.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_THAILAND</Tag>
 		<English>It is the year 1238 AD. Tai peoples have migrated into the area surrounding the Chao Phraya river since the 8th century, but their various kingdoms have been forced to accept the suzerainty of the dominant Khmer Empire. Now the Sukhotai Kingdom has dealt a decisive defeat to the Khmer and sacked their capital of Angkor, establishing its hegemony over South East Asia.</English>
 		<French>It is the year 1238 AD. Tai peoples have migrated into the area surrounding the Chao Phraya river since the 8th century, but their various kingdoms have been forced to accept the suzerainty of the dominant Khmer Empire. Now the Sukhotai Kingdom has dealt a decisive defeat to the Khmer and sacked their capital of Angkor, establishing its hegemony over South East Asia.</French>
@@ -912,6 +1080,14 @@
 		<German>It is the year 1700 AD. With excellent relations with the new European powers in South Asia and controlling one of the largest cities in the world, the Kingdom of Ayutthaya is in an advantageous condition. However, the threat from their Burmese neighbors is beginning to grow and even the Europeans might consider colonization ...</German>
 		<Italian>It is the year 1700 AD. With excellent relations with the new European powers in South Asia and controlling one of the largest cities in the world, the Kingdom of Ayutthaya is in an advantageous condition. However, the threat from their Burmese neighbors is beginning to grow and even the Europeans might consider colonization ...</Italian>
 		<Spanish>It is the year 1700 AD. With excellent relations with the new European powers in South Asia and controlling one of the largest cities in the world, the Kingdom of Ayutthaya is in an advantageous condition. However, the threat from their Burmese neighbors is beginning to grow and even the Europeans might consider colonization ...</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_THAILAND_1815AD</Tag>
+		<English>It is the year 1815 AD. Burma has been driven out of Thailand, resulting in the foundation of the new Rattanakosin kingdom. Thailand has defended its sovereignty, but European powers have shown increased interest in South East Asia, and it is likely that it would have to defend it once more.</English>
+		<French>It is the year 1815 AD. Burma has been driven out of Thailand, resulting in the foundation of the new Rattanakosin kingdom. Thailand has defended its sovereignty, but European powers have shown increased interest in South East Asia, and it is likely that it would have to defend it once more.</French>
+		<German>It is the year 1815 AD. Burma has been driven out of Thailand, resulting in the foundation of the new Rattanakosin kingdom. Thailand has defended its sovereignty, but European powers have shown increased interest in South East Asia, and it is likely that it would have to defend it once more.</German>
+		<Italian>It is the year 1815 AD. Burma has been driven out of Thailand, resulting in the foundation of the new Rattanakosin kingdom. Thailand has defended its sovereignty, but European powers have shown increased interest in South East Asia, and it is likely that it would have to defend it once more.</Italian>
+		<Spanish>It is the year 1815 AD. Burma has been driven out of Thailand, resulting in the foundation of the new Rattanakosin kingdom. Thailand has defended its sovereignty, but European powers have shown increased interest in South East Asia, and it is likely that it would have to defend it once more.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_TIBET</Tag>
@@ -970,6 +1146,14 @@
 		<Spanish>It is the year 1700 AD. After the rise of the Safavid Empire, the power of the Timurids as the eminent Turkic power in the Middle East has been broken. Afterwards, Uzbek tribes have invaded Transoxiana and captured its wealthy cities, establishing the Khanate of Bukhara.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKESTAN_1815AD</Tag>
+		<English>It is the year 1815 AD. Transoxiana is an increasingly impoverished and isolated part of the world. The wealth of the Silk Route is long past, and now the expanding Russian Empire is becoming a threat to the north.</English>
+		<French>It is the year 1815 AD. Transoxiana is an increasingly impoverished and isolated part of the world. The wealth of the Silk Route is long past, and now the expanding Russian Empire is becoming a threat to the north.</French>
+		<German>It is the year 1815 AD. Transoxiana is an increasingly impoverished and isolated part of the world. The wealth of the Silk Route is long past, and now the expanding Russian Empire is becoming a threat to the north.</German>
+		<Italian>It is the year 1815 AD. Transoxiana is an increasingly impoverished and isolated part of the world. The wealth of the Silk Route is long past, and now the expanding Russian Empire is becoming a threat to the north.</Italian>
+		<Spanish>It is the year 1815 AD. Transoxiana is an increasingly impoverished and isolated part of the world. The wealth of the Silk Route is long past, and now the expanding Russian Empire is becoming a threat to the north.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_TURKEY</Tag>
 		<English>It is the year 1280 AD. After the collapse of the Seljuk Empire, the Anatolian Turks are divided into several small Beyliks. However, Byzantium is weakened itself, and now that the Osmanli Beylik is in the hands of a strong leader, a Turkish Ottoman Empire seems close. With the Bosphorus right within their grasp, they have the opportunity to form an empire that stretches over three continents.</English>
 		<French>Nous sommes en l'an 1280 ap. J.-C. Depuis l'effondrement de l'Empire seldjoukide, les Turcs d'Anatolie sont divis&#233;s en plusieurs petits beyliks. Or, Byzance est faible, et comme le Beylik ottoman est dirig&#233; par un chef fort, la fondation d'un empire semble &#224; port&#233;e de main. En prenant le Bosphore, les Ottomans auront l'opportunit&#233; d'&#233;tendre leur domination sur trois continents.</French>
@@ -994,6 +1178,14 @@
 		<Spanish>It is the year 1700 AD. With the defeat at the Siege of Vienna, the military expansion of the Ottoman Empire has come to an end and it is on the defensive against the growing power of Austria and Russia. This change in the balance of power leads to increased cultural contact and exchange with the Europeans and a flowering of Ottoman culture.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DOM_TURKEY_1815AD</Tag>
+		<English>It is the year 1815 AD. The Ottoman Empire is the sick man of Europe. On the defensive against Austria and Russia, recent events have shown that it is vulnerable to French and British intervention as well. Algeria and Egypt are independent in all but name, and nationalist movements are gaining strength in the Balkans.</English>
+		<French>It is the year 1815 AD. The Ottoman Empire is the sick man of Europe. On the defensive against Austria and Russia, recent events have shown that it is vulnerable to French and British intervention as well. Algeria and Egypt are independent in all but name, and nationalist movements are gaining strength in the Balkans.</French>
+		<German>It is the year 1815 AD. The Ottoman Empire is the sick man of Europe. On the defensive against Austria and Russia, recent events have shown that it is vulnerable to French and British intervention as well. Algeria and Egypt are independent in all but name, and nationalist movements are gaining strength in the Balkans.</German>
+		<Italian>It is the year 1815 AD. The Ottoman Empire is the sick man of Europe. On the defensive against Austria and Russia, recent events have shown that it is vulnerable to French and British intervention as well. Algeria and Egypt are independent in all but name, and nationalist movements are gaining strength in the Balkans.</Italian>
+		<Spanish>It is the year 1815 AD. The Ottoman Empire is the sick man of Europe. On the defensive against Austria and Russia, recent events have shown that it is vulnerable to French and British intervention as well. Algeria and Egypt are independent in all but name, and nationalist movements are gaining strength in the Balkans.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_DOM_VIETNAM</Tag>
 		<English>It is the year 938 AD. Vietnam is an ancient culture, but until recently it has seen long periods of domination by its powerful neighbor China. This history has left a legacy of Chinese culture and forms of government, and at the same time created a tradition of military resistance and guerilla warfare. Now it is Vietnam's time to turn its attention southward.</English>
 		<French>It is the year 938 AD. Vietnam is an ancient culture, but until recently it has seen long periods of domination by its powerful neighbor China. This history has left a legacy of Chinese culture and forms of government, and at the same time created a tradition of military resistance and guerilla warfare. Now it is Vietnam's time to turn its attention southward.</French>
@@ -1016,6 +1208,14 @@
 		<German>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</German>
 		<Italian>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</Italian>
 		<Spanish>It is the year 1700 AD. For over a century, there has been a trend of decentralization in Vietnam, and now the state is divided between rival lords. Nevertheless, the march to the south against Champa continues. But recent years have seen an increased presence of Christian missionaries. Can Vietnam avoid becoming a target itself?</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DOM_VIETNAM_1815AD</Tag>
+		<English>It is the year 1815 AD. Vietnam has spent most of the previous century in civil wars. It is now united again under the Nguyen dynasty, but the conflict has been exploited by European powers to expand their influence. The Dutch and Portuguese both supplied the belligerents, and Catholicism is entrenched. The empire must be careful to avoid further encroachment.</English>
+		<French>It is the year 1815 AD. Vietnam has spent most of the previous century in civil wars. It is now united again under the Nguyen dynasty, but the conflict has been exploited by European powers to expand their influence. The Dutch and Portuguese both supplied the belligerents, and Catholicism is entrenched. The empire must be careful to avoid further encroachment.</French>
+		<German>It is the year 1815 AD. Vietnam has spent most of the previous century in civil wars. It is now united again under the Nguyen dynasty, but the conflict has been exploited by European powers to expand their influence. The Dutch and Portuguese both supplied the belligerents, and Catholicism is entrenched. The empire must be careful to avoid further encroachment.</German>
+		<Italian>It is the year 1815 AD. Vietnam has spent most of the previous century in civil wars. It is now united again under the Nguyen dynasty, but the conflict has been exploited by European powers to expand their influence. The Dutch and Portuguese both supplied the belligerents, and Catholicism is entrenched. The empire must be careful to avoid further encroachment.</Italian>
+		<Spanish>It is the year 1815 AD. Vietnam has spent most of the previous century in civil wars. It is now united again under the Nguyen dynasty, but the conflict has been exploited by European powers to expand their influence. The Dutch and Portuguese both supplied the belligerents, and Catholicism is entrenched. The empire must be careful to avoid further encroachment.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOM_</Tag>

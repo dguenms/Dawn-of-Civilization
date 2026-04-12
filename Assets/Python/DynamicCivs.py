@@ -598,7 +598,36 @@ dStartingLeaders = [
 },
 # 1500 AD
 {
-	
+	iChina : iHongwu,
+	iDravidia : iKrishnaDevaRaya,
+	iEthiopia : iZaraYaqob,
+	iKorea : iSejong,
+	iMali : iMansaMusa,
+	iFrance : iLouis,
+	iMalays : iTunPerak,
+	iJapan : iOdaNobunaga,
+	iNorse : iChristian,
+	iTurks : iTamerlane,
+	iMoors : iYaqub,
+	iJava : iHayamWuruk,
+	iSpain : iPhilip,
+	iEngland : iElizabeth,
+	iHolyRome : iCharles,
+	iBurma : iBayinnaung,
+	iVietnam : iLeLoi,
+	iMisr : iBaibars,
+	iPoland : iSobieski,
+	iPortugal : iJoao,
+	iInca : iHuaynaCapac,
+	iItaly : iLorenzo,
+	iAztecs : iMontezuma,
+	iMughals : iTughluq,
+	iThailand : iNaresuan,
+	iSweden : iGustav,
+	iRussia : iIvan,
+	iOttomans : iSuleiman,
+	iCongo : iMbemba,
+	iIran : iAbbas,
 },
 # 1700 AD
 {
@@ -622,6 +651,35 @@ dStartingLeaders = [
 	iRussia : iPeter,
 	iOttomans : iSuleiman,
 	iNetherlands : iWilliam,
+},
+# 1815 AD
+{
+	iIndia: iShivaji,
+	iKorea: iSejong,
+	iJapan: iOdaNobunaga,
+	iNorse: iChristian,
+	iTurks: iTamerlane,
+	iSpain: iPhilip,
+	iFrance: iNapoleon,
+	iEngland: iVictoria,
+	iHolyRome: iFrancis,
+	iBurma: iBayinnaung,
+	iVietnam: iLeLoi,
+	iMisr: iMuhammadAli,
+	iItaly: iCavour,
+	iSweden: iGustav,
+	iRussia: iAlexanderI,
+	iOttomans: iSuleiman,
+	iThailand: iMongkut,
+	iCongo: iMbemba,
+	iIran: iAbbas,
+	iManchuria: iKangxi,
+	iNetherlands: iWilliam,
+	iGermany: iFrederick,
+	iAmerica: iWashington,
+	iArgentina: iSanMartin,
+	iMexico: iSantaAnna,
+	iColombia: iBolivar,
 },
 ]
 
@@ -1312,6 +1370,9 @@ def specificName(iPlayer):
 				return "TXT_KEY_CIV_ITALY_TUSCANY"
 				
 			return capitalName(iPlayer)
+		
+		if cities.region(rItaly).any(lambda city: city.getOwner() != iPlayer):
+			return "TXT_KEY_CIV_ITALY_SARDINIA_PIEDMONT"
 	
 	elif iCiv == iPortugal:
 		if isControlled(iPlayer, plots.core(iMoors)):
@@ -1328,7 +1389,7 @@ def specificName(iPlayer):
 		if getColumn(iPlayer) < 9 and scenarioStartYear() < 1500:
 			return "TXT_KEY_CIV_THAILAND_SUKHOTHAI"
 		
-		if iEra <= iRenaissance:
+		if getColumn(iPlayer) <= 10:
 			return "TXT_KEY_CIV_THAILAND_AYUTTHAYA"
 			
 	elif iCiv == iNetherlands:
@@ -1511,13 +1572,13 @@ def specificAdjective(iPlayer):
 			
 	elif iCiv == iIran:
 		if bEmpire:
-			if iEra <= iRenaissance:
-				return "TXT_KEY_CIV_PERSIA_SAFAVID"
-		
-			if iEra == iIndustrial:
+			if iEra >= iGlobal:
+				return "TXT_KEY_CIV_PERSIA_PAHLAVI"
+			
+			if getColumn(iPlayer) >= 12:
 				return "TXT_KEY_CIV_PERSIA_QAJAR"
-		
-			return "TXT_KEY_CIV_PERSIA_PAHLAVI"
+			
+			return "TXT_KEY_CIV_PERSIA_SAFAVID"
 		
 	elif iCiv == iPersia:
 		if pPlayer.isStateReligion() and iReligion < 0:
@@ -1702,7 +1763,7 @@ def specificAdjective(iPlayer):
 		bSpain = not player(iMoors).isExisting() or not player(iMoors).getCapitalCity() in plots.region(rIberia)
 	
 		if bSpain:
-			if not player(iPortugal).isExisting() or master(iPortugal) == iPlayer or not player(iPortugal).getCapitalCity() in plots.region(rIberia):
+			if not player(iPortugal).isExisting() or master(iPortugal) == iPlayer or not cities.owner(iPortugal).region(rIberia):
 				return "TXT_KEY_CIV_SPAIN_IBERIAN"
 			
 		if isCurrentCapital(iPlayer, "Barcelona", "Tarragon", "Valencia", "Zaragoza"):
@@ -1760,8 +1821,6 @@ def specificAdjective(iPlayer):
 		if iEra >= iIndustrial and not bEmpire:
 			return civAdjective(iPlayer)
 		
-		return specificName(iPlayer)
-	
 	elif iCiv == iRus:
 		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_RUS_UKRAINIAN"
@@ -2364,7 +2423,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_BURMA_CITY_STATES"
 		
 		if iEra >= iRenaissance:
-			if bEmpire:
+			if bEmpire or getColumn(iPlayer) >= 11:
 				return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
 			if capital in cities.birth(iBurma).coastal():
@@ -2411,7 +2470,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			if bTheocracy:
 				return "TXT_KEY_CALIPHATE_ADJECTIVE"
 				
-			if iEra >= iIndustrial:
+			if getColumn(iPlayer) >= 12:
 				return "TXT_KEY_SULTANATE_OF"
 			
 			if not tPlayer.isHasTech(iGunpowder) and controlsHolyCity(iPlayer, iIslam):
@@ -2536,6 +2595,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iCiv == iThailand:
 		if iEra >= iIndustrial and bEmpire:
 			return "TXT_KEY_EMPIRE_OF"
+		
+		if getColumn(iPlayer) >= 11:
+			return "TXT_KEY_KINGDOM_OF"
 
 	elif iCiv == iNetherlands:
 		if bCityStates:
@@ -2558,7 +2620,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_EMPIRE_OF"
 		
 	elif iCiv == iGermany:
-		if iEra >= iIndustrial and bEmpire:
+		if getColumn(iPlayer) >= 15 and bEmpire:
 			if player(iHolyRome).isExisting() and team(iHolyRome).isExisting() and civ(master(iHolyRome)) == iGermany:
 				return "TXT_KEY_CIV_GERMANY_GREATER_EMPIRE"
 				
