@@ -1453,8 +1453,24 @@ class Plots(Locations):
 	def no_enemies(self, iPlayer):
 		return self.where(lambda p: units.at(p).atwar(iPlayer).none())
 	
-	def expand(self, iNumTiles):
-		return self.enrich(lambda p: plots.circle(p, radius=iNumTiles))
+	def expand(self, iRange):
+		if not self:
+			return self
+		
+		if iRange == 0:
+			return self
+		
+		min_x, max_x = self.minimum(CyPlot.getX).getX(), self.maximum(CyPlot.getX).getX()
+		min_y, max_y = self.minimum(CyPlot.getY).getY(), self.maximum(CyPlot.getY).getY()
+		
+		factory = PlotFactory()
+		rectangle = factory.rectangle((min_x-1, min_y-1), (max_x+1, max_y+1)).set()
+		inner = self.set()
+		outer = rectangle - inner
+		
+		expanded = self + Plots(outer).where(lambda p: any(key in inner for key in factory.surrounding(p)._keys))
+		
+		return expanded.expand(iRange-1)
 	
 	def edge(self):
 		return self.where(lambda p: plots.surrounding(p).any(lambda sp: sp not in self))
