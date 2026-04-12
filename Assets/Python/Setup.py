@@ -5,7 +5,7 @@ from Events import handler
 def updateCore(iCivilization):
 	coreArea = plots.core(iCivilization)
 	for plot in plots.all():
-		if plot.isWater() or (plot.isPeak() and location(plot) not in lPeakExceptions): continue
+		if plot.isWater() or (plot.isPeak() and location(plot) not in dConquerorPlotTypesDict): continue
 		plot.setCore(iCivilization, plot in coreArea)
 
 @handler("GameStart")
