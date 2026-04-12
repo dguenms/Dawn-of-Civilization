@@ -1463,7 +1463,7 @@ class Plots(Locations):
 		inner = self.set()
 		outer = rectangle - inner
 		
-		expanded = self + Plots(outer).where(lambda p: any(key in inner for key in factory.surrounding(p)._keys))
+		expanded = self + Plots(outer).where(lambda p: not p.isNone() and any(key in inner for key in factory.surrounding(p)._keys))
 		
 		return expanded.expand(iRange-1)
 	
