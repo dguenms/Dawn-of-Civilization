@@ -60,7 +60,7 @@ def exportCore(iPlayer):
 	BL, TR = getTLBR(lCorePlots)
 
 	tExceptions = None
-	lExceptions = plots.rectangle(BL, TR).land().where(lambda p: not (p.isPeak() and location(p) not in lPeakExceptions) and not p.isPlayerCore(iPlayer))
+	lExceptions = plots.rectangle(BL, TR).land().where(lambda p: (not p.isPeak() or location(p) in dConquerorPlotTypesDict) and not p.isPlayerCore(iPlayer))
 	if lExceptions:
 		tExceptions = ("dCoreAreaExceptions", lExceptions)
 	
@@ -81,7 +81,7 @@ def getSettlerValue(plot, *args, **kwargs):
 	
 	if plot.isWater():
 		return 0
-	elif plot.isPeak() and location(plot) in lPeakExceptions:
+	elif plot.isPeak() and location(plot) in dConquerorPlotTypesDict:
 		return 0
 		
 	if iPlayer is not None:

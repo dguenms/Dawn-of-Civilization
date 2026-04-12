@@ -1,8 +1,5 @@
 from Consts import *
 
-# Peak that change to hills during the game, like Bogota
-lPeakExceptions = [(31, 13), (32, 19), (27, 29), (88, 47), (40, 66)]
-	
 ### Capitals ###
 
 dCapitals = CivDict({
