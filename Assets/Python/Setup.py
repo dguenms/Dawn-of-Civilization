@@ -1,4 +1,5 @@
 from Core import *
+from Resources import *
 from Events import handler
 	
 

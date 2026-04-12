@@ -10119,7 +10119,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_VIETNAM
-		CityName=Hue
+		CityName=Phu Xuan
 		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -10581,6 +10581,7 @@ BeginPlot
 		BuildingType=BUILDING_TAOIST_MONASTERY
 		BuildingType=BUILDING_TAOIST_SHRINE
 		BuildingType=BUILDING_GREAT_WALL
+		BuildingType=BUILDING_FORBIDDEN_PALACE
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		HolyCityReligionType=RELIGION_TAOISM
