@@ -3740,7 +3740,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_CRUSADE</Tag>
-		<English>Our war against the %s1:2_civ_adjective continues. Our spiritual leaders cry out for us to wage a crusade to wrest control of %s6_city away from them.</English>
+		<English>Our holy sites are still in the hands of the %s1:2_civ_adjective infidels. Our spiritual leaders cry out for us to wage a crusade to wrest control of %s6_city away from them.</English>
 		<French>Notre guerre contre les %s1:2_civ_adjective continue. Nos dirigeants spirituels r&#233;clament que nous lancions une croisade pour leur arracher le contr&#244;le de la ville : %s6_city.</French>
 		<German>Unser Krieg gegen das %s1:3_civ_adjective Volk geht weiter. Unsere religi&#246;sen F&#252;hrer fordern, das wir uns einem Kreuzzug anschlie&#223;en, um ihnen die Stadt %s6_city zu entrei&#223;en.</German>
 		<Italian>La nostra guerra contro i nemici %s1:3_civ_adjective continua. I nostri leader spirituali chiedono a gran voce che promuoviamo una crociata per togliere al nemico il controllo di %s6_city.</Italian>
