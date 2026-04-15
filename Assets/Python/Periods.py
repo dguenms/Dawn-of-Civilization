@@ -198,10 +198,6 @@ def onCityAcquired(iOwner, iPlayer, city, bConquest):
 			setPeriod(iTurks, iPeriodSeljuks)
 		else:
 			setPeriod(iTurks, -1)
-	
-	if iOwnerCiv == iEgypt:
-		if iCiv in [iGreece, iRome]:
-			setPeriod(iEgypt, iPeriodPtolemaicEgypt)
 			
 	if iOwnerCiv == iByzantium:
 		if bConquest and player(iByzantium).getNumCities() <= 4:
@@ -329,6 +325,14 @@ def onPlayerChangeStateReligion(iPlayer, iReligion):
 	if iCiv == iEgypt and iReligion >= 0:
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt:
 			setPeriod(iEgypt, -1)
+
+
+@handler("changeWar")
+def onChangeWar(bWar, iPlayer, iOtherPlayer):
+	if not bWar:
+		if civ(iPlayer) == iEgypt and civ(iOtherPlayer) in [iGreece, iRome]:
+			if cities.region(rEgypt).owner(iOtherPlayer):
+				setPeriod(iEgypt, iPeriodPtolemaicEgypt)
 			
 			
 def getNorsePeriod(iPlayer):
