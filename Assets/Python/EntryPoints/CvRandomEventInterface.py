@@ -2902,6 +2902,12 @@ def canTriggerCrusade(argsList):
 			
 	return false
 
+def canTriggerCrusadeCity(argsList):
+	iTrigger, iPlayer, iID = argsList
+	city = player(iPlayer).getCity(iID)
+	
+	return player(iPlayer).getStateReligion() == iIslam and city.isHolyCityByType(iOrthodoxy)
+	
 def doTriggerCrusade(argsList):
 	kTriggeredData = argsList[0]
 	

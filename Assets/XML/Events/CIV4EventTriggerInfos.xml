@@ -12314,8 +12314,8 @@
 			<bPickOtherPlayerCity>1</bPickOtherPlayerCity>
 			<bShowPlot>0</bShowPlot>
 			<iCityFoodWeight>0</iCityFoodWeight>
-			<PythonCanDo>canTriggerCrusade</PythonCanDo>
-			<PythonCanDoCity/>
+			<PythonCanDo/>
+			<PythonCanDoCity>canTriggerCrusadeCity</PythonCanDoCity>
 			<PythonCanDoUnit/>
 			<PythonCallback>doTriggerCrusade</PythonCallback>
 		</EventTriggerInfo>
