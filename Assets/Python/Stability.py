@@ -430,6 +430,7 @@ def getSeparatismModifier(iPlayer, city):
 	bTotalitarianism = civic.iSociety == iTotalitarianism
 	bExpansionExceptions = (bHistorical and iCiv == iMongols and not isDecline(iPlayer)) or bTotalitarianism
 	
+	iCurrentEra = player(iPlayer).getCurrentEra()
 	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCivCulture(c) or plot.getCivCulture(c))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
 	
@@ -463,9 +464,12 @@ def getSeparatismModifier(iPlayer, city):
 	if city.hasBuilding(unique_building(iPlayer, iJail)):
 		iModifier -= 1
 	
-	# overseas colonies with Colonialism
-	if city.isColony():
-		if civic.iTerritory == iColonialism and bHistorical: iModifier -= 1
+	# overseas colonies
+	if city.isColony():		
+		if iCurrentEra <= iIndustrial and civic.iTerritory == iColonialism and bHistorical: iModifier -= 1
+		
+		if iCurrentEra >= iIndustrial: iModifier += 1
+		if iCurrentEra >= iGlobal: iModifier += 1
 	
 	# cap
 	if iModifier < -1: iModifier = -1
