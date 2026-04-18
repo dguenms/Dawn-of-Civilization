@@ -412,6 +412,11 @@ scenario1815AD = Scenario(
 			lCoastRegions=lAfrica,
 			lSeaRegions=[rMediterraneanSea, rRedSea],
 		),
+		iCivGroupAmerica: Revealed(
+			lLandRegions=lEurope + lNorthAfrica + lAsia + lAmerica, 
+			lCoastRegions=lSubSaharanAfrica + lAsia + lAmerica,
+			lSeaRegions=[rAtlanticOcean, rPacificOcean, rIndianOcean, rSeaOfJapan, rEastChinaSea, rSouthChinaSea, rAustralasianSea, rBayOfBengal, rPersianGulf, rArabianSea, rNorthSea, rMediterraneanSea, rBlackSea, rCaribbeanSea, rGulfOfMexico],
+		),
 	},
 	
 	dGreatPeopleCreated = {
