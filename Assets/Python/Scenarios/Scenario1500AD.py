@@ -466,6 +466,8 @@ scenario1500AD = Scenario(
 		(tPataliputra, [(111, 44)]),
 	],
 	
+	lUnexpiredWonders = [iOxfordUniversity, iSaintThomasChurch],
+	
 	lAllGoalsFailed = [iChina, iDravidia, iEthiopia, iKorea, iKhmer, iMali, iMalays, iJapan, iNorse, iTurks, iTibet, iMoors, iJava, iSwahili, iMisr, iItaly, iAztecs],
 	lGoalsSucceeded = [(iSpain, 0), (iBurma, 0), (iVietnam, 0), (iPoland, 0), (iMughals, 0), (iRussia, 0)],
 	setupGoals = setupGoals,

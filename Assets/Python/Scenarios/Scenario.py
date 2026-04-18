@@ -368,6 +368,7 @@ class Scenario(object):
 		
 		self.lInitialWars = kwargs.get("lInitialWars", [])
 		self.lWorkingCities = kwargs.get("lWorkingCities", [])
+		self.lUnexpiredWonders = kwargs.get("lUnexpiredWonders", [])
 		
 		self.lAllGoalsFailed = kwargs.get("lAllGoalsFailed", [])
 		self.lGoalsSucceeded = kwargs.get("lGoalsSucceeded", [])
@@ -510,7 +511,7 @@ class Scenario(object):
 			if city:
 				city.setBuildingOriginalOwner(iWonder, iCiv)
 				city.setBuildingOriginalTime(iWonder, iEarliestYear)
-			elif iYear < self.iStartYear:
+			elif iYear < self.iStartYear and iWonder not in self.lUnexpiredWonders:
 				game.incrementBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType())
 	
 	def adjustGreatPeople(self):
