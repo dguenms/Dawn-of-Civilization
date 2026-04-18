@@ -2846,7 +2846,7 @@ def leader(iPlayer):
 	elif iCiv == iMisr:
 		if not bMonarchy and iEra >= iGlobal: return iNasser
 		
-		if iEra >= iIndustrial: return iMuhammadAli
+		if getColumn(iPlayer) >= 12: return iMuhammadAli
 		
 		if tPlayer.isHasTech(iGunpowder): return iBaibars
 			
