@@ -443,7 +443,11 @@ def getSeparatismModifier(iPlayer, city):
 		iModifier += 2
 	
 	# colonies with Totalitarianism
-	if city.isColony() and bHistorical and civic.iGovernment == iTotalitarianism:
+	if city.isColony() and bHistorical and bTotalitarianism:
+		iModifier += 1
+	
+	# conquest with Totalitarianism
+	if bConquest and not city.isOriginalOwner(iPlayer) and bTotalitarianism:
 		iModifier += 1
 		
 	# not original owner
