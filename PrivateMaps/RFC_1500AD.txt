@@ -3113,35 +3113,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=63
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_HOLY_ROMAN
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_HOLY_ROMAN
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_HOLY_ROMAN
-		CityName=Magdeburg
-		CityPopulation=6
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_WEAVER
-		BuildingType=BUILDING_MONUMENT
-		BuildingType=BUILDING_WALLS
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_CASTLE
-		BuildingType=BUILDING_CATHOLIC_TEMPLE
-		ReligionType=RELIGION_CATHOLICISM
-		BeginCulture
-			Civilization=CIVILIZATION_HOLY_ROMAN, Culture=100
-		EndCulture
-		YearFounded=919
-	EndCity
+	ImprovementType=IMPROVEMENT_LUMBERMILL
 EndPlot
 BeginPlot
 	x=68,y=65
@@ -3464,7 +3436,36 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=63
-	ImprovementType=IMPROVEMENT_LUMBERMILL
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_HOLY_ROMAN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_HOLY_ROMAN
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_HOLY_ROMAN
+		CityName=Brandenburg
+		CityPopulation=6
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_CASTLE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
+		BeginCulture
+			Civilization=CIVILIZATION_HOLY_ROMAN, Culture=100
+		EndCulture
+		YearFounded=919
+	EndCity
 EndPlot
 BeginPlot
 	x=69,y=67
