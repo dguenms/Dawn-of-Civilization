@@ -326,7 +326,7 @@ iPeriodModernItaly : 				((65, 53),	(70, 57)),
 iPeriodYuan : 						((117, 56),	(127, 62)),
 iPeriodPakistan : 					((100, 46),	(103, 49)),
 iPeriodOttomanConstantinople : 		((77, 50),	(84, 55)),
-iPeriodQing :						((120, 51),	(129, 59)),
+iPeriodQing :						((123, 52),	(129, 59)),
 iPeriodModernGermany : 				((65, 61),	(69, 65)),
 }
 
@@ -342,7 +342,7 @@ iPeriodGreatBritain :			[(53, 65), (53, 66), (53, 67), (55, 70)],
 iPeriodLateInca :				[(34, 24), (34, 25)],
 iPeriodModernItaly :			[(65, 53)],
 iPeriodOttomanConstantinople :	[(83, 51), (84, 51), (84, 52)],
-iPeriodQing :					[(120, 56), (120, 57), (120, 58), (120, 59), (121, 57), (121, 58), (121, 59), (122, 58), (122, 59), (123, 58), (123, 59), (124, 59), (129, 57)],
+iPeriodQing :					[(123, 58), (123, 59), (124, 59), (129, 57)],
 iPeriodModernGermany :			[(69, 61)],
 })
 
