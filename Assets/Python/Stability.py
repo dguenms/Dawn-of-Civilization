@@ -406,6 +406,9 @@ def calculateAdministration(city):
 	
 	iPopulation = city.getPopulation()
 	iAdministrationModifier = getAdministrationModifier(iPlayer)
+	
+	if city.hasBuilding(unique_building(iPlayer, iCourthouse)):
+		iAdministrationModifier += 50
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
 	
