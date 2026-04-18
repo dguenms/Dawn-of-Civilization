@@ -45,6 +45,7 @@ tSpreadFactors = (
 	iCore :		[rFrance, rCentralEurope, rPoland, rIreland, rItaly, rIberia],
 	iHistorical :	[rBritain, rLowerGermany, rQuebec, rMaritimes, rAtlanticSeaboard, rCaribbean, rAridoamerica, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone, rCongo, rKalahari, rCape, rPhilippines],
 	iPeriphery :	[rBalkans, rGreece, rRuthenia, rAmericanArctic, rOntario, rMidwest, rDeepSouth, rGreatPlains, rCalifornia, rAustralia, rOceania, rGuinea, rSwahiliCoast, rMadagascar],
+	iMinority :		[rDravida, rIndochina, rSouthChina],
 },
 # Protestantism
 {
