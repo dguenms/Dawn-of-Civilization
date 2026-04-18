@@ -7318,6 +7318,12 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
+	// Leoreth: not for minor civs
+	if (GET_PLAYER(getOwnerINLINE()).isMinorCiv())
+	{
+		return 0;
+	}
+
 	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
 	if (pCapital && !plot()->isOverseas(pCapital->plot()))
 	{
@@ -7329,16 +7335,10 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
-	// Leoreth: not for minor civs
-	if (GET_PLAYER(getOwnerINLINE()).isMinorCiv())
-	{
-		return 0;
-	}
-
 	int iNumCitiesPercent = 100;
 
-	iNumCitiesPercent *= (getPopulation() + 17);
-	iNumCitiesPercent /= 18;
+	iNumCitiesPercent *= (getPopulation() + 9);
+	iNumCitiesPercent /= 10;
 
 	iNumCitiesPercent *= GC.getHandicapInfo(getHandicapType()).getColonyMaintenancePercent();
 	iNumCitiesPercent /= 100;
