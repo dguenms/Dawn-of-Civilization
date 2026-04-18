@@ -10267,7 +10267,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
-	x=86,y=59
+	x=86,y=60
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_MUSKETEER
@@ -10275,7 +10275,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_RUSSIA
-		CityName=Azov
+		CityName=Cherkassk
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -10292,19 +10292,8 @@ BeginPlot
 		BeginCulture
 			Civilization=CIVILIZATION_RUSSIA, Culture=250
 		EndCulture
-		YearFounded=-300
-		YearAcquired=1695
-		PreviousOwner=CIVILIZATION_GREECE
-		PreviousOwner=CIVILIZATION_ITALY
-		PreviousOwner=CIVILIZATION_MONGOL
-		PreviousOwner=CIVILIZATION_OTTOMAN
-		PreviousOwner=CIVILIZATION_RUS
-		PreviousOwner=CIVILIZATION_TURKS
+		YearFounded=1756
 	EndCity
-EndPlot
-BeginPlot
-	x=86,y=60
-	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=86,y=64
