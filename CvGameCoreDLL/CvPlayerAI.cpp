@@ -10942,10 +10942,10 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 	{
 		if (!kCivic.isStateReligion() || iHighestReligionCount > 0)
 		{
-			iValue *= 5;
-			iValue /= 4;
-			iValue += 6 * getNumCities();
-			iValue += 20;
+			iValue *= 3;
+			iValue /= 2;
+			iValue += 8 * getNumCities();
+			iValue += 50;
 		}
 	}
 
