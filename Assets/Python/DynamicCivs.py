@@ -1336,6 +1336,9 @@ def specificName(iPlayer):
 		
 		if bCityStates:
 			return "TXT_KEY_CIV_BURMA_PYU"
+			
+		if capital in cities.birth(iBurma).coastal():
+			return "TXT_KEY_CIV_BURMA_HANTHAWADDY"
 		
 		return "TXT_KEY_CIV_BURMA_BAGAN"
 		
