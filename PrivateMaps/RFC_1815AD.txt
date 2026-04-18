@@ -11064,6 +11064,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
+	x=92,y=19
+	ImprovementType=IMPROVEMENT_WHALING_BOATS
+EndPlot
+BeginPlot
 	x=92,y=46
 	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
