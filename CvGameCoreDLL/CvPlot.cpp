@@ -6235,6 +6235,13 @@ void CvPlot::setBonusType(BonusTypes eNewValue)
 
 
 // Leoreth
+BonusTypes CvPlot::getBaseBonusVarietyType() const
+{
+	return (BonusTypes)m_eBonusVarietyType;
+}
+
+
+// Leoreth
 BonusTypes CvPlot::getBonusVarietyType(TeamTypes eTeam) const
 {
 	if (getBonusType(eTeam) == NO_BONUS)
@@ -6242,7 +6249,7 @@ BonusTypes CvPlot::getBonusVarietyType(TeamTypes eTeam) const
 		return NO_BONUS;
 	}
 
-	return (BonusTypes)m_eBonusVarietyType;
+	return getBaseBonusVarietyType();
 }
 
 
@@ -6250,11 +6257,6 @@ BonusTypes CvPlot::getBonusVarietyType(TeamTypes eTeam) const
 void CvPlot::setBonusVarietyType(BonusTypes eNewValue)
 {
 	if (eNewValue != NO_BONUS && !GC.getBonusInfo(eNewValue).isGraphicalOnly())
-	{
-		return;
-	}
-	
-	if (getBonusType() == NO_BONUS && eNewValue != NO_BONUS)
 	{
 		return;
 	}

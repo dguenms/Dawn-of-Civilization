@@ -1612,8 +1612,8 @@ class CvPlotDesc:
 				f.write("\tStartingPlot\n")
 			if (plot.getBonusType(-1)!=-1):
 				f.write("\tBonusType=%s\n" %(gc.getBonusInfo(plot.getBonusType(-1)).getType()) )
-			if (plot.getBonusVarietyType(-1) != -1):
-				f.write("\tBonusVarietyType=%s\n" % gc.getBonusInfo(plot.getBonusVarietyType(-1)).getType())
+			if (plot.getBaseBonusVarietyType() != -1):
+				f.write("\tBonusVarietyType=%s\n" % gc.getBonusInfo(plot.getBaseBonusVarietyType()).getType())
 				
 		if (plot.getImprovementType()!=-1):
 			f.write("\tImprovementType=%s\n" %(gc.getImprovementInfo(plot.getImprovementType()).getType()) )

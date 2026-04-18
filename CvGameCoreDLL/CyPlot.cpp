@@ -784,6 +784,11 @@ int /* BonusTypes */ CyPlot::getNonObsoleteBonusType(int /*TeamTypes*/ eTeam)
 	return m_pPlot ? m_pPlot->getNonObsoleteBonusType((TeamTypes)eTeam) : -1;
 }
 
+int /* BonusTypes */ CyPlot::getBaseBonusVarietyType()
+{
+	return m_pPlot ? m_pPlot->getBaseBonusVarietyType() : -1;
+}
+
 int /* BonusTypes */ CyPlot::getBonusVarietyType(int /*TeamTypes*/ eTeam)
 {
 	return m_pPlot ? m_pPlot->getBonusVarietyType((TeamTypes)eTeam) : -1;
