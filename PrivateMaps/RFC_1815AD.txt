@@ -9579,10 +9579,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=83,y=23
-	ImprovementType=IMPROVEMENT_PLANTATION
-EndPlot
-BeginPlot
 	x=83,y=24
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
@@ -9594,6 +9590,31 @@ EndPlot
 BeginPlot
 	x=83,y=26
 	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_INDEPENDENT
+		CityName=Mombasa
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_LIGHTHOUSE
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_COFFEEHOUSE
+		BuildingType=BUILDING_ISLAMIC_TEMPLE
+		ReligionType=RELIGION_ISLAM
+		BeginCulture
+			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
+		EndCulture
+		YearFounded=900
+		YearAcquired=1480
+		PreviousOwner=CIVILIZATION_SWAHILI
+	EndCity
 EndPlot
 BeginPlot
 	x=83,y=35
@@ -9797,16 +9818,8 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=84,y=23
-	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
 	x=84,y=24
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
-	x=84,y=27
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=84,y=36
@@ -9965,7 +9978,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Sansibar
+		CityName=Zanjibar
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -9986,10 +9999,6 @@ BeginPlot
 		EndCulture
 		YearFounded=1700
 	EndCity
-EndPlot
-BeginPlot
-	x=85,y=28
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=85,y=29
