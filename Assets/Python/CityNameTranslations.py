@@ -21019,6 +21019,8 @@ name_translations = {
 		),
 	},
 	"Zanzibar": {
+		iArabic: "Zanjibar",
+		iEnglish: _,
 		iGerman: "Sansibar",
 		iGreek: "Menuthias",
 		iKiswahili: _,
