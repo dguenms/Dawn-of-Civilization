@@ -17764,7 +17764,11 @@ bool CvPlayerAI::AI_advancedStartImproveCity(CvCity* pCity)
 		}
 	}
 
-	int iTargetPopulation = pCity->happyLevel() + (getCurrentEra() / 2);
+	int iTargetPopulation = pCity->getPopulation() + pCity->foodDifference() / 2;
+	if (iTargetPopulation > pCity->getPopulation())
+	{
+		iTargetPopulation = std::max(pCity->getPopulation(), iTargetPopulation - pCity->angryPopulation(iTargetPopulation - pCity->getPopulation()));
+	}
 
 	while (iPlotsImproved < iTargetPopulation)
 	{
