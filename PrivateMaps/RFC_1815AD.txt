@@ -287,6 +287,14 @@ BeginPlot
 		UnitType=UNIT_GRENADIER
 		UnitOwner=CIVILIZATION_MEXICO
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_MEXICO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_MEXICO
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MEXICO
 		CityName=Ciudad de México
@@ -909,6 +917,10 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_ENGLAND
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_ENGLAND
 		CityName=Toronto
@@ -1227,6 +1239,18 @@ BeginPlot
 		UnitType=UNIT_GRENADIER
 		UnitOwner=CIVILIZATION_AMERICA
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_AMERICA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_AMERICA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_AMERICA
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_AMERICA
 		CityName=Washington
@@ -1337,6 +1361,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON
+		UnitOwner=CIVILIZATION_COLOMBIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_COLOMBIA
 	EndUnit
 	BeginCity
@@ -2321,6 +2349,18 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_ARGENTINA
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_ARGENTINA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_ARGENTINA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_ARGENTINA
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_ARGENTINA
 		CityName=Buenos Aires
@@ -2848,6 +2888,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_PORTUGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_PORTUGAL
 	EndUnit
 	BeginCity
@@ -3747,6 +3791,14 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_SPAIN
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_SPAIN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_SPAIN
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
 		CityName=Madrid
@@ -4073,6 +4125,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON
+		UnitOwner=CIVILIZATION_ENGLAND
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
 	BeginCity
@@ -4737,6 +4793,14 @@ BeginPlot
 		UnitType=UNIT_FRENCH_GRIBEAUVAL
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_FRANCE
 		CityName=Paris
@@ -4958,6 +5022,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON
+		UnitOwner=CIVILIZATION_NETHERLANDS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_NETHERLANDS
 	EndUnit
 	BeginCity
@@ -5601,6 +5669,10 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_ITALY
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_ITALY
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_ITALY
 		CityName=Milano
@@ -5751,10 +5823,6 @@ EndPlot
 BeginPlot
 	x=66,y=74
 	ImprovementType=IMPROVEMENT_MINE
-EndPlot
-BeginPlot
-	x=67,y=29
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=67,y=35
@@ -6160,6 +6228,10 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_NORSE
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_NORSE
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_NORSE
 		CityName=København
@@ -6542,6 +6614,14 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_GERMANY
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_GERMANY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_GERMANY
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_GERMANY
 		CityName=Berlin
@@ -6659,6 +6739,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_ITALY
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_ITALY
 	EndUnit
 	BeginCity
@@ -6853,6 +6937,10 @@ BeginPlot
 		UnitOwner=CIVILIZATION_CONGO
 	EndUnit
 	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
 		UnitType=UNIT_SETTLER
 		UnitOwner=CIVILIZATION_CONGO
 	EndUnit
@@ -6968,6 +7056,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON
+		UnitOwner=CIVILIZATION_HOLY_ROMAN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_HOLY_ROMAN
 	EndUnit
 	BeginCity
@@ -7394,6 +7486,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON
+		UnitOwner=CIVILIZATION_SWEDEN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_SWEDEN
 	EndUnit
 	BeginCity
@@ -8492,6 +8588,10 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_MISR
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_MISR
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MISR
 		CityName=El-Qahirah
@@ -8633,6 +8733,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_OTTOMAN_GREAT_BOMBARD
+		UnitOwner=CIVILIZATION_OTTOMAN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_OTTOMAN
 	EndUnit
 	BeginCity
@@ -9278,6 +9382,14 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CANNON
+		UnitOwner=CIVILIZATION_RUSSIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_RUSSIA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_RUSSIA
 	EndUnit
 	BeginCity
@@ -11166,6 +11278,10 @@ BeginPlot
 		UnitType=UNIT_BOMBARD
 		UnitOwner=CIVILIZATION_IRAN
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_IRAN
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_IRAN
 		CityName=Tehran
@@ -12506,6 +12622,10 @@ BeginPlot
 		UnitType=UNIT_BOMBARD
 		UnitOwner=CIVILIZATION_INDIA
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_INDIA
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDIA
 		CityName=Dhar
@@ -13343,6 +13463,10 @@ BeginPlot
 		UnitType=UNIT_CANNON
 		UnitOwner=CIVILIZATION_ENGLAND
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_ENGLAND
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_ENGLAND
 		CityName=Calcutta
@@ -14062,6 +14186,10 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_BURMA
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_BURMA
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_BURMA
 		CityName=Mandalay
@@ -14438,6 +14566,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
+		UnitOwner=CIVILIZATION_THAILAND
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_THAILAND
 	EndUnit
 	BeginCity
@@ -14905,38 +15037,6 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_VIETNAM
-	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_VIETNAM
 		CityName=Dong Kinh
@@ -15393,6 +15493,46 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_BOMBARD
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_VIETNAM
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_VIETNAM
 	EndUnit
 	BeginCity
@@ -15866,6 +16006,14 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_MANCHU
 	EndUnit
 	BeginCity
@@ -16912,6 +17060,14 @@ BeginPlot
 		UnitType=UNIT_KOREAN_HWACHA
 		UnitOwner=CIVILIZATION_KOREA
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_KOREA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_KOREA
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_KOREA
 		CityName=Hanseong
@@ -17603,6 +17759,10 @@ BeginPlot
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
+		UnitOwner=CIVILIZATION_JAPAN
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
 		UnitOwner=CIVILIZATION_JAPAN
 	EndUnit
 	BeginCity
