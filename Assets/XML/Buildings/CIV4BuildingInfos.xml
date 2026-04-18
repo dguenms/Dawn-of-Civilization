@@ -14228,6 +14228,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_BELL_ROCK_LIGHTHOUSE</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_BELL_ROCK_LIGHTHOUSE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
+			<ObsoleteTech>TECH_MACROECONOMICS</ObsoleteTech>
 			<PrereqTech>TECH_METALLURGY</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
