@@ -308,6 +308,9 @@ def setupGoals(iCiv, goals):
 def updateData():
 	data.dFirstContactConquerors = {iMaya: True, iToltecs: True, iAztecs: True, iInca: True}
 	
+	for iCiv in lTradingCompanyCivs:
+		data.civs[iCiv].bTradingCompanyConquerors = False
+	
 	data.civs[iChina].iResurrections = 2
 	data.civs[iIndia].iResurrections = 1
 	data.civs[iDravidia].iResurrections = 1

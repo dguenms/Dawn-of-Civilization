@@ -4295,9 +4295,6 @@ def canTriggerTradingCompanyConquerors(argsList):
 	iPlayer = kTriggeredData.ePlayer
 	iCiv = civ(iPlayer)
 	
-	if scenario() == i1700AD: 
-		return False
-	
 	if not player(iPlayer).isHuman():
 		return False
 	
