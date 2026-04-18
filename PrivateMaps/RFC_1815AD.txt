@@ -11369,6 +11369,32 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
+	x=94,y=18
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_FRANCE
+		CityName=Saint-Denis
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
+		BeginCulture
+			Civilization=CIVILIZATION_FRANCE, Culture=50
+		EndCulture
+		YearFounded=1669
+	EndCity
+EndPlot
+BeginPlot
 	x=94,y=39
 	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
@@ -11499,6 +11525,11 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=66
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=96,y=19
+	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
