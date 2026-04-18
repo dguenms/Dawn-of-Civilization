@@ -192,6 +192,7 @@ public:
 	void resetFeatureModel();
 	int /* BonusTypes */ getBonusType(int /*TeamTypes*/ eTeam); 
 	int /* BonusTypes */ getNonObsoleteBonusType(int /*TeamTypes*/ eTeam); 
+	int /* BonusTypes */ getBaseBonusVarietyType();
 	int /* BonusTypes */ getBonusVarietyType(int /* TeamTypes */ eTeam);
 	void setBonusType(int /* BonusTypes */ eNewValue);
 	void setBonusVarietyType(int /* BonusTypes */ eNewValue);

@@ -324,6 +324,7 @@ public:
 	BonusTypes getNonObsoleteBonusType(TeamTypes eTeam = NO_TEAM) const;																	// Exposed to Python
 	void setBonusType(BonusTypes eNewValue);																															// Exposed to Python
 
+	BonusTypes getBaseBonusVarietyType() const;
 	BonusTypes getBonusVarietyType(TeamTypes eTeam = NO_TEAM) const;
 	void setBonusVarietyType(BonusTypes eNewValue);
 
