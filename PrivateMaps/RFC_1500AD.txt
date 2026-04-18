@@ -967,6 +967,21 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=56,y=45
+	BeginUnit
+		UnitType=UNIT_HEAVY_GALLEY
+		UnitOwner=CIVILIZATION_MOORS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_GALLEY
+		UnitOwner=CIVILIZATION_MOORS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_GALLEY
+		UnitOwner=CIVILIZATION_MOORS
+	EndUnit
+EndPlot
+BeginPlot
 	x=56,y=48
 	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
@@ -1790,14 +1805,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_MOORS
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_MOORS
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_MOORS
+		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Wahran
 		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
@@ -1810,8 +1825,9 @@ BeginPlot
 		BuildingType=BUILDING_MOORISH_NORIA
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_MOORS, Culture=100
+			Civilization=CIVILIZATION_INDEPENDENT2, Culture=100
 		EndCulture
+		PreviousOwner=CIVILIZATION_MOORS
 		YearFounded=900
 	EndCity
 EndPlot
@@ -2254,27 +2270,15 @@ BeginPlot
 	x=63,y=48
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_MOORS
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_MOORS
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_HEAVY_GALLEY
-		UnitOwner=CIVILIZATION_MOORS
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_MOORS
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_MOORS
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_MOORS
+		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Al-Jazair
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -2288,13 +2292,14 @@ BeginPlot
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_MOORS, Culture=100
+			Civilization=CIVILIZATION_INDEPENDENT2, Culture=100
 		EndCulture
 		YearFounded=-300
 		YearAcquired=700
 		PreviousOwner=CIVILIZATION_PHOENICIA
 		PreviousOwner=CIVILIZATION_BYZANTIUM
 		PreviousOwner=CIVILIZATION_ROME
+		PreviousOwner=CIVILIZATION_MOORS
 		PreviousOwner=CIVILIZATION_BARBARIAN
 	EndCity
 EndPlot
@@ -2822,14 +2827,14 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_MOORS
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_CROSSBOWMAN
-		UnitOwner=CIVILIZATION_MOORS
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_MOORS
+		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Tunus
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
@@ -2841,7 +2846,7 @@ BeginPlot
 		BuildingType=BUILDING_MOORISH_NORIA
 		ReligionType=RELIGION_ISLAM
 		BeginCulture
-			Civilization=CIVILIZATION_MOORS, Culture=100
+			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=-400
 		YearAcquired=1535
