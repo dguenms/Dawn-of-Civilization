@@ -451,6 +451,8 @@ scenario1500AD = Scenario(
 	},
 	
 	lInitialWars = [
+		(iEngland, iIndependent, WarPlanTypes.WARPLAN_LIMITED),
+		(iRussia, iIndependent2, WarPlanTypes.WARPLAN_LIMITED),
 		(iOttomans, iMisr, WarPlanTypes.WARPLAN_TOTAL),
 	],
 	
