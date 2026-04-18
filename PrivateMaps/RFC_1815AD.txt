@@ -2144,6 +2144,10 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=36,y=22
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=36,y=40
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
@@ -2196,6 +2200,15 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=14
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=37,y=18
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=37,y=21
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -2341,6 +2354,14 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=38,y=18
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=38,y=20
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=38,y=35
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -2401,6 +2422,51 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=14
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=39,y=19
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_MUSKETEER
+		UnitOwner=CIVILIZATION_INDEPENDENT
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_INDEPENDENT
+		CityName=Asunción
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		ReligionType=RELIGION_CATHOLICISM
+		BeginCulture
+			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
+		EndCulture
+		YearFounded=1535
+		PreviousOwner=CIVILIZATION_SPAIN
+	EndCity
+EndPlot
+BeginPlot
+	x=39,y=20
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -2478,6 +2544,11 @@ EndPlot
 BeginPlot
 	x=40,y=17
 	ImprovementType=IMPROVEMENT_PLANTATION
+EndPlot
+BeginPlot
+	x=40,y=20
+	ImprovementType=IMPROVEMENT_PLANTATION
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=40,y=62
