@@ -1708,11 +1708,12 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 {
 	FAssertMsg(eTeam != getID(), "shouldn't call this function on ourselves");
 
+	bool bThreatened = false;
 	CvTeamAI& kMasterTeam = GET_TEAM(eTeam);
 
 	for (int iLoopTeam = 0; iLoopTeam < MAX_TEAMS; iLoopTeam++)
 	{
-		CvTeam& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
+		CvTeamAI& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
 		if (kLoopTeam.isAlive() && iLoopTeam != getID() && iLoopTeam != kMasterTeam.getID() && !kLoopTeam.isMinorCiv()) // Leoreth: exclude wars with minor civs from vassal considerations
 		{
 			if (!kLoopTeam.isAtWar(kMasterTeam.getID()) && kLoopTeam.isAtWar(getID()))
@@ -1753,7 +1754,24 @@ DenialTypes CvTeamAI::AI_vassalTrade(TeamTypes eTeam) const
 					}
 				}
 			}
+
+			if (!kLoopTeam.isAtWar(getID()) && kLoopTeam.canChangeWarPeace(getID()))
+			{
+				if (kLoopTeam.AI_isLandTarget(getID()) && kLoopTeam.AI_getAttitude(getID()) == ATTITUDE_FURIOUS)
+				{
+					if (2 * kLoopTeam.getPower(true) > 3 * getPower(true) && 3 * kMasterTeam.getPower(true) > 4 * kLoopTeam.getPower(true))
+					{
+						bThreatened = true;
+					}
+				}
+			}
 		}
+	}
+
+	// Leoreth: do not become a peace vassal unless threatened
+	if (!bThreatened)
+	{
+		return DENIAL_NO_GAIN;
 	}
 
 	return AI_surrenderTrade(eTeam);
@@ -1904,12 +1922,12 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		int iVassalPopulation = getTotalPopulation();
 
 		// Leoreth: do not accumulate too many vassals (strength + population instead of number of vassals)
-		if (iTotalMasterPower + iRawVassalPower > iTotalPower / 3)
+		if (iTotalMasterPower + iRawVassalPower > iTotalPower / 2)
 		{
 			return DENIAL_POWER_YOU;
 		}
 
-		if (iMasterPopulation + iVassalPopulation > iTotalPopulation / 3)
+		if (iMasterPopulation + iVassalPopulation > iTotalPopulation / 2)
 		{
 			return DENIAL_POWER_YOU;
 		}
@@ -2014,7 +2032,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			return DENIAL_POWER_US;
 		}
 
-		if (iVassalPower > iAveragePower || 3 * iVassalPower > 2 * iMasterPower)
+		if (iVassalPower > iAveragePower || 2 * iVassalPower > iMasterPower)
 		{
 			return DENIAL_POWER_US;
 		}
@@ -2092,7 +2110,6 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 				return DENIAL_TOO_FAR;
 			}
 			// edead: end
-
 		}
 
 		AttitudeTypes eAttitude = AI_getAttitude(eTeam, false);
