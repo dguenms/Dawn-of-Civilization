@@ -9236,7 +9236,6 @@ BeginPlot
 		BuildingType=BUILDING_UNIVERSITY
 		BuildingType=BUILDING_STAR_FORT
 		BuildingType=BUILDING_ESTATE
-		BuildingType=BUILDING_LEVEE
 		BuildingType=BUILDING_OBSERVATORY
 		BuildingType=BUILDING_WAREHOUSE
 		BuildingType=BUILDING_JEWISH_TEMPLE
@@ -17148,7 +17147,6 @@ BeginPlot
 		BuildingType=BUILDING_RUSSIAN_OSTROG
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_WHARF
-		BuildingType=BUILDING_DRYDOCK
 		BeginCulture
 			Civilization=CIVILIZATION_RUSSIA, Culture=50
 		EndCulture

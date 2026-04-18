@@ -177,7 +177,7 @@ lCivilizations = [
 		iGold=500,
 		iStateReligion=iOrthodoxy,
 		lCivics=[iDespotism, iBureaucracy, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(12).without(iSociology, iSocialContract),
+		techs=techs.column(12).without(iHydraulics, iSocialContract),
 		dAttitudes={iSweden: -1, iOttomans: -2},
 		dMemories={
 			iFrance: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
