@@ -16359,8 +16359,42 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=50
-	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_ARQUEBUSIER
+		UnitOwner=CIVILIZATION_MANCHU
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_MANCHU
+		CityName=Nanjing
+		CityPopulation=12
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_MONUMENT
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_THEATRE
+		BuildingType=BUILDING_ARENA
+		BuildingType=BUILDING_JEWELLER
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_BATH
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_PHARMACY
+		BuildingType=BUILDING_CONFUCIAN_TEMPLE
+		BuildingType=BUILDING_CONFUCIAN_CATHEDRAL
+		BuildingType=BUILDING_PORCELAIN_TOWER
+		ReligionType=RELIGION_CONFUCIANISM
+		BeginCulture
+			Civilization=CIVILIZATION_MANCHU, Culture=100
+		EndCulture
+		YearFounded=-571
+		YearAcquired=1640
+		PreviousOwner=CIVILIZATION_CHINA
+		PreviousOwner=CIVILIZATION_MONGOL
+	EndCity
 EndPlot
 BeginPlot
 	x=127,y=51
@@ -16712,7 +16746,6 @@ BeginPlot
 		BuildingType=BUILDING_CONFUCIAN_TEMPLE
 		BuildingType=BUILDING_CONFUCIAN_MONASTERY
 		BuildingType=BUILDING_TAOIST_TEMPLE
-		BuildingType=BUILDING_PORCELAIN_TOWER
 		ReligionType=RELIGION_CONFUCIANISM
 		ReligionType=RELIGION_TAOISM
 		FreeSpecialistType=SPECIALIST_GREAT_MERCHANT
