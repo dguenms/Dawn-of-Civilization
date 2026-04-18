@@ -21,11 +21,11 @@ import math
 tEraAdministrationModifier = (
 	100, # ancient
 	200, # classical
-	200, # medieval
-	250, # renaissance
-	300, # industrial
-	350, # modern
-	400, # future
+	150, # medieval
+	200, # renaissance
+	250, # industrial
+	200, # modern
+	200, # future
 )
 
 dCivilizationAdministrationModifier = CivDict({
