@@ -466,11 +466,6 @@ def setupScenarioResources():
 		if iTurn <= iStartTurn:
 			for x, y in lFeatures:
 				plot(x, y).setFeatureType(-1, 0)
-				
-	for iTurn, lTerrains in dTerrains:
-		if iTurn <= iStartTurn:
-			for (x, y), iTerrain in lTerrains:
-				plot(x, y).setTerrainType(iTerrain, True, True)
 	
 	if year(700) <= iStartTurn:
 		plot(41, 58).setFeatureType(-1, 0)
