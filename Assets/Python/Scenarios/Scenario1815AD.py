@@ -489,6 +489,8 @@ scenario1815AD = Scenario(
 		(tAtlanta, [(24, 50)]),
 	],
 	
+	lUnexpiredWonders = [iLasLajasSanctuary],
+	
 	lAllGoalsFailed = [iIndia, iKorea, iFrance, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iMisr, iPortugal, iItaly, iThailand, iSweden, iRussia, iOttomans, iCongo, iIran, iNetherlands, iManchuria],
 	lGoalsSucceeded = [(iJapan, 0), (iEngland, 0)],
 	setupGoals = setupGoals,
