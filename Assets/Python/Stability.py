@@ -448,7 +448,7 @@ def getSeparatismModifier(iPlayer, city):
 	
 	# conquest with Totalitarianism
 	if bConquest and not city.isOriginalOwner(iPlayer) and bTotalitarianism:
-		iModifier += 1
+		iModifier -= 1
 		
 	# not original owner
 	if not bExpansionExceptions:
