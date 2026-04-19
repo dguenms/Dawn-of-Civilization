@@ -8189,6 +8189,11 @@ name_translations = {
 		iEnglish: _,
 		iPolynesian: "Waihopai",
 	},
+	"Inzareg": {
+		iArabic: "El-Meki",
+		iBerber: _,
+		iFrench: u"Elméki",
+	},
 	"Ioannina": {  # relocated from Apollonia
 		iGreek: _,
 		iItalian: "Giannina",

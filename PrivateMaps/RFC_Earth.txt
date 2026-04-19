@@ -29855,6 +29855,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=40
+	BonusType=BONUS_DEER
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -30310,7 +30311,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=40
-	BonusType=BONUS_DEER
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
