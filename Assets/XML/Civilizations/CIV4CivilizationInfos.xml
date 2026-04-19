@@ -23,7 +23,7 @@
 			<LoadingTimes>
 				<LoadingTime>40</LoadingTime>
 				<LoadingTime>25</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>18</LoadingTime>
 				<LoadingTime>5</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -213,7 +213,7 @@
 			<LoadingTimes>
 				<LoadingTime>45</LoadingTime>
 				<LoadingTime>35</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>20</LoadingTime>
 				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -384,9 +384,9 @@
 			<LoadingTimes>
 				<LoadingTime>40</LoadingTime>
 				<LoadingTime>25</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>35</LoadingTime>
+				<LoadingTime>20</LoadingTime>
 				<LoadingTime>5</LoadingTime>
-				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -672,9 +672,9 @@
 			<LoadingTimes>
 				<LoadingTime>50</LoadingTime>
 				<LoadingTime>40</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>30</LoadingTime>
 				<LoadingTime>12</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>1</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -945,9 +945,9 @@
 			<LoadingTimes>
 				<LoadingTime>60</LoadingTime>
 				<LoadingTime>50</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>40</LoadingTime>
 				<LoadingTime>20</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>8</LoadingTime>
 			</LoadingTimes>
 			<bPlayable>1</bPlayable>
 			<bAIPlayable>1</bAIPlayable>
@@ -1386,7 +1386,7 @@
 			<LoadingTimes>
 				<LoadingTime>55</LoadingTime>
 				<LoadingTime>40</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>25</LoadingTime>
 				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -2035,7 +2035,7 @@
 			<LoadingTimes>
 				<LoadingTime>30</LoadingTime>
 				<LoadingTime>20</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>10</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3761,9 +3761,9 @@
 			<Identifier>MAN</Identifier>
 			<StartingYear>1586</StartingYear>
 			<LoadingTimes>
-				<LoadingTime>1</LoadingTime>
-				<LoadingTime>0</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>25</LoadingTime>
+				<LoadingTime>16</LoadingTime>
+				<LoadingTime>3</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -3975,7 +3975,7 @@
 			<LoadingTimes>
 				<LoadingTime>50</LoadingTime>
 				<LoadingTime>35</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>25</LoadingTime>
 				<LoadingTime>8</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
@@ -4580,7 +4580,7 @@
 			<LoadingTimes>
 				<LoadingTime>25</LoadingTime>
 				<LoadingTime>12</LoadingTime>
-				<LoadingTime>0</LoadingTime>
+				<LoadingTime>3</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 				<LoadingTime>0</LoadingTime>
 			</LoadingTimes>
