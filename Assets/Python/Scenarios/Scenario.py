@@ -229,6 +229,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iBorobudur : (iJava, 825),
 	iPrambanan : (iJava, 850),
 	iEscorial : (iSpain, 1584),
+	iGuadalupeBasilica : (iSpain, 1709),
 	iChapultepecCastle : (iSpain, 1785),
 	iLasLajasSanctuary : (iSpain, 1764),
 	iMezquita : (iMoors, 785),
