@@ -4480,6 +4480,7 @@ name_translations = {
 		iPersian: "Krksy",
 	},
 	u"Ciudad de Panamá": {
+		iAmerican: found("Balboa"),
 		iDutch: "Panama-Stad",
 		iEnglish: (
 			found("New Edinburgh"),
