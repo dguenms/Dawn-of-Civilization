@@ -1468,6 +1468,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=31,y=13
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=31,y=14
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot

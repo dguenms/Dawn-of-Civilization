@@ -13781,6 +13781,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=31,y=13
+	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -14238,7 +14239,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=13
-	BonusType=BONUS_CRAB
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
