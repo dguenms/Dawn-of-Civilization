@@ -33,7 +33,7 @@ dCivilizationAdministrationModifier = CivDict({
 	iChina: -50,
 	iRome: 50,
 	iMisr: -30,
-	iManchuria: -100,
+	iManchuria: -50,
 }, 0)
 
 
