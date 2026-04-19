@@ -16655,7 +16655,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=18
-	BonusType=BONUS_CORN
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
