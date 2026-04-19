@@ -40270,6 +40270,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=54
+	BonusType=BONUS_DYE
+	BonusVarietyType=BONUS_DYE_COCHINEAL
 	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
