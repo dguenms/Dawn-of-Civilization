@@ -188,6 +188,7 @@ def setupScenario():
 			"Byzantion": "Constantinopolis",
 			"Mahabalipuram": "Madras",
 			"Ra-Kedet": "Alexandreia",
+			"Teotihuacan": "Tenochtitlan",
 		}
 	
 	data.dRelocatedCities.update(dRelocated)
@@ -465,16 +466,16 @@ def checkName(city, bFound=False, bNotify=False):
 
 
 def applyName(city, translation, bNotify=False):
-	current_name = city.getName()	
-	if current_name == translation.name:
-		return
-	
 	if translation.bRelocation:
 		applyRelocation(city, translation.name)
 		return
 	
 	if translation.bRenaming:
 		applyRenaming(city, translation.name)
+		return
+		
+	current_name = city.getName()	
+	if current_name == translation.name:
 		return
 		
 	city.setName(translation.name, False)

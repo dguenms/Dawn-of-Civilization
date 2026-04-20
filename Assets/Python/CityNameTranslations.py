@@ -203,6 +203,9 @@ class Translations(object):
 		if not names:
 			names = [name for names in self.translations.values() for name in listify(names) if self.isRelocatedToLanguage(name, iLanguage)]
 		
+		if not names:
+			names = [name for names in self.translations.values() for name in listify(names) if self.isRenamedToLanguage(name, iLanguage)]
+		
 		return tuple(self.createTranslation(name) for name in names)
 	
 	def __contains__(self, iLanguage):
@@ -216,6 +219,18 @@ class Translations(object):
 			return False
 		
 		if not name.bRelocation:
+			return False
+		
+		return iLanguage in name_translations.get(name.name, {})
+	
+	def isRenamedToLanguage(self, name, iLanguage):
+		if not name:
+			return False
+		
+		if not isinstance(name, Translation):
+			return False
+		
+		if not name.bRenaming:
 			return False
 		
 		return iLanguage in name_translations.get(name.name, {})
@@ -18372,7 +18387,7 @@ name_translations = {
 		iLocal: "Temeekunga",
 		iSpanish: u"Temécula",
 	},
-	"Tenochtitlan": {
+	"Tenochtitlan": {  # renamed from Teotihuacan
 		iDutch: "Mexico-Stad",
 		iEnglish: "Mexico City",
 		iFrench: "Mexico",
