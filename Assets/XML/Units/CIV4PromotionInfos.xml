@@ -1090,7 +1090,7 @@
 			<Type>PROMOTION_CITY_RAIDER1</Type>
 			<Description>TXT_KEY_PROMOTION_CITYRAIDER1</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<iCityAttack>20</iCityAttack>
+			<iCityAttack>15</iCityAttack>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -1112,7 +1112,7 @@
 			<Description>TXT_KEY_PROMOTION_CITYRAIDER2</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_CITY_RAIDER1</PromotionPrereqOr1>
-			<iCityAttack>25</iCityAttack>
+			<iCityAttack>15</iCityAttack>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
@@ -1142,13 +1142,7 @@
 			<Description>TXT_KEY_PROMOTION_CITYRAIDER3</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_CITY_RAIDER2</PromotionPrereqOr1>
-			<iCityAttack>30</iCityAttack>
-			<UnitCombatMods>
-				<UnitCombatMod>
-					<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
-					<iUnitCombatMod>10</iUnitCombatMod>
-				</UnitCombatMod>
-			</UnitCombatMods>
+			<iCityAttack>20</iCityAttack>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
