@@ -799,6 +799,7 @@ class Birth(object):
 			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
 				return False
 		
+		# Misr requires Egypt to be dead and Arabia to be shaky or worse
 		if self.iCiv == iMisr:
 			if player(iEgypt).isExisting():
 				return False
@@ -827,6 +828,14 @@ class Birth(object):
 		# Iran requires Persia to be dead
 		if self.iCiv == iIran:
 			if player(iPersia).isExisting():
+				return False
+		
+		# Saudis require Arabia to be dead and no player in its birth area to be stable
+		if self.iCiv == iSaudis:
+			if player(iArabia).isExisting():
+				return False
+			
+			if cities.birth(iSaudis).players().major().all_if_any(lambda p: stability(p) >= iStabilityStable):
 				return False
 		
 		# Argentina requires any Old World civilization in Andes or Southern Cone
