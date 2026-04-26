@@ -460,6 +460,7 @@
 			<TechCityTrade>TECH_REFINING</TechCityTrade>
 			<YieldChanges>
 				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<iAITradeModifier>20</iAITradeModifier>
