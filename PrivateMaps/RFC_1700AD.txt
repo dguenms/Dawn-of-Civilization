@@ -2753,7 +2753,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_OTTOMAN
-		CityName=Wahran
+		CityName=Vahran
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -7410,10 +7410,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
-	x=86,y=38
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
 	x=86,y=40
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -7943,7 +7939,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Tbilisi
+		CityName=Tiflis
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
@@ -9673,7 +9669,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MUGHALS
-		CityName=Delhi
+		CityName=Shahjahanabad
 		CityPopulation=12
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
