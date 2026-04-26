@@ -1253,7 +1253,7 @@ public:
 
 	int distance(PlayerTypes ePlayer);
 	bool isDistant(PlayerTypes ePlayer);
-	bool isNeighbor(PlayerTypes ePlayer);
+	bool isNeighbor(PlayerTypes ePlayer) const;
 
 	int getInitialBirthTurn() const;
 	void setInitialBirthTurn(int iNewValue);

@@ -3817,6 +3817,14 @@
 		<Spanish>Our %s1 has defected to the %s2 side after being defeated by their Bannerman near %s3.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_ATTITUDE_COMPETITOR</Tag>
+		<English>%D1: "We are rival powers."</English>
+		<French>%D1: "We are rival powers."</French>
+		<German>%D1: "We are rival powers."</German>
+		<Italian>%D1: "We are rival powers."</Italian>
+		<Spanish>%D1: "We are rival powers."</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

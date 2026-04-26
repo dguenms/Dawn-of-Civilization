@@ -5052,6 +5052,7 @@ int CvPlayerAI::AI_getAttitudeVal(PlayerTypes ePlayer, bool bForced) const
 		}
 
 		iAttitude += AI_getColonyAttitude(ePlayer);
+		iAttitude += AI_getCompetitorAttitude(ePlayer); // Leoreth
 		iAttitude += AI_getAttitudeExtra(ePlayer);
 
 		m_aiAttitudeCache[ePlayer] = range(iAttitude, -100, 100);
@@ -5653,6 +5654,48 @@ int CvPlayerAI::AI_getColonyAttitude(PlayerTypes ePlayer) const
 	if (getParent() == ePlayer)
 	{
 		iAttitude += GC.getLeaderHeadInfo(getPersonalityType()).getFreedomAppreciation();
+	}
+
+	return iAttitude;
+}
+
+int CvPlayerAI::AI_getCompetitorAttitude(PlayerTypes ePlayer) const
+{
+	int iAttitude = 0;
+
+	int iPlayersAlive = GC.getGameINLINE().countCivPlayersAlive();
+	int iOurRank = GC.getGameINLINE().getPlayerRank(getID());
+	int iTheirRank = GC.getGameINLINE().getPlayerRank(ePlayer);
+
+	if (std::abs(iOurRank - iTheirRank) < iPlayersAlive / 5)
+	{
+		iAttitude -= 1;
+	}
+
+	if (iAttitude == 0)
+	{
+		return iAttitude;
+	}
+
+	if (!isNeighbor(ePlayer))
+	{
+		return iAttitude;
+	}
+
+	if (iTheirRank < iPlayersAlive / 5)
+	{
+		iAttitude -= 1;
+	}
+
+	if (getCurrentEra() >= ERA_INDUSTRIAL)
+	{
+		iAttitude -= 1;
+	}
+
+	int iLeaderAttitude = std::abs(GC.getLeaderHeadInfo(getPersonalityType()).getWorseRankDifferenceAttitudeChange()) + std::abs(GC.getLeaderHeadInfo(getPersonalityType()).getBetterRankDifferenceAttitudeChange());
+	if (iLeaderAttitude >= 2)
+	{
+		iAttitude -= 1;
 	}
 
 	return iAttitude;

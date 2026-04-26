@@ -24918,7 +24918,7 @@ bool CvPlayer::isDistant(PlayerTypes ePlayer)
 	return (iDistance > GC.getMap().maxStepDistance() / 2);
 }
 
-bool CvPlayer::isNeighbor(PlayerTypes ePlayer)
+bool CvPlayer::isNeighbor(PlayerTypes ePlayer) const
 {
 	return (GET_PLAYER(getID()).AI_calculateStolenCityRadiusPlots(ePlayer) > 0 || GET_PLAYER(ePlayer).AI_calculateStolenCityRadiusPlots(getID()) > 0);
 }

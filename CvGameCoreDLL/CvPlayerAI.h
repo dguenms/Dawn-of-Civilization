@@ -120,6 +120,7 @@ public:
 	int AI_getRivalTradeAttitude(PlayerTypes ePlayer) const;
 	int AI_getMemoryAttitude(PlayerTypes ePlayer, MemoryTypes eMemory) const;
 	int AI_getColonyAttitude(PlayerTypes ePlayer) const;
+	int AI_getCompetitorAttitude(PlayerTypes ePlayer) const; // Leoreth
 
     // BEGIN: Show Hidden Attitude Mod 01/22/2010
 	int AI_getFirstImpressionAttitude(PlayerTypes ePlayer) const;
