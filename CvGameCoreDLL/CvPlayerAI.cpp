@@ -5468,6 +5468,12 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 		iAttitude /= 2;
 	}
 
+	// Leoreth: reduce overall impact
+	if (iAttitude < -1)
+	{
+		iAttitude += 1;
+	}
+
 	//Rhye - start (modified by Leoreth)
 	if (getCurrentEra() == ERA_MEDIEVAL)
 	{
