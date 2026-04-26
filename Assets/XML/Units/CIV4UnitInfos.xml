@@ -16380,12 +16380,19 @@
 			<iCollateralDamageLimit>50</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<iCityAttack>25</iCityAttack>
+			<iHillsDefense>25</iHillsDefense>
 			<UnitCombatCollateralImmunes>
 				<UnitCombatCollateralImmune>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<iUnitCombatCollateralImmune>1</iUnitCombatCollateralImmune>
 				</UnitCombatCollateralImmune>
 			</UnitCombatCollateralImmunes>
+			<UnitClassDefenseMods>
+				<UnitClassDefenseMod>
+					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
+					<iUnitClassMod>25</iUnitClassMod>
+				</UnitClassDefenseMod>
+			</UnitClassDefenseMods>
 			<iBombardRate>12</iBombardRate>
 			<iCultureGarrison>7</iCultureGarrison>
 			<iAsset>3</iAsset>
@@ -16482,12 +16489,19 @@
 			<iCollateralDamageLimit>50</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>4</iCollateralDamageMaxUnits>
 			<iCityAttack>25</iCityAttack>
+			<iHillsDefense>25</iHillsDefense>
 			<UnitCombatCollateralImmunes>
 				<UnitCombatCollateralImmune>
 					<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 					<iUnitCombatCollateralImmune>1</iUnitCombatCollateralImmune>
 				</UnitCombatCollateralImmune>
 			</UnitCombatCollateralImmunes>
+			<UnitClassDefenseMods>
+				<UnitClassDefenseMod>
+					<UnitClassType>UNITCLASS_CANNON</UnitClassType>
+					<iUnitClassMod>25</iUnitClassMod>
+				</UnitClassDefenseMod>
+			</UnitClassDefenseMods>
 			<iBombardRate>12</iBombardRate>
 			<iCultureGarrison>7</iCultureGarrison>
 			<iAsset>3</iAsset>
