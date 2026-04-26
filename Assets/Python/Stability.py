@@ -681,55 +681,56 @@ def calculateStability(iPlayer):
 	if iDeification in civics:
 		if iCurrentEra <= iClassical: iCivicEraTechStability += 2
 		else: iCivicEraTechStability -= 2 * (iCurrentEra - iClassical)
-		
+	
 	if iRepublic in civics:
 		if iCurrentEra <= iClassical: iCivicEraTechStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
-		
+	
 	if iIsolationism in civics:
 		if iCurrentEra >= iGlobal: iCivicEraTechStability -= (iCurrentEra - iRenaissance) * 4
-		
+	
 	if tPlayer.isHasTech(iRepresentation):
 		if (iRepublic, iDemocracy) not in civics and (iStratocracy, iConstitution) not in civics: iCivicEraTechStability -= 5
-		
+	
 	if tPlayer.isHasTech(iCivilRights):
 		if (iSlavery, iManorialism, iCasteSystem) in civics: iCivicEraTechStability -= 5
-		
+	
 	if tPlayer.isHasTech(iEconomics):
 		if (iReciprocity, iRedistribution, iMerchantTrade) in civics: iCivicEraTechStability -= 5
-		
+	
 	if tPlayer.isHasTech(iNationalism):
-		if (iNationhood, iMultilateralism) in civics: iCivicEraTechStability += 5
-		if (iHegemony, iThalassocracy) in civics: iCivicEraTechStability -= 5
-		
+		if (iNationhood, iMultilateralism) not in civics: iCivicEraTechStability -= 2
+		if (iHegemony, iThalassocracy) in civics: iCivicEraTechStability -= 3
+	
 	if tPlayer.isHasTech(iDoctrine):
 		if (iAnimism, iDeification) in civics: iCivicEraTechStability -= 5
 	
 	if tPlayer.isHasTech(iStatecraft):
-		if (iPersonalism, iCitizenship, iVassalage) not in civics: iCivicEraTechStability += 5
+		if (iPersonalism, iCitizenship, iVassalage) in civics: iCivicEraTechStability -= 3
+
 	
+	if iCurrentEra <= iMedieval:
+		if iStateReligion == iHinduism:
+			if iCasteSystem in civics: iCivicEraTechStability += 3
+
+		elif iStateReligion == iConfucianism:
+			if iBureaucracy in civics: iCivicEraTechStability += 3
+			if iIsolationism in civics: iCivicEraTechStability += 3
+
+		elif iStateReligion in [iZoroastrianism, iOrthodoxy, iCatholicism, iProtestantism]:
+			if iSlavery in civics: iCivicEraTechStability -= 3
+
+		elif iStateReligion == iIslam:
+			if iSlavery in civics: iCivicEraTechStability += 2
+			
+		elif iStateReligion == iBuddhism:
+			if iMonasticism in civics: iCivicEraTechStability += 2
 	
-	if iStateReligion == iHinduism:
-		if iCasteSystem in civics: iCivicEraTechStability += 3
-		
-	elif iStateReligion == iConfucianism:
-		if iBureaucracy in civics: iCivicEraTechStability += 3
-		if iIsolationism in civics: iCivicEraTechStability += 3
-		
-	elif iStateReligion in [iZoroastrianism, iOrthodoxy, iCatholicism, iProtestantism]:
-		if iSlavery in civics: iCivicEraTechStability -= 3
-		
-	elif iStateReligion == iIslam:
-		if iSlavery in civics: iCivicEraTechStability += 2
-		
-	elif iStateReligion == iBuddhism:
-		if iMonasticism in civics: iCivicEraTechStability += 2
-		
 		
 	if iThalassocracy in civics:
 		if cities.owner(iPlayer).coastal().count() * 2 < player(iPlayer).getNumCities():
 			iCivicEraTechStability -= 4
-		
+	
 		
 	if not player(iPlayer).isHuman() and iCivicEraTechStability < 0: iCivicEraTechStability /= 2
 	
