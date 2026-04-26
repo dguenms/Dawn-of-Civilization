@@ -1466,7 +1466,7 @@
 			<Type>PROMOTION_DISENGAGE1</Type>
 			<Description>TXT_KEY_PROMOTION_DISENGAGE1</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<iWithdrawalChange>10</iWithdrawalChange>
+			<iWithdrawalChange>20</iWithdrawalChange>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
@@ -1501,7 +1501,7 @@
 			<Sound>AS2D_IF_LEVELUP</Sound>
 			<PromotionPrereqOr1>PROMOTION_DISENGAGE1</PromotionPrereqOr1>
 			<bImmuneToFirstStrikes>1</bImmuneToFirstStrikes>
-			<iWithdrawalChange>20</iWithdrawalChange>
+			<iWithdrawalChange>30</iWithdrawalChange>
 			<UnitCombats>
 				<UnitCombat>
 					<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
