@@ -2006,8 +2006,8 @@
 					<iDiscoverRand>0</iDiscoverRand>
 					<YieldChanges>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>3</iYieldChange>
 						<iYieldChange>2</iYieldChange>
+						<iYieldChange>4</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 			</BonusTypeStructs>
