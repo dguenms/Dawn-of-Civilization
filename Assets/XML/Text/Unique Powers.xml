@@ -138,6 +138,22 @@
 		<Spanish>Receives a free technology for the first five technologies discovered</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_BEL_TITLE</Tag>
+		<English>The Power of the International African Association:</English>
+		<French>The Power of the International African Association:</French>
+		<German>The Power of the International African Association:</German>
+		<Italian>The Power of the International African Association:</Italian>
+		<Spanish>The Power of the International African Association:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BEL</Tag>
+		<English>Guaranteed to be included in Congresses</English>
+		<French>Guaranteed to be included in Congresses</French>
+		<German>Guaranteed to be included in Congresses</German>
+		<Italian>Guaranteed to be included in Congresses</Italian>
+		<Spanish>Guaranteed to be included in Congresses</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
 		<English>The Power of Cordiality:</English>
 		<French>The Power of Cordiality:</French>

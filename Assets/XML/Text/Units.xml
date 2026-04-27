@@ -3688,10 +3688,26 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SAUDI_IKHWAN_STRATEGY</Tag>
 		<English>The [COLOR_UNIT_TEXT]Ikhwan[COLOR_REVERT], the Saudi replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Camel[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], and starts with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</English>
-		<French>Ikhwan</French>
-		<German>Ikhwan</German>
-		<Italian>Ikhwan</Italian>
-		<Spanish>Ikhwan</Spanish>
+		<French>The [COLOR_UNIT_TEXT]Ikhwan[COLOR_REVERT], the Saudi replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Camel[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], and starts with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Ikhwan[COLOR_REVERT], the Saudi replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Camel[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], and starts with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Ikhwan[COLOR_REVERT], the Saudi replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Camel[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], and starts with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Ikhwan[COLOR_REVERT], the Saudi replacement for the [COLOR_UNIT_TEXT]Dragoon[COLOR_REVERT], requires [COLOR_HIGHLIGHT_TEXT]Camel[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], receives additional combat strength on [COLOR_HIGHLIGHT_TEXT]Semidesert[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Desert[COLOR_REVERT], and starts with the [COLOR_HIGHLIGHT_TEXT]Desert Adaptation[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BELGIAN_CHASSEUR</Tag>
+		<English>Chasseur</English>
+		<French>Chasseur</French>
+		<German>Chasseur</German>
+		<Italian>Chasseur</Italian>
+		<Spanish>Chasseur</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BELGIAN_CHASSEUR_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Chasseur[COLOR_REVERT], the Belgian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an increased chance to withdraw from combat.</English>
+		<French>The [COLOR_UNIT_TEXT]Chasseur[COLOR_REVERT], the Belgian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an increased chance to withdraw from combat.</French>
+		<German>The [COLOR_UNIT_TEXT]Chasseur[COLOR_REVERT], the Belgian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an increased chance to withdraw from combat.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Chasseur[COLOR_REVERT], the Belgian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an increased chance to withdraw from combat.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Chasseur[COLOR_REVERT], the Belgian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an increased chance to withdraw from combat.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>

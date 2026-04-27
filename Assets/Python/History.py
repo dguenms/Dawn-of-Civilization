@@ -16,11 +16,12 @@ dRelocatedCapitals = CivDict({
 })
 
 dCapitalInfrastructure = CivDict({
-	iPhoenicia : (3, [], []),
-	iByzantium : (5, [iBarracks, iWalls, iLibrary, iMarket, iGranary, iHarbor, iForge], [temple]),
-	iPortugal : (5, [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls], [temple]),
-	iItaly : (7, [iLibrary, iMarket, iArtStudio, iAqueduct, iJail, iWalls], [temple]),
-	iNetherlands : (9, [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre], [temple]),
+	iPhoenicia : (3, [], [], 0),
+	iByzantium : (5, [iBarracks, iWalls, iLibrary, iMarket, iGranary, iHarbor, iForge], [temple], 0),
+	iPortugal : (5, [iLibrary, iMarket, iHarbor, iLighthouse, iForge, iWalls], [temple], 0),
+	iItaly : (7, [iLibrary, iMarket, iArtStudio, iAqueduct, iJail, iWalls], [temple], 0),
+	iNetherlands : (9, [iLibrary, iMarket, iWharf, iLighthouse, iBarracks, iPharmacy, iBank, iArena, iTheatre], [temple], 0),
+	iBelgium : (11, [iBath, iArena, iSewer], [temple], 2000),
 })
 
 
@@ -722,7 +723,7 @@ def relocateCapitals(iPlayer, city):
 def buildCapitalInfrastructure(iPlayer, city):
 	if iPlayer in dCapitalInfrastructure:
 		if at(city, plots.capital(iPlayer)) and year() <= year(dBirth[iPlayer]) + turns(5):
-			iPopulation, lBuildings, lReligiousBuildings = dCapitalInfrastructure[iPlayer]
+			iPopulation, lBuildings, lReligiousBuildings, iCulture = dCapitalInfrastructure[iPlayer]
 			
 			if city.getPopulation() < iPopulation:
 				city.setPopulation(iPopulation)
@@ -734,6 +735,10 @@ def buildCapitalInfrastructure(iPlayer, city):
 			if iStateReligion >= 0:
 				for religiosBuilding in lReligiousBuildings:
 					city.setHasRealBuilding(religiosBuilding(iStateReligion), True)
+			
+			if iCulture > 0:
+				city.changeCulture(iPlayer, scale(iCulture), True)
+				city.doPlotCulture(True, iPlayer, scale(iCulture), False)
 					
 					
 def giveEarlyColonists(iCiv):

@@ -452,8 +452,8 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran, iSaudis]
-lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina, iSaudis]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran, iManchuria, iSaudis]
+lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina, iSaudis, iBelgium]
 
 lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iMisr, iBrazil, iNorse, iSweden, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
@@ -485,6 +485,7 @@ dEmpireThreshold = {
 	iIran : 4,
 	iSaudis : 6,
 	iGermany : 5,
+	iBelgium : 5,
 }
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
@@ -591,6 +592,7 @@ dStartingLeaders = [
 	iMexico : iJuarez,
 	iColombia : iBolivar,
 	iBrazil : iPedro,
+	iBelgium : iLeopold,
 	iAustralia : iCurtin,
 	iCanada : iMacDonald,
 },
@@ -2681,6 +2683,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iCiv == iBrazil:
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_OF"
+	
+	elif iCiv == iBelgium:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if isControlled(iPlayer, plots.core(iBelgium)) and isControlled(iPlayer, plots.core(iNetherlands)):
+			return "TXT_KEY_CIV_BELGIUM_UNITED_KINGDOM_OF"
 			
 	return None
 			

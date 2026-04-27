@@ -31,6 +31,12 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_BELGIUM</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Belgium.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_LeoBelgicus.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_BYZANTIUM</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Byzantium.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_Labarum.dds</Path>

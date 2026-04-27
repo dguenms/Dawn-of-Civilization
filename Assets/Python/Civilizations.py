@@ -625,6 +625,14 @@ lCivilizations = [
 		techs=techs.column(12).including(iRepresentation, iNationalism, iBiology)
 	),
 	Civilization(
+		iBelgium,
+		iGold=600,
+		iAdvancedStartPoints=800,
+		iStateReligion=iCatholicism,
+		lCivics=[iMonarchy, iConstitution, iIndividualism, iFreeEnterprise, iClergy, iNationhood],
+		techs=techs.column(13).without(iBiology, iRepresentation)
+	),
+	Civilization(
 		iAustralia,
 		iGold=600,
 		iAdvancedStartPoints=200,
@@ -1157,6 +1165,17 @@ dStartingUnits = CivDict({
 		iFerry: 2,
 		iEscort: 3,
 	},
+	iBelgium: {
+		iSettle: 1,
+		iWork: 3,
+		iExplore: 1,
+		iSkirmish: 4,
+		iDefend: 5,
+		iSiege: 3,
+		iMissionary: 1,
+		iFerry: 2,
+		iExploreSea: 1,
+	},
 	iAustralia: {
 		iSettle: 4,
 		iWork: 3,
@@ -1453,6 +1472,11 @@ dAdditionalUnits = CivDict({
 		iSkirmish: 2,
 		iSiege: 2,
 	},
+	iBelgium: {
+		iSkirmish: 3,
+		iDefend: 3,
+		iSiege: 3,
+	},
 	iAustralia: {
 		iAttack: 4,
 		iEscort: 3,
@@ -1581,6 +1605,10 @@ def createSpecificUnits(iPlayer, tile):
 		makeUnits(iPlayer, iCamelGunner, tile, 6)
 	elif iCiv == iColombia:
 		makeUnits(iPlayer, iAlbionLegion, tile, 5).experience(2)
+	elif iCiv == iBelgium:
+		makeUnit(iPlayer, iGreatArtist, tile)
+		makeUnit(iPlayer, iGreatScientist, tile)
+		makeUnit(iPlayer, iGreatEngineer, tile)
 
 dSpecificAdditionalUnits = CivDict({
 	iEthiopia: {
@@ -2077,6 +2105,11 @@ dTechPreferences = {
 		iElectricity: 20,
 		iPsychology: 20,
 	},
+	iBelgium: {
+		iRailroad: 50,
+		iFission: 30,
+		iGeopolitics: 30,
+	},
 	iAustralia : {
 		iTelevision: 40,
 		iGenetics: 40,
@@ -2553,6 +2586,10 @@ dBuildingPreferences = {
 		iCristoRedentor: 30,
 		iItaipuDam: 30,
 		iWembley: 20,
+	},
+	iBelgium: {
+		iAtomium: 50,
+		iBerlaymont: 50,
 	},
 	iAustralia : {
 		iHarbourOpera: 50,

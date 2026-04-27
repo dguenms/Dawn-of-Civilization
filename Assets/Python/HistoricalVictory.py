@@ -34,6 +34,7 @@ ANGKOR = "TXT_KEY_VICTORY_NAME_ANGKOR"
 AYUTTHAYA = "TXT_KEY_VICTORY_NAME_AYUTTHAYA"
 BABYLON = "TXT_KEY_VICTORY_NAME_BABYLON"
 BERLIN = "TXT_KEY_VICTORY_NAME_BERLIN"
+BRUSSELS = "TXT_KEY_VICTORY_NAME_BRUSSELS"
 BUENOS_AIRES = "TXT_KEY_VICTORY_NAME_BUENOS_AIRES"
 CAIRO = "TXT_KEY_VICTORY_NAME_CAIRO"
 CARTHAGE = "TXT_KEY_VICTORY_NAME_CARTHAGE"
@@ -847,6 +848,15 @@ dGoals = {
 			FreeSpecialistCity(12),
 			by=1950,
 		),
+	),
+	iBelgium: (
+		GreatPeople(iGreatEngineer, 4, by=1920),
+		All(
+			ControlledResourceCount((iBanana, 4), (iIvory, 3), (iGems, 3), by=1900),
+			ControlledResourceCount(iRubber, 3, by=1920),
+			ControlledResourceCount(iUranium, 1, by=1950),
+		),
+		AreaPercent(plots.regions(rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia).named(EUROPE), 65, subject=ALLIES, by=1960),
 	),
 	iAustralia: (
 		ControlledResourceCount(improvement_resources(iMine), 18, by=1900),

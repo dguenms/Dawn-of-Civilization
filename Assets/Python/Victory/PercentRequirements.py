@@ -13,6 +13,10 @@ class AreaPercent(PercentRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_PERCENT"
 	
+	SUBJECT_DESC_KEYS = {
+		ALLIES: "TXT_KEY_VICTORY_DESC_CONTROL_DIRECTLY_OR_THROUGH_ALLIES",
+	}
+	
 	def __init__(self, area, *parameters, **options):
 		PercentRequirement.__init__(self, area, *parameters, **options)
 		

@@ -1365,4 +1365,12 @@
 		<Italian>Ibn Saud</Italian>
 		<Spanish>Ibn Saud</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_LEADER_LEOPOLD</Tag>
+		<English>Leopold</English>
+		<French>Leopold</French>
+		<German>Leopold</German>
+		<Italian>Leopold</Italian>
+		<Spanish>Leopold</Spanish>
+	</TEXT>
 </Civ4GameText>

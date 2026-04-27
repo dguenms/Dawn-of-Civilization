@@ -3218,6 +3218,22 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Refinery[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BELGIAN_CHOCOLATERIE</Tag>
+		<English>Chocolaterie</English>
+		<French>Chocolaterie</French>
+		<German>Chocolaterie</German>
+		<Italian>Chocolaterie</Italian>
+		<Spanish>Chocolaterie</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BELGIAN_CHOCOLATERIE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Chocolaterie[COLOR_REVERT], the Belgian replacement for the [COLOR_BUILDING_TEXT]Coffeehouse[COLOR_REVERT], increases culture by 25% and grants additional happiness from [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</English>
+		<French>The [COLOR_BUILDING_TEXT]Chocolaterie[COLOR_REVERT], the Belgian replacement for the [COLOR_BUILDING_TEXT]Coffeehouse[COLOR_REVERT], increases culture by 25% and grants additional happiness from [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</French>
+		<German>The [COLOR_BUILDING_TEXT]Chocolaterie[COLOR_REVERT], the Belgian replacement for the [COLOR_BUILDING_TEXT]Coffeehouse[COLOR_REVERT], increases culture by 25% and grants additional happiness from [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Chocolaterie[COLOR_REVERT], the Belgian replacement for the [COLOR_BUILDING_TEXT]Coffeehouse[COLOR_REVERT], increases culture by 25% and grants additional happiness from [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Chocolaterie[COLOR_REVERT], the Belgian replacement for the [COLOR_BUILDING_TEXT]Coffeehouse[COLOR_REVERT], increases culture by 25% and grants additional happiness from [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

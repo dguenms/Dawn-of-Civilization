@@ -65,6 +65,7 @@ def getPrimary(iCiv):
 	elif iCiv == iIran: return iPersia
 	elif iCiv == iManchuria: return iChina
 	elif iCiv == iSaudis: return iArabia
+	elif iCiv == iBelgium: return iNetherlands
 	
 	return iCiv
 

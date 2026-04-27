@@ -2932,6 +2932,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_BRUSSELS</Tag>
+		<English>Brussels</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_BUENOS_AIRES</Tag>
 		<English>Buenos Aires</English>
 		<French></French>

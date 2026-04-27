@@ -150,6 +150,7 @@ LEADER_DATES = {
 	iBolivar: 1820,
 	iPedro: 1840,
 	iVargas: 1930,
+	iLeopold: 1865,
 	iCurtin: 1940,
 	iMacDonald: 1870,
 	iTrudeau: 1970,

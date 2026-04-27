@@ -11696,6 +11696,20 @@
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
+		<SoundData>
+			<SoundID>SND_BELGIUM_SELECT</SoundID>
+			<Filename>Sounds/Units/BelgiumSelect</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
+		<SoundData>
+			<SoundID>SND_BELGIUM_ORDER</SoundID>
+			<Filename>Sounds/Units/BelgiumOrder</Filename>
+			<LoadType>DYNAMIC_RES</LoadType>
+			<bIsCompressed>1</bIsCompressed>
+			<bInGeneric>1</bInGeneric>
+		</SoundData>
 	</SoundDatas>
 	<ContextTypes>
 		<ContextType>Generic</ContextType>

@@ -176,6 +176,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEL1</Tag>
+		<English>Sillon Industriel</English>
+		<French>Sillon Industriel</French>
+		<German>Sillon Industriel</German>
+		<Italian>Sillon Industriel</Italian>
+		<Spanish>Sillon Industriel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEL2</Tag>
+		<English>Heart of Darkness</English>
+		<French>Heart of Darkness</French>
+		<German>Heart of Darkness</German>
+		<Italian>Heart of Darkness</Italian>
+		<Spanish>Heart of Darkness</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEL3</Tag>
+		<English>Capital of Europe</English>
+		<French>Capital of Europe</French>
+		<German>Capital of Europe</German>
+		<Italian>Capital of Europe</Italian>
+		<Spanish>Capital of Europe</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_BRA1</Tag>
 		<English>Economic Titles</English>
 		<French>Economic Titles</French>

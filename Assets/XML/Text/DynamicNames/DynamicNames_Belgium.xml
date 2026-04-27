@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_DESC</Tag>
+		<English>The Belgians</English>
+		<French>The Belgians</French>
+		<German>The Belgians</German>
+		<Italian>The Belgians</Italian>
+		<Spanish>The Belgians</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_PEOPLES</Tag>
+		<English>Belgian Peoples</English>
+		<French>Belgian Peoples</French>
+		<German>Belgian Peoples</German>
+		<Italian>Belgian Peoples</Italian>
+		<Spanish>Belgian Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_ADJECTIVE</Tag>
+		<English>Belgian</English>
+		<French>Belgian</French>
+		<German>Belgian</German>
+		<Italian>Belgian</Italian>
+		<Spanish>Belgian</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_SHORT_DESC</Tag>
+		<English>Belgium</English>
+		<French>Belgium</French>
+		<German>Belgium</German>
+		<Italian>Belgium</Italian>
+		<Spanish>Belgium</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_DEFAULT</Tag>
+		<English>Kingdom of %s1</English>
+		<French>Kingdom of %s1</French>
+		<German>Kingdom of %s1</German>
+		<Italian>Kingdom of %s1</Italian>
+		<Spanish>Kingdom of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_UNITED_KINGDOM_OF</Tag>
+		<English>United Kingdom of %s1</English>
+		<French>United Kingdom of %s1</French>
+		<German>United Kingdom of %s1</German>
+		<Italian>United Kingdom of %s1</Italian>
+		<Spanish>United Kingdom of %s1</Spanish>
+	</TEXT>
+</Civ4GameText>

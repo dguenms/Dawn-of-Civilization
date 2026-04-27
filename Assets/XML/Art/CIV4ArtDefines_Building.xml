@@ -3837,5 +3837,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Refinery/refinery_button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BELGIAN_CHOCOLATERIE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.05</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Tavern/Tavern.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Tavern/Chocolaterie.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

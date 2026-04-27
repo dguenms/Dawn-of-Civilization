@@ -71,6 +71,7 @@ dClearedForBirth = {
 	iAztecs: iToltecs,
 	iRussia: iRus,
 	iMexico: iAztecs,
+	iBelgium: iNetherlands,
 }
 
 lAlwaysClear = [
@@ -859,6 +860,11 @@ class Birth(object):
 		# Brazil requires any Old World civilization in Brazil or Amazonia
 		if self.iCiv == iBrazil:
 			if not cities.regions(rBrazil, rAmazonia).ever_owned(lBioOldWorld):
+				return False
+		
+		# Belgium requires Netherlands not to exist, not controlling its core, or being collapsing
+		if self.iCiv == iBelgium:
+			if player(iNetherlands).isExisting() and cities.core(iNetherlands).owner(iNetherlands) and stability(iNetherlands) > iStabilityCollapsing:
 				return False
 		
 		# Australia requires any cities in Australia

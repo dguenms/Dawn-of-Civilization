@@ -1199,6 +1199,18 @@ class Congress:
 				
 	def getHighestRankedPlayers(self, lPlayers, iNumPlayers):
 		return players.of(lPlayers).highest(iNumPlayers, game.getPlayerRank)
+	
+	def additionalInvites(self):
+		invites = []
+		
+		# America: claims in the west
+		if cities.rectangle(tAmericanClaims).notowner(iAmerica):
+			invites.append(iAmerica)
+		
+		# Belgian UP
+		invites.append(iBelgium)
+		
+		return [iCiv for iCiv in invites if player(iCiv).isExisting() and not team(player(iCiv).getTeam()).isAVassal()]
 		
 	def invite(self):
 		rank = lambda x: game.getPlayerRank(x)
@@ -1221,9 +1233,12 @@ class Congress:
 			
 		self.invites = self.invites.existing()
 		
-		# America receives an invite if there are still claims in the west
-		if player(iAmerica).isExisting() and not team(player(iAmerica).getTeam()).isAVassal() and iAmerica not in self.invites and not self.bPostWar:
-			if cities.rectangle(tAmericanClaims).notowner(iAmerica):
-				if len(self.invites) == getNumInvitations():
-					self.invites = self.invites.limit(len(self.invites)-1)
-				self.invites = self.invites.including(slot(iAmerica))
+		if not self.bPostWar:
+			additionalInvites = [iInvite for iInvite in self.additionalInvites() if slot(iInvite) not in self.invites]
+			
+			if additionalInvites:
+				excessInvites = len(self.invites) + len(additionalInvites) - getNumInvitations()
+				if excessInvites > 0:
+					self.invites = self.invites.limit(len(self.invites)-excessInvites)
+			
+				self.invites = self.invites.including(*[slot(iCiv) for iCiv in additionalInvites])
