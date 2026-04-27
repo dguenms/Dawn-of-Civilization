@@ -835,7 +835,7 @@ class Birth(object):
 			if player(iArabia).isExisting():
 				return False
 			
-			if cities.birth(iSaudis).players().major().all_if_any(lambda p: stability(p) >= iStabilityStable):
+			if cities.birth(iSaudis).owners().major().all_if_any(lambda p: stability(p) >= iStabilityStable):
 				return False
 		
 		# Argentina requires any Old World civilization in Andes or Southern Cone
