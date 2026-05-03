@@ -137,10 +137,15 @@ def collapseToCore(iPlayer):
 		secession(iPlayer, ahistoricalCities)
 		
 	# otherwise, secede all cities outside of core
-	elif nonCoreCities:
+	elif secededCities:
 	
 		# notify owner
 		message(iPlayer, 'TXT_KEY_STABILITY_COLLAPSE_TO_CORE', color=iRed)
 			
 		# secede all non-core cities
-		secession(iPlayer, nonCoreCities)
+		secession(iPlayer, secededCities)
+	
+	# reduce culture expansion
+	for plot in plots.owner(iPlayer):
+		if none(plot.isCultureRangeCity(iPlayer, iRange) for iRange in range(3)):
+			plot.setCulture(iPlayer, 0, True)
