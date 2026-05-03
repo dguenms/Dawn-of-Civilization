@@ -7866,6 +7866,9 @@ int CvPlayer::calculateTransmissionResearch(TechTypes eTech) const
 
 	int iResearch = GET_TEAM(getTeam()).getResearchCost(eTech, false);
 
+	iResearch *= 100;
+	iResearch /= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent();
+
 	iResearch *= calculateResearchModifier(eTech);
 	iResearch /= 100;
 
