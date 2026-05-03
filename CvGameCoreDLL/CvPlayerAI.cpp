@@ -515,7 +515,7 @@ void CvPlayerAI::AI_doTurnUnitsPost()
 				bool bKilled = false;
 				if (!bNoDisband)
 				{
-					if (pLoopUnit->canFight() && !pLoopUnit->isFound()) // Leoreth: do not disband American pioneers
+					if (pLoopUnit->canFight() && !pLoopUnit->isFound() && !isMinorCiv()) // Leoreth: do not disband American pioneers or minor units
 					{
 						int iExp = pLoopUnit->getExperience();
 						CvCity* pPlotCity = pLoopUnit->plot()->getPlotCity();
