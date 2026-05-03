@@ -10444,7 +10444,6 @@ BeginPlot
 		CityOwner=CIVILIZATION_SAUDI
 		CityName=Makkah
 		CityPopulation=5
-		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
 		BuildingType=BUILDING_WEAVER
