@@ -407,7 +407,7 @@ def getEmigrationValue(city):
 
 
 def immigration():
-	sourcePlayers = players.major().existing().where(lambda p: player(p).getCapitalCity().getRegionID() not in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getEmigrationValue(city) > 0))
+	sourcePlayers = players.major().existing().where(lambda p: not player(p).isBirthProtected()).where(lambda p: player(p).getCapitalCity().getRegionID() not in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getEmigrationValue(city) > 0))
 	targetPlayers = players.major().existing().where(lambda p: player(p).getCapitalCity().getRegionID() in lNewWorld).where(lambda p: cities.owner(p).any(lambda city: getImmigrationValue(city) > 0))
 	
 	iNumMigrations = min(sourcePlayers.count(), targetPlayers.count())
