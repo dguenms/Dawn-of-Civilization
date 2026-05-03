@@ -327,10 +327,12 @@ lCivilizations = [
 	),
 	Civilization(
 		iIndependent2,
+		iGold=200,
 		techs=techs.column(7),
 	),
 	Civilization(
 		iIndependent,
+		iGold=200,
 		techs=techs.column(7),
 	),
 ]
