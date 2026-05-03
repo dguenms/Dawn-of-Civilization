@@ -398,7 +398,7 @@ scenario1815AD = Scenario(
 	
 	dRevealed = {
 		iCivGroupEurope: Revealed(
-			lLandRegions=lEurope + lNorthAfrica + lAsia + lAmerica, 
+			lLandRegions=lEurope + lNorthAfrica + lAsia + lAmerica + [rGuinea, rSahel, rEthiopia], 
 			lCoastRegions=lSubSaharanAfrica + lAsia + lAmerica,
 			lSeaRegions=[rAtlanticOcean, rPacificOcean, rIndianOcean, rSeaOfJapan, rEastChinaSea, rSouthChinaSea, rAustralasianSea, rBayOfBengal, rPersianGulf, rArabianSea, rNorthSea, rMediterraneanSea, rBlackSea, rCaribbeanSea, rGulfOfMexico],
 		),

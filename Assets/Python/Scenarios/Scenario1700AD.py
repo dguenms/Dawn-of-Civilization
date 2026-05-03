@@ -342,7 +342,7 @@ scenario1700AD = Scenario(
 	
 	dRevealed = {
 		iCivGroupEurope: Revealed(
-			lLandRegions=lEurope + lNorthAfrica + [rAnatolia, rMesopotamia, rArabia, rPersia], 
+			lLandRegions=lEurope + lNorthAfrica + [rAnatolia, rMesopotamia, rArabia, rPersia, rGuinea, rSahel, rEthiopia], 
 			lCoastRegions=lIndia + lEastAsia + lSubSaharanAfrica + lAmerica,
 			lSeaAreas=[((29, 60), (50, 27)), ((28, 11), (58, 26)), ((79, 23), (97, 32)), ((111, 28), (123, 44)), ((0, 28), (21, 44))],
 		),
