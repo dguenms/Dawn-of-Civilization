@@ -254,6 +254,7 @@ public:
 	int calculateBaseNetGold() const;
 	int calculateBaseNetResearch(TechTypes eTech = NO_TECH) const;   // Exposed to Python
 	int calculateResearchModifier(TechTypes eTech) const;   // Exposed to Python
+	int calculateTransmissionResearch(TechTypes eTech) const;
 	int calculateGoldRate() const;																																				// Exposed to Python
 	int calculateResearchRate(TechTypes eTech = NO_TECH) const;																						// Exposed to Python
 	int calculateTotalCommerce() const;

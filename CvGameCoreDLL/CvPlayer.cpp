@@ -7777,7 +7777,7 @@ int CvPlayer::calculateBaseNetGold() const
 
 int CvPlayer::calculateResearchModifier(TechTypes eTech) const
 {
-	int iModifier = 100;
+	int iModifier = 0;
 
 	if (NO_TECH == eTech)
 	{
@@ -7803,12 +7803,16 @@ int CvPlayer::calculateResearchModifier(TechTypes eTech) const
 		}
 	}
 
+	// Leoreth: reduce baseline for tech spread in later eras
+	iPossibleKnownCount /= std::max(1, getCurrentEra() - 1);
+	iKnownCount = std::min(iKnownCount, iPossibleKnownCount);
+
 	if (iPossibleKnownCount > 0)
 	{
 		iModifier += (GC.getDefineINT("TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER") * iKnownCount) / iPossibleKnownCount;
 	}
 
-	int iPossiblePaths = 0;
+	/*int iPossiblePaths = 0;
 	int iUnknownPaths = 0;
 
 	for (int iI = 0; iI < GC.getNUM_OR_TECH_PREREQS(); iI++)
@@ -7826,7 +7830,7 @@ int CvPlayer::calculateResearchModifier(TechTypes eTech) const
 
 	FAssertMsg(iPossiblePaths >= iUnknownPaths, "The number of possible paths is expected to match or exceed the number of unknown ones");
 
-	iModifier += (iPossiblePaths - iUnknownPaths) * GC.getDefineINT("TECH_COST_KNOWN_PREREQ_MODIFIER");
+	iModifier += (iPossiblePaths - iUnknownPaths) * GC.getDefineINT("TECH_COST_KNOWN_PREREQ_MODIFIER");*/
 
 	return iModifier;
 }
@@ -7844,7 +7848,31 @@ int CvPlayer::calculateBaseNetResearch(TechTypes eTech) const
 		eResearchTech = getCurrentResearch();
 	}
 
-	return (((GC.getDefineINT("BASE_RESEARCH_RATE") + getCommerceRate(COMMERCE_RESEARCH)) * calculateResearchModifier(eResearchTech)) / 100);
+	return GC.getDefineINT("BASE_RESEARCH_RATE") + getCommerceRate(COMMERCE_RESEARCH) + calculateTransmissionResearch(eResearchTech);
+}
+
+
+int CvPlayer::calculateTransmissionResearch(TechTypes eTech) const
+{
+	if (eTech == NO_TECH)
+	{
+		return 0;
+	}
+
+	if (isAnarchy())
+	{
+		return 0;
+	}
+
+	int iResearch = GET_TEAM(getTeam()).getResearchCost(eTech, false);
+
+	iResearch *= calculateResearchModifier(eTech);
+	iResearch /= 100;
+
+	iResearch *= getCommercePercent(COMMERCE_RESEARCH);
+	iResearch /= 100;
+
+	return iResearch;
 }
 
 
@@ -7877,19 +7905,6 @@ int CvPlayer::calculateResearchRate(TechTypes eTech) const
 	{
 		iRate = std::max(1, (calculateBaseNetResearch(eTech) + calculateBaseNetGold()));
 	}
-
-	//Rhye - start min and max turns cap
-	/*int iCost = GET_TEAM((TeamTypes)getID()).getResearchCost(eTech);
-	if (iRate > 0) {
-		if (iCost / iRate < 4) {
-			iRate = iCost/4;
-		}
-		if (iCost / iRate > 40) {
-			iRate = iCost/40;
-		}
-	}	*/
-	//Rhye - end
-
 
 	return iRate;
 }
@@ -8131,7 +8146,8 @@ int CvPlayer::getResearchTurnsLeftTimes100(TechTypes eTech, bool bOverflow) cons
 				if ((iI == getID()) || (GET_PLAYER((PlayerTypes)iI).getCurrentResearch() == eTech))
 				{
 					iResearchRate += GET_PLAYER((PlayerTypes)iI).calculateResearchRate(eTech);
-					iOverflow += (GET_PLAYER((PlayerTypes)iI).getOverflowResearch() * calculateResearchModifier(eTech)) / 100;
+					//iOverflow += (GET_PLAYER((PlayerTypes)iI).getOverflowResearch() * calculateResearchModifier(eTech)) / 100;
+					iOverflow = GET_PLAYER((PlayerTypes)iI).getOverflowResearch();
 				}
 			}
 		}
@@ -15189,12 +15205,14 @@ void CvPlayer::doResearch()
 		TechTypes eCurrentTech = getCurrentResearch();
 		if (eCurrentTech == NO_TECH)
 		{
-			int iOverflow = (100 * calculateResearchRate()) / std::max(1, calculateResearchModifier(eCurrentTech));
+			//int iOverflow = (100 * calculateResearchRate()) / std::max(1, calculateResearchModifier(eCurrentTech));
+			int iOverflow = calculateResearchRate();
 			changeOverflowResearch(iOverflow);
 		}
 		else
 		{
-			iOverflowResearch = (getOverflowResearch() * calculateResearchModifier(eCurrentTech)) / 100;
+			//iOverflowResearch = (getOverflowResearch() * calculateResearchModifier(eCurrentTech)) / 100;
+			iOverflowResearch = getOverflowResearch();
 			setOverflowResearch(0);
 			GET_TEAM(getTeam()).changeResearchProgress(eCurrentTech, (calculateResearchRate() + iOverflowResearch), getID());
 		}

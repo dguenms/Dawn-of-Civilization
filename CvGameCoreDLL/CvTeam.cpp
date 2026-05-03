@@ -2748,7 +2748,7 @@ int CvTeam::getResearchCost(TechTypes eTech, bool bModifiers) const
 	{
 		int iModifier = 100;
 
-		iModifier += getPopulationResearchModifier();
+		//iModifier += getPopulationResearchModifier();
 		//iModifier += getTechLeaderModifier();
 		iModifier += getTechDifferenceModifier();
 		iModifier += getSpreadResearchModifier(eTech);
@@ -5323,7 +5323,8 @@ void CvTeam::setResearchProgress(TechTypes eIndex, int iNewValue, PlayerTypes eP
 
 		if (getResearchProgress(eIndex) >= getResearchCost(eIndex))
 		{
-			int iOverflow = (100 * (getResearchProgress(eIndex) - getResearchCost(eIndex))) / std::max(1, GET_PLAYER(ePlayer).calculateResearchModifier(eIndex));
+			//int iOverflow = (100 * (getResearchProgress(eIndex) - getResearchCost(eIndex))) / std::max(1, GET_PLAYER(ePlayer).calculateResearchModifier(eIndex));
+			int iOverflow = getResearchProgress(eIndex) - getResearchCost(eIndex);
 			GET_PLAYER(ePlayer).changeOverflowResearch(iOverflow);
 			setHasTech(eIndex, true, ePlayer, true, true);
 			//Rhye
