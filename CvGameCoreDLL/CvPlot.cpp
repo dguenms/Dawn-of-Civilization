@@ -2805,6 +2805,12 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 
 	if (eRoute != NO_ROUTE)
 	{
+		// Leoreth: cannot build routes on Marsh
+		if (getFeatureType() == FEATURE_MARSH)
+		{
+			return false;
+		}
+
 		if (getRouteType() != NO_ROUTE)
 		{
 			if (getRouteType() == eRoute)
