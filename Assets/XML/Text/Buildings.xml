@@ -3195,11 +3195,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MASRYEEN_SOUK_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an addition +50% foreign trade route yield.</English>
-		<French>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an addition +50% foreign trade route yield.</French>
-		<German>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an addition +50% foreign trade route yield.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an addition +50% foreign trade route yield.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an addition +50% foreign trade route yield.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an additional +50% foreign trade route yield.</English>
+		<French>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an additional +50% foreign trade route yield.</French>
+		<German>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an additional +50% foreign trade route yield.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an additional +50% foreign trade route yield.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an additional +50% foreign trade route yield.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SAUDI_REFINERY</Tag>
