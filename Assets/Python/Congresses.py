@@ -607,6 +607,7 @@ class Congress:
 			self.voteOnClaimsAI()
 			
 	def applyVotes(self):
+		data.dLastClaims = {}
 		dResults = {}
 		
 		for iClaimant in self.dCityClaims:
@@ -618,6 +619,8 @@ class Congress:
 				else:
 					iOtherClaimant, iVotes = dResults[(x, y)]
 					if self.dVotes[iClaimant] > iVotes: dResults[(x, y)] = (iClaimant, self.dVotes[iClaimant])
+			
+			data.dLastClaims[iClaimant] = (x, y)
 					
 		for (x, y), (iClaimant, iVotes) in dResults.items():
 			plot = plot_(x, y)
@@ -1095,8 +1098,8 @@ class Congress:
 				
 				bRecolonise = not self.bPostWar and city.getRegionID() in lAmerica and civ(iPlayer) in dCivGroups[iCivGroupEurope] and civ(city) in dCivGroups[iCivGroupAmerica] and civ(city) in dTechGroups[iTechGroupWestern]
 				
-				if not plot.isRevealed(iPlayer, False): continue
-				if city.isCapital(): continue
+				if player(iPlayer).isHuman() and not plot.isRevealed(iPlayer, False): continue
+				if not player(iPlayer).isHuman() and location(plot) == data.dLastClaims.get(iPlayer): continue
 				
 				# after a war: losers can only claim previously owned cities
 				if self.bPostWar and iPlayer in self.losers:
