@@ -7335,7 +7335,7 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
-	int iNumCitiesPercent = 100;
+	int iNumCitiesPercent = 50;
 
 	iNumCitiesPercent *= (getPopulation() + 9);
 	iNumCitiesPercent /= 10;
