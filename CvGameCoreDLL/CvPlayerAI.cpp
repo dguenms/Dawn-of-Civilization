@@ -5667,21 +5667,18 @@ int CvPlayerAI::AI_getColonyAttitude(PlayerTypes ePlayer) const
 
 int CvPlayerAI::AI_getCompetitorAttitude(PlayerTypes ePlayer) const
 {
-	int iAttitude = 0;
-
 	int iPlayersAlive = GC.getGameINLINE().countCivPlayersAlive();
 	int iOurRank = GC.getGameINLINE().getPlayerRank(getID());
 	int iTheirRank = GC.getGameINLINE().getPlayerRank(ePlayer);
 
-	if (std::abs(iOurRank - iTheirRank) < iPlayersAlive / 5)
+	bool bCompetitor = std::abs(iOurRank - iTheirRank) < iPlayersAlive / 10 || (iOurRank < iPlayersAlive / 5 && iTheirRank < iPlayersAlive / 5);
+
+	if (!bCompetitor)
 	{
-		iAttitude -= 1;
+		return 0;
 	}
 
-	if (iAttitude == 0)
-	{
-		return iAttitude;
-	}
+	int iAttitude = -1;
 
 	if (!isNeighbor(ePlayer))
 	{
