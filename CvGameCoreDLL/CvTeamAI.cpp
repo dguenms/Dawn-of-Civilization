@@ -2587,14 +2587,13 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 {
-	//Rhye - start
-	//return ((getNumCities() + GET_TEAM(eTeam).getNumCities()) * 3); //Rhye
 	int iModifier = 280;
-	if (isHasTech((TechTypes)ELECTRICITY) || isHasTech((TechTypes)ASSEMBLY_LINE)) {
+	if (isHasTech(ELECTRICITY)) 
+	{
 		iModifier = 200;
 	}
-	else if (GC.getGameINLINE().getGameTurn() > getTurnForYear(400)) 
-	{ //the last 100 turns, starting from 1900
+	if (isHasTech(GEOPOLITICS)) 
+	{
 		iModifier = 160;
 	}
 
