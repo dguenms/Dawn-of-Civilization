@@ -351,6 +351,9 @@ class Barbarians(object):
 		return False
 	
 	def cleanup(self):
+		if not player(self.iOwner).isExisting():
+			return
+		
 		for unit in units.owner(self.iOwner).where(lambda unit: data.units[unit].spawn_data == self.spawn_data()):
 			unit.kill(False, -1)
 	
