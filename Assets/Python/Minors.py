@@ -714,6 +714,7 @@ barbarians = [
 	Barbarians(1740, 1800, {iHussar: 4}, ((105, 53), (116, 62)), 10, INVADERS, target_area=((117, 46), (129, 59)), adjective="TXT_KEY_ADJECTIVE_DZUNGAR", iAlternativeCiv=iMongols, promotions=(iDesertAdaptation, iSteppeAdaptation,)),
 	Barbarians(1750, 1850, {iMusketeer: 7, iCannon: 3}, ((100, 46),	(104, 51)), 10, INVADERS, target_area=((99, 42), (107, 51)), adjective="TXT_KEY_ADJECTIVE_SIKH"),
 	Barbarians(1800, 1900, {iPikeman: 2}, ((71, 11), (81, 17)), 10, NATIVES, iOwner=iNative, adjective="TXT_KEY_ADJECTIVE_ZULU"),
+	Barbarians(1800, 1900, {iCamelGunner: 3}, ((86, 38), (91, 45)), 10, NOMADS, target_area=((77, 39), (91, 50)), adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
 	Barbarians(1800, 1900, {iMountedBrave: 1}, ((12, 62), (22, 65)), 12, NOMADS, iOwner=iNative, target_area=((15, 57), (26, 66)), adjective="TXT_KEY_ADJECTIVE_CREE"),
 	Barbarians(1800, 1900, {iMountedBrave: 1}, ((13, 50), (20, 56)), 9, NOMADS, iOwner=iNative, target_area=((15, 51), (26, 62)), adjective="TXT_KEY_ADJECTIVE_COMANCHE"),
 	Barbarians(1850, 1930, {iSpearman: 1, iArcher: 1, iWarrior: 1}, ((126, 18), (143, 23)), 10, NATIVES, iOwner=iNative, target_area=((128, 15), (143, 24)), adjective="TXT_KEY_ADJECTIVE_ABORIGINAL"),
