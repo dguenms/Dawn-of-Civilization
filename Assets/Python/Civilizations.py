@@ -1110,7 +1110,7 @@ dStartingUnits = CivDict({
 		iSettle: 4,
 		iWork: 2,
 		iDefend: 2,
-		iMissionary: 1,
+		iMissionary: 2,
 		# 6 Camel Gunners
 	},
 	iAmerica: {
