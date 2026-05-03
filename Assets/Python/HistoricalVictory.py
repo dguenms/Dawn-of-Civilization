@@ -795,7 +795,7 @@ dGoals = {
 		AllowOnly(plots.regions(rMaghreb, rEgypt, rNubia, rLevant, rMesopotamia, rArabia).named(ARAB_WORLD), civs(*lArabCivs).named(ARAB), at=1920),
 		GreatPeople(iGreatProphet, 7, by=1930),
 		All(
-			ResourceCount(iOil, 8, subject=ALLIES),
+			ResourceCount(iOil, 12, subject=ALLIES),
 			CorporationCount(iOilIndustry, 4),
 			GoldAmount(25000),
 			by=1970,
