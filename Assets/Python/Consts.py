@@ -1162,6 +1162,8 @@ lAmerica = lSouthAmerica + lCentralAmerica + lNorthAmerica
 
 lNewWorld = lAmerica + lOceania
 
+lLateColonialRegions = lAfrica + lSouthAsia + lEastAsia + [rLevant, rMesopotamia, rArabia, rPersia, rKhorasan, rTransoxiana]
+
 dCivGroupRegions = {
 	iCivGroupEurope: lEurope,
 	iCivGroupEastAsia: lEastAsia,

@@ -801,6 +801,8 @@ class Congress:
 		bOwner = (iOwner >= 0)
 		bOwnClaim = (iClaimant == iVoter)
 		
+		bColonialClaimant = civ(iClaimant) in dCivGroups[iCivGroupEurope] and (not bOwner or civ(iOwner) not in dTechGroups[iTechGroupWestern])
+		bColonialVoter = bColonialClaimant and civ(iVoter) in dCivGroups[iCivGroupEurope]
 		bRecolonise = plot.getRegionID() in lAmerica and civ(iClaimant) in dCivGroups[iCivGroupEurope] and civ(iOwner) in dCivGroups[iCivGroupAmerica] and civ(iOwner) in dTechGroups[iTechGroupWestern]
 		
 		if bCity: city = plot.getPlotCity()
@@ -844,7 +846,7 @@ class Congress:
 			if team(iClaimant).isVassal(iVoter): iFavorClaimant += 10
 			if team(iOwner).isVassal(iVoter): iFavorOwner += 10
 			
-			if not plot.isPlayerCore(iOwner) or plot.isPlayerCore(iClaimant):
+			if not plot.isPlayerCore(iOwner) or plot.isPlayerCore(iClaimant) or bColonialClaimant:
 				# French UP
 				if civ(iClaimant) == iFrance: iFavorClaimant += 10
 				if civ(iOwner) == iFrance: iFavorOwner += 10
@@ -863,7 +865,6 @@ class Congress:
 		if civ(iClaimant) == iFrance: iClaimValidity += 5
 		
 		if not bRecolonise:
-		
 			# plot factors
 			# plot culture
 			if bOwner:
@@ -872,16 +873,27 @@ class Congress:
 				# after wars: claiming from a non-participant has less legitimacy unless its your own claim
 				if self.bPostWar and not bOwnClaim and iOwner not in self.losers:
 					iClaimValidity -= 10
+					
+				# reluctant to assign capitals
+				if bCity and city.isCapital():
+					iClaimValidity -= 5
 				
 			# generic settler map bonus
-			iClaimValidity += plot.getPlayerSettlerValue(iClaimant)
-
-			# Europeans support colonialism unless they want the plot for themselves (not against Western civs)
-			if civ(iVoter) in dCivGroups[iCivGroupEurope]:
-				if civ(iClaimant) in dCivGroups[iCivGroupEurope]:
-					if not bOwner or civ(iOwner) not in dTechGroups[iTechGroupWestern]:
-						if plot.getPlayerSettlerValue(iVoter) == 0:
-							iClaimValidity += 10
+			iClaimantSettlerValue = plot.getPlayerSettlerValue(iClaimant)
+			iOwnerSettlerValue = bOwner and plot.getPlayerSettlerValue(iOwner) or 0
+			iClaimValidity += 2 * (iClaimantSettlerValue - iOwnerSettlerValue)
+			
+			# colonialism
+			if bColonialVoter and plot.getPlayerSettlerValue(iVoter) == 0:
+				iClaimValidity += 10
+				
+				if player(iClaimant).getCurrentEra() == iIndustrial and plot.getPlayerSettlerValue(iClaimant) > 0:
+					iClaimValidity += 10
+				
+					if plot.getRegionID() in lAfrica:
+						iClaimValidity += 5
+					if plot.getRegionID() in lSubSaharanAfrica:
+						iClaimValidity += 5
 							
 			# vote to support settler maps for civs from your own group
 			if bOwner:
@@ -1045,7 +1057,7 @@ class Congress:
 		if not self.dPossibleClaims[iPlayer]: return
 		x, y, iValue = find_max(self.dPossibleClaims[iPlayer], lambda claim: claim[2]).result
 		self.dCityClaims[iPlayer] = (x, y, iValue)
-		
+	
 	def canClaim(self, iPlayer):
 		if not self.bPostWar: return True
 		
@@ -1054,6 +1066,15 @@ class Congress:
 		if iPlayer in self.losers: return True
 		
 		return False
+	
+	def getSettlerClaimValue(self, iSettlerMapValue):
+		iValue = 0
+		
+		if iSettlerMapValue > 0: iValue += 1
+		if iSettlerMapValue > 1: iValue += 2
+		if iSettlerMapValue >= 10: iValue += 2
+		
+		return iValue
 			
 	def selectClaims(self, iPlayer):
 		pPlayer = player(iPlayer)
@@ -1071,11 +1092,15 @@ class Congress:
 				if iPlayer in self.losers and iLoopPlayer not in self.winners: continue
 				
 			# AI civs: cannot claim cities from friends
-			if not player(iPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: 
+			if not player(iPlayer).isHuman() and not is_minor(iLoopPlayer) and pPlayer.AI_getAttitude(iLoopPlayer) >= AttitudeTypes.ATTITUDE_FRIENDLY: 
 				continue
 			
 			# recently spawned
 			if since(player(iLoopPlayer).getLastBirthTurn()) <= turns(10):
+				continue
+			
+			# never met
+			if not team(iPlayer).isHasEverMet(player(iLoopPlayer).getTeam()):
 				continue
 			
 			# exclude master/vassal relationships
@@ -1084,7 +1109,7 @@ class Congress:
 			if team(iPlayer).isAVassal() and master(iPlayer) == master(iLoopPlayer): continue
 			
 			# cannot demand cities while at war
-			if team(iPlayer).isAtWar(iLoopPlayer): 
+			if not is_minor(iLoopPlayer) and team(iPlayer).isAtWar(iLoopPlayer): 
 				continue
 			
 			# Palace of Nations effect
@@ -1126,19 +1151,25 @@ class Congress:
 					iValue += 5
 							
 				# colonies
-				if not bRecolonise:
+				if not bRecolonise and city.getPreviousCiv() != civ(iPlayer):
 					if civ(iPlayer) in dCivGroups[iCivGroupEurope]:
-						if is_minor(iLoopPlayer) or (civ(iLoopPlayer) not in dCivGroups[iCivGroupEurope] and stability(iLoopPlayer) < iStabilityShaky) or (civ(iLoopPlayer) in dCivGroups[iCivGroupEurope] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
-							if plot.getRegionID() not in lEurope + lMiddleEast + lNorthAfrica:
+						if is_minor(iLoopPlayer) or (civ(iLoopPlayer) not in dCivGroups[iCivGroupEurope] and stability(iLoopPlayer) <= iStabilityShaky) or (civ(iLoopPlayer) in dCivGroups[iCivGroupEurope] and not player(iLoopPlayer).isHuman() and pPlayer.AI_getAttitude(iLoopPlayer) < AttitudeTypes.ATTITUDE_PLEASED):
+							if plot.getRegionID() in lLateColonialRegions or (plot.getRegionID() in lAmerica and civ(iLoopPlayer) in dCivGroups[iCivGroupEurope]):
 								if iSettlerMapValue > 0:
-									iValue += iSettlerMapValue
+									iValue += self.getSettlerClaimValue(iSettlerMapValue)
+									iValue += plot.getPlayerWarValue(iPlayer)
+									
+									if civ(iLoopPlayer) in dTechGroups[iTechGroupWestern]:
+										iValue /= 2
+									elif player(iPlayer).getCurrentEra() == iIndustrial and plot.getRegionID() in lSubSaharanAfrica:
+										iValue += 5
 									
 				# weaker and collapsing empires
 				if not is_minor(iLoopPlayer):
 					if game.getPlayerRank(iPlayer) > iNumPlayersAlive / 2 and game.getPlayerRank(iLoopPlayer) < iNumPlayersAlive / 2:
 						if data.players[iLoopPlayer].iStabilityLevel == iStabilityCollapsing:
 							if iSettlerMapValue > 0:
-								iValue += iSettlerMapValue
+								iValue += self.getSettlerClaimValue(iSettlerMapValue)
 									
 				# close to own empire
 				closest = closestCity(city, iPlayer)
