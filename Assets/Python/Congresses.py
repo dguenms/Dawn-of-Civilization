@@ -682,7 +682,7 @@ class Congress:
 		
 		bLimitedDefenders = player(iPlayer).isHuman() or isIsland(flipped)
 		iNumDefenders = bLimitedDefenders and 2 or max(2, player(iPlayer).getCurrentEra()-1)
-		createRoleUnit(iPlayer, flipped, iDefend, iNumDefenders)
+		ensureDefenders(iPlayer, flipped, iNumDefenders)
 		
 	def foundColony(self, iPlayer, (x, y)):
 		plot = plot_(x, y)
