@@ -49,4 +49,40 @@
 		<Italian>Commonwealth of %s1</Italian>
 		<Spanish>Commonwealth of %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_COMMUNIST</Tag>
+		<English>%s2 Worker's Commonwealth</English>
+		<French>
+			<Text>Commonwealth %s2 des travailleurs</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>%s2 Worker's Commonwealth</German>
+		<Italian>%s2 Worker's Commonwealth</Italian>
+		<Spanish>%s2 Worker's Commonwealth</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_AUSTRALIA_FASCIST</Tag>
+		<English>%s2 Union</English>
+		<French>
+			<Text>Union %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>%s2 Union:%s2 Union:%s2 Union</Text>
+			<Gender>Female:Female:Female</Gender>
+			<Plural>0:0:0</Plural>
+		</German>
+		<Italian>
+			<Text>Unione %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Uni&#243;n %s2</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+	</TEXT>
 </Civ4GameText>
