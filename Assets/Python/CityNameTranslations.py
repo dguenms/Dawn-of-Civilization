@@ -9712,7 +9712,7 @@ name_translations = {
 		iEnglish: "Albany",
 		iLocal: _, # Aboriginal Nyungar
 	},
-	"Kinshasa": {  # relocated from M'banza-Nsundi
+	"Kinshasa": {  # relocated from Ntamo
 		iCongolese: _,
 		iDutch: "Leopoldstad",
 		iFrench: u"Léopoldville",
@@ -11365,13 +11365,6 @@ name_translations = {
 			_,
 		),
 		iPortuguese: found("Maquela do Zombo"),
-	},
-	"M'banza-Nsundi": {
-		iCongolese: (
-			relocate("Kinshasa", iAfter=iIndustrial),
-		),
-		iDutch: relocate("Kinshasa"),
-		iFrench: relocate("Kinshasa"),
 	},
 	"Ma'tan as-Sarra": {
 		iArabic: _,
@@ -13541,6 +13534,14 @@ name_translations = {
 		iDutch: relocate("Kananga"),
 		iFrench: relocate("Kananga"),
 		iGerman: found("Malandji"),
+	},
+	"Ntamo": {
+		iCongolese: (
+			relocate("Kinshasa", iAfter=iIndustrial),
+			_,
+		),
+		iDutch: relocate("Kinshasa"),
+		iFrench: relocate("Kinshasa"),
 	},
 	"Ntsweng": {
 		iLocal: (

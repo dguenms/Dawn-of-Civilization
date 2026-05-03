@@ -32560,8 +32560,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=28
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
-	TerrainType=TERRAIN_SAVANNA
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
@@ -33008,7 +33008,6 @@ BeginPlot
 	x=74,y=25
 	RiverNSDirection=0
 	isWOfRiver
-	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
@@ -33032,9 +33031,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=28
-	FeatureType=FEATURE_MARSH, FeatureVariety=3
-	TerrainType=TERRAIN_MARSH
-	PlotType=2
+	TerrainType=TERRAIN_COAST
+	PlotType=3
 EndPlot
 BeginPlot
 	x=74,y=29
@@ -33511,7 +33509,6 @@ BeginPlot
 	x=75,y=27
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_DIAMONDS
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
@@ -34004,16 +34001,16 @@ BeginPlot
 	x=76,y=28
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
-	TerrainType=TERRAIN_GRASS
+	FeatureType=FEATURE_MARSH, FeatureVariety=3
+	TerrainType=TERRAIN_MARSH
 	PlotType=2
 EndPlot
 BeginPlot
 	x=76,y=29
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_MARSH, FeatureVariety=3
-	TerrainType=TERRAIN_MARSH
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
@@ -34447,6 +34444,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=23
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

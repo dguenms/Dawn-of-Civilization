@@ -1741,6 +1741,10 @@ BeginPlot
 		UnitType=UNIT_ARQUEBUSIER
 		UnitOwner=CIVILIZATION_FRANCE
 	EndUnit
+	BeginUnit
+		UnitType=UNIT_EXPLORER
+		UnitOwner=CIVILIZATION_FRANCE
+	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_FRANCE
 		CityName=Saint-Louis-du-Sénégal
@@ -4765,97 +4769,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=25
-	RouteType=ROUTE_ROAD
-	BeginUnit
-		UnitType=UNIT_CONGOLESE_POMBOS
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CONGOLESE_POMBOS
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CONGOLESE_POMBOS
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CONGOLESE_POMBOS
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CONGOLESE_POMBOS
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CONGOLESE_POMBOS
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_LONGBOWMAN
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CATAPULT
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_CATAPULT
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SLAVE
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SLAVE
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SLAVE
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SLAVE
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SLAVE
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SETTLER
-		UnitOwner=CIVILIZATION_CONGO
-	EndUnit
-	BeginCity
-		CityOwner=CIVILIZATION_CONGO
-		CityName=M'banza-Kongo
-		CityPopulation=8
-		BuildingType=BUILDING_PALACE
-		BuildingType=BUILDING_GRANARY
-		BuildingType=BUILDING_TANNERY
-		BuildingType=BUILDING_CONGOLESE_MBWADI
-		BuildingType=BUILDING_LIBRARY
-		BuildingType=BUILDING_HARBOR
-		BuildingType=BUILDING_AQUEDUCT
-		BuildingType=BUILDING_LIGHTHOUSE
-		BuildingType=BUILDING_JAIL
-		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_CATHOLIC_TEMPLE
-		BuildingType=BUILDING_CATHOLIC_MONASTERY
-		ReligionType=RELIGION_CATHOLICISM
-		BeginCulture
-			Civilization=CIVILIZATION_CONGO, Culture=100
-		EndCulture
-		YearFounded=1390
-	EndCity
+	ImprovementType=IMPROVEMENT_HAMLET
 EndPlot
 BeginPlot
 	x=71,y=26
@@ -5042,6 +4956,90 @@ BeginPlot
 	x=72,y=25
 	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=72,y=26
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_LONGBOWMAN
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CATAPULT
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CATAPULT
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SLAVE
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SLAVE
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SLAVE
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SLAVE
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SLAVE
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SETTLER
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_CONGO
+		CityName=Ntamo
+		CityPopulation=8
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_CONGOLESE_MBWADI
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_FORGE
+		BuildingType=BUILDING_CATHOLIC_TEMPLE
+		BuildingType=BUILDING_CATHOLIC_MONASTERY
+		ReligionType=RELIGION_CATHOLICISM
+		BeginCulture
+			Civilization=CIVILIZATION_CONGO, Culture=100
+		EndCulture
+		YearFounded=1390
+	EndCity
 EndPlot
 BeginPlot
 	x=72,y=27
@@ -5347,6 +5345,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=74,y=25
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=74,y=44
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -5563,6 +5565,34 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=75,y=25
+	ImprovementType=IMPROVEMENT_MINE
+EndPlot
+BeginPlot
+	x=75,y=26
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CONGOLESE_POMBOS
+		UnitOwner=CIVILIZATION_CONGO
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_CONGO
+		CityName=Nsheng
+		CityPopulation=3
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_TANNERY
+		BuildingType=BUILDING_CONGOLESE_MBWADI
+		BuildingType=BUILDING_AQUEDUCT
+		BeginCulture
+			Civilization=CIVILIZATION_CONGO, Culture=50
+		EndCulture
+	EndCity
+EndPlot
+BeginPlot
 	x=75,y=45
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -5651,6 +5681,14 @@ EndPlot
 BeginPlot
 	x=75,y=76
 	ImprovementType=IMPROVEMENT_CAMP
+EndPlot
+BeginPlot
+	x=76,y=25
+	ImprovementType=IMPROVEMENT_QUARRY
+EndPlot
+BeginPlot
+	x=76,y=27
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=76,y=44

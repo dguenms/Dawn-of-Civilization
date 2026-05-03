@@ -506,6 +506,14 @@
 		<Spanish>Komi</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_KUBA</Tag>
+		<English>Kuba</English>
+		<French>Kuba</French>
+		<German>Kuba</German>
+		<Italian>Kuba</Italian>
+		<Spanish>Kuba</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_LAO</Tag>
 		<English>Lao</English>
 		<French>Lao</French>
@@ -922,6 +930,14 @@
 		<Spanish>Uighur</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_UTETERA</Tag>
+		<English>Utetera</English>
+		<French>Utetera</French>
+		<German>Utetera</German>
+		<Italian>Utetera</Italian>
+		<Spanish>Utetera</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_VANDAL</Tag>
 		<English>Vandal</English>
 		<French>Vandal</French>
@@ -992,6 +1008,14 @@
 		<German>Xirong</German>
 		<Italian>Xirong</Italian>
 		<Spanish>Xirong</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_YEKE</Tag>
+		<English>Yeke</English>
+		<French>Yeke</French>
+		<German>Yeke</German>
+		<Italian>Yeke</Italian>
+		<Spanish>Yeke</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_YEMENI</Tag>

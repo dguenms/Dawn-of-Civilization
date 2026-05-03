@@ -68,7 +68,7 @@ dBaseLanguages = {
 	iOttomans: (iOttoman, iTurkish),
 	iThailand: (iThai,),
 	iSweden: (iSwedish, iNordic),
-	iCongo: (iCongolese,),
+	iCongo: (iCongolese, iKiswahili),
 	iIran: (iPersian,),
 	iNetherlands: (iDutch,),
 	iManchuria: (iManchu, iChinese, iMongol),

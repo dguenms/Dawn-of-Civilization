@@ -89,7 +89,7 @@ dResourcesDict = {
 	(125, 41) : (800,   iClam),     # South China
 	(82, 40)  : (900,   iIron),     # Egypt
 	(73, 25)  : (1000,  iBanana),   # Congo
-	(70, 30)  : (1000,  iBanana),   # Cameroon
+	(71, 29)  : (1000,  iBanana),   # Cameroon
 	(62, 32)  : (1000,  iBanana),   # West Africa
 	(116, 42) : (1000,  iOpium),    # Burma
 	(117, 45) : (1000,  iOpium),    # Burma
@@ -244,14 +244,18 @@ dResourcesDict = {
 	(9, 53)   : (1850,  iGold),     # California
 	(7, 56)   : (1850,  iGold),     # California
 	(10, 54)  : (1850,  iSilver),   # Nevada
+	(74, 25)  : (1850,  iGems),	    # Congo
+	(75, 27)  : (1850,  iGems),     # Congo
 	(16, 54)  : (1860,  iGold),     # Colorado
 	(12, 60)  : (1860,  iSilver),   # Idaho
+	(77, 27)  : (1880,  iCocoa),    # Congo
+	(77, 29)  : (1880,  iCoffee),	# Congo
 	(90, 61)  : (1900,  iPotato),	# Volga
-	(11, 52)  : (1900,  iCow),		# Arizona
+	(11, 52)  : (1900,  iCow),      # Arizona
 	(138, 9)  : (1900,  iWheat),    # Victoria
 	(26, 49)  : (1900,  iCitrus),   # Florida
 	(83, 29)  : (1900,  iTea),      # Kenya
-	(71, 29)  : (1900,  iRubber),   # Cameroon
+	(72, 30)  : (1900,  iRubber),   # Cameroon
 	(74, 29)  : (1900,  iRubber),   # Congo
 	(74, 24)  : (1900,  iRubber),   # Congo
 	(118, 36) : (1900,  iRubber),   # Malaysia

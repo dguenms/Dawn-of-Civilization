@@ -1130,7 +1130,7 @@ rSahel, rSahara, rAtlanticSeaboard, rDeepSouth, rMidwest, rGreatPlains, rAridoam
 rQuebec, rMaritimes, rAmericanArctic, rCaribbean, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, 
 rSouthernCone, rAntarctica, rHinduKush, rRussia, rVolga) = range(iNumRegions)
 
-iNumWaterRegions = 86
+iNumWaterRegions = 87
 (rMediterraneanSea, rBlackSea, rCaspianSea, rBalticSea, rNorthSea, rAtlanticOcean, rCaribbeanSea, rGulfOfMexico, rHudsonBay, rArcticOcean,
 rRedSea, rArabianSea, rPersianGulf, rBayOfBengal, rIndianOcean, rAustralasianSea, rSouthChinaSea, rEastChinaSea, rSeaOfJapan, rSeaOfOkhotsk, 
 rBeringSea, rPacificOcean, rSouthernOcean, rVanern, rVattern, rInari, rPaijanne, rOulu, rSaimaa, rPeipus, 
@@ -1139,7 +1139,7 @@ rZaysan, rUvs, rKhovsgol, rBaikal, rTaymyr, rHulun, rQinghai, rLopNur, rSiling, 
 rPoyang, rTai, rTonleSap, rSetoInlandSea, rEyre, rChad, rTana, rTurkana, rNyanza, rMwitanzege, 
 rRweru, rTanganyika, rMweru, rBangweulu, rRukwa, rMalawi, rGreatBear, rTidee, rAthabasca, rReindeer, 
 rDubawt, rBaker, rWinnipeg, rSuperior, rMichigan, rHuron, rErie, rLakeOntario, rMistassini, rLobstick, 
-rGreatSalt, rNicaragua, rTiticaca, rMarChiquita, rKhanka, rZabuye) = range(100, 100 + iNumWaterRegions)
+rGreatSalt, rNicaragua, rTiticaca, rMarChiquita, rKhanka, rZabuye, rMaiNdombe) = range(100, 100 + iNumWaterRegions)
 
 lEuropeProper = [rBritain, rIreland, rFrance, rIberia, rItaly, rLowerGermany, rCentralEurope, rBalkans, rGreece, rPoland, rBaltics, rScandinavia, rRuthenia, rPonticSteppe, rRussia, rVolga]
 lEuropeAsia = [rEuropeanArctic, rUrals, rSiberia]
