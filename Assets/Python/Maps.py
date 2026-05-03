@@ -7,6 +7,7 @@ from CityNames import *
 from Resources import *
 from Scenarios import *
 from Periods import *
+from Minors import *
 
 import Locations
 
@@ -319,6 +320,11 @@ def markAllResourceSpawns():
 	
 	for tile, (iCiv, iResource) in dSpawnResourcesDict.items():
 		createLandmark(tile, "%s %s" % (infos.bonus(iResource).getText(), infos.civ(iCiv).getDescription()))
+
+
+def markMinorCities():
+	for minor_city in minor_cities:
+		createLandmark(minor_city.tile, "%s %s" % (minor_city.name, minor_city.iYear))
 
 
 def markTerrainSpawns():
