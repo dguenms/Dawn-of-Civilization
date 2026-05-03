@@ -2573,12 +2573,12 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 	eAttitude = AI_getAttitude(eTeam);
 
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-			{
+	{
 		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getOpenBordersRefuseAttitudeThreshold())
-				{
-					return DENIAL_ATTITUDE;
-				}
-			}
+		{
+			return DENIAL_ATTITUDE;
+		}
+	}
 	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;
@@ -2625,6 +2625,15 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
 		{
 			iNumCities = 2 * getNumCities();
+		}
+	}
+
+	// Leoreth: Berlaymont effect
+	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(BERLAYMONT))
+	{
+		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
+		{
+			iNumCities = GET_TEAM(eTeam).getNumCities();
 		}
 	}
 
@@ -2784,15 +2793,15 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eTeam) const
 		// }
 	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-			{
-				/// Sanguo mod / edead - start
-				if ((eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold() && iGameTurn < getTurnForYear(1906)) ||
-					(eAttitude <= (AttitudeTypes)std::max(0,GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold()-1) && iGameTurn >= getTurnForYear(1906))) //1906, the last 100 turns
-				// Sanguo mod / edead - end
-				{
-					return DENIAL_ATTITUDE;
-				}
-			}
+	{
+		/// Sanguo mod / edead - start
+		if ((eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold() && iGameTurn < getTurnForYear(1906)) ||
+			(eAttitude <= (AttitudeTypes)std::max(0,GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getDefensivePactRefuseAttitudeThreshold()-1) && iGameTurn >= getTurnForYear(1906))) //1906, the last 100 turns
+		// Sanguo mod / edead - end
+		{
+			return DENIAL_ATTITUDE;
+		}
+	}
 	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;
@@ -2852,12 +2861,12 @@ DenialTypes CvTeamAI::AI_permanentAllianceTrade(TeamTypes eTeam) const
 		// }
 	// }
 	for (std::vector<PlayerTypes>::const_iterator iter = m_aePlayerMembers.begin(); iter != m_aePlayerMembers.end(); ++iter)
-		{
+	{
 		if (eAttitude <= GC.getLeaderHeadInfo(GET_PLAYER(*iter).getPersonalityType()).getPermanentAllianceRefuseAttitudeThreshold())
-				{
-					return DENIAL_ATTITUDE;
-				}
-			}
+		{
+			return DENIAL_ATTITUDE;
+		}
+	}
 	// Sanguo Mod Performance, end
 
 	return NO_DENIAL;

@@ -5772,7 +5772,7 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData, 
 		{
 			if (eSecretaryGeneral != NO_TEAM)
 			{
-				if (eSecretaryGeneral == getTeam() ||(GET_TEAM(getTeam()).AI_getAttitude(eSecretaryGeneral) == ATTITUDE_FRIENDLY))
+				if (eSecretaryGeneral == getTeam() || (GET_TEAM(getTeam()).AI_getAttitude(eSecretaryGeneral) == ATTITUDE_FRIENDLY))
 				{
 					return PLAYER_VOTE_YES;
 				}

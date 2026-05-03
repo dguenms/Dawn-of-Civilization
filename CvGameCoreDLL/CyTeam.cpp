@@ -1037,3 +1037,8 @@ int CyTeam::AI_getWarPlan(int eTeam)
 {
 	return m_pTeam ? m_pTeam->AI_getWarPlan((TeamTypes)eTeam) : -1;
 }
+
+bool CyTeam::isHasEverMet(int eTeam)
+{
+	return m_pTeam ? m_pTeam->isHasEverMet((TeamTypes)eTeam) : -1;
+}

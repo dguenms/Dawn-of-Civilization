@@ -2447,19 +2447,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BERLAYMONT_HELP</Tag>
-		<English>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</English>
-		<French>[ICON_BULLET]+2 pactes de d&#233;fense possibles[NEWLINE][ICON_BULLET]+1 sp&#233;cialiste gratuit par pacte de d&#233;fense</French>
-		<German>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</German>
-		<Italian>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Italian>
-		<Spanish>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Spanish>
+		<English>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]Other civilization are more willing to enter into defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</English>
+		<French>[ICON_BULLET]+2 pactes de d&#233;fense possibles[NEWLINE][ICON_BULLET]Other civilization are more willing to enter into defensive pacts[NEWLINE][ICON_BULLET]+1 sp&#233;cialiste gratuit par pacte de d&#233;fense</French>
+		<German>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]Other civilization are more willing to enter into defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</German>
+		<Italian>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]Other civilization are more willing to enter into defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Italian>
+		<Spanish>[ICON_BULLET]+2 possible defensive pacts[NEWLINE][ICON_BULLET]Other civilization are more willing to enter into defensive pacts[NEWLINE][ICON_BULLET]+1 free specialist per defensive pact</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BERLAYMONT_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
-		<French>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
-		<German>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
-		<Italian>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign, increases the willingness of other civilizations to sign defensive pacts, and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign, increases the willingness of other civilizations to sign defensive pacts, and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign, increases the willingness of other civilizations to sign defensive pacts, and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign, increases the willingness of other civilizations to sign defensive pacts, and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Berlaymont[COLOR_REVERT] increases the limit of defensive pacts you can sign, increases the willingness of other civilizations to sign defensive pacts, and provides provides 1 free specialist per signed defensive pact. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Statesman[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ITER</Tag>
