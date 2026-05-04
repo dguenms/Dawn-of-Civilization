@@ -5852,7 +5852,7 @@
 			<Buildings>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_INDUSTRIAL_PARK</BuildingClassType>
-					<BuildingType>BUILDING_SAUDI_REFINERY</BuildingType>
+					<BuildingType>BUILDING_SAUDI_OIL_DEPOT</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

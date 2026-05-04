@@ -3828,14 +3828,14 @@
 			<Button>Art/Structures/Buildings/Souk/souk.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_SAUDI_REFINERY</Type>
+			<Type>ART_DEF_BUILDING_GAS_PLANT</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.0</fScale>
 			<fInterfaceScale>0.55</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Refinery/gasplant.nif</NIF>
+			<NIF>Art/Structures/Buildings/Gas_Plant/gasplant.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Refinery/refinery_button.dds</Button>
+			<Button>Art/Structures/Buildings/Gas_Plant/gas_plant_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BELGIAN_CHOCOLATERIE</Type>
@@ -3846,6 +3846,16 @@
 			<NIF>Art/Structures/Buildings/Tavern/Tavern.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Tavern/Chocolaterie.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_SAUDI_OIL_DEPOT</Type>
+			<LSystem>LSYSTEM_4x4</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>0.44</fInterfaceScale>
+			<NIF> Art/Structures/Buildings/Oil_Depot/depot.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Oil_Depot/depot_button.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -5375,12 +5375,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_INDUSTRIAL_PARK</BuildingClass>
-			<Type>BUILDING_SAUDI_REFINERY</Type>
-			<Description>TXT_KEY_BUILDING_SAUDI_REFINERY</Description>
-			<Civilopedia>TXT_KEY_BUILDING_SAUDI_REFINERY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_SAUDI_REFINERY_STRATEGY</Strategy>
+			<Type>BUILDING_SAUDI_OIL_DEPOT</Type>
+			<Description>TXT_KEY_BUILDING_SAUDI_OIL_DEPOT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SAUDI_OIL_DEPOT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SAUDI_OIL_DEPOT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_SAUDI_REFINERY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_SAUDI_OIL_DEPOT</ArtDefineTag>
 			<PrereqTech>TECH_REFINING</PrereqTech>
 			<iCost>300</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>

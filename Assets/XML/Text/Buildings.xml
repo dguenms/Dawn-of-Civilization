@@ -3202,20 +3202,20 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Souk[COLOR_REVERT], the Masryeen replacement for the [COLOR_BUILDING_TEXT]Market[COLOR_REVERT], grants an additional +50% foreign trade route yield.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SAUDI_REFINERY</Tag>
-		<English>Refinery</English>
-		<French>Refinery</French>
-		<German>Refinery</German>
-		<Italian>Refinery</Italian>
-		<Spanish>Refinery</Spanish>
+		<Tag>TXT_KEY_BUILDING_SAUDI_OIL_DEPOT</Tag>
+		<English>Oil Depot</English>
+		<French>Oil Depot</French>
+		<German>Oil Depot</German>
+		<Italian>Oil Depot</Italian>
+		<Spanish>Oil Depot</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_SAUDI_REFINERY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Refinery[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</English>
-		<French>The [COLOR_BUILDING_TEXT]Refinery[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</French>
-		<German>The [COLOR_BUILDING_TEXT]Refinery[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Refinery[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Refinery[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</Spanish>
+		<Tag>TXT_KEY_BUILDING_SAUDI_OIL_DEPOT_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Oil Depot[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</English>
+		<French>The [COLOR_BUILDING_TEXT]Oil Depot[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</French>
+		<German>The [COLOR_BUILDING_TEXT]Oil Depot[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Oil Depot[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Oil Depot[COLOR_REVERT], the Saudi replacement for the [COLOR_BUILDING_TEXT]Industrial Park[COLOR_REVERT], grants additional production and commerce on improved [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT] resources.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BELGIAN_CHOCOLATERIE</Tag>
