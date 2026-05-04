@@ -696,9 +696,7 @@ def setup():
 	if iScenario == i600AD:
 		data.civs[iChina].iAnarchyTurns += 3
 		
-	elif iScenario == i1700AD:
-		data.civs[iEgypt].iResurrections += 1
-		
+	elif iScenario in [i1700AD, i1815AD]:
 		checkReplacementName(iManchuria)
 	
 @handler("playerCivAssigned")
