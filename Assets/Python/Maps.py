@@ -255,6 +255,22 @@ def exportPlotMap(name, func):
 	map.export()
 
 
+def exportEarthMaps():
+	maps = (
+		("Bonus", lambda p: p.getBonusType(-1)),
+		("BonusVariety", lambda p: p.getBonusVarietyType(-1)),
+		("Continent", CyPlot.getContinentArea),
+		("Feature", CyPlot.getFeatureType),
+		("FeatureVariety", CyPlot.getFeatureVariety),
+		("Landmass", CyPlot.getArea),
+		("Plot", CyPlot.getPlotType),
+		("Terrain", CyPlot.getTerrainType),
+	)
+	
+	for name, func in maps:
+		exportPlotMap(name, func)
+
+
 def markUnnamedTiles():
 	for (x, y), name in city_names:
 		p = plot(x, y)
