@@ -189,7 +189,15 @@ def nobelPrizeEffect(unit, iPlayer):
 				city.changeGreatPeopleUnitProgress(iGreatPersonType, iGreatPeoplePoints)
 				
 				interface.setDirty(InterfaceDirtyBits.MiscButtons_DIRTY_BIT, True)
-				message(city.getOwner(), 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(unit), unit.getName(), city.getName(), iGreatPeoplePoints)
+				message(city.getOwner(), 'TXT_KEY_BUILDING_NOBEL_PRIZE_EFFECT', adjective(unit), getGreatPersonName(unit), city.getName(), iGreatPeoplePoints)
+
+
+def getGreatPersonName(unit):
+	name = unit.getName()
+	if " (" in name:
+		return "%s %s" % (infos.unit(unit).getText(), name.split(" (")[0])
+	
+	return infos.unit(unit).getText()
 
 
 # Westminster Palace effect: +1 gold per colony
