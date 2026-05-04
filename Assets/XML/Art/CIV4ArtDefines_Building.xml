@@ -3877,5 +3877,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Waterworks/waterworks.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_DIAGNOSTICS_CENTER</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.0</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Diagnostics_Center/house.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Diagnostics_Center/diagnostics_center.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

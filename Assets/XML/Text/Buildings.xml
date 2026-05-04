@@ -3266,6 +3266,22 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] improve a city's health.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DIAGNOSTICS_CENTER</Tag>
+		<English>Diagnostics Center</English>
+		<French>Diagnostics Center</French>
+		<German>Diagnostics Center</German>
+		<Italian>Diagnostics Center</Italian>
+		<Spanish>Diagnostics Center</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_DIAGNOSTICS_CENTER_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Diagnostics Center[COLOR_REVERT] increases a city's health with access to [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rare Earths[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Diagnostics Center[COLOR_REVERT] increases a city's health with access to [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rare Earths[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Diagnostics Center[COLOR_REVERT] increases a city's health with access to [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rare Earths[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Diagnostics Center[COLOR_REVERT] increases a city's health with access to [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rare Earths[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Diagnostics Center[COLOR_REVERT] increases a city's health with access to [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rare Earths[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

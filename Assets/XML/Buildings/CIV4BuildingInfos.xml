@@ -5842,7 +5842,7 @@
 			<Description>TXT_KEY_BUILDING_WATERWORKS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_WATERWORKS_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_WATERWORKS_STRATEGY</Strategy>
-			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_WATERWORKS</ArtDefineTag>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
 			<TechTypes>
@@ -6102,7 +6102,7 @@
 			<ArtDefineTag>ART_DEF_BUILDING_NUCLEAR_PLANT</ArtDefineTag>
 			<PrereqTech>TECH_NUCLEAR_POWER</PrereqTech>
 			<PowerBonus>BONUS_URANIUM</PowerBonus>
-			<iCost>250</iCost>
+			<iCost>400</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>75</iConquestProb>
@@ -6123,6 +6123,39 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_DIAGNOSTICS_CENTER</BuildingClass>
+			<Type>BUILDING_DIAGNOSTICS_CENTER</Type>
+			<Description>TXT_KEY_BUILDING_DIAGNOSTICS_CENTER</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DIAGNOSTICS_CENTER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DIAGNOSTICS_CENTER_STRATEGY</Strategy>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DIAGNOSTICS_CENTER</ArtDefineTag>
+			<PrereqTech>TECH_LASER</PrereqTech>
+			<iCost>400</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<BonusHealthChanges>
+				<BonusHealthChange>
+					<BonusType>BONUS_URANIUM</BonusType>
+					<iHealthChange>2</iHealthChange>
+				</BonusHealthChange>
+				<BonusHealthChange>
+					<BonusType>BONUS_RARE_EARTHS</BonusType>
+					<iHealthChange>2</iHealthChange>
+				</BonusHealthChange>
+			</BonusHealthChanges>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_HOSPITAL</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
