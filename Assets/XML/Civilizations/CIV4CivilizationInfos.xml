@@ -1104,8 +1104,8 @@
 				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_ENGLAND</DerivativeCiv>
-			<CivilizationSelectionSound>AS3D_ENGLAND_SELECT</CivilizationSelectionSound>
-			<CivilizationActionSound>AS3D_ENGLAND_ORDER</CivilizationActionSound>
+			<CivilizationSelectionSound>AS3D_CANADA_SELECT</CivilizationSelectionSound>
+			<CivilizationActionSound>AS3D_CANADA_ORDER</CivilizationActionSound>
 		</CivilizationInfo>
 		<CivilizationInfo>
 			<Type>CIVILIZATION_PHOENICIA</Type>
