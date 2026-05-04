@@ -7235,7 +7235,8 @@ name_translations = {
 	},
 	"Hajr": {
 		iArabic: (
-			rename("Ar-Riyad", iAfter=iRenaissance),
+			rename("Ar-Riyad", iAfter=iIndustrial),
+			translate("Al-Diriyah", iAfter=iRenaissance),
 			_,
 		),
 	},
