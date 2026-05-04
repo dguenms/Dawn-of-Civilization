@@ -8481,7 +8481,7 @@
 		<UnitArtInfo>
 			<Type>ART_DEF_UNIT_ENGLISH_MAN_OF_WAR</Type>
 			<Button>Art/Units/Man-of-War/Button_ManOfWar.dds</Button>
-			<fScale>0.21</fScale>
+			<fScale>0.19</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
