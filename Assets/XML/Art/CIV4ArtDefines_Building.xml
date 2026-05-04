@@ -3867,5 +3867,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Oil_Depot/depot_button.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_WATERWORKS</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>1.4</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Waterworks/sewage.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Waterworks/waterworks.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

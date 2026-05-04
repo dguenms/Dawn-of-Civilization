@@ -5837,6 +5837,39 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_WATERWORKS</BuildingClass>
+			<Type>BUILDING_WATERWORKS</Type>
+			<Description>TXT_KEY_BUILDING_WATERWORKS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_WATERWORKS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_WATERWORKS_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_WATERWORKS</ArtDefineTag>
+			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_PNEUMATICS</PrereqTech>
+			</TechTypes>
+			<iCost>400</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>60</iConquestProb>
+			<iHealth>3</iHealth>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_SEWER</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_AIRPORT</BuildingClass>
 			<Type>BUILDING_AIRPORT</Type>
 			<Description>TXT_KEY_BUILDING_AIRPORT</Description>

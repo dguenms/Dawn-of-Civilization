@@ -2099,11 +2099,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SEWER_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</English>
-		<French>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</French>
-		<German>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</German>
-		<Italian>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</English>
+		<French>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</French>
+		<German>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] improve a city's health. [COLOR_BUILDING_TEXT]Sewers[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]Abbey Mills[COLOR_REVERT] world wonder.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_DISTILLERY</Tag>
@@ -3248,6 +3248,22 @@
 		<German>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</German>
 		<Italian>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</Italian>
 		<Spanish>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WATERWORKS</Tag>
+		<English>Waterworks</English>
+		<French>Waterworks</French>
+		<German>Waterworks</German>
+		<Italian>Waterworks</Italian>
+		<Spanish>Waterworks</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WATERWORKS_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] improve a city's health.</English>
+		<French>[COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] improve a city's health.</French>
+		<German>[COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] improve a city's health.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] improve a city's health.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Waterworks[COLOR_REVERT] improve a city's health.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

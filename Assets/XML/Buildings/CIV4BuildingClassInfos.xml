@@ -524,6 +524,15 @@
 			<DefaultBuilding>BUILDING_INTELLIGENCE_AGENCY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_WATERWORKS</Type>
+			<Description>TXT_KEY_BUILDING_WATERWORKS</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_WATERWORKS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ELECTRICAL_GRID</Type>
 			<Description>TXT_KEY_BUILDING_ELECTRICAL_GRID</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
