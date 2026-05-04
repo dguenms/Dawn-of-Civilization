@@ -271,6 +271,18 @@ def exportEarthMaps():
 		exportPlotMap(name, func)
 
 
+def exportScenarioMap():
+	def plot_civ(p):
+		if p.isWater():
+			return -1
+		iOwner = p.getOwner()
+		if iOwner == -1:
+			return -1
+		return player(iOwner).getCivilizationType()
+	
+	exportPlotMap(getScenario().fileName, plot_civ)
+
+
 def markUnnamedTiles():
 	for (x, y), name in city_names:
 		p = plot(x, y)
