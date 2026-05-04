@@ -5300,6 +5300,36 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_GAS_PLANT</BuildingClass>
+			<Type>BUILDING_GAS_PLANT</Type>
+			<Description>TXT_KEY_BUILDING_GAS_PLANT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_GAS_PLANT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_GAS_PLANT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_GAS_PLANT</ArtDefineTag>
+			<PrereqTech>TECH_PNEUMATICS</PrereqTech>
+			<PowerBonus>BONUS_OIL</PowerBonus>
+			<bDirtyPower>1</bDirtyPower>
+			<iCost>300</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ConstructSound>AS2D_BUILD_PLANTCOAL</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_FACTORY</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_INDUSTRIAL_PARK</BuildingClass>
 			<Type>BUILDING_INDUSTRIAL_PARK</Type>
 			<Description>TXT_KEY_BUILDING_INDUSTRIAL_PARK</Description>

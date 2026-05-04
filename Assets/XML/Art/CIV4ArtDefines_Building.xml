@@ -3838,6 +3838,16 @@
 			<Button>Art/Structures/Buildings/Gas_Plant/gas_plant_button.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_GAS_PLANT</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.75</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Gas_Plant/gasplant.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Gas_Plant/Gas_Plant.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BELGIAN_CHOCOLATERIE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>

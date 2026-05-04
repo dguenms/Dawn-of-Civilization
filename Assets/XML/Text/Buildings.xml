@@ -3234,6 +3234,22 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Chocolaterie[COLOR_REVERT], the Belgian replacement for the [COLOR_BUILDING_TEXT]Coffeehouse[COLOR_REVERT], increases culture by 25% and grants additional happiness from [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GAS_PLANT</Tag>
+		<English>Gas Plant</English>
+		<French>Gas Plant</French>
+		<German>Gas Plant</German>
+		<Italian>Gas Plant</Italian>
+		<Spanish>Gas Plant</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_GAS_PLANT_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Gas Plants[COLOR_REVERT] provide dirty power with access to [COLOR_HIGHLIGHT_TEXT]Oil[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
