@@ -333,6 +333,12 @@ class ControlledResourceCount(ThresholdRequirement):
 	
 	def value(self, iPlayer, iResource):
 		return player(iPlayer).getNumAvailableBonuses(iResource) - player(iPlayer).getBonusImport(iResource) + player(iPlayer).getBonusExport(iResource)
+	
+	def get_description(self):
+		if self.iRequired == 1:
+			return Description("TXT_KEY_VICTORY_DESC_CONTROLLED_RESOURCE_COUNT_SINGLE", *self.format_parameters())
+		
+		return ThresholdRequirement.get_description(self)
 
 
 # Second Kushan UHV goal

@@ -924,6 +924,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_CONTROLLED_RESOURCE_COUNT_SINGLE</Tag>
+		<English>%s2 %s1 resource</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_STATE_RELIGION</Tag>
 		<English>no %s2 civilizations in %s1</English>
 		<French></French>
