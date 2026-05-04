@@ -2321,8 +2321,8 @@
 			<Type>ART_DEF_BUILDING_ESTATE</Type>
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>0.3</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
+			<fScale>0.24</fScale>
+			<fInterfaceScale>0.75</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Estate/ts_d_gov.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/Estate.dds</Button>
