@@ -15406,6 +15406,9 @@
 			<MovieDefineTag>ART_DEF_MOVIE_NOBEL_PRIZE</MovieDefineTag>
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_REFINING</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_JOURNALISM</PrereqTech>
+			</TechTypes>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
