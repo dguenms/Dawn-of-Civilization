@@ -3808,6 +3808,9 @@
 					<iFlavor>4</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_COLLECTIVISM</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_ENGINE</PrereqTech>
 				<PrereqTech>TECH_RAILROAD</PrereqTech>
