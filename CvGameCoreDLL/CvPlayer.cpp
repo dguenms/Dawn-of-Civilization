@@ -7864,6 +7864,11 @@ int CvPlayer::calculateTransmissionResearch(TechTypes eTech) const
 		return 0;
 	}
 
+	if (isMinorCiv())
+	{
+		return 0;
+	}
+
 	int iResearch = GET_TEAM(getTeam()).getResearchCost(eTech, false);
 
 	iResearch *= 100;
