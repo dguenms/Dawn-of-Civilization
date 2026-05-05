@@ -12088,6 +12088,16 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RIVER"));
 			}
+
+			// Leoreth: hydro power requires river crossing between hills or peaks in first ring
+			if (kBuilding.isPower())
+			{
+				if (NULL == pCity || NO_PLAYER == ePlayer || !pCity->isWaterPowerLocation())
+				{
+					szBuffer.append(NEWLINE);
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_WATER_POWER"));
+				}
+			}
 		}
 
 		if (kBuilding.getUnitLevelPrereq() > 0)

@@ -17083,10 +17083,29 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 			{
 				return false;
 			}
+
+			// Leoreth: hydro power requires a river crossing between hills or peaks in first ring
+			if (GC.getBuildingInfo(eBuilding).isPower())
+			{
+				if (!isWaterPowerLocation())
+				{
+					return false;
+				}
+			}
 		}
 	}
 
 	return true;
+}
+
+bool CvCity::isWaterPowerLocation() const
+{
+	if (getCityIndexPlot(0)->isWaterPower()) return true;
+	if (getCityIndexPlot(5)->isWaterPower()) return true;
+	if (getCityIndexPlot(6)->isWaterPower()) return true;
+	if (getCityIndexPlot(7)->isWaterPower()) return true;
+
+	return false;
 }
 
 int CvCity::getTriggerValue(EventTriggerTypes eTrigger) const

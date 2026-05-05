@@ -983,6 +983,7 @@ public:
 	bool isHasBuildingEffect(BuildingTypes eBuilding) const; // Leoreth
 
 	bool isValidBuildingLocation(BuildingTypes eIndex) const;
+	bool isWaterPowerLocation() const;
 
 	int getNumFreeBuilding(BuildingTypes eIndex) const;															// Exposed to Python
 	void setNumFreeBuilding(BuildingTypes eIndex, int iNewValue);

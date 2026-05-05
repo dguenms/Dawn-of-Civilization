@@ -507,6 +507,14 @@
 		<Spanish>[COLOR_WARNING_TEXT]Requires Access to Coast[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_WATER_POWER</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires River Crossing between Hills or Peaks adjacent to City[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Requires River Crossing between Hills or Peaks adjacent to City[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Requires River Crossing between Hills or Peaks adjacent to City[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Requires River Crossing between Hills or Peaks adjacent to City[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Requires River Crossing between Hills or Peaks adjacent to City[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_FREE_TECH</Tag>
 		<English>[ICON_BULLET]1 Free Technology From Your Current Or Earlier Eras</English>
 		<French>[ICON_BULLET]1 technologie gratuite de l'&#232;re actuelle ou d'une &#232;re pass&#233;e</French>
