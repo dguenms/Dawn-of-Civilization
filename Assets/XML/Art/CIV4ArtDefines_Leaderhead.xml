@@ -799,7 +799,7 @@
 			<BackgroundKFM>Art/LeaderHeads/Idris2/Suleiman_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
-			<Type>ART_DEF_LEADER_SONGTSEN</Type>
+			<Type>ART_DEF_LEADER_UZBEG</Type>
 			<Button>Art/Leaderheads/Songtsen/Btn_Ogedei.dds</Button>
 			<NIF>Art/Leaderheads/Songtsen/yu.nif</NIF>
 			<KFM>Art/Leaderheads/Songtsen/wang_kon.kfm</KFM>
@@ -1253,6 +1253,14 @@
 			<KFM>art/LeaderHeads/Leopold_II/Hammurabi.kfm</KFM>
 			<NoShaderNIF>art/LeaderHeads/Leopold_II/Leopold_II.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Leopold_II/Hammurabi_Backgrnd.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SONGTSEN</Type>
+			<Button>Art/Leaderheads/Songtsen/Button_Songtsen.dds</Button>
+			<NIF>Art/Leaderheads/Songtsen/S_Gampo.nif</NIF>
+			<KFM>Art/Leaderheads/Songtsen/Stuyvesant.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Songtsen/S_Gampo.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Songtsen/Zara Yaqob_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
