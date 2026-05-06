@@ -108,7 +108,7 @@ def resetMongolPower(bWar, iTeam, iOtherTeam):
 
 @handler("improvementBuilt")
 def americanImprovementPower(iImprovement, x, y):
-	if scenarioStartTurn():
+	if scenarioStart():
 		return
 	
 	improved = plot(x, y)
