@@ -424,6 +424,14 @@ def mongolConquerors(iTargetTeam):
 				makeUnits(iMongols, iKeshik, tSpawn, 2 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
 				makeUnits(iMongols, iMangudai, tSpawn, 1 + 2 * iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
 				makeUnits(iMongols, iTrebuchet, tSpawn, 1 + iHandicap, UnitAITypes.UNITAI_ATTACK_CITY)
+			
+			if iTargetCiv == iTurks:
+				for unit in units.owner(iTargetCiv):
+					if unit.isHasPromotion(iVolunteer):
+						unit.kill(False, -1)
+				
+				for city in cities.owner(iTargetCiv):
+					ensureDefenders(iTargetCiv, city, 2)
 				
 			message(iTargetTeam, 'TXT_KEY_MONGOL_HORDE_HUMAN')
 			if team().canContact(iTargetTeam):
