@@ -3104,8 +3104,8 @@ class CvMainInterface:
 						iCount = iCount + 1;
 				
 				if not CyInterface().isCityScreenUp():
-					iAdministration = cities.owner(ePlayer).sum(calculateAdministration)
-					iSeparatism = cities.owner(ePlayer).sum(calculateSeparatism)
+					iAdministration = calculatePlayerAdministration(ePlayer)
+					iSeparatism = calculatePlayerSeparatism(ePlayer)
 					expansion = "%s %s" % (localText.getText("INTERFACE_ADMINISTRATION", (iAdministration, CyGame().getSymbolID(FontSymbols.SCALES_CHAR))), localText.getText("INTERFACE_SEPARATISM", (iSeparatism, CyGame().getSymbolID(FontSymbols.OCCUPATION_CHAR))))
 					
 					if iAdministration < iSeparatism:

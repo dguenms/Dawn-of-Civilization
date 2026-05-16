@@ -396,6 +396,9 @@ def domesticCrisis(iPlayer):
 			city.changeOccupationTimer(iCrisisTurns)
 			
 		message(iPlayer, 'TXT_KEY_STABILITY_DOMESTIC_CRISIS', iCrisisTurns, color=iRed)
+		
+def calculatePlayerAdministration(iPlayer):
+	return cities.owner(iPlayer).sum(calculateAdministration) + 10
 
 def calculateAdministration(city):
 	iPlayer = city.getOwner()
@@ -406,6 +409,12 @@ def calculateAdministration(city):
 	iPopulation = city.getPopulation()
 	iAdministrationModifier = getAdministrationModifier(iPlayer)
 	
+	for plot in plots.city_radius(city):
+		if plot.getImprovementType() in [iVillage, iTown]:
+			workingCity = plot.getWorkingCity()
+			if workingCity and not workingCity.isNone() and workingCity.getID() == city.getID():
+				iPopulation += 1
+	
 	if city.hasBuilding(unique_building(iPlayer, iCourthouse)):
 		iAdministrationModifier += 50
 
@@ -415,6 +424,9 @@ def calculateAdministration(city):
 		iAdministration += iPopulation
 	
 	return iAdministration
+
+def calculatePlayerSeparatism(iPlayer):
+	return cities.owner(iPlayer).sum(calculateSeparatism)
 	
 def getSeparatismModifier(iPlayer, city):
 	iModifier = 0
@@ -526,8 +538,8 @@ def calculateStability(iPlayer):
 	iDifferentReligionPopulation = 0
 	iNoReligionPopulation = 0
 	
-	iAdministration = cities.owner(iPlayer).sum(calculateAdministration) + 10
-	iSeparatism = cities.owner(iPlayer).sum(calculateSeparatism)
+	iAdministration = calculatePlayerAdministration(iPlayer)
+	iSeparatism = calculatePlayerSeparatism(iPlayer)
 	
 	bDecline = isDecline(iPlayer)
 	
@@ -567,9 +579,6 @@ def calculateStability(iPlayer):
 			if bNonStateReligion: 
 				if iStateReligion >= 0 and city.isHasReligion(iStateReligion): iDifferentReligionPopulation += iPopulation / 2
 				else: iDifferentReligionPopulation += iPopulation
-				
-	iAdministrationImprovements = plots.core(iPlayer).owner(iPlayer).where(lambda plot: plot.getWorkingCity() and plot.getImprovementType() in [iVillage, iTown]).count()
-	iAdministration += getAdministrationModifier(iPlayer) * iAdministrationImprovements / 100
 	
 	iCurrentPower = pPlayer.getPower()
 	iPreviousPower = pPlayer.getPowerHistory(since(turns(10)))
