@@ -2155,7 +2155,6 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 	else
 	{
 		int iMinCitiesConquered = std::min(GET_PLAYER(getLeaderID()).getNumCities(), 4);
-
 		if (AI_getWarSuccess(eTeam) + iMinCitiesConquered * GC.getDefineINT("WAR_SUCCESS_CITY_CAPTURING") > GET_TEAM(eTeam).AI_getWarSuccess(getID()))
 		{
 			return DENIAL_JOKING;

@@ -7,9 +7,6 @@ from Collapse import *
 
 from Events import handler, events
 
-from operator import itemgetter
-from datetime import date
-
 import Periods as periods
 import Logging as log
 
