@@ -663,10 +663,9 @@ def stabilizeRomeAfterByzantium(iPlayer):
 def westernMongolExplorers(iPlayer):
 	if civ(iPlayer) == iMongols:
 		if not player(iPlayer).isHuman():
-			city = cities.owner(iPlayer).minimum(CyCity.getX)
-			if city:
-				createRoleUnit(iPlayer, city, iExplore)
-
+			for plot in plots.region(rPonticSteppe).notowned().where(lambda p: not plots.surrounding(p).owned()).sample(3):
+				makeUnit(iPlayer, iMangudai, plot, UnitAITypes.UNITAI_EXPLORE)
+				
 
 @handler("flip")
 def removeBarbariansForMongols(iPlayer):
