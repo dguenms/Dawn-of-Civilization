@@ -7250,13 +7250,11 @@ name_translations = {
 	},
 	"Hakata": {
 		iChinese: "Fugang",
-		iDutch: found("Hirado"),
 		iJapanese: (
 			translate("Fukuoka", iAfter=iIndustrial),
 			_,
 		),
 		iKorean: "Boggang",
-		iPortuguese: found("Hirado"),
 	},
 	"Hakodate": {
 		iChinese: "Hanguan",
@@ -7671,9 +7669,12 @@ name_translations = {
 		),
 		iLocal: "Jiren", # Oromo
 	},
-	"Hirado": {  # founded on Hakata
+	"Hirado": {
 		iDutch: "Firando",
-		iJapanese: _,
+		iJapanese: (
+			relocate("Nagasaki", iAfter=iRenaissance),
+			_,
+		),
 		iPortuguese: "Firando",
 	},
 	"Hiroshima": {
@@ -12817,7 +12818,7 @@ name_translations = {
 		iEnglish: "Nagapattinam",
 		iPortuguese: u"Negapatão",
 	},
-	"Nagasaki": {
+	"Nagasaki": {  # relocated from Hirado
 		iChinese: "Changqi",
 		iJapanese: _,
 		iKorean: "Jang-gi",

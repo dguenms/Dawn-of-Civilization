@@ -2928,7 +2928,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_JAPAN
-		CityName=Nagasaki
+		CityName=Hirado
 		CityPopulation=2
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_HARBOR
