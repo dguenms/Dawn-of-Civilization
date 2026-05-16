@@ -5143,7 +5143,7 @@ bool CvUnit::pillage()
 			// Viking UP
 			if (getCivilizationType() == NORSE && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
 			{
-				iPillageGold *= 5;
+				iPillageGold *= 2;
 			}
 
 			if (iPillageGold > 0)
