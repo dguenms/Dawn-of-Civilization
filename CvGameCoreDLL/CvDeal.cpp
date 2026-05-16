@@ -343,6 +343,16 @@ void CvDeal::addTrades(CLinkList<TradeData>* pFirstList, CLinkList<TradeData>* p
 		CvEventReporter::getInstance().playerSlaveTrade(getSecondPlayer(), iFirstGold);
 	}
 
+	if (bSecondTrade && !bFirstTrade)
+	{
+		CvEventReporter::getInstance().goldGranted(getSecondPlayer(), getFirstPlayer(), iSecondGold);
+	}
+
+	if (bFirstTrade && !bSecondTrade)
+	{
+		CvEventReporter::getInstance().goldGranted(getFirstPlayer(), getSecondPlayer(), iFirstGold);
+	}
+
 	if (bFirstPeace && bSecondPeace)
 	{
 		if (bSecondTrade && !bFirstTrade)

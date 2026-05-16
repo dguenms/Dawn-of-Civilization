@@ -3282,6 +3282,14 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Diagnostics Center[COLOR_REVERT] increases a city's health with access to [COLOR_HIGHLIGHT_TEXT]Uranium[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rare Earths[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TATAR_BASQAQ</Tag>
+		<English>Basqaq</English>
+		<French>Basqaq</French>
+		<German>Basqaq</German>
+		<Italian>Basqaq</Italian>
+		<Spanish>Basqaq</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

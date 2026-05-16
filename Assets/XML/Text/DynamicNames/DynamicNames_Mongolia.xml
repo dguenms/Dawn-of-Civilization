@@ -299,27 +299,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_RUS</Tag>
-		<English>Khanate of the Golden Horde</English>
-		<French>
-			<Text>Khanat de la Horde d'or</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Khanat der Goldenen Horde:Khanat der Goldenen Horde:Khanat der Goldenen Horde</Text>
-			<Gender>Neuter:Neuter:Neuter</Gender>
-			<Plural>0:0:0</Plural>
-		</German>
-		<Italian>
-			<Text>Khanato dell'Orda d'Oro</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Janato de la Horda de Oro</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
+		<English>Khanate of %s1</English>
+		<French>Khanate of %s1</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MONGOL_OTTOMANS</Tag>

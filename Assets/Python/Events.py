@@ -78,6 +78,8 @@ events.addEvent("tribute")
 events.addEvent("playerCityRenamed")
 events.addEvent("buildingProcessed")
 events.addEvent("citySacked")
+events.addEvent("unitCaptured")
+events.addEvent("goldGranted")
 
 
 @handler("buildingBuilt")

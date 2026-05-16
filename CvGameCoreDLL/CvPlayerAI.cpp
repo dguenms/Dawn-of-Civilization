@@ -4850,14 +4850,6 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 		}
 	}
 
-	//Rhye - stop pestering me!
-	if (AI_getAttitudeVal(ePlayer) < 0) {
-		/*if (AI_getMemoryCount(ePlayer, MEMORY_MADE_DEMAND_RECENT) > 0 && AI_getMemoryCount(ePlayer, MEMORY_MADE_DEMAND_RECENT) < 2)
-		{
-			return false;
-		}*/
-	}
-
 	return true;
 }
 

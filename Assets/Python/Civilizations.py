@@ -523,6 +523,13 @@ lCivilizations = [
 		techs=techs.column(7).including(iCommune, iCropRotation, iDoctrine, iCompanies),
 	),
 	Civilization(
+		iTatars,
+		iGold=200,
+		iAdvancedStartPoints=200,
+		lCivics=[iElective, iVassalage, iSlavery, iMerchantTrade, iMonasticism, iHegemony],
+		techs=techs.column(7).including(iCommune, iPaper, iCompass, iGunpowder).without(iTheology)
+	),
+	Civilization(
 		iRussia,
 		iGold=300,
 		iAdvancedStartPoints=200,
@@ -1043,14 +1050,23 @@ dStartingUnits = CivDict({
 		iEscort: 2,
 		iWorkerSea: 1,
 	},
+	iTatars: {
+		iSettle: 4,
+		iWork: 2,
+		iSiege: 3,
+		iShock: 6,
+		iHarass: 6,
+		iDefend: 2,
+	},
 	iRussia: {
 		iSettle: 4,
-		iWork: 3,
-		iDefend: 2,
+		iWork: 5,
+		iDefend: 4,
 		iAttack: 3,
 		iCounter: 4,
 		iSiege: 3,
-		iHarass: 2,
+		iShock: 1,
+		iHarass: 3,
 		iExplore: 2,
 		iMissionary: 3,
 	},
@@ -1267,6 +1283,9 @@ dExtraAIUnits = CivDict({
 		iSkirmish: 1,
 		iDefend: 1,
 	},
+	iTatars: {
+		iWork: 2,
+	},
 	iCongo: {
 		iSettle: 1,
 		iWork: 1,
@@ -1420,6 +1439,10 @@ dAdditionalUnits = CivDict({
 		iCounter: 2,
 		iShock: 2,
 	},
+	iTatars: {
+		iShock: 2,
+		iHarass: 3,
+	},
 	iRussia: {
 		iAttack: 4,
 		iDefend: 3,
@@ -1502,6 +1525,10 @@ dStartingExperience = CivDict({
 	},
 	iMughals: {
 		iAttack: 2,
+	},
+	iTatars: {
+		iShock: 3,
+		iHarass: 3,
 	},
 	iRussia: {
 		iExplore: 2,

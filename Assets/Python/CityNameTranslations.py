@@ -1857,7 +1857,7 @@ name_translations = {
 		iJapanese: "Asutorahan",
 		iKorean: "Aseuteurahan",
 		iLatin: "Astracanum",
-		iMongol: "Hajji Tarkhan",
+		iMongol: "Ash-Tarkhan",
 		iPersian: "Hajitarkhan",
 		iPolish: "Astrachan",
 		iPortuguese: u"Astracã",
@@ -2194,6 +2194,14 @@ name_translations = {
 			_,
 		),
 		iGreek: "Ptolemais Theron",
+	},
+	u"Baghçasaray": {  # founded on Khersonesos
+		iGerman: "Bachtschyssaraj",
+		iKorean: "Baheuchisarai",
+		iPolish: "Bakczysaraj",
+		iRussian: "Bakhchisaray",
+		iTurkish: _,
+		iUkrainian: "Bakhchysarai",
 	},
 	"Baghdad": {  # relocated from Babilû
 		iArabic: _,
@@ -9618,6 +9626,7 @@ name_translations = {
 			"Chersoneso",
 		),
 		iLatin: "Chersonesus",
+		iMongol: found(u"Baghçasaray"),
 		iPolish: "Chersonez",
 		iRussian: (
 			found("Sevastopol"),
@@ -12372,12 +12381,13 @@ name_translations = {
 		iJapanese: "Mosukuwa",
 		iKorean: "Moseukeuba",
 		iMalay: "Moskwa",
-		iSpanish: u"Moscú",
+		iMongol: u"Mäskäw",
 		iPersian: "Mosko",
 		iPolish: "Moskwa",
 		iPolynesian: "Mosekao",
 		iPortuguese: "Moscovo",
 		iRussian: _,
+		iSpanish: u"Moscú",
 		iTurkish: "Moskova",
 		iVietnamese: "Mac Tu Khoa",
 	},
@@ -14224,6 +14234,7 @@ name_translations = {
 		iGerman: "Kertsch",
 		iGreek: _,
 		iItalian: "Cercio",
+		iMongol: found("Solkhat"),
 		iPolish: "Kercz",
 		iRussian: "Kerch",
 		iTurkish: "Kerch",
@@ -16542,6 +16553,12 @@ name_translations = {
 		iMongol: _,
 		iTurkish: "Sarighsin",
 	},
+	"Sarai": {  # founded on Tsaritsyn
+		iArabic: "Saray al-Jadid",
+		iEnglish: "Sarai",
+		iMongol: "Saray",
+		iRussian: relocate("Tsaritsyn"),
+	},
 	"Sarajevo": {
 		iArabic: "Sarayifu",
 		iCeltic: u"Sairéavó",
@@ -17402,6 +17419,13 @@ name_translations = {
 		iFrench: u"Sokodé",
 		iGerman: "Sockden",
 		iLocal: _,
+	},
+	"Solkhat": {  # founded on Pantikapaion
+		iArabic: "al-Qrim",
+		iGreek: "Leukopolis",
+		iMongol: _,
+		iRussian: "Staryi Krym",
+		iTurkish: "Krim",
 	},
 	"Soltaniyeh": {  # relocated from Zangan
 		iPersian: relocate("Zangan"),
@@ -19045,7 +19069,10 @@ name_translations = {
 		iPhoenician: _,
 	},
 	"Tsaritsyn": {
-		iMongol: "Sarisu",
+		iMongol: (
+			found("Sarai"),
+			"Sarisu",
+		),
 		iPolish: "Carycyn",
 		iRussian: (
 			rename("Volgograd", iAfter=iGlobal),

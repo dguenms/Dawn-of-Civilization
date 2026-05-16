@@ -201,6 +201,7 @@ dSpecificVassalTitles = deepdict({
 		iRus : "TXT_KEY_CIV_RUSSIAN_RUS",
 		iTurks : "TXT_KEY_ADJECTIVE_TITLE",
 		iPoland : "TXT_KEY_CIV_RUSSIAN_POLAND",
+		iTatars : "TXT_KEY_CIV_RUSSIAN_TATARS",
 		iAmerica : "TXT_KEY_ADJECTIVE_TITLE",
 	},
 	iOttomans : {
@@ -264,6 +265,7 @@ dMasterTitles = {
 	iPortugal : "TXT_KEY_ADJECTIVE_TITLE",
 	iMongols : "TXT_KEY_CIV_MONGOL_VASSAL",
 	iMughals : "TXT_KEY_CIV_MUGHAL_VASSAL",
+	iTatars : "TXT_KEY_CIV_TATAR_VASSAL",
 	iRussia : "TXT_KEY_CIV_RUSSIAN_VASSAL",
 	iOttomans : "TXT_KEY_CIV_OTTOMAN_VASSAL",
 	iThailand : "TXT_KEY_CIV_THAI_VASSAL",
@@ -481,6 +483,7 @@ dEmpireThreshold = {
 	iMongols : 8,
 	iMughals : 6,
 	iItaly : 7,
+	iTatars: 3,
 	iRussia : 8,
 	iIran : 4,
 	iSaudis : 6,
@@ -577,6 +580,7 @@ dStartingLeaders = [
 	iMongols : iGenghisKhan,
 	iAztecs : iMontezuma,
 	iMughals : iTughluq,
+	iTatars : iUzbeg,
 	iThailand : iNaresuan,
 	iSweden : iGustav,
 	iRussia : iIvan,
@@ -1387,8 +1391,9 @@ def specificName(iPlayer):
 		if not (bEmpire and iEra >= iRenaissance) and not isControlled(iPlayer, plots.regions(rRuthenia, rPonticSteppe, rEuropeanArctic), 5):
 			if not bCityStates and isCurrentCapital(iPlayer, "Moskva"):
 				return "TXT_KEY_CIV_RUSSIA_MUSCOVY"
-				
-			return capitalName(iPlayer)
+			
+			if not tPlayer.isAVassal():
+				return capitalName(iPlayer)
 			
 	elif iCiv == iThailand:
 		if getColumn(iPlayer) < 9 and scenarioStartYear() < 1500:
@@ -1396,6 +1401,18 @@ def specificName(iPlayer):
 		
 		if getColumn(iPlayer) <= 10:
 			return "TXT_KEY_CIV_THAILAND_AYUTTHAYA"
+	
+	elif iCiv == iTatars:
+		if capital.getRegionID() == rVolga:
+			return capitalName(iPlayer)
+		
+		if capital.getRegionID() == rPonticSteppe and capital.isCoastal(20):
+			return "TXT_KEY_CIV_TATARS_CRIMEA"
+			
+		if bEmpire:
+			return "TXT_KEY_CIV_TATARS_GOLDEN_HORDE"
+		
+		return "TXT_KEY_CIV_TATARS_GREAT_HORDE"
 			
 	elif iCiv == iNetherlands:
 		if bCityStates:
@@ -1902,6 +1919,13 @@ def specificAdjective(iPlayer):
 	elif iCiv == iMughals:
 		if not tPlayer.isHasTech(iFirearms):
 			return "TXT_KEY_CIV_MUGHALS_GHORID"
+	
+	elif iCiv == iTatars:
+		if capital.getRegionID() in [rUrals, rSiberia]:
+			return "TXT_KEY_CIV_TATARS_SIBIR"
+		
+		elif capital.getRegionID() == rPonticSteppe:
+			return "TXT_KEY_CIV_TATARS_CRIMEAN"
 				
 	elif iCiv == iOttomans:
 		return "TXT_KEY_CIV_OTTOMANS_OTTOMAN"
@@ -2594,6 +2618,18 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		
 		if cities.rectangle(tNorway).all(lambda city: city.getOwner() == iPlayer):
 			return "TXT_KEY_CIV_SWEDEN_SWEDEN_NORWAY"
+	
+	elif iCiv == iTatars:
+		if capital.getRegionID() == rVolga:
+			return "TXT_KEY_CIV_TATARS_KHANATE_OF"
+		
+		if capital.getRegionID() == rPonticSteppe:
+			if not capital.isCoastal(20):
+				if bEmpire or year() >= year(1300):
+					return "TXT_KEY_CIV_TATARS_KHANATE_OF"
+			
+			if bEmpire:
+				return "TXT_KEY_CIV_TATARS_THRONE_OF"
 		
 	elif iCiv == iRussia:
 		if bEmpire and iEra >= iRenaissance:

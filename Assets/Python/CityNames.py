@@ -64,6 +64,7 @@ dBaseLanguages = {
 	iMongols: (iMongol, iTurkish),
 	iAztecs: (iNahuatl, iMayan),
 	iMughals: (iPersian, iIndian, iDravidian),
+	iTatars: (iMongol, iTurkish),
 	iRussia: (iRussian,),
 	iOttomans: (iOttoman, iTurkish),
 	iThailand: (iThai,),

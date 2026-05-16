@@ -1474,6 +1474,30 @@
 		<Italian>Nordic Model</Italian>
 		<Spanish>Nordic Model</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAT1</Tag>
+		<English>Tatar Yoke</English>
+		<French>Tatar Yoke</French>
+		<German>Tatar Yoke</German>
+		<Italian>Tatar Yoke</Italian>
+		<Spanish>Tatar Yoke</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAT2</Tag>
+		<English>The Golden Horde</English>
+		<French>The Golden Horde</French>
+		<German>The Golden Horde</German>
+		<Italian>The Golden Horde</Italian>
+		<Spanish>The Golden Horde</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAT3</Tag>
+		<English>Slave Raids</English>
+		<French>Slave Raids</French>
+		<German>Slave Raids</German>
+		<Italian>Slave Raids</Italian>
+		<Spanish>Slave Raids</Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_THA1</Tag>

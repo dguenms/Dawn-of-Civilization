@@ -800,11 +800,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_UZBEG</Type>
-			<Button>Art/Leaderheads/Songtsen/Btn_Ogedei.dds</Button>
-			<NIF>Art/Leaderheads/Songtsen/yu.nif</NIF>
-			<KFM>Art/Leaderheads/Songtsen/wang_kon.kfm</KFM>
-			<NoShaderNIF>Art/Leaderheads/Songtsen/yu.nif</NoShaderNIF>
-			<BackgroundKFM>Art/Leaderheads/Songtsen/Wang_Kon_BG.kfm</BackgroundKFM>
+			<Button>Art/Leaderheads/Uzbeg/Btn_Ogedei.dds</Button>
+			<NIF>Art/Leaderheads/Uzbeg/yu.nif</NIF>
+			<KFM>Art/Leaderheads/Uzbeg/wang_kon.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Uzbeg/yu.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Uzbeg/Wang_Kon_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_CASIMIR</Type>

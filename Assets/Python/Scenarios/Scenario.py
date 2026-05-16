@@ -120,6 +120,7 @@ LEADER_DATES = {
 	iMontezuma: 1440,
 	iTughluq: 1330,
 	iAkbar: 1560,
+	iUzbeg: 1315,
 	iNaresuan: 1590,
 	iMongkut: 1860,
 	iGustav: 1620,

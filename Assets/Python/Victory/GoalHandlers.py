@@ -162,7 +162,7 @@ class EventHandlerRegistry(object):
 		return combatFood
 	
 	def combatGold(self, goal, applicable, func):
-		def combatGold((iPlayer, unit, iGold)):
+		def combatGold((iPlayer, iGold)):
 			if applicable(goal, iPlayer):
 				func(goal, iGold)
 		
@@ -202,6 +202,15 @@ class EventHandlerRegistry(object):
 				func(goal, team(iHasMetTeam).getLeaderID())
 		
 		return firstContact
+	
+	def goldGranted(self, goal, applicable, func):
+		def goldGranted((iFrom, iTo, iGold)):
+			print "gold granted from %s to %s: %d" % (name(iFrom), name(iTo), iGold)
+			if applicable(goal, iTo):
+				print "call %s" % func.__name__
+				func(goal, iGold)
+		
+		return goldGranted
 	
 	def greatPersonBorn(self, goal, applicable, func):
 		def greatPersonBorn((unit, iPlayer, city)):

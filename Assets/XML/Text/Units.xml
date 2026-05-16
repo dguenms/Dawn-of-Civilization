@@ -3710,6 +3710,14 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Chasseur[COLOR_REVERT], the Belgian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has an increased chance to withdraw from combat.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_TATAR_CHAMBUL</Tag>
+		<English>Chambul</English>
+		<French>Chambul</French>
+		<German>Chambul</German>
+		<Italian>Chambul</Italian>
+		<Spanish>Chambul</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
 		<English></English>
 		<French></French>

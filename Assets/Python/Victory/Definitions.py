@@ -148,6 +148,7 @@ CombatFood = GoalDefinition(req.CombatFood)
 ConqueredCities = GoalDefinition(req.ConqueredCities)
 Constructed = GoalDefinition(req.Constructed)
 DefeatedUnits = GoalDefinition(req.DefeatedUnits)
+DespoilmentGold = GoalDefinition(req.DespoilmentGold)
 EnslaveCount = GoalDefinition(req.EnslaveCount)
 EraFirstDiscover = GoalDefinition(req.EraFirstDiscover)
 GoldenAges = GoalDefinition(req.GoldenAges)
@@ -174,6 +175,7 @@ SunkShips = GoalDefinition(req.SunkShips)
 TradeGold = GoalDefinition(req.TradeGold)
 TradeMissionCount = GoalDefinition(req.TradeMissionCount)
 TradeRouteCommerce = GoalDefinition(req.TradeRouteCommerce)
+TributeGold = GoalDefinition(req.TributeGold)
 
 
 ### ARGUMENTS ###

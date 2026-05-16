@@ -1800,15 +1800,10 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 		return DENIAL_NO_GAIN;
 	}
 
-	// Leoreth: not if either of them are birth protected
+	// Leoreth: birth protected
 	if (GET_PLAYER(getLeaderID()).isBirthProtected())
 	{
 		return DENIAL_POWER_US;
-	}
-
-	if (GET_PLAYER(kMasterTeam.getLeaderID()).isBirthProtected())
-	{
-		return DENIAL_NO_GAIN;
 	}
 
 	// Leoreth: not if any city is expansion target

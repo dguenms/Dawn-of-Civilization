@@ -63,7 +63,7 @@ def norseUP(winningUnit, losingUnit):
 			player(iWinner).changeGold(iGold)
 			message(iWinner, 'TXT_KEY_NORSE_NAVAL_UP', iGold, adjective(losingUnit), losingUnit.getName())
 			
-			events.fireEvent("combatGold", iWinner, winningUnit, iGold)
+			events.fireEvent("combatGold", iWinner, iGold)
 
 
 # Mughal UP: receives 50% of building cost as culture when building is completed
@@ -152,3 +152,20 @@ def kushanPower(unit, iReligion, bSuccess):
 				iGold = scale(20 + distance(capital_city, spread_city))
 				message(unit.getOwner(), "TXT_KEY_UP_SYNCRETISM_EFFECT", iGold, infos.religion(iReligion).getText(), spread_city.getName(), location=spread_city, button=infos.religion(iReligion).getButton())
 				player(unit.getOwner()).changeGold(iGold)
+
+
+@handler("unitPillage")
+def tatarPillagePower(unit, iImprovement):
+	if civ(unit.getOwner()) == iTatars and iImprovement >= 0:
+		unit.changeExperience(1, 1000, True, False, True)
+
+
+@handler("unitCaptured")
+def tatarCapturePower(iOwner, iUnit, unit):
+	iPlayer = unit.getOwner()
+	if civ(iPlayer) == iTatars:
+		iGold = scale(20)
+		message(iPlayer, "TXT_KEY_UP_DESPOILMENT_EFFECT", iGold, adjective(iOwner), unit.getName(), location=unit, button=unit.getButton())
+		player(iPlayer).changeGold(iGold)
+		
+		events.fireEvent("combatGold", iPlayer, iGold)

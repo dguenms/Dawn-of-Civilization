@@ -1042,6 +1042,30 @@
 		<Spanish>The Dravidians have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_TAT_TITLE</Tag>
+		<English>The Power of Despoilment:</English>
+		<French>The Power of Despoilment:</French>
+		<German>The Power of Despoilment:</German>
+		<Italian>The Power of Despoilment:</Italian>
+		<Spanish>The Power of Despoilment:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_TAT</Tag>
+		<English>Pillaging improvements grants experience and capturing workers grants additional gold</English>
+		<French>Pillaging improvements grants experience and capturing workers grants additional gold</French>
+		<German>Pillaging improvements grants experience and capturing workers grants additional gold</German>
+		<Italian>Pillaging improvements grants experience and capturing workers grants additional gold</Italian>
+		<Spanish>Pillaging improvements grants experience and capturing workers grants additional gold</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_DESPOILMENT_EFFECT</Tag>
+		<English>We gained %d1 [ICON_GOLD] after capturing a %s2 %s3.</English>
+		<French>We gained %d1 [ICON_GOLD] after capturing a %s2 %s3.</French>
+		<German>We gained %d1 [ICON_GOLD] after capturing a %s2 %s3.</German>
+		<Italian>We gained %d1 [ICON_GOLD] after capturing a %s2 %s3.</Italian>
+		<Spanish>We gained %d1 [ICON_GOLD] after capturing a %s2 %s3.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_THA_TITLE</Tag>
 		<English>The Power of Embassies:</English>
 		<French>The Power of Embassies:</French>

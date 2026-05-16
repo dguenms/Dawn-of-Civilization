@@ -162,6 +162,7 @@ public:
 	void globalWarming(int iGlobalWarmingValue, int iGlobalWarmingDefense); // Leoreth
 	void globalWarmingEffect(CvPlot* pPlot, bool bChanged, TerrainTypes ePreviousTerrain, TerrainTypes eNewTerrain, FeatureTypes ePreviousFeature); // Leoreth
 	void buildingProcessed(CvCity* pCity, BuildingTypes eBuilding, int iChange); // Leoreth
+	void goldGranted(PlayerTypes eFrom, PlayerTypes eTo, int iGold); // Leoreth
 
 	DllExport void preSave();
 

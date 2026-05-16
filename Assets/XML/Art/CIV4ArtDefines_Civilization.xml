@@ -217,6 +217,12 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_TATARS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Tatars.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_GoldenHorde.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
 			<Type>ART_DEF_CIVILIZATION_ZULU</Type>
 			<Button>,Art/Interface/Buttons/Civilizations/Spain.dds,Art/Interface/Buttons/Warlords_Atlas_2.dds,6,1</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_ZuluShield.dds</Path>

@@ -280,6 +280,22 @@ class DefeatedUnits(TrackRequirement):
 			goal.check()
 
 
+# Third Tatar UHV goal
+class DespoilmentGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_DESPOILMENT_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_DESPOILMENT_GOLD"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, iRequired, **options)
+		
+		self.accumulated("unitPillage")
+		self.accumulated("combatGold")
+
+
 class EnslaveCount(TrackRequirement):
 
 	TYPES = (COUNT,)
@@ -933,3 +949,18 @@ class TradeRouteCommerce(TrackRequirement):
 		iGold = cities.owner(iPlayer).sum(lambda city: city.getTradeYield(YieldTypes.YIELD_COMMERCE) * city.getBaseYieldRateModifier(YieldTypes.YIELD_COMMERCE, 0)) / 100
 		self.accumulate(iGold)
 		goal.check()
+
+
+# First Tatar Goal
+class TributeGold(TrackRequirement):
+
+	TYPES = (AMOUNT,)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_TRIBUTE_GOLD"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_TRIBUTE_GOLD"
+	
+	def __init__(self, iRequired, **options):
+		TrackRequirement.__init__(self, iRequired, **options)
+		
+		self.accumulated("goldGranted")

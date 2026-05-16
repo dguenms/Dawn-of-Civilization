@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_DESC</Tag>
+		<English>The Tatars</English>
+		<French>The Tatars</French>
+		<German>The Tatars</German>
+		<Italian>The Tatars</Italian>
+		<Spanish>The Tatars</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TARTARY_PEOPLES</Tag>
+		<English>Kipchak Peoples</English>
+		<French>Kipchak Peoples</French>
+		<German>Kipchak Peoples</German>
+		<Italian>Kipchak Peoples</Italian>
+		<Spanish>Kipchak Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_ADJECTIVE</Tag>
+		<English>Tatar</English>
+		<French>Tatar</French>
+		<German>Tatar</German>
+		<Italian>Tatar</Italian>
+		<Spanish>Tatar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_SHORT_DESC</Tag>
+		<English>Tartary</English>
+		<French>Tartary</French>
+		<German>Tartary</German>
+		<Italian>Tartary</Italian>
+		<Spanish>Tartary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TARTARY_DEFAULT</Tag>
+		<English>%s2 Khanate</English>
+		<French>%s2 Khanate</French>
+		<German>%s2 Khanate</German>
+		<Italian>%s2 Khanate</Italian>
+		<Spanish>%s2 Khanate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_REPUBLIC</Tag>
+		<English>Great State of %s1</English>
+		<French>Great State of %s1</French>
+		<German>Great State of %s1</German>
+		<Italian>Great State of %s1</Italian>
+		<Spanish>Great State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_COMMUNIST</Tag>
+		<English>Great Socialist State of %s1</English>
+		<French>Great Socialist State of %s1</French>
+		<German>Great Socialist State of %s1</German>
+		<Italian>Great Socialist State of %s1</Italian>
+		<Spanish>Great Socialist State of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_FASCIST</Tag>
+		<English>Great %s2 State</English>
+		<French>Great %s2 State</French>
+		<German>Great %s2 State</German>
+		<Italian>Great %s2 State</Italian>
+		<Spanish>Great %s2 State</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_KHANATE_OF</Tag>
+		<English>Khanate of %s1</English>
+		<French>Khanate of %s1</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_THRONE_OF</Tag>
+		<English>Khanate of %s1</English>
+		<French>Khanate of %s1</French>
+		<German>Khanate of %s1</German>
+		<Italian>Khanate of %s1</Italian>
+		<Spanish>Khanate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_GOLDEN_HORDE</Tag>
+		<English>the Golden Horde</English>
+		<French>the Golden Horde</French>
+		<German>the Golden Horde</German>
+		<Italian>the Golden Horde</Italian>
+		<Spanish>the Golden Horde</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_GREAT_HORDE</Tag>
+		<English>the Great Horde</English>
+		<French>the Great Horde</French>
+		<German>the Great Horde</German>
+		<Italian>the Great Horde</Italian>
+		<Spanish>the Great Horde</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_SIBIR</Tag>
+		<English>Sibir</English>
+		<French>Sibir</French>
+		<German>Sibir</German>
+		<Italian>Sibir</Italian>
+		<Spanish>Sibir</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_CRIMEA</Tag>
+		<English>Crimea</English>
+		<French>Crimea</French>
+		<German>Crimea</German>
+		<Italian>Crimea</Italian>
+		<Spanish>Crimea</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATARS_CRIMEAN</Tag>
+		<English>Crimean</English>
+		<French>Crimean</French>
+		<German>Crimean</German>
+		<Italian>Crimean</Italian>
+		<Spanish>Crimean</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TATAR_VASSAL</Tag>
+		<English>Darugha of %s1</English>
+		<French>Darugha of %s1</French>
+		<German>Darugha of %s1</German>
+		<Italian>Darugha of %s1</Italian>
+		<Spanish>Darugha of %s1</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -18840,7 +18840,7 @@ int CvCity::calculateCultureCost(CvPlot* pPlot, bool bOrdering) const
 	}
 
 	// Leoreth: Steppe Empires (use this for Steppe and Semidesert terrain later)
-	if (getCivilizationType() == TURKS || getCivilizationType() == MONGOLS)
+	if (getCivilizationType() == TURKS || getCivilizationType() == MONGOLS || getCivilizationType() == TATARS)
 	{
 		if (pPlot->getTerrainType() == TERRAIN_DESERT || pPlot->getTerrainType() == TERRAIN_STEPPE || pPlot->getTerrainType() == TERRAIN_SEMIDESERT)
 		{

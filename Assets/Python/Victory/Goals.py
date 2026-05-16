@@ -345,7 +345,7 @@ class Goal(Describable):
 		return text("TXT_KEY_VICTORY_GOAL_POSSIBLE")
 	
 	def announce(self, key, condition=True):
-		if condition and player(self.iPlayer).isHuman() and not scenarioStart():
+		if condition and player(self.iPlayer).isHuman() and not scenarioStart() and not autoplay():
 			show(text(key, self.get_description().format()))
 	
 	def announce_success(self):

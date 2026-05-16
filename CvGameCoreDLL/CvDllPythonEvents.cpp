@@ -1631,6 +1631,21 @@ void CvDllPythonEvents::reportCitySacked(CvCity* pCity)
 	}
 }
 
+void CvDllPythonEvents::reportGoldGranted(PlayerTypes eFrom, PlayerTypes eTo, int iGold)
+{
+	if (preEvent())
+	{
+		CyArgsList eventData;
+		eventData.add("goldGranted");
+
+		eventData.add((int)eFrom);
+		eventData.add((int)eTo);
+		eventData.add(iGold);
+
+		postEvent(eventData);
+	}
+}
+
 void CvDllPythonEvents::reportGenericEvent(const char* szEventName, void *pyArgs)
 {
 	if (preEvent())

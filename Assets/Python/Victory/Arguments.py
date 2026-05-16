@@ -6,7 +6,7 @@ from Core import base_building as base_building_core
 
 def as_int(value):
 	if isinstance(value, Aggregate):
-		return value.of(int(item) for item in value.items)
+		return value.of(int(item) for item in value.items).named(value.name_key, *value.name_args)
 	
 	return int(value)
 

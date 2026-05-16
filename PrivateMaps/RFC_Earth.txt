@@ -40767,6 +40767,7 @@ BeginPlot
 	x=90,y=59
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -41654,7 +41655,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=58
-	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42099,6 +42099,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=58
+	BonusType=BONUS_FISH
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42986,7 +42987,7 @@ BeginPlot
 	x=95,y=57
 	RiverNSDirection=0
 	isWOfRiver
-	TerrainType=TERRAIN_DESERT
+	TerrainType=TERRAIN_SALTFLAT
 	PlotType=2
 EndPlot
 BeginPlot

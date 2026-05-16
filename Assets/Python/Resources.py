@@ -340,6 +340,7 @@ dRemovedFeaturesDict = {
 	(80, 38)  : 1200, # Nubia
 	(63, 65)  : 1500, # Netherlands
 	(62, 64)  : 1500, # Netherlands
+	(90, 59)  : 1500, # Volga
 	(99, 59)  : 1600, # Transoxiana
 	(98, 58)  : 1600, # Transoxiana
 	(96, 56)  : 1600, # Transoxiana

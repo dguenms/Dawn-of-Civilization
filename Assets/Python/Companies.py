@@ -141,7 +141,7 @@ def getCityValue(city, iCompany):
 	
 	# geographical requirements
 	if iCompany == iSilkRoute:
-		if city.getRegionID() not in [rMongolia, rTarimBasin, rTransoxiana, rKhorasan, rHinduKush, rPersia, rMesopotamia, rLevant]:
+		if city.getRegionID() not in [rMongolia, rTarimBasin, rTransoxiana, rKhorasan, rHinduKush, rPersia, rMesopotamia, rLevant] and (city.getRegionID() not in [rPonticSteppe, rVolga] or iOwnerCiv not in [iTurks, iMongols, iTatars]):
 			return -1
 			
 	elif iCompany == iTradingCompany:

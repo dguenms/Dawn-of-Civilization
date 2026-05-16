@@ -596,6 +596,11 @@ void CvEventReporter::citySacked(CvCity* pCity)
 	m_kPythonEventMgr.reportCitySacked(pCity);
 }
 
+void CvEventReporter::goldGranted(PlayerTypes eFrom, PlayerTypes eTo, int iGold)
+{
+	m_kPythonEventMgr.reportGoldGranted(eFrom, eTo, iGold);
+}
+
 void CvEventReporter::preSave()
 {
 	m_kPythonEventMgr.preSave();

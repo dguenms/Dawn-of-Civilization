@@ -41,6 +41,7 @@ lExpansionCivs = [
 
 lIndependenceCivs = [
 	iByzantium,
+	iTatars,
 	iArgentina,
 	iMexico,
 	iColombia,
@@ -546,6 +547,11 @@ class Birth(object):
 			self.area += additionalPlots.where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().existing().without(self.iPlayer)))
 			self.area = self.area.unique()
 		
+		if self.iCiv == iTatars:
+			if player(iMongols).isExisting():
+				self.area += plots.owner(iMongols).regions(*lEurope)
+				self.area = self.area.unique()
+		
 		if self.iCiv == iManchuria:
 			if player(iChina).isExisting() and player(iChina).isHuman() and stability(iChina) >= iStabilityStable:
 				self.area = self.area.where(lambda p: p not in plots.core(iChina))
@@ -764,6 +770,9 @@ class Birth(object):
 			return
 		
 		if iUntilBirth == 2:
+			if self.cancelSpawn():
+				self.cancel()
+				return
 			self.askSwitch()
 		elif iUntilBirth == 1:
 			self.birth()
@@ -880,6 +889,14 @@ class Birth(object):
 		
 		return True
 	
+	def cancelSpawn(self):
+		if self.iCiv == iTatars:
+			print "mongol cities in europe: %s" % cities.owner(iMongols).regions(*lEurope)
+			if not cities.owner(iMongols).regions(*lEurope):
+				return True
+		
+		return False
+	
 	def announce(self):
 		if scenarioStart():
 			return
@@ -930,6 +947,10 @@ class Birth(object):
 		
 		for plot in self.area:
 			plot.resetBirthProtected()
+	
+	def cancel(self):
+		self.canceled = True
+		self.resetProtection()
 	
 	def expansion(self):
 		for plot in plots.all().where(lambda p: p.getExpansion() == self.iPlayer):

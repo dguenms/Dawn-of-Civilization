@@ -796,8 +796,24 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_DESPOILMENT_GOLD</Tag>
+		<English>%s1 gold by pillaging and capturing workers</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_CITY_CAPTURE_GOLD</Tag>
 		<English>%s1 gold from conquering cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_TRIBUTE_GOLD</Tag>
+		<English>%s1 gold from tribute</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1759,8 +1775,24 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_DESPOILMENT_GOLD</Tag>
+		<English>Gold from despoilment</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_CITY_CAPTURE_GOLD</Tag>
 		<English>Gold from conquering cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_TRIBUTE_GOLD</Tag>
+		<English>Gold from tribute</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3214,6 +3246,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_CENTRAL_ASIA</Tag>
+		<English>Central Asia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_CHINA</Tag>
 		<English>China</English>
 		<French></French>
@@ -3510,6 +3550,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_RUSSIA</Tag>
+		<English>Russia</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_SCANDINAVIA</Tag>
 		<English>Scandinavia</English>
 		<French></French>
@@ -3787,6 +3835,15 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_TRADING_COMPANY_RESOURCES</Tag>
 		<English>trading company</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_MOUNTED</Tag>
+		<English>Mounted units</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

@@ -190,6 +190,14 @@
 		<Spanish>Novorossiya Governorate</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_RUSSIAN_TATARS</Tag>
+		<English>Taurida Governorate</English>
+		<French>Taurida Governorate</French>
+		<German>Taurida Governorate</German>
+		<Italian>Taurida Governorate</Italian>
+		<Spanish>Taurida Governorate</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_RUSSIA_SOVIET</Tag>
 		<English>Soviet %s1</English>
 		<French>
