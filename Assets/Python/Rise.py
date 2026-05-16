@@ -771,6 +771,7 @@ class Birth(object):
 		
 		if iUntilBirth == 2:
 			if self.cancelSpawn():
+				log.rise("BIRTH CANCELED: condition not satisfied at spawn: %s", infos.civ(self.iCiv).getText())
 				self.cancel()
 				return
 			self.askSwitch()
@@ -890,8 +891,10 @@ class Birth(object):
 		return True
 	
 	def cancelSpawn(self):
+		if self.isHuman():
+			return False
+		
 		if self.iCiv == iTatars:
-			print "mongol cities in europe: %s" % cities.owner(iMongols).regions(*lEurope)
 			if not cities.owner(iMongols).regions(*lEurope):
 				return True
 		
