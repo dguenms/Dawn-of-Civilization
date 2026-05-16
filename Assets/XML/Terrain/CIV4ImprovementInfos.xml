@@ -220,7 +220,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
@@ -321,7 +321,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -382,7 +382,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -459,7 +459,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -520,7 +520,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -597,7 +597,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -651,7 +651,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>10</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -836,7 +836,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>-100</iHappinessPercent>
-			<iPillageGold>10</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1024,7 +1024,7 @@
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
 			<iHealthPercent>0</iHealthPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
@@ -1104,7 +1104,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids>
@@ -1173,7 +1173,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1239,7 +1239,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1301,7 +1301,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1504,7 +1504,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>-100</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1693,7 +1693,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1800,7 +1800,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1914,7 +1914,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -1994,7 +1994,7 @@
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
 			<iHealthPercent>-100</iHealthPercent>
-			<iPillageGold>10</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -2061,7 +2061,7 @@
 			<iAirBombDefense>10</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>10</iPillageGold>
+			<iPillageGold>20</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -2127,7 +2127,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>5</iPillageGold>
+			<iPillageGold>10</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -2247,7 +2247,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>10</iPillageGold>
+			<iPillageGold>15</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
@@ -2311,7 +2311,7 @@
 			<iAirBombDefense>5</iAirBombDefense>
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
-			<iPillageGold>15</iPillageGold>
+			<iPillageGold>20</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids>
 				<TerrainMakesValid>
@@ -2373,7 +2373,7 @@
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
 			<iHealthPercent>0</iHealthPercent>
-			<iPillageGold>20</iPillageGold>
+			<iPillageGold>25</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>
@@ -2426,7 +2426,7 @@
 			<iDefenseModifier>0</iDefenseModifier>
 			<iHappinessPercent>0</iHappinessPercent>
 			<iHealthPercent>0</iHealthPercent>
-			<iPillageGold>25</iPillageGold>
+			<iPillageGold>30</iPillageGold>
 			<bOutsideBorders>0</bOutsideBorders>
 			<TerrainMakesValids/>
 			<FeatureMakesValids/>

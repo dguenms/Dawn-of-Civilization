@@ -5125,30 +5125,17 @@ bool CvUnit::pillage()
 
 		if (pPlot->getTeam() != getTeam())
 		{
-			// Use python to determine pillage amounts...
-			lPillageGold = 0;
+			iPillageGold = GC.getImprovementInfo(eTempImprovement).getPillageGold();
+			iPillageGold += GC.getGameINLINE().getSorenRandNum(iPillageGold / 2, "pillage gold");
 
-			CyPlot* pyPlot = new CyPlot(pPlot);
-			CyUnit* pyUnit = new CyUnit(this);
+			iPillageGold *= (100 + getPillageChange());
+			iPillageGold /= 100;
 
-			CyArgsList argsList;
-			argsList.add(gDLL->getPythonIFace()->makePythonObject(pyPlot));	// pass in plot class
-			argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
-
-			gDLL->getPythonIFace()->callFunction(PYGameModule, "doPillageGold", argsList.makeFunctionArgs(),&lPillageGold);
-
-			delete pyPlot;	// python fxn must not hold on to this pointer
-			delete pyUnit;	// python fxn must not hold on to this pointer
-
-			iPillageGold = (int)lPillageGold;
-
-			//Rhye - start UP (Viking)
+			// Viking UP
 			if (getCivilizationType() == NORSE && GET_PLAYER(getOwnerINLINE()).getCurrentEra() <= ERA_MEDIEVAL)
 			{
 				iPillageGold *= 5;
 			}
-			//Rhye - end UP
-
 
 			if (iPillageGold > 0)
 			{
