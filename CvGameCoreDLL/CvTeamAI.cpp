@@ -2018,6 +2018,14 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 							}
 						}
 					}
+					// Leoreth: can only capitulate to neighbor if any
+					else
+					{
+						if (GET_PLAYER(getLeaderID()).isNeighbor(kLoopTeam.getLeaderID()) && !GET_PLAYER(getLeaderID()).isNeighbor(kMasterTeam.getLeaderID()))
+						{
+							return DENIAL_TOO_FAR;
+						}
+					}
 				}
 			}
 		}
