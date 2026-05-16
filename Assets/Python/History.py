@@ -381,7 +381,7 @@ def conquistadors(iOldWorldPlayer, iNewWorldPlayer, newWorldPlots):
 
 @handler("firstContact")
 def firstContactMongolConquerors(iTeamX, iHasMetTeamY):
-	if not scenarioStartTurn() and civ(iHasMetTeamY) == iMongols and civ() != iMongols and since(player(iMongols).getLastBirthTurn()) >= 2:
+	if not scenarioStart() and civ(iHasMetTeamY) == iMongols and civ() != iMongols and since(player(iMongols).getLastBirthTurn()) >= 1:
 		mongolConquerors(iTeamX)
 
 
@@ -440,7 +440,7 @@ def recordExplorationTurn(iTech, iTeam, iPlayer):
 
 @handler("techAcquired")
 def spanishExplorers(iTech, iTeam, iPlayer):
-	if scenarioStartTurn():
+	if scenarioStart():
 		return
 	
 	if iTech == iCartography:
