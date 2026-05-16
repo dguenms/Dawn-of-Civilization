@@ -730,7 +730,7 @@ dGoals = {
 	),
 	iRussia: (
 		All(
-			BuildingCount(iOrthodoxCathedral, 3, by=1500),
+			BuildingCount(iOrthodoxCathedral, 2, by=1500),
 			BuildingCount(sum(lOrthodoxWonders).named(ORTHODOX_WONDERS), 3, by=1600),
 		),
 		All(
