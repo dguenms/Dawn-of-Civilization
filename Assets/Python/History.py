@@ -678,6 +678,15 @@ def removeBarbariansForMongols(iPlayer):
 			unit.kill(False, -1)
 
 
+@handler("flip")
+def removeWesternMongolExpansion(iPlayer):
+	if civ(iPlayer) == iTatars:
+		for plot in plots.regions(*lEurope):
+			iExpansionPlayer = plot.getExpansion()
+			if iExpansionPlayer >= 0 and civ(iExpansionPlayer) == iMongols:
+				plot.resetExpansion()
+
+
 ### PERIOD CHANGE ###
 
 @handler("playerPeriodChange")
