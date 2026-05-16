@@ -293,6 +293,7 @@
 		<BuildInfo>
 			<Type>BUILD_SLAVE_MINE</Type>
 			<Description>TXT_KEY_BUILD_SLAVE_MINE</Description>
+			<PrereqTech>TECH_MINING</PrereqTech>
 			<iTime>0</iTime>
 			<bKill>1</bKill>
 			<ImprovementType>IMPROVEMENT_SLAVE_MINE</ImprovementType>
