@@ -235,10 +235,19 @@ void CvUnit::init(int iID, UnitTypes eUnit, UnitAITypes eUnitAI, PlayerTypes eOw
 	// Spanish UP
 	if (getCivilizationType() == SPAIN)
 	{
-		if (getUnitCombatType() == 9) //naval
+		if (getUnitCombatType() == UNITCOMBAT_NAVAL) //naval
 		{
 			setHasPromotion(PROMOTION_NAVIGATION1, true);
 			setHasPromotion(PROMOTION_NAVIGATION2, true);
+		}
+	}
+
+	// Steppe civilizations
+	if (getCivilizationType() == TURKS || getCivilizationType() == MONGOLS || getCivilizationType() == TATARS)
+	{
+		if (getUnitCombatType() == UNITCOMBAT_LIGHT_CAVALRY || getUnitCombatType() == NO_UNITCOMBAT)
+		{
+			setHasPromotion(PROMOTION_STEPPE_ADAPTATION, true);
 		}
 	}
 
