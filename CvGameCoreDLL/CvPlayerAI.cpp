@@ -7104,27 +7104,27 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 
 int CvPlayerAI::AI_maxGoldTrade(PlayerTypes ePlayer) const
 {
-	int iMaxGold;
+	int iMaxGold = getGold();
 	int iResearchBuffer;
 
 	FAssert(ePlayer != getID());
 
-	if (isHuman() || (GET_PLAYER(ePlayer).getTeam() == getTeam()))
+	if (!isHuman() && GET_PLAYER(ePlayer).getTeam() != getTeam())
 	{
-		iMaxGold = getGold();
-	}
-	else
-	{
-		iMaxGold = getTotalPopulation();
+		//iMaxGold = getTotalPopulation();
 
-		iMaxGold *= (GET_TEAM(getTeam()).AI_getHasMetCounter(GET_PLAYER(ePlayer).getTeam()) + 10);
+		//iMaxGold *= (GET_TEAM(getTeam()).AI_getHasMetCounter(GET_PLAYER(ePlayer).getTeam()) + 10);
 
-		iMaxGold *= GC.getLeaderHeadInfo(getPersonalityType()).getMaxGoldTradePercent();
+		iMaxGold *= (10 + GC.getLeaderHeadInfo(getPersonalityType()).getMaxGoldTradePercent());
 		iMaxGold /= 100;
 
-		iMaxGold -= AI_getGoldTradedTo(ePlayer);
-
-        iResearchBuffer = -calculateGoldRate() * 12;
+		// Leoreth: allow more extraction from capitulated vassals
+		if (!GET_TEAM(getTeam()).isVassal(GET_PLAYER(ePlayer).getTeam()) || !GET_TEAM(getTeam()).isCapitulated())
+		{
+			iMaxGold -= AI_getGoldTradedTo(ePlayer);
+		}
+        
+		iResearchBuffer = -calculateGoldRate() * 12;
         iResearchBuffer *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent();
         iResearchBuffer /= 100;
 
