@@ -4820,6 +4820,19 @@ bool CvPlayerAI::AI_isWillingToTalk(PlayerTypes ePlayer) const
 			iRefuseDuration /= 100;
 		}
 
+		// Leoreth: desperation
+		if (getNumCities() == 1)
+		{
+			CvCity* pCapital = getCapitalCity();
+			if (pCapital != NULL)
+			{
+				if (pCapital->plot()->getNumDefenders(getID()) <= 1 && AI_isPlotThreatened(pCapital->plot(), 1, false))
+				{
+					return true;
+				}
+			}
+		}
+
 		//Rhye
 		if (AI_getMemoryCount(ePlayer, MEMORY_NUKED_US) > 0)
 		{
