@@ -2,7 +2,7 @@ from Core import *
 from RFCUtils import *
 from Secession import *
 
-from Slots import getImpact, getNextBirth, allSlotsTaken
+from Slots import getImpact, getNextBirths, countAvailableSlots, availableSlot
 from Events import events, handler
 
 
@@ -18,15 +18,22 @@ def checkScheduledCollapse():
 
 @handler("BeginGameTurn")
 def checkAvailableSlots():
-	if allSlotsTaken():
-		iNextCiv = getNextBirth()
-		if iNextCiv is not None:
-			freeSlotFor(iNextCiv)
-			
+	nextBirths = getNextBirths()
+	if not nextBirths:
+		return
+	
+	iAvailableSlots = countAvailableSlots()
+	if len(nextBirths) <= iAvailableSlots:
+		return
+	
+	iRequiredSlots = len(nextBirths) - iAvailableSlots
+	for iCiv in nextBirths[:iRequiredSlots]:
+		freeSlotFor(iCiv)
+		
 
 def freeSlotFor(iCiv):
 	iCivImpact = getImpact(iCiv)
-	availableSlots = players.major().ai().alive().where(lambda p: getImpact(civ(p)) <= iCivImpact)
+	availableSlots = players.major().ai().existing().where(lambda p: getImpact(civ(p)) <= iCivImpact).where(lambda p: data.players[p].iTurnsToCollapse == -1)
 	metric = lambda iPlayer: (getImpact(civ(iPlayer)), until(year(dFall[iPlayer])))
 	
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityCollapsing).minimum(metric)

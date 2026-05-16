@@ -907,10 +907,15 @@ class Birth(object):
 		if plots.owner(active()).closest_distance(self.location) <= 10:
 			key = "TXT_KEY_MESSAGE_RISE_%s" % infos.civ(self.iCiv).getIdentifier()
 			text = text_if_exists(key, adjective(self.iPlayer), otherwise="TXT_KEY_MESSAGE_RISE_GENERIC")
-			message(active(), text.encode("ascii", "xmlcharrefreplace"), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
+			message(active(), latin1(text), location=self.location, color=iRed, button=infos.civ(self.iCiv).getButton())
 	
 	def activate(self):
 		if self.iPlayer is None:
+			if self.sharesLimitedSlot():
+				self.canceled = True
+				log.rise("BIRTH CANCELED: skipping %s slot for preferred civs %s", infos.civ(self.iCiv).getText(), currentUnassignedBirths)
+				return
+			
 			self.iPlayer = findSlot(self.iCiv)
 			
 		if self.iPlayer < 0:
@@ -1052,6 +1057,14 @@ class Birth(object):
 		
 		if turn() == year(dFall[iClearedCiv]).deviate(10, data.iSeed):
 			completeCollapse(slot(iClearedCiv))
+	
+	def sharesLimitedSlot(self):
+		currentUnassignedBirths = getBirthsForTurn(self.iTurn).where(lambda iCiv: iCiv not in players.all().civs())
+		iAvailableSlots = countAvailableSlots()
+		if currentUnassignedBirths.count() <= iAvailableSlots:
+			return False
+			
+		return currentUnassignedBirths.any(lambda iCiv: getImpact(iCiv) > getImpact(self.iCiv)) and self.iCiv not in currentUnassignedBirths.limit(iAvailableSlots)
 	
 	def askSwitch(self):
 		if not self.canSwitch():

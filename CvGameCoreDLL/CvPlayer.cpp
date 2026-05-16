@@ -2433,6 +2433,8 @@ void CvPlayer::killUnits()
 	{
 		pLoopUnit->kill(false);
 	}
+
+	verifyAlive();
 }
 
 

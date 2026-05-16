@@ -21,6 +21,9 @@ def findMinorSlot(iCiv):
 	return next(iSlot for iSlot in reversed(range(iNumPlayers)) if civ(iSlot) == -1)
 	
 def availableSlot(iSlot):
+	if civ(iSlot) == -1:
+		return True
+	
 	if civ(iSlot) == iNative and since(year(1900)) > 0 and player(iSlot).getNumCities() == 0 and player(iSlot).getNumUnits() == 0:
 		return True
 	
@@ -111,16 +114,25 @@ def isOutdated(iCiv):
 		return True
 	
 	return False
+	
+def getBirthsForTurn(iTurn):
+	births = [iCiv for iCiv, iYear in dBirth.items() if year(iYear) == iTurn]
+	return civs.of(*births).sort(getImpact, reverse=True)
 
-def getNextBirth():
-	lUpcomingCivs = [iCiv for iCiv, iYear in dBirth.items() if turn() < year(iYear) - turns(5)]
-	return find_min(lUpcomingCivs, dBirth.__getitem__).result
+def getNextBirths():
+	for iTurns in range(turns(5), turns(10)):
+		births = getBirthsForTurn(turn() + iTurns)
+		if births:
+			return births
+	
+	return []
 
-def getUnavailableSlots():
+def countAvailableSlots():
+	return count(1 for iSlot in range(iNumPlayers) if availableSlot(iSlot))
+
+def countUnavailableSlots():
 	return count(1 for iSlot in range(iNumPlayers) if not availableSlot(iSlot))
 
-def allSlotsTaken():
-	return getUnavailableSlots() >= iNumPlayers-1
 
 def quickSpawn(iCiv):
 	iPlayer = findSlot(iCiv)

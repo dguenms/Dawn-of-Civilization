@@ -58,9 +58,7 @@ def onReleasedPlayer(iPlayer, iReleasedCivilization):
 
 
 def isResurrectionPossible():
-	iTakenSlots = getUnavailableSlots()
-	iAvailableSlots = iNumPlayers-1	
-	return iTakenSlots + 1 < iAvailableSlots
+	return countAvailableSlots() > 1
 
 						
 def getResurrectionCities(iCiv, bFromCollapse=False):

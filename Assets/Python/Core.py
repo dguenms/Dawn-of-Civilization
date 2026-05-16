@@ -889,6 +889,9 @@ class EntityCollection(object):
 	def __getitem__(self, index):
 		return self.entities()[index]
 	
+	def __getslice__(self, lower, upper):
+		return self.copy(self._keys[lower:upper])
+	
 	def __add__(self, other):
 		if other is None: return self
 		if not isinstance(other, type(self)):
@@ -1478,6 +1481,9 @@ class Plots(Locations):
 	
 	def edge(self):
 		return self.where(lambda p: plots.surrounding(p).any(lambda sp: sp not in self))
+	
+	def owned(self):
+		return self.where(CyPlot.isOwned)
 	
 	def notowned(self):
 		return self.where(lambda p: not p.isOwned())
