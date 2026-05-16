@@ -913,7 +913,7 @@ class Birth(object):
 		if self.iPlayer is None:
 			if self.sharesLimitedSlot():
 				self.canceled = True
-				log.rise("BIRTH CANCELED: skipping %s slot for preferred civs %s", infos.civ(self.iCiv).getText(), currentUnassignedBirths)
+				log.rise("BIRTH CANCELED: skipping %s slot to keep it free", infos.civ(self.iCiv).getText())
 				return
 			
 			self.iPlayer = findSlot(self.iCiv)
