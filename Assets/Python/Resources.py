@@ -186,7 +186,7 @@ dResourcesDict = {
 	(21, 50)  : (1750,  iCotton),	# Louisiana
 	(22, 52)  : (1750,  iCotton),	# Mississippi
 	(23, 51)  : (1750,  iCotton),	# Alabama
-	(74, 12)  : (1750,  iWine),     # South Africa
+	(73, 11)  : (1750,  iWine),     # South Africa
 	(41, 17)  : (1750,  iWine),     # Southern Brazil
 	(128, 62) : (1800,  iCorn),     # Manchuria
 	(82, 69)  : (1800,  iPotato),   # Russia
@@ -255,6 +255,7 @@ dResourcesDict = {
 	(138, 9)  : (1900,  iWheat),    # Victoria
 	(26, 49)  : (1900,  iCitrus),   # Florida
 	(83, 29)  : (1900,  iTea),      # Kenya
+	(74, 12)  : (1900,  iTea),		# South Africa
 	(72, 30)  : (1900,  iRubber),   # Cameroon
 	(74, 29)  : (1900,  iRubber),   # Congo
 	(74, 24)  : (1900,  iRubber),   # Congo
