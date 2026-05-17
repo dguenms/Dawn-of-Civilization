@@ -7846,14 +7846,19 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 
 	bStrategic = false;
 
-	for (iI = 0; iI < GC.getNumUnitInfos(); iI++)
+	for (iI = 0; !bStrategic && iI < GC.getNumUnitClassInfos(); iI++)
 	{
+		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
+		if (eUnit == NO_UNIT) continue;
+
+		if (getCapitalCity() != NULL && getCapitalCity()->allUpgradesAvailable(eUnit) != NO_UNIT) continue;
+
 		if (GC.getUnitInfo((UnitTypes) iI).getPrereqAndBonus() == eBonus)
 		{
 			bStrategic = true;
 		}
 
-		for (iJ = 0; iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
+		for (iJ = 0; !bStrategic && iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
 		{
 			if (GC.getUnitInfo((UnitTypes) iI).getPrereqOrBonuses(iJ) == eBonus)
 			{
@@ -7862,14 +7867,35 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 		}
 	}
 
-	for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	for (iI = 0; !bStrategic && iI < GC.getNumBuildingInfos(); iI++)
 	{
+		if (!canConstruct((BuildingTypes)iI, false, false, false, true)) continue;
+
+		bool bAnyPrereqAvailable = false;
+		if (isTechAvailable((TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getPrereqAndTech()))
+		{
+			bAnyPrereqAvailable = true;
+		}
+
+		for (iJ = 0; !bAnyPrereqAvailable && iJ < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iJ++)
+		{
+			TechTypes eTech = (TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getPrereqAndTechs(iJ);
+			if (eTech == NO_TECH) break;
+
+			if (isTechAvailable(eTech))
+			{
+				bAnyPrereqAvailable = true;
+			}
+		}
+
+		if (!bAnyPrereqAvailable) continue;
+
 		if (GC.getBuildingInfo((BuildingTypes) iI).getPrereqAndBonus() == eBonus)
 		{
 			bStrategic = true;
 		}
 
-		for (iJ = 0; iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
+		for (iJ = 0; !bStrategic && iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
 		{
 			if (GC.getBuildingInfo((BuildingTypes) iI).getPrereqOrBonuses(iJ) == eBonus)
 			{

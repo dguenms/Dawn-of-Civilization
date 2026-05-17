@@ -6164,15 +6164,6 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 				return false;
 			}
 		}
-
-		// Leoreth: at most one worker per city (disabled)
-		/*if (GC.getUnitInfo(eUnit).isWorker())
-		{
-			if (getWorkerCount() + (bContinue ? -1 : 0) >= getNumCities())
-			{
-				return false;
-			}
-		}*/
 	}
 
 	return true;
@@ -8071,6 +8062,18 @@ bool CvPlayer::canResearch(TechTypes eTech, bool bTrade, TechTypes eGivenTech) c
 	}
 
 	return true;
+}
+
+
+// Leoreth
+bool CvPlayer::isTechAvailable(TechTypes eTech) const
+{
+	if (eTech == NO_TECH)
+	{
+		return true;
+	}
+
+	return GET_TEAM(getTeam()).isHasTech(eTech) || canResearch(eTech);
 }
 
 
