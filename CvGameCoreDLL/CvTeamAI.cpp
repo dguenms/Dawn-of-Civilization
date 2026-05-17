@@ -2611,7 +2611,7 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 		{
 			if (GET_TEAM((TeamTypes)eTeam).isDefensivePact((TeamTypes)iI) && isDefensivePact((TeamTypes)iI))
 			{
-				iModifier -= 70;
+				iModifier += 70;
 			}
 		}
 	}
@@ -2621,9 +2621,9 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	// Leoreth: Amber Room effect
 	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(AMBER_ROOM))
 	{
-		iModifier -= 60;
+		iModifier += 60;
 
-		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
+		if (GET_TEAM(eTeam).getNumCities() < getNumCities())
 		{
 			iNumCities = 2 * getNumCities();
 		}
@@ -2632,9 +2632,9 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	// Leoreth: Berlaymont effect
 	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isHasBuildingEffect(BERLAYMONT))
 	{
-		if (GET_TEAM(eTeam).getNumCities() > getNumCities())
+		if (GET_TEAM(eTeam).getNumCities() < getNumCities())
 		{
-			iNumCities = GET_TEAM(eTeam).getNumCities();
+			iNumCities = 2 * GET_TEAM(eTeam).getNumCities();
 		}
 	}
 
