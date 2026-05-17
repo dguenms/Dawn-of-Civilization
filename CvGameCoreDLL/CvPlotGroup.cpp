@@ -266,7 +266,10 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 				int iLoop;
 				for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 				{
-					pLoopCity->changeBuildingCommerceChange(ATOMIUM, COMMERCE_RESEARCH, (eBonus == BONUS_URANIUM ? 10 : 1) * iChange);
+					if (pLoopCity->isHasBuildingEffect(ATOMIUM))
+					{
+						pLoopCity->changeBuildingCommerceChange(ATOMIUM, COMMERCE_RESEARCH, (eBonus == BONUS_URANIUM ? 10 : 1) * iChange);
+					}
 				}
 			}
 		}

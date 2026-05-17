@@ -17676,15 +17676,6 @@ int CvCity::getBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes
 	{
 		if ((*it).eBuildingClass == eBuildingClass && (*it).eYield == eYield)
 		{
-			int iChange = (*it).iChange;
-
-			// Leoreth: we have an overflow issue here, so clean out the affected entry and log an error until it is fixed
-			if (iChange < 0 || iChange >= 1000)
-			{
-				logMajorError(CvWString::format(L"removed invalid entry - getBuildingYieldChange(%s, %s) - %s (%d, %d)", GC.getBuildingClassInfo(eBuildingClass).getText(), GC.getYieldInfo(eYield).getText(), getNameKey(), getX(), getY()), getX(), getY());
-				return 0;
-			}
-
 			return (*it).iChange;
 		}
 	}
@@ -17699,16 +17690,6 @@ void CvCity::setBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, 
 
 void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield, int iChange)
 {
-	if (iChange <= 0)
-	{
-		iChange = 0;
-	}
-
-	if (iChange <= -1000 || iChange >= 1000)
-	{
-		logMajorError(CvWString::format(L"Unexpected value - setBuildingYieldChange(%s, %s, %d) - %s (%d, %d)", GC.getBuildingClassInfo(eBuildingClass).getText(), GC.getYieldInfo(eYield).getText(), iChange, getNameKey(), getX(), getY()), getX(), getY());
-	}
-
 	for (std::vector<BuildingYieldChange>::iterator it = m_aBuildingYieldChange.begin(); it != m_aBuildingYieldChange.end(); ++it)
 	{
 		if ((*it).eBuildingClass == eBuildingClass && (*it).eYield == eYield)
@@ -17803,11 +17784,6 @@ void CvCity::setBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eC
 
 void CvCity::setBuildingCommerceChange(BuildingClassTypes eBuildingClass, CommerceTypes eCommerce, int iChange)
 {
-	if (iChange <= 0)
-	{
-		iChange = 0;
-	}
-
 	for (std::vector<BuildingCommerceChange>::iterator it = m_aBuildingCommerceChange.begin(); it != m_aBuildingCommerceChange.end(); ++it)
 	{
 		if ((*it).eBuildingClass == eBuildingClass && (*it).eCommerce == eCommerce)
