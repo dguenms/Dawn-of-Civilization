@@ -2990,7 +2990,7 @@ int CvPlayerAI::AI_targetCityValue(CvCity* pCity, bool bRandomize, bool bIgnoreA
 		// Europeans target African cities more
 		if (iWarMapValue > 0)
 		{
-			if (getID() == ENGLAND || getID() == FRANCE || getID() == GERMANY || getID() == PORTUGAL || getID() == NETHERLANDS || getID() == ITALY)
+			if (getCivilizationType() == ENGLAND || getCivilizationType() == FRANCE || getCivilizationType() == GERMANY || getCivilizationType() == PORTUGAL || getCivilizationType() == NETHERLANDS || getCivilizationType() == ITALY || getCivilizationType() == BELGIUM)
 			{
 				if (getCurrentEra() == ERA_INDUSTRIAL)
 				{
@@ -19577,8 +19577,8 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 	PlayerTypes eOwner = pUnit->getOwner();
 	CivilizationTypes eCivilization = pUnit->getCivilizationType();
 
-	bool bOwnerEuropean = (eCivilization == SPAIN || eCivilization == FRANCE || eCivilization == ENGLAND || eCivilization == PORTUGAL || eCivilization == NETHERLANDS);
-	bool bBuyerEuropean = (getCivilizationType() == SPAIN || getCivilizationType() == FRANCE || getCivilizationType() == ENGLAND || getCivilizationType() == PORTUGAL || getCivilizationType() == NETHERLANDS);
+	bool bOwnerEuropean = (eCivilization == SPAIN || eCivilization == FRANCE || eCivilization == ENGLAND || eCivilization == PORTUGAL || eCivilization == NETHERLANDS || eCivilization == AMERICA || eCivilization == BRAZIL);
+	bool bBuyerEuropean = (getCivilizationType() == SPAIN || getCivilizationType() == FRANCE || getCivilizationType() == ENGLAND || getCivilizationType() == PORTUGAL || getCivilizationType() == NETHERLANDS || getCivilizationType() == AMERICA || getCivilizationType() == BRAZIL);
 
 	bool bOwnerExploration = GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)EXPLORATION);
 	bool bBuyerExploration = GET_TEAM(GET_PLAYER(getID()).getTeam()).isHasTech((TechTypes)EXPLORATION);
@@ -19590,7 +19590,7 @@ int CvPlayerAI::AI_slaveTradeVal(CvUnit* pUnit) const
 
 	if (getCivilizationType() != GC.getGame().getActiveCivilizationType())
 	{
-		if (getCivilizationType() == MALI || getCivilizationType() == CONGO || getCivilizationType() == ETHIOPIA)
+		if (getCivilizationType() == MALI || getCivilizationType() == CONGO || getCivilizationType() == ETHIOPIA || getCivilizationType() == SWAHILI)
 		{
 			return 0;
 		}
