@@ -12259,24 +12259,15 @@ bool CvPlot::isSlaveImprovement() const
 	return getImprovementType() == IMPROVEMENT_SLAVE_MINE || getImprovementType() == IMPROVEMENT_SLAVE_PLANTATION;
 }
 
-bool CvPlot::isWaterPower() const
+bool CvPlot::isWaterPower(DirectionTypes eDirection) const
 {
 	CvPlot* pAdjacentPlot;
 
 	if (getPlotType() == PLOT_HILLS || getPlotType() == PLOT_PEAK)
 	{
-		if (isRiverCrossing(DIRECTION_EAST))
+		if (isRiverCrossing(eDirection))
 		{
-			pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_EAST);
-			if (pAdjacentPlot->getPlotType() == PLOT_HILLS || pAdjacentPlot->getPlotType() == PLOT_PEAK)
-			{
-				return true;
-			}
-		}
-
-		if (isRiverCrossing(DIRECTION_NORTH))
-		{
-			pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_NORTH);
+			pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), eDirection);
 			if (pAdjacentPlot->getPlotType() == PLOT_HILLS || pAdjacentPlot->getPlotType() == PLOT_PEAK)
 			{
 				return true;

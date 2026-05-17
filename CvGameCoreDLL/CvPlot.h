@@ -586,7 +586,7 @@ public:
 	static int getRegionGroupForRegion(int iRegion);
 
 	bool isSlaveImprovement() const;
-	bool isWaterPower() const;
+	bool isWaterPower(DirectionTypes eDirection) const;
 
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();

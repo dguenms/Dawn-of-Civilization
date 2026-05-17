@@ -17100,10 +17100,27 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 
 bool CvCity::isWaterPowerLocation() const
 {
-	if (getCityIndexPlot(0)->isWaterPower()) return true;
-	if (getCityIndexPlot(5)->isWaterPower()) return true;
-	if (getCityIndexPlot(6)->isWaterPower()) return true;
-	if (getCityIndexPlot(7)->isWaterPower()) return true;
+	for (int iDX = -1; iDX <= 0; iDX++)
+	{
+		for (int iDY = -1; iDY <= 1; iDY++)
+		{
+			if (GC.getMap().plot(getX() + iDX, getY() + iDY)->isWaterPower(DIRECTION_EAST))
+			{
+				return true;
+			}
+		}
+	}
+
+	for (int iDX = -1; iDX <= 1; iDX++)
+	{
+		for (int iDY = -1; iDY <= 0; iDY++)
+		{
+			if (GC.getMap().plot(getX() + iDX, getY() + iDY)->isWaterPower(DIRECTION_NORTH))
+			{
+				return true;
+			}
+		}
+	}
 
 	return false;
 }
