@@ -21,10 +21,10 @@ class ContactBeforeRevealed(StateRequirement):
 	
 	def check_contacted_before_revealed(self, goal, iPlayer):
 		if iPlayer in self.civs:
-			if self.area.land().none(lambda plot: plot.isRevealed(iPlayer, False)):
-				self.succeed()
-			else:
+			if self.area.land().any(lambda plot: players.of(*self.civs).any(lambda p: plot.isRevealed(p, False))):
 				self.fail()
+			else:
+				self.succeed()
 			
 			goal.final_check()
 

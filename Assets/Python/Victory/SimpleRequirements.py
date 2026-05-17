@@ -360,8 +360,6 @@ class OnlyDefensiveWar(Requirement):
 	
 	def handle_change_war(self, goal, iTeam, iOtherTeam, bWar, bFromDefensivePact):
 		if bWar and not bFromDefensivePact:
-			log_with_trace("expire change war: %s on %s" % (name(iTeam), name(iOtherTeam)))
-			raise Exception("expire change war")
 			goal.expire()
 	
 	def handle_end_player_turn(self, goal):
@@ -371,8 +369,6 @@ class OnlyDefensiveWar(Requirement):
 			if player(iPlayer).AI_isWillingToTalk(goal.iPlayer):
 				if team(player(iPlayer).getTeam()).AI_makePeaceTradeVal(goalTeam.getID()) > goalTeam.AI_makePeaceTradeVal(player(iPlayer).getTeam()):
 					goal.expire()
-					log_with_trace("expire turnly at war with %s" % name(iPlayer))
-					raise Exception("expire turnly at war with %s" % name(iPlayer))
 					break
 
 
