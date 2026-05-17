@@ -18636,6 +18636,12 @@ name_translations = {
 		iItalian: "Gadames",
 		iSpanish: u"Gadamés",
 	},
+	"Tikhono-Zadonsky": {
+		iRussian: (
+			translate("Kropotkin", bCommunist=True),
+			_,
+		),
+	},
 	"Tilimsan": {  # relocated from Km'
 		iArabic: _,
 		iBerber: translate("Tagrart", iBefore=iMedieval),
