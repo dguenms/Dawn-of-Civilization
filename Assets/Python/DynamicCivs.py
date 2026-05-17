@@ -1924,7 +1924,7 @@ def specificAdjective(iPlayer):
 		if capital.getRegionID() in [rUrals, rSiberia]:
 			return "TXT_KEY_CIV_TATARS_SIBIR"
 		
-		elif capital.getRegionID() == rPonticSteppe:
+		elif capital.getRegionID() == rPonticSteppe and capital.isCoastal(20):
 			return "TXT_KEY_CIV_TATARS_CRIMEAN"
 				
 	elif iCiv == iOttomans:
