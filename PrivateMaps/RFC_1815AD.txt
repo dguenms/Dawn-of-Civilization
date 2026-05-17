@@ -369,7 +369,7 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		ReligionType=RELIGION_CATHOLICISM
 		BeginCulture
-			Civilization=CIVILIZATION_MEXICO, Culture=100
+			Civilization=CIVILIZATION_MEXICO, Culture=10
 		EndCulture
 		YearFounded=1595
 		YearAcquired=1810
