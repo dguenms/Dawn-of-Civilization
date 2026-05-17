@@ -300,27 +300,6 @@
 			<EntityEvent>ENTITY_EVENT_MINE</EntityEvent>
 			<FeatureStructs>
 				<FeatureStruct>
-					<FeatureType>FEATURE_TAIGA</FeatureType>
-					<PrereqTech>TECH_ECOLOGY</PrereqTech>
-					<iTime>800</iTime>
-					<iProduction>20</iProduction>
-					<bRemove>1</bRemove>
-				</FeatureStruct>
-				<FeatureStruct>
-					<FeatureType>FEATURE_JUNGLE</FeatureType>
-					<PrereqTech>TECH_MICROBIOLOGY</PrereqTech>
-					<iTime>800</iTime>
-					<iProduction>0</iProduction>
-					<bRemove>1</bRemove>
-				</FeatureStruct>
-				<FeatureStruct>
-					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>600</iTime>
-					<iProduction>0</iProduction>
-					<bRemove>0</bRemove>
-				</FeatureStruct>
-				<FeatureStruct>
 					<FeatureType>FEATURE_FOREST</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
 					<iTime>0</iTime>
@@ -330,7 +309,7 @@
 				<FeatureStruct>
 					<FeatureType>FEATURE_SAVANNA</FeatureType>
 					<PrereqTech>TECH_ALLOYS</PrereqTech>
-					<iTime>200</iTime>
+					<iTime>0</iTime>
 					<iProduction>0</iProduction>
 					<bRemove>1</bRemove>
 				</FeatureStruct>
