@@ -2199,7 +2199,10 @@ name_translations = {
 		iGerman: "Bachtschyssaraj",
 		iKorean: "Baheuchisarai",
 		iPolish: "Bakczysaraj",
-		iRussian: "Bakhchisaray",
+		iRussian: (
+			relocate("Sevastopol", iAfter=iIndustrial),
+			"Bakhchisaray",
+		),
 		iTurkish: _,
 		iUkrainian: "Bakhchysarai",
 	},

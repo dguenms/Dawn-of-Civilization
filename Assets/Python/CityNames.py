@@ -555,7 +555,10 @@ def applyName(city, translation, bNotify=False):
 def applyRelocation(city, name):
 	tile_name = city_names[city]
 	if tile_name == name:
-		return
+		if name not in data.dRelocatedCities:
+			return
+
+		del data.dRelocatedCities[name]
 	
 	current_relocated_name = data.dRelocatedCities.get(tile_name, tile_name)
 	if current_relocated_name in data.dRenamedCities:
