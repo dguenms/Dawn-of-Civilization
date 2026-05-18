@@ -517,6 +517,7 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	m_iAIAutoPlay = 0;
 	m_iCircumnavigated = -1; //Rhye
 	m_iMedianTechValue = 0; // Leoreth
+	m_iPowerConsumedCount = 0;
 
 	// Leoreth: graphics paging
 	m_iXResolution = 1024;
@@ -8796,6 +8797,7 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iAIAutoPlay);
 	pStream->Read(&m_iCircumnavigated); //Rhye
 	pStream->Read(&m_iMedianTechValue); // Leoreth
+	pStream->Read(&m_iPowerConsumedCount); // Leoreth
 
 	// m_uiInitialTime not saved
 
@@ -9069,6 +9071,7 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_iAIAutoPlay);
 	pStream->Write(m_iCircumnavigated); //Rhye
 	pStream->Write(m_iMedianTechValue);
+	pStream->Write(m_iPowerConsumedCount);
 
 	// m_uiInitialTime not saved
 
@@ -10909,4 +10912,22 @@ void CvGame::setFirstDiscoveredTurn(TechTypes eTech, int iTurn)
 	FAssert(eTech < GC.getNumTechInfos());
 
 	m_aiFirstDiscoveredTurn[eTech] = iTurn;
+}
+
+int CvGame::getPowerConsumedCount() const
+{
+	return m_iPowerConsumedCount;
+}
+
+void CvGame::setPowerConsumedCount(int iNewValue)
+{
+	m_iPowerConsumedCount = iNewValue;
+}
+
+void CvGame::changePowerConsumedCount(int iChange)
+{
+	if (iChange != 0)
+	{
+		setPowerConsumedCount(getPowerConsumedCount() + iChange);
+	}
 }

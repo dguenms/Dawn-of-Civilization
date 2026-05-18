@@ -1246,21 +1246,7 @@ void CvCity::doTurn()
 	// Leoreth: ITER effect
 	if (isHasBuildingEffect(ITER))
 	{
-		int iOldCommerce = getBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITER).getBuildingClassType(), YIELD_COMMERCE);
-
-		int iNewCommerce = 0;
-		for (int iI = 0; iI < MAX_PLAYERS; iI++)
-		{
-			int iLoop;
-			for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
-			{
-				iNewCommerce += pLoopCity->getPowerConsumedCount();
-			}
-		}
-
-		iNewCommerce /= 20;
-
-		changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)ITER).getBuildingClassType(), YIELD_COMMERCE, iNewCommerce - iOldCommerce);
+		setBuildingYieldChange(ITER, YIELD_COMMERCE, GC.getGameINLINE().getPowerConsumedCount() / 20);
 	}
 
 	if (getCultureUpdateTimer() > 0)
@@ -4875,16 +4861,14 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// ITER
 		else if (eBuilding == ITER)
 		{
-			int iPowerConsumed = 0;
-			for (iI = 0; iI < MAX_PLAYERS; iI++)
+			if (iChange < 0)
 			{
-				for (pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
-				{
-					iPowerConsumed += pLoopCity->getPowerConsumedCount();
-				}
+				setBuildingYieldChange(ITER, YIELD_COMMERCE, 0);
 			}
-
-			setBuildingYieldChange(ITER, YIELD_COMMERCE, std::max(0, iPowerConsumed * iChange));
+			else if (iChange > 0)
+			{
+				setBuildingYieldChange(ITER, YIELD_COMMERCE, GC.getGameINLINE().getPowerConsumedCount() / 20);
+			}
 		}
 
 		GET_PLAYER(getOwnerINLINE()).changeAssets(GC.getBuildingInfo(eBuilding).getAssetValue() * iChange);
@@ -10074,17 +10058,7 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 			}
 			else if (eBuilding == ITER)
 			{
-				int iNumPowerConsumed = 0;
-				for (int iI = 0; iI < MAX_PLAYERS; iI++)
-				{
-					int iLoop;
-					for (CvCity* pLoopCity = GET_PLAYER((PlayerTypes)iI).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER((PlayerTypes)iI).nextCity(&iLoop))
-					{
-						iNumPowerConsumed += pLoopCity->getPowerConsumedCount();
-					}
-				}
-
-				iExtraRate += iNumPowerConsumed / 20;
+				iExtraRate += GC.getGameINLINE().getPowerConsumedCount() / 20;
 			}
 		}
 
@@ -19371,6 +19345,8 @@ void CvCity::changePowerConsumedCount(int iChange)
 	if (iChange != 0)
 	{
 		m_iPowerConsumedCount += iChange;
+
+		GC.getGameINLINE().changePowerConsumedCount(iChange);
 
 		updatePowerHealth();
 	}

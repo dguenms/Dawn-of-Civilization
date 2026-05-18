@@ -616,6 +616,10 @@ public:
 	int getFirstDiscoveredTurn(TechTypes eTech) const;
 	void setFirstDiscoveredTurn(TechTypes eTech, int iTurn);
 
+	int getPowerConsumedCount() const;
+	void setPowerConsumedCount(int iNewValue);
+	void changePowerConsumedCount(int iChange);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -640,6 +644,7 @@ protected:
 	int m_iInitWonders;
 	int m_iAIAutoPlay;
 	int m_iCircumnavigated; //Rhye
+	int m_iPowerConsumedCount; // Leoreth
 
 	unsigned int m_uiInitialTime;
 
