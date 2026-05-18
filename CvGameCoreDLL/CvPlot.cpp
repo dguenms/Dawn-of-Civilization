@@ -12061,7 +12061,7 @@ void CvPlot::setContinentArea(int iNewValue)
 
 bool CvPlot::isOverseas(const CvPlot* pPlot) const
 {
-	return getRegionGroup() != pPlot->getRegionGroup() && getContinentArea() != pPlot->getContinentArea();
+	return getOverseasGroup() != pPlot->getOverseasGroup() && getContinentArea() != pPlot->getContinentArea();
 }
 
 void CvPlot::setBirthProtected(PlayerTypes ePlayer)
@@ -12251,6 +12251,30 @@ int CvPlot::getRegionGroupForRegion(int iRegion)
 		return REGION_GROUP_OCEANIA;
 	default:
 		return NO_REGION_GROUP;
+	}
+}
+
+int CvPlot::getOverseasGroup() const
+{
+	switch (getRegionGroup())
+	{
+	case REGION_GROUP_NORTH_AMERICA:
+	case REGION_GROUP_SOUTH_AMERICA:
+		return OVERSEAS_GROUP_AMERICAS;
+	case REGION_GROUP_EUROPE:
+	case REGION_GROUP_MIDDLE_EAST:
+	case REGION_GROUP_NORTH_AFRICA:
+		return OVERSEAS_GROUP_EUROPE;
+	case REGION_GROUP_SUB_SAHARAN_AFRICA:
+		return OVERSEAS_GROUP_AFRICA;
+	case REGION_GROUP_SOUTH_ASIA:
+	case REGION_GROUP_EAST_ASIA:
+	case REGION_GROUP_NORTH_ASIA:
+		return OVERSEAS_GROUP_ASIA;
+	case REGION_GROUP_OCEANIA:
+		return OVERSEAS_GROUP_OCEANIA;
+	default:
+		return NO_OVERSEAS_GROUP;
 	}
 }
 

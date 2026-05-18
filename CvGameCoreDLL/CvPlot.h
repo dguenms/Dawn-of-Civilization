@@ -581,6 +581,7 @@ public:
 
 	int getContinentID() const;
 	int getRegionGroup() const;
+	int getOverseasGroup() const;
 	bool isNewWorld() const;
 
 	static int getRegionGroupForRegion(int iRegion);
