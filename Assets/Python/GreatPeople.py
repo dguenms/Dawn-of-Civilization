@@ -1138,7 +1138,6 @@ dGreatPeople = {
 			"Khashayarsha", # 5th BC
 			"fMania", # 4th BC
 			"Mithradata", # 1st BC
-			"Shapur", # 3rd
 			"Rostam Farrokhzad", # 7th
 			iRenaissance,		
 			"Shah Ismail", # 16th
