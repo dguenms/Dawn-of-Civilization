@@ -199,7 +199,6 @@ protected:
 	bool AI_airBombDefenses();	
 	bool AI_exploreAir();
 	bool AI_nuke();
-	bool AI_nukeRange(int iRange);
 	bool AI_trade(int iValueThreshold);
 	bool AI_infiltrate();
 	bool AI_reconSpy(int iRange);

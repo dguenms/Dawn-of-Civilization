@@ -4320,14 +4320,7 @@ void CvUnitAI::AI_ICBMMove()
 //		}
 //	}
 
-	if (airRange() > 0)
-	{
-		if (AI_nukeRange(airRange()))
-		{
-			return;
-		}
-	}
-	else if (AI_nuke())
+	if (AI_nuke())
 	{
 		return;
 	}
@@ -16776,127 +16769,6 @@ CvCity* CvUnitAI::AI_offensiveSatelliteTarget() const
 	return pBestCity;
 }
 
-
-bool CvUnitAI::AI_nukeRange(int iRange)
-{
-	CvPlot* pBestPlot = NULL;
-	int iBestValue = 0;
-	for (int iDX = -(iRange); iDX <= iRange; iDX++)
-	{
-		for (int iDY = -(iRange); iDY <= iRange; iDY++)
-		{
-			CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
-
-			if (pLoopPlot != NULL)
-			{
-				if (canNukeAt(plot(), pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE()))
-				{
-					int iValue = -99;
-
-					for (int iDX2 = -(nukeRange()); iDX2 <= nukeRange(); iDX2++)
-					{
-						for (int iDY2 = -(nukeRange()); iDY2 <= nukeRange(); iDY2++)
-						{
-							CvPlot* pLoopPlot2 = plotXY(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), iDX2, iDY2);
-
-							if (pLoopPlot2 != NULL)
-							{
-								int iEnemyCount = 0;
-								int iTeamCount = 0;
-								int iNeutralCount = 0;
-								int iDamagedEnemyCount = 0;
-
-								CLLNode<IDInfo>* pUnitNode;
-								CvUnit* pLoopUnit;
-								pUnitNode = pLoopPlot2->headUnitNode();
-								while (pUnitNode != NULL)
-								{
-									pLoopUnit = ::getUnit(pUnitNode->m_data);
-									pUnitNode = pLoopPlot2->nextUnitNode(pUnitNode);
-
-									if (!pLoopUnit->isNukeImmune())
-									{
-										if (pLoopUnit->getTeam() == getTeam())
-										{
-											iTeamCount++;
-										}
-										else if (!pLoopUnit->isInvisible(getTeam(), false))
-										{
-											if (isEnemy(pLoopUnit->getTeam()))
-											{
-												iEnemyCount++;
-												if (pLoopUnit->getDamage() * 2 > pLoopUnit->maxHitPoints())
-												{
-													iDamagedEnemyCount++;
-												}
-											}
-											else
-											{
-												iNeutralCount++;
-											}
-										}
-									}
-								}
-
-								iValue += (iEnemyCount + iDamagedEnemyCount) * (pLoopPlot2->isWater() ? 25 : 12);
-								iValue -= iTeamCount * 15;
-								iValue -= iNeutralCount * 20;
-
-
-								int iMultiplier = 1;
-								if (pLoopPlot2->getTeam() == getTeam())
-								{
-									iMultiplier = -2;
-								}
-								else if (isEnemy(pLoopPlot2->getTeam()))
-								{
-									iMultiplier = 1;
-								}
-								else if (!pLoopPlot2->isOwned())
-								{
-									iMultiplier = 0;
-								}
-								else
-								{
-									iMultiplier = -10;
-								}
-
-								if (pLoopPlot2->getImprovementType() != NO_IMPROVEMENT)
-								{
-									iValue += iMultiplier * 10;
-								}
-
-								if (pLoopPlot2->getBonusType() != NO_BONUS)
-								{
-									iValue += iMultiplier * 20;
-								}
-
-								if (pLoopPlot2->isCity())
-								{
-									iValue += std::max(0, iMultiplier * (-20 + 15 * pLoopPlot2->getPlotCity()->getPopulation()));
-								}
-							}
-						}
-					}
-
-					if (iValue > iBestValue)
-					{
-						iBestValue = iValue;
-						pBestPlot = pLoopPlot;
-					}
-				}
-			}
-		}
-	}
-
-	if (pBestPlot != NULL)
-	{
-		getGroup()->pushMission(MISSION_NUKE, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
-		return true;
-	}
-
-	return false;
-}
 
 bool CvUnitAI::AI_trade(int iValueThreshold)
 {
