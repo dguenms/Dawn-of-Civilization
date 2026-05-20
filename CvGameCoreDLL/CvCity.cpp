@@ -1243,7 +1243,13 @@ void CvCity::doTurn()
 		}
 	}
 
-	// Leoreth: ITER effect
+	// Aqua Appia effect
+	if (isHasBuildingEffect(AQUA_APPIA))
+	{
+		setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, getCultureLevel());
+	}
+
+	// ITER effect
 	if (isHasBuildingEffect(ITER))
 	{
 		setBuildingYieldChange(ITER, YIELD_COMMERCE, GC.getGameINLINE().getPowerConsumedCount() / 20);
@@ -4665,7 +4671,14 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 		// Aqua Appia
 		if (eBuilding == AQUA_APPIA)
 		{
-			setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, std::max(0, getCultureLevel() * iChange));
+			if (iChange < 0)
+			{
+				setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, 0);
+			}
+			else if (iChange > 0)
+			{
+				setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, getCultureLevel());
+			}
 		}
 
 		// Pyramid of the Sun
@@ -9732,11 +9745,6 @@ void CvCity::setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups
 				if (isHasBuildingEffect(IMAGE_OF_THE_WORLD_SQUARE))
 				{
 					changeExtraTradeRoutes(eNewValue - eOldValue);
-				}
-
-				if (isHasBuildingEffect(AQUA_APPIA))
-				{
-					changeBuildingYieldChange((BuildingClassTypes)GC.getBuildingInfo(AQUA_APPIA).getBuildingClassType(), YIELD_FOOD, eNewValue - eOldValue);
 				}
 			}
 
