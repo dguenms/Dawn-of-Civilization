@@ -66,7 +66,6 @@ def getPrimary(iCiv):
 	elif iCiv == iIran: return iPersia
 	elif iCiv == iManchuria: return iChina
 	elif iCiv == iSaudis: return iArabia
-	elif iCiv == iBelgium: return iNetherlands
 	
 	return iCiv
 
@@ -5663,6 +5662,91 @@ dGreatPeople = {
 		iGreatSpy : (
 			"fPolicarpa Salavarrieta", # 19th
 			u"fManuela Sáenz", # 19th
+		),
+	},
+	iBelgium : {
+		iGreatProphet : (
+			"Guido de Bres", # 16th (also Dutch)
+			"Ferdinand Verbiest", # 17th
+			iIndustrial,
+			"Damien De Veuster", # 19th
+			u"Désiré-Joseph Mercier", # 19th
+			iGlobal,
+			"Joseph Cardijn", # 20th
+			"Dominique Pire", # 20th
+			"Adolf Daens", # 20th
+			"fEmmanuelle Cinquin", # 20th
+		),
+		iGreatArtist : (
+			"Pieter Bruegel", # 16th (also Dutch)
+			"Peter Paul Rubens", # 17th
+			iIndustrial,
+			"Hendrik Conscience", # 19th
+			"Guido Gezelle", # 19th
+			"Maurice Maeterlinck", # 19th
+			iGlobal,
+			"Jacques Brel", # 20th
+			"Georges Simenon", # 20th
+			"Georges Prosper Remi", # 20th
+			u"René Magritte", # 20th
+		),
+		iGreatScientist : (
+			"Andreas Vesalius", # 16th
+			"Gerardus Mercator", # 16th (also Holy Roman)
+			"Ferdinand Verbiest", # 17th
+			iIndustrial,
+			"Jules Bordet", # 19th
+			iGlobal,
+			u"Georges Lemaître", # 20th
+			"Paul Janssen", # 20th
+			"Christian de Duve", # 20th
+		),
+		iGreatMerchant : (
+			"John Cockerill", # 19th
+			"Ernest Solvay", # 19th
+			"Alexandre Delcommune", # 19th
+			iGlobal,
+			"Jean Neuhaus", # 20th
+			"fBerthe Cabra", # 20th
+			"Adrien de Gerlache", # 20th
+			u"Albert Frère", # 20th
+		),
+		iGreatEngineer : (
+			"Simon Stevin", # 16th (also Dutch)
+			iIndustrial,
+			"Adolphe Sax", # 19th (also Dutch)
+			"Henri Alexis Brialmont", # 19th
+			u"Zénobe Gramme", # 19th
+			iGlobal,
+			"Firmin van Bree", # 20th
+			"Victor Pierre Horta", # 20th
+		),
+		iGreatStatesman : (
+			"Charles Rogier", # 19th
+			"fMarie Popelin", # 19th
+			"Auguste Beernaert", # 19th
+			"Henri La Fontaine", # 19th
+			iGlobal,
+			"Camille Huysmans", # 20th
+			"Julien Lahaut", # 20th
+			"Paul-Henri Spaak", # 20th
+		),
+		iGreatGeneral : (
+			"Johann Tserclaes", # 17th
+			iIndustrial,
+			u"Pierre Emmanuel Félix Chazal", # 19th
+			iGlobal,
+			"Jules Jacques de Dixmude", # 20th
+			"Jean-Baptiste Piron", # 20th
+			"Jean Schramme", # 20th
+		),
+		iGreatSpy : (
+			"Alexis Hody", # 19th
+			iGlobal,
+			"fGabrielle Petit", # 20th
+			"Henry Robinson", # 20th
+			"fMarthe Cnockaert", # 20th
+			u"André Moyen", # 20th
 		),
 	},
 	iBrazil : {
