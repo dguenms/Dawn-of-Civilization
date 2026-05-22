@@ -85,6 +85,14 @@ dBaseLanguages = {
 	iCanada: (iEnglish, iFrench),
 }
 
+lUniqueSuffixes = [
+	"Alexandreia",
+	"Alexandria",
+	"Antiochia",
+	"Antiokheia",
+	"Laodicea",
+]
+
 
 ### EVENT HANDLERS ###
 
@@ -542,14 +550,25 @@ def applyName(city, translation, bNotify=False):
 		applyRenaming(city, translation.name)
 		return
 		
+	name = translation.name
+	
+	# remove specific suffixes from names if not needed (e.g. Alexandria ad Issum -> Alexandria)
+	prefix = next(p for p in lUniqueSuffixes if name.startswith(p))
+	if prefix is not None and cities.owner(city).without(city).none(lambda other: other.getName().startswith(prefix)):
+		name = prefix
+	
+	# add region suffix for duplicate names (e.g. Qart-Hadasht -> Qart-Hadasht, Iberia)
+	if cities.owner(city).without(city).any(lambda other: other.getName() == name):
+		name += " (%s)" % plot(city).getRegionName()
+	
 	current_name = city.getName()	
-	if current_name == translation.name:
+	if current_name == name:
 		return
-		
-	city.setName(translation.name, False)
+	
+	city.setName(name, False)
 	
 	if bNotify:
-		message(city.getOwner(), "TXT_KEY_MESSAGE_CITY_NAME_CHANGE", current_name, translation.name, location=city, button='Art/Interface/Buttons/Actions/FoundCity.dds')
+		message(city.getOwner(), "TXT_KEY_MESSAGE_CITY_NAME_CHANGE", current_name, name, location=city, button='Art/Interface/Buttons/Actions/FoundCity.dds')
 
 
 def applyRelocation(city, name):

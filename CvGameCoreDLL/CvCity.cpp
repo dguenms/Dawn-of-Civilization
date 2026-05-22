@@ -12645,7 +12645,7 @@ void CvCity::setName(const wchar* szNewValue, bool bFound)
 
 	if (!szName.empty())
 	{
-		if (GET_PLAYER(getOwnerINLINE()).isCityNameValid(szName, false))
+		if (true || GET_PLAYER(getOwnerINLINE()).isCityNameValid(szName, false))
 		{
 			m_szName = szName;
 
