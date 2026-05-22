@@ -539,7 +539,7 @@ class Birth(object):
 	def updateArea(self):
 		if self.iCiv in lExpandedFlipCivs:
 			owners = self.area.cities().owners().major()
-			ownerCities = cities.all().area(self.location).where(lambda city: city.getOwner() in owners).where(lambda city: not plot(city).isPlayerCore(city.getOwner())).where(lambda city: plot(city).getSettlerValue(self.iCiv) > 0)
+			ownerCities = cities.all().area(self.location).where(lambda city: city.getOwner() in owners).where(lambda city: not plot(city).isPlayerCore(city.getOwner())).where(lambda city: plot(city).getSettlerValue(self.iCiv) > 0 or plot(city).getPlayerSettlerValue(city.getOwner()) == 0)
 			closerCities = ownerCities.where(lambda city: real_distance(city, self.location) <= real_distance(city, capital(city)))
 			
 			additionalPlots = closerCities.plots().expand(1) + closerCities.plots().expand(2).where(lambda p: p.getSettlerValue(self.iCiv) > 0)
