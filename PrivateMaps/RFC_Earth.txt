@@ -5926,6 +5926,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=52
+	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
