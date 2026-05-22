@@ -19547,7 +19547,7 @@ name_translations = {
 		),
 	},
 	"Uru": {
-		iArabic: relocate("Al-Basra"),
+		iArabic: relocate("Al-Basrah"),
 		iBabylonian: _,
 		iGreek: relocate("Apologou Emporion"),
 		iLocal: "Urim", # Sumerian
