@@ -28,6 +28,7 @@ dPeriods1500AD = {
 
 dPeriods1700AD = {
 	iIndia : iPeriodMaratha,
+	iMoors : iPeriodMorocco,
 	iHolyRome : iPeriodAustria,
 	iEngland : iPeriodUnitedKingdom,
 	iInca : iPeriodPeru,
@@ -37,6 +38,7 @@ dPeriods1700AD = {
 dPeriods1815AD = {
 	iChina : iPeriodMing,
 	iIndia : iPeriodMaratha,
+	iMoors : iPeriodMorocco,
 	iFrance : iPeriodNationalFrance,
 	iNorse : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,
