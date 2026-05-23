@@ -3168,11 +3168,20 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 {
 	FAssert(canMoveOrAttackInto(pPlot) || isMadeAttack());
 
-	CvPlot* pOldPlot = plot();
-
-	changeMoves(pPlot->movementCost(this, plot()));
+	int iMovementCost = pPlot->movementCost(this, plot());
+	changeMoves(iMovementCost);
 
 	setXY(pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true, bShow && pPlot->isVisibleToWatchingHuman(), bShow);
+
+	if (hasCargo() && iMovementCost == maxMoves())
+	{
+		std::vector<CvUnit*> aCargoUnits;
+		getCargoUnits(aCargoUnits);
+		for (std::vector<CvUnit*>::iterator it = aCargoUnits.begin(); it != aCargoUnits.end(); ++it)
+		{
+			(*it)->finishMoves();
+		}
+	}
 
 	//change feature
 	FeatureTypes featureType = pPlot->getFeatureType();
