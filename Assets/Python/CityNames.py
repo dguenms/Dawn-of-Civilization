@@ -603,10 +603,10 @@ def getDisplayName(identifier, tile):
 	return getDisplayNameForName(identifier, tile, tile_names)
 
 
-def getDisplayNameForName(identifier, tile, tile_names):
+def getDisplayNameForName(identifier, tile, tile_names, bFound=True):
 	base_name, tile_name = tile_names
 	
-	bFound = not plot_(tile).isCity()
+	bFound = bFound and not plot_(tile).isCity()
 	translation = getNameTranslation(identifier, tile, (base_name, tile_name), bFound=bFound)
 	
 	if not translation:
@@ -617,7 +617,7 @@ def getDisplayNameForName(identifier, tile, tile_names):
 	
 	if translation.bRenaming or translation.bRelocation:
 		if translation.name != tile_name:
-			return getDisplayNameForName(identifier, tile, (translation.name, translation.name))
+			return getDisplayNameForName(identifier, tile, (translation.name, translation.name), bFound=False)
 	
 	return translation.name
 
@@ -626,15 +626,26 @@ def getNameEvolution(identifier, tile):
 	tile_names = getTileNames(tile)
 	bFound = not plot_(tile).isCity()
 	
+	for translation, preceding in getApplicablePrecedingTranslations(identifier, tile, tile_names, bFound=bFound):
+		sequence = [t.name for t in preceding if t.isEraSpecific(bFound=bFound)] + [translation.name]
+		if sequence:
+			return " -> ".join(reversed([entry for entry in sequence if entry != "?"]))
+	
+	return getDisplayName(identifier, tile)
+
+
+def getApplicablePrecedingTranslations(identifier, tile, tile_names, bFound=False):
+	base_name, tile_name = tile_names
+	
 	for iLanguage, translations in getNameTranslationsByLanguage(identifier, tile, tile_names):
 		translations = list(translations)
 		for index, translation in enumerate(translations):
 			if translation.isApplicable(identifier, tile, bFound=bFound):
-				sequence = [t.name for t in translations[:index] if t.isEraSpecific(bFound=bFound)] + [translation.name]
-				if sequence:
-					return " -> ".join(reversed([entry for entry in sequence if entry != "?"]))
-	
-	return getDisplayName(identifier, tile)
+				if translation.bRelocation and translation.name != tile_name:
+					for t, preceding in getApplicablePrecedingTranslations(identifier, tile, (translation.name, translation.name)):
+						yield t, preceding
+				
+				yield translation, translations[:index]
 
 
 def clearChanges(city):

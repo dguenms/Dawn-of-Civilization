@@ -102,7 +102,7 @@ class Translation(object):
 		)
 		return none(properties)
 		
-	def isApplicable(self, iCiv, tile, bFound=False, bChange=True, bRenaming=True):
+	def isApplicable(self, iCiv, tile, bFound=False, bRenaming=True):
 		city = city_(tile)
 		iCurrentEra = is_minor(iCiv) and game.getCurrentEra() or player(iCiv).getCurrentEra()
 		
