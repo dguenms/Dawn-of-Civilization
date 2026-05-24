@@ -648,7 +648,8 @@ int CvTeamAI::AI_calculatePlotWarValue(TeamTypes eTeam) const
 		{
 			if (!pLoopPlot->isWater() && pLoopPlot->isAdjacentTeam(getID(), true))
 			{
-				iValue += 4;
+				//iValue += 4;
+				iValue += 2 + pLoopPlot->getWarValue(getLeaderID());
 			}
 
 			BonusTypes eBonus = pLoopPlot->getBonusType(getID());
@@ -1126,12 +1127,6 @@ int CvTeamAI::AI_startWarVal(TeamTypes eTeam) const
 			}
 	// Sanguo Mod Performance, end
 	iValue /= iMaxCultureVictoryAdjustment;
-
-	// Leoreth: avoid birth protected
-	if (GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).isBirthProtected())
-	{
-		iValue /= 4;
-	}
 
 	return iValue;
 }
