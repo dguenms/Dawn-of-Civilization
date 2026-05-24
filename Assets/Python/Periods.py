@@ -74,7 +74,6 @@ dPeriodNames = {
 	iPeriodDenmark:					"Denmark",
 	iPeriodNorway:					"Norway",
 	iPeriodUzbeks:					"Uzbeks",
-	iPeriodSaudi:					"Saudi",
 	iPeriodMorocco:					"Morocco",
 	iPeriodSpain:					"Spain",
 	iPeriodAustria:					"Austria",
@@ -162,9 +161,6 @@ def onResurrection(iPlayer):
 	if iCiv == iCelts:
 		setPeriod(iCelts, iPeriodInsularCelts)
 	
-	if iCiv == iArabia:
-		setPeriod(iArabia, iPeriodSaudi)
-		
 	if iCiv == iMongols:
 		setPeriod(iCiv, -1)
 	
