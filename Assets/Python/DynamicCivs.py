@@ -2574,9 +2574,6 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if not bResurrected:
 			if iReligion == iCatholicism:
-				if bTheocracy:
-					return "TXT_KEY_CIV_ITALY_PAPAL_STATES"
-				
 				if isCurrentCapital(iPlayer, "Roma"):
 					return "TXT_KEY_CIV_ITALY_PAPAL_STATES"
 					
