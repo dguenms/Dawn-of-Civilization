@@ -11583,7 +11583,7 @@
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>
 			<ObsoleteTech>TECH_MEASUREMENT</ObsoleteTech>
-			<PrereqBonuses>BONUS_CAMEL</PrereqBonuses>
+			<PrereqCorporation>CORPORATION_SILK_ROUTE</PrereqCorporation>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
