@@ -537,6 +537,7 @@ minor_cities = [
 	MinorCity(800, iIndependent, (57, 69), u"Sgàin", iPopulation=2, iCiv=iFrance, units={iDefend: 2, iCounter: 1}, buildings=[iWalls], adjective="TXT_KEY_ADJECTIVE_SCOTTISH"),
 	MinorCity(820, iIndependent, (71, 59), "Vindobona", iPopulation=1, iCiv=iHolyRome, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_BAVARIAN"),
 	MinorCity(840, iIndependent, (54, 65), u"Áth Cliath", iPopulation=1, iCiv=iCelts, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_IRISH"),
+	MinorCity(860, iIndependent, (82, 68), "Novgorod", iPopulation=2, iCiv=iRus, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_RUS"),
 	MinorCity(900, iNative, (27, 28), u"Túcume", iPopulation=1, iCiv=iInca, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
 	MinorCity(900, iNative, (28, 25), "Chan Chan", iPopulation=2, iCiv=iInca, units={iDefend: 1}, adjective="TXT_KEY_ADJECTIVE_CHIMU"),
 	MinorCity(900, iIndependent, (87, 29), "Muqdisho", iPopulation=3, iCiv=iSwahili, units={iDefend: 2}, adjective="TXT_KEY_ADJECTIVE_SOMALI"),

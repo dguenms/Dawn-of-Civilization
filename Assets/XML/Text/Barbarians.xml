@@ -730,6 +730,14 @@
 		<Spanish>Rajput</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ADJECTIVE_RUS</Tag>
+		<English>Rus</English>
+		<French>Rus</French>
+		<German>Rus</German>
+		<Italian>Rus</Italian>
+		<Spanish>Rus</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_ADJECTIVE_SAKA</Tag>
 		<English>Saka</English>
 		<French>Saka</French>
