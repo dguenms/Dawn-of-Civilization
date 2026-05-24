@@ -499,6 +499,15 @@ void CvDeal::verify()
 		}
 	}
 
+	// Leoreth: canceled without contact
+	if (!isUncancelableVassalDeal(NO_PLAYER) && !isPeaceDeal())
+	{
+		if (!GET_TEAM(GET_PLAYER(getFirstPlayer()).getTeam()).isHasMet(GET_PLAYER(getSecondPlayer()).getTeam()) && !GET_TEAM(GET_PLAYER(getSecondPlayer()).getTeam()).isHasMet(GET_PLAYER(getFirstPlayer()).getTeam()))
+		{
+			bCancelDeal = true;
+		}
+	}
+
 	if (bCancelDeal)
 	{
 		kill();
