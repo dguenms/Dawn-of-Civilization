@@ -255,7 +255,7 @@ def onCapitalMoved(city):
 			setPeriod(iPhoenicia, -1)
 	
 	if iOwnerCiv == iNorse:
-		if player(iOwner).getLastStateReligion() != -1:
+		if player(iOwner).getLastStateReligion() >= 0:
 			setPeriod(iNorse, getNorsePeriod(iOwner))
 	
 	if iOwnerCiv == iMoors:
