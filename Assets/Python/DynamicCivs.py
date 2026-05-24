@@ -1214,6 +1214,15 @@ def specificName(iPlayer):
 	elif iCiv == iNorse:
 		if iEra >= iIndustrial and bEmpire and (not player(iSweden).isAlive() or team(iSweden).isVassal(iPlayer)):
 			return "TXT_KEY_CIV_NORSE_SCANDINAVIA"
+		
+		if pPlayer.getPeriod() == -1:
+			if not player(iSweden).isAlive() and capital in cities.birth(iSweden):
+				return "TXT_KEY_CIV_NORSE_SWEDEN"
+			
+			if capital in cities.rectangle(tNorway):
+				return "TXT_KEY_CIV_NORSE_NORWAY"
+			
+			
 			
 	elif iCiv == iTurks:
 		if capital in plots.regions(rCaucasus, rPonticSteppe):

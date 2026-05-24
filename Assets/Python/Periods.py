@@ -255,7 +255,7 @@ def onCapitalMoved(city):
 			setPeriod(iPhoenicia, -1)
 	
 	if iOwnerCiv == iNorse:
-		if player(iOwner).getCurrentEra() >= iRenaissance:
+		if player(iOwner).getLastStateReligion() != -1:
 			setPeriod(iNorse, getNorsePeriod(iOwner))
 	
 	if iOwnerCiv == iMoors:
@@ -276,10 +276,6 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	if iCiv == iDravidia:
 		if iEra == iMedieval:
 			setPeriod(iDravidia, iPeriodVijayanagara)
-	
-	if iCiv == iNorse:
-		if iEra == iRenaissance:
-			setPeriod(iNorse, getNorsePeriod(iPlayer))
 	
 	if iCiv == iMoors:
 		if iEra == iIndustrial:
@@ -328,6 +324,9 @@ def onPlayerChangeStateReligion(iPlayer, iReligion):
 	if iCiv == iEgypt and iReligion >= 0:
 		if player(iPlayer).getPeriod() == iPeriodPtolemaicEgypt:
 			setPeriod(iEgypt, -1)
+	
+	elif iCiv == iNorse and iReligion >= 0:
+		setPeriod(iNorse, getNorsePeriod(iPlayer))
 
 
 @handler("changeWar")
@@ -342,9 +341,8 @@ def getNorsePeriod(iPlayer):
 	capital = player(iPlayer).getCapitalCity()
 	
 	if capital:
-		if isCurrentCapital(iPlayer, "Oslo", u"Niðaróss"):
+		if capital in cities.rectangle(tNorway):
 			return iPeriodNorway
-		elif isCurrentCapital(iPlayer, "Roskilde"):
-			return iPeriodDenmark
+		return iPeriodDenmark
 	
 	return -1
