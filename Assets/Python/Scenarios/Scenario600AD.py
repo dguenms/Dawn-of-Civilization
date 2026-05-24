@@ -78,10 +78,10 @@ lCivilizations = [
 	),
 	Civilization(
 		iFrance,
-		iGold=150,
+		iGold=100,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(5).including(iNobility, iSteel, iArchitecture, iPolitics, iScholarship)
+		techs=techs.column(6).including(iFeudalism)
 	),
 	Civilization(
 		iMalays,
@@ -185,6 +185,8 @@ def createStartingUnits():
 	# France
 	capital = plots.capital(iFrance)
 	createRoleUnit(iFrance, capital, iCounter, 2)
+	createRoleUnit(iFrance, capital, iAttack, 2)
+	createRoleUnit(iFrance, capital, iDefend, 1)
 	if not player(iFrance).isHuman():
 		createRoleUnit(iFrance, capital, iDefend, 2)
 	

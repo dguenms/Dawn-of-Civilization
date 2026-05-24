@@ -330,7 +330,7 @@ lCivilizations = [
 		iGold=100,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(5).including(iNobility, iSteel, iArchitecture, iPolitics)
+		techs=techs.column(6).without(iEthics)
 	),
 	Civilization(
 		iMalays,
@@ -415,7 +415,7 @@ lCivilizations = [
 		iAdvancedStartPoints=150,
 		iStateReligion=iCatholicism,
 		lCivics=[iElective, iTheocracy, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(6).including(iFeudalism, iTheology)
+		techs=techs.column(6).including(iFeudalism, iFortification, iTheology)
 	),
 	Civilization(
 		iBurma,
@@ -816,9 +816,9 @@ dStartingUnits = CivDict({
 	iFrance: {
 		iSettle: 2,
 		iWork: 2,
-		iDefend: 2,
+		iDefend: 3,
 		iCounter: 2,
-		iAttack: 2,
+		iAttack: 4,
 		iMissionary: 1,
 	},
 	iMalays: {
@@ -1869,7 +1869,7 @@ dTechPreferences = {
 		iMeasurement: 20,
 		iAcademia: 20,
 		iEducation: 15,
-		iFeudalism: 15,
+		iFeudalism: 20,
 		iChemistry: 15,
 		iSociology: 15,
 		iFission: 12,
