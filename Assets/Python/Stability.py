@@ -30,8 +30,8 @@ dCivilizationAdministrationModifier = CivDict({
 	iChina: -50,
 	iRome: 50,
 	iMisr: -50,
-	iTatars: -50,
 	iOttomans: -50,
+	iTatars: -50,
 	iManchuria: -50,
 }, 0)
 
@@ -417,6 +417,9 @@ def calculateAdministration(city):
 	
 	if city.hasBuilding(unique_building(iPlayer, iCourthouse)):
 		iAdministrationModifier += 50
+	
+	if civ(iPlayer) == iOttomans and player(iPlayer).getCurrentEra() in [iMedieval, iRenaissance]:
+		iAdministrationModifier += 100
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
 	
