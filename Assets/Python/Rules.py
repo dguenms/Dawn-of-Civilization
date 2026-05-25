@@ -7,9 +7,14 @@ from Events import handler
 ### CONSTANTS ###
 
 dRelocatedCapitals = {
-	(iHolyRome, iRenaissance): tVienna,
+	(iChina, iMedieval): tBeijing,
+	(iDravidia, iRenaissance): tVijayanagara,
 	(iJapan, iIndustrial): tTokyo,
+	(iNorse, iRenaissance): tCopenhagen,
+	(iHolyRome, iRenaissance): tVienna,
+	(iPoland, iRenaissance): tWarsaw,
 	(iItaly, iIndustrial): tRome,
+	(iIran, iIndustrial): tTehran,
 }
 
 
