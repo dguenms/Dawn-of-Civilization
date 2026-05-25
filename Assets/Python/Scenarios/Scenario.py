@@ -170,6 +170,16 @@ RELIGION_FOUNDING_DATES = {
 	iZoroastrianism: -600
 }
 
+ERA_START_DATES = {
+	iAncient: -3000,
+	iClassical: -600,
+	iMedieval: 400,
+	iRenaissance: 1500,
+	iIndustrial: 1800,
+	iGlobal: 1920,
+	iDigital: 1980,
+}
+
 WONDER_ORIGINAL_BUILDERS = {
 	iGreatLighthouse : (iEgypt, -284),
 	iGreatLibrary : (iEgypt, -285),
@@ -477,7 +487,7 @@ class Scenario(object):
 		self.adjustTerritories()
 		
 		self.adjustReligions()
-		self.adjustWonders()
+		self.adjustBuildings()
 		self.adjustGreatPeople()
 		self.adjustColonists()
 		
@@ -509,15 +519,32 @@ class Scenario(object):
 		
 		game.setVoteSourceReligion(1, iCatholicism, False)
 	
-	def adjustWonders(self):
+	def adjustBuildings(self):
+		for city in cities.all():
+			self.setOriginalBuildingTimes(city)
+		
+		self.expireWonders()
+		
+	def setOriginalBuildingTimes(self, city):
+		iYearBuilt = game.getTurnYear(city.getGameTurnFounded())
+		for iBuilding in range(iNumBuildings):
+			if iBuilding in WONDER_ORIGINAL_BUILDERS:
+				iCiv, iYear = WONDER_ORIGINAL_BUILDERS[iBuilding]
+				iYearBuilt = iYear
+				city.setBuildingOriginalOwner(iBuilding, iCiv)
+			else:
+				iTech = infos.building(iBuilding).getPrereqAndTech()
+				if iTech >= 0:
+					iYearBuilt = max(iYearBuilt, ERA_START_DATES.get(infos.tech(iTech).getEra()))
+			
+			iYearBuilt = game.getTurnYear(year(min(iYearBuilt, self.iStartYear)))
+			city.setBuildingOriginalTime(iBuilding, iYearBuilt)
+	
+	def expireWonders(self):
 		for iWonder, (iCiv, iYear) in WONDER_ORIGINAL_BUILDERS.items():
-			city = getBuildingCity(iWonder, False)
-			iEarliestYear = game.getTurnYear(year(min(iYear, self.iStartYear)))
-			if city:
-				city.setBuildingOriginalOwner(iWonder, iCiv)
-				city.setBuildingOriginalTime(iWonder, iEarliestYear)
-			elif iYear < self.iStartYear and iWonder not in self.lUnexpiredWonders:
-				game.incrementBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType())
+			if game.getBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType()) == 0:
+				if iYear < self.iStartYear and iWonder not in self.lUnexpiredWonders:
+					game.incrementBuildingClassCreatedCount(infos.building(iWonder).getBuildingClassType())
 	
 	def adjustGreatPeople(self):
 		for iCiv, iGreatPeople in self.dGreatPeopleCreated.items():
