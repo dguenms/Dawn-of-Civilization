@@ -379,7 +379,7 @@ lCivilizations = [
 	),
 	Civilization(
 		iMoors,
-		iGold=200,
+		iGold=400,
 		iAdvancedStartPoints=150,
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iTheocracy, iSlavery, iMerchantTrade, iClergy, iHegemony],
@@ -1860,7 +1860,6 @@ dTechPreferences = {
 		iTheology: 20,
 	},
 	iFrance : {
-		iReplaceableParts: 15,
 		iFirearms: 20,
 		iExploration: 20,
 		iGeography: 30,
@@ -1935,7 +1934,7 @@ dTechPreferences = {
 		iCartography: 50,
 		iExploration: 50,
 		iCompass: 30,
-		iGunpowder: 30,
+		iGunpowder: 50,
 		iFirearms: 25,
 		iPatronage: 25,
 		iReplaceableParts: 20,
