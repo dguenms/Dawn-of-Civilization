@@ -92,6 +92,12 @@ tMongolsPersiaBR = (98, 52)
 
 tConquestMongolsPersia = (13, iMongols, iTurks, tMongolsPersiaTL, tMongolsPersiaBR, 7, iMongolsPersiaYear, 10)
 
+iOttomanEgyptYear = 1517
+tOttomanEgyptTL = (76, 39)
+tOttomanEgyptBR = (81, 45)
+
+tConquestOttomanEgypt = (14, iOttomans, iMisr, tOttomanEgyptTL, tOttomanEgyptBR, 3, iOttomanEgyptYear, 5)
+
 lConquests = [
 	tConquestRomeCarthage, 
 	tConquestRomeGreece, 
@@ -106,6 +112,7 @@ lConquests = [
 	tConquestTurksAnatolia, 
 	tConquestEnglandIreland,
 	tConquestMongolsPersia,
+	tConquestOttomanEgypt,
 ]
 
 
@@ -310,6 +317,11 @@ def spawnConquerors(iPlayer, iPreferredTarget, tTL, tBR, iNumTargets, iYear, iIn
 			
 		if iCiv == iTurks:
 			units += createRoleUnit(iPlayer, tPlot, iShockCity, 2+iExtra)
+			
+		if iCiv == iOttomans:
+			units += createRoleUnit(iPlayer, tPlot, iShockCity, 1+iExtra)
+			units += createRoleUnit(iPlayer, tPlot, iCitySiege, 1+iExtra)
+			units += createRoleUnit(iPlayer, tPlot, iCityAttack, 2+iExtra)
 		
 		units.promotion(iVolunteer)
 
