@@ -451,11 +451,12 @@ def spanishExplorers(iTech, iTeam, iPlayer):
 	if scenarioStart():
 		return
 	
-	if iTech == iCartography:
+	if iTech in [iCartography, iGunpowder]:
 		if civ(iPlayer) == iSpain and not player(iPlayer).isHuman():
-			city = cities.owner(iPlayer).coastal().minimum(CyCity.getX)
-			if city:
-				caravel = makeUnit(iPlayer, iCaravel, city, UnitAITypes.UNITAI_EXPLORE_SEA)
+			if team(iTeam).isHasTech(iCartography) and team(iTeam).isHasTech(iGunpowder):
+				city = cities.owner(iPlayer).coastal().minimum(CyCity.getX)
+				if city:
+					caravel = makeUnit(iPlayer, iCaravel, city, UnitAITypes.UNITAI_EXPLORE_SEA)
 
 
 @handler("techAcquired")
