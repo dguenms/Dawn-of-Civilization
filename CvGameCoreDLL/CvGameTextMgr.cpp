@@ -12043,7 +12043,7 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			{
 				CvWString szPaganReligionName = gDLL->getText("TXT_KEY_RELIGION_PAGANISM");
 				
-				if (NO_PLAYER != ePlayer && !GET_PLAYER(ePlayer).isMinorCiv())
+				if (NO_PLAYER != ePlayer && !GET_PLAYER(ePlayer).isMinorCiv() && !GET_PLAYER(ePlayer).isBarbarian())
 				{
 					szPaganReligionName = CvWString(GC.getPaganReligionInfo((PaganReligionTypes)GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getPaganReligion()).getDescription());
 				}
