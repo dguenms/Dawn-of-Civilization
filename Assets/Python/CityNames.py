@@ -91,6 +91,7 @@ lUniqueSuffixes = [
 	"Antiochia",
 	"Antiokheia",
 	"Laodicea",
+	"Santiago",
 ]
 
 
