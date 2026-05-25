@@ -265,6 +265,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iSaintBasilsCathedral : (iRussia, 1561),
 	iTopkapiPalace : (iOttomans, 1465),
 	iBlueMosque : (iOttomans, 1616),
+	iEmeraldBuddha : (iThailand, 1783),
 	iImageOfTheWorldSquare : (iIran, 1629),
 	iBourse : (iNetherlands, 1602),
 	iAmberRoom : (iGermany, 1700),
