@@ -596,6 +596,12 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 		iValue += ((getMilitaryProductionModifier() * iExperience * 8) / 100);
 	}
 
+	int iHappiness = GC.getSpecialistInfo(eSpecialist).getHappiness();
+	if (angryPopulation(-iHappiness) > 0)
+	{
+		return -1;
+	}
+
 	return (iValue * 100);
 }
 

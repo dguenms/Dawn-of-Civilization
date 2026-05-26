@@ -1607,6 +1607,11 @@ void CvUnitAI::AI_workerMove()
 		return;
 	}
 
+	if (m_pUnitInfo->isSlave() && AI_join())
+	{
+		return;
+	}
+
 	if (!(isHuman()) && (AI_getUnitAIType() == UNITAI_WORKER))
 	{
 		if (GC.getGameINLINE().getElapsedGameTurns() > 10)
