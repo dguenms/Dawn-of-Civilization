@@ -811,9 +811,9 @@ class Congress:
 			bOwnCity = (iOwner == iVoter)
 			bWarClaim = (iClaimant in self.winners and iOwner in self.losers)
 		
-		# everyone agrees on AI American claims in the west, unless owner is native to the Americas
-		if civ(iClaimant) == iAmerica and iVoter != iOwner and civ(iOwner) not in dCivGroups[iCivGroupAmerica]:
-			if plot in plots.rectangle(tAmericanClaims):
+		# everyone agrees on AI American claims in the west
+		if civ(iClaimant) == iAmerica and iVoter != iOwner and not (bCity and city.isEverOwnedCiv(iAmerica)):
+			if plot in plots.rectangle(tAmericanClaims).without(lAmericanClaimsExceptions):
 				self.vote(iVoter, iClaimant, 1)
 				return
 			
@@ -1046,7 +1046,7 @@ class Congress:
 		return None
 				
 	def vote(self, iVoter, iClaimant, iVote):
-		if iClaimant in self.dVotes: self.dVotes[iClaimant] += iVote
+		#if iClaimant in self.dVotes: self.dVotes[iClaimant] += iVote
 		self.dVotes[iClaimant] += iVote
 		if iVote == 1 and iVoter not in self.dVotedFor[iClaimant]: self.dVotedFor[iClaimant].append(iVoter)
 				
@@ -1185,7 +1185,7 @@ class Congress:
 					
 				# AI America receives extra value for claims in the west
 				if civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
-					if city in plots.rectangle(tAmericanClaims):
+					if city in plots.rectangle(tAmericanClaims).without(lAmericanClaimsExceptions):
 						iValue += 5
 						
 				# help Canada gain Labrador and Newfoundland
@@ -1238,7 +1238,7 @@ class Congress:
 		invites = []
 		
 		# America: claims in the west
-		if cities.rectangle(tAmericanClaims).notowner(iAmerica):
+		if cities.rectangle(tAmericanClaims).without(lAmericanClaimsExceptions).notowner(iAmerica):
 			invites.append(iAmerica)
 		
 		# Belgian UP
