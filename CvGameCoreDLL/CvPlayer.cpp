@@ -7800,9 +7800,15 @@ int CvPlayer::calculateResearchModifier(TechTypes eTech) const
 	iPossibleKnownCount /= std::max(1, getCurrentEra() - 1);
 	iKnownCount = std::min(iKnownCount, iPossibleKnownCount);
 
+	int iMaxModifier = GC.getDefineINT("TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER");
+	if (getArtStyleType() == ARTSTYLE_AFRICA || getArtStyleType() == ARTSTYLE_MESO_AMERICA || getArtStyleType() == ARTSTYLE_NATIVE_AMERICA || getArtStyleType() == ARTSTYLE_SOUTH_AMERICA || getArtStyleType() == ARTSTYLE_SOUTH_PACIFIC)
+	{
+		iMaxModifier /= 2;
+	}
+
 	if (iPossibleKnownCount > 0)
 	{
-		iModifier += (GC.getDefineINT("TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER") * iKnownCount) / iPossibleKnownCount;
+		iModifier += (iMaxModifier * iKnownCount) / iPossibleKnownCount;
 	}
 
 	/*int iPossiblePaths = 0;
