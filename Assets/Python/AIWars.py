@@ -96,7 +96,12 @@ iOttomanEgyptYear = 1517
 tOttomanEgyptTL = (76, 39)
 tOttomanEgyptBR = (81, 45)
 
+iOttomanMaghrebYear = 1570
+tOttomanMaghrebTL = (63, 45)
+tOttomanMaghrebBR = (69, 48)
+
 tConquestOttomanEgypt = (14, iOttomans, iMisr, tOttomanEgyptTL, tOttomanEgyptBR, 3, iOttomanEgyptYear, 5)
+tConquestOttomanMaghreb = (15, iOttomans, iMoors, tOttomanMaghrebTL, tOttomanMaghrebBR, 2, iOttomanMaghrebYear, 5)
 
 lConquests = [
 	tConquestRomeCarthage, 
@@ -113,6 +118,7 @@ lConquests = [
 	tConquestEnglandIreland,
 	tConquestMongolsPersia,
 	tConquestOttomanEgypt,
+	tConquestOttomanMaghreb,
 ]
 
 

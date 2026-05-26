@@ -148,7 +148,7 @@ iTan = 90
 iLime = 100
 
 # scripted conquerors
-iNumConquests = 15
+iNumConquests = 16
 
 lNeighbours = [
 	(iEgypt, iBabylonia),
