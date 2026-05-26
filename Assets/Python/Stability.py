@@ -448,8 +448,10 @@ def getSeparatismModifier(iPlayer, city):
 	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCivCulture(c) or plot.getCivCulture(c))
 	iCulturePercent = iTotalCulture != 0 and 100 * plot.getCulture(iPlayer) / iTotalCulture or 0
 	
+	iTurnsOwned = since(city.getGameTurnAcquired())
+	
 	# recent conquests in conquest area
-	if bConquest and city.getOriginalCiv() != iCiv and since(city.getGameTurnAcquired()) <= turns(10):
+	if bConquest and city.getOriginalCiv() != iCiv and iTurnsOwned <= turns(10):
 		return 0
 	
 	# ahistorical tiles
@@ -466,11 +468,11 @@ def getSeparatismModifier(iPlayer, city):
 		
 	# not original owner
 	if not bExpansionExceptions:
-		if not city.isOriginalOwner(iPlayer) and since(city.getGameTurnAcquired()) < turns(25):
+		if not city.isOriginalOwner(iPlayer) and iTurnsOwned >= turns(25):
 			iModifier += 1
 	
 	# not majority culture
-	if iCiv != iPersia:
+	if iCiv != iPersia and not (iCiv == iOttomans and bConquest and iTurnsOwned <= turns(25)):
 		if iCulturePercent < 50: iModifier += 1
 		if iCulturePercent < 20: iModifier += 1
 	

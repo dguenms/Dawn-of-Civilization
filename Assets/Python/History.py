@@ -58,6 +58,13 @@ def conquistadorCapital(iOwner, iPlayer, city):
 			city.setHasRealBuilding(iAdministrativeCenter, True)
 
 
+@handler("cityAcquired")
+def helpConstantinople(iOwner, iPlayer, city):
+	if location(city) == tConstantinople:
+		for plot in plots.city_radius(city):
+			plot.setWorkingCity(city)
+
+
 ### FIRST CITY ###
 
 @handler("firstCity")
