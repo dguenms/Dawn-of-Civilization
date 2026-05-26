@@ -657,7 +657,8 @@ def flipMoorishMaghreb(iPlayer):
 			city.setHasReligion(iIslam, True, False, False)
 			
 			makeUnit(iPlayer, iSettler, city)
-			makeUnit(iPlayer, iWorker, city)
+			createRoleUnit(iPlayer, city, iDefend, 1)
+			createRoleUnit(iPlayer, city, iWork, 1)
 
 
 @handler("flip")
