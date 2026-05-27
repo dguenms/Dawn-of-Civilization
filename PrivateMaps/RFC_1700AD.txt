@@ -2594,7 +2594,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=46
-	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -2747,6 +2746,10 @@ BeginPlot
 		YearAcquired=1300
 		PreviousOwner=CIVILIZATION_MALI
 	EndCity
+EndPlot
+BeginPlot
+	x=60,y=46
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=60,y=47
