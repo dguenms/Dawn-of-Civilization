@@ -3179,7 +3179,10 @@ void CvUnit::move(CvPlot* pPlot, bool bShow)
 		getCargoUnits(aCargoUnits);
 		for (std::vector<CvUnit*>::iterator it = aCargoUnits.begin(); it != aCargoUnits.end(); ++it)
 		{
-			(*it)->finishMoves();
+			if (!(*it)->isAmphib())
+			{
+				(*it)->finishMoves();
+			}
 		}
 	}
 

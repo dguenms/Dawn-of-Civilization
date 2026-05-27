@@ -189,4 +189,12 @@
 		<Italian>Reconnaissance</Italian>
 		<Spanish>Reconnaissance</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROMOTION_AMPHIB_TEXT</Tag>
+		<English>[ICON_BULLET]No Combat Penalty for Attacking from Sea[NEWLINE][ICON_BULLET]No movement loss when entering enemy waters</English>
+		<French>[ICON_BULLET]No Combat Penalty for Attacking from Sea[NEWLINE][ICON_BULLET]No movement loss when entering enemy waters</French>
+		<German>[ICON_BULLET]No Combat Penalty for Attacking from Sea[NEWLINE][ICON_BULLET]No movement loss when entering enemy waters</German>
+		<Italian>[ICON_BULLET]No Combat Penalty for Attacking from Sea[NEWLINE][ICON_BULLET]No movement loss when entering enemy waters</Italian>
+		<Spanish>[ICON_BULLET]No Combat Penalty for Attacking from Sea[NEWLINE][ICON_BULLET]No movement loss when entering enemy waters</Spanish>
+	</TEXT>
 </Civ4GameText>
