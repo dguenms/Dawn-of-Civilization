@@ -59,10 +59,12 @@ def conquistadorCapital(iOwner, iPlayer, city):
 
 
 @handler("cityAcquired")
-def helpConstantinople(iOwner, iPlayer, city):
-	if location(city) == tConstantinople:
-		for plot in plots.city_radius(city):
-			plot.setWorkingCity(city)
+def helpConstantinople(iOwner, iPlayer):
+	constantinople = city(tConstantinople)
+	if constantinople and constantinople.getOwner() == iPlayer:
+		for plot in plots.city_radius(constantinople):
+			if plot.getOwner() == iPlayer:
+				plot.setWorkingCity(constantinople)
 
 
 ### FIRST CITY ###
