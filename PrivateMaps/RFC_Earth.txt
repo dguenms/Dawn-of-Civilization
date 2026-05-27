@@ -5509,7 +5509,7 @@ EndPlot
 BeginPlot
 	x=12,y=57
 	TerrainType=TERRAIN_PLAINS
-	PlotType=1
+	PlotType=2
 EndPlot
 BeginPlot
 	x=12,y=58
