@@ -3749,7 +3749,6 @@ dGreatPeople = {
 			u"Lý Nhân Tông", # 11th
 			u"Nguyên Trãi", # 15th
 			iGlobal,
-			u"Hô Chi Minh", # 20th
 			u"Nguyên Van Linh", # 20th
 			u"Lê Ðúc Tho", # 20th
 		),
