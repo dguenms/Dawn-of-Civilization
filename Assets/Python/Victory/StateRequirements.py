@@ -229,11 +229,11 @@ class FirstTribute(StateRequirement):
 		self.handle("tribute", self.succeed_on_tribute)
 		self.expire("tribute", self.fail_on_tribute)
 	
-	def succeed_on_tribute(self, goal, iGold, iTo):
+	def succeed_on_tribute(self, goal, iTo):
 		self.succeed()
 		goal.check()
 	
-	def fail_on_tribute(self, goal, iGold, iTo):
+	def fail_on_tribute(self, goal, iTo):
 		self.fail()
 		goal.announce_failure_cause(iTo, "TXT_KEY_VICTORY_ANNOUNCE_FIRST_TRIBUTE")
 		goal.fail()
