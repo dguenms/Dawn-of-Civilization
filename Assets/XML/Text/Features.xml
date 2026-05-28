@@ -85,4 +85,12 @@
 		<Italian>[NEWLINE][ICON_BULLET]Non si possono costruire miglioramenti su questo terreno</Italian>
 		<Spanish>[NEWLINE][ICON_BULLET]Cannot build any improvements on this feature</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_STRAIT</Tag>
+		<English>Strait</English>
+		<French>Strait</French>
+		<German>Strait</German>
+		<Italian>Strait</Italian>
+		<Spanish>Strait</Spanish>
+	</TEXT>
 </Civ4GameText>

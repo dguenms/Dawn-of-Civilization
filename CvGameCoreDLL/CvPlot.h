@@ -588,6 +588,7 @@ public:
 
 	bool isSlaveImprovement() const;
 	bool isWaterPower(DirectionTypes eDirection) const;
+	bool isStrait() const;
 
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();

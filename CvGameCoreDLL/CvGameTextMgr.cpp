@@ -4816,6 +4816,13 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(NEWLINE);
 		}
 
+		// Leoreth: general strait effect
+		if (pPlot->isStrait())
+		{
+			szString.append(GC.getFeatureInfo(FEATURE_STRAIT).getDescription());
+			szString.append(NEWLINE);
+		}
+
 		if (pPlot->getTerrainType() != NO_TERRAIN)
 		{
 			if (pPlot->isPeak())
@@ -4835,7 +4842,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 					szString.append(gDLL->getText("TXT_KEY_PLOT_HILLS"));
 				}
 
-				if (pPlot->getFeatureType() != NO_FEATURE)
+				if (pPlot->getFeatureType() != NO_FEATURE && pPlot->getFeatureType() != FEATURE_STRAIT)
 				{
 					szTempBuffer.Format(L"%s/", GC.getFeatureInfo(pPlot->getFeatureType()).getDescription());
 					szString.append(szTempBuffer);

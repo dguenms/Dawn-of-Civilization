@@ -1848,7 +1848,10 @@ int pathValid(FAStarNode* parent, FAStarNode* node, int data, const void* pointe
 		{
 			if (!(GC.getMapINLINE().plotINLINE(parent->m_iX, node->m_iY)->isWater()) && !(GC.getMapINLINE().plotINLINE(node->m_iX, parent->m_iY)->isWater()))
 			{
-				return FALSE;
+				if (!(pFromPlot->isStrait() && pToPlot->isStrait()))
+				{
+					return FALSE;
+				}
 			}
 		}
 	}

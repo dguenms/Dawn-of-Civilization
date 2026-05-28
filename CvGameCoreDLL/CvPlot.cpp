@@ -12301,3 +12301,8 @@ bool CvPlot::isWaterPower(DirectionTypes eDirection) const
 	
 	return false;
 }
+
+bool CvPlot::isStrait() const
+{
+	return getFeatureType() == FEATURE_STRAIT || getFeatureType() == FEATURE_ISLANDS_STRAIT;
+}

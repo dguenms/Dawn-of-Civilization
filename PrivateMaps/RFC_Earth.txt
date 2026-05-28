@@ -73,6 +73,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=0,y=8
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -486,6 +487,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=7
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3309,7 +3311,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=63
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3747,7 +3749,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=62
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12295,13 +12297,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=70
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=71
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -12744,6 +12746,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=72
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -15956,6 +15959,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=60
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16447,7 +16451,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=61
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16941,6 +16945,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=64
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -17417,6 +17422,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=65
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -29029,6 +29035,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=52
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -29487,6 +29494,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=53
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30016,7 +30024,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30479,6 +30487,7 @@ EndPlot
 BeginPlot
 	x=68,y=68
 	BonusType=BONUS_AMBER
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31278,6 +31287,7 @@ BeginPlot
 	x=70,y=50
 	BonusType=BONUS_DYE
 	BonusVarietyType=BONUS_DYE_MUREX
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31735,6 +31745,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=49
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35634,6 +35645,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=54
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -36123,6 +36135,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=55
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -54990,6 +55003,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=76
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -55479,6 +55493,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=77
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -58883,7 +58898,7 @@ EndPlot
 BeginPlot
 	x=130,y=24
 	BonusType=BONUS_WHALE
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59353,7 +59368,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59419,6 +59434,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=37
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59811,7 +59827,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=24
-	FeatureType=FEATURE_CAPE, FeatureVariety=0
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59882,7 +59898,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60346,6 +60362,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=37
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60857,6 +60874,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=52
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61291,6 +61309,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=51
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61721,6 +61740,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=136,y=50
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61734,6 +61754,7 @@ EndPlot
 BeginPlot
 	x=136,y=52
 	BonusType=BONUS_FISH
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62161,7 +62182,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=52
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62602,6 +62623,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=51
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62650,6 +62672,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=59
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63112,6 +63135,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=60
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63827,6 +63851,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=28
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64251,6 +64276,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=27
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
