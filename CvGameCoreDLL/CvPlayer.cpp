@@ -6537,6 +6537,34 @@ bool CvPlayer::canCreate(ProjectTypes eProject, bool bContinue, bool bTestVisibl
 		return false;
 	}
 
+	// Leoreth: Suez and Panama Canal requires no city on Suez tile and access to the tile
+	if (eProject == PROJECT_SUEZ_CANAL || eProject == PROJECT_PANAMA_CANAL)
+	{
+		CvPlot* pPlot;
+		
+		if (eProject == PROJECT_SUEZ_CANAL)
+		{
+			pPlot = GC.getMap().plot(82, 44);
+		}
+		else
+		{
+			pPlot = GC.getMap().plot(27, 37);
+		}
+
+		if (pPlot->isCity())
+		{
+			return false;
+		}
+
+		if (pPlot->isOwned() && pPlot->getOwnerINLINE() != getID())
+		{
+			if (!GET_TEAM(getTeam()).isOpenBorders(pPlot->getTeam()))
+			{
+				return false;
+			}
+		}
+	}
+
 	if (!bTestVisible)
 	{
 		if (GC.getGameINLINE().isProjectMaxedOut(eProject, (GET_TEAM(getTeam()).getProjectMaking(eProject) + ((bContinue) ? -1 : 0))))

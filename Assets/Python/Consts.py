@@ -1190,10 +1190,10 @@ dCivGroupRegions = {
 
 #Projects
 
-iNumProjects = 22
-(iManhattanProject, iTheInternet, iHumanGenome, iSDI, iGPS, iGreatFirewall, iISS, iBallisticMissile, iFirstSatellite, iManInSpace, 
-iLunarLanding, iGoldenRecord, iMarsMission, iLunarColony, iInterstellarProbe, iMarsFraming, iMarsPowerSource, iMarsExtractor, iMarsHabitat, iMarsHydroponics, 
-iMarsLaboratory, iMarsControlCenter) = range(iNumProjects)
+iNumProjects = 24
+(iSuezCanal, iPanamaCanal, iManhattanProject, iTheInternet, iHumanGenome, iSDI, iGPS, iGreatFirewall, iISS, iBallisticMissile, 
+iFirstSatellite, iManInSpace, iLunarLanding, iGoldenRecord, iMarsMission, iLunarColony, iInterstellarProbe, iMarsFraming, iMarsPowerSource, iMarsExtractor, 
+iMarsHabitat, iMarsHydroponics, iMarsLaboratory, iMarsControlCenter) = range(iNumProjects)
 
 lMarsBaseComponents = [iMarsFraming, iMarsPowerSource, iMarsExtractor, iMarsHabitat, iMarsHydroponics, iMarsLaboratory, iMarsControlCenter]
 
@@ -1210,11 +1210,11 @@ iNumCultureLevels = 7
 
 #Improvements
 
-iNumImprovements = 32
+iNumImprovements = 33
 (iLandWorked, iWaterWorked, iCityRuins, iHut, iFarm, iPaddyField, iFishingBoats, iHarvestBoats, iOceanFishery, iWhalingBoats, 
 iMine, iSlaveMine, iWorkshop, iLumbermill, iWindmill, iWatermill, iPlantation, iSlavePlantation, iQuarry, iPasture, 
 iCamp, iWell, iOffshorePlatform, iOrchard, iCottage, iHamlet, iVillage, iTown, iFort, iForestPreserve, 
-iMarinePreserve, iSolarCollector) = range(iNumImprovements)
+iMarinePreserve, iSolarCollector, iCanal) = range(iNumImprovements)
 
 iNumRoutes = 4
 (iRouteRoad, iRouteRailroad, iRouteRomanRoad, iRouteHighway) = range(iNumRoutes)

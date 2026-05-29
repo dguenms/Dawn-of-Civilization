@@ -10583,7 +10583,15 @@ int CvCity::getPeaceTradeModifier(TeamTypes eTeam) const
 		return 0;
 	}
 
-	int iPeaceTurns = std::min(GC.getDefineINT("FOREIGN_TRADE_FULL_CREDIT_PEACE_TURNS"), GET_TEAM(getTeam()).AI_getAtPeaceCounter(eTeam));
+	int iPeaceTurns = GET_TEAM(getTeam()).AI_getAtPeaceCounter(eTeam);
+
+	// Suez Canal: Faster trade route modifier from years of peace
+	if (GET_TEAM(getTeam()).getProjectCount(PROJECT_SUEZ_CANAL) > 0)
+	{
+		iPeaceTurns *= 2;
+	}
+
+	iPeaceTurns = std::min(GC.getDefineINT("FOREIGN_TRADE_FULL_CREDIT_PEACE_TURNS"), iPeaceTurns);
 
 	// Canadian UP: Double trade route yield from years of peace
 	if (getCivilizationType() == CANADA)

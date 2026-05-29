@@ -409,4 +409,52 @@
 		<Italian>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</Italian>
 		<Spanish>The [COLOR_PROJECT_TEXT]Internet[COLOR_REVERT] grants all technologies that are already discovered by 2 known civilizations.</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SUEZ_CANAL</Tag>
+		<English>Suez Canal</English>
+		<French>Suez Canal</French>
+		<German>Suez Canal</German>
+		<Italian>Suez Canal</Italian>
+		<Spanish>Suez Canal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SUEZ_CANAL_STRATEGY</Tag>
+		<English>The [COLOR_PROJECT_TEXT]Suez Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT], causes trade route yields to increase at a faster rate at peace time, and creates a [COLOR_HIGHLIGHT_TEXT]Canal[COLOR_REVERT] improvement on the Suez tile.</English>
+		<French>The [COLOR_PROJECT_TEXT]Suez Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT], causes trade route yields to increase at a faster rate at peace time, and creates a [COLOR_HIGHLIGHT_TEXT]Canal[COLOR_REVERT] improvement on the Suez tile.</French>
+		<German>The [COLOR_PROJECT_TEXT]Suez Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT], causes trade route yields to increase at a faster rate at peace time, and creates a [COLOR_HIGHLIGHT_TEXT]Canal[COLOR_REVERT] improvement on the Suez tile.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]Suez Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT], causes trade route yields to increase at a faster rate at peace time, and creates a [COLOR_HIGHLIGHT_TEXT]Canal[COLOR_REVERT] improvement on the Suez tile.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]Suez Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Engineer[COLOR_REVERT], causes trade route yields to increase at a faster rate at peace time, and creates a [COLOR_HIGHLIGHT_TEXT]Canal[COLOR_REVERT] improvement on the Suez tile.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_SUEZ_CANAL_HELP</Tag>
+		<English>[ICON_BULLET]Trade route yield grows faster during peace time[NEWLINE][ICON_BULLET]Creates a [LINK=literal]Canal[\LINK] on the Suez tile[NEWLINE][COLOR_RED]Requires no city on the Suez tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Suez tile[COLOR_REVERT]</English>
+		<French>[ICON_BULLET]Trade route yield grows faster during peace time[NEWLINE][ICON_BULLET]Creates a [LINK=literal]Canal[\LINK] on the Suez tile[NEWLINE][COLOR_RED]Requires no city on the Suez tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Suez tile[COLOR_REVERT]</French>
+		<German>[ICON_BULLET]Trade route yield grows faster during peace time[NEWLINE][ICON_BULLET]Creates a [LINK=literal]Canal[\LINK] on the Suez tile[NEWLINE][COLOR_RED]Requires no city on the Suez tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Suez tile[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]Trade route yield grows faster during peace time[NEWLINE][ICON_BULLET]Creates a [LINK=literal]Canal[\LINK] on the Suez tile[NEWLINE][COLOR_RED]Requires no city on the Suez tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Suez tile[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]Trade route yield grows faster during peace time[NEWLINE][ICON_BULLET]Creates a [LINK=literal]Canal[\LINK] on the Suez tile[NEWLINE][COLOR_RED]Requires no city on the Suez tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Suez tile[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_PANAMA_CANAL</Tag>
+		<English>Panama Canal</English>
+		<French>Panama Canal</French>
+		<German>Panama Canal</German>
+		<Italian>Panama Canal</Italian>
+		<Spanish>Panama Canal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_PANAMA_CANAL_STRATEGY</Tag>
+		<English>The [COLOR_PROJECT_TEXT]Panama Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Statesman[COLOR_REVERT], grants additional experience and the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion to sea units, and creates [COLOR_HIGHLIGHT_TEXT]Straits[COLOR_REVERT] along the Panama tile.</English>
+		<French>The [COLOR_PROJECT_TEXT]Panama Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Statesman[COLOR_REVERT], grants additional experience and the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion to sea units, and creates [COLOR_HIGHLIGHT_TEXT]Straits[COLOR_REVERT] along the Panama tile.</French>
+		<German>The [COLOR_PROJECT_TEXT]Panama Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Statesman[COLOR_REVERT], grants additional experience and the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion to sea units, and creates [COLOR_HIGHLIGHT_TEXT]Straits[COLOR_REVERT] along the Panama tile.</German>
+		<Italian>The [COLOR_PROJECT_TEXT]Panama Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Statesman[COLOR_REVERT], grants additional experience and the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion to sea units, and creates [COLOR_HIGHLIGHT_TEXT]Straits[COLOR_REVERT] along the Panama tile.</Italian>
+		<Spanish>The [COLOR_PROJECT_TEXT]Panama Canal[COLOR_REVERT] grants a free [COLOR_HIGHLIGHT_TEXT]Great Statesman[COLOR_REVERT], grants additional experience and the [COLOR_HIGHLIGHT_TEXT]Navigation I[COLOR_REVERT] promotion to sea units, and creates [COLOR_HIGHLIGHT_TEXT]Straits[COLOR_REVERT] along the Panama tile.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROJECT_PANAMA_CANAL_HELP</Tag>
+		<English>[ICON_BULLET]+2 experience for Sea units[NEWLINE][ICON_BULLET]Creates Straits along the Panama tile[NEWLINE][COLOR_RED]Requires no city on the Panama tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Panama tile[COLOR_REVERT]</English>
+		<French>[ICON_BULLET]+2 experience for Sea units[NEWLINE][ICON_BULLET]Creates Straits along the Panama tile[NEWLINE][COLOR_RED]Requires no city on the Panama tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Panama tile[COLOR_REVERT]</French>
+		<German>[ICON_BULLET]+2 experience for Sea units[NEWLINE][ICON_BULLET]Creates Straits along the Panama tile[NEWLINE][COLOR_RED]Requires no city on the Panama tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Panama tile[COLOR_REVERT]</German>
+		<Italian>[ICON_BULLET]+2 experience for Sea units[NEWLINE][ICON_BULLET]Creates Straits along the Panama tile[NEWLINE][COLOR_RED]Requires no city on the Panama tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Panama tile[COLOR_REVERT]</Italian>
+		<Spanish>[ICON_BULLET]+2 experience for Sea units[NEWLINE][ICON_BULLET]Creates Straits along the Panama tile[NEWLINE][COLOR_RED]Requires no city on the Panama tile[COLOR_REVERT][NEWLINE][COLOR_RED]Requires access to the Panama tile[COLOR_REVERT]</Spanish>
+	</TEXT>
 </Civ4GameText>

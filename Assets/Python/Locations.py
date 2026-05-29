@@ -84,6 +84,12 @@ iCanadaWesternBorder = 8
 iCanadaEasternBorder = 40
 
 
+# Wonders
+
+tSuez = (82, 44)
+lPanamaStraits = [(26, 37), (27, 36)]
+
+
 ### Tiles ###
 
 tAngkor = (121, 37)

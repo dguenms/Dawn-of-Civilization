@@ -5038,6 +5038,12 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 						}
 
 						// Leoreth
+						if (eIndex == PROJECT_PANAMA_CANAL)
+						{
+							GET_PLAYER((PlayerTypes)iI).changeDomainExperienceModifier(DOMAIN_SEA, iChange * 2);
+						}
+
+						// Leoreth
 						if (eIndex == PROJECT_GOLDEN_RECORD)
 						{
 							GET_PLAYER((PlayerTypes)iI).updateCommerce(COMMERCE_CULTURE);

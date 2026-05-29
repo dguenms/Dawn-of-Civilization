@@ -12474,6 +12474,18 @@ void CvGameTextMgr::setProjectHelp(CvWStringBuffer &szBuffer, ProjectTypes eProj
 	}
 
 	// Leoreth
+	if (eProject == PROJECT_SUEZ_CANAL)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_SUEZ_CANAL_HELP"));
+	}
+
+	if (eProject == PROJECT_PANAMA_CANAL)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_PROJECT_PANAMA_CANAL_HELP"));
+	}
+
 	if (eProject == PROJECT_GOLDEN_RECORD)
 	{
 		szBuffer.append(NEWLINE);

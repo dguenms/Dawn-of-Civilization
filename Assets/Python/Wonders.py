@@ -1,5 +1,6 @@
 from Core import *
 from RFCUtils import *
+from Locations import *
 from Events import handler
 
 
@@ -243,3 +244,18 @@ def pantheonOnPaganTempleChange(city, iBuilding, iChange):
 		wonderCity = getBuildingCity(iPantheon)
 		if wonderCity and wonderCity.getOwner() == city.getOwner():
 			wonderCity.changeBuildingCommerceChange(infos.building(iPantheon).getBuildingClassType(), CommerceTypes.COMMERCE_GOLD, iChange)
+
+
+# Suez Canal effect: place Canal on Suez tile
+@handler("projectBuilt")
+def suezCanalEffect(city, iProject):
+	if iProject == iSuezCanal:
+		plot(tSuez).setImprovementType(iCanal)
+
+
+# Panama Canal effect: place Straits around Panama tile
+@handler("projectBuilt")
+def panamaCanalEffect(city, iProject):
+	if iProject == iPanamaCanal:
+		for plot in plots.of(lPanamaStraits):
+			plot.setFeatureType(iStrait, 0)
