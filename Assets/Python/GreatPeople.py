@@ -182,7 +182,6 @@ dGreatPeople = {
 			"Kagemni", # 26th BC
 			"Ptahhotep", # 25th BC
 			"Amenemhat", # 20th BC
-			"fHatshepsut", # 15th BC
 			"Herihor", # 11th BC
 			iClassical,
 			"fBerenice Euergetis", # 3rd BC
@@ -1237,7 +1236,7 @@ dGreatPeople = {
 			"Diocletianus", # 3rd
 		),
 		iGreatGeneral : (
-			"Scipio Africanus", # 2nd BC
+			"Fabius Maximus", # 2nd BC
 			"Gaius Marius", # 2nd BC
 			"Gnaeus Pompeius Magnus", # 1st BC
 			"Germanicus", # 1st
@@ -1307,7 +1306,6 @@ dGreatPeople = {
 			"Niall Noigiallach", # Disputed
 			u"Adomnán", # 5th/6th
 			"Hywel Dda", # 10th
-			"Brian Boru", # 11th
 			"Llywelyn", # 13th
 			"Robert", # 14th
 		),
@@ -1316,7 +1314,6 @@ dGreatPeople = {
 			"Cassivellaunus", # 1st BC
 			"Vercingetorix", # 1st BC
 			"Ambiorix", # 1st BC
-			"fBoudica", # 1st
 			"Caratacus", # 1st
 			"Ambrosius Aurelianus", # 5th
 			iMedieval,
@@ -1888,7 +1885,6 @@ dGreatPeople = {
 			"Ioannis Tzimiskes", # 10th
 			"Nikephoros Phokas", # 10th
 			"Ioannis Kourkouas", # 10th 
-			"Basileios Bulgaroktonos", # 11th
 			"Georgios Maniakes", # 11th
 			"Michael Palaiologos", # 12th
 			"Nikephoros Bryennios", # 12th
@@ -2283,7 +2279,6 @@ dGreatPeople = {
 			u"Haraldr Hárfagri", # 9th Norwegian
 			u"Eiríkr Blóðøx", # 10th norwegian
 			u"Sveinn Tjúguskegg", # 10th danish
-			u"Knútr inn Ríki", # 11th Danish
 			u"Harald Harðráði", # 11th norwegian
 			"Knutr", # 11th danish
 			u"Sigurðr Jórsalafari", # 12th Norwegian
@@ -3660,7 +3655,6 @@ dGreatPeople = {
 			"Danylo Halytskyy", # 13th
 			iRenaissance,
 			"Petro Sahaydachnyy", # 16th
-			"Bohdan Khmelnytskyy", # 17th
 			"Pylyp Orlyk", # 18th
 			iGlobal,
 			"Mykhailo Hrushevskyi", # 20th
@@ -3951,7 +3945,6 @@ dGreatPeople = {
 			"Adam Jerzy Czartoryski", # 19th
 			iGlobal,
 			"Ignacy Daszynski", # 20th
-			"Jozef Pilsudski", # 20th
 			"Wladyslaw Sikorski", # 20th
 		),
 		iGreatGeneral : (
@@ -4341,7 +4334,6 @@ dGreatPeople = {
 		iGreatProphet : (
 			"Qiu Chuji", # 12th (also Chinese)
 			"Berke", # 13th
-			u"Özbeg", # 13th
 			"Adud al-Din al-Iji", # 13th
 			u"Drogön Chögyal Phagpa", # 13th
 			iRenaissance,
