@@ -26,10 +26,10 @@ LEADERHEADS
 * The Capo: Cavour, Charles V, Nasser, Yaroslav, Mongkut, Afonso, Hitler, Chandragupta, George I (Stambolov), Tun Perak (Askia), Ptolemy
 * IgorS: Charles V, Nasser, Yaroslav, Mongkut, Afonso, Brian Boru, Tun Perak (Askia)
 * Amra: Naresuan (Ramkhamhaeng), Hiram, Akbar, Basil, Francis
-* Ekmek: Meiji, Ataturk, Khomeini, Mussolini, Akbar, Basil, Hitler, Pilsudski, Castilla (O'Higgins), Amanirena (Amina)
+* Ekmek: Meiji, Ataturk, Khomeini, Mussolini, Akbar, Basil, Hitler, Pilsudski, Castilla (O'Higgins), Amanirena (Amina), Curtin
 * cfkane: Afonso, Le Loi (Liu Bei)
 * Methyl Orange: Kammu (Jimmu), Ashurbanipal
-* mechaerik: Franco
+* mechaerik: Franco, Leopold
 * Flintlock1415: Alfred
 * PW90: Philipp
 * charle88: Philipp
@@ -42,7 +42,7 @@ LEADERHEADS
 * Triver: Sri Jayanasa (Gajah Mada)
 * Bernie14: Hitler, Haile Selassie, Walesa
 * The Coyote: Hitler
-* Smeagolheart: Hitler
+* Smeagolheart: Hitler, Muhammad Ali (Osman)
 * Chuggi: Hitler
 * Firaxis: Qin Shi Huang, Taizong (Chinese release)
 * Novator: Casimir III, Gerhardsen, Vargas, Murshili (Mursilis), Taharqa
@@ -51,9 +51,11 @@ LEADERHEADS
 * ramzay1945: Casimir III, Gustavus Adolphus, MacDonald, Khmelnytsky
 * Civciv5: Krishna Deva Raya (Dharmapala)
 * AbsintheRed: Topiltzin
-* il marchese: Anawrahta (Ramkhamhaeng)
+* il marchese: Anawrahta (Ramkhamhaeng), Songtsen Gampo
 * Refar: Ho Chi Minh
 * Wonderblunder: Haakon
+* Rise of Mankind: Ibn Saud
+* Nitram15: Kangxi (Yesugei)
 * Bautos42: texture and background changes for various included leaders
 
 From mods, without explicit mention of the original creators
@@ -66,13 +68,19 @@ UNITS
 * RFC Classical World (srpt): Patiyodha name and button
 * MightyToad: Galleass, Hwacha, Kobukson, Lanternas (Civ5 imports)
 * embryodead: Gallowglass
-* Realism Invictus: Lantaka, Druzhina, Carolean, Hakkapeliitta, Atlatl, Rattan Archer
+* Realism Invictus (Walter Hawkwood): Lantaka, Druzhina, Carolean, Hakkapeliitta, Atlatl, Rattan Archer, Digger, Light Horse, Chasseur, Bannerman, Ikhwan, Chambul
+* Sword of Islam (embryodead): Mamluk
 
 BUILDINGS:
 * The Ancient Mediterranean mod: Menhir
-* Walter Hawkwood: Gopuram (EU3 building pack)
-* Realism Invictus: Forge
+* Walter Hawkwood: Gopuram (EU3 building pack), CSIRO (EE2 building pack)
+* Realism Invictus: Forge, Chocolaterie (Tavern)
 * History Rewritten: Caravanserai, Kalliu
+* JFD, Janburota, bernie14 (Civ5 Belgium mod): Chocolaterie
+* RFCA: Piaohao (Teahouse)
+* Sword of Islam: Souk
+* More Civilisations, Darth, Alga, JFD, Sas, TarcisioCM, Zharques (Civ5 Crimea mod): Basqaq
+* stolenrays: Oil Depot
 
 WONDERS
 * merijn_v1: Dujiangyan, Channel Tunnel, Prambanan, Metropolitain, Gardens by the Bay, Silver Tree Fountain, Old Synagogue
@@ -84,6 +92,9 @@ WONDER MOVIES:
 * Caveman2Cosmos
 * Realism Invictus
 * Sword of Islam
+
+FLAGS:
+* TopHatPaladin (Civ5 Golden Horde mod): Tatars
 
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
@@ -113,13 +124,13 @@ MISCELLANEOUS
 * andrewv42: map changes in India and Indochina
 * Steb: city names in Canada and the Americas
 * devolution (AdvCiv mod): DLL compiler options (Final_Release target)
-* SOVNARKOM: Belgian great people names
+* MacAurther: Straits implementation
 
 PEDIA
 * Wikipedia
 
 HELP AND ADVICE
-* Walter Hawkwood: fixing issues with unit and building models
+* Walter Hawkwood: fixing issues with unit and building models and animations
 
 GITHUB PROJECT CONTRIBUTORS
 Sgt. Bears, merijn_v1, Bautos42, Alexius08, Imp. Knoedel, Citis, DC123456789, Panopticon, 1SDAN
@@ -132,7 +143,7 @@ Too many people to list for their contributions of Great Statesmen, Female Great
 in particular Hightower, DC123456789, borhap88, Panopticon and Chep,
 as well as significant overall contributions by Steb,
 manio curio for Roman and Italian names,
-SOVNARKOM for Mongol names
+SOVNARKOM for Mongol and Belgian names
 
 There has been so much valuable feedback to this mod which I'm really thankful for. I hope you're not offended if you miss yourself in this quickly compiled list and I hereby thank you anonymously.
 If someone feels they should be mentioned here as a contributor, please notify me. I certainly didn't consciously exclude anyone.
