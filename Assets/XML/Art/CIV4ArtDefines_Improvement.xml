@@ -261,7 +261,7 @@
 		<ImprovementArtInfo>
 			<Type>ART_DEF_IMPROVEMENT_CANAL</Type>
 			<bExtraAnimations>0</bExtraAnimations>
-			<fScale>0.5</fScale>
+			<fScale>0.25</fScale>
 			<fInterfaceScale>1.0</fInterfaceScale>
 			<NIF>Art/Structures/Improvements/Canal/Kanal.nif</NIF>
 			<KFM/>
