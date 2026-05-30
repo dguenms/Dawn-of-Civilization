@@ -2781,7 +2781,7 @@
 			<bGoody>0</bGoody>
 			<bPermanent>1</bPermanent>
 			<bUseLSystem>0</bUseLSystem>
-			<iAdvancedStartCost>80</iAdvancedStartCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iAdvancedStartCostIncrease>0</iAdvancedStartCostIncrease>
 			<iTilesPerGoody>0</iTilesPerGoody>
 			<iGoodyRange>0</iGoodyRange>
