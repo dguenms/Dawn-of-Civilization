@@ -1119,6 +1119,7 @@ class Congress:
 			for city in cities.owner(iLoopPlayer):
 				plot = plot_(city)
 				iSettlerMapValue = plot.getPlayerSettlerValue(iPlayer)
+				iWarMapValue = plot.getPlayerWarValue(iPlayer)
 				iValue = 0
 				
 				bRecolonise = not self.bPostWar and city.getRegionID() in lAmerica and civ(iPlayer) in dCivGroups[iCivGroupEurope] and civ(city) in dCivGroups[iCivGroupAmerica] and civ(city) in dTechGroups[iTechGroupWestern]
@@ -1138,8 +1139,7 @@ class Congress:
 				if iTotalCulture > 0:
 					iCultureRatio = city.getCultureTimes100(iPlayer) * 100 / iTotalCulture
 					if iCultureRatio > iCultureDivisor:
-						if civ(city) != iAmerica:
-							iValue += iCultureRatio / iCultureDivisor
+						iValue += iCultureRatio / iCultureDivisor
 							
 				# ever owned
 				if not bRecolonise and city.isEverOwned(iPlayer):
@@ -1176,6 +1176,10 @@ class Congress:
 				iDistance = distance(city, closest)
 				if iDistance < 5:
 					iValue += 5-iDistance
+					iValue += self.getSettlerClaimValue(iSettlerMapValue)
+				
+				if iSettlerMapValue >= 10 and iWarMapValue >= 5:
+					iValue += 2
 					
 				# after war: war targets
 				if self.bPostWar:
@@ -1192,7 +1196,7 @@ class Congress:
 				if civ(iPlayer) == iCanada:
 					if city in plots.rectangle(tNewfoundland):
 						iValue += 5
-					
+				
 				if iValue > 0:
 					lPlots.append((city.getX(), city.getY(), iValue))
 		
