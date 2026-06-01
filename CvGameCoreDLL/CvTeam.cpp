@@ -5021,7 +5021,7 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 								int iLoop;
 								for (CvUnit* pUnit = GET_PLAYER((PlayerTypes)iI).firstUnit(&iLoop); pUnit != NULL; pUnit = GET_PLAYER((PlayerTypes)iI).nextUnit(&iLoop))
 								{
-									if (GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(pUnit->getUnitCombatType()))
+									if (pUnit->getUnitCombatType() != NO_UNITCOMBAT && GC.getPromotionInfo((PromotionTypes)kProject.getFreePromotion()).getUnitCombat(pUnit->getUnitCombatType()))
 									{
 										pUnit->setHasPromotion((PromotionTypes)kProject.getFreePromotion(), true);
 									}
