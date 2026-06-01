@@ -7226,8 +7226,7 @@ int CvCity::calculateBaseDistanceMaintenanceTimes100() const
 
 	iMaintenance /= iMaxDistance;
 
-	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
-	if (pCapital && plot()->isOverseas(pCapital->plot()))
+	if (isColony())
 	{
 		iMaintenance /= 2;
 	}
@@ -7321,8 +7320,7 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
-	CvCity* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity();
-	if (pCapital && !plot()->isOverseas(pCapital->plot()))
+	if (!isColony())
 	{
 		return 0;
 	}
@@ -18715,8 +18713,9 @@ void CvCity::setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue)
 bool CvCity::isColony() const
 {
 	CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
-
 	if (pCapital == NULL) return false;
+
+	if (pCapital->plot()->getRegionID() == REGION_ETHIOPIA && plot()->getOverseasGroup() == OVERSEAS_GROUP_EUROPE) return false;
 
 	return plot()->isOverseas(pCapital->plot());
 }
