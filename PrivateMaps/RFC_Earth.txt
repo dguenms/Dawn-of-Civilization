@@ -10907,6 +10907,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=61
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11344,11 +11345,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=59
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=25,y=60
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11781,6 +11784,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=58
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12226,6 +12230,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=58
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12673,6 +12678,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=59
+	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
