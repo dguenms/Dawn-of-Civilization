@@ -10,6 +10,10 @@
 
 #include "CvGlobals.h"
 #include "CvArtFileMgr.h"
+// doc: advciv does not need these includes so perhaps something is missing
+#include "CvInfo_Building.h"
+#include "CvInfo_Civics.h"
+#include "CvInfo_City.h"
 
 class CyGame;
 class CyMap;

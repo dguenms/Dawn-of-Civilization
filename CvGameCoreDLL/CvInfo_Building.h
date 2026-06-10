@@ -180,6 +180,7 @@ public:
 	ReligionTypes getReligionType() const { return m_eReligionType; }
 	ReligionTypes getStateReligion() const { return m_eStateReligion; }
 	ReligionTypes getPrereqReligion() const { return m_ePrereqReligion; }
+	ReligionTypes getPrereqOrReligion() const { return m_ePrereqOrReligion; }
 	CorporationTypes getPrereqCorporation() const
 	{
 		return m_ePrereqCorporation;
@@ -214,6 +215,15 @@ public:
 	int getBombardDefenseModifier() const { return m_iBombardDefenseModifier; }
 	int getAllCityDefenseModifier() const { return m_iAllCityDefenseModifier; }
 	int getEspionageDefenseModifier() const { return m_iEspionageDefenseModifier; }
+
+	// doc
+	int getBuildingUnhealthModifier() const { return m_iBuildingUnhealthModifier; }
+	int getCorporationUnhealthModifier() const { return m_iCorporationUnhealthModifier; }
+	int getCultureGreatPeopleRateModifier() const { return m_iCultureGreatPeopleRateModifier; }
+	int getCultureHappiness() const { return m_iCultureHappiness; }
+	int getCultureTradeRouteModifier() const { return m_iCultureTradeRouteModifier; }
+	int getUnignorableBombardDefenseModifier() const { return m_iUnignorableBombardDefenseModifier; }
+
 	MissionTypes getMissionType() const { return m_eMissionType; }
 	void setMissionType(MissionTypes eNewType);
 	VoteSourceTypes getVoteSourceType() const { return m_eVoteSourceType; }
@@ -246,6 +256,10 @@ public:
 	bool isStateReligion() const { return m_bStateReligion; }
 	bool isAllowsNukes() const { return m_bAllowsNukes; }
 
+	// doc
+	bool isPagan() const { return m_bPagan; }
+	bool isNoResistance() const { return m_bNoResistance; }
+
 	const TCHAR* getConstructSound() const;
 	const TCHAR* getArtDefineTag() const;
 	const TCHAR* getMovieDefineTag() const;
@@ -268,6 +282,11 @@ public:
 	DEF_SHORT_INFO_ENUM_MAP(SpecialistExtraCommerce, Commerce, CommercePercentMap); // (not exposed to Python)
 	DEF_SHORT_INFO_ENUM_MAP(StateReligionCommerce, Commerce, CommerceChangeMap);
 	DEF_SHORT_INFO_ENUM_MAP(CommerceHappiness, Commerce, CommercePercentMap);
+
+	// doc
+	DEF_SHORT_INFO_ENUM_MAP(FlatRiverPlotYieldChange, Yield, YieldChangeMap);
+	DEF_SHORT_INFO_ENUM_MAP(CultureCommerceModifier, Commerce, CommercePercentMap);
+	DEF_SHORT_INFO_ENUM_MAP(PowerCommerceModifier, Commerce, CommercePercentMap);
 
 	DEF_INFO_ENUM_MAP(ReligionChange, Religion, int, char, NonDefaultEnumMap);
 	DEF_INFO_ENUM_MAP(SpecialistCount, Specialist, int, char, ArrayEnumMap);
@@ -307,6 +326,11 @@ public:
 	DEF_INFO_ENUM2SHORT_MAP(SpecialistYieldChange, Specialist, Yield, YieldChangeMap, NonDefaultEnumMap);
 	DEF_INFO_ENUM2SHORT_MAP(BonusYieldModifier, Bonus, Yield, YieldPercentMap, NonDefaultEnumMap);
 	// <advc.003w> for convenience
+
+	// doc
+	DEF_INFO_ENUM2SHORT_MAP(BonusCommerceModifier, Bonus, Commerce, CommercePercentMap, NonDefaultEnumMap);
+	DEF_INFO_ENUM2SHORT_MAP(BonusYieldChange, Bonus, Yield, YieldChangeMap, NonDefaultEnumMap);
+
 	bool isWorldWonder() const
 	{
 		return GC.getInfo(getBuildingClassType()).isWorldWonder();
@@ -409,6 +433,7 @@ protected:
 	ReligionTypes m_eReligionType;
 	ReligionTypes m_eStateReligion;
 	ReligionTypes m_ePrereqReligion;
+	ReligionTypes m_ePrereqOrReligion; // doc
 	CorporationTypes m_ePrereqCorporation;
 	CorporationTypes m_eFoundsCorporation;
 	ReligionTypes m_eGlobalReligionCommerce;
@@ -432,6 +457,15 @@ protected:
 	int m_iAllCityDefenseModifier;
 	int m_iEspionageDefenseModifier;
 	int m_iUnhealthyPopulationModifier; // K-Mod: was m_bNoUnhealthyPopulation
+
+	// doc
+	int m_iBuildingUnhealthModifier;
+	int m_iCorporationUnhealthModifier;
+	int m_iCultureGreatPeopleRateModifier;
+	int m_iCultureHappiness;
+	int m_iCultureTradeRouteModifier;
+	int m_iUnignorableBombardDefenseModifier;
+
 	MissionTypes m_eMissionType;
 	VoteSourceTypes m_eVoteSourceType;
 
@@ -458,6 +492,8 @@ protected:
 	bool m_bCenterInCity;
 	bool m_bStateReligion;
 	bool m_bAllowsNukes;
+	bool m_bPagan; // doc
+	bool m_bNoResistance; // doc
 
 	CvString m_szConstructSound;
 	CvString m_szArtDefineTag;

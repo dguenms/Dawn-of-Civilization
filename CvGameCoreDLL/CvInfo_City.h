@@ -49,6 +49,9 @@ public: // All the const functions are exposed to Python
 	void setMissionType(int iNewType);
 	int getExperience() const;
 
+	// doc
+	int getHappiness() const { return m_iHappiness; }
+
 	bool isVisible() const;
 
 	int getYieldChange(int i) const;
@@ -65,6 +68,9 @@ protected:
 	int m_iGreatPeopleRateChange;
 	int m_iMissionType;
 	int m_iExperience;
+
+	// doc
+	int m_iHappiness;
 
 	bool m_bVisible;
 
@@ -86,6 +92,8 @@ public:
 	~CvCultureLevelInfo();
 
 	int getCityDefenseModifier() const; // Exposed to Python
+	int getWonderLimit() const;
+	int getNationalWonderLimit() const;
 	int getSpeedThreshold(int i) const; // Exposed to Python
 	bool read(CvXMLLoadUtility* pXML);
 
@@ -97,6 +105,8 @@ public:
 
 protected:
 	int m_iCityDefenseModifier;
+	int m_iWonderLimit;
+	int m_iNationalWonderLimit;
 	int* m_paiSpeedThreshold;
 };
 
@@ -139,6 +149,8 @@ public: // The const functions are exposed to Python
 	int getGoldPerProduction() const;
 	int getProductionPerPopulation() const;
 	bool isAnger() const;
+	bool isUnits() const; // doc
+	bool isBuildings() const; // doc
 
 	bool read(CvXMLLoadUtility* pXML);
 
@@ -146,6 +158,8 @@ protected:
 	int m_iGoldPerProduction;
 	int m_iProductionPerPopulation;
 	bool m_bAnger;
+	bool m_bUnits; // doc
+	bool m_bBuildings; // doc
 };
 
 #endif

@@ -51,19 +51,6 @@ enum MovementFlags // advc.pf: Turned into an enum; exposed to Python (CyEnumsIn
 };
 OVERLOAD_BITWISE_OPERATORS(MovementFlags)
 
-// TODO: include in CvEnums
-#ifdef _USRDLL
-#define MAX_CIV_PLAYERS				(36)
-#else
-#define MAX_CIV_PLAYERS				(CvGlobals::getInstance().getMaxCivPlayers())
-#endif
-
-#define MAX_CIV_TEAMS				(MAX_CIV_PLAYERS)
-#define MAX_PLAYERS					(MAX_CIV_PLAYERS + 1)
-#define MAX_TEAMS					(MAX_PLAYERS)
-#define BARBARIAN_PLAYER			((PlayerTypes)MAX_CIV_PLAYERS)
-#define BARBARIAN_TEAM				((TeamTypes)MAX_CIV_TEAMS)
-
 /*	Char Count limit for edit boxes ...
 	advc (note): The DLL uses some of these in CvDLLButtonPopup. */
 #define PREFERRED_EDIT_CHAR_COUNT							(15)
@@ -81,12 +68,7 @@ OVERLOAD_BITWISE_OPERATORS(MovementFlags)
 #define DIRECTION_RADIUS									(1)
 #define DIRECTION_DIAMETER									(DIRECTION_RADIUS * 2 + 1)
 
-// TODO: include in CvEnums
-#define NUM_CITY_PLOTS					(21)
-#define NUM_CITY_PLOTS_3				(37) // Leoreth: 21 + 16
-#define CITY_HOME_PLOT					(0)
-#define CITY_PLOTS_RADIUS				(2)
-#define CITY_PLOTS_DIAMETER				((CITY_PLOTS_RADIUS*2) + 1)
+#define MIN_CONTINENT_SIZE									(40)
 
 #ifndef _USRDLL // advc: Unused (at least in the DLL); should probably keep it that way.
 	#define GAME_NAME ("Game")

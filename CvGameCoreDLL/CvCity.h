@@ -224,7 +224,8 @@ public:
 
 	bool hasTrait(TraitTypes eTrait) const;																		// Exposed to Python
 	bool isBarbarian() const;
-	bool isIndependent() const; // doc																					// Exposed to Python
+	bool isIndependent() const; // doc																			// Exposed to Python
+	bool isMinorCiv() const; // doc
 	bool isHuman() const;																						// Exposed to Python
 	DllExport bool isVisible(TeamTypes eTeam, bool bDebug) const;												// Exposed to Python
 	// advc: Make bDebug=false the default
@@ -373,6 +374,7 @@ public:
 	CvArea* secondWaterArea() const;
 	CvArea* sharedWaterArea(CvCity* pCity) const;
 	CvArea* continentArea() const; // doc
+	CvArea& getContinentArea() const; // doc
 	bool isBlockaded() const;
 	// BETTER_BTS_AI_MOD: END
 
@@ -401,7 +403,7 @@ public:
 	int getGreatPeopleRate() const;																				// Exposed to Python
 	int getTotalGreatPeopleRateModifier() const;																// Exposed to Python
 	void changeBaseGreatPeopleRate(int iChange);																// Exposed to Python
-	int getGreatPeopleRateModifier() const { return m_iGreatPeopleRateModifier; }								// Exposed to Python
+	int getGreatPeopleRateModifier() const;																		// Exposed to Python
 	void changeGreatPeopleRateModifier(int iChange);
 	// BUG - Building Additional Great People - start
 	int getAdditionalGreatPeopleRateByBuilding(BuildingTypes eBuilding) const;
@@ -600,7 +602,7 @@ public:
 	int getFoodKept() const { return m_iFoodKept; }																// Exposed to Python
 	void setFoodKept(int iNewValue);
 	void changeFoodKept(int iChange);
-	int getMaxFoodKeptPercent() const { return m_iMaxFoodKeptPercent; }											// Exposed to Python
+	int getMaxFoodKeptPercent() const;																			// Exposed to Python
 	void changeMaxFoodKeptPercent(int iChange);
 
 	int getOverflowProduction() const { return m_iOverflowProduction; }											// Exposed to Python
@@ -654,7 +656,7 @@ public:
 	int getNukeModifier() const { return m_iNukeModifier; }														// Exposed to Python
 	void changeNukeModifier(int iChange);
 
-	int getFreeSpecialist() const { return m_iFreeSpecialist; }													// Exposed to Python
+	int getFreeSpecialist() const;																				// Exposed to Python
 	void changeFreeSpecialist(int iChange);
 
 	int getPowerCount() const { return m_iPowerCount; }
@@ -737,7 +739,7 @@ public:
 
 	CultureLevelTypes getCultureLevel() const { return m_eCultureLevel; }										// Exposed to Python
 	CultureLevelTypes getCultureLevel(PlayerTypes ePlayer) const; // advc
-	int getCultureThreshold() const { return getCultureThreshold(getCultureLevel()); }							// Exposed to Python
+	int getCultureThreshold() const;																			// Exposed to Python
 	static int getCultureThreshold(CultureLevelTypes eLevel);
 	void setCultureLevel(CultureLevelTypes eNewValue, bool bUpdatePlotGroups);
 	void updateCultureLevel(bool bUpdatePlotGroups);
@@ -767,10 +769,7 @@ public:
 
 	int getBaseYieldRate(YieldTypes eYield) const { return m_aiBaseYieldRate.get(eYield); }						// Exposed to Python
 	int getBaseYieldRateModifier(YieldTypes eYield, int iExtra = 0) const;										// Exposed to Python
-	int getYieldRate(YieldTypes eYield) const																	// Exposed to Python
-	{
-		return (getBaseYieldRate(eYield) * getBaseYieldRateModifier(eYield)) / 100;
-	}
+	int getYieldRate(YieldTypes eYield) const;																	// Exposed to Python
 	void setBaseYieldRate(YieldTypes eYield, int iNewValue);													// Exposed to Python
 	void changeBaseYieldRate(YieldTypes eYield, int iChange);													// Exposed to Python
 	int calculateBaseYieldRate(YieldTypes eYield); // advc.104u
@@ -806,10 +805,7 @@ public:
 	// BULL - Trade Hover - end
 	void setTradeYield(YieldTypes eYield, int iNewValue);
 
-	int getExtraSpecialistYield(YieldTypes eYield) const														// Exposed to Python
-	{
-		return m_aiExtraSpecialistYield.get(eYield);
-	}
+	int getExtraSpecialistYield(YieldTypes eYield) const;														// Exposed to Python
 	int getExtraSpecialistYield(YieldTypes eYield, SpecialistTypes eSpecialist) const;							// Exposed to Python
 	void updateExtraSpecialistYield(YieldTypes eYield);
 	void updateExtraSpecialistYield();
@@ -927,10 +923,7 @@ public:
 	void changeDomainProductionModifier(DomainTypes eDomain, int iChange);
 
 	int getCulture(CivilizationTypes eCivilization) const; // doc
-	int getCulture(PlayerTypes ePlayer) const																	// Exposed to Python
-	{	// advc: Delegate to the Times100 function
-		return getCultureTimes100(ePlayer) / 100; // TODO: this is wrong
-	}
+	int getCulture(PlayerTypes ePlayer) const;																	// Exposed to Python
 	int getCultureTimes100(CivilizationTypes eCivilization) const; // doc
 	int getCultureTimes100(PlayerTypes ePlayer) const															// Exposed to Python
 	{
@@ -938,7 +931,7 @@ public:
 	}
 	int countTotalCultureTimes100() const;																		// Exposed to Python
 	int getActualTotalCultureTimes100() const; // doc
-	PlayerTypes findHighestCulture() const;																		// Exposed to Python
+	PlayerTypes findHighestCulture(bool bIgnoreMinors = false) const;																		// Exposed to Python
 	// advc.101:  (advc.ctr: exposed to Python)
 	scaled revoltProbability( // <advc.023>
 			bool bIgnoreWar = false, bool biIgnoreGarrison = false,
@@ -1241,6 +1234,8 @@ public:
 	}
 	void setNumFreeBuilding(BuildingTypes eBuilding, int iNewValue);
 
+	bool isHasBuildingEffect(BuildingTypes eBuilding) const;
+
 	bool isMeltdownBuilding(BuildingTypes eBuilding) const; // advc.652
 	bool isMeltdownBuildingSuperseded(BuildingTypes eBuilding) const; // advc.652
 
@@ -1389,8 +1384,6 @@ public:
 	bool isMongolUP() const; // doc
 	void setMongolUP(bool bNewValue); // doc
 
-	void doPlotCultureTimes100(bool bUpdate, PlayerTypes ePlayer, int iCultureRateTimes100, bool bCityCulture); // doc
-
 	int getGameTurnCivLost(CivilizationTypes eCivilization); // doc
 	void setGameTurnCivLost(CivilizationTypes eCivilization, int iNewValue); // doc
 	int getGameTurnPlayerLost(PlayerTypes ePlayer); // doc
@@ -1415,9 +1408,9 @@ public:
 	int determineArtStyleType() const; // doc
 	void updateArtStyleType(); // doc
 
-	int getDistanceTradeModifier(CvCity* pOtherCity) const; // doc
-	int getDefensivePactTradeModifier(CvCity* pOtherCity) const; // doc
-	int getVassalTradeModifier(CvCity* pOtherCity) const; // doc
+	int getDistanceTradeModifier(CvCity const& kOtherCity) const; // doc
+	int getDefensivePactTradeModifier(CvCity const& kOtherCity) const; // doc
+	int getVassalTradeModifier(CvCity const& kOtherCity) const; // doc
 
 	int estimateGrowth(int iTurns) const; // doc
 

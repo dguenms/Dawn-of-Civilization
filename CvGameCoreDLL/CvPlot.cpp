@@ -3828,7 +3828,7 @@ int CvPlot::getFOWIndex() const
 			(getX() * LANDSCAPE_FOW_RESOLUTION);
 }
 
-// advc: Let's us know that the CvArea objects have been initialized
+// advc: Lets us know that the CvArea objects have been initialized
 void CvPlot::initArea()
 {
 	m_pArea = GC.getMap().getArea(m_iArea);

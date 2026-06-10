@@ -141,6 +141,8 @@ public:
 	DllExport void updateHuman();
 	// advc: (Don't call CvGame::getActivePlayer b/c that header is not available here.)
 	bool isActive() const { return GC.getInitCore().getActivePlayer() == getID(); }
+	bool isIndependent() const;
+	bool isNative() const;
 
 	DllExport wchar const* getName(uint uiForm = 0) const;															// Exposed to Python
     void setName(std::wstring szNewValue); // rfc																														// Exposed to Python
@@ -725,9 +727,6 @@ public:
 	int getNumCitiesMaintenanceModifier() const { return m_iNumCitiesMaintenanceModifier; }							// Exposed to Python
 	void changeNumCitiesMaintenanceModifier(int iChange);
 
-    int getColonyMaintenanceModifier() const; // doc
-    void changeColonyMaintenanceModifier(int iChange); // doc
-
 	int getCorporationMaintenanceModifier() const { return m_iCorporationMaintenanceModifier; }						// Exposed to Python
 	void changeCorporationMaintenanceModifier(int iChange);
 
@@ -741,7 +740,7 @@ public:
     void changeProcessModifier(int iChange); // doc
     void updateProductionToCommerceModifier(); // doc
 
-    int getFoodProductionModifier() const; // doc
+	int getFoodProductionModifier() const { return m_iFoodProductionModifier; } // doc
     void changeFoodToProductionModifier(int iChange); // doc
 
 	int getTotalMaintenance() const { return getTotalMaintenanceTimes100() / 100; }									// Exposed to Python
@@ -1800,7 +1799,6 @@ protected:  // <advc.210>
 	int m_iDistanceMaintenanceModifier;
 	int m_iColonyMaintenanceModifier; // advc.912g
 	int m_iNumCitiesMaintenanceModifier;
-	int m_iColonyMaintenanceModifier; // doc
 	int m_iCorporationMaintenanceModifier;
 	int m_iCorporationCommerceModifier; // doc
 	int m_iCorporationUnhappinessModifier; // doc

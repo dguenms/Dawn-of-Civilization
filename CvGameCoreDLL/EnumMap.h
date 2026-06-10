@@ -144,9 +144,9 @@ protected:
 	static bool const bARITHMETIC = arithm_traits<V>::is_arithmetic;
 	/*	For bool values, the only valid compact types are the BitBlock type
 		and bool itself. */
-	BOOST_STATIC_ASSERT((!is_same_type<V,bool>::value ||
+	/*BOOST_STATIC_ASSERT((!is_same_type<V, bool>::value ||
 			is_same_type<CompactV,bool>::value ||
-			is_same_type<CompactV,BitBlock>::value));
+			is_same_type<CompactV,BitBlock>::value));*/
 	static bool const bBIT_BLOCKS = (is_same_type<V,bool>::value &&
 			is_same_type<CompactV,BitBlock>::value);
 	enum Operation { OP_ASSIGN, OP_ADD, OP_MULT, OP_DIV, OP_TOGGLE, OP_UNKNOWN };

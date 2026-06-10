@@ -620,51 +620,47 @@ void CvArea::changeNumImprovements(ImprovementTypes eImprovement, int iChange)
 }*/
 
 
-// TODO: refactor
-int CvArea::getClosestAreaSize(int iSize) const
+CvArea* CvArea::findClosestArea(int iMinSize) const
 {
-	if (getNumTiles() > iSize)
-	{
-		return getID();
-	}
+	if (getNumTiles() >= iMinSize)
+		return NULL;
 
-	int iCurrentDistance;
 	CvPlot* pCurrentPlot;
 	CvPlot* pLoopPlot;
-	int iClosestArea = -1;
+	int iCurrentDistance;
+
+	CvArea* pClosestArea = NULL;
 	int iClosestDistance = MAX_INT;
 
-	for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+	for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
 	{
-		pCurrentPlot = GC.getMapINLINE().plotByIndex(iI);
+		pCurrentPlot = GC.getMap().plotByIndex(iI);
+		if (!pCurrentPlot->isArea(*this))
+			continue;
 
-		if (pCurrentPlot->getArea() == getID())
+		for (int iJ = 0; iJ < GC.getMap().numPlots(); iJ++)
 		{
-			for (int iJ = 0; iJ < GC.getMapINLINE().numPlotsINLINE(); iJ++)
+			pLoopPlot = GC.getMap().plotByIndex(iJ);
+			if (!pLoopPlot->isArea(*this))
+				continue;
+			if (pLoopPlot->isWater())
+				continue;
+			if (pLoopPlot->getArea().getNumTiles() < iMinSize)
+				continue;
+			// doc: only use Australia as closest continent for Oceania
+			if (pLoopPlot->getRegionID() == REGION_AUSTRALIA && pCurrentPlot->getRegionID() != REGION_OCEANIA)
+				continue;
+
+			iCurrentDistance = stepDistance(pCurrentPlot->getX(), pCurrentPlot->getY(), pLoopPlot->getX(), pLoopPlot->getY());
+			if (iCurrentDistance < iClosestDistance)
 			{
-				pLoopPlot = GC.getMapINLINE().plotByIndex(iJ);
-
-				if (pLoopPlot->getArea() != getID() && !pLoopPlot->isWater() && GC.getMapINLINE().getArea(pLoopPlot->getArea())->getNumTiles() > iSize)
-				{
-					// Leoreth: prevent from using Australia as closest continent unless Oceania
-					if (pLoopPlot->getRegionID() == REGION_AUSTRALIA && pCurrentPlot->getRegionID() != REGION_OCEANIA)
-					{
-						continue;
-					}
-
-					iCurrentDistance = stepDistance(pCurrentPlot->getX(), pCurrentPlot->getY(), pLoopPlot->getX(), pLoopPlot->getY());
-
-					if (iCurrentDistance < iClosestDistance)
-					{
-						iClosestDistance = iCurrentDistance;
-						iClosestArea = pLoopPlot->getArea();
-					}
-				}
+				iClosestDistance = iCurrentDistance;
+				pClosestArea = pLoopPlot->area();
 			}
 		}
 	}
 
-	return iClosestArea;
+	return pClosestArea;
 }
 
 

@@ -1,8 +1,3 @@
-// continue
-// left 18009
-// center 19887
-// right 22752
-
 #include "CvGameCoreDLL.h"
 #include "CvPlayer.h"
 #include "CvAgents.h"
@@ -23230,13 +23225,6 @@ void CvPlayer::changeNoResistanceCount(int iChange)
 bool CvPlayer::isNoResistance() const
 {
 	return getNoResistanceCount() > 0;
-}
-
-// doc
-// TODO: header
-int CvPlayer::getFoodProductionModifier() const
-{
-	return m_iFoodProductionModifier;
 }
 
 // doc

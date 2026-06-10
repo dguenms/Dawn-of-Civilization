@@ -1597,12 +1597,20 @@ void CvMap::calculateAreas()
 		}
 	}
 
-	// doc: store closest area of size 40+
-	for (iI = 0; iI < numPlotsINLINE(); iI++)
+	FOR_EACH_AREA(pLoopArea)
 	{
-		pLoopPlot = plotByIndexINLINE(iI);
+		if (pLoopArea->getNumTiles() >= MIN_CONTINENT_SIZE)
+			continue;
 
-		pLoopPlot->setContinentArea(getArea(pLoopPlot->getArea())->getClosestAreaSize(40));
+		CvArea* pContinentArea = pLoopArea->findClosestArea(MIN_CONTINENT_SIZE);
+		if (pContinentArea != NULL)
+		{
+			for (int iI = 0; iI < numPlots(); iI++)
+			{
+				if (plotByIndex(iI)->isArea(*pLoopArea))
+					plotByIndex(iI)->setContinentArea(pContinentArea);
+			}
+		}
 	}
 
 	updateLakes(); // advc.030

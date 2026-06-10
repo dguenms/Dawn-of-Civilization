@@ -133,6 +133,7 @@ SET_TRAITS_FOR_DYN_ENUM(PlotNum, PLOT_NUM, PlotNumInt, plot_num_traits::getNumMa
 	SET_TRAITS_FOR_DYN_ENUM(Prefix, SUFFIX, short, GC.getNum##Prefix##Infos())
 
 DO_FOR_EACH_BIG_DYN_INFO_TYPE(SET_TRAITS_FOR_BIG_ENUM);
+DO_FOR_EACH_CUSTOM_INFO_TYPE(SET_TRAITS_FOR_BIG_ENUM);
 
 #define SET_TRAITS_FOR_CIV_ID(Prefix, INFIX) \
 	template<> \

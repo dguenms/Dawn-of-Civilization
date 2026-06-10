@@ -15,35 +15,20 @@
 	/* getInfo function and getNumInfos function exported */ \
 	DO(Climate, CLIMATE) \
 	DO(SeaLevel, SEALEVEL) \
-	DO(Terrain, TERRAIN) \
-	DO(Feature, FEATURE) \
-	DO(Improvement, IMPROVEMENT) \
 	DO(TurnTimer, TURNTIMER) \
 	DO(Handicap, HANDICAP) \
 	DO(GameSpeed, GAMESPEED) \
-	DO(Era, ERA) \
-	DO(Victory, VICTORY) \
 	/* internal only */ \
 	/*DO(Camera, CAMERAANIMATION)*/ /* advc.003j: unused */ \
-	DO(Advisor, ADVISOR) \
 	DO(Emphasize, EMPHASIZE) \
 	DO(BonusClass, BONUSCLASS) \
 	/*DO(River, RIVER)*/ /* advc.003j: unused */ \
 	DO(Goody, GOODY) \
 	DO(Trait, TRAIT) \
-	DO(Process, PROCESS) \
 	DO(Season, SEASON) \
 	DO(Month, MONTH) \
-	DO(UnitCombat, UNITCOMBAT) \
 	DO(Invisible, INVISIBLE) \
-	DO(VoteSource, VOTESOURCE) \
-	DO(Specialist, SPECIALIST) \
-	DO(Religion, RELIGION) \
-	DO(Corporation, CORPORATION) \
-	DO(Hurry, HURRY) \
-	DO(Upkeep, UPKEEP) \
-	DO(CultureLevel, CULTURELEVEL) \
-	DO(CivicOption, CIVICOPTION)
+	DO(Upkeep, UPKEEP) 
 
 // Number of instances not known at compile time; can be greater than MAX_CHAR.
 #define DO_FOR_EACH_BIG_DYN_INFO_TYPE(DO) \
@@ -56,24 +41,16 @@
 	DO(Build, BUILD) \
 	/* getInfo function and getNumInfos function exported */ \
 	DO(PlayerColor, PLAYERCOLOR) \
-	DO(Bonus, BONUS) \
-	DO(LeaderHead, LEADER) \
-	DO(Civilization, CIVILIZATION) \
 	DO(Cursor, CURSOR) \
 	/* internal only */ \
 	DO(BuildingClass, BUILDINGCLASS) \
-	DO(Building, BUILDING) \
 	DO(SpecialBuilding, SPECIALBUILDING) \
-	DO(Project, PROJECT) \
+	DO(PaganReligion, PAGANRELIGION) \
 	DO(Vote, VOTE) \
 	DO(Concept, CONCEPT) \
 	DO(NewConcept, NEW_CONCEPT) \
 	DO(UnitClass, UNITCLASS) \
 	DO(Unit, UNIT) \
-	DO(SpecialUnit, SPECIALUNIT) \
-	DO(Promotion, PROMOTION) \
-	DO(Tech, TECH) \
-	DO(Civic, CIVIC) \
 	DO(Event, EVENT) \
 	DO(EventTrigger, EVENTTRIGGER) \
 	DO(EspionageMission, ESPIONAGEMISSION) \
@@ -141,12 +118,43 @@
 	DO(CityTab, CITYTAB) \
 	DO(Calendar, CALENDAR) \
 	DO(UnitAI, UNITAI) \
-	DO(Denial, DENIAL)
+	DO(Denial, DENIAL) \
+	DO(Region, REGION) \
+	DO(RegionGroup, REGION_GROUP) \
+	DO(OverseasGroup, OVERSEAS_GROUP) \
+	DO(Parameter, PARAMETER) \
+	DO(Modifier, MODIFIER)
+
+#define DO_FOR_EACH_CUSTOM_INFO_TYPE(DO) \
+	DO(Bonus, BONUS) \
+	DO(Building, BUILDING) \
+	DO(Civilization, CIVILIZATION) \
+	DO(Civic, CIVIC) \
+	DO(CivicOption, CIVICOPTION) \
+	DO(Corporation, CORPORATION) \
+	DO(CultureLevel, CULTURELEVEL) \
+	DO(Era, ERA) \
+	DO(Feature, FEATURE) \
+	DO(Hurry, HURRY) \
+	DO(Improvement, IMPROVEMENT) \
+	DO(LeaderHead, LEADER) \
+	DO(Process, PROCESS) \
+	DO(Project, PROJECT) \
+	DO(Promotion, PROMOTION) \
+	DO(Religion, RELIGION) \
+	DO(Specialist, SPECIALIST) \
+	DO(SpecialUnit, SPECIALUNIT) \
+	DO(Tech, TECH) \
+	DO(Terrain, TERRAIN) \
+	DO(UnitCombat, UNITCOMBAT) \
+	DO(Victory, VICTORY) \
+	DO(VoteSource, VOTESOURCE)
 
 #define DO_FOR_EACH_INFO_TYPE(DO) \
 	DO_FOR_EACH_DYN_INFO_TYPE(DO) \
 	DO_FOR_EACH_STATIC_INFO_TYPE(DO) \
-	DO_FOR_EACH_INT_INFO_TYPE(DO)
+	DO_FOR_EACH_INT_INFO_TYPE(DO) \
+	DO_FOR_EACH_CUSTOM_INFO_TYPE(DO)
 
 /*  These don't have a dedicated CvInfo class, and the macros for generating
 	getter functions can't deal with that. (typedef would make it impossible
@@ -175,6 +183,7 @@
 	DO(CardinalDirection, CARDINALDIRECTION) \
 	DO(WarPlan, WARPLAN) \
 	DO(CityPlot, CITYPLOT) \
+	DO(CulturePlot, CULTUREPLOT) \
 	DO(Feat, FEAT) \
 	DO(AreaAI, AREAAI) \
 	DO(MissionAI, MISSIONAI) \

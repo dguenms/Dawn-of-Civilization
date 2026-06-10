@@ -11642,7 +11642,7 @@ PlayerTypes CvGame::getCityScreenOwner() const
 }
 
 // doc
-bool CvGame::isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevels eNotificationLevel) const
+bool CvGame::isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevelTypes eNotificationLevel) const
 {
 	switch (eNotificationLevel)
 	{
@@ -11661,13 +11661,13 @@ bool CvGame::isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPla
 
 // doc
 // TODO: header
-NotificationLevels CvGame::getGreatPeopleNotifications() const
+NotificationLevelTypes CvGame::getGreatPeopleNotifications() const
 {
 	return m_eGreatPeopleNotifications;
 }
 
 // doc
-void CvGame::setGreatPeopleNotifications(NotificationLevels eNotificationLevel)
+void CvGame::setGreatPeopleNotifications(NotificationLevelTypes eNotificationLevel)
 {
 	m_eGreatPeopleNotifications = eNotificationLevel;
 }
@@ -11679,13 +11679,13 @@ bool CvGame::isGreatPeopleNotification(PlayerTypes eNotifiedPlayer, PlayerTypes 
 }
 
 // doc
-NotificationLevels CvGame::getReligionSpreadNotifications() const
+NotificationLevelTypes CvGame::getReligionSpreadNotifications() const
 {
 	return m_eReligionSpreadNotifications;
 }
 
 // doc
-void CvGame::setReligionSpreadNotifications(NotificationLevels eNotificationLevel)
+void CvGame::setReligionSpreadNotifications(NotificationLevelTypes eNotificationLevel)
 {
 	m_eReligionSpreadNotifications = eNotificationLevel;
 }
@@ -11697,13 +11697,13 @@ bool CvGame::isReligionSpreadNotification(PlayerTypes eNotifiedPlayer, PlayerTyp
 }
 
 // doc
-NotificationLevels CvGame::getEventEffectNotifications() const
+NotificationLevelTypes CvGame::getEventEffectNotifications() const
 {
 	return m_eEventEffectNotifications;
 }
 
 // doc
-void CvGame::setEventEffectNotifications(NotificationLevels eNotificationLevel)
+void CvGame::setEventEffectNotifications(NotificationLevelTypes eNotificationLevel)
 {
 	m_eEventEffectNotifications = eNotificationLevel;
 }

@@ -371,6 +371,7 @@ bool CvXMLLoadUtility::GetNextXmlVal(T& r, T tDefault)
 	template bool CvXMLLoadUtility::GetNextXmlVal<EnumPrefix##Types>(EnumPrefix##Types&, EnumPrefix##Types);
 DO_FOR_EACH_DYN_INFO_TYPE(INSTANTIATE_GET_NEXT_XML_VAL);
 DO_FOR_EACH_STATIC_INFO_TYPE(INSTANTIATE_GET_NEXT_XML_VAL);
+DO_FOR_EACH_CUSTOM_INFO_TYPE(INSTANTIATE_GET_NEXT_XML_VAL);
 #undef INSTANTIATE_GET_NEXT_XML_VAL
 // </advc.enum>
 

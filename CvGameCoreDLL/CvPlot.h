@@ -368,11 +368,12 @@ public:
 			// BETTER_BTS_AI_MOD, General AI, 01/02/09, jdog5000
 			bool bNoImpassable = false) const;
 	CvArea* secondWaterArea() const;
-	CvArea* continentArea() const;
 	void setArea(CvArea* pArea = NULL, /* advc.310: */ bool bProcess = true);
 
-	int getContinentArea() const; // doc // TODO: implement
-	void setContinentArea(int iNewValue); // doc
+	// doc
+	CvArea* continentArea() const { return m_pContinentArea != NULL ? m_pContinentArea : m_pArea; }
+	CvArea& getContinentArea() const { return m_pContinentArea != NULL ? *m_pContinentArea : *m_pArea; }
+	void setContinentArea(CvArea* pContinentArea) { m_pContinentArea = pContinentArea; }
 
 	DllExport int getFeatureVariety() const;														// Exposed to Python
 
@@ -938,11 +939,9 @@ protected:
 	// advc.opt: These two were short int
 	char m_iCityRadiusCount;
 	char m_iRiverCrossingCount;
-	char /*PlayerTypes*/ m_eOwner;
 
 	int m_iContinentArea; // doc
 	short m_iCultureConversionRate; // doc
-	int m_iTotalCulture; // doc // TODO: conflict?
 
 	bool m_bStartingPlot:1;
 	bool m_bNOfRiver:1;
@@ -986,6 +985,7 @@ protected:
 		CvArea* m_pArea; // This acted as a cache in BtS (was mutable)
 		int m_iArea;
 	}; // </advc>
+	CvArea* m_pContinentArea; // doc
 	/*	advc (note): These aren't CvCity pointers b/c of the order of deserialization.
 		Could use the same pattern as above (union) though. */
 	IDInfo m_plotCity;

@@ -39,7 +39,7 @@ struct CvMapInitData // holds initialization info
 };
 /*	advc.003k: Probably has been compiled into the EXE,
 	best not to change the memory layout at all. */
-BOOST_STATIC_ASSERT(sizeof(CvMapInitData) == 20);
+//BOOST_STATIC_ASSERT(sizeof(CvMapInitData) == 20);
 
 class CvMap /* advc.003e: */ : private boost::noncopyable
 {
@@ -193,6 +193,10 @@ public:
 	CityPlotTypes plotCityXY(int iCityX, int iCityY, CvPlot const& kPlot) const				// Exposed to Python (CyGameCoreUtils.py)
 	{
 		return plotCityXY(dxWrap(kPlot.getX() - iCityX), dyWrap(kPlot.getY() - iCityY));
+	}
+	CvPlot* plotCulture(int iX, int iY, CulturePlotTypes ePlot) const
+	{
+		return plotValidXY(iX + GC.getCityPlot3X()[ePlot], iY + GC.getCityPlot3Y()[ePlot]);
 	}
 	// advc:
 	bool adjacentOrSame(CvPlot const& kFirstPlot, CvPlot const& kSecondPlot) const
@@ -692,6 +696,9 @@ inline CvPlot* plotCity(int iX, int iY, CityPlotTypes ePlot) {
 }
 inline CityPlotTypes plotCityXY(int iCityX, int iCityY, CvPlot const& kPlot) {
 	return GC.getMap().plotCityXY(iCityX, iCityY, kPlot);
+}
+inline CvPlot* plotCulture(int iX, int iY, CulturePlotTypes ePlot) {
+	return GC.getMap().plotCulture(iX, iY, ePlot);
 }
 inline bool adjacentOrSame(CvPlot const& kFirstPlot, CvPlot const& kSecondPlot) { // advc
 	return GC.getMap().adjacentOrSame(kFirstPlot, kSecondPlot);

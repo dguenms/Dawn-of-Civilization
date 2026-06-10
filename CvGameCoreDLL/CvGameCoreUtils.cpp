@@ -7,12 +7,6 @@
 #include "BBAILog.h" // advc.007
 #include "CvInfo_GameOption.h"
 
-// doc: map within first ring
-// TODO: move next to plotCity
-CvPlot* plotCity3(int iX, int iY, int iIndex)
-{
-	return GC.getMapINLINE().plotINLINE((iX + GC.getCityPlot3X()[iIndex]), (iY + GC.getCityPlot3Y()[iIndex]));
-}
 
 // advc.035:
 void contestedPlots(std::vector<CvPlot*>& r, TeamTypes t1, TeamTypes t2)

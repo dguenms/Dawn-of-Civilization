@@ -306,6 +306,7 @@ public:
 	// Generate accessors for use within the DLL
 	DO_FOR_EACH_STATIC_INFO_TYPE(MAKE_INFO_ACCESSORS_STATIC)
 	DO_FOR_EACH_DYN_INFO_TYPE(MAKE_INFO_ACCESSORS_DYN)
+	DO_FOR_EACH_CUSTOM_INFO_TYPE(MAKE_INFO_ACCESSORS_DYN)
 	DO_FOR_EACH_INT_INFO_TYPE(MAKE_INFO_ACCESSORS_INT)
 	// World(Size)Info: awkward to generate through a macro
 	CvWorldInfo& getInfo(WorldSizeTypes eWorld) const
@@ -870,8 +871,8 @@ protected:
 	int m_aiPlotCardinalDirectionY[NUM_CARDINALDIRECTION_TYPES];
 	int m_aiCityPlotX[NUM_CITY_PLOTS];
 	int m_aiCityPlotY[NUM_CITY_PLOTS];
-    int m_aiCityPlot3X[NUM_CITY_PLOTS_3]; // doc
-    int m_aiCityPlot3Y[NUM_CITY_PLOTS_3]; // doc
+    int m_aiCityPlot3X[NUM_CULTURE_PLOTS]; // doc
+    int m_aiCityPlot3Y[NUM_CULTURE_PLOTS]; // doc
 	int m_aiCityPlotPriority[NUM_CITY_PLOTS];
 	int m_iMaxCityPlotPriority; // advc
 	CityPlotTypes m_aaeXYCityPlot[CITY_PLOTS_DIAMETER][CITY_PLOTS_DIAMETER];

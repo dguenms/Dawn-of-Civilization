@@ -1027,16 +1027,16 @@ public:
 	void resetCityScreenOwner(); // doc
 	PlayerTypes getCityScreenOwner() const; // doc
 
-	bool isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevels eNotificationLevel) const; // doc
+	bool isNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer, NotificationLevelTypes eNotificationLevel) const; // doc
 
-	NotificationLevels getGreatPeopleNotifications() const; // doc
-	void setGreatPeopleNotifications(NotificationLevels eNotificationLevel); // doc
+	NotificationLevelTypes getGreatPeopleNotifications() const; // doc
+	void setGreatPeopleNotifications(NotificationLevelTypes eNotificationLevel); // doc
 	bool isGreatPeopleNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const; // doc
-	NotificationLevels getReligionSpreadNotifications() const; // doc
-	void setReligionSpreadNotifications(NotificationLevels eNotificationLevel); // doc
+	NotificationLevelTypes getReligionSpreadNotifications() const; // doc
+	void setReligionSpreadNotifications(NotificationLevelTypes eNotificationLevel); // doc
 	bool isReligionSpreadNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const; // doc
-	NotificationLevels getEventEffectNotifications() const; // doc
-	void setEventEffectNotifications(NotificationLevels eNotificationLevel); // doc
+	NotificationLevelTypes getEventEffectNotifications() const; // doc
+	void setEventEffectNotifications(NotificationLevelTypes eNotificationLevel); // doc
 	bool isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const; // doc
 
 	PeriodTypes getPeriod(CivilizationTypes eCivilization) const; // doc
@@ -1122,9 +1122,9 @@ protected:
 	//PlayerTypes m_eEventPlayer; // (advc: unused)
 	StartingPlotNormalizationLevel m_eNormalizationLevel; // advc.108
 
-	NotificationLevels m_eGreatPeopleNotifications; // doc
-	NotificationLevels m_eReligionSpreadNotifications; // doc
-	NotificationLevels m_eEventEffectNotifications; // doc
+	NotificationLevelTypes m_eGreatPeopleNotifications; // doc
+	NotificationLevelTypes m_eReligionSpreadNotifications; // doc
+	NotificationLevelTypes m_eEventEffectNotifications; // doc
 
 	CvRandom m_mapRand;
 	CvRandom m_sorenRand;

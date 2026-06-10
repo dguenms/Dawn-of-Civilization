@@ -124,6 +124,12 @@ m_bLineOfSight(false),
 m_bHiddenNationality(false),
 m_bAlwaysHostile(false),
 m_bNoRevealMap(false),
+m_bResolveCrisis(false), // doc
+m_bReformGovernment(false), // doc
+m_bDiplomaticMission(false), // doc
+m_bPersecute(false), // doc
+m_bGreatMission(false), // doc
+m_bSlave(false), // doc
 m_fUnitMaxSpeed(0.0f),
 m_fUnitPadTime(0.0f),
 m_pbUpgradeUnitClass(NULL),
@@ -855,6 +861,15 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bHiddenNationality);
 	stream->Read(&m_bAlwaysHostile);
 	stream->Read(&m_bNoRevealMap);
+
+	// doc
+	stream->Read(&m_bResolveCrisis);
+	stream->Read(&m_bReformGovernment);
+	stream->Read(&m_bDiplomaticMission);
+	stream->Read(&m_bPersecute);
+	stream->Read(&m_bGreatMission);
+	stream->Read(&m_bSlave);
+
 	stream->Read(&m_fUnitMaxSpeed);
 	stream->Read(&m_fUnitPadTime);
 	// <advc.003t> (Pretty sure I'll never need this - not sure why I'm writing it.)
@@ -1124,6 +1139,15 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bHiddenNationality);
 	stream->Write(m_bAlwaysHostile);
 	stream->Write(m_bNoRevealMap);
+
+	// doc
+	stream->Write(m_bResolveCrisis);
+	stream->Write(m_bReformGovernment);
+	stream->Write(m_bDiplomaticMission);
+	stream->Write(m_bPersecute);
+	stream->Write(m_bGreatMission);
+	stream->Write(m_bSlave);
+
 	stream->Write(m_fUnitMaxSpeed);
 	stream->Write(m_fUnitPadTime);
 	// <advc.003t>
@@ -1261,6 +1285,13 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bHiddenNationality,"bHiddenNationality",false);
 	pXML->GetChildXmlValByName(&m_bAlwaysHostile,"bAlwaysHostile",false);
 	pXML->GetChildXmlValByName(&m_bNoRevealMap,"bNoRevealMap",false);
+
+	pXML->GetChildXmlValByName(&m_bResolveCrisis, "bResolveCrisis");
+	pXML->GetChildXmlValByName(&m_bReformGovernment, "bReformGovernment");
+	pXML->GetChildXmlValByName(&m_bDiplomaticMission, "bDiplomaticMission");
+	pXML->GetChildXmlValByName(&m_bPersecute, "bPersecute");
+	pXML->GetChildXmlValByName(&m_bGreatMission, "bGreatMission");
+	pXML->GetChildXmlValByName(&m_bSlave, "bSlave");
 
 	pXML->SetVariableListTagPair(&m_pbUpgradeUnitClass, "UnitClassUpgrades", GC.getNumUnitClassInfos());
 	pXML->SetVariableListTagPair(&m_pbTargetUnitClass, "UnitClassTargets", GC.getNumUnitClassInfos());

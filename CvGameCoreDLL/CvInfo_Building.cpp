@@ -69,6 +69,7 @@ m_eHolyCity(NO_RELIGION),
 m_eReligionType(NO_RELIGION),
 m_eStateReligion(NO_RELIGION),
 m_ePrereqReligion(NO_RELIGION),
+m_ePrereqOrReligion(NO_RELIGION), // doc
 m_ePrereqCorporation(NO_CORPORATION),
 m_eFoundsCorporation(NO_CORPORATION),
 m_eGlobalReligionCommerce(/* advc (was 0): */ NO_RELIGION),
@@ -91,6 +92,12 @@ m_iDefenseModifier(0),
 m_iBombardDefenseModifier(0),
 m_iAllCityDefenseModifier(0),
 m_iEspionageDefenseModifier(0),
+m_iBuildingUnhealthModifier(0), // doc
+m_iCorporationUnhealthModifier(0), // doc
+m_iCultureGreatPeopleRateModifier(0), // doc
+m_iCultureHappiness(0), // doc
+m_iCultureTradeRouteModifier(0), // doc
+m_iUnignorableBombardDefenseModifier(0), // doc
 m_eMissionType(NO_MISSION),
 m_eVoteSourceType(NO_VOTESOURCE),
 m_fVisibilityPriority(0.0f),
@@ -116,7 +123,9 @@ m_bNukeImmune(false),
 m_bPrereqReligion(false),
 m_bCenterInCity(false),
 m_bStateReligion(false),
-m_bAllowsNukes(false)
+m_bAllowsNukes(false),
+m_bPagan(false), // doc
+m_bNoResistance(false), // doc
 {}
 
 // advc.003w:
@@ -308,6 +317,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read((int*)&m_eReligionType);
 	stream->Read((int*)&m_eStateReligion);
 	stream->Read((int*)&m_ePrereqReligion);
+	stream->Read((int*)&m_ePrereqOrReligion); // doc
 	stream->Read((int*)&m_ePrereqCorporation);
 	stream->Read((int*)&m_eFoundsCorporation);
 	stream->Read((int*)&m_eGlobalReligionCommerce);
@@ -330,6 +340,12 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iBombardDefenseModifier);
 	stream->Read(&m_iAllCityDefenseModifier);
 	stream->Read(&m_iEspionageDefenseModifier);
+	stream->Read(&m_iBuildingUnhealthModifier); // doc
+	stream->Read(&m_iCorporationUnhealthModifier); // doc
+	stream->Read(&m_iCultureGreatPeopleRateModifier); // doc
+	stream->Read(&m_iCultureHappiness); // doc
+	stream->Read(&m_iCultureTradeRouteModifier); // doc
+	stream->Read(&m_iUnignorableBombardDefenseModifier); // doc
 	stream->Read((int*)&m_eMissionType);
 	stream->Read((int*)&m_eVoteSourceType);
 	stream->Read(&m_fVisibilityPriority);
@@ -356,6 +372,8 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bCenterInCity);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
+	stream->Read(&m_bPagan); // doc
+	stream->Read(&m_bNoResistance); // doc
 	stream->ReadString(m_szConstructSound);
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szMovieDefineTag);
@@ -411,6 +429,12 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SpecialistYieldChange().read(stream);
 	BonusYieldModifier().read(stream);
 	// </advc.003t>
+	// doc
+	BonusCommerceModifier().read(stream);
+	BonusYieldChange().read(stream);
+	CultureCommerceModifier().read(stream);
+	FlatRiverPlotYieldChange().read(stream);
+	PowerCommerceModifier().read(stream);
 }
 
 void CvBuildingInfo::write(FDataStreamBase* stream)
@@ -483,6 +507,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_eReligionType);
 	stream->Write(m_eStateReligion);
 	stream->Write(m_ePrereqReligion);
+	stream->Write(m_ePrereqOrReligion); // doc
 	stream->Write(m_ePrereqCorporation);
 	stream->Write(m_eFoundsCorporation);
 	stream->Write(m_eGlobalReligionCommerce);
@@ -505,6 +530,12 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iBombardDefenseModifier);
 	stream->Write(m_iAllCityDefenseModifier);
 	stream->Write(m_iEspionageDefenseModifier);
+	stream->Write(m_iBuildingUnhealthModifier); // doc
+	stream->Write(m_iCorporationUnhealthModifier); // doc
+	stream->Write(m_iCultureGreatPeopleRateModifier); // doc
+	stream->Write(m_iCultureHappiness); // doc
+	stream->Write(m_iCultureTradeRouteModifier); // doc
+	stream->Write(m_iUnignorableBombardDefenseModifier); // doc
 	stream->Write(m_eMissionType);
 	stream->Write(m_eVoteSourceType);
 
@@ -533,6 +564,8 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bCenterInCity);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
+	stream->Write(m_bPagan); // doc
+	stream->Write(m_bNoResistance); // doc
 	stream->WriteString(m_szConstructSound);
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szMovieDefineTag);
@@ -586,6 +619,13 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	SpecialistYieldChange().write(stream);
 	BonusYieldModifier().write(stream);
 	// </advc.003t>
+
+	// doc
+	BonusCommerceModifier().write(stream);
+	BonusYieldChange().write(stream);
+	CultureCommerceModifier().write(stream);
+	FlatRiverPlotYieldChange().write(stream);
+	PowerCommerceModifier().write(stream);
 }
 #endif
 
@@ -603,6 +643,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetInfoIDFromChildXmlVal(m_eReligionType, "ReligionType");
 	pXML->SetInfoIDFromChildXmlVal(m_eStateReligion, "StateReligion");
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqReligion, "PrereqReligion");
+	pXML->SetInfoIDFromChildXmlVal(m_ePrereqOrReligion, "PrereqOrReligion"); // doc
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqCorporation, "PrereqCorporation");
 	pXML->SetInfoIDFromChildXmlVal(m_eFoundsCorporation, "FoundsCorporation");
 	pXML->SetInfoIDFromChildXmlVal(m_eGlobalReligionCommerce, "GlobalReligionCommerce");
@@ -703,6 +744,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bBuildingOnlyHealthy, "bBuildingOnlyHealthy");
 	pXML->GetChildXmlValByName(&m_bNeverCapture, "bNeverCapture");
 	pXML->GetChildXmlValByName(&m_bNukeImmune, "bNukeImmune");
+	pXML->GetChildXmlValByName(&m_bPagan, "bPagan"); // doc
+	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // doc
 	pXML->GetChildXmlValByName(&m_bPrereqReligion, "bPrereqReligion");
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
@@ -764,6 +807,12 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iBombardDefenseModifier, "iBombardDefense");
 	pXML->GetChildXmlValByName(&m_iAllCityDefenseModifier, "iAllCityDefense");
 	pXML->GetChildXmlValByName(&m_iEspionageDefenseModifier, "iEspionageDefense");
+	pXML->GetChildXmlValByName(&m_iBuildingUnhealthModifier, "iBuildingUnhealthModifier"); // doc
+	pXML->GetChildXmlValByName(&m_iCorporationUnhealthModifier, "iCorporationUnhealthModifier"); // doc
+	pXML->GetChildXmlValByName(&m_iCultureGreatPeopleRateModifier, "iCultureGreatPeopleRateModifier"); // doc
+	pXML->GetChildXmlValByName(&m_iCultureHappiness, "iCultureHappiness"); // doc
+	pXML->GetChildXmlValByName(&m_iCultureTradeRouteModifier, "iCultureTradeRouteModifier"); // doc
+	pXML->GetChildXmlValByName(&m_iUnignorableBombardDefenseModifier, "iUnignorableBombardDefenseModifier"); // doc
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");
 	pXML->GetChildXmlValByName(&m_iPowerValue, "iPower");
 	pXML->GetChildXmlValByName(&m_fVisibilityPriority, "fVisibilityPriority");
@@ -777,6 +826,9 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetYieldList(AreaYieldModifier(), "AreaYieldModifiers");
 	pXML->SetYieldList(GlobalYieldModifier(), "GlobalYieldModifiers");
 
+	// doc
+	pXML->SetYieldList(FlatRiverPlotYieldChange(), "FlatRiverPlotYieldChanges");
+
 	pXML->SetCommerceList(CommerceChange(), "CommerceChanges");
 	pXML->SetCommerceList(ObsoleteSafeCommerceChange(), "ObsoleteSafeCommerceChanges");
 	pXML->SetCommerceList(CommerceChangeDoubleTime(), "CommerceChangeDoubleTimes");
@@ -785,6 +837,10 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetCommerceList(SpecialistExtraCommerce(), "SpecialistExtraCommerces");
 	pXML->SetCommerceList(StateReligionCommerce(), "StateReligionCommerces");
 	pXML->SetCommerceList(CommerceHappiness(), "CommerceHappinesses");
+
+	// doc
+	pXML->SetCommerceList(CultureCommerceModifier(), "CultureCommerceModifiers");
+	pXML->SetCommerceList(PowerCommerceModifier(), "PowerCommerceModifiers");
 
 	pXML->SetVariableListTagPair(ReligionChange(), "ReligionChanges");
 	pXML->SetVariableListTagPair(SpecialistCount(), "SpecialistCounts");
@@ -812,6 +868,10 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(FlavorValue(), "Flavors");
 	pXML->SetVariableListTagPair(ImprovementFreeSpecialist(), "ImprovementFreeSpecialists");
 	pXML->SetVariableListTagPair(BuildingHappinessChanges(), "BuildingHappinessChanges");
+
+	// doc
+	pXML->SetVariableListTagRate(BonusCommerceModifier(), "BonusCommerceModifier", "BonusType", "CommerceModifiers");
+	pXML->SetVariableListTagRate(BonusYieldChange(), "BonusYieldChange", "BonusType", "YieldChanges");
 
 	return true;
 }

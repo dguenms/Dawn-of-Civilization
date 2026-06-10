@@ -218,6 +218,10 @@ public: /*  All const functions are exposed to Python except some related to art
 	bool isAlwaysHostile() const { return m_bAlwaysHostile; }
 	bool isNoRevealMap() const { return m_bNoRevealMap; }
 
+	// doc
+	bool isSlave() const { return m_bSlave; }
+	bool isWorker() const { return getWorkRate() > 0 && getDomainType() == DOMAIN_LAND && getCombat() == 0 && !isSlave(); }
+
 	float getUnitMaxSpeed() const;
 	float getUnitPadTime() const;
 
@@ -467,6 +471,14 @@ protected:
 	bool m_bAlwaysHostile;
 	bool m_bNoRevealMap;
 	int m_iLeaderPromotion;
+
+	// doc
+	bool m_bResolveCrisis;
+	bool m_bReformGovernment;
+	bool m_bDiplomaticMission;
+	bool m_bPersecute;
+	bool m_bGreatMission;
+	bool m_bSlave;
 
 	float m_fUnitMaxSpeed;
 	float m_fUnitPadTime;

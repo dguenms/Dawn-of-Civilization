@@ -136,11 +136,17 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 	else pXML->InitList(&m_piCommerceChange, NUM_COMMERCE_TYPES);
 	pXML->GetChildXmlValByName(&m_iExperience, "iExperience");
 	pXML->SetVariableListTagPair(&m_piFlavorValue, "Flavors", GC.getNumFlavorTypes());
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+
 	return true;
 }
 
 CvCultureLevelInfo::CvCultureLevelInfo() :
 m_iCityDefenseModifier(0),
+m_iWonderLimit(0),
+m_iNationalWonderLimit(0),
 m_paiSpeedThreshold(NULL)
 {}
 
@@ -152,6 +158,16 @@ CvCultureLevelInfo::~CvCultureLevelInfo()
 int CvCultureLevelInfo::getCityDefenseModifier() const
 {
 	return m_iCityDefenseModifier;
+}
+
+int CvCultureLevelInfo::getWonderLimit() const
+{
+	return m_iWonderLimit;
+}
+
+int CvCultureLevelInfo::getNationalWonderLimit() const
+{
+	return m_iNationalWonderLimit;
 }
 
 int CvCultureLevelInfo::getSpeedThreshold(int i) const
@@ -166,6 +182,8 @@ bool CvCultureLevelInfo::read(CvXMLLoadUtility* pXml)
 		return false;
 
 	pXml->GetChildXmlValByName(&m_iCityDefenseModifier, "iCityDefenseModifier");
+	pXml->GetChildXmlValByName(&m_iWonderLimit, "iWonderLimit");
+	pXml->GetChildXmlValByName(&m_iNationalWonderLimit, "iNationalWonderLimit");
 	pXml->SetVariableListTagPair(&m_paiSpeedThreshold, "SpeedThresholds", GC.getNumGameSpeedInfos());
 
 	return true;
@@ -234,7 +252,9 @@ bool CvEmphasizeInfo::read(CvXMLLoadUtility* pXML)
 CvHurryInfo::CvHurryInfo() :
 m_iGoldPerProduction(0),
 m_iProductionPerPopulation(0),
-m_bAnger(false)
+m_bAnger(false),
+m_bUnits(false), // doc
+m_bBuildings(false), // doc
 {}
 
 int CvHurryInfo::getGoldPerProduction() const
@@ -252,6 +272,16 @@ bool CvHurryInfo::isAnger() const
 	return m_bAnger;
 }
 
+bool CvHurryInfo::isUnits() const
+{
+	return m_bUnits;
+}
+
+bool CvHurryInfo::isBuildings() const
+{
+	return m_bBuildings;
+}
+
 bool CvHurryInfo::read(CvXMLLoadUtility* pXML)
 {
 	if (!CvInfoBase::read(pXML))
@@ -260,6 +290,8 @@ bool CvHurryInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iGoldPerProduction, "iGoldPerProduction");
 	pXML->GetChildXmlValByName(&m_iProductionPerPopulation, "iProductionPerPopulation");
 	pXML->GetChildXmlValByName(&m_bAnger, "bAnger");
+	pXML->GetChildXmlValByName(&m_bUnits, "bUnits"); // doc
+	pXML->GetChildXmlValByName(&m_bBuildings, "bBuildings"); // doc
 
 	return true;
 }

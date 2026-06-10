@@ -512,7 +512,6 @@ public:
 	}
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);		// Exposed to Python
 
-    bool isFriendlyTerritory(TeamTypes eTeam) const; // doc // TODO: lost implementation?
     bool isAccessibleTerritory(TeamTypes eTeam) const; // doc // TODO: lost implementation?
 
 	bool doesImprovementConnectBonus(ImprovementTypes eImprovement, BonusTypes eBonus) const; // K-Mod

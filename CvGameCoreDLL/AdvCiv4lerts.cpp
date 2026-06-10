@@ -464,7 +464,7 @@ void CityTradeAlert::check()
 							/*(!bLiberate || GET_TEAM(kPlayer.getTeam()).
 							getTurnsAtPeace(kAlertPlayer.getTeam()) > 1)*/
 							//^Try a different tack.
-							(!bLiberate || pCity->getPreviousOwner() != kPlayer.getID()))
+							(!bLiberate || !pCity->isPreviousOwner(kPlayer.getID())))
 						{
 							vector<int>& kWas = (bLiberate ? m_canLiberate[kPlayer.getID()] :
 									m_willBuy[kPlayer.getID()]);

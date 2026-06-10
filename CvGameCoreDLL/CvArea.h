@@ -118,10 +118,7 @@ public:
 	}
 	void changeFreeSpecialist(PlayerTypes eIndex, int iChange);
 
-	int getPower(PlayerTypes eIndex) const																// Exposed to Python
-	{
-		return m_aiPower.get(eIndex);
-	}
+	int getPower(PlayerTypes eIndex) const;
 	void changePower(PlayerTypes eIndex, int iChange);
 
 	int getBestFoundValue(PlayerTypes eIndex) const														// Exposed to Python
@@ -196,7 +193,7 @@ public:
 	/*int getNumImprovements(ImprovementTypes eImprovement) const;										// Exposed to Python
 	void changeNumImprovements(ImprovementTypes eImprovement, int iChange);*/
 
-	int getClosestAreaSize(int iSize) const;
+	CvArea* findClosestArea(int iMinSize) const; // doc
 
 	int getEnemyPower(PlayerTypes ePlayer, bool bIncludeMinors = false) const;
 

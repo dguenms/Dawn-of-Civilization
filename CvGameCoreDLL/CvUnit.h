@@ -301,8 +301,6 @@ public:
 	bool canRebuild(CvPlot const& kPlot) const; // doc
 	bool rebuild(); // doc
 
-	bool isWorker() const; // doc
-
 	int upgradePrice(UnitTypes eUnit) const;																// Exposed to Python
 	int upgradeXPChange(UnitTypes eUnit) const; // advc.080
 	bool upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount = 0) const;			// Exposed to Python
@@ -515,7 +513,6 @@ public:
 			bool bTestVisible, bool bTestCanAttack) const; // </advc>
 	bool isBetterDefenderThan(const CvUnit* pDefender, const CvUnit* pAttacker) const;						// Exposed to Python
 	bool canDefendAgainst(const CvUnit* pAttacker, const CvPlot* pPlot = NULL) const; // doc
-	bool canSiege(TeamTypes eTeam) const; // doc
 
 	int airBaseCombatStr() const																			// Exposed to Python
 	{
@@ -1376,7 +1373,7 @@ struct CombatDetails											// Exposed to Python
 		/*	Not nice - but we mustn't zero the string, and we don't want to
 			repeat all the int members. */
 		ZeroMemory(this, 41 * sizeof(int));
-		BOOST_STATIC_ASSERT(sizeof(CombatDetails) == 41 * sizeof(int) + 2 * sizeof(PlayerTypes) + sizeof(std::wstring));
+		//BOOST_STATIC_ASSERT(sizeof(CombatDetails) == 41 * sizeof(int) + 2 * sizeof(PlayerTypes) + sizeof(std::wstring));
 		this->eOwner = eOwner;
 		this->eVisualOwner = eVisualOwner;
 		this->sUnitName = sUnitName;

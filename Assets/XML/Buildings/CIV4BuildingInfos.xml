@@ -9325,7 +9325,7 @@
 			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
 			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_TAOISM</PrereqOrReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<ObsoleteTech>TECH_COMBINED_ARMS</ObsoleteTech>
@@ -9464,7 +9464,7 @@
 			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
 			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_TAOISM</PrereqOrReligion>
 			<MaxStartEra>ERA_CLASSICAL</MaxStartEra>
 			<PrereqTech>TECH_ARITHMETICS</PrereqTech>
 			<ObsoleteTech>TECH_FEUDALISM</ObsoleteTech>
@@ -11435,7 +11435,7 @@
 			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
 			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_TAOISM</PrereqOrReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_MACHINERY</PrereqTech>
 			<ObsoleteTech>TECH_HYDRAULICS</ObsoleteTech>
@@ -12511,7 +12511,7 @@
 			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
 			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_TAOISM</PrereqOrReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_PRINTING</PrereqTech>
 			<ObsoleteTech>TECH_RAILROAD</ObsoleteTech>
@@ -12959,7 +12959,7 @@
 			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
 			<OrStateReligion>RELIGION_TAOISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_TAOISM</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_TAOISM</PrereqOrReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_STATECRAFT</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_STATESMAN</GreatPeopleUnitClass>
@@ -14010,7 +14010,7 @@
 			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
 			<OrStateReligion>RELIGION_ORTHODOXY</OrStateReligion>
 			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_ORTHODOXY</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_ORTHODOXY</PrereqOrReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_GEOLOGY</PrereqTech>
 			<ObsoleteTech>TECH_POWER_PROJECTION</ObsoleteTech>
@@ -15165,7 +15165,7 @@
 			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
 			<OrStateReligion>RELIGION_PROTESTANTISM</OrStateReligion>
 			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
-			<OrPrereqReligion>RELIGION_PROTESTANTISM</OrPrereqReligion>
+			<PrereqOrReligion>RELIGION_PROTESTANTISM</PrereqOrReligion>
 			<PrereqTech>TECH_SOCIAL_SERVICES</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
