@@ -689,6 +689,10 @@ public: // All const functions are exposed to Python
 	{
 		return m_iSuccessRate;
 	}
+
+	// doc
+	UnitTypes getFirstFreeUnit() const { return m_eFirstFreeUnit; }
+
 	bool isSpaceship() const
 	{
 		return m_bSpaceship;
@@ -726,6 +730,9 @@ protected:
 	SpecialBuildingTypes m_eEveryoneSpecialBuilding;
 	int m_iVictoryDelayPercent;
 	int m_iSuccessRate;
+
+	// doc
+	UnitTypes m_eFirstFreeUnit;
 
 	bool m_bSpaceship;
 	bool m_bAllowsNukes;

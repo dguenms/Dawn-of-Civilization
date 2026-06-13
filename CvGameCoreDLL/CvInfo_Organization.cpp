@@ -63,6 +63,8 @@ bool CvOrganizationInfo::read(CvXMLLoadUtility* pXML)
 CvReligionInfo::CvReligionInfo() :
 m_cHolyCityChar(0),
 m_iNumFreeUnits(0),
+m_bProselytizing(false), // doc
+m_bLocal(false), // doc
 m_paiGlobalReligionCommerce(NULL),
 m_paiHolyCityCommerce(NULL),
 m_paiStateReligionCommerce(NULL)
@@ -161,6 +163,10 @@ bool CvReligionInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_iNumFreeUnits, "iFreeUnits");
 
+	// doc
+	pXML->GetChildXmlValByName(&m_bProselytizing, "bProselytizing");
+	pXML->GetChildXmlValByName(&m_bLocal, "bLocal");
+
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
 		"GlobalReligionCommerces"))
 	{
@@ -204,6 +210,8 @@ m_cHeadquarterChar(0),
 m_iSpreadCost(0),
 m_iMaintenance(0),
 m_eBonusProduced(NO_BONUS),
+m_iHappiness(0), // doc
+m_iHealth(0), // doc
 m_paiHeadquarterCommerce(NULL),
 m_paiCommerceProduced(NULL),
 m_paiYieldProduced(NULL)
@@ -273,6 +281,10 @@ bool CvCorporationInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_iSpreadCost, "iSpreadCost");
 	pXML->GetChildXmlValByName(&m_iMaintenance, "iMaintenance");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
+	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
 		"HeadquarterCommerces"))

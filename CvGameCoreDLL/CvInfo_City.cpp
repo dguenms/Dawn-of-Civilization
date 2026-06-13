@@ -44,10 +44,12 @@ m_iGreatPeopleUnitClass(NO_UNITCLASS),
 m_iGreatPeopleRateChange(0),
 m_iMissionType(NO_MISSION),
 m_bVisible(false),
+m_bNoGlobalEffects(false),
 m_piYieldChange(NULL),
 m_piCommerceChange(NULL),
 m_piFlavorValue(NULL),
-m_iExperience(0)
+m_iExperience(0),
+m_iHappiness(0),
 {}
 
 CvSpecialistInfo::~CvSpecialistInfo()
@@ -80,6 +82,12 @@ void CvSpecialistInfo::setMissionType(int iNewType)
 bool CvSpecialistInfo::isVisible() const
 {
 	return m_bVisible;
+}
+
+// doc
+bool CvSpecialistInfo::isSatellite() const
+{
+	return getHappiness() == 0 && isNoGlobalEffects();
 }
 
 int CvSpecialistInfo::getExperience() const
@@ -122,6 +130,10 @@ bool CvSpecialistInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(m_szTexture, "Texture");
 	pXML->GetChildXmlValByName(&m_bVisible, "bVisible");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_bNoGlobalEffects, "bNoGlobalEffects");
+
 	{
 		CvString szTextVal;
 		pXML->GetChildXmlValByName(szTextVal, "GreatPeopleUnitClass");

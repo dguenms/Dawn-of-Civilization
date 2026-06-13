@@ -22773,11 +22773,11 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 }
 
 // doc
-ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligion, bool bDistant, bool bRemove) const
+ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot const& kPlot, ReligionTypes eReligion, bool bDistant, bool bRemove) const
 {
 	bool bStateReligion = getStateReligion() == eReligion;
 	bool bPromoted = bStateReligion || (isTolerating(eReligion) && isStateReligion());
-	int iSpreadFactor = pPlot->getSpreadFactor(eReligion);
+	int iSpreadFactor = kPlot.getSpreadFactor(eReligion);
 
 	if (!bRemove && !bStateReligion && isNoNonStateReligionSpread())
 		return RELIGION_SPREAD_NONE;
@@ -22819,28 +22819,24 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 	return RELIGION_SPREAD_NONE;
 }
 
-bool CvPlayer::isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) const
+bool CvPlayer::isDistantSpread(CvCity const& kCity, ReligionTypes eReligion) const
 {
 	if (!GC.getGame().isReligionFounded(eReligion))
 		return false;
 
-	if (pCity->plot()->getSpreadFactor(eReligion) < REGION_SPREAD_HISTORICAL)
+	if (kCity.getPlot().getSpreadFactor(eReligion) < REGION_SPREAD_HISTORICAL)
 		return false;
 
-	if (GET_PLAYER(pCity->getOwner()).isNoNonStateReligionSpread())
+	if (GET_PLAYER(kCity.getOwner()).isNoNonStateReligionSpread())
 		return false;
 
 	if (getStateReligion() == NO_RELIGION)
 	{
-		if (GC.getMap().getArea(pCity->getArea())->countHasReligion(eReligion, getID()) > 0)
+		if (kCity.getArea().countHasReligion(eReligion, getID()) > 0)
 			return false;
 
 		for (PlayerIter<MAJOR_CIV> it; it.hasNext(), ++it)
 		{
-			// TODO: redundant?
-			if (it->isMinorCiv())
-				continue;
-
 			if (getID() != it->getID() && it->isAlive())
 			{
 				if (it->getStateReligion() == eReligion)

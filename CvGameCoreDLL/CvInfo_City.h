@@ -54,6 +54,10 @@ public: // All the const functions are exposed to Python
 
 	bool isVisible() const;
 
+	// doc
+	bool isNoGlobalEffects() const { return m_bNoGlobalEffects; }
+	bool isSatellite() const;
+
 	int getYieldChange(int i) const;
 	const int* getYieldChangeArray() const; // For Moose - CvWidgetData
 	int getCommerceChange(int i) const;
@@ -73,6 +77,9 @@ protected:
 	int m_iHappiness;
 
 	bool m_bVisible;
+
+	// doc
+	bool m_bNoGlobalEffects;
 
 	CvString m_szTexture;
 

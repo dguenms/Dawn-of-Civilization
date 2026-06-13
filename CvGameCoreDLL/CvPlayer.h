@@ -1644,8 +1644,8 @@ public:
 	bool canBuySlaves() const; // doc
 
 	bool isTolerating(ReligionTypes eReligion) const; // doc
-	bool isDistantSpread(const CvCity* pCity, ReligionTypes eReligion) const; // doc
-	ReligionSpreadTypes getSpreadType(CvPlot* pPlot, ReligionTypes eReligion, bool bDistant = false, bool bRemove = false) const; // doc
+	bool isDistantSpread(CvCity const& kCity, ReligionTypes eReligion) const; // doc
+	ReligionSpreadTypes getSpreadType(CvPlot const& kPlot, ReligionTypes eReligion, bool bDistant = false, bool bRemove = false) const; // doc
 
 	int getStabilityParameter(ParameterTypes eParameter) const; // doc
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue); // doc

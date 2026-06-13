@@ -11,6 +11,7 @@ m_iSeeFromLevel(0),
 m_iSeeThroughLevel(0),
 m_iBuildModifier(0),
 m_iDefenseModifier(0),
+m_iCultureCostModifier(0), // doc
 m_bWater(false),
 m_bImpassable(false),
 m_bFound(false),
@@ -106,6 +107,9 @@ bool CvTerrainInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iBuildModifier, "iBuildModifier");
 	pXML->GetChildXmlValByName(&m_iDefenseModifier, "iDefense");
 
+	// doc
+	pXML->GetChildXmlValByName(&m_iCultureCostModifier, "iCultureCostModifier");
+
 	pXML->SetVariableListTagPairForAudioScripts(&m_pi3DAudioScriptFootstepIndex, "FootstepSounds", GC.getNumFootstepAudioTypes());
 	{
 		CvString szTextVal;
@@ -143,6 +147,7 @@ m_iRivalDefenseModifier(0), // advc.012
 m_iAdvancedStartRemoveCost(0),
 m_iTurnDamage(0),
 m_iWarmingDefense(0), //GWMod
+m_iCultureCostModifier(0), // doc
 m_bNoCoast(false),
 m_bNoRiver(false),
 m_bNoRiverSide(false), // advc.129b
@@ -364,6 +369,10 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iAppearanceProbability, "iAppearance");
 	pXML->GetChildXmlValByName(&m_iDisappearanceProbability, "iDisappearance");
 	pXML->GetChildXmlValByName(&m_iGrowthProbability, "iGrowth");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iCultureCostModifier, "iCultureCostModifier");
+
 	pXML->GetChildXmlValByName(&m_bNoCoast, "bNoCoast");
 	// advc.129b:
 	pXML->GetChildXmlValByName(&m_bNoRiverSide, "bNoRiverSide", false);
@@ -428,6 +437,7 @@ m_iMinLandPercent(0),
 m_iUniqueRange(0),
 m_iGroupRange(0),
 m_iGroupRand(0),
+m_iAffectedCities(0), // doc
 m_bOneArea(false),
 m_bHills(false),
 m_bFlatlands(false),
@@ -649,6 +659,7 @@ void CvBonusInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iUniqueRange);
 	stream->Read(&m_iGroupRange);
 	stream->Read(&m_iGroupRand);
+	stream->Read(&m_iAffectedCities); // doc
 	stream->Read(&m_bOneArea);
 	stream->Read(&m_bHills);
 	stream->Read(&m_bFlatlands);
@@ -702,6 +713,7 @@ void CvBonusInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUniqueRange);
 	stream->Write(m_iGroupRange);
 	stream->Write(m_iGroupRand);
+	stream->Write(m_iAffectedCities); // doc
 	stream->Write(m_bOneArea);
 	stream->Write(m_bHills);
 	stream->Write(m_bFlatlands);
@@ -762,6 +774,10 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iUniqueRange, "iUnique");
 	pXML->GetChildXmlValByName(&m_iGroupRange, "iGroupRange");
 	pXML->GetChildXmlValByName(&m_iGroupRand, "iGroupRand");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iAffectedCities, "iAffectedCities");
+
 	pXML->GetChildXmlValByName(&m_bOneArea, "bArea");
 	pXML->GetChildXmlValByName(&m_bHills, "bHills");
 	pXML->GetChildXmlValByName(&m_bFlatlands, "bFlatlands");

@@ -53,6 +53,10 @@ public: // All the const functions are exposed to Python
 	void setHolyCityChar(wchar c);
 	int getNumFreeUnits() const;
 
+	// doc
+	bool isProselytizing() const { return m_bProselytizing; }
+	bool isLocal() const { return m_bLocal; }
+
 	const TCHAR* getTechButton() const;
 	const TCHAR* getGenericTechButton() const;
 	const TCHAR* getButtonDisabled() const;
@@ -77,6 +81,10 @@ protected:
 	wchar m_cHolyCityChar; // advc: was int
 	int m_iNumFreeUnits;
 
+	// doc
+	bool m_bProselytizing;
+	bool m_bLocal;
+
 	CvString m_szTechButton;
 	CvString m_szGenericTechButton;
 	CvWString m_szAdjectiveKey;
@@ -100,6 +108,10 @@ public: // All the const functions are exposed to Python
 	int getSpreadCost() const { return m_iSpreadCost; }
 	int getMaintenance() const { return m_iMaintenance; }
 	BonusTypes getBonusProduced() const { return m_eBonusProduced; }
+
+	// doc
+	int getHappiness() const { return m_iHappiness; }
+	int getHealth() const { return m_iHealth; }
 
 	// Array access:
 	int getNumPrereqBonuses() const { return m_aePrereqBonuses.size(); }
@@ -126,6 +138,10 @@ protected:
 	int m_iSpreadCost;
 	int m_iMaintenance;
 	BonusTypes m_eBonusProduced;
+
+	// doc
+	int m_iHappiness;
+	int m_iHealth;
 
 	std::vector<BonusTypes> m_aePrereqBonuses; // advc.003t: was int*
 	int* m_paiHeadquarterCommerce;

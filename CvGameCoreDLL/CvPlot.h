@@ -374,6 +374,8 @@ public:
 	CvArea* continentArea() const { return m_pContinentArea != NULL ? m_pContinentArea : m_pArea; }
 	CvArea& getContinentArea() const { return m_pContinentArea != NULL ? *m_pContinentArea : *m_pArea; }
 	void setContinentArea(CvArea* pContinentArea) { m_pContinentArea = pContinentArea; }
+	bool isContinentArea(CvArea const& kArea) const { return (continentArea() == &kArea); }
+	bool sameContinentArea(CvPlot const& kPlot) const { return isArea(kPlot.getArea()); }
 
 	DllExport int getFeatureVariety() const;														// Exposed to Python
 
@@ -886,7 +888,7 @@ public:
 
 	bool canSpread(ReligionTypes eReligion) const; // doc
 
-	bool isOverseas(const CvPlot* pPlot) const; // doc
+	bool isOverseas(CvPlot const& pPlot) const; // doc
 
 	void setBirthProtected(PlayerTypes ePlayer); // doc
 	void resetBirthProtected(); // doc

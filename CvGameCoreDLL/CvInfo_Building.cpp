@@ -1101,6 +1101,7 @@ m_eEveryoneSpecialUnit(NO_SPECIALUNIT),
 m_eEveryoneSpecialBuilding(NO_SPECIALBUILDING),
 m_iVictoryDelayPercent(0),
 m_iSuccessRate(0),
+m_iFirstFreeUnit(0), // doc
 m_bSpaceship(false),
 m_bAllowsNukes(false)
 {}
@@ -1148,6 +1149,9 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetInfoIDFromChildXmlVal(m_eEveryoneSpecialUnit, "EveryoneSpecialUnit");
 	pXML->SetInfoIDFromChildXmlVal(m_eEveryoneSpecialBuilding, "EveryoneSpecialBuilding");
+
+	// doc
+	pXML->SetInfoIDFromChildXmlVal(m_eFirstFreeUnit, "FirstFreeUnit");
 
 	pXML->GetChildXmlValByName(&m_bSpaceship, "bSpaceship");
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");

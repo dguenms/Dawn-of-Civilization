@@ -754,7 +754,7 @@ public:
 	void changeRiverPlotYield(YieldTypes eYield, int iChange);
 	int getFlatRiverPlotYield(YieldTypes eYield) const; // doc
 	void changeFlatRiverPlotYield(YieldTypes eYield, int iChange); // doc
-	int getBonusYield(BonusTypes eBonus, YieldTypes eYield) const; // doc
+	int getBonusYield(BonusTypes eBonus, YieldTypes eYield) const { return m_aeiiBonusYieldChange.get(eBonus, eYield); }; // doc
 	void changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange); // doc
 
 	// BUG - Building Additional Yield - start
@@ -925,10 +925,7 @@ public:
 	int getCulture(CivilizationTypes eCivilization) const; // doc
 	int getCulture(PlayerTypes ePlayer) const;																	// Exposed to Python
 	int getCultureTimes100(CivilizationTypes eCivilization) const; // doc
-	int getCultureTimes100(PlayerTypes ePlayer) const															// Exposed to Python
-	{
-		return m_aiCulture.get(ePlayer); // TODO: this is wrong
-	}
+	int getCultureTimes100(PlayerTypes ePlayer) const;															// Exposed to Python
 	int countTotalCultureTimes100() const;																		// Exposed to Python
 	int getActualTotalCultureTimes100() const; // doc
 	PlayerTypes findHighestCulture(bool bIgnoreMinors = false) const;																		// Exposed to Python
@@ -977,10 +974,7 @@ public:
 	void setTradeRoute(PlayerTypes ePlayer, bool bNewValue);
 
 	bool isEverOwned(CivilizationTypes eCivilization) const; // doc
-	bool isEverOwned(PlayerTypes ePlayer) const																	// Exposed to Python
-	{
-		return m_abEverOwned.get(ePlayer); // TODO: this is wrong
-	}
+	bool isEverOwned(PlayerTypes ePlayer) const;																// Exposed to Python
 	void setEverOwned(CivilizationTypes eCivilization, bool bNewValue); // doc
 	void setEverOwned(PlayerTypes ePlayer, bool bNewValue);
 
@@ -1059,8 +1053,7 @@ public:
 	void setProjectProduction(ProjectTypes eProject, int iNewValue);
 	void changeProjectProduction(ProjectTypes eProject, int iChange);
 
-	// TODO: should probably be CivilizationTypes
-	PlayerTypes getBuildingOriginalOwner(BuildingTypes eBuilding) const											// Exposed to Python
+	CivilizationTypes getBuildingOriginalOwner(BuildingTypes eBuilding) const											// Exposed to Python
 	{
 		return m_aeBuildingOriginalOwner.get(eBuilding);
 	}
@@ -1121,11 +1114,7 @@ public:
 	void changeSpecialistCount(SpecialistTypes eSpecialist, int iChange);
 	void alterSpecialistCount(SpecialistTypes eSpecialist, int iChange);										// Exposed to Python
 
-	// TODO: doc has bIgnoreCivic
-	int getMaxSpecialistCount(SpecialistTypes eSpecialist) const												// Exposed to Python
-	{
-		return m_aiMaxSpecialistCount.get(eSpecialist);
-	}
+	int getMaxSpecialistCount(SpecialistTypes eSpecialist, bool bIgnoreCivic = false) const;					// Exposed to Python
 	bool isSpecialistValid(SpecialistTypes eSpecialist, int iExtra = 0) const;									// Exposed to Python
 	void changeMaxSpecialistCount(SpecialistTypes eSpecialist, int iChange);
 
@@ -1225,7 +1214,7 @@ public:
 	void setNumRealBuilding(BuildingTypes eBuilding, int iNewValue,												// Exposed to Python
 			bool bEndOfTurn = false); // advc.001x
 	void setNumRealBuildingTimed(BuildingTypes eBuilding, int iNewValue, bool bFirst,
-			PlayerTypes eOriginalOwner, int iOriginalTime, /* advc.001x */ bool bEndOfTurn = false);
+			CivilizationTypes eOriginalOwner, int iOriginalTime, /* advc.001x */ bool bEndOfTurn = false);
 	//bool isValidBuildingLocation(BuildingTypes eBuilding) const; // advc: Replaced by CvPlot::canConstruct
 
 	int getNumFreeBuilding(BuildingTypes eBuilding) const														// Exposed to Python
@@ -1384,7 +1373,7 @@ public:
 	bool isMongolUP() const; // doc
 	void setMongolUP(bool bNewValue); // doc
 
-	int getGameTurnCivLost(CivilizationTypes eCivilization); // doc
+	int getGameTurnCivLost(CivilizationTypes eCivilization) { return m_aiGameTurnCivLost.get(eCivilization); } // doc
 	void setGameTurnCivLost(CivilizationTypes eCivilization, int iNewValue); // doc
 	int getGameTurnPlayerLost(PlayerTypes ePlayer); // doc
 	void setGameTurnPlayerLost(PlayerTypes ePlayer, int iNewValue); // doc
@@ -1392,16 +1381,16 @@ public:
 	bool isColony() const; // doc
 	bool canSlaveJoin() const; // doc
 
-	int calculateCultureCost(CvPlot* pPlot, bool bOrdering = false) const; // doc
+	int calculateCultureCost(CvPlot const& kPlot, bool bOrdering = false) const; // doc
 	void updateCultureCosts(); // doc
 	void updateCoveredPlots(bool bUpdatePlotGroups); // doc
-	int getCulturePlotIndex(int i) const; // doc
-	CvPlot* getCulturePlot(int i) const; // doc
-	int getCultureCost(int i) const; // doc
-	int getNextCoveredPlot() const; // doc
-	void setNextCoveredPlot(int iNewValue, bool bUpdatePlotGroups); // doc
-	int getEffectiveNextCoveredPlot() const; // doc
-	bool isCoveredBeforeExpansion(int i) const; // doc
+	int getCulturePlotIndex(CulturePlotTypes eCulturePlot) const; // doc
+	CvPlot& getCulturePlot(CulturePlotTypes eCulturePlot) const; // doc
+	int getCultureCost(CulturePlotTypes eCulturePlot) const; // doc
+	CulturePlotTypes getNextCoveredPlot() const { return m_eNextCoveredPlot; } // doc
+	void setNextCoveredPlot(CulturePlotTypes eCulturePlot, bool bUpdatePlotGroups); // doc
+	CulturePlotTypes getEffectiveNextCoveredPlot() const; // doc
+	bool isCoveredBeforeExpansion(CulturePlotTypes eCulturePlot) const; // doc
 
 	void updateGreatWall(); // doc
 
@@ -1420,48 +1409,45 @@ public:
 	bool isHasConflicting(ReligionTypes eReligion) const; // doc
 	int getReligionPopulation(ReligionTypes eReligion) const; // doc
 
-	int getCultureRank() const; // doc
+	int getCultureRank() const { return m_iCultureRank; } // doc
 	void setCultureRank(int iNewValue); // doc
 
 	void updateWorkedImprovements(); // doc
-	void updateWorkedImprovement(int iIndex, bool bNewValue); // doc
+	void updateWorkedImprovement(CityPlotTypes eCityPlot, bool bNewValue); // doc
 	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement); // doc
 
-	int getImprovementHappinessPercentChange(ImprovementTypes eImprovement) const; // doc
+	int getImprovementHappinessPercentChange(ImprovementTypes eImprovement) const { return m_paiImprovementHappinessPercentChange.get(eImprovement); } // doc
 	void changeImprovementHappinessPercentChange(ImprovementTypes eImprovement, int iChange); // doc
 
-	int getImprovementHealthPercentChange(ImprovementTypes eImprovement) const; // doc
+	int getImprovementHealthPercentChange(ImprovementTypes eImprovement) const { return m_paiImprovementHealthPercentChange.get(eImprovement); } // doc
 	void changeImprovementHealthPercentChange(ImprovementTypes eImprovement, int iChange); // doc
 
-	int getCultureGreatPeopleRateModifier() const; // doc
+	int getCultureGreatPeopleRateModifier() const { return m_iCultureGreatPeopleRateModifier; } // doc
 	void changeCultureGreatPeopleRateModifier(int iChange); // doc
 
-	int getCultureHappiness() const; // doc
+	int getCultureHappiness() const { return m_iCultureHappiness; } // doc
 	void changeCultureHappiness(int iChange); // doc
 
-	int getCultureTradeRouteModifier() const; // doc
+	int getCultureTradeRouteModifier() const { return m_iCultureTradeRouteModifier; } // doc
 	void changeCultureTradeRouteModifier(int iChange); // doc
 
-	int getBuildingUnignorableBombardDefense() const; // doc
+	int getBuildingUnignorableBombardDefense() const { return m_iBuildingUnignorableBombardDefense; } // doc
 	void changeBuildingUnignorableBombardDefense(int iChange); // doc
 	int getAdditionalUnignorableBombardDefenseByBuilding(BuildingTypes eBuilding) const; // doc
-
-	int calculateCultureSpecialistCommerce(CommerceTypes eCommerce) const; // doc
-	int calculateCultureSpecialistGreatPeopleRate() const; // doc
 
 	void triggerMeltdown(BuildingTypes eBuilding); // doc
 
 	bool hasBonusEffect(BonusTypes eBonus) const; // doc
 	void processBonusEffect(BonusTypes eBonus, int iChange); // doc
 
-	int getStabilityPopulation() const; // doc
+	int getStabilityPopulation() const { return m_iStabilityPopulation; } // doc
 	void setStabilityPopulation(int iNewValue); // doc
 
-	int getBuildingUnhealthModifier() const; // doc
+	int getBuildingUnhealthModifier() const { return m_iBuildingUnhealthModifier;  } // doc
 	void setBuildingUnhealthModifier(int iNewValue); // doc
 	void changeBuildingUnhealthModifier(int iChange); // doc
 
-	int getCorporationUnhealthModifier() const; // doc
+	int getCorporationUnhealthModifier() const { return m_iCorporationUnhealthModifier;  } // doc
 	void setCorporationUnhealthModifier(int iNewValue); // doc
 	void changeCorporationUnhealthModifier(int iChange); // doc
 
@@ -1657,8 +1643,6 @@ protected:
 	int m_iImprovementHappinessPercent; // doc
 	int m_iImprovementHealthPercent; // doc
 
-	int m_iNextCoveredPlot; // doc
-
 	int m_iCultureGreatPeopleRateModifier; // doc
 	int m_iCultureHappiness; // doc
 	int m_iCultureTradeRouteModifier; // doc
@@ -1701,6 +1685,8 @@ protected:
 	CultureLevelTypes m_eCultureLevel;
 	ArtStyleTypes m_eArtStyle; // doc
 
+	CulturePlotTypes m_eNextCoveredPlot; // doc
+
 	// <advc.enum>
 	YieldChangeMap m_aiSeaPlotYield;
 	YieldChangeMap m_aiRiverPlotYield;
@@ -1713,7 +1699,7 @@ protected:
 	YieldTotalMap m_aiTradeYield;
 	YieldTotalMap m_aiCorporationYield;
 	YieldTotalMap m_aiExtraSpecialistYield;
-	int* m_aiHappinessYield; // doc // TODO: find correct type
+	YieldTotalMap m_aiHappinessYield; // doc
 	EagerEnumMap<CommerceTypes,int> m_aiCommerceRate; // (at times-100 precision)
 	CommercePercentMap m_aiProductionToCommerceModifier;
 	CommerceTotalMap m_aiBuildingCommerce;
@@ -1726,7 +1712,7 @@ protected:
 	CommercePercentMap m_aiCommerceHappinessPer;
 	ArrayEnumMap<DomainTypes,int,char> m_aiDomainFreeExperience;
 	ArrayEnumMap<DomainTypes,int,short> m_aiDomainProductionModifier;
-	EagerEnumMap<PlayerTypes,int> m_aiCulture;
+	EagerEnumMap<CivilizationTypes,int> m_aiCulture;
 	ListEnumMap<PlayerTypes,int,short> m_aiNumRevolts;
 	ListEnumMap<BonusTypes,int,char> m_aiNoBonus;
 	ListEnumMap<BonusTypes,int,char> m_aiFreeBonus;
@@ -1735,7 +1721,7 @@ protected:
 	ListEnumMap<ProjectTypes,int> m_aiProjectProduction;
 	ListEnumMap<BuildingTypes,int> m_aiBuildingProduction;
 	ListEnumMap<BuildingTypes,int,short> m_aiBuildingProductionTime;
-	ListEnumMap<BuildingTypes,PlayerTypes> m_aeBuildingOriginalOwner;
+	ListEnumMap<BuildingTypes,CivilizationTypes> m_aeBuildingOriginalOwner;
 	// advc: Was MIN_INT as a magic number
 	static int const iBuildingOriginalTimeUnknown = MIN_SHORT;
 	EagerEnumMap<BuildingTypes,int,short,iBuildingOriginalTimeUnknown> m_aiBuildingOriginalTime;
@@ -1758,11 +1744,11 @@ protected:
 	ArrayEnumMap<UnitCombatTypes,int,char> m_aiUnitCombatFreeExperience;
 	ListEnumMap<PromotionTypes,int,char> m_aiFreePromotionCount;
 
-	int* m_aiGameTurnCivLost; // doc // TODO: find correct type
-	int* m_aiCulturePlots; // doc // TODO: find correct type
-	int* m_aiCultureCosts; // doc // TODO: find correct type
+	ListEnumMap<CivilizationTypes,int,short> m_aiGameTurnCivLost; // doc
+	ArrayEnumMap<CulturePlotTypes,int,short> m_aiCulturePlots; // doc
+	ArrayEnumMap<CulturePlotTypes,int,short> m_aiCultureCosts; // doc
 
-	EagerEnumMap<PlayerTypes,bool> m_abEverOwned; // TODO: should be civ?
+	EagerEnumMap<CivilizationTypes,bool> m_abEverOwned;
 	EagerEnumMap<PlayerTypes,bool> m_abTradeRoute;
 	EagerEnumMap<TeamTypes,bool> m_abRevealed;
 	ArrayEnumMap<TeamTypes,bool> m_abEspionageVisibility;
@@ -1776,8 +1762,6 @@ protected:
 	CvArea* m_pArea;
 	CvPlot* m_pPlot; // </advc.opt>
 
-	int** m_ppaiBonusYield; // doc // TODO: rename // TODO: fnd correct type
-
 	std::vector< std::pair < UnitClassTypes, HurryTypes > > m_hurriedUnits; // doc // TODO: find correct type
 
 	std::vector<IDInfo> m_aTradeCities; // advc: was an array
@@ -1789,6 +1773,8 @@ protected:
 			YieldChangeMap> m_aeiiBuildingYieldChange;
 	Enum2IntEncMap<ListEnumMap<BuildingClassTypes,CommerceChangeMap::enc_t>,
 			CommerceChangeMap> m_aeiiBuildingCommerceChange;
+	Enum2IntEncMap<ListEnumMap<BonusTypes,YieldChangeMap::enc_t>,
+			YieldChangeMap> m_aeiiBonusYieldChange;
 	ListEnumMap<BuildingClassTypes,int,char> m_aeiBuildingHappyChange;
 	ListEnumMap<BuildingClassTypes,int,char> m_aeiBuildingHealthChange; // </advc.enum>
 	ListEnumMap<BuildingClassTypes,int,char> m_aeiBuildingGreatPeopleRateChange; // doc

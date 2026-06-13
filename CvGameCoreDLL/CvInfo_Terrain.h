@@ -30,6 +30,9 @@ public: // All the const functions are exposed to Python except for those relate
 	int getBuildModifier() const { return m_iBuildModifier; }
 	int getDefenseModifier() const { return m_iDefenseModifier; }
 
+	// doc
+	int getCultureCostModifier() const { return m_iCultureCostModifier; }
+
 	bool isWater() const { return m_bWater; }
 	bool isImpassable() const { return m_bImpassable; }
 	bool isFound() const { return m_bFound; }
@@ -56,6 +59,9 @@ protected:
 	int m_iSeeThroughLevel;
 	int m_iBuildModifier;
 	int m_iDefenseModifier;
+
+	// doc
+	int m_iCultureCostModifier;
 
 	bool m_bWater;
 	bool m_bImpassable;
@@ -97,6 +103,9 @@ public: /*  All the const functions are exposed to Python except for those deali
 	int getAdvancedStartRemoveCost() const;
 	int getTurnDamage() const;
 	int getWarmingDefense() const; //GWmod new xml field M.A. // Exposed to Python
+
+	// doc
+	int getCultureCostModifier() const { return m_iCultureCostModifier; }
 
 	bool isNoCoast() const;
 	bool isNoRiver() const;
@@ -175,6 +184,9 @@ protected:
 
 	int m_iWorldSoundscapeScriptId;
 
+	// doc
+	int m_iCultureCostModifier;
+
 	CvString m_szEffectType;
 	int m_iEffectProbability;
 
@@ -225,6 +237,9 @@ public: // All the const functions are exposed to Python
 	int getUniqueRange() const;
 	int getGroupRange() const;
 	int getGroupRand() const;
+
+	// doc
+	int getAffectedCities() const { return m_iAffectedCities; }
 
 	bool isOneArea() const;
 	bool isHills() const;
@@ -278,6 +293,9 @@ protected:
 	int m_iUniqueRange;
 	int m_iGroupRange;
 	int m_iGroupRand;
+
+	// doc
+	int m_iAffectedCities;
 
 	bool m_bOneArea;
 	bool m_bHills;

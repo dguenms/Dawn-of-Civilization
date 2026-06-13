@@ -43,7 +43,6 @@
 	DO(PlayerColor, PLAYERCOLOR) \
 	DO(Cursor, CURSOR) \
 	/* internal only */ \
-	DO(BuildingClass, BUILDINGCLASS) \
 	DO(SpecialBuilding, SPECIALBUILDING) \
 	DO(PaganReligion, PAGANRELIGION) \
 	DO(Vote, VOTE) \
@@ -128,6 +127,7 @@
 #define DO_FOR_EACH_CUSTOM_INFO_TYPE(DO) \
 	DO(Bonus, BONUS) \
 	DO(Building, BUILDING) \
+	DO(BuildingClass, BUILDINGCLASS) \
 	DO(Civilization, CIVILIZATION) \
 	DO(Civic, CIVIC) \
 	DO(CivicOption, CIVICOPTION) \

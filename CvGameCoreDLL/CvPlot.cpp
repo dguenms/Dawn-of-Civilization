@@ -9435,22 +9435,9 @@ void CvPlot::changeCultureConversionRate(int iChange)
 }
 
 // doc
-// TODO: header
-int CvPlot::getContinentArea() const
-{
-	return m_iContinentArea;
-}
-
-// doc
-void CvPlot::setContinentArea(int iNewValue)
-{
-	m_iContinentArea = iNewValue;
-}
-
-// doc
 bool CvPlot::isOverseas(CvPlot const& kPlot) const
 {
-	return getRegionGroup() != kPlot.getRegionGroup() && getContinentArea() != kPlot.getContinentArea();
+	return getRegionGroup() != kPlot.getRegionGroup() && !sameContinentArea(kPlot);
 }
 
 // doc
