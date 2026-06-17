@@ -3955,8 +3955,8 @@ It is fine for a human player mouse-over (which is what it is used for).
 void createTestFontString(CvWStringBuffer& szString)
 {
 	int iI;
-	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[×]^_`abcdefghijklmnopqrstuvwxyz\n");
-	szString.append(L"{}~\\ßÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖØÙÚÛÜİŞŸßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ¿¡«»°ŠŒšœ™©®€£¢”‘“…’");
+	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[Ã—]^_`abcdefghijklmnopqrstuvwxyz\n");
+	szString.append(L"{}~\\ÃŸÃ€ÃÃ‚ÃƒÃ„Ã…Ã†Ã‡ÃˆÃ‰ÃŠÃ‹ÃŒÃÃÃÃÃ‘Ã’Ã“Ã”Ã•Ã–Ã˜Ã™ÃšÃ›ÃœÃÃÂŸÃŸÃ Ã¡Ã¢Ã£Ã¤Ã¥Ã¦Ã§Ã¨Ã©ÃªÃ«Ã¬Ã­Ã®Ã¯Ã°Ã±Ã²Ã³Ã´ÃµÃ¶Ã·Ã¸Ã¹ÃºÃ»Ã¼Ã½Ã¾Ã¿Â¿Â¡Â«Â»Â°ÂŠÂŒÂÂšÂœÂÂ™Â©Â®Â€Â£Â¢Â”Â‘Â“Â…Â’");
 	for (iI=0;iI<NUM_YIELD_TYPES;++iI)
 		szString.append(CvWString::format(L"%c", GC.getYieldInfo((YieldTypes) iI).getChar()));
 
@@ -21326,20 +21326,48 @@ void CvGameTextMgr::assignFontIds(int iFirstSymbolCode, int iPadAmount)
 
 	// set bonus symbols
 	int bonusBaseID = iCurSymbolID;
-	++iCurSymbolID;
+	//++iCurSymbolID;
+	//for (int i = 0; i < GC.getNumBonusInfos(); i++)
+	//{
+	//	int bonusID = bonusBaseID + GC.getBonusInfo((BonusTypes) i).getArtInfo()->getFontButtonIndex();
+	//	GC.getBonusInfo((BonusTypes) i).setChar(bonusID);
+	//	++iCurSymbolID;
+	//}
+
+	// Corrected bonus indexing for resources
+	// Since there exist bonus resources that are graphical variants and don't have unique font IDs we can't increment for every resource.
+	// Instead, look through each resource to find the one with the highest font button index, and use that for the number of resource icons
+	int iMaxBonusIndex = 0;
 	for (int i = 0; i < GC.getNumBonusInfos(); i++)
 	{
-		int bonusID = bonusBaseID + GC.getBonusInfo((BonusTypes) i).getArtInfo()->getFontButtonIndex();
-		GC.getBonusInfo((BonusTypes) i).setChar(bonusID);
-		++iCurSymbolID;
+	    int iFontIndex = GC.getBonusInfo((BonusTypes) i).getArtInfo()->getFontButtonIndex();
+	    GC.getBonusInfo((BonusTypes) i).setChar(bonusBaseID + iFontIndex);
+	    if (iFontIndex > iMaxBonusIndex) iMaxBonusIndex = iFontIndex;
 	}
+	iCurSymbolID = bonusBaseID + iMaxBonusIndex + 1;
 
 	do
 	{
 		++iCurSymbolID;
 	} while (iCurSymbolID % iPadAmount != 0);
 
-	if(GC.getNumBonusInfos() < iPadAmount)
+	//if(GC.getNumBonusInfos() < iPadAmount)
+	//{
+	//	do
+	//	{
+	//		++iCurSymbolID;
+	//	} while (iCurSymbolID % iPadAmount != 0);
+	//}
+
+	//if(GC.getNumBonusInfos() < 2 * iPadAmount)
+	//{
+	//	do
+	//	{
+	//		++iCurSymbolID;
+	//	} while (iCurSymbolID % iPadAmount != 0);
+	//}
+
+	if(iMaxBonusIndex < iPadAmount)
 	{
 		do
 		{
@@ -21347,7 +21375,7 @@ void CvGameTextMgr::assignFontIds(int iFirstSymbolCode, int iPadAmount)
 		} while (iCurSymbolID % iPadAmount != 0);
 	}
 
-	if(GC.getNumBonusInfos() < 2 * iPadAmount)
+	if(iMaxBonusIndex < 2 * iPadAmount)
 	{
 		do
 		{
