@@ -6,6 +6,7 @@
 #include "UWAIAgent.h" // advc.104
 #include "CvCity.h"
 #include "CvMap.h"
+#include "CvUnit.h"
 #include "CvGameTextMgr.h"
 #include "CvInfo_Civics.h"
 #include "CvInfo_Terrain.h" // just for a logBBAI call :(
@@ -286,7 +287,7 @@ void CvDeal::addTradeItems(
 	bool const bReportUWAI = getUWAI().isEnabled();
 	bool bPeaceTreatyImplied = false; // advc.ctr
 	// advc (fixme): This whole loop is mostly duplicated below
-    if (!atWar(eFirstTeam, eSecondTeam) // doc: prevent crash caused by war triggered by tech trade and subsequent peace treaty
+    if (!atWar(eFirstTeam, eSecondTeam)) // doc: prevent crash caused by war triggered by tech trade and subsequent peace treaty
     {
 	    for (int iPass = 0; iPass < 2; iPass++) // advc: Replacing the K-Mod loop above
 	    {
@@ -308,7 +309,7 @@ void CvDeal::addTradeItems(
 			        insertAtEndFirst(*pItem);
 
                 // doc: track deal outcomes for events
-                switch (pNode->m_data.m_eItemType)
+                switch (pItem->m_eItemType)
                 {
                 case TRADE_PERMANENT_ALLIANCE:
                     bAlliance = true;
@@ -322,7 +323,7 @@ void CvDeal::addTradeItems(
                     break;
                 case TRADE_GOLD:
                     bFirstTrade = true;
-                    iFirstGold += pNode->m_data.m_iData;
+                    iFirstGold += pItem->m_iData;
                     break;
                 case TRADE_GOLD_PER_TURN:
                 case TRADE_VASSAL:
@@ -340,7 +341,7 @@ void CvDeal::addTradeItems(
     }
 	/*	advc: Replacing deleted K-Mod code; tagging
 		advc.001 b/c I think that code contained a copy-paste error. */
-	if (!atWar(eFirstTeam, eSecondTeam) // doc: prevent crash caused by war triggered by tech trade and subsequent peace treaty
+	if (!atWar(eFirstTeam, eSecondTeam)) // doc: prevent crash caused by war triggered by tech trade and subsequent peace treaty
     {
         for (int iPass = 0; iPass < 2; iPass++)
 	    {
@@ -377,7 +378,7 @@ void CvDeal::addTradeItems(
                     break;
                 case TRADE_GOLD:
                     bSecondTrade = true;
-                    iSecondGold += pNode->m_data.m_iData;
+                    iSecondGold += pItem->m_iData;
                     break;
                 case TRADE_GOLD_PER_TURN:
                 case TRADE_VASSAL:
@@ -878,14 +879,16 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 
 	// doc (edead): slave trade based on Afforess' Advanced Diplomacy
 	case TRADE_SLAVE:
-        pUnit = GET_PLAYER(eFromPlayer).getUnit(trade.m_iData);
-        if (pUnit != NULL)
-        {
+	{
+		CvUnit* pUnit = GET_PLAYER(eFromPlayer).getUnit(trade.m_iData);
+		if (pUnit != NULL)
+		{
 			if (pUnit->isCargo())
 				pUnit->unload();
-            pUnit->tradeUnit(eToPlayer);
-        }
-        break;
+			pUnit->tradeUnit(eToPlayer);
+		}
+		break;
+	}
 
 	case TRADE_GOLD:
 		kFromPlayer.changeGold(-trade.m_iData);

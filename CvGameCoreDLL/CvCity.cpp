@@ -119,8 +119,6 @@ CvCity::CvCity() // advc.003u: Merged with the deleted reset function
 	m_iCorporationBadHappiness = 0;
 	m_iCorporationHealth = 0;
 	m_iCorporationUnhealth = 0;
-	m_iImprovementHappinessPercent = 0;
-	m_iImprovementHealthPercent = 0;
 	m_iCultureGreatPeopleRateModifier = 0;
 	m_iCultureHappiness = 0;
 	m_iCultureTradeRouteModifier = 0;
@@ -3991,14 +3989,8 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 // TODO: refactor
 void CvCity::processPlayerBuilding(BuildingTypes eBuilding, int iChange)
 {
-	// Temple of Kukulkan
-	if (eBuilding == TEMPLE_OF_KUKULKAN)
-	{
-		changeImprovementHappinessPercentChange(IMPROVEMENT_PLANTATION, 100 * iChange);
-	}
-
 	// Himeji Castle
-	else if (eBuilding == HIMEJI_CASTLE)
+	if (eBuilding == HIMEJI_CASTLE)
 	{
 		changeCommerceRateModifier(COMMERCE_CULTURE, getBuildingDefense() * iChange);
 	}
@@ -4781,7 +4773,6 @@ int CvCity::unhappyLevel(int iExtra) const
 	iUnhappiness -= std::min(0, getBuildingBadHappiness());
 	iUnhappiness -= std::min(0, getExtraBuildingBadHappiness());
 	iUnhappiness -= std::min(0, getSurroundingBadHappiness());
-    iUnhappiness -= std::min(0, getImprovementHappiness()); // doc: unhappiness from improvement // TODO: redundant with surrounding?
     iUnhappiness -= std::min(0, getCultureHappiness() * getCultureLevel()); // doc: unhappiness from culture level
     iUnhappiness -= std::min(0, getBonusBadHappiness());
 	iUnhappiness -= std::min(0, getReligionBadHappiness());
@@ -4808,7 +4799,6 @@ int CvCity::happyLevel() const
 	iHappiness += std::max(0, getBuildingGoodHappiness());
 	iHappiness += std::max(0, getExtraBuildingGoodHappiness());
     iHappiness += std::max(0, getSurroundingGoodHappiness());
-    iHappiness += std::max(0, getImprovementHappiness()); // doc: happiness from improvement // TODO: redundant with surrounding?
     iHappiness += std::max(0, getCultureHappiness() * getCultureLevel()); // doc: happiness from culture level
 	iHappiness += std::max(0, getBonusGoodHappiness());
 	iHappiness += std::max(0, getReligionGoodHappiness());
@@ -6204,6 +6194,18 @@ void CvCity::updateSurroundingHealthHappiness()
 				if (kTeam.canAccessHappyHealth(kPlot, iHappy)) // advc.901
 					(iHappy > 0 ? iNewGoodHappiness : iNewBadHappiness) += iHappy;
 			}
+
+			// Temple of Kukulkan effect: +1 happiness from working Plantations
+			if (eImprovement == IMPROVEMENT_PLANTATION)
+			{
+				if (GET_PLAYER(getOwner()).isHasBuildingEffect(TEMPLE_OF_KUKULKAN))
+				{
+					if (kPlot.getWorkingCity() == this)
+					{
+						iNewGoodHappiness += 1;
+					}
+				}
+			}
 		}
 	}
 	bool bDirty = false;
@@ -6843,6 +6845,16 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 
 	// Area
 	addGoodOrBad(kBuilding.getAreaHealth(), iGood, iBad);
+
+	// doc: Corporation health
+	iBad += getCorporationUnhealth() * kBuilding.getCorporationUnhealthModifier() / 100;
+
+	// doc: Indian UP: +1 health from buildings that provide happiness
+	if (getCivilizationType() == INDIA && kBuilding.getHappiness() > 0)
+		iGood += 1;
+
+	// doc: building health modifier
+	iBad += (iBad + totalBadBuildingHealth()) * kBuilding.getBuildingUnhealthModifier() / 100;
 
 	// No Unhealthiness from Buildings
 	if (isBuildingOnlyHealthy())
@@ -10928,6 +10940,7 @@ void CvCity::setWorkingPlot(CityPlotTypes ePlot, bool bNewValue) // advc.enum: C
 			gDLL->UI().setDirty(SelectionButtons_DIRTY_BIT, true);
 		// </advc.064b>
 	}
+
 }
 
 
@@ -13466,8 +13479,6 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(&m_iCorporationBadHappiness);
 	pStream->Read(&m_iCorporationHealth);
 	pStream->Read(&m_iCorporationUnhealth);
-	pStream->Read(&m_iImprovementHappinessPercent);
-	pStream->Read(&m_iImprovementHealthPercent);
 	pStream->Read(&m_iCultureGreatPeopleRateModifier);
 	pStream->Read(&m_iCultureHappiness);
 	pStream->Read(&m_iCultureTradeRouteModifier);
@@ -13729,9 +13740,6 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(m_iCorporationBadHappiness);
 	pStream->Write(m_iCorporationHealth);
 	pStream->Write(m_iCorporationUnhealth);
-
-	pStream->Write(m_iImprovementHappinessPercent);
-	pStream->Write(m_iImprovementHealthPercent);
 
 	pStream->Write(m_iCultureGreatPeopleRateModifier);
 	pStream->Write(m_iCultureHappiness);
@@ -16067,111 +16075,6 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 
 // doc
 // TODO: move to header
-int CvCity::getImprovementHappiness() const
-{
-	return getImprovementHappinessPercent() / 100;
-}
-
-// doc
-// TODO: move to header
-int CvCity::getImprovementHappinessPercent() const
-{
-	return m_iImprovementHappinessPercent;
-}
-
-// doc
-void CvCity::setImprovementHappinessPercent(int iNewValue)
-{
-	if (getImprovementHappinessPercent() != iNewValue)
-	{
-		m_iImprovementHappinessPercent = iNewValue;
-
-		AI_setAssignWorkDirty(true);
-	}
-}
-
-// doc
-void CvCity::changeImprovementHappinessPercent(int iChange)
-{
-	setImprovementHappinessPercent(getImprovementHappinessPercent() + iChange);
-}
-
-// doc
-// TODO: move to header
-int CvCity::getImprovementHealth() const
-{
-	return getImprovementHealthPercent() / 100;
-}
-
-// doc
-// TODO: move to header
-int CvCity::getImprovementHealthPercent() const
-{
-	return m_iImprovementHealthPercent;
-}
-
-// doc
-void CvCity::setImprovementHealthPercent(int iNewValue)
-{
-	m_iImprovementHealthPercent = iNewValue;
-}
-
-// doc
-void CvCity::changeImprovementHealthPercent(int iChange)
-{
-	m_iImprovementHealthPercent += iChange;
-}
-
-// doc
-void CvCity::updateWorkedImprovements()
-{
-	setImprovementHappinessPercent(0);
-	setImprovementHealthPercent(0);
-
-	FOR_EACH_ENUM(CityPlot)
-	{
-		if (!isWorkingPlot(eLoopCityPlot))
-			continue;
-		
-		ImprovementTypes eImprovement = getCityIndexPlot(eLoopCityPlot)->getImprovementType();
-		if (eImprovement == NO_IMPROVEMENT)
-			continue;
-
-		changeImprovementHappinessPercent(getImprovementHappinessPercentChange(eImprovement));
-		changeImprovementHealthPercent(getImprovementHealthPercentChange(eImprovement));
-	}
-}
-
-// doc
-void CvCity::updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement)
-{
-	if (eOldImprovement != NO_IMPROVEMENT)
-	{
-		changeImprovementHappinessPercent(-getImprovementHappinessPercentChange(eOldImprovement));
-		changeImprovementHealthPercent(-getImprovementHealthPercentChange(eOldImprovement));
-	}
-
-	if (eNewImprovement != NO_IMPROVEMENT)
-	{
-		changeImprovementHappinessPercent(getImprovementHappinessPercentChange(eNewImprovement));
-		changeImprovementHealthPercent(getImprovementHealthPercentChange(eNewImprovement));
-	}
-}
-
-// doc
-// TODO: unused?
-void CvCity::updateWorkedImprovement(CityPlotTypes eCityPlot, bool bNewValue)
-{
-	CvPlot* pPlot = getCityIndexPlot(eCityPlot);
-	if (!pPlot->isImproved())
-		return;
-
-	changeImprovementHappinessPercent(getImprovementHappinessPercentChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
-	changeImprovementHealthPercent(getImprovementHealthPercentChange(pPlot->getImprovementType()) * (bNewValue ? 1 : -1));
-}
-
-// doc
-// TODO: move to header
 int CvCity::getPowerConsumedCount() const
 {
 	return m_iPowerConsumedCount;
@@ -16185,28 +16088,6 @@ void CvCity::changePowerConsumedCount(int iChange)
 		m_iPowerConsumedCount += iChange;
 
 		updatePowerHealth();
-	}
-}
-
-// doc
-void CvCity::changeImprovementHappinessPercentChange(ImprovementTypes eImprovement, int iChange)
-{
-	if (iChange != 0)
-	{
-		m_paiImprovementHappinessPercentChange.add(eImprovement, iChange);
-
-		updateWorkedImprovements();
-	}
-}
-
-// doc
-void CvCity::changeImprovementHealthPercentChange(ImprovementTypes eImprovement, int iChange)
-{
-	if (iChange != 0)
-	{
-		m_paiImprovementHealthPercentChange.add(eImprovement, iChange);
-
-		updateWorkedImprovements();
 	}
 }
 

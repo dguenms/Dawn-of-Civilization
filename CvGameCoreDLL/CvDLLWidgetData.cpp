@@ -1012,7 +1012,7 @@ bool CvDLLWidgetData::executeAction(CvWidgetDataStruct &widgetDataStruct)
 
     // doc: culture level pedia
 	case WIDGET_PEDIA_JUMP_TO_CULTURE_LEVEL:
-		doPediaCultureLevelJump(widgetDataStruct);
+		py.jumpToPedia(iData1, "CultureLevel");
 		break;
 
 	case WIDGET_PEDIA_BACK:
@@ -1044,7 +1044,7 @@ bool CvDLLWidgetData::executeAction(CvWidgetDataStruct &widgetDataStruct)
 
 	// doc: route pedia
 	case WIDGET_PEDIA_JUMP_TO_ROUTE:
-		doPediaRouteJump(widgetDataStruct);
+		py.jumpToPedia(iData1, "Route");
 		break;
 
 	case WIDGET_PEDIA_JUMP_TO_CIVIC:
@@ -1085,7 +1085,7 @@ bool CvDLLWidgetData::executeAction(CvWidgetDataStruct &widgetDataStruct)
 
 	// doc: pagan religion pedia
 	case WIDGET_PEDIA_JUMP_TO_PAGAN_RELIGION:
-		doPediaPaganReligionHelp(widgetDataStruct);
+		py.jumpToPedia(iData1, "PaganReligion");
 		break;
 
 	case WIDGET_PEDIA_DESCRIPTION:
@@ -1103,7 +1103,7 @@ bool CvDLLWidgetData::executeAction(CvWidgetDataStruct &widgetDataStruct)
 
     // doc: finance advisor
 	case WIDGET_FINANCE_ADVISOR:
-		doFinanceAdvisor(widgetDataStruct);
+		py.showFinanceAdvisorScreen();
 		break;
 
 	case WIDGET_DEAL_KILL:
@@ -1760,15 +1760,6 @@ void CvDLLWidgetData::doSelected(CvWidgetDataStruct &widgetDataStruct)
 	}
 }
 
-// doc
-// TODO: move to advciv location
-void CvDLLWidgetData::doPediaPaganReligionHelp(CvWidgetDataStruct &widgetDataStruct)
-{
-    CyArgsList argsList;
-    argsList.add(widgetDataStruct.m_iData1);
-    gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToPaganReligion", argsList.makeFunctionArgs());
-}
-
 void CvDLLWidgetData::doGotoTurnEvent(CvWidgetDataStruct &widgetDataStruct)
 {
 	CvPlot* pPlot = GC.getMap().plot(widgetDataStruct.m_iData1, widgetDataStruct.m_iData2);
@@ -1800,13 +1791,6 @@ void CvDLLWidgetData::doLaunch(CvWidgetDataStruct &widgetDataStruct)
 		if (pInfo != NULL)
 			gDLL->UI().addPopup(pInfo);
 	}
-}
-
-void CvDLLWidgetData::doFinanceAdvisor(CvWidgetDataStruct &widgetDataStruct)
-{
-	//CyArgsList argsList;
-	//argsList.add(widgetDataStruct.m_iData1);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "showFinanceAdvisor");
 }
 
 //
@@ -1948,6 +1932,7 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 	HurryTypes eHurry = (HurryTypes)widgetDataStruct.m_iData1;
 	// advc.001: canHurry check in order to avoid (inconsequential) overflow
 	int const iHurryGold = (kCity.canHurry(eHurry, true) ? kCity.hurryGold(eHurry) : 0);
+	int const iHurryPopulation = kCity.hurryPopulation(eHurry);
 	if (iHurryGold > 0)
 	{
 		szBuffer.append(NEWLINE);
@@ -1955,7 +1940,6 @@ void CvDLLWidgetData::parseHurryHelp(CvWidgetDataStruct &widgetDataStruct, CvWSt
 	}
 	bool bReasonGiven = false; // advc.064b: Why we can't hurry
 	{
-		int iHurryPopulation = kCity.hurryPopulation(eHurry);
 		if (iHurryPopulation > 0 &&
 			kCity.hurryCost(false) > 0) // advc.004: Don't show hurry pop if no production chosen
 		{
@@ -2092,7 +2076,7 @@ void CvDLLWidgetData::parseConscriptHelp(CvWidgetDataStruct &widgetDataStruct, C
 	    int iConscriptAnger = GC.getDefineINT("CONSCRIPT_POP_ANGER");
 
         // doc: Blue Mosque effect
-        if (kCity.isHasBuildingEffect(BLUE_MOSQUE))
+        if (pHeadSelectedCity->isHasBuildingEffect(BLUE_MOSQUE))
             iConscriptAnger = 1;
 
         if (iConscriptAngerLength > 0)
@@ -2739,17 +2723,18 @@ void CvDLLWidgetData::parseActionHelp_Mission(CvActionInfo const& kAction,
 	}
 	case MISSION_JOIN:
 	{
+		CvUnit* pSelectedUnit = gDLL->UI().getHeadSelectedUnit();
 		GAMETEXT.parseSpecialistHelp(szBuffer, (SpecialistTypes)
 				kAction.getMissionData(), pMissionCity, true);
 
 	    // doc: House of Wisdom effect
-	    if (GET_PLAYER(kSelectedUnit->getOwner()).isHasBuildingEffect(HOUSE_OF_WISDOM))
+	    if (GET_PLAYER(pSelectedUnit->getOwner()).isHasBuildingEffect(HOUSE_OF_WISDOM))
 	    {
 	        szBuffer.append(NEWLINE);
 	        szBuffer.append(NEWLINE);
 	        szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getMissionInfo(MISSION_DISCOVER).getDescription(), GC.getBuildingInfo(HOUSE_OF_WISDOM).getText()).c_str());
-	        parseDiscoverHelp(pMissionPlot, szBuffer);
-	        szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getMissionInfo(MISSION_DISCOVER).getHelp()).c_str());
+			// TODO: add discover help from MISSION_DISCOVER
+			szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getMissionInfo(MISSION_DISCOVER).getHelp()).c_str());
 	    }
 
 		break;
@@ -3360,7 +3345,7 @@ void CvDLLWidgetData::parseActionHelp_Mission(CvActionInfo const& kAction,
 			}
 
             // doc (merijn): Chateau Frontenac effect
-            if (GET_PLAYER(kSelectedUnit->getOwner()).isHasBuildingEffect(FRONTENAC))
+            if (GET_PLAYER(kSelectedUnit.getOwner()).isHasBuildingEffect(FRONTENAC))
             {
                 if (GC.getInfo(eBuild).getTechPrereq() == RAILROAD)
                 {
@@ -3408,7 +3393,7 @@ void CvDLLWidgetData::parseActionHelp_Mission(CvActionInfo const& kAction,
 }
 
 // doc
-// TODO: not in advciv - alternative?
+// TODO: not in advciv - alternative? - this handles first and second discover
 void CvDLLWidgetData::parseDiscoverHelp(CvPlot* pMissionPlot, CvWStringBuffer& szBuffer)
 {
 	CvUnit* pSelectedUnit;
@@ -3896,31 +3881,36 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 
 // rfc: display stability info
 void CvDLLWidgetData::parseCompleteStabilityInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer) {
-    long result = 0;
-    CyArgsList argsList;
-    argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
-    gDLL->getPythonIFace()->callFunction(PYScreensModule, "getStabilityLevel", argsList.makeFunctionArgs(), &result);
-    int iResult = (int)result;
+	int iStabilityLevel = GC.getPythonCaller()->getStabilityLevel((PlayerTypes)widgetDataStruct.m_iData1);
 
     szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
     szBuffer.append(" ");
 
-    if (iResult == 0) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_COLLAPSING"));
-    else if (iResult == 1) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_UNSTABLE"));
-    else if (iResult == 2) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SHAKY"));
-    else if (iResult == 3) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_STABLE"));
-    else szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SOLID"));
+	switch (iStabilityLevel)
+	{
+	case 0:
+		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_COLLAPSING"));
+		break;
+	case 1:
+		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_UNSTABLE"));
+		break;
+	case 2:
+		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SHAKY"));
+		break;
+	case 3:
+		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_STABLE"));
+		break;
+	default:
+		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SOLID"));
+	}
 
     szBuffer.append(NEWLINE);
 }
 
 // rfc: display victory info
 void CvDLLWidgetData::parseHistoricalVictoryInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer) {
-    long result = -1;
-    CyArgsList argsList;
-    argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
-    gDLL->getPythonIFace()->callFunction(PYScreensModule, "countAchievedGoals", argsList.makeFunctionArgs(), &result);
-    szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED", (int)result));
+	int iNumAchievedGoals = GC.getPythonCaller()->countAchievedGoals((PlayerTypes)widgetDataStruct.m_iData1);
+    szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED", iNumAchievedGoals));
     szBuffer.append(NEWLINE);
 }
 
@@ -5013,10 +5003,11 @@ void CvDLLWidgetData::parseTradeItem(CvWidgetDataStruct &widgetDataStruct,
 	    break;
     // doc (edead): slave trade
 	case TRADE_SLAVE:
-	    pUnit = GET_PLAYER(eWhoFrom).getUnit(widgetDataStruct.m_iData2);
-	    GAMETEXT.setUnitHelp(szBuffer, pUnit, true);
-	    eWhoDenies = (widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo);
-	    break;
+	{
+		CvUnit* pUnit = GET_PLAYER(eWhoFrom).getUnit(widgetDataStruct.m_iData2);
+		GAMETEXT.setUnitHelp(szBuffer, pUnit, true);
+		break;
+	}
 	// <advc.034>
 	case TRADE_DISENGAGE:
 		szBuffer.append(gDLL->getText("TXT_KEY_TRADE_DISENGAGE"));
@@ -5072,6 +5063,9 @@ void CvDLLWidgetData::parseTradeItem(CvWidgetDataStruct &widgetDataStruct,
 		case TRADE_SURRENDER:
 		case TRADE_VASSAL:
 			eWhoDenies = NO_PLAYER;
+			break;
+		case TRADE_SLAVE:
+			eWhoDenies = widgetDataStruct.m_bOption ? eWhoFrom : eWhoTo;
 			break;
 		// BETTER_BTS_AI_MOD: END
 		}
@@ -5306,10 +5300,11 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
 		return;
 	CvCity const& c = *pHeadSelectedCity;
     // doc: capture all civilizations: from alive players and dead civilizations
+	// TODO: not just alive
 	/*  <advc.099> Replaced "Alive" with "EverAlive", and sorted to match the
 		order in updateCityScreen (CvMainInterface.py) */
 	std::vector<std::pair<int,PlayerTypes> > aieSorted;
-    std::vectorr<std::pair<int,CivilizationTypes> > aieCivsSorted;
+    std::vector<std::pair<int,CivilizationTypes> > aieCivsSorted;
     // doc: only alive - we capture other one on the civilization level
 	for (PlayerIter<ALIVE> itPlayer; itPlayer.hasNext(); ++itPlayer)
 	{
@@ -5344,10 +5339,10 @@ void CvDLLWidgetData::parseNationalityHelp(CvWidgetDataStruct &widgetDataStruct,
     std::reverse(aieCivsSorted.begin(), aieCivsSorted.end());
     for (size_t i = 0; i < aieCivsSorted.size(); i++)
     {
-        CvCivilizationInfo const& kCivilization = GC.getInfo(aieCivsSorted[i].second);
+        CvCivilizationInfo& kCivilization = GC.getInfo(aieCivsSorted[i].second);
         int iCulturePercent = aieCivsSorted[i].first;
-        PlayerColorTypes ePlayerColor = kCivilization.getDefaultPlayerColor();
-        swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, COLORS(GC.getPlayerColorInfo(ePlayerColor).getTextColorType()), GC.getCivilizationInfo(eCivilization).getAdjective());
+        PlayerColorTypes ePlayerColor = (PlayerColorTypes)kCivilization.getDefaultPlayerColor();
+        swprintf(szTempBuffer, L"\n%d%% " SETCOLR L"%s" ENDCOLR, iCulturePercent, COLORS(GC.getPlayerColorInfo(ePlayerColor).getTextColorType()), kCivilization.getAdjective());
         szBuffer.append(szTempBuffer);
     }
 
@@ -5534,9 +5529,10 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct,
 		return; // advc
 
     // doc: gradual border expansion
-    int iNextCoveredPlot = pHeadSelectedCity->getNextCoveredPlot();
-    int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
+    CulturePlotTypes eNextCoveredPlot = pHeadSelectedCity->getNextCoveredPlot();
+    CulturePlotTypes eEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
 
+	int iThreshold = pHeadSelectedCity->getCultureThreshold();
 
 	int iCultureTimes100 = pHeadSelectedCity->getCultureTimes100(pHeadSelectedCity->getOwner());
 	if (iCultureTimes100%100 == 0)
@@ -5565,10 +5561,13 @@ void CvDLLWidgetData::parseCultureHelp(CvWidgetDataStruct &widgetDataStruct,
     szBuffer.append(gDLL->getText("TXT_KEY_CITY_CULTURE_RANK", iCultureRank+1));
 
     // doc: gradual border expansion
-    if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS_3 && iCultureRateTimes100 > 0)
+	int iCultureRateTimes100 = pHeadSelectedCity->getModifiedCultureRateTimes100();
+    if (eEffectiveNextCoveredPlot < NUM_CULTURE_PLOTS && iCultureRateTimes100 > 0)
     {
-        if (iEffectiveNextCoveredPlot >= iNextCoveredPlot) iThreshold = pHeadSelectedCity->getCultureCost(iEffectiveNextCoveredPlot);
-        else iThreshold = pHeadSelectedCity->getCultureThreshold();
+        if (eEffectiveNextCoveredPlot >= eNextCoveredPlot) 
+			iThreshold = pHeadSelectedCity->getCultureCost(eEffectiveNextCoveredPlot);
+        else 
+			iThreshold = pHeadSelectedCity->getCultureThreshold();
 
         int iCultureLeftTimes100 = 100 * iThreshold - iCultureTimes100;
         if (iCultureLeftTimes100 > 0)
@@ -5927,17 +5926,16 @@ void CvDLLWidgetData::parseBonusRevealHelp(CvWidgetDataStruct &widgetDataStruct,
 }
 
 // doc: bonus trade help
-// TODO: refactor
 void CvDLLWidgetData::parseBonusPlayerTradeHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	bool bFirst = true;
 	TechTypes eTech = (TechTypes)widgetDataStruct.m_iData1;
 
-	for (int iI = 0; iI < GC.getNumBonusInfos(); ++iI)
+	FOR_EACH_ENUM(Bonus)
 	{
-		if (GC.getBonusInfo((BonusTypes)iI).getTechPlayerTrade() == eTech)
+		if (GC.getInfo(eLoopBonus).getTechPlayerTrade() == eTech)
 		{
-			bFirst = GAMETEXT.buildBonusTradeString(szBuffer, eTech, (BonusTypes)iI, bFirst, false, true);
+			bFirst = GAMETEXT.buildBonusTradeString(szBuffer, eTech, eLoopBonus, bFirst, false, true);
 		}
 	}
 }
@@ -6109,7 +6107,7 @@ void CvDLLWidgetData::parseBonusHelpCity(CvWidgetDataStruct &widgetDataStruct, C
     CvPlot* pPlot = GC.getMap().plotByIndex(widgetDataStruct.m_iData2);
     CvCity* pCity = pPlot != NULL && pPlot->isCity() ? pPlot->getPlotCity() : NULL;
 
-    GAMETEXT.setBonusHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData1, false, pCity);
+    GAMETEXT.setBonusHelp(szBuffer, (BonusTypes)widgetDataStruct.m_iData1, pCity, false);
 }
 
 void CvDLLWidgetData::parseReligionHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
@@ -6705,7 +6703,7 @@ void CvDLLWidgetData::parseSatelliteLimitHelp(CvWidgetDataStruct& widgetDataStru
 // doc: first discovered help
 void CvDLLWidgetData::parseFirstDiscoveredHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer)
 {
-	int iFirstDiscoveredTurn = GC.getGameINLINE().getFirstDiscoveredTurn((TechTypes)widgetDataStruct.m_iData1);
-	int iFirstDiscoveredYear = GC.getGameINLINE().getTurnYear(iFirstDiscoveredTurn);
-	szBuffer.append(gDLL->getText("TXT_KEY_WIDGET_FIRST_DISCOVERED", GC.getCivilizationInfo(GC.getGameINLINE().getFirstDiscovered((TechTypes)widgetDataStruct.m_iData1)).getShortDescription(), abs(iFirstDiscoveredYear), iFirstDiscoveredYear >= 0 ? gDLL->getText("TXT_KEY_AD").c_str() : gDLL->getText("TXT_KEY_BC").c_str()));
+	int iFirstDiscoveredTurn = GC.getGame().getFirstDiscoveredTurn((TechTypes)widgetDataStruct.m_iData1);
+	int iFirstDiscoveredYear = GC.getGame().getTurnYear(iFirstDiscoveredTurn);
+	szBuffer.append(gDLL->getText("TXT_KEY_WIDGET_FIRST_DISCOVERED", GC.getCivilizationInfo(GC.getGame().getFirstDiscovered((TechTypes)widgetDataStruct.m_iData1)).getShortDescription(), abs(iFirstDiscoveredYear), iFirstDiscoveredYear >= 0 ? gDLL->getText("TXT_KEY_AD").c_str() : gDLL->getText("TXT_KEY_BC").c_str()));
 }

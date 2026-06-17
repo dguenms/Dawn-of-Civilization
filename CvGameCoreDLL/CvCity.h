@@ -545,11 +545,6 @@ public:
 	int getSurroundingBadHappiness() const { return m_iSurroundingBadHappiness; }								// Exposed to Python
 	//void updateFeatureHappiness(); // advc.901: Replaced by updateSurroundingHealthHappiness
 
-	int getImprovementHappiness() const;
-	int getImprovementHappinessPercent() const;																	// Exposed to Python
-	void setImprovementHappinessPercent(int iNewValue);
-	void changeImprovementHappinessPercent(int iChange);
-
 	int getBonusGoodHappiness(/* advc.912c: */ bool bIgnoreModifier = false) const;								// Exposed to Python
 	int getBonusBadHappiness() const { return m_iBonusBadHappiness; }											// Exposed to Python
 	void changeBonusGoodHappiness(int iChange);
@@ -1412,16 +1407,6 @@ public:
 	int getCultureRank() const { return m_iCultureRank; } // doc
 	void setCultureRank(int iNewValue); // doc
 
-	void updateWorkedImprovements(); // doc
-	void updateWorkedImprovement(CityPlotTypes eCityPlot, bool bNewValue); // doc
-	void updateWorkedImprovement(ImprovementTypes eOldImprovement, ImprovementTypes eNewImprovement); // doc
-
-	int getImprovementHappinessPercentChange(ImprovementTypes eImprovement) const { return m_paiImprovementHappinessPercentChange.get(eImprovement); } // doc
-	void changeImprovementHappinessPercentChange(ImprovementTypes eImprovement, int iChange); // doc
-
-	int getImprovementHealthPercentChange(ImprovementTypes eImprovement) const { return m_paiImprovementHealthPercentChange.get(eImprovement); } // doc
-	void changeImprovementHealthPercentChange(ImprovementTypes eImprovement, int iChange); // doc
-
 	int getCultureGreatPeopleRateModifier() const { return m_iCultureGreatPeopleRateModifier; } // doc
 	void changeCultureGreatPeopleRateModifier(int iChange); // doc
 
@@ -1640,9 +1625,6 @@ protected:
 	int m_iCorporationHealth; // doc
 	int m_iCorporationUnhealth; // doc
 
-	int m_iImprovementHappinessPercent; // doc
-	int m_iImprovementHealthPercent; // doc
-
 	int m_iCultureGreatPeopleRateModifier; // doc
 	int m_iCultureHappiness; // doc
 	int m_iCultureTradeRouteModifier; // doc
@@ -1736,8 +1718,6 @@ protected:
 	ArrayEnumMap<SpecialistTypes,int,char> m_aiForceSpecialistCount;
 	ArrayEnumMap<SpecialistTypes,int,char> m_aiFreeSpecialistCount;
 	ListEnumMap<ImprovementTypes,int,char> m_aiImprovementFreeSpecialists;
-	ListEnumMap<ImprovementTypes,int,char> m_paiImprovementHealthPercentChange; // doc
-	ListEnumMap<ImprovementTypes,int,char> m_paiImprovementHappinessPercentChange; // doc
 	ArrayEnumMap<ReligionTypes,int,char> m_aiReligionInfluence;
 	ArrayEnumMap<ReligionTypes,int,char> m_aiStateReligionHappiness;
 	ArrayEnumMap<ReligionTypes,int,char> m_aiShrine; // advc.enum

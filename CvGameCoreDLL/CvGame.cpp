@@ -44,14 +44,6 @@ CvGame::CvGame() :
 	m_pHallOfFame = NULL; // advc.106i
 	m_pLegacyOrgSeatData = NULL; // advc.enum
 	reset(NO_HANDICAP, true);
-
-    // TODO: declare and initialize
-    // doc
-    m_aiTechRankTeam = new int[MAX_TEAMS];
-    m_aiCivPeriod = new char[NUM_CIVS];
-    m_aiCivilizationHistory = new std::hash_map<int, std::hash_map<int, int> >[NUM_HISTORY_TYPES];
-    m_aiFirstDiscovered = NULL;
-    m_aiFirstDiscoveredTurn = NULL;
 }
 
 
@@ -585,20 +577,6 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 
 	m_szScriptData = "";
 
-    // TODO: declare and initialize
-    for (iI = 0; iI < MAX_TEAMS; iI++)
-    {
-        m_aiTechRankTeam[iI] = 0; // Leoreth
-    }
-    for (iI = 0; iI < NUM_CIVS; iI++)
-    {
-        m_aiCivPeriod[iI] = NO_PERIOD;
-    }
-    for (iI = 0; iI < NUM_HISTORY_TYPES; iI++)
-    {
-        m_aiCivilizationHistory[iI].clear();
-    }
-
 	if (!bConstructorCall)
 	{
 		m_aeRankPlayer.reset();
@@ -624,6 +602,24 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 		m_aiSecretaryGeneralTimer.reset();
 		m_aiVoteTimer.reset();
 		getBarbarianWeightMap().getActivityMap().reset(); // advc.304
+
+		// doc
+		m_aiTechRankTeam.reset();
+		m_aeCivPeriod.reset();
+		m_aeFirstDiscovered.reset();
+		m_aeFirstDiscoveredTurn.reset();
+
+		FOR_EACH_ENUM(Civilization)
+		{
+			History histories[NUM_HISTORY_TYPES];
+			FOR_EACH_ENUM(History)
+			{
+				histories[eLoopHistory].reset();
+			}
+
+
+			m_apCivilizationHistory[eLoopCivilization] = histories;
+		}
 	}
 
 	m_deals.removeAll();
@@ -3019,12 +3015,12 @@ void CvGame::updateTechRanks()
 
 void CvGame::setTechRank(int iRank, TeamTypes eTeam)
 {
-	m_aiTechRankTeam[eTeam] = iRank;
+	m_aiTechRankTeam.set(eTeam, iRank);
 }
 
 int CvGame::getTechRank(TeamTypes eTeam) const
 {
-	return m_aiTechRankTeam[(int)eTeam];
+	return m_aiTechRankTeam.get(eTeam);
 }
 
 void CvGame::setMedianTechValue(int iValue)
@@ -3773,7 +3769,7 @@ int CvGame::countPossibleVote(VoteTypes eVote, VoteSourceTypes eVoteSource) cons
 {
 	int iCount = 0;
     // doc: exclude minors
-	for (PlayerIter<CIV_ALIVE,MAJOR_CIV> it; it.hasNext(); ++it)
+	for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 		iCount += it->getVotes(eVote, eVoteSource);
 	return iCount;
 }
@@ -4948,7 +4944,6 @@ bool CvGame::circumnavigationAvailable() const
 	static bool const bCIRCUMNAVIGATE_FREE_MOVES = GC.getDefineBOOL("CIRCUMNAVIGATE_FREE_MOVES"); // advc.opt
 	if (!bCIRCUMNAVIGATE_FREE_MOVES)
 		return false;
-	}
 
 	// doc: no circumnavigation in 1700 AD
 	if (getScenario() == SCENARIO_1700AD)
@@ -5165,6 +5160,7 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource,
 	}
 	else if (GC.getInfo(kData.eVote).isForceWar())
 	{
+		ReligionTypes eVoteSourceReligion = GC.getGame().getVoteSourceReligion(eVoteSource);
 		CvPlayer const& kPlayer = GET_PLAYER(kData.ePlayer);
 		CvTeam const& kTeam = GET_TEAM(kPlayer.getTeam());
 		if (kTeam.isAVassal())
@@ -5179,32 +5175,22 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource,
             return false;
 
 	    // doc: crusade target if at war with a full member or controlling the holy city
-        // TODO: refactor
 	    if (eVoteSourceReligion != NO_RELIGION)
 	    {
 	        bool bDefensiveCrusade = false;
 	        bool bOffensiveCrusade = false;
 
 	        if (GC.getGame().getHolyCity(eVoteSourceReligion) != NULL && GC.getGame().getHolyCity(eVoteSourceReligion)->getOwner() == kPlayer.getID())
-	        {
 	            bOffensiveCrusade = true;
-	        }
 
 	        if (kPlayer.countNumBuildings((BuildingTypes)GC.getInfoTypeForString("BUILDING_CATHOLIC_SHRINE")) > 0)
-	        {
 	            bOffensiveCrusade = true;
-	        }
 
-	        for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; iPlayer++)
-	        {
-	            if (GET_PLAYER((PlayerTypes)iPlayer).isMinorCiv())
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it) 
+			{
+	            if (it->isFullMember(eVoteSource))
 	            {
-	                continue;
-	            }
-
-	            if (GET_PLAYER((PlayerTypes)iPlayer).isFullMember(eVoteSource))
-	            {
-	                if (GET_TEAM(GET_PLAYER((PlayerTypes)iPlayer).getTeam()).isAtWar(kPlayer.getTeam()))
+	                if (GET_TEAM(it->getTeam()).isAtWar(kPlayer.getTeam()))
 	                {
 	                    bDefensiveCrusade = true;
 	                    break;
@@ -5213,9 +5199,7 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource,
 	        }
 
 	        if (!bDefensiveCrusade && !bOffensiveCrusade)
-	        {
 	            return false;
-	        }
 	    }
 
         // doc: skip old logic
@@ -5288,7 +5272,7 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource,
 			return false;
 	}
     // doc: espionage resolution
-	else if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
+	else if (GC.getInfo(kData.eVote).getEspionage() > 0)
 	{
 		CvPlayer const& kPlayer = GET_PLAYER(kData.ePlayer);
 		CvPlayer const& kOtherPlayer = GET_PLAYER(kData.eOtherPlayer);
@@ -5301,28 +5285,26 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource,
 			return false;
 	}
     // doc: gold resolution
-    // TODO: refactor
-	else if (GC.getVoteInfo(kData.eVote).getGoldPercent() > 0)
+	else if (GC.getInfo(kData.eVote).getGoldPercent() > 0)
 	{
 		// impossible if there is a war between full members
-		for (int iTeam1 = 0; iTeam1 < MAX_CIV_TEAMS; ++iTeam1)
+		for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
 		{
-			CvTeam& kTeam1 = GET_TEAM((TeamTypes)iTeam1);
-			if (kTeam1.isFullMember(eVoteSource))
+			if (it->isFullMember(eVoteSource))
 			{
-				for (int iTeam2 = iTeam1+1; iTeam2 < MAX_CIV_TEAMS; ++iTeam2)
+				for (TeamIter<MAJOR_CIV,NOT_SAME_TEAM_AS> itOther(it->getID()); itOther.hasNext(); ++itOther)
 				{
-					CvTeam& kTeam2 = GET_TEAM((TeamTypes)iTeam2);
-					if (kTeam2.isFullMember(eVoteSource))
+					if (itOther->isFullMember(eVoteSource))
 					{
-						if (kTeam1.isAtWar((TeamTypes)iTeam2)) return false;
+						if (it->isAtWar(itOther->getID())) 
+							return false;
 					}
 				}
 			}
 		}
 	}
     // doc: revoke membership resolution
-	else if (GC.getVoteInfo(kData.eVote).isRevokeMembership())
+	else if (GC.getInfo(kData.eVote).isRevokeMembership())
 	{
 	    CvPlayer const& kPlayer = GET_PLAYER(kData.ePlayer);
 
@@ -5334,20 +5316,14 @@ bool CvGame::isValidVoteSelection(VoteSourceTypes eVoteSource,
 			return false;
 	}
     // doc: decolonize resolution
-    // TODO: refactor
-	else if (GC.getVoteInfo(kData.eVote).isDecolonize())
+	else if (GC.getInfo(kData.eVote).isDecolonize())
 	{
 	    CvPlayer const& kPlayer = GET_PLAYER(kData.ePlayer);
-		CvCity* pCity = kPlayer.getCity(kData.iCityId);
 
 		// only civs at peace can be forced to decolonize
-		CvTeam& kTeam = GET_TEAM(kPlayer.getTeam());
-		for (int iI = 0; iI < MAX_CIV_TEAMS; iI++)
+		for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
 		{
-			if (GET_TEAM((TeamTypes)iI).isMinorCiv())
-				continue;
-
-			if (kTeam.isAtWar((TeamTypes)iI))
+			if (it->isAtWar(kPlayer.getTeam()))
 				return false;
 		}
 	}
@@ -5573,8 +5549,8 @@ void CvGame::setActivePlayer(PlayerTypes eNewValue, bool bForceHotSeat)
         sendPlayerOptions(true);
 
         // doc: enables victory again after switch
-        if (getGameState() == GAMESTATE_EXTENDED)
-            setGameState(GAMESTATE_ON)
+		if (getGameState() == GAMESTATE_EXTENDED)
+			setGameState(GAMESTATE_ON);
 	}
 	updateActiveVisibility(); // advc.706: Moved into subroutine
 }
@@ -5711,10 +5687,10 @@ void CvGame::setWinner(TeamTypes eNewWinner, VictoryTypes eNewVictory)
 	{
 		if (getWinner() != NO_TEAM)
 		{
-			CvWString szBuffer(gDLL->getText("TXT_KEY_GAME_WON",
+			CvWString szBuffer = gDLL->getText("TXT_KEY_GAME_WON",
 					//GET_TEAM(getWinner()).getReplayName().GetCString(),
-                    GET_PLAYER(GET_TEAM(getWinner()).getLeadrID()).getCivilzationShortDescription(), // rfc
-					GC.getInfo(getVictory()).getTextKeyWide()));
+                    GET_PLAYER(GET_TEAM(getWinner()).getLeaderID()).getCivilizationShortDescription(), // rfc
+					GC.getInfo(getVictory()).getTextKeyWide());
 			addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT,
 					GET_TEAM(getWinner()).getLeaderID(), szBuffer,
 					GC.getColorType("HIGHLIGHT_TEXT"));
@@ -6059,15 +6035,6 @@ void CvGame::setReligionSlotTaken(ReligionTypes eReligion, bool bTaken)
 }
 
 
-// doc
-// TODO: update definition in header?
-bool CvGame::isCorporationFounded(CorporationTypes eIndex)
-{
-    //return true; //Leoreth: corporations don't get founded anymore
-    return (getCorporationGameTurnFounded(eIndex) != -1);
-}
-
-
 void CvGame::makeCorporationFounded(CorporationTypes eCorp, PlayerTypes ePlayer)
 {
 	if (!isCorporationFounded(eCorp))
@@ -6376,7 +6343,7 @@ void CvGame::doTurn()
 	PROFILE_BEGIN("CvGame::doTurn()");
 
     // rfc
-    for (PlayerIter it; it->hasNext(); ++it)
+    for (PlayerIter<ANY_AGENT_STATUS> it; it.hasNext(); ++it)
     {
         it->m_bTurnPlayed = false;
     }
@@ -8571,7 +8538,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			/*	advc.130v (note): Not replaced with CvTeam::signPeaceTreaty
 				because I want vassals to get their own peace treaties here. */
             // rfc: war check
-			if (atWar(itLoopPlayer->getTeam(), GET_PLAYER(kData.kVoteOption.ePlayer).getTeam())
+			if (atWar(itLoopPlayer->getTeam(), GET_PLAYER(kData.kVoteOption.ePlayer).getTeam()))
             {
                 itLoopPlayer->forcePeace(kData.kVoteOption.ePlayer);
 			    CvEventReporter::getInstance().peaceBrokered(GET_TEAM(getSecretaryGeneral(kData.eVoteSource)).getLeaderID(), itLoopPlayer->getID(), kData.kVoteOption.ePlayer);
@@ -8629,7 +8596,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 		{
             // doc: can be defied but leads to war
             if (getPlayerVote(pCity->getOwner(), kData.getID()) == PLAYER_VOTE_NEVER)
-            [
+			{
                 for (PlayerIter<MAJOR_CIV,POTENTIAL_ENEMY_OF> it(kPlayer.getTeam()); it.hasNext(); ++it)
                 {
                     if (getPlayerVote(it->getID(), kData.getID()) == PLAYER_VOTE_YES)
@@ -8665,7 +8632,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 
 	    for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 	    {
-	        // dpc: unaffected by defied resolution
+	        // doc: unaffected by defied resolution
 	        if (getPlayerVote(it->getID(), kData.getID()) == PLAYER_VOTE_NEVER)
                  continue;
 	        if (kData.kVoteOption.ePlayer == it->getID())
@@ -8676,15 +8643,14 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 	            iGold = it->getGold() * kVote.getGoldPercent();
 	            iGold /= 100;
 	            iTotalGold += iGold;
-	            kLoopPlayer.changeGold(-iGold);
+				it->changeGold(-iGold);
 	        }
         }
 
 		if (kData.kVoteOption.ePlayer != NO_PLAYER)
 		{
 			GET_PLAYER(kData.kVoteOption.ePlayer).changeGold(iTotalGold / 2);
-			// TODO: refactor
-            m_kUI.addMessage(kData.kVoteOption.ePlayer, true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_APOSTOLIC_PALACE_COLLECT_TITHE", iTotalGold / 2), "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), -1, -1, true, true);
+            gDLL->UI().addMessage(kData.kVoteOption.ePlayer, true, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_APOSTOLIC_PALACE_COLLECT_TITHE", iTotalGold / 2), "", MESSAGE_TYPE_MAJOR_EVENT, "", (ColorTypes)GC.getInfoTypeForString("COLOR_WHITE"), -1, -1, true, true);
 		}
 
 		setVoteOutcome(kData, NO_PLAYER_VOTE);
@@ -8725,7 +8691,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 			{
 				for (CvCity* pLoopCity = kLoopPlayer.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kLoopPlayer.nextCity(&iLoop))
 				{
-					ReligionTypes eReligion = GC.getGameINLINE().getVoteSourceReligion(kData.eVoteSource);
+					ReligionTypes eReligion = GC.getGame().getVoteSourceReligion(kData.eVoteSource);
 
 					if (NO_RELIGION == eReligion || pLoopCity->isHasReligion(eReligion))
 					{
@@ -9040,13 +9006,12 @@ bool CvGame::changePlayer( int playerIdx, int newCivType, int newLeader, int tea
 {
 	bool changedCivOrLeader = false;
 	LeaderHeadTypes prevLeader = NO_LEADER;
-	CvFlagEntity* newFlagSymbol = NULL;
 	CvUnit* pLoopUnit;
 	CvUnit* pNewUnit;
 	int iLoop;
 	TeamTypes prevTeam = GET_PLAYER((PlayerTypes)playerIdx).getTeam();
 
-	if( playerIdx >= GC.getMAX_CIV_PLAYERS() )
+	if (playerIdx >= NUM_CIV_PLAYER_TYPES)
 	{
 		//logMsg("Creating new player ... failed, invalid player index");
 		return false;
@@ -9066,7 +9031,7 @@ bool CvGame::changePlayer( int playerIdx, int newCivType, int newLeader, int tea
 		//logMsg("Creating new player ... failed, invalid leader type");
 		return false;
 	}
-	if( teamIdx >= GC.getMAX_TEAMS() ) //( teamIdx >= GC.getMAX_CIV_TEAMS() )
+	if( teamIdx >= NUM_CIV_TEAM_TYPES ) //( teamIdx >= GC.getMAX_CIV_TEAMS() )
 	{
 		//logMsg("Creating new player ... failed, invalid team index");
 		return false;
@@ -9194,7 +9159,7 @@ bool CvGame::changePlayer( int playerIdx, int newCivType, int newLeader, int tea
 		for (pLoopUnit = GET_PLAYER((PlayerTypes)playerIdx).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER((PlayerTypes)playerIdx).nextUnit(&iLoop))
 		{
 			// Concept borrowed from CvUnit::gift
-			pNewUnit = GET_PLAYER((PlayerTypes)playerIdx).initUnit(pLoopUnit->getUnitType(), pLoopUnit->getX_INLINE(), pLoopUnit->getY_INLINE(), pLoopUnit->AI_getUnitAIType());
+			pNewUnit = GET_PLAYER((PlayerTypes)playerIdx).initUnit(pLoopUnit->getUnitType(), pLoopUnit->getX(), pLoopUnit->getY(), pLoopUnit->AI_getUnitAIType());
 			// Will kill pLoopUnit
 			pNewUnit->convert(pLoopUnit);
 
@@ -9236,7 +9201,7 @@ void CvGame::convertUnits( int playerIdx )
 	for (pLoopUnit = GET_PLAYER((PlayerTypes)playerIdx).firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = GET_PLAYER((PlayerTypes)playerIdx).nextUnit(&iLoop))
 	{
 		// Concept borrowed from CvUnit::gift
-		pNewUnit = GET_PLAYER((PlayerTypes)playerIdx).initUnit(pLoopUnit->getUnitType(), pLoopUnit->getX_INLINE(), pLoopUnit->getY_INLINE(), pLoopUnit->AI_getUnitAIType());
+		pNewUnit = GET_PLAYER((PlayerTypes)playerIdx).initUnit(pLoopUnit->getUnitType(), pLoopUnit->getX(), pLoopUnit->getY(), pLoopUnit->AI_getUnitAIType());
 		// Will kill pLoopUnit
 		pNewUnit->convert(pLoopUnit);
 
@@ -9520,16 +9485,14 @@ void CvGame::read(FDataStreamBase* pStream)
     pStream->Read((int*)&m_eEventEffectNotifications); // doc
 	// <advc.106h>
 	pStream->Read((int*)&m_eInitialActivePlayer);
-	else m_eInitialActivePlayer = getActivePlayer(); // </advc.106h>
 	// <advc.004m>
 	pStream->Read((int*)&m_eCurrentLayer);
 	/*	Initial autosave doesn't contain valid info about the globe layers
 			b/c it gets created before Python calls reportCurrentLayer */
 	if (getTurnSlice() > 0)
 		m_bLayerFromSavegame = true;
-	} // </advc.004m>
+	// </advc.004m>
 	pStream->ReadString(m_szScriptData);
-
 
 	m_aeRankPlayer.read(pStream);
 	m_aePlayerRank.read(pStream);
@@ -9537,9 +9500,8 @@ void CvGame::read(FDataStreamBase* pStream)
 	m_aeRankTeam.read(pStream);
 	m_aeTeamRank.read(pStream);
 	m_aiTeamScore.read(pStream);
-    // TODO: refactor
-    pStream->Read(NUM_CIVS, m_aiCivPeriod); // doc
-    pStream->Read(MAX_TEAMS, m_aiTechRankTeam); // doc
+	m_aeCivPeriod.read(pStream); // doc
+	m_aiTechRankTeam.read(pStream); // doc
 	m_aiUnitCreatedCount.read(pStream);
 	m_aiUnitClassCreatedCount.read(pStream);
 	m_aiBuildingClassCreatedCount.read(pStream);
@@ -9556,9 +9518,8 @@ void CvGame::read(FDataStreamBase* pStream)
 	m_abReligionSlotTaken.read(pStream);
 	m_aeHolyCity.read(pStream);
     m_aeHeadquarters.read(pStream);
-    // TODO: refactor
-    pStream->Read(GC.getNumTechInfos(), m_aiFirstDiscovered); // doc
-    pStream->Read(GC.getNumTechInfos(), m_aiFirstDiscoveredTurn); // doc
+	m_aeFirstDiscovered.read(pStream); // doc
+	m_aeFirstDiscoveredTurn.read(pStream); // doc
 
 	{
 		CvWString szBuffer;
@@ -9698,33 +9659,10 @@ void CvGame::read(FDataStreamBase* pStream)
 	pStream->Read((int*)&m_eCultureVictoryCultureLevel);
 
     // doc: read civ history entries
-    // TODO: refactor
-    for (iI = 0; iI < NUM_HISTORY_TYPES; iI++)
-    {
-        m_aiCivilizationHistory[iI].clear();
-
-        int iNumHistoryEntries;
-        pStream->Read(&iNumHistoryEntries);
-
-        for (int iJ = 0; iJ < iNumHistoryEntries; iJ++)
-        {
-            int iCivilization;
-            pStream->Read(&iCivilization);
-
-            int iNumCivilizationEntries;
-            pStream->Read(&iNumCivilizationEntries);
-
-            for (int iK = 0; iK < iNumCivilizationEntries; iK++)
-            {
-                int iTurn;
-                int iValue;
-                pStream->Read(&iTurn);
-                pStream->Read(&iValue);
-
-                setCivilizationHistory((HistoryTypes)iI, (CivilizationTypes)iCivilization, iTurn, iValue);
-            }
-        }
-    }
+	FOR_EACH_ENUM(Civilization)
+	{
+		m_apCivilizationHistory[eLoopCivilization]->read(pStream);
+	}
 
 	// <advc.052>
 	pStream->Read(&m_bScenario); // </advc.052>
@@ -9835,9 +9773,8 @@ void CvGame::write(FDataStreamBase* pStream)
 	m_aeRankTeam.write(pStream);
 	m_aeTeamRank.write(pStream);
 	m_aiTeamScore.write(pStream);
-    // TODO: refactor
-	pStream->Write(NUM_CIVS, m_aiCivPeriod); // doc
-	pStream->Write(MAX_TEAMS, m_aiTechRankTeam); // doc
+	m_aeCivPeriod.write(pStream); // doc
+	m_aiTechRankTeam.write(pStream); // doc
 	m_aiUnitCreatedCount.write(pStream);
 	m_aiUnitClassCreatedCount.write(pStream);
 	m_aiBuildingClassCreatedCount.write(pStream);
@@ -9854,9 +9791,8 @@ void CvGame::write(FDataStreamBase* pStream)
 	m_abReligionSlotTaken.write(pStream);
 	m_aeHolyCity.write(pStream);
     m_aeHeadquarters.write(pStream);
-    // TODO: refactor
-    pStream->Write(GC.getNumTechInfos(), m_aiFirstDiscovered); // doc
-    pStream->Write(GC.getNumTechInfos(), m_aiFirstDiscoveredTurn); // doc
+	m_aeFirstDiscovered.write(pStream); // doc
+	m_aeFirstDiscoveredTurn.write(pStream); // doc
 	{
 		std::vector<CvWString>::iterator it;
 		pStream->Write(m_aszDestroyedCities.size());
@@ -9918,31 +9854,10 @@ void CvGame::write(FDataStreamBase* pStream)
 	pStream->Write(m_eCultureVictoryCultureLevel);
 
     // doc: civ history graph
-    // TODO: refactor
-    for (iI = 0; iI < NUM_HISTORY_TYPES; iI++)
-    {
-        hash_map<int, hash_map<int, int> > history = m_aiCivilizationHistory[iI];
-
-        int iNumHistoryEntries = history.size();
-        pStream->Write(iNumHistoryEntries);
-
-        hash_map<int, hash_map<int, int> >::iterator historyIt;
-        for (historyIt = history.begin(); historyIt != history.end(); historyIt++)
-        {
-            hash_map<int, int> entries = historyIt->second;
-
-            int iNumCivilizationEntries = entries.size();
-            pStream->Write(historyIt->first);
-            pStream->Write(iNumCivilizationEntries);
-
-            hash_map<int, int>::iterator entriesIt;
-            for (entriesIt = entries.begin(); entriesIt != entries.end(); entriesIt++)
-            {
-                pStream->Write(entriesIt->first);
-                pStream->Write(entriesIt->second);
-            }
-        }
-    }
+	FOR_EACH_ENUM(Civilization)
+	{
+		m_apCivilizationHistory[eLoopCivilization]->write(pStream);
+	}
 
 	pStream->Write(m_bScenario); // advc.052
 	REPRO_TEST_END_WRITE();
@@ -10234,7 +10149,8 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 		kInitCore.setCivShortDesc(eNewPlayer, szEmptyString);
 	}
 	// UNOFFICIAL_PATCH End
-	PlayerColorTypes eColor = (PlayerColorTypes)GC.getInfo(eCiv).getDefaultPlayerColor();
+	PlayerColorTypes ePlayerColor = (PlayerColorTypes)GC.getInfo(eCiv).getDefaultPlayerColor();
+	ColorTypes eColor = GC.getInfo(ePlayerColor).getColorTypePrimary();
     // rfc: disable color reassignment
 	// <advc> Restructured these byzantine loops. Hope I got it right.
 	/*bool bFindNewColor = (eColor == NO_PLAYERCOLOR);
@@ -10285,7 +10201,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 	kInitCore.setLeader(eNewPlayer, eLeader);
 	kInitCore.setCiv(eNewPlayer, eCiv);
 	kInitCore.setSlotStatus(eNewPlayer, SS_COMPUTER);
-	kInitCore.setColor(eNewPlayer, eColor);
+	kInitCore.setColor(eNewPlayer, ePlayerColor);
 	// advc.001: For RANDOM_PERSONALITIES option
 	GET_PLAYER(eNewPlayer).changePersonalityType();
 	/*GET_TEAM(eNewPlayer).init(eTeam);
@@ -10311,7 +10227,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
     if (eCiv != NO_CIVILIZATION)
     {
         CvEventReporter::getInstance().playerCivAssigned(eNewPlayer, eCiv);
-        addReplayMessage(REPLAY_MESSAGE_CIV_ASSIGNED, eNewPlayer, (char*)NULL, eCiv);
+        addReplayMessage(REPLAY_MESSAGE_CIV_ASSIGNED, eNewPlayer, L"", eColor);
     }
 }
 
@@ -10559,14 +10475,14 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 		}
 		else if (GC.getInfo(kData.eVote).isForcePeace())
 		{
-			for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				kData.ePlayer = it->getLeaderID();
+				kData.ePlayer = it->getID();
 				if (isValidVoteSelection(eVoteSource, kData))
 				{
 					kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_FORCE_PEACE",
 							//it->getName().GetCString(),
-							it->getCivilizationShortDescription().GetCString(), // rfc
+							it->getCivilizationShortDescription(), // rfc
 							getVoteRequired(kData.eVote, eVoteSource),
 							countPossibleVote(kData.eVote, eVoteSource));
 					pData->aVoteOptions.push_back(kData);
@@ -10575,14 +10491,14 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 		}
 		else if (GC.getInfo(kData.eVote).isForceNoTrade())
 		{
-			for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				kData.ePlayer = it->getLeaderID();
+				kData.ePlayer = it->getID();
 				if (isValidVoteSelection(eVoteSource, kData))
 				{
 					kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_FORCE_NO_TRADE",
 							//it->getName().GetCString(),
-							it->getCivilizationShortDescription().GetCString(), // rfc
+							it->getCivilizationShortDescription(), // rfc
 							getVoteRequired(kData.eVote, eVoteSource),
 							countPossibleVote(kData.eVote, eVoteSource));
 					pData->aVoteOptions.push_back(kData);
@@ -10591,9 +10507,9 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 		}
 		else if (GC.getInfo(kData.eVote).isForceWar())
 		{
-			for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				kData.ePlayer = it->getLeaderID();
+				kData.ePlayer = it->getID();
 				if (isValidVoteSelection(eVoteSource, kData))
 				{
 					kData.szText =
@@ -10605,7 +10521,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 							// </kekm.25/advc>
 							gDLL->getText("TXT_KEY_POPUP_ELECTION_FORCE_WAR",
 							//it->getName().GetCString(),
-							it->getCivilizationShortDescription().GetCString(), // rfc
+							it->getCivilizationShortDescription(), // rfc
 							getVoteRequired(kData.eVote, eVoteSource),
 							countPossibleVote(kData.eVote, eVoteSource)));
 					pData->aVoteOptions.push_back(kData);
@@ -10642,29 +10558,19 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 			}
 		}
         // doc: revoke membership resolution
-        // TODO: refactor
-		else if (GC.getVoteInfo(kData.eVote).isRevokeMembership())
+		else if (GC.getInfo(kData.eVote).isRevokeMembership())
 		{
-			for (int iTeam1 = 0; iTeam1 < MAX_CIV_TEAMS; ++iTeam1)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				CvTeam& kTeam1 = GET_TEAM((TeamTypes)iTeam1);
-
-				if (kTeam1.isAlive())
+				if (isValidVoteSelection(eVoteSource, kData))
 				{
-					kData.ePlayer = kTeam1.getLeaderID();
-
-					if (isValidVoteSelection(eVoteSource, kData))
-					{
-						//kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_FORCE_WAR", kTeam1.getName().GetCString(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
-						kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_EXCOMMUNICATION", GET_PLAYER((PlayerTypes)iTeam1).getCivilizationDescriptionKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
-						pData->aVoteOptions.push_back(kData);
-					}
+					kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_EXCOMMUNICATION", it->getCivilizationDescriptionKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+					pData->aVoteOptions.push_back(kData);
 				}
 			}
 		}
         // doc: gold resolution
-        // TODO: refactor
-		else if (GC.getVoteInfo(kData.eVote).getGoldPercent() > 0)
+		else if (GC.getInfo(kData.eVote).getGoldPercent() > 0)
 		{
 			kData.ePlayer = GET_TEAM(GC.getGame().getSecretaryGeneral(eVoteSource)).getLeaderID();
 
@@ -10675,24 +10581,16 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 			}
 		}
         // doc: espionage resolution
-        // TODO: refactor
-		else if (GC.getVoteInfo(kData.eVote).getEspionage() > 0)
+		else if (GC.getInfo(kData.eVote).getEspionage() > 0)
 		{
 			kData.ePlayer = GET_TEAM(GC.getGame().getSecretaryGeneral(eVoteSource)).getLeaderID();
 
-			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iI);
-
-				if (kLoopPlayer.isMinorCiv())
-				{
-					continue;
-				}
-
 				bool bValid = false;
-				for (int iJ =  0; iJ < NUM_RELIGIONS; iJ++)
+				FOR_EACH_ENUM(Religion)
 				{
-					if (kLoopPlayer.getReligionPopulation((ReligionTypes)iJ) > 0)
+					if (it->getReligionPopulation(eLoopReligion) > 0)
 					{
 						bValid = true;
 						break;
@@ -10701,58 +10599,38 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 				if (bValid)
 				{
-					kData.eOtherPlayer = kLoopPlayer.getID();
+					kData.eOtherPlayer = it->getID();
 
 					if (isValidVoteSelection(eVoteSource, kData))
 					{
-						kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_INQUISITION", kLoopPlayer.getCivilizationShortDescription(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource));
+						kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_INQUISITION", it->getCivilizationShortDescription(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource));
 						pData->aVoteOptions.push_back(kData);
 					}
 				}
 			}
 		}
         // doc: decolonize resolution
-        // TODO: refactor
-		else if (GC.getVoteInfo(kData.eVote).isDecolonize())
+		else if (GC.getInfo(kData.eVote).isDecolonize())
 		{
-			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				PlayerTypes ePlayer = (PlayerTypes)iI;
-				CvPlayer& kPlayer = GET_PLAYER(ePlayer);
-
-				if (kPlayer.isMinorCiv())
-				{
+				if (it->getTeam() == getSecretaryGeneral(eVoteSource))
 					continue;
-				}
-
-				if (kPlayer.getTeam() == getSecretaryGeneral(eVoteSource))
-				{
+				if (!it->isAlive())
 					continue;
-				}
-
-				if (!kPlayer.isAlive())
-				{
+				if (it->countColonies() == 0)
 					continue;
-				}
-
-				if (kPlayer.countColonies() == 0)
-				{
-					continue;
-				}
 
 				int iBestID = -1;
 				int iBestValue = MAX_INT;
-				int iCurrentValue;
-
-				int iLoop;
-				for (CvCity* pLoopCity = kPlayer.firstCity(&iLoop); NULL != pLoopCity; pLoopCity = kPlayer.nextCity(&iLoop))
+				FOR_EACH_CITY(pLoopCity, *it)
 				{
-					if (pLoopCity->plot()->isCore(ePlayer)) continue;
-					if (pLoopCity->plot()->isOverseas(kPlayer.getCapitalCity()->plot())) continue;
+					if (pLoopCity->plot()->isCore(it->getID())) continue;
+					if (pLoopCity->plot()->isOverseas(it->getCapitalCity()->getPlot())) continue;
 
 					if (NO_PLAYER == pLoopCity->getLiberationPlayer(false))
 					{
-						iCurrentValue = pLoopCity->plot()->getSettlerValue(ePlayer);
+						int iCurrentValue = pLoopCity->plot()->getSettlerValue(it->getID());
 						if (iBestID == -1 || iCurrentValue < iBestValue)
 						{
 							iBestID = pLoopCity->getID();
@@ -10763,62 +10641,45 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 				if (iBestID != -1)
 				{
-					kData.ePlayer = ePlayer;
+					kData.ePlayer = it->getID();
 					kData.iCityId = iBestID;
-					kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_DECOLONIZE", kPlayer.getCity(iBestID)->getNameKey(), kPlayer.getCivilizationShortDescription(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+					kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_DECOLONIZE", 
+						it->getCity(iBestID)->getNameKey(), it->getCivilizationShortDescription(), getVoteRequired(kData.eVote, eVoteSource), 
+						countPossibleVote(kData.eVote, eVoteSource)); // rfc
 					pData->aVoteOptions.push_back(kData);
 				}
 			}
 		}
         // doc: release civilization resolution
-        // TODO: refactor
-		else if (GC.getVoteInfo(kData.eVote).isReleaseCivilization())
+		else if (GC.getInfo(kData.eVote).isReleaseCivilization())
 		{
-			PlayerTypes ePlayer;
-			CivilizationTypes eReleasableCivilization;
-
-			for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+			for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 			{
-				ePlayer = (PlayerTypes)iI;
-
-				if (GET_PLAYER(ePlayer).isMinorCiv())
-				{
+				if (it->getTeam() == getSecretaryGeneral(eVoteSource))
 					continue;
-				}
-
-				if (GET_PLAYER(ePlayer).getTeam() == getSecretaryGeneral(eVoteSource))
-				{
+				if (!it->isAlive())
 					continue;
-				}
 
-				if (!GET_PLAYER(ePlayer).isAlive())
+				FOR_EACH_ENUM(Civilization)
 				{
-					continue;
-				}
+					if (isCivAlive(eLoopCivilization)) continue;
+					if (!canRespawn(eLoopCivilization)) continue;
 
-				for (int iJ = 0; iJ < NUM_CIVS; iJ++)
-				{
-					eReleasableCivilization = (CivilizationTypes)iJ;
-
-					if (isCivAlive(eReleasableCivilization)) continue;
-					if (!canRespawn(eReleasableCivilization)) continue;
-
-					int iCityLoop;
 					int iNumCities = 0;
-
-					for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
+					FOR_EACH_CITY(pLoopCity, *it)
 					{
-						if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(ePlayer) && !pLoopCity->isCapital())
+						if (pLoopCity->isCore(eLoopCivilization) && !pLoopCity->isCore(it->getID()) && !pLoopCity->isCapital())
 						{
-							++iNumCities;
+							iNumCities++;
 						}
 					}
 
 					if (iNumCities > 1)
 					{
-						kData.ePlayer = ePlayer;
-						kData.eOtherPlayer = (PlayerTypes)eReleasableCivilization;
-						kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_RELEASE", GC.getCivilizationInfo(eReleasableCivilization).getText(), GET_PLAYER(ePlayer).getCivilizationAdjective(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+						kData.ePlayer = it->getID();
+						kData.eOtherPlayer = (PlayerTypes)eLoopCivilization;
+						kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_RELEASE", GC.getInfo(eLoopCivilization).getText(), it->getCivilizationAdjective(), 
+							getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); // rfc
 						pData->aVoteOptions.push_back(kData);
 					}
 				}
@@ -11611,15 +11472,12 @@ void CvGame::autosave(bool bInitial)
 }
 
 // doc
-// TODO: refactor
 bool CvGame::isPlayerAutoplay(PlayerTypes ePlayer)
 {
 	if (ePlayer == NO_PLAYER)
-	{
 		ePlayer = getActivePlayer();
-	}
 
-	return getGameTurnYear() < GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear();
+	return getGameTurnYear() < GC.getInfo(GET_PLAYER(ePlayer).getCivilizationType()).getStartingYear();
 }
 
 // doc
@@ -11715,31 +11573,18 @@ bool CvGame::isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes 
 }
 
 // doc
-// TODO: refactor
-PeriodTypes CvGame::getPeriod(CivilizationTypes eCivilization) const
-{
-	if (eCivilization < NUM_CIVS)
-	{
-		return (PeriodTypes)m_aiCivPeriod[eCivilization];
-	}
-
-	return NO_PERIOD;
-}
-
-// doc
-// TODO: refactor
 void CvGame::setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod)
 {
 	if (getPeriod(eCivilization) != ePeriod)
 	{
-		m_aiCivPeriod[eCivilization] = ePeriod;
+		m_aeCivPeriod.set(eCivilization, ePeriod);
 
-		// Leoreth: update for Inca UP
+		// doc: update for Inca UP
 		if (isFinalInitialized() && eCivilization == INCA)
 		{
-			for (int iI = 0; iI < GC.getMapINLINE().numPlotsINLINE(); iI++)
+			for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
 			{
-				CvPlot* pLoopPlot = GC.getMapINLINE().plotByIndexINLINE(iI);
+				CvPlot* pLoopPlot = GC.getMap().plotByIndex(iI);
 
 				pLoopPlot->updateYield();
 				pLoopPlot->setLayoutDirty(true);
@@ -11749,83 +11594,19 @@ void CvGame::setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod)
 }
 
 // doc
-// TODO: refactor
 void CvGame::setCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn, int iValue)
 {
-	if (eCivilization == NO_CIVILIZATION)
-	{
-		return;
-	}
-
-	hash_map<int, hash_map<int, int> >::iterator it = m_aiCivilizationHistory[eHistory].find(eCivilization);
-	if (it == m_aiCivilizationHistory[eHistory].end())
-	{
-		hash_map<int, int> civilizationHistory;
-		civilizationHistory.insert(pair<int, int>(iTurn, iValue));
-		m_aiCivilizationHistory[eHistory].insert(std::pair<int, hash_map<int, int> >(eCivilization, civilizationHistory));
-	}
-	else
-	{
-		it->second.insert(pair<int, int>(iTurn, iValue));
-	}
+	m_apCivilizationHistory[eCivilization][eHistory].set(iTurn, iValue);
 }
 
 // doc
-// TODO: refactor
-int CvGame::getCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn) const
+void CvGame::setFirstDiscovered(TechTypes eTech, CivilizationTypes eCivilization)
 {
-	hash_map<int, hash_map<int, int> >::iterator it = m_aiCivilizationHistory[eHistory].find(eCivilization);
-	if (it != m_aiCivilizationHistory[eHistory].end())
-	{
-		hash_map<int, int>::iterator entryIt = it->second.find(iTurn);
-
-		if (entryIt != it->second.end())
-		{
-			return entryIt->second;
-		}
-	}
-
-	return 0;
+	m_aeFirstDiscovered.set(eTech, eCivilization);
 }
 
 // doc
-// TODO: header
-CivilizationTypes CvGame::getFirstDiscovered(TechTypes eTech) const
-{
-	FAssert(eTech > NO_TECH);
-	FAssert(eTech < GC.getNumTechInfos());
-
-	return (CivilizationTypes)m_aiFirstDiscovered[eTech];
-}
-
-// doc
-// TODO: refactor
-void CvGame::setFirstDiscovered(TechTypes eTech, CivilizationTypes eCiv)
-{
-	FAssert(eTech > NO_TECH);
-	FAssert(eTech < GC.getNumTechInfos());
-	FAssert(eCiv > NO_CIVILIZATION);
-	FAssert(eCiv < NUM_CIVS);
-
-	m_aiFirstDiscovered[eTech] = eCiv;
-}
-
-// doc
-// TODO: header
-int CvGame::getFirstDiscoveredTurn(TechTypes eTech) const
-{
-	FAssert(eTech > NO_TECH);
-	FAssert(eTech < GC.getNumTechInfos());
-
-	return m_aiFirstDiscoveredTurn[eTech];
-}
-
-// doc
-// TODO: refactor
 void CvGame::setFirstDiscoveredTurn(TechTypes eTech, int iTurn)
 {
-	FAssert(eTech > NO_TECH);
-	FAssert(eTech < GC.getNumTechInfos());
-
-	m_aiFirstDiscoveredTurn[eTech] = iTurn;
+	m_aeFirstDiscoveredTurn.set(eTech, iTurn);
 }

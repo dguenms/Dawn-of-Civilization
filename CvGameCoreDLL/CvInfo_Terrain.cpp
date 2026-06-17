@@ -418,6 +418,7 @@ m_eTechReveal(NO_TECH),
 m_eTechCityTrade(NO_TECH),
 m_eTechObsolete(NO_TECH),
 m_eeTechImprove(std::make_pair(NO_TECH, NO_TECH)), // advc.003w
+m_eTechPlayerTrade(NO_TECH), // doc
 m_iAITradeModifier(0),
 m_iAIObjective(0),
 m_iHealth(0),
@@ -640,6 +641,7 @@ void CvBonusInfo::read(FDataStreamBase* stream)
 	stream->Read((int*)&m_eTechReveal);
 	stream->Read((int*)&m_eTechCityTrade);
 	stream->Read((int*)&m_eTechObsolete);
+	stream->Read((int*)&m_eTechPlayerTrade); // doc
 	stream->Read(&m_iAITradeModifier);
 	stream->Read(&m_iAIObjective);
 	stream->Read(&m_iHealth);
@@ -694,6 +696,7 @@ void CvBonusInfo::write(FDataStreamBase* stream)
 	stream->Write(m_eTechReveal);
 	stream->Write(m_eTechCityTrade);
 	stream->Write(m_eTechObsolete);
+	stream->Write(m_eTechPlayerTrade); // doc
 	stream->Write(m_iAITradeModifier);
 	stream->Write(m_iAIObjective);
 	stream->Write(m_iHealth);
@@ -745,6 +748,9 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 		pXML->SetYieldArray(&m_piYieldChange);
 	}
 	else pXML->InitList(&m_piYieldChange, NUM_YIELD_TYPES);
+
+	// doc
+	pXML->GetChildXmlValByName(m_eTechPlayerTrade, "TechPlayerTrade");
 
 	pXML->GetChildXmlValByName(&m_iAITradeModifier, "iAITradeModifier");
 	pXML->GetChildXmlValByName(&m_iAIObjective, "iAIObjective");

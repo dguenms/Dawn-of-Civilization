@@ -170,6 +170,7 @@ public:
 
     ReligionTypes AI_getPersecutionReligion(ReligionTypes eIgnoredReligion); // doc
     int AI_buildingWeight(BuildingTypes eBuilding) const; // doc
+	bool AI_isDesirableWonder(BuildingTypes eBuilding) const;
 
 
 	void read(FDataStreamBase* pStream);

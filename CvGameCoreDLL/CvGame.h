@@ -19,6 +19,8 @@ class BarbarianWeightMap; // advc.304
 class StartPointsAsHandicap; // advc.250b
 class RiseFall; // advc.700
 
+#include "History.h"
+
 typedef std::vector<const CvReplayMessage*> ReplayMessageList;
 
 
@@ -749,7 +751,7 @@ public:
 	}
 	bool isCorporationFounded(CorporationTypes eCorp) const												// Exposed to Python
 	{
-		return (getCorporationGameTurnFounded(eCorp) >= 0);
+		return getCorporationGameTurnFounded(eCorp) >= 0;
 	}
 	void makeCorporationFounded(CorporationTypes eCorp, PlayerTypes ePlayer);
 	CvCity* getHeadquarters(CorporationTypes eCorp) const;												// Exposed to Python
@@ -1039,16 +1041,16 @@ public:
 	void setEventEffectNotifications(NotificationLevelTypes eNotificationLevel); // doc
 	bool isEventEffectNotification(PlayerTypes eNotifiedPlayer, PlayerTypes eCausingPlayer) const; // doc
 
-	PeriodTypes getPeriod(CivilizationTypes eCivilization) const; // doc
+	PeriodTypes getPeriod(CivilizationTypes eCivilization) const { return m_aeCivPeriod.get(eCivilization); } // doc
 	void setPeriod(CivilizationTypes eCivilization, PeriodTypes ePeriod); // doc
 
-	int getCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn) const; // doc
-	void setCivilizationHistory(HistoryTypes eHistoryType, CivilizationTypes eCivilization, int iTurn, int iValue); // doc
+	int getCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn) const { return m_apCivilizationHistory[eCivilization][eHistory].get(iTurn); } // doc
+	void setCivilizationHistory(HistoryTypes eHistory, CivilizationTypes eCivilization, int iTurn, int iValue); // doc
 
-	CivilizationTypes getFirstDiscovered(TechTypes eTech) const; // doc
-	void setFirstDiscovered(TechTypes eTech, CivilizationTypes eCiv); // doc
+	CivilizationTypes getFirstDiscovered(TechTypes eTech) const { return m_aeFirstDiscovered.get(eTech); } // doc
+	void setFirstDiscovered(TechTypes eTech, CivilizationTypes eCivilization); // doc
 
-	int getFirstDiscoveredTurn(TechTypes eTech) const; // doc
+	int getFirstDiscoveredTurn(TechTypes eTech) const { return m_aeFirstDiscoveredTurn.get(eTech); } // doc
 	void setFirstDiscoveredTurn(TechTypes eTech, int iTurn); // doc
 
 protected:
@@ -1090,6 +1092,9 @@ protected:
 	bool m_bCityScreenUp; // </advc.004n>
 	unsigned int m_uiInitialTime;
 	unsigned int m_uiSaveFlag; // advc
+
+	// doc
+	int m_iMedianTechValue;
 
 	bool m_bScoreDirty;
 	bool m_bCircumnavigated;
@@ -1140,12 +1145,6 @@ protected:
 	EagerEnumMap<TeamTypes,TeamTypes> m_aeRankTeam; // Ordered by rank
 	EagerEnumMap<TeamTypes,TeamTypes> m_aeTeamRank;
 	EagerEnumMap<TeamTypes,int> m_aiTeamScore;
-
-	int* m_aiTechRankTeam; // doc // TODO: refactor
-	char* m_aiCivPeriod; // doc // TODO: refactor
-	char* m_aiFirstDiscovered; // doc // TODO: refactor
-	int* m_aiFirstDiscoveredTurn; // doc // TODO: refactor
-	int m_iMedianTechValue; // doc // TODO: move
 
 	ArrayEnumMap<UnitTypes,int> m_aiUnitCreatedCount;
 	ArrayEnumMap<UnitClassTypes,int> m_aiUnitClassCreatedCount;
@@ -1216,6 +1215,13 @@ protected:
 
 	StartPointsAsHandicap* m_pSpah; // advc.250b
 	RiseFall* m_pRiseFall; // advc.700
+
+	// doc
+	EagerEnumMap<TeamTypes, int, char> m_aiTechRankTeam;
+	ListEnumMap<CivilizationTypes, PeriodTypes, char> m_aeCivPeriod;
+	ListEnumMap<TechTypes, CivilizationTypes, char> m_aeFirstDiscovered;
+	ListEnumMap<TechTypes, int, short> m_aeFirstDiscoveredTurn;
+	History* m_apCivilizationHistory[NUM_CIVILIZATION_TYPES]; // TODO: grow for every civ in CvGame::doTurn, set for every player in CvPlayer::doTurn
 
 	void uninit();
 	void setStartTurnYear(int iTurn = 0); // advc.250c

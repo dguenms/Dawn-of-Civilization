@@ -218,6 +218,10 @@ public: // All the const functions are exposed to Python
 	TechTypes getTechCityTrade() const { return m_eTechCityTrade; }
 	TechTypes getTechObsolete() const { return m_eTechObsolete; }
 	TechTypes getTechImprove(bool bWater) const; // advc.003w
+
+	// doc
+	TechTypes getTechPlayerTrade() const { return m_eTechPlayerTrade; }
+
 	int getAITradeModifier() const;
 	int getAIObjective() const;
 	int getHealth() const { return m_iHealth; }
@@ -274,6 +278,10 @@ protected:
 	TechTypes m_eTechCityTrade;
 	TechTypes m_eTechObsolete;
 	std::pair<TechTypes,TechTypes> m_eeTechImprove; // advc.003w
+
+	// doc
+	TechTypes m_eTechPlayerTrade;
+
 	int m_iAITradeModifier;
 	int m_iAIObjective;
 	int m_iHealth;

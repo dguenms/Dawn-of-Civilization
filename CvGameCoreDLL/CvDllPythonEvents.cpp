@@ -1295,7 +1295,7 @@ void CvDllPythonEvents::reportReleasedCivilization(PlayerTypes ePlayer, Civiliza
 		CyArgsList eventData;
 		eventData.add("releasedCivilization");
 
-		eventData.add((ePlayer);
+		eventData.add(ePlayer);
 		eventData.add(eReleasedCivilization);
 
 		postEvent(eventData);

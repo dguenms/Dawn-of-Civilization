@@ -136,6 +136,12 @@ void CvPythonCaller::showForeignAdvisorScreen(int iTab) const
 	call("showForeignAdvisorScreen", argsList, PYScreensModule);
 }
 
+void CvPythonCaller::showFinanceAdvisorScreen() const
+{
+	CyArgsList argsList;
+	call("showFinanceAdvisor", argsList, PYScreensModule);
+}
+
 void CvPythonCaller::showInfoScreen(int iTab, bool bEndGame) const
 {
 	CyArgsList argsList;
@@ -1585,4 +1591,28 @@ bool CvPythonCaller::isVictoryPossible() const
 bool CvPythonCaller::isOverride() const
 {
 	return (m_bLastCallSuccessful && !m_python.pythonUsingDefaultImpl());
+}
+
+// doc
+
+int CvPythonCaller::getStabilityLevel(PlayerTypes ePlayer) const
+{
+	long lResult = 0;
+
+	CyArgsList argsList;
+	argsList.add(ePlayer);
+
+	call("getStabilityLevel", argsList, PYScreensModule, &lResult);
+	return toInt(lResult);
+}
+
+int CvPythonCaller::countAchievedGoals(PlayerTypes ePlayer) const
+{
+	long lResult = 0;
+
+	CyArgsList argsList;
+	argsList.add(ePlayer);
+
+	call("countAchievedGoals", argsList, PYScreensModule, &lResult);
+	return toInt(lResult);
 }

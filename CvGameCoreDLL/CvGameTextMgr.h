@@ -167,11 +167,11 @@ public:
 			int iValue, int iSymbol,
 			bool bNewLine = false, bool bStarted = false);
 // BUG - Resumable Value Change Help - end
-	void setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText = false);
+	void setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText = false, CvCity* pCity = NULL);
 // BULL - Trade Denial - start
 	void setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus,
-			bool bCivilopediaText, PlayerTypes eTradePlayer, bool bImport,
-			bool bForeignAdvisor);
+			bool bCivilopediaText, PlayerTypes eTradePlayer,  bool bImport, 
+			bool bForeignAdvisor, CvCity* pCity = NULL);
 // BULL - Trade Denial - end
 	// <advc.004w>
 	void setBonusExtraHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus,

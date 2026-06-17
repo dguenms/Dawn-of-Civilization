@@ -26,6 +26,7 @@ public:
 	void launchPythonScreenPopup(CvPopupInfo const& kPopupInfo, CvPopup* pPopup) const;
 	void callScreenFunction(char const* szFunctionName) const;
 	void showForeignAdvisorScreen(int iTab = -1) const;
+	void showFinanceAdvisorScreen() const;
 	void showInfoScreen(int iTab = 0, bool bEndGame = false) const;
 	void showHallOfFameScreen(bool bAllowReplay) const;
 	CvPlot* WBGetHighlightPlot() const;
@@ -171,6 +172,10 @@ public:
 	bool createBarbarianUnits() const;
 	bool isVictory(VictoryTypes eVictory) const;
 	bool isVictoryPossible() const;
+
+	// doc
+	int getStabilityLevel(PlayerTypes ePlayer) const;
+	int countAchievedGoals(PlayerTypes ePlayer) const;
 
 private:
 	CvDLLPythonIFaceBase& m_python;

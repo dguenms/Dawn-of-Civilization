@@ -125,6 +125,7 @@
 	DO(Modifier, MODIFIER)
 
 #define DO_FOR_EACH_CUSTOM_INFO_TYPE(DO) \
+	DO(Advisor, ADVISOR) \
 	DO(Bonus, BONUS) \
 	DO(Building, BUILDING) \
 	DO(BuildingClass, BUILDINGCLASS) \
@@ -135,9 +136,11 @@
 	DO(CultureLevel, CULTURELEVEL) \
 	DO(Era, ERA) \
 	DO(Feature, FEATURE) \
+	DO(History, HISTORY) \
 	DO(Hurry, HURRY) \
 	DO(Improvement, IMPROVEMENT) \
 	DO(LeaderHead, LEADER) \
+	DO(Period, PERIOD) \
 	DO(Process, PROCESS) \
 	DO(Project, PROJECT) \
 	DO(Promotion, PROMOTION) \

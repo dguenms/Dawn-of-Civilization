@@ -234,7 +234,6 @@ protected:
     void doPediaPaganReligionHelp(CvWidgetDataStruct &widgetDataStruct); // doc // TODO: move?
 
     void parseRouteHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer); // doc // TODO: move?
-    void doPediaRouteJump(CvWidgetDataStruct &widgetDataStruct); // doc // TODO: move?
 
     void parseWonderLimitHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer); // doc
     void parseSatelliteLimitHelp(CvWidgetDataStruct& widgetDataStruct, CvWStringBuffer& szBuffer); // doc

@@ -581,6 +581,11 @@ public: // All the const functions are exposed to Python
 	int getTradeRoutes() const { return m_iTradeRoutes; }
 	int getMinVoters() const { return m_iMinVoters; }
 
+	// doc
+	int getEspionage() const { return m_iEspionage; }
+	int getGoldPercent() const { return m_iGoldPercent; }
+	int getHappiness() const { return m_iHappiness; }
+
 	bool isSecretaryGeneral() const { return m_bSecretaryGeneral; }
 	bool isVictory() const { return m_bVictory; }
 	bool isFreeTrade() const { return m_bFreeTrade; }
@@ -594,6 +599,11 @@ public: // All the const functions are exposed to Python
 	bool isForceWar() const { return m_bForceWar; }
 	bool isAssignCity() const { return m_bAssignCity; }
 
+	// doc
+	bool isRevokeMembership() const { return m_bRevokeMembership; }
+	bool isDecolonize() const { return m_bDecolonize; }
+	bool isReleaseCivilization() const { return m_bReleaseCivilization; }
+
 	DEF_INFO_ENUM_SET(ForceCivic, Civic);
 	DEF_INFO_ENUM_MAP_BOOL(VoteSourceType, VoteSource, ArrayEnumMap);
 
@@ -604,6 +614,11 @@ protected:
 	int m_iStateReligionVotePercent;
 	int m_iTradeRoutes;
 	int m_iMinVoters;
+
+	// doc
+	int m_iEspionage;
+	int m_iGoldPercent;
+	int m_iHappiness;
 
 	bool m_bSecretaryGeneral;
 	bool m_bVictory;
@@ -617,6 +632,11 @@ protected:
 	bool m_bForceNoTrade;
 	bool m_bForceWar;
 	bool m_bAssignCity;
+
+	// doc
+	bool m_bRevokeMembership;
+	bool m_bDecolonize;
+	bool m_bReleaseCivilization;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -692,6 +712,12 @@ public: // All const functions are exposed to Python
 
 	// doc
 	UnitTypes getFirstFreeUnit() const { return m_eFirstFreeUnit; }
+	SpecialUnitTypes getSpecialUnit() const { return m_eSpecialUnit; }
+	PromotionTypes getFreePromotion() const { return m_eFreePromotion; }
+
+	// doc
+	int getAirExperience() const { return m_iAirExperience; }
+	int getFirstAirExperience() const { return m_iFirstAirExperience; }
 
 	bool isSpaceship() const
 	{
@@ -701,6 +727,13 @@ public: // All const functions are exposed to Python
 	{
 		return m_bAllowsNukes;
 	}
+	
+	// doc
+	bool isRevealsMap() const { return m_bRevealsMap; }
+	bool isSatelliteAttack() const { return m_bSatelliteAttack; }
+	bool isSatelliteIntercept() const { return m_bSatelliteIntercept; }
+	bool isFirstEnemyAnarchy() const { return m_bFirstEnemyAnarchy; }
+	bool isGoldenAge() const { return m_bGoldenAge; }
 
 	const char* getMovieArtDef() const;
 	const TCHAR* getCreateSound() const;
@@ -733,9 +766,22 @@ protected:
 
 	// doc
 	UnitTypes m_eFirstFreeUnit;
+	SpecialUnitTypes m_eSpecialUnit;
+	PromotionTypes m_eFreePromotion;
+
+	// doc
+	int m_iAirExperience;
+	int m_iFirstAirExperience;
 
 	bool m_bSpaceship;
 	bool m_bAllowsNukes;
+
+	// doc
+	bool m_bRevealsMap;
+	bool m_bSatelliteAttack;
+	bool m_bSatelliteIntercept;
+	bool m_bFirstEnemyAnarchy;
+	bool m_bGoldenAge;
 
 	CvString m_szCreateSound;
 	CvString m_szMovieArtDef;

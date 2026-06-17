@@ -1045,6 +1045,9 @@ m_iPopulationThreshold(0),
 m_iStateReligionVotePercent(0),
 m_iTradeRoutes(0),
 m_iMinVoters(0),
+m_iEspionage(0), // doc
+m_iGoldPercent(0), // doc
+m_iHappiness(0), // doc
 m_bSecretaryGeneral(false),
 m_bVictory(false),
 m_bFreeTrade(false),
@@ -1056,7 +1059,10 @@ m_bOpenBorders(false),
 m_bForcePeace(false),
 m_bForceNoTrade(false),
 m_bForceWar(false),
-m_bAssignCity(false)
+m_bAssignCity(false),
+m_bRevokeMembership(false), // doc
+m_bDecolonize(false), // doc
+m_bReleaseCivilization(false), // doc
 {}
 
 bool CvVoteInfo::read(CvXMLLoadUtility* pXML)
@@ -1068,6 +1074,11 @@ bool CvVoteInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iStateReligionVotePercent, "iStateReligionVotePercent");
 	pXML->GetChildXmlValByName(&m_iTradeRoutes, "iTradeRoutes");
 	pXML->GetChildXmlValByName(&m_iMinVoters, "iMinVoters");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iEspionage, "iEspionage");
+	pXML->GetChildXmlValByName(&m_iGoldPercent, "iGoldPercent");
+	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 
 	pXML->GetChildXmlValByName(&m_bSecretaryGeneral, "bSecretaryGeneral");
 	pXML->GetChildXmlValByName(&m_bVictory, "bVictory");
@@ -1081,6 +1092,11 @@ bool CvVoteInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bForceNoTrade, "bForceNoTrade");
 	pXML->GetChildXmlValByName(&m_bForceWar, "bForceWar");
 	pXML->GetChildXmlValByName(&m_bAssignCity, "bAssignCity");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_bRevokeMembership, "bRevokeMembership");
+	pXML->GetChildXmlValByName(&m_bDecolonize, "bDecolonize");
+	pXML->GetChildXmlValByName(&m_bReleaseCivilization, "bReleaseCivilization");
 
 	pXML->SetVariableListTagPair(ForceCivic(), "ForceCivics");
 	pXML->SetVariableListTagPair(VoteSourceType(), "DiploVotes");
@@ -1101,9 +1117,18 @@ m_eEveryoneSpecialUnit(NO_SPECIALUNIT),
 m_eEveryoneSpecialBuilding(NO_SPECIALBUILDING),
 m_iVictoryDelayPercent(0),
 m_iSuccessRate(0),
-m_iFirstFreeUnit(0), // doc
+m_eFirstFreeUnit(NO_UNIT), // doc
+m_eSpecialUnit(NO_SPECIALUNIT), // doc
+m_eFreePromotion(NO_PROMOTION), // doc
+m_iAirExperience(0), // doc
+m_iFirstAirExperience(0), // doc
 m_bSpaceship(false),
-m_bAllowsNukes(false)
+m_bAllowsNukes(false),
+m_bRevealsMap(false), // doc
+m_bSatelliteAttack(false), // doc
+m_bSatelliteIntercept(false), // doc
+m_bFirstEnemyAnarchy(false), // doc
+m_bGoldenAge(false), // doc
 {}
 
 const char* CvProjectInfo::getMovieArtDef() const
@@ -1147,14 +1172,28 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iTechShare, "iTechShare");
 	FAssertBounds(0, MAX_PLAYERS, m_iTechShare); // advc
 
+	// doc
+	pXML->GetChildXmlValByName(&m_iAirExperience, "iAirExperience");
+	pXML->GetChildXmlValByName(&m_iFirstAirExperience, "iFirstAirExperience");
+
 	pXML->SetInfoIDFromChildXmlVal(m_eEveryoneSpecialUnit, "EveryoneSpecialUnit");
 	pXML->SetInfoIDFromChildXmlVal(m_eEveryoneSpecialBuilding, "EveryoneSpecialBuilding");
 
 	// doc
 	pXML->SetInfoIDFromChildXmlVal(m_eFirstFreeUnit, "FirstFreeUnit");
+	pXML->SetInfoIDFromChildXmlVal(m_eSpecialUnit, "SpecialUnit");
+	pXML->SetInfoIDFromChildXmlVal(m_eFreePromotion, "FreePromotion");
 
 	pXML->GetChildXmlValByName(&m_bSpaceship, "bSpaceship");
 	pXML->GetChildXmlValByName(&m_bAllowsNukes, "bAllowsNukes");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_bRevealsMap, "bRevealsMap");
+	pXML->GetChildXmlValByName(&m_bSatelliteAttack, "bSatelliteAttack");
+	pXML->GetChildXmlValByName(&m_bSatelliteIntercept, "bSatelliteIntercept");
+	pXML->GetChildXmlValByName(&m_bFirstEnemyAnarchy, "bFirstEnemyAnarchy");
+	pXML->GetChildXmlValByName(&m_bGoldenAge, "bGoldenAge");
+
 	pXML->GetChildXmlValByName(m_szMovieArtDef, "MovieDefineTag");
 
 	pXML->SetVariableListTagPair(BonusProductionModifier(), "BonusProductionModifiers");

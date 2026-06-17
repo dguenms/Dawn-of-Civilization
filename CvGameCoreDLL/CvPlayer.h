@@ -925,7 +925,7 @@ public:
 
 	DllExport bool isAlive() const { return m_bAlive; }																// Exposed to Python
 	bool isEverAlive() const { return m_bEverAlive; };																// Exposed to Python
-	void setAlive(bool bNewValue);
+	void setAlive(bool bNewValue, bool bTurnActive = true);
 	void verifyAlive();
 
 	bool isExisting() const; // doc
@@ -1590,31 +1590,30 @@ public:
 		return *reinterpret_cast<CvPlayerAI const*>(this);
 	} // </advc.003u>
     TeamTypes getWorstEnemy() const; // doc
-	// Leoreth
 
-	void setFlag(CvWString s); //Rhye
-	void setLeader(int i); //Rhye
+	void setFlag(CvWString s); // rfc
+	void setLeader(int i); // rfc
 	void setLeaderName(CvWString name);
-	LeaderHeadTypes getLeader(); //Rhye
-	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  //Rhye
+	LeaderHeadTypes getLeader(); // rfc
+	void reinit( PlayerTypes eID, LeaderHeadTypes prevLeader, bool doReset );  // rfc
 	DenialTypes AI_slaveTrade(PlayerTypes ePlayer) const; // edead (from Advanced Diplomacy by Afforess)
 
-	bool isHasBuilding(BuildingTypes eIndex) const; // Leoreth
-	bool isHasBuildingEffect(BuildingTypes eIndex) const; // Leoreth
+	bool isHasBuilding(BuildingTypes eIndex) const; // doc
+	bool isHasBuildingEffect(BuildingTypes eIndex) const; // doc
 
 	EraTypes getStartingEra() const;
 	void setStartingEra(EraTypes eNewValue);
 
-	// Leoreth
+	// doc
 	int getModifier(ModifierTypes eModifier) const;
 	void setModifier(ModifierTypes eModifier, int iNewValue);
 
-	// Leoreth
+	// doc
 	int getTechPreference(TechTypes eTech) const;
 	void setTechPreference(TechTypes eTech, int iNewValue);
 	void resetTechPreferences();
 
-	// Leoreth
+	// doc
 	int getBuildingClassPreference(BuildingClassTypes eBuildingClass) const;
 	int getBuildingClassPreference(BuildingTypes eBuilding) const;
 	void setBuildingClassPreference(BuildingClassTypes eBuildingClass, int iNewValue);

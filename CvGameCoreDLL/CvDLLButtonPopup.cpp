@@ -341,40 +341,50 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 					getActivePlayer(), false, true);
 			break;
         case 4: // doc: sack
-		    PlayerTypes eHighestCulturePlayer = pCity->findHighestCulture(true);
-		    pCity->sack(eHighestCulturePlayer, info.getData3());
-		    CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
-            break;
+		{
+			PlayerTypes eHighestCulturePlayer = pCity->findHighestCulture(true);
+			pCity->sack(eHighestCulturePlayer, info.getData3());
+			CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGame().getActivePlayer(), pCity);
+			break;
+		}
         case 5: // doc: spare
 		    pCity->spare(info.getData3());
-		    CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGameINLINE().getActivePlayer(), pCity);
+		    CvEventReporter::getInstance().cityAcquiredAndKept(GC.getGame().getActivePlayer(), pCity);
             break;
 		default: FErrorMsg("Clicked button not recognized");
 		}
 		break;
 	}
 	case BUTTONPOPUP_DISBANDCITY:
+	{
+		CvCity* pCity = GET_PLAYER(getActivePlayer()).getCity(info.getData1());
+		if (pCity == NULL)
+		{
+			FAssert(pCity != NULL);
+			return;
+		}
 		if (pPopupReturn->getButtonClicked() == 1) // disband
 		{
-            // doc: apply acquisition effects
-            // TODO: refactor
-		    pCity->completeAcquisition(info.getData3());
+			// doc: apply acquisition effects
+			// TODO: refactor
+			pCity->completeAcquisition(info.getData3());
 			CvMessageControl::getInstance().sendDoTask(info.getData1(),
-					TASK_DISBAND, -1, -1, false, false, false, false);
+				TASK_DISBAND, -1, -1, false, false, false, false);
 		}
 		else if (pPopupReturn->getButtonClicked() == 0) // keep
 		{
-            // doc: apply acquisition effects
-            // TODO: refactor
+			// doc: apply acquisition effects
+			// TODO: refactor
 			pCity->completeAcquisition(info.getData3());
 			GET_PLAYER(getActivePlayer()).keepCity(*pCity);
 		}
 		else if (pPopupReturn->getButtonClicked() == 2) // BUG: examine
 		{
-		    m_kUI.selectCity(pCity, false);
-			m_kUI.addPopup(CvPopupInfo(BUTTONPOPUP_DISBANDCITY, info.getData1()), getActivePlayer(), false, true);
+			m_kUI.selectCity(pCity, false);
+			m_kUI.addPopup(new CvPopupInfo(BUTTONPOPUP_DISBANDCITY, info.getData1()), getActivePlayer(), false, true);
 		}
 		break;
+	}
 
 	case BUTTONPOPUP_CHOOSEPRODUCTION:
 	{
@@ -1450,8 +1460,8 @@ bool CvDLLButtonPopup::launchRazeCityPopup(CvPopup* pPopup, CvPopupInfo &info)
 	PlayerTypes eLiberationPlayer = (PlayerTypes)info.getData2();
 	// advc: Other bGift checks deleted; now implied by eLiberationPlayer.
 	bool bGift = (eLiberationPlayer != NO_PLAYER);
-    bool bSack = player.canSack(pNewCity); // doc: sack city
-    bool bSpare = player.canSpare(pNewCity, eHighestCulturePlayer, iCaptureGold); // doc: spare city
+    bool bSack = kPlayer.canSack(*pNewCity); // doc: sack city
+    bool bSpare = kPlayer.canSpare(*pNewCity, eLiberationPlayer, iCaptureGold); // doc: spare city
 
 	CvWString szBuffer;
 	if (iCaptureGold > 0)
@@ -1603,8 +1613,8 @@ bool CvDLLButtonPopup::launchChooseTechPopup(CvPopup* pPopup, CvPopupInfo &info)
 			if(eTech == eBestTech || eTech == eNextBestTech)
 			{
 				szBuffer += gDLL->getText("TXT_KEY_POPUP_RECOMMENDED_ONLY_ADV",
-						GC.getInfo((AdvisorTypes)(GC.getInfo(eTech).
-						getAdvisorType())).getTextKeyWide());
+						GC.getInfo(GC.getInfo(eTech).
+						getAdvisorType()).getTextKeyWide());
 			}
 
 			CvString szButton = GC.getInfo(eTech).getButton();
@@ -1645,7 +1655,7 @@ bool CvDLLButtonPopup::launchChangeCivicsPopup(CvPopup* pPopup, CvPopupInfo &inf
 	bool bValid = false;
 
     // doc: suppress for Egypt to account for their UP
-    if (eCivicType == NO_CIVIC && GC.getGame().getActiveCivilization() == EGYPT)
+    if (eCivic == NO_CIVIC && GC.getGame().getActiveCivilizationType() == EGYPT)
         return false;
 
 	bool bStartButton = true; // advc.004o
@@ -2081,19 +2091,20 @@ bool CvDLLButtonPopup::launchDoEspionageTargetPopup(CvPopup* pPopup, CvPopupInfo
 	{
 	    // SuperSpies: glider1
         // TODO: refactor
-	    if (NULL != pCity)
+		CvCity* pCity = kPlot.getPlotCity();
+	    if (pCity != NULL)
 	    {
-	        for (int iSpecialist = SPECIALIST_GREAT_PRIEST; iSpecialist <= SPECIALIST_GREAT_SPY; iSpecialist++)
+	        for (SpecialistTypes eGreatSpecialist = SPECIALIST_GREAT_PRIEST; eGreatSpecialist <= SPECIALIST_GREAT_SPY; eGreatSpecialist++)
 	        {
-	            if (kPlayer.canDoEspionageMission(eMission, eTargetPlayer, pPlot, iSpecialist, pUnit))
+	            if (kPlayer.canDoEspionageMission(eMission, eTargetPlayer, &kPlot, eGreatSpecialist, pSpyUnit))
 	            {
-	                CvSpecialistInfo& kSpecialist = GC.getSpecialistInfo((SpecialistTypes)iSpecialist);
+	                CvSpecialistInfo& kSpecialist = GC.getInfo(eGreatSpecialist);
 	                //does this city contain this great specialist type?
-	                if (pCity->getFreeSpecialistCount((SpecialistTypes)iSpecialist) > 0)
+	                if (pCity->getFreeSpecialistCount(eGreatSpecialist) > 0)
 	                {
-	                    int iCost = kPlayer.getEspionageMissionCost(eMission, eTargetPlayer, pPlot, iSpecialist, pUnit);
+	                    int iCost = kPlayer.getEspionageMissionCost(eMission, eTargetPlayer, &kPlot, eGreatSpecialist, pSpyUnit);
 	                    CvWString szBuffer = gDLL->getText("TXT_KET_ESPIONAGE_MISSION_COST", kSpecialist.getDescription(), iCost);
-	                    gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, kSpecialist.getButton(), iSpecialist, WIDGET_HELP_ESPIONAGE_COST, eMission, iSpecialist);
+	                    gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, kSpecialist.getButton(), eGreatSpecialist, WIDGET_HELP_ESPIONAGE_COST, eMission, eGreatSpecialist);
 	                }
 	            }
 	        }
@@ -2760,28 +2771,27 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 	}*/
 
     // doc: allow to release dead players based on their cores
-	bool abCivFound[NUM_CIVS];
+	EagerEnumMap<CivilizationTypes,bool> abCivFound;
     FOR_EACH_ENUM(Civilization)
     {
-        abCivFound[eLoopCivilization] = false;
         if (kPlayer.getCivilizationType() != eLoopCivilization && !isCivAlive(eLoopCivilization) && canRespawn(eLoopCivilization))
         {
             CvWString szCityList;
-            FOR_EACH_CITY(pLoopCity; kPlayer)
+            FOR_EACH_CITY(pLoopCity, kPlayer)
             {
-                if (pLoopCity->isCore(eLoopCivilization) && !pLoopCity->isCore(ePlayer) && !pLoopCity->isCapital())
+                if (pLoopCity->isCore(eLoopCivilization) && !pLoopCity->isCore(getActivePlayer()) && !pLoopCity->isCapital())
                 {
-                    abCivFound[eLoopCivilization] = true;
+					abCivFound.set(eLoopCivilization, true);
 
                     if (!szCityList.empty()) szCityList += L", ";
                     szCityList += pLoopCity->getName();
                 }
             }
 
-            if (abCivFound[eLoopCivilization])
+            if (abCivFound.get(eLoopCivilization))
             {
                 CvWString szBuffer = gDLL->getText("TXT_KEY_RELESE_CIVILIZATION", szCityList.GetCString(), GC.getInfo(eLoopCivilization).getShortDescription());
-                m_kUI.popupAddGenericButton(pPopup, szBuffer, GC.getInfo(eLoopCiviliztation).getButton(), eLoopCivilization+1, WIDGET_GENERAL); // doc: +1 offset because 0 is decline
+                m_kUI.popupAddGenericButton(pPopup, szBuffer, GC.getInfo(eLoopCivilization).getButton(), eLoopCivilization+1, WIDGET_GENERAL); // doc: +1 offset because 0 is decline
             }
         }
     }
@@ -2814,12 +2824,12 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 			}
 		} // UNOFFICIAL_PATCH: END
         // doc: liberate to minors
-        else if (pLoopCity->plot()->getSettlerValue(ePlayer) == 0)
+        else if (pLoopCity->plot()->getSettlerValue(getActivePlayer()) == 0)
         {
             bool bFound = false;
             FOR_EACH_ENUM(Civilization)
             {
-                if (abCivFound[eLoopCivilization] && pLoopCity->isCore(eLoopCivilization))
+                if (abCivFound.get(eLoopCivilization) && pLoopCity->isCore(eLoopCivilization))
                 {
                     bFound = true;
                     break;
@@ -2901,41 +2911,32 @@ bool CvDLLButtonPopup::launchFoundReligionPopup(CvPopup* pPopup, CvPopupInfo &in
 }
 
 // doc: religious persecution
-// TODO: refactor
 bool CvDLLButtonPopup::launchPersecutionPopup(CvPopup* pPopup, CvPopupInfo &info)
 {
-	PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
+	PlayerTypes ePlayer = GC.getGame().getActivePlayer();
 	if (ePlayer == NO_PLAYER)
-	{
 		return false;
-	}
 
 	CvUnit* pUnit = GET_PLAYER((PlayerTypes)info.getData1()).getUnit(info.getData2());
-
 	if (pUnit == NULL)
-	{
 		return false;
-	}
 
-	CvPlot* pPlot = GC.getMap().plot(pUnit->getX_INLINE(), pUnit->getY_INLINE());
+	CvPlot* pPlot = GC.getMap().plot(pUnit->getX(), pUnit->getY());
 	CvCity* pCity = pPlot->getPlotCity();
-
 	if (pCity == NULL)
-	{
 		return false;
-	}
 
 	gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_PERSECUTION_MESSAGE", pCity->getName().c_str()));
 
 	bool bFound = false;
-	for (int iReligion = 0; iReligion < GC.getNumReligionInfos(); iReligion++)
+	FOR_EACH_ENUM(Religion)
 	{
-		CvReligionInfo& kReligion = GC.getReligionInfo((ReligionTypes)iReligion);
-		if (GET_PLAYER(ePlayer).getStateReligion() != (ReligionTypes)iReligion)
+		CvReligionInfo& kReligion = GC.getReligionInfo(eLoopReligion);
+		if (GET_PLAYER(ePlayer).getStateReligion() != eLoopReligion)
 		{
-			if (pCity->isHasReligion((ReligionTypes)iReligion) && !pCity->isHolyCity((ReligionTypes)iReligion))
+			if (pCity->isHasReligion(eLoopReligion) && !pCity->isHolyCity(eLoopReligion))
 			{
-				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, kReligion.getDescription(), kReligion.getButton(), iReligion, WIDGET_GENERAL);
+				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, kReligion.getDescription(), kReligion.getButton(), eLoopReligion, WIDGET_GENERAL);
 				bFound = true;
 			}
 		}

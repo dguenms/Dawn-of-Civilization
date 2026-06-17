@@ -40,7 +40,7 @@ public: // advc: All the const functions are exposed to Python except those adde
 	CvTechInfo();
 	~CvTechInfo();
 
-	int getAdvisorType() const { return m_iAdvisorType; }
+	AdvisorTypes getAdvisorType() const { return (AdvisorTypes)m_iAdvisorType; } // TODO: refactor
 	int getAIWeight() const { return m_iAIWeight; }
 	int getAITradeModifier() const { return m_iAITradeModifier; }
 	int getResearchCost() const { return m_iResearchCost; }

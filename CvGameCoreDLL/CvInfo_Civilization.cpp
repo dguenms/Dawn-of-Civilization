@@ -12,6 +12,7 @@ m_iNumCityNames(0),
 m_iNumLeaders(0),
 m_iSelectionSoundScriptId(0),
 m_iActionSoundScriptId(0),
+m_iStartingYear(0), // doc
 m_iDerivativeCiv(NO_CIVILIZATION),
 m_bPlayable(false),
 m_bAIPlayable(false),
@@ -210,6 +211,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iSelectionSoundScriptId);
 	stream->Read(&m_iActionSoundScriptId);
 	stream->Read(&m_iDerivativeCiv);
+	stream->Read(&m_iStartingYear); // doc
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
 	stream->ReadString(m_szArtDefineTag);
@@ -258,6 +260,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iSelectionSoundScriptId);
 	stream->Write(m_iActionSoundScriptId);
 	stream->Write(m_iDerivativeCiv);
+	stream->Write(m_iStartingYear); // doc
 	stream->Write(m_bAIPlayable);
 	stream->Write(m_bPlayable);
 	stream->WriteString(m_szArtDefineTag);
@@ -389,6 +392,9 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_pbLeaders, "Leaders", GC.getNumLeaderHeadInfos());
 	CvString szTextVal;
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationSelectionSound");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iStartingYear, "iStartingYear");
 
 	return true;
 }

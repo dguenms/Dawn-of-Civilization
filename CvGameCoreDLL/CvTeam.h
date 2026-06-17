@@ -407,6 +407,7 @@ public:
 	DllExport bool isProjectAndArtMaxedOut(ProjectTypes eProject) const;
 	void changeProjectCount(ProjectTypes eProject, int iChange);							// Exposed to Python
 	DllExport void finalizeProjectArtTypes();
+	bool isProjectMaking(ProjectTypes eProject) const { return getProjectMaking(eProject) > 0; }
 	int getProjectMaking(ProjectTypes eProject) const												// Exposed to Python
 	{
 		return m_aiProjectMaking.get(eProject);

@@ -54,6 +54,9 @@ public: // advc: All the const functions are exposed to Python
 	int getCivilizationFreeUnitsClass(int i) const;
 	int getCivilizationInitialCivics(int i) const;
 
+	// doc
+	int getStartingYear() const { return m_iStartingYear; }
+
 	DllExport bool isLeaders(int i) const;
 	bool isCivilizationFreeBuildingClass(int i) const;
 	bool isCivilizationFreeTechs(int i) const;
@@ -80,6 +83,9 @@ protected:
 	int m_iSelectionSoundScriptId;
 	int m_iActionSoundScriptId;
 	int m_iDerivativeCiv;
+
+	// doc
+	int m_iStartingYear;
 
 	bool m_bAIPlayable;
 	bool m_bPlayable;

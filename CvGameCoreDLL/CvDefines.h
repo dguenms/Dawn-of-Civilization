@@ -118,6 +118,11 @@ OVERLOAD_BITWISE_OPERATORS(MovementFlags)
 #define PLAYER_TEXT_COLOR(kPlayer) \
 		kPlayer.getPlayerTextColorR(), kPlayer.getPlayerTextColorG(), \
 		kPlayer.getPlayerTextColorB(), kPlayer.getPlayerTextColorA()
+#define COLORS(eColor) \
+		((int)(GC.getColorInfo((ColorTypes)eColor).getColor().r * 255)), \
+		((int)(GC.getColorInfo((ColorTypes)eColor).getColor().g * 255)), \
+		((int)(GC.getColorInfo((ColorTypes)eColor).getColor().b * 255)), \
+		((int)(GC.getColorInfo((ColorTypes)eColor).getColor().a * 255))
 
 // python module names
 #define PYDebugToolModule			"CvDebugInterface"

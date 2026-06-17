@@ -171,6 +171,7 @@
     <ClCompile Include="..\EnumMapTest.cpp" />
     <ClCompile Include="..\FAStarFunc.cpp" />
     <ClCompile Include="..\GroupPathFinder.cpp" />
+    <ClCompile Include="..\History.cpp" />
     <ClCompile Include="..\KmodPathFinderLegacy.cpp" />
     <ClCompile Include="..\ModName.cpp" />
     <ClCompile Include="..\PlayerHistory.cpp" />
@@ -336,6 +337,7 @@
     <ClInclude Include="..\FAStarNode.h" />
     <ClInclude Include="..\GameBryo.h" />
     <ClInclude Include="..\GroupPathFinder.h" />
+    <ClInclude Include="..\History.h" />
     <ClInclude Include="..\IntegerConversion.h" />
     <ClInclude Include="..\IntegerTraits.h" />
     <ClInclude Include="..\KmodPathFinder.h" />

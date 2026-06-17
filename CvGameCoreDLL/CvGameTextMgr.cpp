@@ -15624,17 +15624,18 @@ bool CvGameTextMgr::setValueTimes100ChangeHelp(CvWStringBuffer &szBuffer,
 }
 // BUG - Resumable Value Change Help - end
 
-void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText)
+void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText, CvCity* pCity)
 {
   // BULL - Trade Denial - start  (advc.073: bImport param added)
-	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER, false, false);
+	setBonusTradeHelp(szBuffer, eBonus, bCivilopediaText, NO_PLAYER, false, false, pCity);
 }
 
 // This function has been effectly rewritten for K-Mod. (there were a lot of things to change.)
 void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus,
 	bool bCivilopediaText, PlayerTypes eTradePlayer,
   // BULL - Trade Denial - end
-	bool bImport, bool bForeignAdvisor) // advc.073
+	bool bImport, bool bForeignAdvisor, // advc.073
+	CvCity* pCity)
 {
 	if (eBonus == NO_BONUS)
 		return;
@@ -15652,6 +15653,25 @@ void CvGameTextMgr::setBonusTradeHelp(CvWStringBuffer &szBuffer, BonusTypes eBon
 			/*  A city can also be selected without the city screen being up;
 				don't want that here. */
 			gDLL->UI().getHeadSelectedCity() : NULL);
+
+	if (eActivePlayer != NO_PLAYER)
+	{
+		if (pCity != NULL && GC.getInfo(eBonus).getAffectedCities() != 0)
+		{
+			int iDifference = pActivePlayer->getNumAvailableBonuses(eBonus) * GC.getBonusInfo(eBonus).getAffectedCities() - (pCity->getCultureRank() + 1);
+			int iResourceDifference = iDifference >= 0 ? (iDifference / GC.getBonusInfo(eBonus).getAffectedCities()) : (std::abs(iDifference + 1) / GC.getBonusInfo(eBonus).getAffectedCities() + 1);
+
+			if (iResourceDifference == 0)
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_SUPPLIED", pCity->getName().GetCString(), kActivePlayer->getNumAvailableBonuses(eBonus)));
+			else if (iDifference > 0)
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_OVERSUPPLIED", pCity->getName().GetCString(), kActivePlayer->getNumAvailableBonuses(eBonus), iResourceDifference));
+			else
+				szBuffer.append(gDLL->getText("TXT_KEY_BONUS_CITY_REQUIRES", pCity->getName().GetCString(), kActivePlayer->getNumAvailableBonuses(eBonus), iResourceDifference));
+			}
+		}
+		else
+			szBuffer.append(gDLL->getText("TXT_KEY_BONUS_AVAILABLE_PLAYER", kActivePlayer.getNumAvailableBonuses(eBonus), kActivePlayer.getCivilizationShortDescriptionKey()));
+	}
 
 	int const iHappiness = GC.getInfo(eBonus).getHappiness();
 	int const iHealth = GC.getInfo(eBonus).getHealth();
