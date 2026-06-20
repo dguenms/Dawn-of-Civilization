@@ -14,6 +14,8 @@ m_iSelectionSoundScriptId(0),
 m_iActionSoundScriptId(0),
 m_iStartingYear(0), // doc
 m_iDerivativeCiv(NO_CIVILIZATION),
+m_eImpact(NO_IMPACT),
+m_ePaganReligion(NO_PAGAN_RELIGION),
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),
@@ -196,6 +198,17 @@ std::string CvCivilizationInfo::getCityNames(int i) const
 	return m_paszCityNames[i];
 }
 
+void CvCivilizationInfo::setDescription(CvWString szDescription)
+{
+	m_aCachedDescriptions.clear();
+	m_szTextKey = szDescription;
+}
+
+void CvCivilizationInfo::setDescriptionKeyPersistent(std::wstring szDescriptionKeyPersistent)
+{
+	m_szDescriptionKeyPersistent = szDescriptionKeyPersistent;
+}
+
 #if ENABLE_XML_FILE_CACHE
 void CvCivilizationInfo::read(FDataStreamBase* stream)
 {
@@ -212,11 +225,14 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iActionSoundScriptId);
 	stream->Read(&m_iDerivativeCiv);
 	stream->Read(&m_iStartingYear); // doc
+	stream->Read((int*)&m_eImpact); // doc
+	stream->Read((int*)&m_ePaganReligion); // doc
 	stream->Read(&m_bAIPlayable);
 	stream->Read(&m_bPlayable);
 	stream->ReadString(m_szArtDefineTag);
 	stream->ReadString(m_szShortDescriptionKey);
 	stream->ReadString(m_szAdjectiveKey);
+	stream->ReadString(m_szIdentifier); // doc
 	SAFE_DELETE_ARRAY(m_piCivilizationBuildings);
 	m_piCivilizationBuildings = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_piCivilizationBuildings);
@@ -261,11 +277,14 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iActionSoundScriptId);
 	stream->Write(m_iDerivativeCiv);
 	stream->Write(m_iStartingYear); // doc
+	stream->Write(m_eImpact); // doc
+	stream->Write(m_ePaganReligion); // doc
 	stream->Write(m_bAIPlayable);
 	stream->Write(m_bPlayable);
 	stream->WriteString(m_szArtDefineTag);
 	stream->WriteString(m_szShortDescriptionKey);
 	stream->WriteString(m_szAdjectiveKey);
+	stream->WriteString(mszIdentifier); // doc
 	stream->Write(GC.getNumBuildingClassInfos(), m_piCivilizationBuildings);
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationUnits);
 	stream->Write(GC.getNumUnitClassInfos(), m_piCivilizationFreeUnitsClass);
@@ -395,6 +414,10 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 
 	// doc
 	pXML->GetChildXmlValByName(&m_iStartingYear, "iStartingYear");
+	pXML->GetChildXmlValByName(m_szDescriptionKeyPersistent, "Description");
+	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
+	pXML->SetInfoIDFromChildXmlVal(m_eImpact, "Impact");
+	pXML->SetInfoIDFromChildXmlVal(m_ePaganReligion, "PaganReligion");
 
 	return true;
 }

@@ -3012,7 +3012,7 @@ int AIFoundValue::adjustToBadHealth(int iValue, int iGoodHealth) const
 	if (iCities > 0) // Connection to the capital can be slow/costly in the early game
 		iBonusHealth = std::min(iBonusHealth, (iBonusHealth * (1 + iCities)) / 4);
 	int iBadHealth = -iGoodHealth/100 - iBonusHealth -
-			GC.getInfo(kPlayer.getHandicapType()).getHealthBonus();
+			GC.getInfo(kPlayer.getHandicapType()).getHealthBonus() - kPlayer.getModifier(MODIFIER_HEALTH);
 	if (iBadHealth >= -2) // I.e. can only grow to size 2
 	{
 		scaled rDiv = scaled::max(1, 3 - rAIEraFactor + iBadHealth);

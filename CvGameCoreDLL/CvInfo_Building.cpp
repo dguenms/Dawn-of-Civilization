@@ -76,6 +76,7 @@ m_eGlobalReligionCommerce(/* advc (was 0): */ NO_RELIGION),
 m_eGlobalCorporationCommerce(/* advc (was 0): */ NO_CORPORATION),
 m_ePrereqAndBonus(NO_BONUS),
 m_eGreatPeopleUnitClass(NO_UNITCLASS),
+m_ePrereqCivic(NO_CIVIC), // doc
 m_iGreatPeopleRateChange(0),
 m_iConquestProbability(0),
 m_iMaintenanceModifier(0),
@@ -98,6 +99,7 @@ m_iCultureGreatPeopleRateModifier(0), // doc
 m_iCultureHappiness(0), // doc
 m_iCultureTradeRouteModifier(0), // doc
 m_iUnignorableBombardDefenseModifier(0), // doc
+m_iNumColoniesPrereq(0), // doc
 m_eMissionType(NO_MISSION),
 m_eVoteSourceType(NO_VOTESOURCE),
 m_fVisibilityPriority(0.0f),
@@ -346,8 +348,10 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iCultureHappiness); // doc
 	stream->Read(&m_iCultureTradeRouteModifier); // doc
 	stream->Read(&m_iUnignorableBombardDefenseModifier); // doc
+	stream->Read(&m_iNumColoniesPrereq); // doc
 	stream->Read((int*)&m_eMissionType);
 	stream->Read((int*)&m_eVoteSourceType);
+	stream->Read((int*)&m_ePrereqCivic); // doc
 	stream->Read(&m_fVisibilityPriority);
 	stream->Read(&m_bTeamShare);
 	stream->Read(&m_bWater);
@@ -536,8 +540,10 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iCultureHappiness); // doc
 	stream->Write(m_iCultureTradeRouteModifier); // doc
 	stream->Write(m_iUnignorableBombardDefenseModifier); // doc
+	stream->Write(m_iNumColoniesPrereq); // doc
 	stream->Write(m_eMissionType);
 	stream->Write(m_eVoteSourceType);
+	stream->Write(m_ePrereqCivic); // doc
 
 	stream->Write(m_fVisibilityPriority);
 
@@ -653,6 +659,9 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetInfoIDFromChildXmlVal(m_eMaxStartEra, "MaxStartEra");
 	pXML->SetInfoIDFromChildXmlVal(m_eObsoleteTech, "ObsoleteTech");
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqAndTech, "PrereqTech");
+
+	// doc
+	pXML->SetInfoIDFromChildXmlVal(m_ePrereqCivic, "PrereqCivic"); 
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "TechTypes"))
 	{
@@ -813,6 +822,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCultureHappiness, "iCultureHappiness"); // doc
 	pXML->GetChildXmlValByName(&m_iCultureTradeRouteModifier, "iCultureTradeRouteModifier"); // doc
 	pXML->GetChildXmlValByName(&m_iUnignorableBombardDefenseModifier, "iUnignorableBombardDefenseModifier"); // doc
+	pXML->GetChildXmlValByName(&m_iNumColoniesPrereq, "iNumColoniesPrereq"); // doc
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");
 	pXML->GetChildXmlValByName(&m_iPowerValue, "iPower");
 	pXML->GetChildXmlValByName(&m_fVisibilityPriority, "fVisibilityPriority");
@@ -1122,6 +1132,7 @@ m_eSpecialUnit(NO_SPECIALUNIT), // doc
 m_eFreePromotion(NO_PROMOTION), // doc
 m_iAirExperience(0), // doc
 m_iFirstAirExperience(0), // doc
+m_iExistingProductionModifier(0), // doc
 m_bSpaceship(false),
 m_bAllowsNukes(false),
 m_bRevealsMap(false), // doc
@@ -1175,6 +1186,7 @@ bool CvProjectInfo::read(CvXMLLoadUtility* pXML)
 	// doc
 	pXML->GetChildXmlValByName(&m_iAirExperience, "iAirExperience");
 	pXML->GetChildXmlValByName(&m_iFirstAirExperience, "iFirstAirExperience");
+	pXML->GetChildXmlValByName(&m_iExistingProductionModifier, "iExistingProductionModifier");
 
 	pXML->SetInfoIDFromChildXmlVal(m_eEveryoneSpecialUnit, "EveryoneSpecialUnit");
 	pXML->SetInfoIDFromChildXmlVal(m_eEveryoneSpecialBuilding, "EveryoneSpecialBuilding");

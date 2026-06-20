@@ -223,6 +223,10 @@ public:
 	int getCultureHappiness() const { return m_iCultureHappiness; }
 	int getCultureTradeRouteModifier() const { return m_iCultureTradeRouteModifier; }
 	int getUnignorableBombardDefenseModifier() const { return m_iUnignorableBombardDefenseModifier; }
+	int getNumColoniesPrereq() const { return m_iNumColoniesPrereq; }
+
+	// doc
+	CivicTypes getPrereqCivic() const { return m_ePrereqCivic; }
 
 	MissionTypes getMissionType() const { return m_eMissionType; }
 	void setMissionType(MissionTypes eNewType);
@@ -287,6 +291,7 @@ public:
 	DEF_SHORT_INFO_ENUM_MAP(FlatRiverPlotYieldChange, Yield, YieldChangeMap);
 	DEF_SHORT_INFO_ENUM_MAP(CultureCommerceModifier, Commerce, CommercePercentMap);
 	DEF_SHORT_INFO_ENUM_MAP(PowerCommerceModifier, Commerce, CommercePercentMap);
+	DEF_SHORT_INFO_ENUM_MAP(ReligionYieldChange, Yield, YieldChangeMap);
 
 	DEF_INFO_ENUM_MAP(ReligionChange, Religion, int, char, NonDefaultEnumMap);
 	DEF_INFO_ENUM_MAP(SpecialistCount, Specialist, int, char, ArrayEnumMap);
@@ -465,6 +470,10 @@ protected:
 	int m_iCultureHappiness;
 	int m_iCultureTradeRouteModifier;
 	int m_iUnignorableBombardDefenseModifier;
+	int m_iNumColoniesPrereq;
+
+	// doc
+	CivicTypes m_ePrereqCivic;
 
 	MissionTypes m_eMissionType;
 	VoteSourceTypes m_eVoteSourceType;
@@ -718,6 +727,7 @@ public: // All const functions are exposed to Python
 	// doc
 	int getAirExperience() const { return m_iAirExperience; }
 	int getFirstAirExperience() const { return m_iFirstAirExperience; }
+	int getExistingProductionModifier() const { return m_iExistingProductionModifier; }
 
 	bool isSpaceship() const
 	{
@@ -772,6 +782,7 @@ protected:
 	// doc
 	int m_iAirExperience;
 	int m_iFirstAirExperience;
+	int m_iExistingProductionModifier;
 
 	bool m_bSpaceship;
 	bool m_bAllowsNukes;

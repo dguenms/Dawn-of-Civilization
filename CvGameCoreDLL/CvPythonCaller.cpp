@@ -1616,3 +1616,48 @@ int CvPythonCaller::countAchievedGoals(PlayerTypes ePlayer) const
 	call("countAchievedGoals", argsList, PYScreensModule, &lResult);
 	return toInt(lResult);
 }
+
+void CvPythonCaller::toggleStabilityOverlay() const
+{
+	call("toggleStabilityOverlay", PYScreensModule);
+}
+
+CvWString CvPythonCaller::getVictoryTooltip(PlayerTypes ePlayer, CvPlot const& kPlot) const
+{
+	CvWString result = L"";
+
+	CyArgsList argsList;
+	argsList.add(ePlayer);
+	argsList.add(kPlot.getX());
+	argsList.add(kPlot.getY());
+
+	call("getVictoryTooltip", argsList, PYScreensModule, &result);
+
+	return result;
+}
+
+CvWString CvPythonCaller::getVictoryDescription(CivilizationTypes eCivilization) const
+{
+	CvWString result = L"";
+
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+
+	call("getHistoricalVictoryDescriptions", argsList, PYScreensModule, &result);
+
+	return result;
+}
+
+CvWString CvPythonCaller::getCityName(PlayerTypes ePlayer, CvPlot const& kPlot) const
+{
+	CvWString result = L"";
+
+	CyArgsList argsList;
+	argsList.add(ePlayer);
+	argsList.add(kPlot.getX());
+	argsList.add(kPlot.getY());
+
+	call("getCityName", argsList, PYScreensModule, &result);
+
+	return result;
+}

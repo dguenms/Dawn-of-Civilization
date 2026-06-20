@@ -44,6 +44,13 @@ public: // advc: All the const functions are exposed to Python
 	const wchar* getAdjectiveKey() const;
 	std::wstring pyGetAdjectiveKey() { return getAdjectiveKey(); }
 
+	// doc
+	const wchar* getDescriptionKeyPersistent() const { return m_szDescriptionKeyPersistent; }
+	std::wstring pyGetDescriptionKeyPersistent() { return getDescriptionKeyPersistent(); }
+	void setDescriptionKeyPersistent(std::wstring szDescription);
+
+	const std::string getIdentifier() const { return m_szIdentifier; }
+
 	DllExport const TCHAR* getFlagTexture() const;
 	const TCHAR* getArtDefineTag() const;
 
@@ -57,6 +64,9 @@ public: // advc: All the const functions are exposed to Python
 	// doc
 	int getStartingYear() const { return m_iStartingYear; }
 
+	ImpactTypes getImpact() const { return m_eImpact; }
+	PaganReligionTypes getPaganReligion() const { return m_ePaganReligion; }
+
 	DllExport bool isLeaders(int i) const;
 	bool isCivilizationFreeBuildingClass(int i) const;
 	bool isCivilizationFreeTechs(int i) const;
@@ -66,6 +76,12 @@ public: // advc: All the const functions are exposed to Python
 
 	const CvArtInfoCivilization* getArtInfo() const; // (not exposed to Python)
 	const TCHAR* getButton() const;
+
+	// doc
+	int getLoadingTime(ScenarioTypes eScenario) const { return m_aeLoadingTime.get(eScenario); }
+
+	// doc
+	void setDescription(CvWString szString);
 
 	bool read(CvXMLLoadUtility* pXML);
 	bool readPass2(CvXMLLoadUtility* pXML);
@@ -87,12 +103,19 @@ protected:
 	// doc
 	int m_iStartingYear;
 
+	ImpactTypes m_eImpact;
+	PaganReligionTypes m_ePaganReligion;
+
 	bool m_bAIPlayable;
 	bool m_bPlayable;
 
 	CvString m_szArtDefineTag;
 	CvWString m_szShortDescriptionKey;
 	CvWString m_szAdjectiveKey;
+
+	// doc
+	CvWString m_szDescriptionKeyPersistent;
+	std::string m_szIdentifier;
 
 	int* m_piCivilizationBuildings;
 	int* m_piCivilizationUnits;
@@ -108,6 +131,9 @@ protected:
 
 	mutable std::vector<CvWString> m_aszShortDescription;
 	mutable std::vector<CvWString> m_aszAdjective;
+
+	// doc
+	ArrayEnumMap<ScenarioTypes,int,char> m_aeLoadingTime;
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -46,6 +46,18 @@ m_iStateReligionUnitProductionModifier(0),
 m_iStateReligionBuildingProductionModifier(0),
 m_iStateReligionFreeExperience(0),
 m_iExpInBorderModifier(0),
+m_iLevelExperienceModifier(0), // doc
+m_iCorporationUnhappinessModifier(0), // doc
+m_iProcessModifier(0), // doc
+m_iFoodProductionModifier(0), // doc
+m_iWonderProductionModifier(0), // doc
+m_iCorporationCommerceModifier(0), // doc
+m_iDefensivePactTradeModifier(0), // doc
+m_iVassalTradeModifier(0), // doc
+m_iShrineIncomeLimitChange(0), // doc
+m_iCaptureGoldModifier(0), // doc
+m_iCapitalBuildingProductionModifier(0), // doc
+m_iOccupationTimeChange(0), // doc
 m_bMilitaryFoodProduction(false),
 //m_bNoUnhealthyPopulation(false),
 m_iUnhealthyPopulationModifier(0), // K-Mod
@@ -55,15 +67,26 @@ m_bNoCorporations(false),
 m_bNoForeignCorporations(false),
 m_bStateReligion(false),
 m_bNoNonStateReligionSpread(false),
+m_bNoForeignTradeModifier(false), // doc
+m_bSlavery(false), // doc
+m_bNoSlavery(false), // doc
+m_bColonialSlavery(false), // doc
+m_bNoStateReligionAnarchy(false), // doc
+m_bFreeImprovementUpgrade(false), // doc
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
 m_piCommerceModifier(NULL),
 m_piCapitalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
+m_piStateReligionBuildingYield(NULL), // doc
+m_piSpecialistExtraYield(NULL), // doc
+m_piSpecialistCount(NULL), // doc
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiFeatureHappinessChanges(NULL),
+m_paiDomainExperienceModifiers(NULL), // doc
+m_paiBuildingProductionModifiers(NULL), // doc
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
 m_pabSpecialistValid(NULL),
@@ -78,9 +101,14 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piCapitalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
+	SAFE_DELETE_ARRAY(m_piStateReligionBuildingYield); // doc
+	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); // doc
+	SAFE_DELETE_ARRAY(m_piSpecialistCount); // doc
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
+	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers); // doc
+	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers); // doc
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
 	SAFE_DELETE_ARRAY(m_pabSpecialistValid);
@@ -89,6 +117,15 @@ CvCivicInfo::~CvCivicInfo()
 		for (int iI = 0; iI < GC.getNumImprovementInfos(); iI++)
 			SAFE_DELETE_ARRAY(m_ppiImprovementYieldChanges[iI]);
 		SAFE_DELETE_ARRAY(m_ppiImprovementYieldChanges);
+	}
+	// doc
+	if (m_ppiSpecialistTypeExtraYields != NULL)
+	{
+		FOR_EACH_ENUM(Specialist)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields[eLoopSpecialist]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields);
 	}
 }
 
@@ -205,6 +242,15 @@ int CvCivicInfo::getImprovementYieldChanges(int i, int j) const
 	FAssertBounds(0, NUM_YIELD_TYPES, j);
 	return m_ppiImprovementYieldChanges[i][j];
 }
+
+// doc
+int CvCivicInfo::getSpecialistTypeExtraYield(SpecialistTypes eSpecialist, YieldTypes eYield) const
+{
+	FAssertBounds(0, GC.getNumSpecialistInfos(), eSpecialist);
+	FAssertBounds(0, NUM_YIELD_TYPES, eYield);
+	return m_ppiSpecialistTypeExtraYields[eSpecialist][eYield];
+}
+
 #if ENABLE_XML_FILE_CACHE
 void CvCivicInfo::read(FDataStreamBase* stream)
 {
@@ -252,6 +298,18 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iStateReligionBuildingProductionModifier);
 	stream->Read(&m_iStateReligionFreeExperience);
 	stream->Read(&m_iExpInBorderModifier);
+	stream->Read(&m_iLevelExperienceModifier); // doc
+	stream->Read(&m_iCorporationUnhappinessModifier); // doc
+	stream->Read(&m_iProcessModifier); // doc
+	stream->Read(&m_iFoodProductionModifier); // doc
+	stream->Read(&m_iWonderProductionModifier); // doc
+	stream->Read(&m_iCorporationCommerceModifier); // doc
+	stream->Read(&m_iDefensivePactTradeModifier); // doc
+	stream->Read(&m_iVassalTradeModifier); // doc
+	stream->Read(&m_iShrineIncomeLimitChange); // doc
+	stream->Read(&m_iCaptureGoldModifier); // doc
+	stream->Read(&m_iCapitalBuildingProductionModifier); // doc
+	stream->Read(&m_iOccupationTimeChange); // doc
 	stream->Read(&m_bMilitaryFoodProduction);
 	//stream->Read(&m_bNoUnhealthyPopulation);
 	stream->Read(&m_iUnhealthyPopulationModifier); // K-Mod
@@ -261,6 +319,12 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bNoForeignCorporations);
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bNoNonStateReligionSpread);
+	stream->Read(&m_bNoForeignTradeModifier); // doc
+	stream->Read(&m_bSlavery); // doc
+	stream->Read(&m_bNoSlavery); // doc
+	stream->Read(&m_bColonialSlavery); // doc
+	stream->Read(&m_bNoStateReligionAnarchy); // doc
+	stream->Read(&m_bFreeImprovementUpgrade); // doc
 	SAFE_DELETE_ARRAY(m_piYieldModifier);
 	m_piYieldModifier = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piYieldModifier);
@@ -279,6 +343,18 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	m_piSpecialistExtraCommerce = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
+
+	// doc
+	SAFE_DELETE_ARRAY(m_piStateReligionBuildingYield);
+	m_piSpecialistExtraCommerce = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piStateReligionBuildingYield);
+	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield);
+	m_piSpecialistExtraYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piSpecialistExtraYield);
+	SAFE_DELETE_ARRAY(m_piSpecialistCount);
+	m_piSpecialistCount = new int[GC.getNumSpecialistInfos()];
+	stream->Read(GC.getNumSpecialistInfos(), m_piSpecialistCount);
+
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	m_paiBuildingHappinessChanges = new int[GC.getNumBuildingClassInfos()];
 	stream->Read(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
@@ -288,6 +364,15 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
 	m_paiFeatureHappinessChanges = new int[GC.getNumFeatureInfos()];
 	stream->Read(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
+
+	// doc
+	SAFE_DELETE_ARRAY(m_paiDomainExperienceModifiers);
+	m_paiDomainExperienceModifiers = new int[NUM_DOMAIN_TYPES];
+	stream.Read(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers);
+	SAFE_DELETE_ARRAY(m_paiBuildingProductionModifiers);
+	m_paiBuildingProductionModifiers = new int[GC.getNumBuildingClassInfos()];
+	stream.Read(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers);
+
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	m_pabHurry = new bool[GC.getNumHurryInfos()];
 	stream->Read(GC.getNumHurryInfos(), m_pabHurry);
@@ -297,6 +382,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_pabSpecialistValid);
 	m_pabSpecialistValid = new bool[GC.getNumSpecialistInfos()];
 	stream->Read(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
+
 	if (m_ppiImprovementYieldChanges != NULL)
 	{
 		for(int i = 0; i < GC.getNumImprovementInfos(); i++)
@@ -309,6 +395,23 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 		m_ppiImprovementYieldChanges[i]  = new int[NUM_YIELD_TYPES];
 		stream->Read(NUM_YIELD_TYPES, m_ppiImprovementYieldChanges[i]);
 	}
+
+	// doc
+	if (m_ppiSpecialistTypeExtraYields != NULL)
+	{
+		FOR_EACH_ENUM(Specialist)
+		{
+			SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields[eLoopSpecialist]);
+		}
+		SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields);
+	}
+	m_ppiSpecialistTypeExtraYields = new int* [GC.getNumSpecialistInfos()];
+	FOR_EACH_ENUM(Specialist)
+	{
+		m_ppiSpecialistTypeExtraYields[eLoopSpecialist] = new int[NUM_YIELD_TYPES];
+		stream->Read(NUM_YIELD_TYPES, m_ppiSpecialistTypeExtraYields[eLoopSpecialist]);
+	}
+
 	stream->ReadString(m_szWeLoveTheKingKey);
 }
 
@@ -358,7 +461,18 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iStateReligionBuildingProductionModifier);
 	stream->Write(m_iStateReligionFreeExperience);
 	stream->Write(m_iExpInBorderModifier);
-	stream->Write(m_bMilitaryFoodProduction);
+	stream->Write(m_iLevelExperienceModifier); // doc
+	stream->Write(m_iCorporationUnhappinessModifier); // doc
+	stream->Write(m_iProcessModifier); // doc
+	stream->Write(m_iFoodProductionModifier); // doc
+	stream->Write(m_iWonderProductionModifier); // doc
+	stream->Write(m_iCorporationCommerceModifier); // doc
+	stream->Write(m_iDefensivePactTradeModifier); // doc
+	stream->Write(m_iVassalTradeModifier); // doc
+	stream->Write(m_iShrineIncomeLimitChange); // doc
+	stream->Write(m_iCaptureGoldModifier); // doc
+	stream->Write(m_iCapitalBuildingProductionModifier); // doc
+	stream->Write(m_iOccupationTimeChange); // doc
 	//stream->Write(m_bNoUnhealthyPopulation);
 	stream->Write(m_iUnhealthyPopulationModifier); // K-Mod
 	stream->Write(m_bBuildingOnlyHealthy);
@@ -367,20 +481,39 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bNoForeignCorporations);
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bNoNonStateReligionSpread);
+	stream->Write(m_bNoForeignTradeModifier); // doc
+	stream->Write(m_bSlavery); // doc
+	stream->Write(m_bNoSlavery); // doc
+	stream->Write(m_bColonialSlavery); // doc
+	stream->Write(m_bNoStateReligionAnarchy); // doc
+	stream->Write(m_bFreeImprovementUpgrade); // doc
 	stream->Write(NUM_YIELD_TYPES, m_piYieldModifier);
 	stream->Write(NUM_YIELD_TYPES, m_piCapitalYieldModifier);
 	stream->Write(NUM_YIELD_TYPES, m_piTradeYieldModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCapitalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
+	stream->Write(NUM_YIELD_TYPES, m_piStateReligionBuildingYield); // doc
+	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); // doc
+	stream->Write(GC.getNumSpecialistInfos(), m_piSpecialistExtraYield); // doc
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
 	stream->Write(GC.getNumFeatureInfos(), m_paiFeatureHappinessChanges);
+	stream->Write(NUM_DOMAIN_TYPES, m_paiDomainExperienceModifiers); // doc
+	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingProductionModifiers); // doc
 	stream->Write(GC.getNumHurryInfos(), m_pabHurry);
 	stream->Write(GC.getNumSpecialBuildingInfos(), m_pabSpecialBuildingNotRequired);
 	stream->Write(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
+
 	for(int i = 0;i < GC.getNumImprovementInfos(); i++)
 		stream->Write(NUM_YIELD_TYPES, m_ppiImprovementYieldChanges[i]);
+
+	// doc
+	FOR_EACH_ENUM(Specialist)
+	{
+		stream.Write(NUM_YIELD_TYPES, m_ppiSpecialistTypeExtraYields[eLoopSpecialist]);
+	}
+
 	stream->WriteString(m_szWeLoveTheKingKey);
 }
 #endif
@@ -438,12 +571,35 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCivicPercentAnger, "iCivicPercentAnger");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_bNoNonStateReligionSpread, "bNoNonStateReligionSpread");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_bNoForeignTradeModifier, "bNoForeignTradeModifier");
+	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery");
+	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery");
+	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery");
+	pXML->GetChildXmlValByName(&m_bNoStateReligionAnarchy, "bNoStateReligionAnarchy");
+	pXML->GetChildXmlValByName(&m_bFreeImprovementUpgrade, "bFreeImprovementUpgrade");
+
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
 	pXML->GetChildXmlValByName(&m_iStateReligionBuildingProductionModifier, "iStateReligionBuildingProductionModifier");
 	pXML->GetChildXmlValByName(&m_iStateReligionFreeExperience, "iStateReligionFreeExperience");
 	pXML->GetChildXmlValByName(&m_iExpInBorderModifier, "iExpInBorderModifier");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iLevelExperienceModifier, "iLevelExperienceModifier");
+	pXML->GetChildXmlValByName(&m_iCorporationUnhappinessModifier, "iCorporationUnhappinessModifier");
+	pXML->GetChildXmlValByName(&m_iProcessModifier, "iProcessModifier");
+	pXML->GetChildXmlValByName(&m_iFoodProductionModifier, "iFoodProductionModifier");
+	pXML->GetChildXmlValByName(&m_iWonderProductionModifier, "iWonderProductionModifier");
+	pXML->GetChildXmlValByName(&m_iCorporationCommerceModifier, "iCorporationCommerceModifier");
+	pXML->GetChildXmlValByName(&m_iDefensivePactTradeModifier, "iDefensivePactTradeModifier");
+	pXML->GetChildXmlValByName(&m_iVassalTradeModifier, "iVassalTradeModifier");
+	pXML->GetChildXmlValByName(&m_iShrineIncomeLimitChange, "iShrineIncomeLimitChange");
+	pXML->GetChildXmlValByName(&m_iCaptureGoldModifier, "iCaptureGoldModifier");
+	pXML->GetChildXmlValByName(&m_iCapitalBuildingProductionModifier, "iCapitalBuildingProductionModifier");
+	pXML->GetChildXmlValByName(&m_iOccupationTimeChange, "iOccupationTimeChange");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
 		"YieldModifiers"))
@@ -487,6 +643,28 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	}
 	else pXML->InitList(&m_piSpecialistExtraCommerce, NUM_COMMERCE_TYPES);
 
+	// doc
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
+		"StateReligionBuildingYields"))
+	{
+		pXML->SetCommerceArray(&m_piStateReligionBuildingYield);
+	}
+	else pXML->InitList(&m_piStateReligionBuildingYield, NUM_YIELD_TYPES);
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
+		"SpecialistExtraYields"))
+	{
+		pXML->SetCommerceArray(&m_piSpecialistExtraYield);
+	}
+	else pXML->InitList(&m_piSpecialistExtraYield, NUM_YIELD_TYPES);
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
+		"SpecialistCounts"))
+	{
+		pXML->SetCommerceArray(&m_piSpecialistCount);
+	}
+	else pXML->InitList(&m_piSpecialistCount, NUM_YIELD_TYPES);
+
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", GC.getNumHurryInfos());
 	pXML->SetVariableListTagPair(&m_pabSpecialBuildingNotRequired, "SpecialBuildingNotRequireds", GC.getNumSpecialBuildingInfos());
 	pXML->SetVariableListTagPair(&m_pabSpecialistValid, "SpecialistValids", GC.getNumSpecialistInfos());
@@ -494,6 +672,10 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_paiBuildingHappinessChanges, "BuildingHappinessChanges", GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_paiBuildingHealthChanges, "BuildingHealthChanges", GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_paiFeatureHappinessChanges, "FeatureHappinessChanges", GC.getNumFeatureInfos());
+
+	// doc
+	pXML->SetVariableListTagPair(&m_paiDomainExperienceModifiers, "DomainExperienceModifiers", NUM_DOMAIN_TYPES);
+	pXML->SetVariableListTagPair(&m_paiBuildingProductionModifiers, "BuildingProductionModifiers", GC.getNumBuildingClassInfos());
 
 	FAssert(GC.getNumImprovementInfos() > 0);
 	pXML->Init2DIntList(&m_ppiImprovementYieldChanges, GC.getNumImprovementInfos(), NUM_YIELD_TYPES);
@@ -520,6 +702,43 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 								pXML->SetYieldArray(&m_ppiImprovementYieldChanges[iIndex]);
 							}
 							else pXML->InitList(&m_ppiImprovementYieldChanges[iIndex], NUM_YIELD_TYPES);
+						}
+						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
+							break;
+					}
+				}
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
+		}
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
+	// doc
+	FAssert(GC.getNumSpecialistInfos() > 0);
+	pXML->Init2DIntList(&m_ppiSpecialistTypeExtraYields, GC.getNumSpecialistInfos(), NUM_YIELD_TYPES);
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "SpecialistTypeExtraYields"))
+	{
+		if (pXML->SkipToNextVal())
+		{
+			int iNumSibs = gDLL->getXMLIFace()->GetNumChildren(pXML->GetXML());
+			if (gDLL->getXMLIFace()->SetToChild(pXML->GetXML()))
+			{
+				if (iNumSibs > 0)
+				{
+					for (int j = 0; j < iNumSibs; j++)
+					{
+						CvString szTextVal;
+						pXML->GetChildXmlValByName(szTextVal, "SpecialistType");
+						int iIndex = pXML->FindInInfoClass(szTextVal);
+						if (iIndex > -1)
+						{
+							SAFE_DELETE_ARRAY(m_ppiSpecialistTypeExtraYields[iIndex]);
+							if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
+								"SpecialistYields"))
+							{
+								pXML->SetYieldArray(&m_ppiSpecialistTypeExtraYields[iIndex]);
+							}
+							else pXML->InitList(&m_ppiSpecialistTypeExtraYields[iIndex], NUM_YIELD_TYPES);
 						}
 						if (!gDLL->getXMLIFace()->NextSibling(pXML->GetXML()))
 							break;

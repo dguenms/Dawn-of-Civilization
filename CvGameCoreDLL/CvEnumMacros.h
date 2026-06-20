@@ -17,7 +17,6 @@
 	DO(SeaLevel, SEALEVEL) \
 	DO(TurnTimer, TURNTIMER) \
 	DO(Handicap, HANDICAP) \
-	DO(GameSpeed, GAMESPEED) \
 	/* internal only */ \
 	/*DO(Camera, CAMERAANIMATION)*/ /* advc.003j: unused */ \
 	DO(Emphasize, EMPHASIZE) \
@@ -136,8 +135,10 @@
 	DO(CultureLevel, CULTURELEVEL) \
 	DO(Era, ERA) \
 	DO(Feature, FEATURE) \
+	DO(GameSpeed, GAMESPEED) \
 	DO(History, HISTORY) \
 	DO(Hurry, HURRY) \
+	DO(Impact, IMPACT) \
 	DO(Improvement, IMPROVEMENT) \
 	DO(LeaderHead, LEADER) \
 	DO(Period, PERIOD) \
@@ -145,6 +146,7 @@
 	DO(Project, PROJECT) \
 	DO(Promotion, PROMOTION) \
 	DO(Religion, RELIGION) \
+	DO(Scenario, SCENARIO) \
 	DO(Specialist, SPECIALIST) \
 	DO(SpecialUnit, SPECIALUNIT) \
 	DO(Tech, TECH) \
@@ -176,6 +178,7 @@
 #define CvCalendarInfo CvInfoBase
 #define CvUnitAIInfo CvInfoBase
 #define CvDenialInfo CvInfoBase
+#define CvPaganReligionInfo CvInfoBase
 // This one just has an irregular, exported name.
 #define CvThroneRoomCameraInfo CvThroneRoomCamera
 

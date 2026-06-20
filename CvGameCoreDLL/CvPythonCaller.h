@@ -177,6 +177,12 @@ public:
 	int getStabilityLevel(PlayerTypes ePlayer) const;
 	int countAchievedGoals(PlayerTypes ePlayer) const;
 
+	void toggleStabilityOverlay() const;
+
+	CvWString getVictoryTooltip(PlayerTypes ePlayer, CvPlot const& kPlot) const;
+	CvWString getVictoryDescription(CivilizationTypes eCivilization) const;
+	CvWString getCityName(PlayerTypes ePlayer, CvPlot const& kPlot) const;
+
 private:
 	CvDLLPythonIFaceBase& m_python;
 	bool* m_abUseCallback; // Replacing all the USE_..._CALLBACK variables and getters

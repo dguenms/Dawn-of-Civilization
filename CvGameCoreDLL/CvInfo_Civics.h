@@ -61,6 +61,20 @@ public: // The const functions are exposed to Python except those added by AdvCi
 	int getStateReligionFreeExperience() const { return m_iStateReligionFreeExperience; }
 	int getExpInBorderModifier() const { return m_iExpInBorderModifier; }
 
+	// doc
+	int getLevelExperienceModifier() const { return m_iLevelExperienceModifier; }
+	int getCorporationUnhappinessModifier() const { return m_iCorporationUnhappinessModifier; }
+	int getProcessModifier() const { return m_iProcessModifier; }
+	int getFoodProductionModifier() const { return m_iFoodProductionModifier; }
+	int getWonderProductionModifier() const { return m_iWonderProductionModifier; }
+	int getCorporationCommerceModifier() const { return m_iCorporationCommerceModifier; }
+	int getDefensivePactTradeModifier() const { return m_iDefensivePactTradeModifier; }
+	int getVassalTradeModifier() const { return m_iVassalTradeModifier; }
+	int getShrineIncomeLimitChange() const { return m_iShrineIncomeLimitChange; }
+	int getCaptureGoldModifier() const { return m_iCaptureGoldModifier; }
+	int getCapitalBuildingProductionModifier() const { return m_iCapitalBuildingProductionModifier; }
+	int getOccupationTimeChange() const { return m_iOccupationTimeChange; }
+
 	bool isMilitaryFoodProduction() const { return m_bMilitaryFoodProduction; }
 	//bool isNoUnhealthyPopulation() const; // K-Mod, 27/dec/10:
 	int getUnhealthyPopulationModifier() const { return m_iUnhealthyPopulationModifier; }	// Exposed to Python
@@ -70,6 +84,14 @@ public: // The const functions are exposed to Python except those added by AdvCi
 	bool isNoForeignCorporations() const { return m_bNoForeignCorporations; }
 	bool isStateReligion() const { return m_bStateReligion; }
 	bool isNoNonStateReligionSpread() const { return m_bNoNonStateReligionSpread; }
+
+	// doc
+	bool isNoForeignTradeModifier() const { return m_bNoForeignTradeModifier; }
+	bool isSlavery() const { return m_bSlavery; }
+	bool isNoSlavery() const { return m_bNoSlavery; }
+	bool isColonialSlavery() const { return m_bColonialSlavery; }
+	bool isNoStateReligionAnarchy() const { return m_bNoStateReligionAnarchy; }
+	bool isFreeImprovementUpgrade() const { return m_bFreeImprovementUpgrade; }
 
 	std::wstring pyGetWeLoveTheKing() { return getWeLoveTheKing(); }
 	const wchar* getWeLoveTheKing();
@@ -88,17 +110,34 @@ public: // The const functions are exposed to Python except those added by AdvCi
 	int* getCapitalCommerceModifierArray() const;
 	int getSpecialistExtraCommerce(int i) const;
 	int* getSpecialistExtraCommerceArray() const;
+
+	// doc
+	int getStateReligionBuildingYield(YieldTypes eYield) const { m_piStateReligionBuildingYield[eYield]; }
+	int* getStateReligionBuildingYieldArray() { return m_piStateReligionBuildingYield; }
+	int getSpecialistExtraYield(YieldTypes eYield) const { return m_piSpecialistExtraYield[eYield]; }
+	int* getSpecialistExtraYieldArray() const { return m_piSpecialistExtraYield; }
+	int getSpecialistCount(SpecialistTypes eSpecialist) const { return m_piSpecialistCount[eSpecialist]; }
+	int* getSpecialistCountArray() const { return m_piSpecialistCount;  }
+
 	int getBuildingHappinessChanges(int i) const;
 	bool isAnyBuildingHappinessChanges() const { return (m_paiBuildingHappinessChanges != NULL); } // advc.003t
 	int getBuildingHealthChanges(int i) const;
 	bool isAnyBuildingHealthChanges() const { return (m_paiBuildingHealthChanges != NULL); } // advc.003t
 	int getFeatureHappinessChanges(int i) const;
 
+	// doc
+	int getDomainExperienceModifier(DomainTypes eDomain) const { return m_paiDomainExperienceModifiers[eDomain]; }
+	int getBuildingProductionModifier(BuildingClassTypes eBuildingClass) const { return m_paiBuildingProductionModifiers[eBuildingClass]; }
+
 	bool isHurry(int i) const;
 	bool isSpecialBuildingNotRequired(int i) const;
 	bool isSpecialistValid(int i) const;
 
 	int getImprovementYieldChanges(int i, int j) const;
+
+	// doc
+	int getSpecialistTypeExtraYield(SpecialistTypes eSpecialist, YieldTypes eYield) const;
+
 	#if ENABLE_XML_FILE_CACHE
 	void read(FDataStreamBase* stream);
 	void write(FDataStreamBase* stream);
@@ -146,6 +185,20 @@ protected:
 	int m_iStateReligionFreeExperience;
 	int m_iExpInBorderModifier;
 
+	// doc
+	int m_iLevelExperienceModifier;
+	int m_iCorporationUnhappinessModifier;
+	int m_iProcessModifier;
+	int m_iFoodProductionModifier;
+	int m_iWonderProductionModifier;
+	int m_iCorporationCommerceModifier;
+	int m_iDefensivePactTradeModifier;
+	int m_iVassalTradeModifier;
+	int m_iShrineIncomeLimitChange;
+	int m_iCaptureGoldModifier;
+	int m_iCapitalBuildingProductionModifier;
+	int m_iOccupationTimeChange;
+
 	//bool m_bNoUnhealthyPopulation;
 	int m_iUnhealthyPopulationModifier; // K-Mod
 	bool m_bMilitaryFoodProduction;
@@ -157,6 +210,14 @@ protected:
 	bool m_bNoNonStateReligionSpread;
 	bool m_bCanAlwaysForce; // advc.132
 
+	// doc
+	bool m_bNoForeignTradeModifier;
+	bool m_bSlavery;
+	bool m_bNoSlavery;
+	bool m_bColonialSlavery;
+	bool m_bNoStateReligionAnarchy;
+	bool m_bFreeImprovementUpgrade;
+
 	CvWString m_szWeLoveTheKingKey;
 
 	int* m_piYieldModifier;
@@ -165,15 +226,26 @@ protected:
 	int* m_piCommerceModifier;
 	int* m_piCapitalCommerceModifier;
 	int* m_piSpecialistExtraCommerce;
+
+	// doc
+	int* m_piStateReligionBuildingYield;
+	int* m_piSpecialistExtraYield;
+	int* m_piSpecialistCount;
+
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;
 	int* m_paiFeatureHappinessChanges;
+
+	// doc
+	int* m_paiDomainExperienceModifiers;
+	int* m_paiBuildingProductionModifiers;
 
 	bool* m_pabHurry;
 	bool* m_pabSpecialBuildingNotRequired;
 	bool* m_pabSpecialistValid;
 
 	int** m_ppiImprovementYieldChanges;
+	int** m_ppiSpecialistTypeExtraYields; // doc
 };
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

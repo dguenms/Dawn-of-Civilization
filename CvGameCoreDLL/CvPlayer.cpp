@@ -23489,3 +23489,9 @@ int CvPlayer::getModifiedCommerceRate(CommerceTypes eCommerce) const
 {
 	return getModifiedCommerceRateTimes100(eCommerce) / 100;
 }
+
+// doc
+bool CvPlayer::isHasCivic(CivicTypes eCivic) const
+{
+	return getCivics(GC.getInfo(eCivic).getCivicOptionType()) == eCivic;
+}

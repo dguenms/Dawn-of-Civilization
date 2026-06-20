@@ -392,7 +392,7 @@ void setListHelp(CvWString& szBuffer, wchar const* szStart, wchar const* szItem,
 	bFirst = false; // advc: And deleted this line from every call location
 }
 
-// TODO: removed by advvic, find new location
+// TODO: removed by advciv, find new location
 int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 {
 	int iResearch;
@@ -402,7 +402,7 @@ int getDiscoverResearch(UnitTypes eUnit, PlayerTypes ePlayer, TechTypes eTech)
 	// Leoreth: slight base discover scaling
 	iResearch = (kUnitInfo.getBaseDiscover() + (std::max(0, kPlayer.getCurrentEra()-1) * kUnitInfo.getBaseDiscover() / 2) + (kUnitInfo.getDiscoverMultiplier() * GET_TEAM(kPlayer.getTeam()).getTotalPopulation()));
 
-	iResearch *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getUnitDiscoverPercent();
+	iResearch *= GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getUnitDiscoverPercent();
 	iResearch /= 100;
 
 	return std::max(0, iResearch);
@@ -664,7 +664,7 @@ bool PUF_isAnimal(CvUnit const* pUnit, int iDummy1, int iDummy2)
 	return pUnit->isAnimal();
 }
 
-bool PUF_isMilitaryHappiness(CvUnit const* pUnit, int iDummy1, int iDummy2)
+bool PUF_isMilitaryHappiness(CvUnit const* pUnit, int iData1, int iDummy2)
 {
 	FAssert(iDummy2 == -1);
 	// doc: only city owner units provide military happiness
@@ -908,27 +908,23 @@ int getTurnMonthForGame(int iGameTurn, int iStartYear, CalendarTypes eCalendar,
 // doc (edead): convert normal speed turns to game speed turns
 int getTurns(int iTurns)
 {
-	int iSpeed = (int)GC.getGameINLINE().getGameSpeedType();
-
-	// marathon
-	if (iSpeed == 0) return 3 * iTurns;
-
-	// epic
-	else if (iSpeed == 1)
+	switch (GC.getGame().getGameSpeedType())
 	{
+	case GAMESPEED_MARATHON:
+		return 3 * iTurns;
+	case GAMESPEED_EPIC:
 		if (iTurns == 3) return 5;
 		else if (iTurns == 6) return 10;
-		else return (iTurns * 3 / 2);
+		else return iTurns * 3 / 2;
 	}
 
-	// ottherwise normal
 	return iTurns;
 }
 
 // doc (edead): convert year to turn number in current game speed
 int getTurnForYear(int iTurnYear)
 {
-	return (getGameTurnForMonth(iTurnYear * GC.getNumMonthInfos(), GC.getGameINLINE().getStartYear(), GC.getGameINLINE().getCalendar(), GC.getGameINLINE().getGameSpeedType()));
+	return (getGameTurnForMonth(iTurnYear * GC.getNumMonthInfos(), GC.getGame().getStartYear(), GC.getGame().getCalendar(), GC.getGame().getGameSpeedType()));
 }
 
 // doc (edead): convert year to turn number in current game speed
@@ -977,7 +973,7 @@ int getGameTurnForMonth(int iTurnMonth, int iStartYear, CalendarTypes eCalendar,
 // doc: active scenario
 ScenarioTypes getScenario()
 {
-	return GC.getMapINLINE().getScenario();
+	return GC.getMap().getScenario();
 }
 
 // doc: active scenario start year

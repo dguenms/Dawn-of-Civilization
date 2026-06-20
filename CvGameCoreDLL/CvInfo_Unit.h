@@ -169,6 +169,10 @@ public: /*  All const functions are exposed to Python except some related to art
 	CommandTypes getCommandType() const;
 	void setCommandType(CommandTypes eNewType);
 
+	// doc
+	int getPlainsAttackModifier() const { return m_iPlainsAttackModifier; }
+	int getPlainsDefenseModifier() const { return m_iPlainsDefenseModifier; }
+
 	bool isAnimal() const { return m_bAnimal; }
 	bool isFoodProduction() const { return m_bFoodProduction; }
 	bool isNoBadGoodies() const { return m_bNoBadGoodies; }
@@ -219,6 +223,11 @@ public: /*  All const functions are exposed to Python except some related to art
 	bool isNoRevealMap() const { return m_bNoRevealMap; }
 
 	// doc
+	bool isResolveCrisis() const { return m_bResolveCrisis; }
+	bool isReformGovernment() const { return m_bReformGovernment; }
+	bool isDiplomaticMission() const { return m_bDiplomaticMission; }
+	bool isPersecute() const { return m_bPersecute; }
+	bool isGreatMission() const { return m_bGreatMission; }
 	bool isSlave() const { return m_bSlave; }
 	bool isWorker() const { return getWorkRate() > 0 && getDomainType() == DOMAIN_LAND && getCombat() == 0 && !isSlave(); }
 
@@ -430,6 +439,10 @@ protected:
 	CommandTypes m_eCommandType;
 	int m_iLeaderExperience;
 
+	// doc
+	int m_iPlainsAttackModifier;
+	int m_iPlainsDefenseModifier;
+
 	bool m_bAnimal;
 	bool m_bFoodProduction;
 	bool m_bNoBadGoodies;
@@ -629,6 +642,12 @@ public: // All the const functions are exposed to Python
 	int getCommandType() const;
 	void setCommandType(int iNewType);
 
+	// doc
+	int getPlainsAttackPercent() const { return m_iPlainsAttackPercent; }
+	int getPlainsDefensePercent() const { return m_iPlainsDefensePercent; }
+	int getRiverAttackPercent() const { return m_iRiverAttackPercent; }
+	int getExtraUpkeep() const { return m_iExtraUpkeep; }
+	
 	int getRevoltProtection() const;
 	int getCollateralDamageProtection() const;
 	int getPillageChange() const;
@@ -645,6 +664,9 @@ public: // All the const functions are exposed to Python
 	bool isAlwaysHeal() const;
 	bool isHillsDoubleMove() const;
 	bool isImmuneToFirstStrikes() const;
+
+	// doc
+	bool isNoUpgrade() const { return m_bNoUpgrade; }
 
 	const TCHAR* getSound() const;
 
@@ -706,6 +728,12 @@ protected:
 	int m_iExperiencePercent;
 	int m_iKamikazePercent;
 
+	// doc
+	int m_iPlainsAttackPercent;
+	int m_iPlainsDefensePercent;
+	int m_iRiverAttackPercent;
+	int m_iExtraUpkeep;
+
 	bool m_bLeader;
 	//bool m_bBlitz;
 	int m_iBlitz; // advc.164
@@ -715,6 +743,9 @@ protected:
 	bool m_bAlwaysHeal;
 	bool m_bHillsDoubleMove;
 	bool m_bImmuneToFirstStrikes;
+
+	// doc
+	bool m_bNoUpgrade;
 
 	CvString m_szSound;
 

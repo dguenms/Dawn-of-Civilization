@@ -1019,6 +1019,7 @@ m_piYieldChange(NULL),
 m_piRiverSideYieldChange(NULL),
 m_piHillsYieldChange(NULL),
 m_piIrrigatedChange(NULL),
+m_piCoastalYieldChange(NULL), // doc
 m_pbTerrainMakesValid(NULL),
 m_pbFeatureMakesValid(NULL),
 m_ppiTechYieldChanges(NULL),
@@ -1033,6 +1034,7 @@ CvImprovementInfo::~CvImprovementInfo()
 	SAFE_DELETE_ARRAY(m_piRiverSideYieldChange);
 	SAFE_DELETE_ARRAY(m_piHillsYieldChange);
 	SAFE_DELETE_ARRAY(m_piIrrigatedChange);
+	SAFE_DELETE_ARRAY(m_piCoastalYieldChange); // doc
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	SAFE_DELETE_ARRAY(m_pbFeatureMakesValid);
 
@@ -1279,6 +1281,12 @@ void CvImprovementInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piIrrigatedChange);
 	m_piIrrigatedChange = new int[NUM_YIELD_TYPES];
 	stream->Read(NUM_YIELD_TYPES, m_piIrrigatedChange);
+
+	// doc
+	SAFE_DELETE_ARRAY(m_piCoastalYieldChange);
+	m_piCoastalYieldChange = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piCoastalYieldChange);
+
 	SAFE_DELETE_ARRAY(m_pbTerrainMakesValid);
 	m_pbTerrainMakesValid = new bool[GC.getNumTerrainInfos()];
 	stream->Read(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
@@ -1356,6 +1364,7 @@ void CvImprovementInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_YIELD_TYPES, m_piRiverSideYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piHillsYieldChange);
 	stream->Write(NUM_YIELD_TYPES, m_piIrrigatedChange);
+	stream->Write(NUM_YIELD_TYPES, m_piCoastalYieldChange); // doc
 	stream->Write(GC.getNumTerrainInfos(), m_pbTerrainMakesValid);
 	stream->Write(GC.getNumFeatureInfos(), m_pbFeatureMakesValid);
 	for (int i = 0; i < GC.getNumBonusInfos(); i++)
@@ -1408,6 +1417,14 @@ bool CvImprovementInfo::read(CvXMLLoadUtility* pXML)
 		pXML->SetYieldArray(&m_piIrrigatedChange);
 	}
 	else pXML->InitList(&m_piIrrigatedChange, NUM_YIELD_TYPES);
+
+	// doc
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
+		"CoastalYieldChange"))
+	{
+		pXML->SetYieldArray(&m_piCoastalYieldChange);
+	}
+	else pXML->InitList(&m_piCoastalYieldChange, NUM_YIELD_TYPES);
 
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCost, "iAdvancedStartCost");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartCostIncrease, "iAdvancedStartCostIncrease");

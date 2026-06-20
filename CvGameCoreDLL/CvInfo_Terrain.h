@@ -481,6 +481,10 @@ public:
 		return m_piIrrigatedChange;
 	}
 
+	// doc
+	int getCoastalYieldChange(YieldTypes eYield) const { return m_piCoastalYieldChange[eYield]; }
+	int const* getCoastalYieldChangeArray() const { return m_piCoastalYieldChange; }
+
 	bool getTerrainMakesValid(int i) const;
 	bool isAnyTerrainMakesValid() const { return (m_pbTerrainMakesValid != NULL); } // advc.003t
 	bool getFeatureMakesValid(int i) const;
@@ -550,6 +554,9 @@ protected:
 	int* m_piRiverSideYieldChange;
 	int* m_piHillsYieldChange;
 	int* m_piIrrigatedChange;
+
+	// doc
+	int* m_piCoastalYieldChange;
 
 	bool* m_pbTerrainMakesValid;
 	bool* m_pbFeatureMakesValid;

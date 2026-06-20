@@ -1254,6 +1254,8 @@ public:
 			int iExtraCities = 0) const; // advc.004b
 	void setCivics(CivicOptionTypes eCivicOption, CivicTypes eNewValue);											// Exposed to Python
 
+	bool isHasCivic(CivicTypes eCivic) const;
+
 	int getSpecialistExtraYield(SpecialistTypes eSpecialist, YieldTypes eYield) const								// Exposed to Python
 	{
 		return m_aeeiSpecialistExtraYield.get(eSpecialist, eYield);

@@ -154,18 +154,14 @@ void CvGame::updateColoredPlots()
 			}
 
 			// doc: display next culture plot
-			// TODO: refactor
-			int iEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
-			if (iEffectiveNextCoveredPlot < NUM_CITY_PLOTS)
+			CulturePlotTypes eEffectiveNextCoveredPlot = pHeadSelectedCity->getEffectiveNextCoveredPlot();
+			if (eEffectiveNextCoveredPlot < LAST_CITY_RADIUS_CULTURE_PLOT)
 			{
-				pLoopPlot = pHeadSelectedCity->getCulturePlot(iEffectiveNextCoveredPlot);
+				CvPlot const& kPlot = pHeadSelectedCity->getCulturePlot(eEffectiveNextCoveredPlot);
 
-				if (pLoopPlot != NULL)
-				{
-					NiColorA color(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_CULTURE_STORED")).getColor());
-					color.a = 0.7f;
-					gDLL->getEngineIFace()->addColoredPlot(pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), color, PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_BASE);
-				}
+				NiColorA color(GC.getColorInfo((ColorTypes)GC.getInfoTypeForString("COLOR_CULTURE_STORED")).getColor());
+				color.a = 0.7f;
+				gDLL->getEngineIFace()->addColoredPlot(kPlot.getX(), kPlot.getY(), color, PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_BASE);
 			}
 		}
 		else
@@ -1776,7 +1772,7 @@ void CvGame::doControl(ControlTypes eControl)
 	// doc (edead)
 	case CONTROL_STABILITY_OVERLAY:
 	{
-		gDLL->getPythonIFace()->callFunction(PYScreensModule, "toggleStabilityOverlay");
+		GC.getPythonCaller()->toggleStabilityOverlay();
 		break;
 	}
 	default: FErrorMsg("Unknown control type");

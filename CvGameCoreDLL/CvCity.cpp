@@ -4932,7 +4932,7 @@ int CvCity::goodHealth() const
     iHealth += std::max(0, getCorporationHealth()); // doc: health from corporation
 	iHealth += std::max(0,
 			GET_PLAYER(getOwner()).getExtraHealth() + getExtraHealth());
-	iHealth += std::max(0, GC.getInfo(getHandicapType()).getHealthBonus()); 
+	iHealth += std::max(0, GC.getInfo(getHandicapType()).getHealthBonus());
 	iHealth += std::max(0, GET_PLAYER(getOwner()).getModifier(MODIFIER_HEALTH)); // doc: civilization base health
 	return iHealth;
 }

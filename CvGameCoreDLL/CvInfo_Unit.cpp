@@ -84,6 +84,8 @@ m_eCommandType(NO_COMMAND),
 m_iLeaderExperience(0),
 m_iLeaderPromotion(NO_PROMOTION),
 // </kmodx>
+m_iPlainsAttackModifier(0), // doc
+m_iPlainsDefenseModifier(0), // doc
 m_bAnimal(false),
 m_bFoodProduction(false),
 m_bNoBadGoodies(false),
@@ -818,6 +820,11 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iUnitRangedWaveSize);
 	stream->Read(&m_iNumUnitNames);
 	stream->Read((int*)&m_eCommandType);
+
+	// doc
+	stream->Read(&m_iPlainsAttackModifier);
+	stream->Read(&m_iPlainsDefenseModifier);
+
 	stream->Read(&m_bAnimal);
 	stream->Read(&m_bFoodProduction);
 	stream->Read(&m_bNoBadGoodies);
@@ -1099,6 +1106,11 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUnitRangedWaveSize);
 	stream->Write(m_iNumUnitNames);
 	stream->Write(m_eCommandType);
+
+	// doc
+	stream->Write(m_iPlainsAttackModifier);
+	stream->Write(m_iPlainsDefenseModifier);
+
 	stream->Write(m_bAnimal);
 	stream->Write(m_bFoodProduction);
 	stream->Write(m_bNoBadGoodies);
@@ -1469,6 +1481,10 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iHillsAttackModifier, "iHillsAttack");
 	pXML->GetChildXmlValByName(&m_iHillsDefenseModifier, "iHillsDefense");
 
+	// doc
+	pXML->GetChildXmlValByName(&m_iPlainsAttackModifier, "iPlainsAttackModifier");
+	pXML->GetChildXmlValByName(&m_iPlainsDefenseModifier, "iPlainsDefenseModifier");
+
 	pXML->SetVariableListTagPair(&m_pbTerrainNative, "TerrainNatives", GC.getNumTerrainInfos());
 	pXML->SetVariableListTagPair(&m_pbFeatureNative, "FeatureNatives", GC.getNumFeatureInfos());
 
@@ -1827,6 +1843,10 @@ m_iPillageChange(0),
 m_iUpgradeDiscount(0),
 m_iExperiencePercent(0),
 m_iKamikazePercent(0),
+m_iPlainsAttackPercent(0), // doc
+m_iPlainsDefensePercent(0), // doc
+m_iRiverAttackPercent(0), // doc
+m_iExtraUpkeep(0), // doc
 m_bLeader(false),
 m_iBlitz(0), // advc.164
 m_bAmphib(false),
@@ -1835,6 +1855,7 @@ m_bEnemyRoute(false),
 m_bAlwaysHeal(false),
 m_bHillsDoubleMove(false),
 m_bImmuneToFirstStrikes(false),
+m_bNoUpgrade(false), // doc
 m_piTerrainAttackPercent(NULL),
 m_piTerrainDefensePercent(NULL),
 m_piFeatureAttackPercent(NULL),
@@ -2186,6 +2207,10 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iUpgradeDiscount);
 	stream->Read(&m_iExperiencePercent);
 	stream->Read(&m_iKamikazePercent);
+	stream->Read(&m_iPlainsAttackPercent); // doc
+	stream->Read(&m_iPlainsDefensePercent); // doc
+	stream->Read(&m_iRiverAttackPercent); // doc
+	stream->Read(&m_iExtraUpkeep); // doc
 	stream->Read(&m_bLeader);
 	stream->Read(&m_iBlitz); // advc.164
 	stream->Read(&m_bAmphib);
@@ -2194,6 +2219,7 @@ void CvPromotionInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bAlwaysHeal);
 	stream->Read(&m_bHillsDoubleMove);
 	stream->Read(&m_bImmuneToFirstStrikes);
+	stream->Read(&m_bNoUpgrade); // doc
 	stream->ReadString(m_szSound);
 	SAFE_DELETE_ARRAY(m_piTerrainAttackPercent);
 	m_piTerrainAttackPercent = new int[GC.getNumTerrainInfos()];
@@ -2266,6 +2292,10 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iUpgradeDiscount);
 	stream->Write(m_iExperiencePercent);
 	stream->Write(m_iKamikazePercent);
+	stream->Write(m_iPlainsAttackPercent); // doc
+	stream->Write(m_iPlainsDefensePercent); // doc
+	stream->Write(m_iRiverAttackPercent); // doc
+	stream->Write(m_iExtraUpkeep); // doc
 	stream->Write(m_bLeader);
 	stream->Write(m_iBlitz); // advc.164
 	stream->Write(m_bAmphib);
@@ -2274,6 +2304,7 @@ void CvPromotionInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bAlwaysHeal);
 	stream->Write(m_bHillsDoubleMove);
 	stream->Write(m_bImmuneToFirstStrikes);
+	stream->Write(m_bNoUpgrade); // doc
 	stream->WriteString(m_szSound);
 	stream->Write(GC.getNumTerrainInfos(), m_piTerrainAttackPercent);
 	stream->Write(GC.getNumTerrainInfos(), m_piTerrainDefensePercent);
@@ -2307,6 +2338,10 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bAlwaysHeal, "bAlwaysHeal");
 	pXML->GetChildXmlValByName(&m_bHillsDoubleMove, "bHillsDoubleMove");
 	pXML->GetChildXmlValByName(&m_bImmuneToFirstStrikes, "bImmuneToFirstStrikes");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_bNoUpgrade, "bNoUpgrade");
+
 	pXML->GetChildXmlValByName(&m_iVisibilityChange, "iVisibilityChange");
 	pXML->GetChildXmlValByName(&m_iMovesChange, "iMovesChange");
 	pXML->GetChildXmlValByName(&m_iMoveDiscountChange, "iMoveDiscountChange");
@@ -2335,6 +2370,13 @@ bool CvPromotionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iUpgradeDiscount, "iUpgradeDiscount");
 	pXML->GetChildXmlValByName(&m_iExperiencePercent, "iExperiencePercent");
 	pXML->GetChildXmlValByName(&m_iKamikazePercent, "iKamikazePercent");
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iPlainsAttackPercent, "iPlainsAttackPercent");
+	pXML->GetChildXmlValByName(&m_iPlainsDefensePercent, "iPlainsDefensePercent");
+	pXML->GetChildXmlValByName(&m_iRiverAttackPercent, "iRiverAttackPercent");
+	pXML->GetChildXmlValByName(&m_iExtraUpkeep, "iExtraUpkeep");
+
 	pXML->SetVariableListTagPair(&m_piTerrainAttackPercent, "TerrainAttacks", GC.getNumTerrainInfos());
 	pXML->SetVariableListTagPair(&m_piTerrainDefensePercent, "TerrainDefenses", GC.getNumTerrainInfos());
 	pXML->SetVariableListTagPair(&m_piFeatureAttackPercent, "FeatureAttacks", GC.getNumFeatureInfos());
