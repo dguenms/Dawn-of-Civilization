@@ -539,11 +539,11 @@ def isUnitOfRole(iUnit, iRole):
 	if iRole == iBase:
 		return base_unit(iUnit) == iMilitia
 	elif iRole == iDefend:
-		return (iCombatType == UnitCombatTypes.UNITCOMBAT_ARCHER and unit.getCityDefenseModifier() > 0) or iCombatType == UnitCombatTypes.UNITCOMBAT_GUN or base_unit(iUnit) == iMilitia
+		return (iCombatType == UnitCombatTypes.UNITCOMBAT_ARCHER and unit.getCityDefenseModifier() > 0) or iCombatType == UnitCombatTypes.UNITCOMBAT_GUN or unit.isOnlyDefensive() or base_unit(iUnit) == iMilitia
 	elif iRole in [iAttack, iCityAttack]:
 		return iCombatType in [UnitCombatTypes.UNITCOMBAT_MELEE, UnitCombatTypes.UNITCOMBAT_GUN]
 	elif iRole == iCounter:
-		return iCombatType == UnitCombatTypes.UNITCOMBAT_MELEE and unit.getUnitCombatModifier(UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY) > 0
+		return (iCombatType == UnitCombatTypes.UNITCOMBAT_MELEE and unit.getUnitCombatModifier(UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY) > 0) or (iCombatType == UnitCombatTypes.UNITCOMBAT_GUN and (infos.unitClasses().any(lambda u: unit.getUnitClassAttackModifier(u) > 10 or unit.getUnitClassDefenseModifier(u) > 10) or infos.unitCombats().any(lambda u: unit.getUnitCombatModifier(u) > 10)))
 	elif iRole in [iShock, iShockCity]:
 		return iCombatType == UnitCombatTypes.UNITCOMBAT_HEAVY_CAVALRY and iUnit != iWarElephant or iUnit == iKeshik
 	elif iRole == iHarass:
