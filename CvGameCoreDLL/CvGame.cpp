@@ -8186,17 +8186,22 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 				}
 			}
 
-			if (kVote.isDecolonize())
-			{
-				CvCity* pCity = GET_PLAYER(kData.kVoteOption.ePlayer).getCity(kData.kVoteOption.iCityId);
+			setVoteOutcome(kData, NO_PLAYER_VOTE);
+		}
 
-				pCity->liberate(false);
-			}
+		if (kVote.isDecolonize())
+		{
+			CvCity* pCity = GET_PLAYER(kData.kVoteOption.ePlayer).getCity(kData.kVoteOption.iCityId);
+			log(CvWString::format(L"Decolonize city %s", pCity->getName().c_str()));
 
-			if (kVote.isReleaseCivilization())
-			{
-				GET_PLAYER(kData.kVoteOption.ePlayer).splitEmpire(kData.kVoteOption.eOtherPlayer);
-			}
+			pCity->liberate(false);
+
+			setVoteOutcome(kData, NO_PLAYER_VOTE);
+		}
+
+		if (kVote.isReleaseCivilization())
+		{
+			GET_PLAYER(kData.kVoteOption.ePlayer).splitEmpire(kData.kVoteOption.eOtherPlayer);
 
 			setVoteOutcome(kData, NO_PLAYER_VOTE);
 		}

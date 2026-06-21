@@ -18248,7 +18248,7 @@ void CvCity::liberate(bool bConquest)
 		}
 		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, eOwner, szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
-		GET_PLAYER(ePlayer).acquireCity(this, false, true, true);
+		GET_PLAYER(ePlayer).acquireCity(this, bConquest, true, true);
 		GET_PLAYER(ePlayer).AI_changeMemoryCount(eOwner, MEMORY_LIBERATED_CITIES, 1);
 
 		if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(GET_PLAYER(eOwner).getTeam()))
@@ -18327,12 +18327,15 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 						}
 					}
 
-					if (GET_PLAYER((PlayerTypes)iPlayer).getTeam() == getTeam()
-						|| GET_TEAM(GET_PLAYER((PlayerTypes)iPlayer).getTeam()).isVassal(getTeam())
-						|| GET_TEAM(getTeam()).isVassal(GET_PLAYER((PlayerTypes)iPlayer).getTeam()))
+					if (getOwner() != iPlayer)
 					{
-						iCultureTimes100 *= 2;
-						iCultureTimes100 = (iCultureTimes100 + iTotalCultureTimes100) / 2;
+						if (GET_PLAYER((PlayerTypes)iPlayer).getTeam() == getTeam()
+							|| GET_TEAM(GET_PLAYER((PlayerTypes)iPlayer).getTeam()).isVassal(getTeam())
+							|| GET_TEAM(getTeam()).isVassal(GET_PLAYER((PlayerTypes)iPlayer).getTeam()))
+						{
+							iCultureTimes100 *= 2;
+							iCultureTimes100 = (iCultureTimes100 + iTotalCultureTimes100) / 2;
+						}
 					}
 
 					int iValue = std::max(100, iCultureTimes100) / std::max(1, iCapitalDistance);
