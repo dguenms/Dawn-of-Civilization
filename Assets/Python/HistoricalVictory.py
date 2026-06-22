@@ -161,8 +161,8 @@ ALL_EUROPEAN = "TXT_KEY_VICTORY_NAME_ALL_EUROPEAN"
 ARAB = "TXT_KEY_VICTORY_NAME_ARAB"
 CHRISTIAN = "TXT_KEY_VICTORY_NAME_CHRISTIAN"
 EUROPEAN = "TXT_KEY_VICTORY_NAME_EUROPEAN"
-EUROPEAN_CIVILIZATION = "TXT_KEY_VICTORY_NAME_EUROPEAN_CIVILIZATION"
 LOCAL = "TXT_KEY_VICTORY_NAME_LOCAL"
+OLD_WORLD_CIVILIZATION = "TXT_KEY_VICTORY_NAME_OLD_WORLD_CIVILIZATION"
 
 # separators
 OR = "TXT_KEY_OR"
@@ -342,7 +342,7 @@ dGoals = {
 			Discover(iArithmetics, by=100),
 		),
 		Wonder(iTempleOfKukulkan, by=600),
-		ContactBeforeRevealed(group(iCivGroupEurope).named(EUROPEAN_CIVILIZATION), plots.regions(*lAmerica).named(AMERICAS)),
+		ContactBeforeRevealed(civs(*lBioOldWorld).named(OLD_WORLD_CIVILIZATION), plots.regions(*lAmerica).named(AMERICAS)),
 	),
 	iDravidia: (
 		All(
