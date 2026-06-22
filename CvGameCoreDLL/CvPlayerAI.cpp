@@ -8068,9 +8068,9 @@ DenialTypes CvPlayerAI::AI_cityTrade(CvCity* pCity, PlayerTypes ePlayer) const
 					return DENIAL_UNKNOWN;
 				}
 
-				if (!pCity->isPreviousOwner(getID()))
+				if (!pCity->isPreviousOwner(ePlayer))
 				{
-					if (pCity->plot()->getSettlerValue(getID()) == 0 && pCity->plot()->getWarValue(getID()) == 0)
+					if (pCity->plot()->getSettlerValue(ePlayer) == 0 && pCity->plot()->getWarValue(ePlayer) == 0)
 					{
 						return DENIAL_UNKNOWN;
 					}
