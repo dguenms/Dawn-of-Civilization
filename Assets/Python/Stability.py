@@ -442,7 +442,7 @@ def getSeparatismModifier(iPlayer, city):
 	bHistorical = plot.getPlayerSettlerValue(iPlayer) > 0
 	bConquest = plot.getPlayerWarValue(iPlayer) > 1
 	bTotalitarianism = civic.iSociety == iTotalitarianism
-	bExpansionExceptions = (bHistorical and iCiv == iMongols and not isDecline(iPlayer)) or bTotalitarianism
+	bExpansionExceptions = (bHistorical and iCiv in [iTurks, iMongols, iManchuria] and not isDecline(iPlayer)) or bTotalitarianism
 	
 	iCurrentEra = player(iPlayer).getCurrentEra()
 	iTotalCulture = civs.major().sum(lambda c: plot.isCore(c) and 2 * plot.getCivCulture(c) or plot.getCivCulture(c))
@@ -468,7 +468,7 @@ def getSeparatismModifier(iPlayer, city):
 		
 	# not original owner
 	if not bExpansionExceptions:
-		if not city.isOriginalOwner(iPlayer) and iTurnsOwned >= turns(25):
+		if not city.isOriginalOwner(iPlayer) and iTurnsOwned <= turns(25):
 			iModifier += 1
 	
 	# not majority culture
