@@ -3938,7 +3938,7 @@
 [NEWLINE][BOLD]Aztecs:[\BOLD]
 [ICON_BULLET]Always spawns if the Toltecs are dead
 [ICON_BULLET]Also spawns if the Toltec stability is Shaky or lower
-[ICON_BULLET]If the human player controls the Toltec, Shaky stability is sufficient to prevent the Thai spawn
+[ICON_BULLET]If the human player controls the Toltecs, Shaky stability is sufficient to prevent the Aztec spawn
 [NEWLINE][BOLD]Ottomans:[\BOLD]
 [ICON_BULLET]Always spawns if any city in their birth area is human controlled
 [ICON_BULLET]Does not spawn if the Turks never conquer a city in Asia west of Persia
