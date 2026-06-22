@@ -5738,6 +5738,22 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 		return false;
 	}
 
+	// Leoreth: prevent birth squatting
+	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	{
+		if (GET_PLAYER((PlayerTypes)iI).getInitialBirthTurn() == GC.getGame().getGameTurn())
+		{
+			CvPlot* pStartingPlot = GET_PLAYER((PlayerTypes)iI).getStartingPlot();
+			if (pStartingPlot != NULL)
+			{
+				if (plotDistance(pPlot->getX(), pPlot->getY(), pStartingPlot->getX(), pStartingPlot->getY()) <= 1)
+				{
+					return false;
+				}
+			}
+		}
+	}
+
 	if (pPlot->getFeatureType() != NO_FEATURE && getCivilizationType() != CONGO)	//Leoreth: Congolese UP: can found in jungle
 	{
 		if (GC.getFeatureInfo(pPlot->getFeatureType()).isNoCity())
