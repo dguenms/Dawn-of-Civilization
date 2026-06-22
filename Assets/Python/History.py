@@ -60,6 +60,9 @@ def conquistadorCapital(iOwner, iPlayer, city):
 
 @handler("cityAcquired")
 def helpConstantinople(iOwner, iPlayer):
+	if player(iPlayer).isHuman():
+		return
+	
 	constantinople = city(tConstantinople)
 	if constantinople and constantinople.getOwner() == iPlayer:
 		for plot in plots.city_radius(constantinople):
