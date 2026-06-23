@@ -7194,21 +7194,15 @@ void CvTeam::changeTotalTechValue(int iChange)
 
 bool CvTeam::canCutContact(TeamTypes eTeam)
 {
-	bool bResult = true;
-
 	CvPlot* pLoopPlot;
 	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
 	{
 		pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
-		if (pLoopPlot->isOwned())
-		{
-			if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == getID() && pLoopPlot->isVisible(eTeam, false)) bResult = false;
-			if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == eTeam && pLoopPlot->isVisible(getID(), false)) bResult = false;
-		}
-		if (!bResult) break;
+		if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == getID() && pLoopPlot->isVisible(eTeam, false)) return false;
+		if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == eTeam && pLoopPlot->isVisible(getID(), false)) return false;
 	}
 
-	return bResult;
+	return true;
 }
 
 bool CvTeam::canFoundReligion(ReligionTypes eReligion, TechTypes eTechDiscovered) const
