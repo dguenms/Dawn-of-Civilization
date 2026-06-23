@@ -1112,7 +1112,7 @@ def specificName(iPlayer):
 		if isCurrentCapital(iPlayer, "Lihu'e", "Honolulu", "Hilo"):
 			return "TXT_KEY_CIV_POLYNESIA_HAWAII"
 			
-		if isCurrentCapital(iPlayer, "Ta'u"):
+		if isCurrentCapital(iPlayer, "Aga'e"):
 			return "TXT_KEY_CIV_POLYNESIA_SAMOA"
 			
 		if isCurrentCapital(iPlayer, "Alofi"):
