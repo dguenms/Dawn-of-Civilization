@@ -5741,6 +5741,8 @@ bool CvPlayer::canFound(int iX, int iY, bool bTestVisible) const
 	// Leoreth: prevent birth squatting
 	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
 	{
+		if (getID() == iI) continue;
+
 		if (GET_PLAYER((PlayerTypes)iI).getInitialBirthTurn() == GC.getGame().getGameTurn())
 		{
 			CvPlot* pStartingPlot = GET_PLAYER((PlayerTypes)iI).getStartingPlot();
