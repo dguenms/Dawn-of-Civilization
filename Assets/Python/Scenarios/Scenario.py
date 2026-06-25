@@ -528,6 +528,9 @@ class Scenario(object):
 	def setOriginalBuildingTimes(self, city):
 		iYearBuilt = game.getTurnYear(city.getGameTurnFounded())
 		for iBuilding in range(iNumBuildings):
+			if not city.isHasRealBuilding(iBuilding):
+				continue
+			
 			if iBuilding in WONDER_ORIGINAL_BUILDERS:
 				iCiv, iYear = WONDER_ORIGINAL_BUILDERS[iBuilding]
 				iYearBuilt = iYear
@@ -536,6 +539,16 @@ class Scenario(object):
 				iTech = infos.building(iBuilding).getPrereqAndTech()
 				if iTech >= 0:
 					iYearBuilt = max(iYearBuilt, ERA_START_DATES.get(infos.tech(iTech).getEra()))
+				
+				iSpecialBuilding = infos.building(iBuilding).getSpecialBuildingType()
+				if iSpecialBuilding >= 0:
+					iTech = infos.specialBuilding(iSpecialBuilding).getTechPrereq()
+					if iTech >= 0:
+						iYearBuilt = max(iYearBuilt, ERA_START_DATES.get(infos.tech(iTech).getEra()))
+				
+				iPrereqReligion = infos.building(iBuilding).getPrereqReligion()
+				iOrPrereqReligion = infos.building(iBuilding).getOrPrereqReligion()
+				iYearBuilt = max(iYearBuilt, RELIGION_FOUNDING_DATES.get(iPrereqReligion), RELIGION_FOUNDING_DATES.get(iOrPrereqReligion))
 			
 			iYearBuilt = game.getTurnYear(year(min(iYearBuilt, self.iStartYear)))
 			city.setBuildingOriginalTime(iBuilding, iYearBuilt)

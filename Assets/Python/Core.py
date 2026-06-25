@@ -2281,6 +2281,12 @@ class Infos:
 	
 	def routes(self):
 		return InfoCollection.type(gc.getRouteInfo, gc.getNumRouteInfos())
+		
+	def specialBuilding(self, identifier):
+		return gc.getSpecialBuildingInfo(identifier)
+	
+	def specialBuildings(self):
+		return InfoCollection.type(gc.getSpecialBuildingInfo, gc.getNumSpecialBuildingInfos())
 	
 	def specialist(self, identifier):
 		return gc.getSpecialistInfo(identifier)
