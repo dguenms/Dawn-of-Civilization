@@ -3793,9 +3793,9 @@
 			<bAnimated>0</bAnimated>
 			<fScale>0.08</fScale>
 			<fInterfaceScale>0.6</fInterfaceScale>
-			<NIF>Art/Structures/Wonders/Floralis Generica/empty.nif</NIF>
+			<NIF>Art/Structures/Wonders/Floralis_Generica/empty.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Wonders/Floralis Generica/floralis.dds</Button>
+			<Button>Art/Structures/Wonders/Floralis_Generica/floralis.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_AUSTRALIAN_CSIRO</Type>
