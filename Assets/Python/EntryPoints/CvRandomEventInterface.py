@@ -2879,51 +2879,34 @@ def canTriggerCrusade(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	otherPlayer = gc.getPlayer(kTriggeredData.eOtherPlayer)
 	
-	iReligion = kTriggeredData.eReligion
-	if iReligion == iCatholicism:
-		iReligion = iOrthodoxy
+	if player.getStateReligion() != iCatholicism:
+		return False
 	
-	if iReligion != iOrthodoxy:
-		return false
+	if otherPlayer.getStateReligion() != iIslam:
+		return False
 	
-	holyCity = gc.getGame().getHolyCity(iReligion)
+	if team(player.getTeam()).isAtWar(otherPlayer.getTeam()):
+		return False
 	
-	if holyCity.isNone():
-		return false
-	
-	if gc.getGame().isOption(GameOptionTypes.GAMEOPTION_ONE_CITY_CHALLENGE) and gc.getPlayer(kTriggeredData.ePlayer).isHuman():
-		return false
-	
-	if player.isHuman() and not gc.getTeam(player.getTeam()).isAtWar(holyCity.getTeam()):
-		return false
-		
-	if gc.getPlayer(holyCity.getOwner()).getStateReligion() not in [iOrthodoxy, iCatholicism, iProtestantism]:
-		return true
-			
-	return false
+	return True
 
 def canTriggerCrusadeCity(argsList):
 	iTrigger, iPlayer, iID = argsList
 	city = player(iPlayer).getCity(iID)
 	
-	return player(iPlayer).getStateReligion() == iIslam and city.isHolyCityByType(iOrthodoxy)
+	return city.isHolyCityByType(iOrthodoxy)
 	
 def doTriggerCrusade(argsList):
 	kTriggeredData = argsList[0]
 	
 	iPlayer = kTriggeredData.ePlayer
-	iReligion = kTriggeredData.eReligion
-	
-	if iReligion == iCatholicism:
-		iReligion = iOrthodoxy
-	
-	holyCity = gc.getGame().getHolyCity(iReligion)
+	iOtherPlayer = kTriggeredData.eOtherPlayer
 	
 	if not gc.getPlayer(iPlayer).isHuman():
 		createRoleUnit(iPlayer, capital(iPlayer), iShockCity, 3)
 		createRoleUnit(iPlayer, capital(iPlayer), iSiege, 2)
 	
-	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).declareWar(holyCity.getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
+	gc.getTeam(gc.getPlayer(iPlayer).getTeam()).declareWar(gc.getPlayer(iOtherPlayer).getTeam(), True, WarPlanTypes.WARPLAN_LIMITED)
 
 def getHelpCrusade1(argsList):
 	iEvent = argsList[0]
