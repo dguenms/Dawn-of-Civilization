@@ -282,6 +282,14 @@
 		<Spanish>Eastern Turkic</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TURKS_KHWARAZMIAN</Tag>
+		<English>Khwarazmian</English>
+		<French>Khwarazmian</French>
+		<German>Khwarazmian</German>
+		<Italian>Khwarazmian</Italian>
+		<Spanish>Khwarazmian</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TURKIC_VASSAL</Tag>
 		<English>Atabeylik of %s1</English>
 		<French>

@@ -1743,16 +1743,19 @@ def specificAdjective(iPlayer):
 		if bResurrected:
 			return "TXT_KEY_CIV_TURKS_TIMURID"
 	
-		if capital in plots.regions(rCaucasus, rPonticSteppe):
+		if capital in cities.regions(rCaucasus, rPonticSteppe):
 			return "TXT_KEY_CIV_TURKS_KHAZAR"
+		
+		if capital in cities.regions(rTransoxiana):
+			return "TXT_KEY_CIV_TURKS_KHWARAZMIAN"
 		
 		if isControlled(iPlayer, plots.regions(rPersia, rKhorasan)):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
-		if capital in plots.regions(rPersia, rKhorasan):
+		if capital in cities.regions(rPersia, rKhorasan):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 		
-		if capital in plots.region(rAnatolia):
+		if capital in cities.region(rAnatolia):
 			return "TXT_KEY_CIV_TURKS_SELJUK"
 			
 		if iEra >= iRenaissance:
