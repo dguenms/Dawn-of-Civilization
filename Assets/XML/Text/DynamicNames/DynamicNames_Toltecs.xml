@@ -34,14 +34,6 @@
 		<Spanish>Toltecs</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TOLTECS_SHORT_DESC</Tag>
-		<English>Toltecs</English>
-		<French>Toltecs</French>
-		<German>Toltecs</German>
-		<Italian>Toltecs</Italian>
-		<Spanish>Toltecs</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_TOLTECS_ALTEPETL</Tag>
 		<English>%s2 Altepetl</English>
 		<French>%s2 Altepetl</French>

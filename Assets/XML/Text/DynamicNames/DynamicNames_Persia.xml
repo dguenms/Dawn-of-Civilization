@@ -458,18 +458,6 @@
 		</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_IRAN_SHORT_DESC</Tag>
-		<English>Iran</English>
-		<French>
-			<Text>Iran</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Iran</German>
-		<Italian>Iran</Italian>
-		<Spanish>Iran</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_PERSIA_ADJECTIVE</Tag>
 		<English>Persian</English>
 		<French>
