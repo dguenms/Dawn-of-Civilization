@@ -1266,3 +1266,8 @@ void CyPlot::updateRevealedOwner(int eTeam)
 {
 	if (m_pPlot) m_pPlot->updateRevealedOwner((TeamTypes)eTeam);
 }
+
+void CyPlot::updatePlotGroup()
+{
+	if (m_pPlot) m_pPlot->updatePlotGroup();
+}

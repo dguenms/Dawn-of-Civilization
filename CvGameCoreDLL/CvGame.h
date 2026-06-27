@@ -620,6 +620,9 @@ public:
 	void setPowerConsumedCount(int iNewValue);
 	void changePowerConsumedCount(int iChange);
 
+	bool isUpdatePlotGroups() const;
+	void setUpdatePlotGroups(bool bNewValue);
+
 protected:
 	int m_iElapsedGameTurns;
 	int m_iStartTurn;
@@ -657,6 +660,9 @@ protected:
 	bool m_bHotPbemBetweenTurns;
 	bool m_bPlayerOptionsSent;
 	bool m_bNukesValid;
+
+	// Leoreth
+	bool m_bUpdatePlotGroups;
 
 	HandicapTypes m_eHandicap;
 	PlayerTypes m_ePausePlayer;

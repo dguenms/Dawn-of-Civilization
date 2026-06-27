@@ -7891,6 +7891,9 @@ void CvPlot::updatePlotGroup()
 
 void CvPlot::updatePlotGroup(PlayerTypes ePlayer, bool bRecalculate)
 {
+	if (!GC.getGameINLINE().isUpdatePlotGroups())
+		return;
+
 	PROFILE("CvPlot::updatePlotGroup(Player)");
 
 	CvPlotGroup* pPlotGroup;

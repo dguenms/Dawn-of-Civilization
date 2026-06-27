@@ -318,6 +318,8 @@ public:
 
 	void setWorkingCity(CyCity* pCity);
 
+	void updatePlotGroup();
+
 private:
 	CvPlot* m_pPlot;
 };

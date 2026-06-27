@@ -213,7 +213,9 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	# set state religion based on religions in the area
 	if iNewStateReligion >= 0:
 		pPlayer.setLastStateReligion(iNewStateReligion)
-	
+		
+	game.setUpdatePlotGroups(False)
+		
 	for city in resurrectionCities:
 		iOwner = city.getOwner()
 		pOwner = player(iOwner)
@@ -285,6 +287,10 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	data.players[iPlayer].iPlagueCountdown = -10
 	clearPlague(iPlayer)
 	convertBackCulture(iPlayer)
+	
+	game.setUpdatePlotGroups(True)
+	for p in plots.owner(iPlayer):
+		p.updatePlotGroup()
 	
 	# resurrection leaders
 	if iCiv in dResurrectionLeaders:

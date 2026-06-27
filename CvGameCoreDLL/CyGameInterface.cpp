@@ -325,6 +325,8 @@ void CyGamePythonInterface()
 		.def("getFirstDiscoveredTech", &CyGame::getFirstDiscoveredTurn, "int (int iTech)")
 
 		.def("getMedianTechValue", &CyGame::getMedianTechValue, "int ()")
+
+		.def("setUpdatePlotGroups", &CyGame::setUpdatePlotGroups, "void (bool bNewValue)")
 		;
 
 	python::class_<CyDeal>("CyDeal")
