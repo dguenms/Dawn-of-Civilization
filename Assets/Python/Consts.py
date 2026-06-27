@@ -1270,6 +1270,33 @@ iPeriodMorocco, iPeriodSpain, iPeriodAustria, iPeriodUnitedKingdom, iPeriodGreat
 iPeriodYuan, iPeriodPeru, iPeriodLateInca, iPeriodModernItaly, iPeriodPakistan, 
 iPeriodOttomanConstantinople, iPeriodQing, iPeriodModernGermany) = range(iNumPeriods)
 
+dCivPeriods = {
+	iEgypt: (iPeriodPtolemaicEgypt,),
+	iNubia : (iPeriodMakuria,),
+	iChina : (iPeriodMing,),
+	iIndia : (iPeriodMaratha,),
+	iGreece : (iPeriodModernGreece,),
+	iPhoenicia : (iPeriodCarthage,),
+	iCelts : (iPeriodInsularCelts,),
+	iDravidia : (iPeriodVijayanagara,),
+	iByzantium : (iPeriodByzantineConstantinople,),
+	iFrance : (iPeriodNationalFrance,),
+	iJapan : (iPeriodMeiji,),
+	iNorse : (iPeriodDenmark, iPeriodNorway),
+	iTurks : (iPeriodSeljuks, iPeriodUzbeks),
+	iMoors : (iPeriodMorocco,),
+	iSpain : (iPeriodSpain,),
+	iHolyRome : (iPeriodAustria,),
+	iEngland : (iPeriodUnitedKingdom, iPeriodGreatBritain),
+	iMongols : (iPeriodYuan,),
+	iInca : (iPeriodPeru, iPeriodLateInca),
+	iItaly : (iPeriodModernItaly,),
+	iMughals : (iPeriodPakistan,),
+	iOttomans : (iPeriodOttomanConstantinople,),
+	iManchuria : (iPeriodQing,),
+	iGermany : (iPeriodModernGermany,),
+}
+
 iNumImpacts = 5
 (iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactPlayer) = range(iNumImpacts)
 
