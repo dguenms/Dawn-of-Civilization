@@ -66,6 +66,14 @@
 		<Spanish> [ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Tech Divergence:[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TECH_TRANSMISSION</Tag>
+		<English>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Transmission:[COLOR_REVERT] %D1_Change [ICON_RESEARCH]</English>
+		<French>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Transmission:[COLOR_REVERT] %D1_Change [ICON_RESEARCH]</French>
+		<German>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Transmission:[COLOR_REVERT] %D1_Change [ICON_RESEARCH]</German>
+		<Italian>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Transmission:[COLOR_REVERT] %D1_Change [ICON_RESEARCH]</Italian>
+		<Spanish>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]Transmission:[COLOR_REVERT] %D1_Change [ICON_RESEARCH]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNITS_CONTRACTED_OUT</Tag>
 		<English>Units Contracted Out</English>
 		<French>Unit&#233;s sous contrat</French>

@@ -8601,6 +8601,13 @@ void CvGameTextMgr::setTechTradeHelp(CvWStringBuffer &szBuffer, TechTypes eTech,
 		}
 		else
 		{
+			int iTransmissionResearch = GET_PLAYER(GC.getGameINLINE().getActivePlayer()).calculateTransmissionResearch(eTech);
+			if (iTransmissionResearch != 0)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_TECH_TRANSMISSION", iTransmissionResearch));
+			}
+
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_TECH_NUM_TURNS", GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getResearchTurnsLeft(eTech, (gDLL->ctrlKey() || !(gDLL->shiftKey())))));
 
