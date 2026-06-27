@@ -19,19 +19,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MISR_ADJECTIVE</Tag>
-		<English>Egyptian</English>
-		<French>Egyptian</French>
-		<German>Egyptian</German>
-		<Italian>Egyptian</Italian>
-		<Spanish>Egyptian</Spanish>
+		<English>Masryeen</English>
+		<French>Masryeen</French>
+		<German>Masryeen</German>
+		<Italian>Masryeen</Italian>
+		<Spanish>Masryeen</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MISR_SHORT_DESC</Tag>
-		<English>Egypt</English>
-		<French>Egypt</French>
-		<German>Egypt</German>
-		<Italian>Egypt</Italian>
-		<Spanish>Egypt</Spanish>
+		<English>Misr</English>
+		<French>Misr</French>
+		<German>Misr</German>
+		<Italian>Misr</Italian>
+		<Spanish>Misr</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MISR_DEFAULT</Tag>

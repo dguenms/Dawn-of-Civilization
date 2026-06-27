@@ -19,19 +19,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SAUDI_ADJECTIVE</Tag>
-		<English>Arabian</English>
-		<French>Arabian</French>
-		<German>Arabian</German>
-		<Italian>Arabian</Italian>
-		<Spanish>Arabian</Spanish>
+		<English>Saudi</English>
+		<French>Saudi</French>
+		<German>Saudi</German>
+		<Italian>Saudi</Italian>
+		<Spanish>Saudi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SAUDI_SHORT_DESC</Tag>
-		<English>Arabia</English>
-		<French>Arabia</French>
-		<German>Arabia</German>
-		<Italian>Arabia</Italian>
-		<Spanish>Arabia</Spanish>
+		<English>Saudi Arabia</English>
+		<French>Saudi Arabia</French>
+		<German>Saudi Arabia</German>
+		<Italian>Saudi Arabia</Italian>
+		<Spanish>Saudi Arabia</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SAUDIS_DEFAULT</Tag>

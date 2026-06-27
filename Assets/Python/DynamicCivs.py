@@ -494,6 +494,7 @@ dEmpireThreshold = {
 
 lChristianity = [iCatholicism, iOrthodoxy, iProtestantism]
 
+lInitialNameChanges = [iMisr, iSaudis]
 lRespawnNameChanges = [iHolyRome, iInca, iAztecs, iMali] # TODO: this should be covered by period
 lVassalNameChanges = [iInca, iAztecs, iMughals] # TODO: this should be covered by period
 lChristianityNameChanges = [iInca, iAztecs] # TODO: this should be covered by period
@@ -510,10 +511,12 @@ dNameChanges = { # TODO: this should be covered by period
 	iInca : "TXT_KEY_CIV_PERU_SHORT_DESC",
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_SHORT_DESC",
 	iMali : "TXT_KEY_CIV_SONGHAI_SHORT_DESC",
+	iMisr : "TXT_KEY_CIV_EGYPT_SHORT_DESC",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_SHORT_DESC",
 	iMoors : "TXT_KEY_CIV_MOROCCO_SHORT_DESC",
 	iTurks : "TXT_KEY_CIV_UZBEKS_SHORT_DESC",
 	iManchuria: "TXT_KEY_CIV_CHINA_SHORT_DESC",
+	iSaudis : "TXT_KEY_CIV_ARABIA_SHORT_DESC",
 }
 
 dAdjectiveChanges = {
@@ -522,10 +525,12 @@ dAdjectiveChanges = {
 	iInca : "TXT_KEY_CIV_PERU_ADJECTIVE",
 	iHolyRome : "TXT_KEY_CIV_AUSTRIA_ADJECTIVE",
 	iMali : "TXT_KEY_CIV_SONGHAI_ADJECTIVE",
+	iMisr : "TXT_KEY_CIV_EGYPT_ADJECTIVE",
 	iMughals : "TXT_KEY_CIV_PAKISTAN_ADJECTIVE",
 	iMoors : "TXT_KEY_CIV_MOROCCO_ADJECTIVE",
 	iTurks : "TXT_KEY_CIV_UZBEKS_ADJECTIVE",
 	iManchuria : "TXT_KEY_CIV_CHINA_ADJECTIVE",
+	iSaudis : "TXT_KEY_CIV_ARABIA_ADJECTIVE",
 }
 
 dStartingLeaders = [
@@ -710,6 +715,10 @@ def initName(iPlayer):
 		setDesc(iPlayer, peoplesName(iPlayer))
 		checkName(iPlayer)
 		checkLeader(iPlayer)
+	
+	if civ(iPlayer) in lInitialNameChanges:
+		checkNameChange(iPlayer)
+		checkAdjectiveChange(iPlayer)
 
 @handler("resurrection")
 def onResurrection(iPlayer):
