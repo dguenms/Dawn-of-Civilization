@@ -11229,10 +11229,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=92,y=58
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
 	x=92,y=63
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -11456,6 +11452,10 @@ BeginPlot
 		PreviousOwner=CIVILIZATION_MONGOL
 		PreviousOwner=CIVILIZATION_TURKS
 	EndCity
+EndPlot
+BeginPlot
+	x=93,y=58
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=93,y=62
