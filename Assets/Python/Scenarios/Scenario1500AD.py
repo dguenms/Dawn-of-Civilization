@@ -381,6 +381,10 @@ scenario1500AD = Scenario(
 		iMisr: "TXT_KEY_CIV_EGYPT_DESC",
 	},
 	
+	dOwnedTiles = {
+		iMisr: [(76, 46)],
+	},
+	
 	dRevealed = {
 		iCivGroupEurope: Revealed(
 			lLandRegions=lEurope + lNorthAfrica + [rAnatolia, rMesopotamia, rArabia, rPersia], 

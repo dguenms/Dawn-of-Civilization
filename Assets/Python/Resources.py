@@ -542,7 +542,7 @@ def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RE
 	
 	plot.setBonusType(iBonus)
 	
-	if iBonusVariety >= 0:
+	if iBonusVariety >= 0 and iRemovedBonus == -1:
 		plot.setBonusVarietyType(iBonusVariety)
 			
 	if iBonus == -1:
