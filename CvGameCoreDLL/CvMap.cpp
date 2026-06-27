@@ -1516,6 +1516,12 @@ void CvMap::calculateAreas()
 	{
 		pLoopPlot = plotByIndexINLINE(iI);
 
+		if (pLoopPlot->isWater())
+		{
+			pLoopPlot->setContinentArea(pLoopPlot->getArea());
+			continue;
+		}
+
 		pLoopPlot->setContinentArea(getArea(pLoopPlot->getArea())->getClosestAreaSize(40));
 	}
 }
