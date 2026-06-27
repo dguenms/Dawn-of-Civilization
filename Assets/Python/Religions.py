@@ -66,14 +66,6 @@ def onBuildingBuilt(city, iBuilding):
 			if cities.owner(iPlayer).none(lambda city: city.isHasReligion(iOrthodoxy)):
 				player(city).setLastStateReligion(iCatholicism)
 
-@handler("BeginGameTurn")
-def foundHinduism(iGameTurn):
-	if not player(iIndia).isHuman():
-		if iGameTurn == year(-2000)+1:
-			if not game.isReligionFounded(iHinduism):
-				if plot(92, 39).isCity():
-					foundReligion((92, 39), iHinduism)
-
 
 @handler("cityBuilt")
 def foundIslam(city):
