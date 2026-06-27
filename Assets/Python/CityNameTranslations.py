@@ -7904,6 +7904,7 @@ name_translations = {
 			found("Hailar"),
 			"Hulunbu'er",
 		),
+		iManchu: found("Hailar"),
 		iMongol: _,
 	},
 	"Hurghada": {  # founded on Gebtu
