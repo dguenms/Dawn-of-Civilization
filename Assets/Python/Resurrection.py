@@ -27,23 +27,24 @@ def checkResurrection():
 			return
 	
 		iNationalismModifier = min(20, 4 * game.countKnownTechNumTeams(iNationalism))
-		possibleResurrections = civs.major().where(canRespawn).sort(lambda c: (-getImpact(c), data.civs[c].iLastTurnAlive))
+		for iImpact, possibleResurrections in civs.major().where(canRespawn).grouped(lambda c: -getImpact(c)):
+			possibleResurrections = possibleResurrections.sort(lambda c: data.civs[c].iLastTurnAlive)
 		
-		# civs entirely controlled by minors will always respawn
-		for iCiv in possibleResurrections:
-			if cities.respawn(iCiv).all(is_minor):
-				resurrectionCities = getResurrectionCities(iCiv)
-				if canResurrectFromCities(iCiv, resurrectionCities):
-					doResurrection(iCiv, resurrectionCities)
-					return
-					
-		# otherwise minimum amount of cities and random chance are required
-		for iCiv in possibleResurrections:
-			if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iCiv]:
-				resurrectionCities = getResurrectionCities(iCiv)
-				if canResurrectFromCities(iCiv, resurrectionCities):
-					doResurrection(iCiv, resurrectionCities)
-					return
+			# civs entirely controlled by minors will always respawn
+			for iCiv in possibleResurrections:
+				if cities.respawn(iCiv).all(is_minor):
+					resurrectionCities = getResurrectionCities(iCiv)
+					if canResurrectFromCities(iCiv, resurrectionCities):
+						doResurrection(iCiv, resurrectionCities)
+						return
+						
+			# otherwise minimum amount of cities and random chance are required
+			for iCiv in possibleResurrections:
+				if rand(100) - iNationalismModifier + 10 < dResurrectionProbability[iCiv]:
+					resurrectionCities = getResurrectionCities(iCiv)
+					if canResurrectFromCities(iCiv, resurrectionCities):
+						doResurrection(iCiv, resurrectionCities)
+						return
 
 
 @handler("releasedCivilization")
