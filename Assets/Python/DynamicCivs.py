@@ -1791,14 +1791,15 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ARABIA_ABBASID"
 			
 	elif iCiv == iMoors:
-		if tPlayer.isHasTech(iCartography):
-			return "TXT_KEY_CIV_MOORS_SAADI"
-				
-		if bEmpire:
-			if bTheocracy:
-				return "TXT_KEY_CIV_MOORS_ALMORAVID"
+		if bMonarchy:
+			if tPlayer.isHasTech(iCartography):
+				return "TXT_KEY_CIV_MOORS_SAADI"
 					
-			return "TXT_KEY_CIV_MOORS_ALMOHAD"
+			if bEmpire:
+				if bTheocracy:
+					return "TXT_KEY_CIV_MOORS_ALMORAVID"
+						
+				return "TXT_KEY_CIV_MOORS_ALMOHAD"
 			
 		if not capital in plots.region(rIberia):
 			return "TXT_KEY_CIV_MOORS_MOROCCAN"
