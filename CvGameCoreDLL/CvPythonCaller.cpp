@@ -1622,6 +1622,15 @@ void CvPythonCaller::toggleStabilityOverlay() const
 	call("toggleStabilityOverlay", PYScreensModule);
 }
 
+void CvPythonCaller::updateCustomMapOption(int iOptionID, CustomMapOptionTypes eCustomMapOption) const
+{
+	CyArgsList argsList;
+	argsList.add(iOptionID);
+	argsList.add(eCustomMapOption);
+
+	call("updateCustomMapOption", argsList, PYScreensModule);
+}
+
 CvWString CvPythonCaller::getVictoryTooltip(PlayerTypes ePlayer, CvPlot const& kPlot) const
 {
 	CvWString result = L"";

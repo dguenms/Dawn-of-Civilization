@@ -29,10 +29,13 @@ struct CvMapInitData // holds initialization info
 	bool m_bWrapY;
 
 	CvMapInitData(int iGridW = 0, int iGridH = 0,
+		// doc
+		int iPrimeMeridian = -1, int iEquator = -1,
 		// advc.129: was +/-90
 		int iTopLatitude = 87, int iBottomLatitude = -87,
 		bool bWrapX = false, bool bWrapY = false)
 	:	m_iGridH(iGridH), m_iGridW(iGridW),
+		m_iPrimeMeridian(iPrimeMeridian), m_iEquator(iEquator),
 		m_iTopLatitude(iTopLatitude), m_iBottomLatitude(iBottomLatitude),
 		m_bWrapY(bWrapY), m_bWrapX(bWrapX)
 	{}

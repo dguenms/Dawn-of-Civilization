@@ -966,11 +966,7 @@ void CvInitCore::setCustomMapOption(int iOptionID, CustomMapOptionTypes eCustomM
 		m_aeCustomMapOptions[iOptionID] = eCustomMapOption;
 
         // doc: setup scenario in Python
-		CyArgsList argsList;
-		argsList.add(iOptionID);
-		argsList.add(eCustomMapOption);
-		long lResult = 0;
-		gDLL->getPythonIFace()->callFunction(PYScreensModule, "updateCustomMapOption", argsList.makeFunctionArgs(), &lResult);
+		GC.getPythonCaller()->updateCustomMapOption(iOptionID, eCustomMapOption);
 	}
 }
 
@@ -1502,19 +1498,6 @@ void CvInitCore::setXMLCheck(PlayerTypes eID, CvString const& szXMLCheck)
 	FAssertBounds(0, MAX_PLAYERS, eID);
 	m_aszXMLCheck[eID] = szXMLCheck;
 }
-/*	<advc> Definitions of exported setters moved from the header.
-	Easier to track external calls in the debugger this way. */
-void CvInitCore::setGameName(CvWString const& szGameName)
-{
-	/*	<advc.135c> Changing the game name can be a step to enable debug tools.
-		Make sure that the other players are aware. */
-	if (getMultiplayer() && !m_szGameName.empty() && m_szGameName != szGameName &&
-		getActivePlayer() != NO_PLAYER)
-	{
-		GET_PLAYER(getActivePlayer()).announceGameNameChange(m_szGameName, szGameName);
-	} // </advc.135c>
-	m_szGameName = szGameName;
-}
 
 void CvInitCore::setGamePassword(CvWString const& szGamePassword)
 {
@@ -1864,17 +1847,20 @@ int CvInitCore::getAdvancedStartMinPoints() const
 }
 
 
-// TODO: move to header?
-const CvWString& CvInitCore::getGameName() const
-{
-	return m_szGameName;
-}
-
-
-// doc: encode mod version in game name for better save game inspection
+/*	<advc> Definitions of exported setters moved from the header.
+	Easier to track external calls in the debugger this way. */
 // TODO: refactor
-void CvInitCore::setGameName(const CvWString& szGameName)
+void CvInitCore::setGameName(CvWString const& szGameName)
 {
+	/*	<advc.135c> Changing the game name can be a step to enable debug tools.
+		Make sure that the other players are aware. */
+	if (getMultiplayer() && !m_szGameName.empty() && m_szGameName != szGameName &&
+		getActivePlayer() != NO_PLAYER)
+	{
+		GET_PLAYER(getActivePlayer()).announceGameNameChange(m_szGameName, szGameName);
+	} // </advc.135c>
+
+	// doc: encode mod version in game name for better save game inspection
 	static CvWString szAppliedGameName = szGameName;
 	static CvWString szModVersion = GC.getDefineSTRING("DAWN_OF_CIV_MOD_VERSION");
 	static CvWString szLeft = " (v";

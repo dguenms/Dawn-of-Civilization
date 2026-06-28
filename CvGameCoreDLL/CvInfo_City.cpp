@@ -49,7 +49,7 @@ m_piYieldChange(NULL),
 m_piCommerceChange(NULL),
 m_piFlavorValue(NULL),
 m_iExperience(0),
-m_iHappiness(0),
+m_iHappiness(0)
 {}
 
 CvSpecialistInfo::~CvSpecialistInfo()
@@ -266,7 +266,7 @@ m_iGoldPerProduction(0),
 m_iProductionPerPopulation(0),
 m_bAnger(false),
 m_bUnits(false), // doc
-m_bBuildings(false), // doc
+m_bBuildings(false) // doc
 {}
 
 int CvHurryInfo::getGoldPerProduction() const

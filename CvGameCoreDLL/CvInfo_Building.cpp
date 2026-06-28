@@ -127,7 +127,7 @@ m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
 m_bPagan(false), // doc
-m_bNoResistance(false), // doc
+m_bNoResistance(false) // doc
 {}
 
 // advc.003w:
@@ -1072,7 +1072,7 @@ m_bForceWar(false),
 m_bAssignCity(false),
 m_bRevokeMembership(false), // doc
 m_bDecolonize(false), // doc
-m_bReleaseCivilization(false), // doc
+m_bReleaseCivilization(false) // doc
 {}
 
 bool CvVoteInfo::read(CvXMLLoadUtility* pXML)
@@ -1139,7 +1139,7 @@ m_bRevealsMap(false), // doc
 m_bSatelliteAttack(false), // doc
 m_bSatelliteIntercept(false), // doc
 m_bFirstEnemyAnarchy(false), // doc
-m_bGoldenAge(false), // doc
+m_bGoldenAge(false) // doc
 {}
 
 const char* CvProjectInfo::getMovieArtDef() const

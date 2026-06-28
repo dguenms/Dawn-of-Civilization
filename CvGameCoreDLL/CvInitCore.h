@@ -70,7 +70,7 @@ public:
 		inline-expanded. I.e. the EXE will access the respective members directly
 		through a memory offset.) */
 
-	const CvWString& getGameName() const { return m_szGameName; } // TODO: remove cpp override
+	const CvWString& getGameName() const { return m_szGameName; }
 	DllExport void setGameName(const CvWString& szGameName);
 
 	const CvWString& getGamePassword() const { return m_szGamePassword; }

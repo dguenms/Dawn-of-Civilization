@@ -178,6 +178,7 @@ public:
 	int countAchievedGoals(PlayerTypes ePlayer) const;
 
 	void toggleStabilityOverlay() const;
+	void updateCustomMapOption(int iOptionID, CustomMapOptionTypes eCustomMapOption) const;
 
 	CvWString getVictoryTooltip(PlayerTypes ePlayer, CvPlot const& kPlot) const;
 	CvWString getVictoryDescription(CivilizationTypes eCivilization) const;

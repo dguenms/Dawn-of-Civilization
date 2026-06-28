@@ -15,7 +15,7 @@ m_iActionSoundScriptId(0),
 m_iStartingYear(0), // doc
 m_iDerivativeCiv(NO_CIVILIZATION),
 m_eImpact(NO_IMPACT),
-m_ePaganReligion(NO_PAGAN_RELIGION),
+m_ePaganReligion(NO_PAGANRELIGION),
 m_bPlayable(false),
 m_bAIPlayable(false),
 m_piCivilizationBuildings(NULL),

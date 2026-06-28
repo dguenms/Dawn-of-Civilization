@@ -179,6 +179,15 @@
 #define CvUnitAIInfo CvInfoBase
 #define CvDenialInfo CvInfoBase
 #define CvPaganReligionInfo CvInfoBase
+#define CvRegionInfo CvInfoBase
+#define CvRegionGroupInfo CvInfoBase
+#define CvOverseasGroupInfo CvInfoBase
+#define CvParameterInfo CvInfoBase
+#define CvModifierInfo CvInfoBase
+#define CvHistoryInfo CvInfoBase
+#define CvImpactInfo CvInfoBase
+#define CvPeriodInfo CvInfoBase
+#define CvScenarioInfo CvInfoBase
 // This one just has an irregular, exported name.
 #define CvThroneRoomCameraInfo CvThroneRoomCamera
 

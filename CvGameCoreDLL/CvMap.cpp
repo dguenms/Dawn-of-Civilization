@@ -346,30 +346,26 @@ void CvMap::setAllPlotTypes(PlotTypes ePlotType)
 // XXX generalize these funcs? (macro?)
 void CvMap::doTurn()
 {
+	// doc: culture conversion
+	// TODO: move to CvPlot::doTurn
+	int iGameTurn = GC.getGame().getGameTurn();
+	int iInterval = getTurns(5);
+
 	//PROFILE("CvMap::doTurn()"); // advc.003o
-	for(int i = 0; i < numPlots(); i++)
-	    getPlotByIndex(i).doTurn();
+	for (int i = 0; i < numPlots(); i++)
+	{
+		CvPlot& kPlot = getPlotByIndex(i);
 
-    // doc: culture conversion
-    // TODO: refactor
-    // TODO: move to CvPlot::doTurn
-    int iGameTurn = GC.getGameINLINE().getGameTurn();
-    int iInterval = getTurns(5);
+		kPlot.doTurn();
 
-    for (iI = 0; iI < numPlotsINLINE(); iI++)
-    {
-        pPlot = plotByIndexINLINE(iI);
+		if (iGameTurn % iInterval == 0)
+		{
+			if (kPlot.getCultureConversionCivilization() == NO_CIVILIZATION)
+				continue;
 
-        pPlot->doTurn();
-
-        if (iGameTurn % iInterval == 0)
-        {
-            if (pPlot->getCultureConversionCivilization() != NO_CIVILIZATION)
-            {
-                pPlot->changeCultureConversionRate(-5);
-            }
-        }
-    }
+			kPlot.changeCultureConversionRate(-5);
+		}
+	}
 }
 
 
@@ -1502,97 +1498,70 @@ void CvMap::calculateAreas()
 		}
 	}
 
-
-
 	// doc: create different continents for Europe, Africa and South America, plus separate Scandinavia and Denmark
-    // TODO: refactor
+	CvArea* asia = getPlot(121, 52).area(); // Chang'an
+	CvArea* america = getPlot(29, 54).area(); // Washington
+
     CvArea* europe = addArea();
 	CvArea* africa = addArea();
 	CvArea* southAmerica = addArea();
 	CvArea* scandinavia = addArea();
 	CvArea* denmark = addArea();
 
-	int asiaID = plot(121, 52)->getArea(); // Chang'an
-	int americaID = plot(29, 54)->getArea(); // Washington
+	europe->init(false);
+	africa->init(false);
+	southAmerica->init(false);
+	scandinavia->init(false);
+	denmark->init(false);
 
-	int europeID = europe->getID();
-	int africaID = africa->getID();
-	int southAmericaID = southAmerica->getID();
-	int scandinaviaID = scandinavia->getID();
-	int denmarkID = denmark->getID();
-
-	europe->init(europeID, false);
-	africa->init(africaID, false);
-	southAmerica->init(southAmericaID, false);
-	scandinavia->init(scandinaviaID, false);
-	denmark->init(denmarkID, false);
-
-	CvPlot* plot;
-	for (int iX = 0; iX < getGridWidth(); iX++)
+	for (int iIndex = 0; iIndex < numPlots(); iIndex++)
 	{
-		for (int iY = 0; iY < getGridHeight(); iY++)
+		CvPlot& kPlot = getPlotByIndex(iIndex);
+		gDLL->callUpdater();
+
+		if (kPlot.isWater())
 		{
-			gDLL->callUpdater();
-			plot = plotSorenINLINE(iX, iY);
-
-			if (!plot->isWater())
+			switch (kPlot.getRegionGroup())
 			{
-				switch (plot->getRegionGroup())
-				{
-				case REGION_GROUP_EUROPE:
-				case REGION_GROUP_MIDDLE_EAST:
-					if (plot->getArea() == asiaID)
-					{
-						plot->setArea(europeID);
-					}
-					break;
-				case REGION_GROUP_SUB_SAHARAN_AFRICA:
-					if (plot->getArea() == asiaID)
-					{
-						plot->setArea(africaID);
-					}
-					break;
-				case REGION_GROUP_SOUTH_AMERICA:
-					if (plot->getArea() == americaID)
-					{
-						plot->setArea(southAmericaID);
-					}
-					break;
-				}
+			case REGION_GROUP_EUROPE:
+			case REGION_GROUP_MIDDLE_EAST:
+				if (kPlot.area() == asia)
+					kPlot.setArea(europe);
+				break;
+			case REGION_GROUP_SUB_SAHARAN_AFRICA:
+				if (kPlot.area() == asia)
+					kPlot.setArea(africa);
+				break;
+			case REGION_GROUP_SOUTH_AMERICA:
+				if (kPlot.area() == america)
+					kPlot.setArea(southAmerica);
+				break;
+			}
 
-				switch (plot->getRegionID())
+			switch (kPlot.getRegionID())
+			{
+			case REGION_SIBERIA:
+			case REGION_AMUR:
+			case REGION_CENTRAL_ASIAN_STEPPE:
+			case REGION_EGYPT:
+			case REGION_NUBIA:
+				if (kPlot.area() == asia)
+					kPlot.setArea(europe);
+				break;
+			case REGION_SCANDINAVIA:
+				if (kPlot.area() == europe)
 				{
-				case REGION_SIBERIA:
-				case REGION_AMUR:
-				case REGION_CENTRAL_ASIAN_STEPPE:
-				case REGION_EGYPT:
-				case REGION_NUBIA:
-					if (plot->getArea() == asiaID)
-					{
-						plot->setArea(europeID);
-					}
-					break;
-				case REGION_SCANDINAVIA:
-					if (plot->getArea() == europeID)
-					{
-						if (iX >= 66 && iX <= 68 && iY >= 66 && iY <= 69)
-						{
-							plot->setArea(denmarkID);
-						}
-						else
-						{
-							plot->setArea(scandinaviaID);
-						}
-					}
-					break;
-				case REGION_MAGHREB:
-				case REGION_SAHARA:
-					if (plot->getArea() == asiaID)
-					{
-						plot->setArea(africaID);
-					}
-					break;
+					if (kPlot.getX() >= 66 && kPlot.getX() <= 68 && kPlot.getY() >= 66 && kPlot.getY() <= 69)
+						kPlot.setArea(denmark);
+					else
+						kPlot.setArea(scandinavia);
 				}
+				break;
+			case REGION_MAGHREB:
+			case REGION_SAHARA:
+				if (kPlot.area() == asia)
+					kPlot.setArea(africa);
+				break;
 			}
 		}
 	}
@@ -1745,27 +1714,17 @@ int CvMap::plotIndex(int iX, int iY) const
 {
 	if (iX == INVALID_PLOT_COORD || iY == INVALID_PLOT_COORD) return NULL;
 
-	int iMapX = coordRange(iX, getGridWidthINLINE(), isWrapXINLINE());
-	int iMapY = coordRange(iY, getGridHeightINLINE(), isWrapYINLINE());
+	int iMapX = coordRange(iX, getGridWidth(), isWrapX());
+	int iMapY = coordRange(iY, getGridHeight(), isWrapY());
 
 	return (isPlot(iMapX, iMapY)) ? plotNum(iMapX, iMapY) : -1;
 }
 
-int CvMap::getPrimeMeridian() const
-{
-	return m_iPrimeMeridian;
-}
-
-int CvMap::getEquator() const
-{
-	return m_iEquator;
-}
-
 void CvMap::updateCulture()
 {
-	for (int iI = 0; iI < numPlotsINLINE(); iI++)
+	for (int iI = 0; iI < numPlots(); iI++)
 	{
-		plotByIndexINLINE(iI)->updateCulture(true, true);
+		getPlotByIndex(iI).updateCulture(true, true);
 	}
 }
 

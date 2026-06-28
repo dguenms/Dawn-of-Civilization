@@ -156,14 +156,14 @@ void CvGlobals::init() // allocate
 	};
 
 	// doc: gradual border expansion
-	int aiCityPlot3X[NUM_CITY_PLOTS_3] =
+	int aiCulturePlotX[NUM_CULTURE_PLOTS] =
 	{
 		0,
 		0, 1, 1, 1, 0,-1,-1,-1,
 		0, 1, 2, 2, 2, 1, 0,-1,-2,-2,-2,-1,
 		0, 1, 2, 3, 3, 3, 2, 1, 0,-1,-2,-3,-3,-3,-2,-1,
 	};
-	int aiCityPlot3Y[NUM_CITY_PLOTS_3] =
+	int aiCulturePlotY[NUM_CULTURE_PLOTS] =
 	{
 		0,
 		1, 1, 0,-1,-1,-1, 0, 1,
@@ -242,8 +242,8 @@ void CvGlobals::init() // allocate
 	memcpy(m_aiPlotCardinalDirectionY, aiPlotCardinalDirectionY, sizeof(m_aiPlotCardinalDirectionY));
 	memcpy(m_aiCityPlotX, aiCityPlotX, sizeof(m_aiCityPlotX));
     memcpy(m_aiCityPlotY, aiCityPlotY, sizeof(m_aiCityPlotY));
-    memcpy(m_aiCityPlot3X, aiCityPlot3X, sizeof(m_aiCityPlot3X));
-    memcpy(m_aiCityPlot3Y, aiCityPlot3Y, sizeof(m_aiCityPlot3Y));
+    memcpy(m_aiCulturePlotX, aiCulturePlotX, sizeof(m_aiCulturePlotX));
+    memcpy(m_aiCulturePlotY, aiCulturePlotY, sizeof(m_aiCulturePlotY));
 	memcpy(m_aiCityPlotPriority, aiCityPlotPriority, sizeof(m_aiCityPlotPriority));
 	// advc: unused
 	/*memcpy(m_aeTurnLeftDirection, aeTurnLeftDirection, sizeof(m_aeTurnLeftDirection));

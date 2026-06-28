@@ -750,7 +750,9 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 	else pXML->InitList(&m_piYieldChange, NUM_YIELD_TYPES);
 
 	// doc
-	pXML->GetChildXmlValByName(m_eTechPlayerTrade, "TechPlayerTrade");
+	CvString szTextVal;
+	pXML->GetChildXmlValByName(szTextVal, "TechPlayerTrade");
+	m_eTechPlayerTrade = (TechTypes)GC.getInfoTypeForString(szTextVal);
 
 	pXML->GetChildXmlValByName(&m_iAITradeModifier, "iAITradeModifier");
 	pXML->GetChildXmlValByName(&m_iAIObjective, "iAIObjective");

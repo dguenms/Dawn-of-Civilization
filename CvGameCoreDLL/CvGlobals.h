@@ -173,8 +173,8 @@ public:
 	}
 	int const* getCityPlotX() const { return m_aiCityPlotX; }
 	int const* getCityPlotY() const { return m_aiCityPlotY; }
-    int const* getCityPlot3X() const { return m_aiCityPlot3X; } // doc
-    int const* getCityPlot3Y() const { return m_aiCityPlot3Y; } // doc
+    int const* getCityPlot3X() const { return m_aiCulturePlotX; } // doc
+    int const* getCityPlot3Y() const { return m_aiCulturePlotY; } // doc
 	int const* getCityPlotPriority() const { return m_aiCityPlotPriority; }
 	int maxCityPlotPriority() const { return m_iMaxCityPlotPriority; } // advc
 	/*	(advc: Unused getTurnLeftDirection, getTurnRightDirection deleted,
@@ -871,8 +871,8 @@ protected:
 	int m_aiPlotCardinalDirectionY[NUM_CARDINALDIRECTION_TYPES];
 	int m_aiCityPlotX[NUM_CITY_PLOTS];
 	int m_aiCityPlotY[NUM_CITY_PLOTS];
-    int m_aiCityPlot3X[NUM_CULTURE_PLOTS]; // doc
-    int m_aiCityPlot3Y[NUM_CULTURE_PLOTS]; // doc
+    int m_aiCulturePlotX[NUM_CULTURE_PLOTS]; // doc
+    int m_aiCulturePlotY[NUM_CULTURE_PLOTS]; // doc
 	int m_aiCityPlotPriority[NUM_CITY_PLOTS];
 	int m_iMaxCityPlotPriority; // advc
 	CityPlotTypes m_aaeXYCityPlot[CITY_PLOTS_DIAMETER][CITY_PLOTS_DIAMETER];
