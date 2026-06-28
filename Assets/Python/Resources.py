@@ -55,6 +55,7 @@ def setup():
 dResourcesDict = {
 	(103, 42) : (-1000, iHorse),	# Gujarat
 	(78, 44)  : (-600,  iCotton),	# Egypt
+	(92, 52)  : (-400,  iRice),     # Mazandaran
 	(127, 44) : (-200,  iRice),     # South China
 	(125, 46) : (-200,  iRice),     # South China
 	(125, 45) : (-200,  iCitrus),   # South China
@@ -71,8 +72,10 @@ dResourcesDict = {
 	(90, 19)  : (400,   iBanana),   # Madagascar
 	(90, 18)  : (400,   iSugar),	# Madagascar
 	(99, 43)  : (400,   iCotton),   # Sindh
-	(73, 46)  : (500,	iClam), 	# Cyrenaica
+	(91, 55)  : (400,   iCotton),   # Azerbaijan
+	(73, 46)  : (500,   iClam),     # Cyrenaica
 	(78, 56)  : (550,   iSilk),     # Thrace
+	(91, 51)  : (550,   iSilk),     # Azerbaijan
 	(92, 47)  : (600,   iCitrus),   # Persia
 	(76, 27)  : (600,   iBanana),   # Central Africa
 	(75, 31)  : (600,   iBanana),   # Central Africa
@@ -236,7 +239,8 @@ dResourcesDict = {
 	(110, 56) : (1850,  iCotton),	# Xinjiang
 	(105, 35) : (1850,  iTea),      # Tamil Nadu
 	(109, 31) : (1850,  iTea),      # Sri Lanka
-	(91, 54)  : (1850,  iTea),      # Azerbaijan
+	(87, 54)  : (1850,  iTea),      # Georgia
+	(93, 52)  : (1850,  iTea),      # Mazandaran
 	(7, 55)   : (1850,  iWine),     # California
 	(35, 13)  : (1850,  iWine),     # Argentina
 	(33, 12)  : (1850,  iWine),     # Chile
@@ -312,6 +316,7 @@ dRemovedResourcesDict = {
 	(32, 42)  : 1650, # Gold in Hispaniola
 	(47, 24)  : 1650, # Dye (brazilwood) in Brazil
 	(110, 49) : 1750, # Gold in Tibet
+	(83, 58)  : 1850, # Spices (saffron) in Anatolia
 }
 
 dFeaturesDict = {
