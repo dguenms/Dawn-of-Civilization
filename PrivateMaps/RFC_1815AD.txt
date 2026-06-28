@@ -7358,6 +7358,11 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
+	x=73,y=11
+	ImprovementType=IMPROVEMENT_ORCHARD
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=73,y=12
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
@@ -7549,10 +7554,6 @@ EndPlot
 BeginPlot
 	x=74,y=11
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=74,y=12
-	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=74,y=25
@@ -7820,6 +7821,7 @@ EndPlot
 BeginPlot
 	x=75,y=12
 	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=75,y=25
