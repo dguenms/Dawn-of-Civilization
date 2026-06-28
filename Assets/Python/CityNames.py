@@ -181,6 +181,7 @@ def setupScenario():
 			"Jiaohe": "Turpan",
 			"Khersonesos": "Kaffa",
 			"Mayapan": "Uuc Yabnal",
+			"Ninua": "Al-Mawsil",
 			"Oguaa": "Elmina",
 			"Pagan": "Awa",
 			"Patala": "Thatta",

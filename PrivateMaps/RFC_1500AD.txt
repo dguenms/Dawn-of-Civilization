@@ -6899,7 +6899,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_INDEPENDENT
-		CityName=Hajji Tarkhan
+		CityName=Ash-Tarkhan
 		CityPopulation=6
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
