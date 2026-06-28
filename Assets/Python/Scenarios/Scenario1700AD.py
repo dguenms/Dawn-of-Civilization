@@ -417,6 +417,10 @@ scenario1700AD = Scenario(
 		iNetherlands : 4,
 	},
 	
+	lWorkingCities = [
+		(tEsfahan, [(92, 46)]),
+	],
+	
 	lInitialWars = [
 		(iEngland, iMughals, WarPlanTypes.WARPLAN_LIMITED),
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)

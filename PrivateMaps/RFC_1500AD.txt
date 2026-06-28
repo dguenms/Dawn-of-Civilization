@@ -6871,7 +6871,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=51
-	ImprovementType=IMPROVEMENT_WINDMILL
+	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -6879,8 +6879,12 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
-	x=91,y=55
+	x=91,y=54
 	ImprovementType=IMPROVEMENT_COTTAGE
+EndPlot
+BeginPlot
+	x=91,y=55
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=91,y=59
@@ -6938,7 +6942,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=52
-	ImprovementType=IMPROVEMENT_CAMP
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
 EndPlot
 BeginPlot
 	x=92,y=58
@@ -7213,7 +7217,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=46
-	ImprovementType=IMPROVEMENT_ORCHARD
+	ImprovementType=IMPROVEMENT_WINDMILL
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -7223,7 +7227,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=51
-	ImprovementType=IMPROVEMENT_WINDMILL
+	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -7278,7 +7282,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=51
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_WINDMILL
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
