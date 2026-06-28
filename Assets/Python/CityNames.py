@@ -238,6 +238,7 @@ def setupScenario():
 			"Chalchihuites": "Guadalajara",
 			"Chan Chan": "Truhillu",
 			"Fuerte Recabarren": u"Concepción",
+			"Hulunbuir": "Hailar",
 			"Juneau": "Sitka",
 			"Kalhu": "Al-Mawsil",
 			"Khersonesos": "Sevastopol",

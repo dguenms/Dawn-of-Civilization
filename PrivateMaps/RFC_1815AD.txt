@@ -3415,7 +3415,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SPAIN
-		CityName=Santiago de Compostela
+		CityName=Santiago
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -10805,7 +10805,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_SAUDI
-		CityName=Ar-Riyad
+		CityName=Al-Diriyah
 		CityPopulation=4
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_BARRACKS
@@ -16572,7 +16572,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MANCHU
-		CityName=Qayilar
+		CityName=Hailar
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
