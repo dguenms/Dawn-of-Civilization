@@ -1233,3 +1233,10 @@ void getUnitAIString(CvWString& szString, UnitAITypes eUnitAI)
 	default: szString = CvWString::format(L"unknown(%d)", eUnitAI); break;
 	}
 }
+
+bool isHumanVictoryWonder(BuildingTypes eBuilding, BuildingTypes eWonder, CivilizationTypes eCivilization)
+{
+	return eBuilding == eWonder &&
+		GC.getGame().getActiveCivilizationType() == eCivilization &&
+		GC.getGame().getGameTurn() == getTurnForYear(GC.getInfo(eCivilization).getStartingYear()) + getTurns(5);
+}

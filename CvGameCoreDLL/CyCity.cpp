@@ -2732,7 +2732,7 @@ bool CyCity::rebuild(int iEra)
 	return m_pCity ? m_pCity->rebuild((EraTypes)iEra) : false;
 }
 
-// dpc
+// doc
 bool CyCity::isValidBuildingLocation(int iBuilding)
 {
 	return m_pCity ? m_pCity->isValidBuildingLocation((BuildingTypes)iBuilding) : false;

@@ -816,4 +816,8 @@ private: // advc.003u: (See comments in the private section of CvPlayer.h)
 	virtual void writeExternal(FDataStreamBase* pStream);
 };
 
+static const int lTechLeaderPenalty[NUM_ERA_TYPES] = { 0, 0, 20, 25, 25, 25, 25 };
+static const int lTechBackwardsBonus[NUM_ERA_TYPES] = { 0, 20, 30, 40, 50, 50, 50 };
+
+
 #endif

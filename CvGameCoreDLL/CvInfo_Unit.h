@@ -173,6 +173,8 @@ public: /*  All const functions are exposed to Python except some related to art
 	int getPlainsAttackModifier() const { return m_iPlainsAttackModifier; }
 	int getPlainsDefenseModifier() const { return m_iPlainsDefenseModifier; }
 
+	CivicTypes getPrereqCivic() const { return m_ePrereqCivic; }
+
 	bool isAnimal() const { return m_bAnimal; }
 	bool isFoodProduction() const { return m_bFoodProduction; }
 	bool isNoBadGoodies() const { return m_bNoBadGoodies; }
@@ -443,6 +445,8 @@ protected:
 	int m_iPlainsAttackModifier;
 	int m_iPlainsDefenseModifier;
 
+	CivicTypes m_ePrereqCivic;
+
 	bool m_bAnimal;
 	bool m_bFoodProduction;
 	bool m_bNoBadGoodies;
@@ -587,6 +591,9 @@ public:
 	bool isValid() const;
 	bool isCityLoad() const;
 
+	// doc
+	bool isPlayerValid() const { return m_bPlayerValid; }
+
 	bool isCarrierUnitAIType(int i) const; // Exposed to Python
 	int getProductionTraits(int i) const; // Exposed to Python
 
@@ -595,6 +602,9 @@ public:
 protected:
 	bool m_bValid;
 	bool m_bCityLoad;
+
+	// doc
+	bool m_bPlayerValid;
 
 	bool* m_pbCarrierUnitAITypes;
 	int* m_piProductionTraits;

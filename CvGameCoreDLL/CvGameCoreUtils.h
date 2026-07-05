@@ -246,6 +246,8 @@ bool canEverRespawn(CivilizationTypes eCivilization); // doc
 bool isCivAlive(CivilizationTypes eCivilization); // doc
 bool validatePeriodConstant(PeriodTypes ePeriod); // doc
 
+bool isHumanVictoryWonder(BuildingTypes eBuilding, BuildingTypes eWonder, CivilizationTypes eCivilization);
+
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);
 void getActivityTypeString(CvWString& szString, ActivityTypes eActivityType);

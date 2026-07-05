@@ -68,6 +68,7 @@ m_eAdvisorType(NO_ADVISOR),
 m_eHolyCity(NO_RELIGION),
 m_eReligionType(NO_RELIGION),
 m_eStateReligion(NO_RELIGION),
+m_eOrStateReligion(NO_RELIGION), // doc
 m_ePrereqReligion(NO_RELIGION),
 m_ePrereqOrReligion(NO_RELIGION), // doc
 m_ePrereqCorporation(NO_CORPORATION),
@@ -318,6 +319,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read((int*)&m_eHolyCity);
 	stream->Read((int*)&m_eReligionType);
 	stream->Read((int*)&m_eStateReligion);
+	stream->Read((int*)&m_eOrStateReligion); // doc
 	stream->Read((int*)&m_ePrereqReligion);
 	stream->Read((int*)&m_ePrereqOrReligion); // doc
 	stream->Read((int*)&m_ePrereqCorporation);
@@ -434,6 +436,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	BonusYieldModifier().read(stream);
 	// </advc.003t>
 	// doc
+	PrereqBuildingClassPercent().read(stream);
 	BonusCommerceModifier().read(stream);
 	BonusYieldChange().read(stream);
 	CultureCommerceModifier().read(stream);
@@ -510,6 +513,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_eHolyCity);
 	stream->Write(m_eReligionType);
 	stream->Write(m_eStateReligion);
+	stream->Write(m_eOrStateReligion); // doc
 	stream->Write(m_ePrereqReligion);
 	stream->Write(m_ePrereqOrReligion); // doc
 	stream->Write(m_ePrereqCorporation);
@@ -627,6 +631,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	// </advc.003t>
 
 	// doc
+	PrereqBuildingClassPercent().write(stream);
 	BonusCommerceModifier().write(stream);
 	BonusYieldChange().write(stream);
 	CultureCommerceModifier().write(stream);
@@ -648,6 +653,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetInfoIDFromChildXmlVal(m_eHolyCity, "HolyCity");
 	pXML->SetInfoIDFromChildXmlVal(m_eReligionType, "ReligionType");
 	pXML->SetInfoIDFromChildXmlVal(m_eStateReligion, "StateReligion");
+	pXML->SetInfoIDFromChildXmlVal(m_eOrStateReligion, "StateReligion"); // doc
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqReligion, "PrereqReligion");
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqOrReligion, "PrereqOrReligion"); // doc
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqCorporation, "PrereqCorporation");
@@ -849,6 +855,8 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetCommerceList(CommerceHappiness(), "CommerceHappinesses");
 
 	// doc
+	pXML->SetVariableListTagPair(PrereqBuildingClassPercent(), "PrereqBuildingClassPercents");
+	
 	pXML->SetCommerceList(CultureCommerceModifier(), "CultureCommerceModifiers");
 	pXML->SetCommerceList(PowerCommerceModifier(), "PowerCommerceModifiers");
 

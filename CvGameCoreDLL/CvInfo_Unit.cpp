@@ -86,6 +86,7 @@ m_iLeaderPromotion(NO_PROMOTION),
 // </kmodx>
 m_iPlainsAttackModifier(0), // doc
 m_iPlainsDefenseModifier(0), // doc
+m_ePrereqCivic(NO_CIVIC), // doc
 m_bAnimal(false),
 m_bFoodProduction(false),
 m_bNoBadGoodies(false),
@@ -825,6 +826,8 @@ void CvUnitInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iPlainsAttackModifier);
 	stream->Read(&m_iPlainsDefenseModifier);
 
+	stream->Read((int*)&m_ePrereqCivic);
+
 	stream->Read(&m_bAnimal);
 	stream->Read(&m_bFoodProduction);
 	stream->Read(&m_bNoBadGoodies);
@@ -1111,6 +1114,8 @@ void CvUnitInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iPlainsAttackModifier);
 	stream->Write(m_iPlainsDefenseModifier);
 
+	stream->Write(m_ePrereqCivic);
+
 	stream->Write(m_bAnimal);
 	stream->Write(m_bFoodProduction);
 	stream->Write(m_bNoBadGoodies);
@@ -1348,6 +1353,9 @@ bool CvUnitInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqCorporation, "PrereqCorporation");
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqBuilding, "PrereqBuilding");
 	pXML->SetInfoIDFromChildXmlVal(m_ePrereqAndTech, "PrereqTech");
+
+	// doc
+	pXML->SetInfoIDFromChildXmlVal(m_ePrereqCivic, "PrereqCivic");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"TechTypes"))
 	{
@@ -1760,6 +1768,7 @@ bool CvUnitClassInfo::readPass3()
 CvSpecialUnitInfo::CvSpecialUnitInfo() :
 m_bValid(false),
 m_bCityLoad(false),
+m_bPlayerValid(false),
 m_pbCarrierUnitAITypes(NULL),
 m_piProductionTraits(NULL)
 {}
@@ -1801,6 +1810,7 @@ bool CvSpecialUnitInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_bValid, "bValid");
 	pXML->GetChildXmlValByName(&m_bCityLoad, "bCityLoad");
+	pXML->GetChildXmlValByName(&m_bPlayerValid, "bPlayerValid"); // doc
 	pXML->SetVariableListTagPair(&m_pbCarrierUnitAITypes, "CarrierUnitAITypes", NUM_UNITAI_TYPES);
 	pXML->SetVariableListTagPair(&m_piProductionTraits, "ProductionTraits", GC.getNumTraitInfos());
 	return true;

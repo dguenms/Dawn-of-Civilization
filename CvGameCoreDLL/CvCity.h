@@ -732,6 +732,15 @@ public:
 	void setOriginalCiv(CivilizationTypes eNewValue); // doc
 	bool isOriginalOwner(PlayerTypes ePlayer) const; // doc
 
+	int getSettlerValue() const; // doc
+	int getSettlerValue(PlayerTypes ePlayer) const; // doc
+	int getSettlerValue(CivilizationTypes eCivilization) const; // doc
+	int getWarValue() const; // doc
+	int getWarValue(PlayerTypes ePlayer) const; // doc
+	int getWarValue(CivilizationTypes eCivilization) const; // doc
+
+	bool isBirthProtected() const; // doc
+
 	CultureLevelTypes getCultureLevel() const { return m_eCultureLevel; }										// Exposed to Python
 	CultureLevelTypes getCultureLevel(PlayerTypes ePlayer) const; // advc
 	int getCultureThreshold() const;																			// Exposed to Python

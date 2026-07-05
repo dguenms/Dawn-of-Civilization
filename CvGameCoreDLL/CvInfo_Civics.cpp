@@ -58,6 +58,7 @@ m_iShrineIncomeLimitChange(0), // doc
 m_iCaptureGoldModifier(0), // doc
 m_iCapitalBuildingProductionModifier(0), // doc
 m_iOccupationTimeChange(0), // doc
+m_iCulturedCityFreeSpecialists(0), // doc
 m_bMilitaryFoodProduction(false),
 //m_bNoUnhealthyPopulation(false),
 m_iUnhealthyPopulationModifier(0), // K-Mod
@@ -82,6 +83,7 @@ m_piSpecialistExtraCommerce(NULL),
 m_piStateReligionBuildingYield(NULL), // doc
 m_piSpecialistExtraYield(NULL), // doc
 m_piSpecialistCount(NULL), // doc
+m_piUnimprovedTileYield(NULL), // doc
 m_paiBuildingHappinessChanges(NULL),
 m_paiBuildingHealthChanges(NULL),
 m_paiFeatureHappinessChanges(NULL),
@@ -104,6 +106,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_piStateReligionBuildingYield); // doc
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraYield); // doc
 	SAFE_DELETE_ARRAY(m_piSpecialistCount); // doc
+	SAFE_DELETE_ARRAY(m_piUnimprovedTileYield); // doc
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	SAFE_DELETE_ARRAY(m_paiBuildingHealthChanges);
 	SAFE_DELETE_ARRAY(m_paiFeatureHappinessChanges);
@@ -310,6 +313,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iCaptureGoldModifier); // doc
 	stream->Read(&m_iCapitalBuildingProductionModifier); // doc
 	stream->Read(&m_iOccupationTimeChange); // doc
+	stream->Read(&m_iCulturedCityFreeSpecialists); // doc
 	stream->Read(&m_bMilitaryFoodProduction);
 	//stream->Read(&m_bNoUnhealthyPopulation);
 	stream->Read(&m_iUnhealthyPopulationModifier); // K-Mod
@@ -354,6 +358,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piSpecialistCount);
 	m_piSpecialistCount = new int[GC.getNumSpecialistInfos()];
 	stream->Read(GC.getNumSpecialistInfos(), m_piSpecialistCount);
+	SAFE_DELETE_ARRAY(m_piUnimprovedTileYield);
+	m_piUnimprovedTileYield = new int[NUM_YIELD_TYPES];
+	stream->Read(NUM_YIELD_TYPES, m_piUnimprovedTileYield);
 
 	SAFE_DELETE_ARRAY(m_paiBuildingHappinessChanges);
 	m_paiBuildingHappinessChanges = new int[GC.getNumBuildingClassInfos()];
@@ -473,6 +480,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iCaptureGoldModifier); // doc
 	stream->Write(m_iCapitalBuildingProductionModifier); // doc
 	stream->Write(m_iOccupationTimeChange); // doc
+	stream->Write(m_iCulturedCityFreeSpecialists); // doc
 	//stream->Write(m_bNoUnhealthyPopulation);
 	stream->Write(m_iUnhealthyPopulationModifier); // K-Mod
 	stream->Write(m_bBuildingOnlyHealthy);
@@ -495,6 +503,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_YIELD_TYPES, m_piStateReligionBuildingYield); // doc
 	stream->Write(NUM_YIELD_TYPES, m_piSpecialistExtraYield); // doc
+	stream->Write(GC.getNumSpecialistInfos(), m_piSpecialistCount); // doc
+	stream->Write(NUM_YIELD_TYPES, m_piUnimprovedTileYield); // doc
 	stream->Write(GC.getNumSpecialistInfos(), m_piSpecialistExtraYield); // doc
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHappinessChanges);
 	stream->Write(GC.getNumBuildingClassInfos(), m_paiBuildingHealthChanges);
@@ -600,6 +610,7 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCaptureGoldModifier, "iCaptureGoldModifier");
 	pXML->GetChildXmlValByName(&m_iCapitalBuildingProductionModifier, "iCapitalBuildingProductionModifier");
 	pXML->GetChildXmlValByName(&m_iOccupationTimeChange, "iOccupationTimeChange");
+	pXML->GetChildXmlValByName(&m_iCulturedCityFreeSpecialists, "iCulturedCityFreeSpecialists");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
 		"YieldModifiers"))
@@ -663,7 +674,14 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	{
 		pXML->SetCommerceArray(&m_piSpecialistCount);
 	}
-	else pXML->InitList(&m_piSpecialistCount, NUM_YIELD_TYPES);
+	else pXML->InitList(&m_piSpecialistCount, GC.getNumSpecialistInfos());
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
+		"UnimprovedTileYields"))
+	{
+		pXML->SetCommerceArray(&m_piUnimprovedTileYield);
+	}
+	else pXML->InitList(&m_piUnimprovedTileYield, NUM_YIELD_TYPES);
 
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", GC.getNumHurryInfos());
 	pXML->SetVariableListTagPair(&m_pabSpecialBuildingNotRequired, "SpecialBuildingNotRequireds", GC.getNumSpecialBuildingInfos());

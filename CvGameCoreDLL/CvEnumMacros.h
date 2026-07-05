@@ -120,7 +120,6 @@
 	DO(Region, REGION) \
 	DO(RegionGroup, REGION_GROUP) \
 	DO(OverseasGroup, OVERSEAS_GROUP) \
-	DO(Parameter, PARAMETER) \
 	DO(Modifier, MODIFIER)
 
 #define DO_FOR_EACH_CUSTOM_INFO_TYPE(DO) \
@@ -141,6 +140,7 @@
 	DO(Impact, IMPACT) \
 	DO(Improvement, IMPROVEMENT) \
 	DO(LeaderHead, LEADER) \
+	DO(Parameter, PARAMETER) \
 	DO(Period, PERIOD) \
 	DO(Process, PROCESS) \
 	DO(Project, PROJECT) \

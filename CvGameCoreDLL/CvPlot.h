@@ -506,6 +506,7 @@ public:
 
 	int determineVariety(FeatureTypes eFeature = NO_FEATURE) const; // doc
 
+	bool isBonus() const { return getBonusType() != NO_BONUS; }
 	DllExport BonusTypes getBonusType(TeamTypes eTeam = NO_TEAM) const;								// Exposed to Python
 	BonusTypes getNonObsoleteBonusType(TeamTypes eTeam = NO_TEAM,									// Exposed to Python
 			bool bCheckConnected = false) const;
@@ -865,10 +866,12 @@ public:
 	bool isCore() const; // doc
 	void setCore(CivilizationTypes eCivilization, bool bNewValue); // doc
 
+	int getSettlerValue() const { return getSettlerValue(getOwner()); };
 	int getSettlerValue(CivilizationTypes eCivilization) const; // doc // TODO: implement
 	int getSettlerValue(PlayerTypes ePlayer) const; // doc
 	void setSettlerValue(CivilizationTypes eCivilization, int iNewValue); // doc
 
+	int getWarValue() const { return getWarValue(getOwner()); }
 	int getWarValue(CivilizationTypes eCivilization) const; // doc // TODO: implement
 	int getWarValue(PlayerTypes ePlayer) const; // doc
 	void setWarValue(CivilizationTypes eCivilization, int iNewValue); // doc

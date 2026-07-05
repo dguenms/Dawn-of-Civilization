@@ -1710,4 +1710,12 @@
 		<DefineName>CULTURE_COST_RIVER</DefineName>
 		<iDefineIntVal>-5</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>SHRINE_INCOME_LIMIT</DefineName>
+		<iDefineIntVal>20</iDefineIntVal>
+	</Define>
+	<Define>
+		<DefineName>PLAGUE_BUILDING_CLASS</DefineName>
+		<DefineTextVal>BUILDINGCLASS_PLAGUE</DefineTextVal>
+	</Define>
 </Civ4Defines>

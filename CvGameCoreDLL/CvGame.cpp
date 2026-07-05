@@ -8716,7 +8716,7 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 
 		if (kVote.isReleaseCivilization())
 		{
-			GET_PLAYER(kData.kVoteOption.ePlayer).splitEmpire(kData.kVoteOption.eOtherPlayer);
+			GET_PLAYER(kData.kVoteOption.ePlayer).splitEmpire((CivilizationTypes)kData.kVoteOption.eOtherPlayer);
 		}
 
 		setVoteOutcome(kData, NO_PLAYER_VOTE);

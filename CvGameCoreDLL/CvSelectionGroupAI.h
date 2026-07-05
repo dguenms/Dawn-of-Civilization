@@ -85,6 +85,9 @@ public:
 
 	bool AI_isFull();
 
+	// doc
+	void AI_makeForceSeparate();
+
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
 

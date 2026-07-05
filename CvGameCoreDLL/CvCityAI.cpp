@@ -605,8 +605,8 @@ void CvCityAI::AI_chooseProduction()
 			*pWaterSettlerArea, &kArea);
 	int iNumSettlers = kPlayer.AI_totalUnitAIs(UNITAI_SETTLE);
 
-    int const iAreaBestSettlerValue = kPlayer.AI_bestCitySiteSettlerValue(kArea.getID());
-    int const iWaterAreaBestSettlerValue = (pWaterSettlerArea != NULL) ? kPlayer.AI_bestAdjacentCitySiteSettlerValue(pWaterSettlerArea->getID()) : 0;
+    int const iAreaBestSettlerValue = kPlayer.AI_bestCitySiteSettlerValue(&kArea);
+    int const iWaterAreaBestSettlerValue = (pWaterSettlerArea != NULL) ? kPlayer.AI_bestAdjacentCitySiteSettlerValue(pWaterSettlerArea) : 0;
 
 	bool bCapitalArea = false;
 	int iNumCapitalAreaCities = 0;
@@ -14401,29 +14401,20 @@ void CvCityAI::AI_ClearConstructionValueCache()
 }
 
 
-// doc: return first non-state religion to make it work for now
-// TODO: refactor
-ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion)
+// TODO: sort by persecution value
+ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion) const
 {
-	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	FOR_EACH_ENUM(Religion)
 	{
-		if (eIgnoredReligion == iI)
-		{
+		if (eIgnoredReligion == eLoopReligion)
 			continue;
-		}
+		if (GET_PLAYER(getOwner()).getStateReligion() == eLoopReligion)
+			continue;
+		if (GET_PLAYER(getOwner()).AI_getPersecutionValue(eLoopReligion) < 0)
+			continue;
 
-		if (GET_PLAYER(getOwner()).getStateReligion() != iI)
-		{
-			if (GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI) < 0)
-			{
-				break;
-			}
-
-			if (isHasReligion((ReligionTypes)iI) && !isHolyCity((ReligionTypes)iI))
-			{
-				return (ReligionTypes)iI;
-			}
-		}
+		if (isHasReligion(eLoopReligion) && !isHolyCity(eLoopReligion))
+			return eLoopReligion;
 	}
 
 	return NO_RELIGION;

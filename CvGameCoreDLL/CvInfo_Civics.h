@@ -74,6 +74,7 @@ public: // The const functions are exposed to Python except those added by AdvCi
 	int getCaptureGoldModifier() const { return m_iCaptureGoldModifier; }
 	int getCapitalBuildingProductionModifier() const { return m_iCapitalBuildingProductionModifier; }
 	int getOccupationTimeChange() const { return m_iOccupationTimeChange; }
+	int getCulturedCityFreeSpecialists() const { return m_iCulturedCityFreeSpecialists; }
 
 	bool isMilitaryFoodProduction() const { return m_bMilitaryFoodProduction; }
 	//bool isNoUnhealthyPopulation() const; // K-Mod, 27/dec/10:
@@ -112,12 +113,14 @@ public: // The const functions are exposed to Python except those added by AdvCi
 	int* getSpecialistExtraCommerceArray() const;
 
 	// doc
-	int getStateReligionBuildingYield(YieldTypes eYield) const { m_piStateReligionBuildingYield[eYield]; }
+	int getStateReligionBuildingYield(YieldTypes eYield) const { return m_piStateReligionBuildingYield[eYield]; }
 	int* getStateReligionBuildingYieldArray() { return m_piStateReligionBuildingYield; }
 	int getSpecialistExtraYield(YieldTypes eYield) const { return m_piSpecialistExtraYield[eYield]; }
 	int* getSpecialistExtraYieldArray() const { return m_piSpecialistExtraYield; }
 	int getSpecialistCount(SpecialistTypes eSpecialist) const { return m_piSpecialistCount[eSpecialist]; }
-	int* getSpecialistCountArray() const { return m_piSpecialistCount;  }
+	int* getSpecialistCountArray() const { return m_piSpecialistCount; }
+	int getUnimprovedTileYield(YieldTypes eYield) const { return m_piUnimprovedTileYield[eYield]; }
+	int* getUnimprovedTileYieldArray() const { return m_piUnimprovedTileYield; }
 
 	int getBuildingHappinessChanges(int i) const;
 	bool isAnyBuildingHappinessChanges() const { return (m_paiBuildingHappinessChanges != NULL); } // advc.003t
@@ -128,6 +131,7 @@ public: // The const functions are exposed to Python except those added by AdvCi
 	// doc
 	int getDomainExperienceModifier(DomainTypes eDomain) const { return m_paiDomainExperienceModifiers[eDomain]; }
 	int getBuildingProductionModifier(BuildingClassTypes eBuildingClass) const { return m_paiBuildingProductionModifiers[eBuildingClass]; }
+	bool isAnyBuildingProductionModifier() const { return m_paiBuildingProductionModifiers != NULL; }
 
 	bool isHurry(int i) const;
 	bool isSpecialBuildingNotRequired(int i) const;
@@ -198,6 +202,7 @@ protected:
 	int m_iCaptureGoldModifier;
 	int m_iCapitalBuildingProductionModifier;
 	int m_iOccupationTimeChange;
+	int m_iCulturedCityFreeSpecialists;
 
 	//bool m_bNoUnhealthyPopulation;
 	int m_iUnhealthyPopulationModifier; // K-Mod
@@ -231,6 +236,7 @@ protected:
 	int* m_piStateReligionBuildingYield;
 	int* m_piSpecialistExtraYield;
 	int* m_piSpecialistCount;
+	int* m_piUnimprovedTileYield;
 
 	int* m_paiBuildingHappinessChanges;
 	int* m_paiBuildingHealthChanges;

@@ -375,6 +375,10 @@ bool CvXMLLoadUtility::SetPostGlobalsGlobalDefines()
 	idx = FindInInfoClass(szVal);
 	GC.getDefinesVarSystem()->SetValue("BARBARIAN_LEADER", idx);
 
+	SetGlobalDefine("PLAGUE_BUILDING_CLASS", szVal);
+	idx = FindInInfoClass(szVal);
+	GC.getDefinesVarSystem()->SetValue("PLAGUE_BUILDING_CLASS", szVal);
+
 	return true;
 }
 

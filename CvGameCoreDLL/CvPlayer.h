@@ -565,7 +565,7 @@ public:
 	int getStrikeTurns() const { return m_iStrikeTurns; }															// Exposed to Python
 	void changeStrikeTurns(int iChange);
 
-	int getMaxAnarchyTurns() const { return m_iMaxAnarchyTurns; }													// Exposed to Python
+	int getMaxAnarchyTurns() const;																					// Exposed to Python
 	void updateMaxAnarchyTurns();
 
 	int getAnarchyModifier() const { return m_iAnarchyModifier; }													// Exposed to Python
@@ -697,7 +697,7 @@ public:
 	void setConscriptCount(int iNewValue);																			// Exposed to Python
 	void changeConscriptCount(int iChange) { setConscriptCount(getConscriptCount() + iChange); }					// Exposed to Python
 
-	int getMaxConscript() const { return m_iMaxConscript; }															// Exposed to Python
+	int getMaxConscript() const;																					// Exposed to Python
 	void changeMaxConscript(int iChange);
 
 	int getOverflowResearch() const { return m_iOverflowResearch; }													// Exposed to Python
@@ -831,11 +831,11 @@ public:
 	void changeConversionTimer(int iChange) { setConversionTimer(getConversionTimer() + iChange); }
 
 	int getStateReligionCount() const { return m_iStateReligionCount; }
-	bool isStateReligion() const { return (getStateReligionCount() > 0); }											// Exposed to Python
+	bool isStateReligion() const;																					// Exposed to Python
 	void changeStateReligionCount(int iChange);
 
 	int getNoNonStateReligionSpreadCount() const { return m_iNoNonStateReligionSpreadCount; }
-	bool isNoNonStateReligionSpread() const { return (getNoNonStateReligionSpreadCount() > 0); }					// Exposed to Python
+	bool isNoNonStateReligionSpread() const;																		// Exposed to Python
 	void changeNoNonStateReligionSpreadCount(int iChange);
 
 	int getStateReligionHappiness() const { return m_iStateReligionHappiness; }										// Exposed to Python
@@ -1062,10 +1062,7 @@ public:
 	}
 	void changeCapitalCommerceRateModifier(CommerceTypes eCommerce, int iChange);
 
-	int getStateReligionBuildingCommerce(CommerceTypes eCommerce) const												// Exposed to Python
-	{
-		return m_aiStateReligionBuildingCommerce.get(eCommerce);
-	}
+	int getStateReligionBuildingCommerce(CommerceTypes eCommerce) const;											// Exposed to Python
 	void changeStateReligionBuildingCommerce(CommerceTypes eCommerce, int iChange);
 
 	int getSpecialistExtraCommerce(CommerceTypes eCommerce) const													// Exposed to Python
@@ -1123,7 +1120,7 @@ public:
 	bool isBuildingFree(BuildingTypes eBuilding) const { return (getFreeBuildingCount(eBuilding) > 0); }			// Exposed to Python
 	void changeFreeBuildingCount(BuildingTypes eBuilding, int iChange);
 
-    int getBuildingProductionModifier(BuildingTypes eBuilding) const; // doc
+	int getBuildingProductionModifier(BuildingTypes eBuilding) const { return m_aiBuildingProductionModifier.get(eBuilding); } // doc
     void changeBuildingProductionModifier(BuildingTypes eBuilding, int iChange); // doc
 
 	int getExtraBuildingHappiness(BuildingTypes eBuilding) const													// Exposed to Python
@@ -1140,7 +1137,7 @@ public:
 	int getFeatureHappiness(FeatureTypes eFeature) const { return m_aiFeatureHappiness.get(eFeature); }				// Exposed to Python
 	void changeFeatureHappiness(FeatureTypes eFeature, int iChange);
 
-    int getSpecialistExtraCount(SpecialistTypes eSpecialist) const; // doc
+	int getSpecialistExtraCount(SpecialistTypes eSpecialist) const { return m_aiSpecialistExtraCount.get(eSpecialist); } // doc
     void changeSpecialistExtraCount(SpecialistTypes eSpecialist, int iChange); // doc
 
 	int getUnitClassCount(UnitClassTypes eUnitClass) const															// Exposed to Python
@@ -1246,6 +1243,7 @@ public:
 	}
 	void setResearchingTech(TechTypes eTech, bool bNewValue);
 
+	bool hasCivic(CivicTypes eCivic) const;
 	CivicTypes getCivics(CivicOptionTypes eCivicOption) const { return m_aeCivics.get(eCivicOption); }				// Exposed to Python
 	void getCivics(CivicMap& kResult) const; // advc.enum
 	int getSingleCivicUpkeep(CivicTypes eCivic, bool bIgnoreAnarchy = false,										// Exposed to Python
@@ -1256,13 +1254,10 @@ public:
 
 	bool isHasCivic(CivicTypes eCivic) const;
 
-	int getSpecialistExtraYield(SpecialistTypes eSpecialist, YieldTypes eYield) const								// Exposed to Python
-	{
-		return m_aeeiSpecialistExtraYield.get(eSpecialist, eYield);
-	}
+	int getSpecialistExtraYield(SpecialistTypes eSpecialist, YieldTypes eYield) const;								// Exposed to Python
 	void changeSpecialistExtraYield(SpecialistTypes eSpecialist, YieldTypes eYield, int iChange);
 
-    int getUnimprovedTileYield(YieldTypes eYield) const; // doc
+	int getUnimprovedTileYield(YieldTypes eYield) const { return m_aiUnimprovedTileYield.get(eYield); } // doc
     void changeUnimprovedTileYield(YieldTypes eYield, int iChange); // doc
 
     int getCaptureGoldModifier() const; // doc
@@ -1419,6 +1414,7 @@ public:
 	}
 	CvSelectionGroup* addSelectionGroup();
 	void deleteSelectionGroup(int iID);
+	void separateAttackCitySelectionGroups();
 
 	// pending triggers iteration (advc.003j - unused)
 	EventTriggeredData* firstEventTriggered(int *pIterIdx, bool bRev=false) const;
@@ -1513,7 +1509,7 @@ public:
 	int getUnitExtraCost(UnitClassTypes eUnitClass) const;
 	void setUnitExtraCost(UnitClassTypes eUnitClass, int iCost);
 
-	bool splitEmpire(int iCivilization); // doc // TODO: type?
+	bool splitEmpire(CivilizationTypes eNewCivilization); // doc
 	bool canSplitEmpire() const;
 	bool canSplitArea(CvArea const& kArea) const;
 	PlayerTypes getSplitEmpirePlayer(CvArea const& kArea) const;
@@ -1521,7 +1517,7 @@ public:
 
 	void launch(VictoryTypes victoryType);
 
-	bool hasShrine(ReligionTypes eReligion);
+	bool hasShrine(ReligionTypes eReligion) const;
 	int getVotes(VoteTypes eVote, VoteSourceTypes eVoteSource) const;												// Exposed to Python
 	void processVoteSource(VoteSourceTypes eVoteSource, bool bActive);
 	bool canDoResolution(VoteSourceTypes eVoteSource, VoteSelectionSubData const& kData) const;
@@ -1607,11 +1603,11 @@ public:
 	void setStartingEra(EraTypes eNewValue);
 
 	// doc
-	int getModifier(ModifierTypes eModifier) const;
+	int getModifier(ModifierTypes eModifier) const { return m_aiModifier.get(eModifier); }
 	void setModifier(ModifierTypes eModifier, int iNewValue);
 
 	// doc
-	int getTechPreference(TechTypes eTech) const;
+	int getTechPreference(TechTypes eTech) const { return m_aiTechPreference.get(eTech); }
 	void setTechPreference(TechTypes eTech, int iNewValue);
 	void resetTechPreferences();
 
@@ -1633,22 +1629,22 @@ public:
 
 	EraTypes getSoundtrackEra();
 
-	int getDomainFreeExperience(DomainTypes eDomainType) const; // doc
-	void changeDomainExperienceModifier(DomainTypes eDomainType, int iChange); // doc
+	int getDomainFreeExperience(DomainTypes eDomain) const { return m_aiDomainFreeExperience.get(eDomain); } // doc
+	void changeDomainExperienceModifier(DomainTypes eDomain, int iChange); // doc
 
 	int countColonies() const; // doc
 	int countVassalCities() const; // doc
 	int countCoastalCities() const; // doc
 	int countHappinessBonuses() const; // doc
 	int countRequiredSlaves() const; // doc
-	CvCity* findSlaveCity() const; // doc
+	const CvCity* findSlaveCity() const; // doc
 	bool canBuySlaves() const; // doc
 
 	bool isTolerating(ReligionTypes eReligion) const; // doc
 	bool isDistantSpread(CvCity const& kCity, ReligionTypes eReligion) const; // doc
 	ReligionSpreadTypes getSpreadType(CvPlot const& kPlot, ReligionTypes eReligion, bool bDistant = false, bool bRemove = false) const; // doc
 
-	int getStabilityParameter(ParameterTypes eParameter) const; // doc
+	int getStabilityParameter(ParameterTypes eParameter) const { return m_aiStabilityParameter.get(eParameter); } // doc
 	void setStabilityParameter(ParameterTypes eParameter, int iNewValue); // doc
 
 	int AI_getTakenTilesThreshold() const; // doc
@@ -1691,13 +1687,14 @@ public:
 	int calculateCitiesMaintenance() const; // doc
 
 	void restoreGeneralThreshold(); // doc
+	void resetGreatPeopleCreated(); // doc
 
 	bool canUseSlaves() const; // doc
 
 	void updateCultureRanks() const; // doc
 	void updateCultureRanks(CvPlotGroup* pPlotGroup) const; // doc
 
-	bool isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const; // doc
+	bool isSpecialUnitValid(SpecialUnitTypes eSpecialUnit) const { return m_abSpecialUnitValid.get(eSpecialUnit); } // doc
 	void makeSpecialUnitValid(SpecialUnitTypes eSpecialUnit); // doc
 
 	int getSatelliteExtraCommerce(CommerceTypes eCommerce) const; // doc
@@ -1943,11 +1940,11 @@ protected:  // <advc.210>
 	ArrayEnumMap<PlayerTypes,int,short> m_aiGoldPerTurnByPlayer;
 	// advc.120: K-Mod had used default 1; now 0 again.
 	ArrayEnumMap<TeamTypes,int,short> m_aiEspionageSpendingWeightAgainstTeam;
-    ArrayEnumMap<DomainTypes,int,char> m_aiDomainExperienceModifiers; // doc
-    ArrayEnumMap<ParameterTypes,int,char> m_aiStabilityParameters; // doc
-    ArrayEnumMap<ModifierTypes,int,char> m_aiModifiers; // doc
-    ArrayEnumMap<TechTypes,int,char> m_aiTechPreferences; // doc // TODO: renamed
-    ArrayEnumMap<YieldTypes,int,char> m_aiReligionYieldChange; // doc
+    ArrayEnumMap<DomainTypes,int,char> m_aiDomainFreeExperience; // doc
+    ArrayEnumMap<ParameterTypes,int,char> m_aiStabilityParameter; // doc // TODO: ParameterTypes
+    ArrayEnumMap<ModifierTypes,int,char> m_aiModifier; // doc
+    ArrayEnumMap<TechTypes,int,char> m_aiTechPreference; // doc
+    YieldChangeMap m_aiReligionYieldChange; // doc
 	ArrayEnumMap<BonusTypes,int,char> m_aiBonusExport;
 	ArrayEnumMap<BonusTypes,int,char> m_aiBonusImport;
 	ArrayEnumMap<ImprovementTypes,int,short> m_aiImprovementCount;
@@ -1957,8 +1954,8 @@ protected:  // <advc.210>
 	ListEnumMap<BuildingTypes,int,char> m_aiFreeBuildingCount;
 	ListEnumMap<BuildingTypes,int,char> m_aiExtraBuildingHappiness;
 	ListEnumMap<BuildingTypes,int,char> m_aiExtraBuildingHealth;
-    ListEnumMap<BuildingTypes,int,char> m_paiBuildingProductionModifiers; // doc
-    ListEnumMap<SpecialistTypes,int,char> m_paiSpecialistExtraCounts; // doc
+    ListEnumMap<BuildingTypes,int,char> m_aiBuildingProductionModifier; // doc
+    ListEnumMap<SpecialistTypes,int,char> m_aiSpecialistExtraCount; // doc
 	ListEnumMap<FeatureTypes,int,char> m_aiFeatureHappiness;
 	ArrayEnumMap<UnitClassTypes,int,short> m_aiUnitClassCount;
 	ArrayEnumMap<UnitClassTypes,int,short> m_aiUnitClassMaking;
@@ -1982,7 +1979,7 @@ protected:  // <advc.210>
 	ArrayEnumMap<TechTypes,bool> m_abResearchingTech;
 	ArrayEnumMap<PlayerTypes,bool> m_abEverSeenDemographics; // advc.091
 	ArrayEnumMap<VoteSourceTypes,bool,void*,true> m_abLoyalMember;
-    ArrayEnumMap<SpecialUnitTypes,bool> m_pabSpecialUnitValid; // doc
+    ArrayEnumMap<SpecialUnitTypes,bool> m_abSpecialUnitValid; // doc
 
 	Enum2IntEncMap<ArrayEnumMap<SpecialistTypes,YieldChangeMap::enc_t>,
 			YieldChangeMap> m_aeeiSpecialistExtraYield;

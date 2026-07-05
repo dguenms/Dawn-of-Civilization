@@ -632,7 +632,7 @@ void CvNetEmpireSplit::Execute()
 {
 	if (m_ePlayer != NO_PLAYER)
 	{
-		GET_PLAYER(m_ePlayer).splitEmpire(m_iPlayerID);
+		GET_PLAYER(m_ePlayer).splitEmpire((CivilizationTypes)m_iPlayerID);
 	}
 }
 

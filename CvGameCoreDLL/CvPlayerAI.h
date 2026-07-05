@@ -104,7 +104,7 @@ public:
 	#if 0 // advc
 	void AI_doCentralizedProduction(); // K-Mod. (not used)
 	#endif
-	void AI_conquerCity(CvCityAI& kCity, /* advc.ctr: */ bool bEverOwned = false);
+	void AI_conquerCity(CvCityAI& kCity, PlayerTypes eHighestCulturePlayer, int iCaptureGold, /* advc.ctr: */ bool bEverOwned = false);
 	scaled AI_razeMemoryScore(CvCity const& kCity) const; // advc.130q
 	bool AI_acceptUnit(CvUnit const& kUnit) const;
 	bool AI_captureUnit(UnitTypes eUnit, CvPlot const& kPlot) const;
@@ -286,13 +286,13 @@ public:
 			bool bAssumeEnabled = false, // K-Mod
 			// advc.036: Whether baseBonusVal is computed for a resource trade
 			bool bTrade = false) const;
-	int AI_baseBonusVal(BonusTypes eBonus, /* advc.036: */ bool bTrade = false) const;
+	int AI_baseBonusVal(BonusTypes eBonus, /* doc */ int iChange, /* advc.036: */ bool bTrade = false) const;
 	int AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes eFromPlayer, int iChange,
 			bool bExtraHappyOrHealth = false) const; // advc.036
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes eToPlayer,
 			int iChange = 0) const; // advc.133
 	// advc.210e: Exposed to Python
-	int AI_corporationBonusVal(BonusTypes eBonus, /* advc.036: */ bool bTrade = false) const;
+	int AI_corporationBonusVal(BonusTypes eBonus, /* doc */ int iChange, /* advc.036: */ bool bTrade = false) const;
 	int AI_goldForBonus(BonusTypes eBonus, PlayerTypes eBonusOwner) const; // advc.036
 	// <advc.ctr>
     int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const; // doc
@@ -360,6 +360,7 @@ public:
 	{
 		return (AI_countOwnedBonuses(eBonus, 1) > 0);
 	} // </advc.opt>
+	int AI_neededWorkers() const;
 	int AI_neededWorkers(CvArea const& kArea) const;
 	int AI_neededMissionaries(CvArea const& kArea, ReligionTypes eReligion) const;
 	int AI_neededExecutives(CvArea const& kArea, CorporationTypes eCorporation) const;
@@ -678,8 +679,8 @@ public:
 			CvArea const* pExcludeArea = NULL) const;
 	int AI_getNumPrimaryAreaCitySites(int iMinimumValue = 0) const; // K-Mod
     CvPlot& AI_getCitySite(int iIndex) const;
-    int AI_bestCitySiteSettlerValue(int iAreaID = -1) const; // doc
-    int AI_bestAdjacentCitySiteSettlerValue(int iAreaID = -1) const; // doc
+    int AI_bestCitySiteSettlerValue(CvArea const* pArea = NULL) const; // doc
+    int AI_bestAdjacentCitySiteSettlerValue(CvArea const* pWaterArea = NULL) const; // doc
 	// advc.117, advc.121:
 	bool AI_isAdjacentCitySite(CvPlot const& p, bool bCheckCenter) const;
 	bool AI_isAwfulSite(CvCity const& kCity, bool bConquest = false) const; // advc.ctr
@@ -766,9 +767,9 @@ public:
 	// advc.104r: Made public and param added
 	void AI_doSplit(bool bForce = false);
 
-    int AI_slaveTradeVal(CvUnit* pUnit) const; // doc (edead)
+    int AI_slaveTradeVal(CvUnit const& kUnit) const; // doc (edead)
     int AI_getPersecutionValue(ReligionTypes eReligion) const; // doc
-    int AI_neededPersecutors(CvArea* pArea) const; // doc
+    int AI_neededPersecutors(CvArea const& kArea) const; // doc
     bool AI_enablesUnitWonder(UnitClassTypes eUnitClass, int iPathLength) const; // doc // TODO: used?
     bool AI_willUseNukes(PlayerTypes eTarget, bool bOffensive) const; // doc // TODO: used?
     int AI_getEnemyPower(bool bIncludeMinors = false) const; // doc
@@ -1012,5 +1013,21 @@ inline CvUnitAI* AI_getUnit(IDInfo unit)
 	FAssertBounds(0, MAX_PLAYERS, unit.eOwner);
 	return GET_PLAYER(unit.eOwner).AI_getUnit(unit.iID);
 } // </advc.003u>
+
+// doc: persecution priority
+static const int persecutionValue[NUM_RELIGION_TYPES][NUM_RELIGION_TYPES] =
+{
+	// JUD ORT CAT PRO ISL HIN BUD CON TAO ZOR
+	{  -1,  1,  1,  1,  1,  1,  1,  1,  1,  1 }, // Judaism
+	{   1, -1,  3,  3,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
+	{   2,  2, -1,  3,  4,  1,  1,  1,  1,  2 }, // Catholicism
+	{   3,  2,  3, -1,  4,  1,  1,  1,  1,  2 }, // Protestantism
+	{   1,  2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam
+	{   1,  3,  3,  3,  4, -1,  0,  1,  1,  2 }, // Hinduism
+	{   1,  3,  3,  3,  4,  0, -1,  1,  1,  2 }, // Buddhism
+	{   1,  2,  2,  2,  3,  1,  1, -1,  0,  1 }, // Confucianism
+	{   1,  2,  2,  2,  3,  1,  1,  0, -1,  1 }, // Taoism
+	{   1,  3,  3,  3,  4,  1,  1,  1,  1, -1 }, // Zoroastrianism
+};
 
 #endif

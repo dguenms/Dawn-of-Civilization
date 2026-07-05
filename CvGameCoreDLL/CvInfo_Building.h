@@ -179,8 +179,9 @@ public:
 	ReligionTypes getHolyCity() const { return m_eHolyCity; }
 	ReligionTypes getReligionType() const { return m_eReligionType; }
 	ReligionTypes getStateReligion() const { return m_eStateReligion; }
+	ReligionTypes getOrStateReligion() const { return m_eOrStateReligion; }
 	ReligionTypes getPrereqReligion() const { return m_ePrereqReligion; }
-	ReligionTypes getPrereqOrReligion() const { return m_ePrereqOrReligion; }
+	ReligionTypes getPrereqOrReligion() const { return m_ePrereqOrReligion; } // doc
 	CorporationTypes getPrereqCorporation() const
 	{
 		return m_ePrereqCorporation;
@@ -333,6 +334,8 @@ public:
 	// <advc.003w> for convenience
 
 	// doc
+	DEF_INFO_ENUM_MAP(PrereqBuildingClassPercent, BuildingClass, int, short, NonDefaultEnumMap);
+
 	DEF_INFO_ENUM2SHORT_MAP(BonusCommerceModifier, Bonus, Commerce, CommercePercentMap, NonDefaultEnumMap);
 	DEF_INFO_ENUM2SHORT_MAP(BonusYieldChange, Bonus, Yield, YieldChangeMap, NonDefaultEnumMap);
 
@@ -437,6 +440,7 @@ protected:
 	ReligionTypes m_eHolyCity;
 	ReligionTypes m_eReligionType;
 	ReligionTypes m_eStateReligion;
+	ReligionTypes m_eOrStateReligion; // doc
 	ReligionTypes m_ePrereqReligion;
 	ReligionTypes m_ePrereqOrReligion; // doc
 	CorporationTypes m_ePrereqCorporation;

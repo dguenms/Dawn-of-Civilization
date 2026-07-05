@@ -168,7 +168,7 @@ public:
 
     void AI_ClearConstructionValueCache(); // K-Mod
 
-    ReligionTypes AI_getPersecutionReligion(ReligionTypes eIgnoredReligion); // doc
+    ReligionTypes AI_getPersecutionReligion(ReligionTypes eIgnoredReligion = NO_RELIGION) const; // doc
     int AI_buildingWeight(BuildingTypes eBuilding) const; // doc
 	bool AI_isDesirableWonder(BuildingTypes eBuilding) const;
 

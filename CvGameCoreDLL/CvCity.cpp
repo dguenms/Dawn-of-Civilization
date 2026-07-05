@@ -7882,11 +7882,51 @@ void CvCity::setOriginalCiv(CivilizationTypes eNewValue)
 bool CvCity::isOriginalOwner(PlayerTypes ePlayer) const
 {
 	if (ePlayer == NO_PLAYER)
-	{
 		return false;
-	}
 
 	return GET_PLAYER(ePlayer).getCivilizationType() == getOriginalCiv();
+}
+
+
+int CvCity::getSettlerValue() const
+{
+	return getPlot().getSettlerValue();
+}
+
+
+int CvCity::getSettlerValue(PlayerTypes ePlayer) const
+{
+	return getPlot().getSettlerValue(ePlayer);
+}
+
+
+int CvCity::getSettlerValue(CivilizationTypes eCivilization) const
+{
+	return getPlot().getSettlerValue(eCivilization);
+}
+
+
+int CvCity::getWarValue() const
+{
+	return getPlot().getWarValue();
+}
+
+
+int CvCity::getWarValue(PlayerTypes ePlayer) const
+{
+	return getPlot().getWarValue(ePlayer);
+}
+
+
+int CvCity::getWarValue(CivilizationTypes eCivilization) const
+{
+	return getPlot().getWarValue(eCivilization);
+}
+
+
+bool CvCity::isBirthProtected() const
+{
+	return getPlot().isBirthProtected();
 }
 
 
