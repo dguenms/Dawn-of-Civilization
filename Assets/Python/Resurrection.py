@@ -289,8 +289,6 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	convertBackCulture(iPlayer)
 	
 	game.setUpdatePlotGroups(True)
-	for p in plots.owner(iPlayer):
-		p.updatePlotGroup()
 	
 	# resurrection leaders
 	if iCiv in dResurrectionLeaders:

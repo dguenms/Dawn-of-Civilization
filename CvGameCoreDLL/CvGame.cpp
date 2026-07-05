@@ -10948,4 +10948,12 @@ bool CvGame::isUpdatePlotGroups() const
 void CvGame::setUpdatePlotGroups(bool bNewValue)
 {
 	m_bUpdatePlotGroups = bNewValue;
+
+	if (bNewValue)
+	{
+		for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
+		{
+			GC.getMap().plotByIndex(iI)->updatePlotGroup();
+		}
+	}
 }

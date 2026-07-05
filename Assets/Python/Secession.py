@@ -36,7 +36,6 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		# free up ruins for Indraprastha spawn
 		if location(cityPlot) == tDelhi:
 			cityPlot.setImprovementType(-1)
-			
 	
 	# determine who has the best claim on each city
 	dClaimedCities = appenddict()
@@ -65,8 +64,6 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 			lMinorCities.extend(claimedCities)
 			
 		game.setUpdatePlotGroups(True)
-		for p in plots.owner(iClaimant):
-			p.updatePlotGroup()
 	
 	# secede remaining cities to minors
 	lPossibleMinors = getPossibleMinors(iPlayer)
@@ -76,9 +73,7 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 			secedeCity(city, iMinor, not bComplete, iArmyPercent)
 		
 		game.setUpdatePlotGroups(True)
-		for p in plots.owner(iMinor):
-			p.updatePlotGroup()
-		
+
 	# notify for partial secessions
 	if not bComplete and player().canContact(iPlayer):
 		message(active(), 'TXT_KEY_STABILITY_CITIES_SECEDED', fullname(iPlayer), len(secedingCities))
