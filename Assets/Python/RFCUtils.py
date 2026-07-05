@@ -1160,6 +1160,7 @@ def possibleSpawnsBetween(origin, target, iDistance):
 			.passable()
 			.where(lambda p: p.getOwner() in [plot(origin).getOwner(), plot(target).getOwner(), -1])
 			.where(lambda p: map.getArea(p.getArea()).getNumCities() > 0)
+			.where(lambda p: p.getArea() == target.getArea())
 			.where(lambda p: distance(p, target) >= iDistance)
 			.where(lambda p: not p.isVisibleEnemyUnit(origin.getOwner()))
 			.where(lambda p: not cities.surrounding(p).notowner(origin.getOwner()))
