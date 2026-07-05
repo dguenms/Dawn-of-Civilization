@@ -316,7 +316,8 @@ dRemovedResourcesDict = {
 	(32, 42)  : 1650, # Gold in Hispaniola
 	(47, 24)  : 1650, # Dye (brazilwood) in Brazil
 	(110, 49) : 1750, # Gold in Tibet
-	(83, 58)  : 1850, # Spices (saffron) in Anatolia
+	(83, 55)  : 1850, # Spices (saffron) in Anatolia
+	(84, 55)  : 1850, # Spices (saffron) in Anatolia
 }
 
 dFeaturesDict = {
