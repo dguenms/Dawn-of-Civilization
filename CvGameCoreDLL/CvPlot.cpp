@@ -47,14 +47,6 @@ CvPlot::CvPlot() // advc: Merged with the deleted reset function
 	m_iActivePlayerSafeRangeCache = -1;
 	// BETTER_BTS_AI_MOD: END
 
-    // TODO: refactor
-    m_abCore = NULL; // doc
-    m_aiSettlerValue = NULL; // doc
-    m_aiWarValue = NULL; // doc
-    m_aiReligionSpreadFactor = NULL; // doc
-
-    m_aiReligionInfluence = NULL; // doc
-
 	m_pFeatureSymbol = NULL;
 	m_pPlotBuilder = NULL;
 	m_pRouteSymbol = NULL;
@@ -418,11 +410,11 @@ void CvPlot::doTurn()
     {
         if (GET_PLAYER(getOwner()).isHasBuildingEffect(GREAT_WALL))
         {
-            FOR_EACH_UNIT_IN_VAR(pUnit, *this)
+            FOR_EACH_UNIT_VAR_IN(pUnit, *this)
             {
                 if (pUnit->isBarbarian())
                 {
-                    pUnit->changeDamage(10, getOwnerINLINE());
+                    pUnit->changeDamage(10, getOwner());
                 }
             }
         }
@@ -496,18 +488,16 @@ void CvPlot::doImprovement()
 			aren't correctly implemented, and I'm not going to fix that. */
 		//if (isBeingWorked() || GC.getInfo(eImprovementUpgrade).isOutsideBorders())
 		changeUpgradeProgress(kOwner.getImprovementUpgradeRate());
-        iUpgradeTime = getImprovementUpgradeTime(getImprovementType()) * 100;
+        int iUpgradeTime = GC.getGame().getImprovementUpgradeTime(getImprovementType()) * 100;
 
 	    // doc: slower upgrade rate on unhealthy improvements
-        // TODO: move to getImprovementUpgradeTime
 	    if (isFeature() && GC.getInfo(getFeatureType()).getHealthPercent() < 0)
 	    {
 	        iUpgradeTime *= 100 + std::abs(GC.getInfo(getFeatureType()).getHealthPercent());
 	        iUpgradeTime /= 100;
 	    }
 
-		if (getUpgradeProgress() >= GC.getGame().
-			getImprovementUpgradeTime(getImprovementType()) * 100)
+		if (getUpgradeProgress() >= iUpgradeTime)
 		{
 			setImprovementType(eImprovementUpgrade);
 		}
@@ -1524,6 +1514,11 @@ bool CvPlot::isLake() const
 	return (area() == NULL ? false : getArea().isLake());
 }
 
+bool CvPlot::isSaline() const
+{
+	return GC.getInfo(getTerrainType()).isSaline();
+}
+
 // XXX if this changes need to call updateIrrigated and CvCity::updateFreshWaterHealth
 // XXX precalculate this???
 bool CvPlot::isFreshWater() const
@@ -1543,7 +1538,7 @@ bool CvPlot::isFreshWater() const
 
 	FOR_EACH_ADJ_PLOT(*this)
 	{
-		if (pAdj->isLake() && !GC.getInfo(pAdj->getTerrainType()).isSaline()) // doc: salt lakes // TODO: plot function?
+		if (pAdj->isLake() && !pAdj->isSaline()) // doc: salt lakes
 			return true;
 		if (pAdj->isFeature() &&
 			GC.getInfo(pAdj->getFeatureType()).isAddsFreshWater())
@@ -1978,7 +1973,7 @@ bool CvPlot::canSeeDisplacementPlot(TeamTypes eTeam, int iDX, int iDY,
 
 		    // doc: reduce water sight of land units
 		    if (!isWater() && pPlot->isWater())
-		        fromLevel -= 1;
+		        iFromLevel -= 1;
 
 			if (bOuterRing) // check strictly higher level
 			{
@@ -2841,8 +2836,8 @@ int CvPlot::movementCost(CvUnit const& kUnit, CvPlot const& kFrom,
     // doc: Great Wall effect: +1 movement cost for enemies within the great wall
     if (isWithinGreatWall() && isOwned())
     {
-        if (GET_PLAYER(getOwner()).isHasBuildingEffect(GREAT_WALL) && GET_TEAM(getTeam()).isAtWar(pUnit->getTeam()))
-            iRegularCost += GC.getHILLS_EXTRA_MOVEMENT();
+        if (GET_PLAYER(getOwner()).isHasBuildingEffect(GREAT_WALL) && GET_TEAM(getTeam()).isAtWar(kUnit.getTeam()))
+            iRegularCost += GC.getDefineINT(CvGlobals::HILLS_EXTRA_MOVEMENT);
     }
 
 	bool bHasTerrainCost = true; // (iRegularCost > 1); // doc: double move is possible
@@ -2856,7 +2851,7 @@ int CvPlot::movementCost(CvUnit const& kUnit, CvPlot const& kFrom,
         // doc: unit must be able to enter Ocean (not just culture access)
         if (!kUnit.getUnitInfo().getTerrainImpassable(getTerrainType()) ||
             (kUnit.getUnitInfo().getTerrainPassableTech(getTerrainType()) != NO_TEAM &&
-            GET_TEAM(kUnit.getTeam()).isHasTech(kUnit.getUnitInfo().getTerrainPassableTech(getTerrainType())))
+            GET_TEAM(kUnit.getTeam()).isHasTech(kUnit.getUnitInfo().getTerrainPassableTech(getTerrainType()))))
             iRegularCost /= 2;
     }
 
@@ -3036,7 +3031,7 @@ PlayerTypes CvPlot::calculateCulturalOwner(/* advc.099c: */ bool bIgnoreCultureR
             {
                 for (PlayerIter<MAJOR_CIV,NOT_SAME_TEAM_AS> itOther(itPlayer->getTeam()); itOther.hasNext(); ++itOther)
                 {
-                    if (!itOther->isAlive() && isCore(itOther->getID()) && GC.getGame().getGameTurn() > it->getInitialBirthTurn())
+                    if (!itOther->isAlive() && isCore(itOther->getID()) && GC.getGame().getGameTurn() > itOther->getInitialBirthTurn())
                     {
                         iCulture *= 4;
                         break;
@@ -3627,7 +3622,7 @@ bool CvPlot::isTradeNetworkConnected(CvPlot const& kOther, TeamTypes eTeam) cons
 			return true;
 
         // doc: always connected on islands with 3 or less tiles
-        if (!isWater() && area().getNumTiles() <= 3)
+        if (!isWater() && getArea().getNumTiles() <= 3)
             return true;
 
 		if (kOther.isRiverNetwork(eTeam) &&
@@ -3682,8 +3677,7 @@ bool CvPlot::isTradeNetworkConnected(CvPlot const& kOther, TeamTypes eTeam) cons
 }
 
 // doc
-// TODO: restore in header
-bool CvPlot::isImpassable() const
+bool CvPlot::determineImpassable() const
 {
     if (isPeak())
         return true;
@@ -3833,18 +3827,6 @@ void CvPlot::initArea()
 {
 	m_pArea = GC.getMap().getArea(m_iArea);
 	FAssert(m_pArea != NULL);
-}
-
-
-// doc
-CvArea* CvPlot::continentArea() const
-{
-    if (m_pPlotArea != NULL && m_pPlotArea->getID() == getContinentArea())
-    {
-        return m_pPlotArea;
-    }
-
-    return GC.getMapINLINE().getArea(getArea());
 }
 
 
@@ -4953,12 +4935,13 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
     // doc: update culture cost
 	if (eOldFeature != eNewValue)
 	{
-		for (CityPlotIter3 itPlot(*this); itPlot.hasNext(); ++itPlot) // TODO: implement
+		FOR_EACH_ENUM(CulturePlot)
 		{
-			if (itPlot->isCity())
+			CvPlot* pCulturePlot = plotCulture(getX(), getY(), eLoopCulturePlot);
+			if (pCulturePlot->isCity())
 			{
-				itPlot->getCity()->updateCultureCosts();
-				itPlot->getCity()->updateCoveredPlots(true);
+				pCulturePlot->getPlotCity()->updateCultureCosts();
+				pCulturePlot->getPlotCity()->updateCoveredPlots(true);
 			}
 		}
 	}
@@ -5096,12 +5079,13 @@ void CvPlot::setBonusType(BonusTypes eNewValue)
 	gDLL->UI().setDirty(GlobeLayer_DIRTY_BIT, true);
 
     // doc: update culture costs
-	for (CityPlotIter3 itPlot(*this); itPlot.hasNext(); ++itPlot) // TODO: implement - or version of nearby city iter
+	FOR_EACH_ENUM(CulturePlot)
     {
-        if (itPlot->isCity())
+		CvPlot* pCulturePlot = plotCulture(getX(), getY(), eLoopCulturePlot);
+        if (pCulturePlot->isCity())
         {
-            itPlot->getCity()->updateCultureCosts();
-            itPlot->getCity()->updateCoveredPlots(true);
+			pCulturePlot->getPlotCity()->updateCultureCosts();
+			pCulturePlot->getPlotCity()->updateCoveredPlots(true);
         }
     }
 }
@@ -5203,13 +5187,14 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue,
 	    updatePlotGroup(/* advc.064d: */ true);
 
 	    // doc: update culture costs
-	    for (CityPlotIter3 itPlot(*this); itPlot.hasNext(); ++itPlot) // TODO: implement - or version of nearby city iter
+		FOR_EACH_ENUM(CulturePlot)
 	    {
-	        if (itPlot->isCity())
+			CvPlot* pCulturePlot = plotCulture(getX(), getY(), eLoopCulturePlot);
+	        if (pCulturePlot->isCity())
 	        {
-                itPlot->getCity()->setNextCoveredPlot(0, false);
-	            itPlot->getCity()->updateCultureCosts();
-	            itPlot->getCity()->updateCoveredPlots(true);
+				pCulturePlot->getPlotCity()->setNextCoveredPlot(FIRST_CULTURE_PLOT, false);
+				pCulturePlot->getPlotCity()->updateCultureCosts();
+				pCulturePlot->getPlotCity()->updateCoveredPlots(true);
 	        }
 	    }
 	}
@@ -5667,14 +5652,15 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 		        if (eYield == YIELD_FOOD || eYield == YIELD_PRODUCTION)
 		        {
                     if (getFeatureType() == FEATURE_JUNGLE || getFeatureType() == FEATURE_RAINFOREST || getFeatureType() == FEATURE_MARSH)
-		                iYield += 1;
+		                iYieldRate += 1;
 		        }
 		    }
         }
 	}
 
     // doc: clamp negative value and apply bonus effects last so they always appear
-    iYield = std::max(0, iYield);
+    iYieldRate = std::max(0, iYieldRate);
+
     if (eTeam != NO_TEAM)
     {
         BonusTypes eBonus = getBonusType(eTeam);
@@ -5897,7 +5883,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
                             iYield += pWorkingCity->getBonusYield(getBonusType(), eYield);
 
                             // doc: Manchu UP: additional food and commerce from improved resources when at peace for happy cities
-                            if (eCivilization == MANCHU && pWorkingCity->angryPopulation() == 0 && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWarWithMajorPlayer())
+                            if (getCivilizationType() == MANCHU && pWorkingCity->angryPopulation() == 0 && !GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWarWithMajorPlayer())
                             {
                                 if (eYield == YIELD_FOOD && GC.getInfo(eImprovement).getImprovementBonusYield(getBonusType(), eYield) > 0)
                                     iYield += 1;
@@ -5919,7 +5905,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			(!bDisplay || pCity->isRevealed(getActiveTeam())))
 		{
 			// advc.031: Moved into new function
-			iYield += calculateCityPlotYieldChange(eYield, iYield, pCity->getPopulation());
+			iYield += calculateCityPlotYieldChange(eYield, iYield, getOwner(), pCity->getPopulation());
 		}
 	}
 
@@ -5955,7 +5941,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	    }
 
 	    // doc: Ethiopian UP: +1 food on hill tiles that yield at least one food
-	    if (eCivilization == ETHIOPIA)
+	    if (getCivilizationType() == ETHIOPIA)
 	    {
 	        if (eYield == YIELD_FOOD)
 	        {
@@ -5967,7 +5953,7 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 	    }
 
 	    // Leoreth: Ruthenian UP: +1 commerce on unimproved land tiles in your trade network
-	    if (eCivilization == RUS)
+	    if (getCivilizationType() == RUS)
 	    {
 	        if (eYield == YIELD_COMMERCE)
 	        {
@@ -6128,15 +6114,12 @@ int CvPlot::getActualTotalCulture() const
 // doc
 int CvPlot::countTotalCulture(bool bIncludeDeadCivilizations) const
 {
-	int iTotalCulture;
-	int iI;
-
-	iTotalCulture = 0;
-	for (iI = 0; iI < NUM_TOTAL_CIVILIZATIONS; ++iI) // TODO: refactor
+	int iTotalCulture = 0;
+	FOR_EACH_ENUM(Civilization)
 	{
-		if (bIncludeDeadCivilizations || isCivAlive((CivilizationTypes)iI))
+		if (bIncludeDeadCivilizations || isCivAlive(eLoopCivilization))
 		{
-			iTotalCulture += getCulture((CivilizationTypes)iI);
+			iTotalCulture += getCulture(eLoopCivilization);
 		}
 	}
 	return iTotalCulture;
@@ -6247,8 +6230,8 @@ void CvPlot::setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUp
         return;
 
     // <advc.opt>
-    m_aiCulture.set(eIndex, iNewValue);
-    m_iTotalCulture += iNewValue - m_aiCulture.get(eIndex); // </advc.opt>
+    m_aiCulture.set(eCivilization, iNewValue);
+    m_iTotalCulture += iNewValue - m_aiCulture.get(eCivilization); // </advc.opt>
     FAssert(getActualCulture(eCivilization) >= 0);
 
     if (bUpdate)
@@ -6262,7 +6245,7 @@ void CvPlot::setCulture(CivilizationTypes eCivilization, int iNewValue, bool bUp
 
 void CvPlot::setCulture(PlayerTypes ePlayer, int iNewValue, bool bUpdate, bool bUpdatePlotGroups)
 {
-    if (getActualCulture(ePlayer == iNewValue)
+    if (getActualCulture(ePlayer) == iNewValue)
         return;
 
     setCulture(GET_PLAYER(ePlayer).getCivilizationType(), iNewValue, bUpdate, bUpdatePlotGroups);
@@ -6275,8 +6258,10 @@ void CvPlot::setCulture(PlayerTypes ePlayer, int iNewValue, bool bUpdate, bool b
 
 void CvPlot::changeCulture(PlayerTypes ePlayer, int iChange, bool bUpdate)
 {
-	if(iChange != 0)
-		setCulture(eIndex, getCulture(ePlayer) + iChange, bUpdate, true);
+	if (iChange == 0)
+		return
+
+	setCulture(ePlayer, getCulture(ePlayer) + iChange, bUpdate, true);
 }
 
 
@@ -6331,7 +6316,7 @@ bool CvPlot::isBestAdjacentFound(PlayerTypes eIndex) /* advc: */ const
 		{
             // doc: settler map
             int iAdjacentSettlerValue = pAdj->getSettlerValue(eIndex);
-		    if ((GET_PLAYER(eIndex).canFound(pAdjacentPlot->getX(), pAdjacentPlot->getY()) || iAdjacentSettlerValue >= 10) &&
+		    if ((GET_PLAYER(eIndex).canFound(pAdj->getX(), pAdj->getY()) || iAdjacentSettlerValue >= 10) &&
                 (iAdjacentSettlerValue >= 10 || iSettlerValue <= 1) &&
                 iAdjacentSettlerValue > iSettlerValue)
 		        return false;
@@ -7771,6 +7756,12 @@ int CvPlot::exclusiveRadius(PlayerTypes ePlayer) const
 	return iRadius;
 }
 
+// doc
+CivilizationTypes CvPlot::getCivilizationType() const
+{
+	return getOwner() != NO_PLAYER ? GET_PLAYER(getOwner()).getCivilizationType() : NO_CIVILIZATION;
+}
+
 /*	advc: Replacing the old getArea function. Not public b/c CvAreas shouldn't be
 	routinely passed and accessed by id. */
 int CvPlot::areaID() const
@@ -8397,7 +8388,6 @@ bool CvPlot::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer) const
 	{
 		if (getPlotType() != kTrigger.getPlotType())
 			return false;
-		}
 
 		// doc: exclude peaks unless specifically for peaks
 		if (kTrigger.getPlotType() != PLOT_PEAK && isPeak())
@@ -8717,7 +8707,8 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible,
 			if (eSpecialBuilding == NO_SPECIALBUILDING)
                 return false;
 
-			if (!GET_PLAYER(getOwner()).isSpecialBuildingNotRequired(eSpecialBuilding) && (GC.getInfo(eSpecialBuilding).getObsoleteTech() == NO_TECH || !GET_TEAM(getTeam()).isHasTech(GC.getInfo(eSpecialBuilding).getObsoleteTech()))
+			if (!GET_PLAYER(getOwner()).isSpecialBuildingNotRequired(eSpecialBuilding) && 
+				(GC.getInfo(eSpecialBuilding).getObsoleteTech() == NO_TECH || !GET_TEAM(getTeam()).isHasTech(GC.getInfo(eSpecialBuilding).getObsoleteTech())))
 				return false;
 		}
 	}
@@ -9153,7 +9144,7 @@ bool CvPlot::isCore(CivilizationTypes eCivilization) const
 bool CvPlot::isCore(PlayerTypes ePlayer) const
 {
 	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
-	if (eCivilization != NO_CIVILIZATION && eCivilization < NUM_CIVS)
+	if (eCivilization != NO_CIVILIZATION)
 		return isCore(eCivilization);
 	return false;
 }
@@ -9162,7 +9153,7 @@ bool CvPlot::isCore(PlayerTypes ePlayer) const
 bool CvPlot::isCore() const
 {
 	if (isOwned())
-		return isCore(getOwnerINLINE());
+		return isCore(getOwner());
 	return false;
 }
 
@@ -9185,7 +9176,7 @@ int CvPlot::getSettlerValue(CivilizationTypes eCivilization) const
 int CvPlot::getSettlerValue(PlayerTypes ePlayer) const
 {
 	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
-	if (eCivilization != NO_CIVILIZATION && eCivilization < NUM_CIVS)
+	if (eCivilization != NO_CIVILIZATION)
 		return getSettlerValue(eCivilization);
 	return 0;
 }
@@ -9210,7 +9201,7 @@ int CvPlot::getWarValue(CivilizationTypes eCivilization) const
 int CvPlot::getWarValue(PlayerTypes ePlayer) const
 {
 	CivilizationTypes eCivilization = GET_PLAYER(ePlayer).getCivilizationType();
-	if (eCivilization != NO_CIVILIZATION && eCivilization < NUM_CIVS)
+	if (eCivilization != NO_CIVILIZATION)
 		return getWarValue(eCivilization);
 	return 0;
 }
@@ -9230,17 +9221,17 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 
 	if (eReligion == JUDAISM)
 	{
-		if (!GC.getGameINLINE().isReligionFounded(ORTHODOXY))
+		if (!GC.getGame().isReligionFounded(ORTHODOXY))
 			return getSpreadFactor(ORTHODOXY);
 	}
 	else if (eReligion == ORTHODOXY)
 	{
-		if (!GC.getGameINLINE().isReligionFounded(ISLAM))
+		if (!GC.getGame().isReligionFounded(ISLAM))
 		{
 			if (getSpreadFactor(ISLAM) == REGION_SPREAD_CORE)
 				return REGION_SPREAD_CORE;
 		}
-		if (!GC.getGameINLINE().isReligionFounded(CATHOLICISM))
+		if (!GC.getGame().isReligionFounded(CATHOLICISM))
 		{
 			if (iSpreadFactor < getSpreadFactor(CATHOLICISM))
 				return getSpreadFactor(CATHOLICISM);
@@ -9248,7 +9239,7 @@ int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 	}
 	else if (eReligion == CATHOLICISM)
 	{
-		if (!GC.getGameINLINE().isReligionFounded(PROTESTANTISM))
+		if (!GC.getGame().isReligionFounded(PROTESTANTISM))
 		{
 			if (getRegionID() != REGION_SCANDINAVIA || GC.getGame().getGameTurnYear() >= 900)
 			{
@@ -9362,15 +9353,16 @@ bool CvPlot::canSpread(ReligionTypes eReligion) const
 bool CvPlot::isPlains() const
 {
 	return isFlatlands() &&
-        (!isFeature() || GC.getFeatureInfo(getFeatureType()).getDefenseModifier() <= 0) &&
-        !isCity(true);
+        (!isFeature() || GC.getInfo(getFeatureType()).getDefenseModifier() <= 0) &&
+		(!isImproved() || GC.getInfo(getImprovementType()).getDefenseModifier() <= 0) &&
+        !isCity();
 }
 
 // doc
 // TODO: header
 CivilizationTypes CvPlot::getCultureConversionCivilization() const
 {
-	return m_eCultureConversionCivilization;
+	return (CivilizationTypes)m_eCultureConversionCivilization;
 }
 
 // doc

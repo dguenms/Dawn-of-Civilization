@@ -39,6 +39,9 @@ public: // All the const functions are exposed to Python except for those relate
 	bool isFoundCoast() const { return m_bFoundCoast; }
 	bool isFoundFreshWater() const { return m_bFoundFreshWater; }
 
+	// doc
+	bool isSaline() const { return m_bSaline; }
+
 	DllExport const TCHAR* getArtDefineTag() const;
 
 	int getWorldSoundscapeScriptId() const;
@@ -68,6 +71,9 @@ protected:
 	bool m_bFound;
 	bool m_bFoundCoast;
 	bool m_bFoundFreshWater;
+
+	// doc
+	bool m_bSaline;
 
 	int m_iWorldSoundscapeScriptId;
 
@@ -122,6 +128,9 @@ public: /*  All the const functions are exposed to Python except for those deali
 	bool isNukeImmune() const;
 	const TCHAR* getOnUnitChangeTo() const;
 
+	// doc
+	bool isMakesPassable() const { return m_bMakesPassable; }
+
 	const TCHAR* getArtDefineTag() const;
 
 	int getWorldSoundscapeScriptId() const;
@@ -167,6 +176,9 @@ protected:
 	int m_iTurnDamage;
 	int m_iWarmingDefense; //GWMod
 
+	// doc
+	int m_iCultureCostModifier;
+
 	bool m_bNoCoast;
 	bool m_bNoRiver;
 	bool m_bNoRiverSide; // advc.129b
@@ -182,10 +194,10 @@ protected:
 	bool m_bNukeImmune;
 	CvString m_szOnUnitChangeTo;
 
-	int m_iWorldSoundscapeScriptId;
-
 	// doc
-	int m_iCultureCostModifier;
+	bool m_bMakesPassable;
+
+	int m_iWorldSoundscapeScriptId;
 
 	CvString m_szEffectType;
 	int m_iEffectProbability;

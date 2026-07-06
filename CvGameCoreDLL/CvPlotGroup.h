@@ -26,6 +26,7 @@ public:
 	int getID() const { return m_iID; }
 	void setID(int iID) { m_iID = iID; }
 	PlayerTypes getOwner() const { return m_eOwner; }
+	bool isOwned() const { return getOwner() != NO_PLAYER; }
 
 	int getNumBonuses(BonusTypes eBonus) const { return m_aiNumBonuses.get(eBonus); }
 	bool hasBonus(BonusTypes eBonus) { return(getNumBonuses(eBonus) > 0); }

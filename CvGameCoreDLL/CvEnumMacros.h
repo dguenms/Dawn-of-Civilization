@@ -11,7 +11,6 @@
 	(CvXMLLoadUtility will verify this too.) */
 #define DO_FOR_EACH_SMALL_DYN_INFO_TYPE(DO) \
 	/* getNumInfos function exported */ \
-	DO(Route, ROUTE) \
 	/* getInfo function and getNumInfos function exported */ \
 	DO(Climate, CLIMATE) \
 	DO(SeaLevel, SEALEVEL) \
@@ -146,6 +145,7 @@
 	DO(Project, PROJECT) \
 	DO(Promotion, PROMOTION) \
 	DO(Religion, RELIGION) \
+	DO(Route, ROUTE) \
 	DO(Scenario, SCENARIO) \
 	DO(Specialist, SPECIALIST) \
 	DO(SpecialUnit, SPECIALUNIT) \

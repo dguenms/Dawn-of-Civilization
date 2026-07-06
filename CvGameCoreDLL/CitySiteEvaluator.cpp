@@ -517,7 +517,7 @@ short AIFoundValue::evaluate()
 			if (bHome)
 			{
 				aiNatureYield[eLoopYield] += p.calculateCityPlotYieldChange(
-						eLoopYield, aiNatureYield[eLoopYield], 1);
+						eLoopYield, aiNatureYield[eLoopYield], kPlayer.getID(), 1);
 			} // </advc.031>
 		}
 		if (bHome)

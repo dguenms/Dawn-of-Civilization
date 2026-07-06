@@ -82,6 +82,7 @@ public:
 	bool isWithinTeamCityRadius(TeamTypes eTeam, PlayerTypes eIgnorePlayer = NO_PLAYER) const;		// Exposed to Python
 
 	DllExport bool isLake() const;																	// Exposed to Python
+	bool isSaline() const;
 	bool isFreshWater() const;																		// Exposed to Python
 	bool isAdjacentFreshWater() const; // advc.108
 	bool isAdjacentSaltWater() const; // advc.041
@@ -230,7 +231,8 @@ public:
 	// BETTER_BTS_AI_MOD: END
 	PlayerTypes calculateCulturalOwner(
 			bool bIgnoreCultureRange = false, // advc.099c
-			bool bOwnExclusiveRadius = false) const; // advc.035
+			bool bOwnExclusiveRadius = false, // advc.035
+			bool bActual = false) const; // doc
 
 	void plotAction(PlotUnitFunc func, int iData1 = -1, int iData2 = -1,
 			PlayerTypes eOwner = NO_PLAYER, TeamTypes eTeam = NO_TEAM);
@@ -344,6 +346,7 @@ public:
 	// advc: isValidDomain... functions moved to CvUnit
 	// <advc.opt>
 	bool isImpassable() const { return m_bImpassable; } // cached									// Exposed to Python
+	bool determineImpassable() const; // doc
 	bool isAnyIsthmus() const { return m_bAnyIsthmus; } // Note: always false for land plots
 	void updateAnyIsthmus(); // </advc.opt>
 
@@ -458,6 +461,7 @@ public:
 	PlayerTypes getSecondOwner() const;
 	void setSecondOwner(PlayerTypes eNewValue); // </advc.035>
 	int exclusiveRadius(PlayerTypes ePlayer) const; // advc.099b
+	CivilizationTypes getCivilizationType() const;
 
 	bool isPlains() const; // doc
 
@@ -574,12 +578,12 @@ public:
 	bool hasYield() const { return m_aiYield.isAnyNonDefault(); } // advc.enum							// Exposed to Python
 	void updateYield();
 	int calculateCityPlotYieldChange(YieldTypes eYield,
-			int iYield, int iCityPopulation) const;
+			int iYield, PlayerTypes ePlayer, int iCityPopulation) const;
 	// int calculateMaxYield(YieldTypes eYield) const; // disabled by K-Mod
 	int getYieldWithBuild(BuildTypes eBuild, YieldTypes eYield, bool bWithUpgrade) const;
 
 	int getCulture(CivilizationTypes eCivilization) const; // doc
-	int getCulture(PlayerTypes eIndex) const { return m_aiCulture.get(eIndex); } // TODO: replace					// Exposed to Python
+	int getCulture(PlayerTypes eIndex) const;														// Exposed to Python
 	int getActualCulture(CivilizationTypes eCivilization) const; // doc
 	int getActualCulture(PlayerTypes ePlayer) const; // doc
 	int getActualTotalCulture() const; // doc
@@ -1004,7 +1008,7 @@ protected:
 	mutable ArrayEnumMap<TeamTypes,bool> m_abBorderDangerCache;
 
 	YieldChangeMap m_aiYield;
-	ArrayEnumMap<PlayerTypes,int> m_aiCulture;
+	ArrayEnumMap<CivilizationTypes,int> m_aiCulture;
 	ArrayEnumMap<PlayerTypes,int,int,FFreeList::INVALID_INDEX> m_aiPlotGroup;
 	mutable ArrayEnumMap<PlayerTypes,short> m_aiFoundValue; // advc: mutable
 	ListEnumMap<PlayerTypes,int,char> m_aiPlayerCityRadiusCount;
