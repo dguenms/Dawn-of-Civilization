@@ -1602,7 +1602,7 @@ int CvPythonCaller::getStabilityLevel(PlayerTypes ePlayer) const
 	CyArgsList argsList;
 	argsList.add(ePlayer);
 
-	call("getStabilityLevel", argsList, PYScreensModule, &lResult);
+	call("getStabilityLevel", argsList, lResult, PYScreensModule);
 	return toInt(lResult);
 }
 
@@ -1613,7 +1613,7 @@ int CvPythonCaller::countAchievedGoals(PlayerTypes ePlayer) const
 	CyArgsList argsList;
 	argsList.add(ePlayer);
 
-	call("countAchievedGoals", argsList, PYScreensModule, &lResult);
+	call("countAchievedGoals", argsList, lResult, PYScreensModule);
 	return toInt(lResult);
 }
 
@@ -1640,7 +1640,8 @@ CvWString CvPythonCaller::getVictoryTooltip(PlayerTypes ePlayer, CvPlot const& k
 	argsList.add(kPlot.getX());
 	argsList.add(kPlot.getY());
 
-	call("getVictoryTooltip", argsList, PYScreensModule, &result);
+	m_bLastCallSuccessful = m_python.callFunction(PYScreensModule, "getVictoryTooltip",
+		argsList.makeFunctionArgs(), &result);
 
 	return result;
 }
@@ -1652,7 +1653,8 @@ CvWString CvPythonCaller::getVictoryDescription(CivilizationTypes eCivilization)
 	CyArgsList argsList;
 	argsList.add(eCivilization);
 
-	call("getHistoricalVictoryDescriptions", argsList, PYScreensModule, &result);
+	m_bLastCallSuccessful = m_python.callFunction(PYScreensModule, "getHistoricalVictoryDescriptions",
+		argsList.makeFunctionArgs(), &result);
 
 	return result;
 }
@@ -1666,7 +1668,8 @@ CvWString CvPythonCaller::getCityName(PlayerTypes ePlayer, CvPlot const& kPlot) 
 	argsList.add(kPlot.getX());
 	argsList.add(kPlot.getY());
 
-	call("getCityName", argsList, PYScreensModule, &result);
+	m_bLastCallSuccessful = m_python.callFunction(PYScreensModule, "getCityName",
+		argsList.makeFunctionArgs(), &result);
 
 	return result;
 }

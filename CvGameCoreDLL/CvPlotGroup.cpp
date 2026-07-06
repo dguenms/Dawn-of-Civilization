@@ -4,6 +4,7 @@
 #include "CvCity.h"
 #include "CvMap.h"
 #include "DepthFirstPlotSearch.h" // advc.opt
+#include "CvInfo_Terrain.h"
 
 int CvPlotGroup::m_iRecalculating = 0; // advc.064d
 
@@ -249,7 +250,7 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 		{
 			if (eBonus == BONUS_SILVER || eBonus == BONUS_GOLD)
 			{
-				FOR_EACH_CITY_VAR(pLoopCity, GET_PLAYER(getOwner())
+				FOR_EACH_CITY_VAR(pLoopCity, GET_PLAYER(getOwner()))
 				{
 					if (pLoopCity->isHasRealBuilding(ESCORIAL))
 					{
@@ -283,6 +284,8 @@ void CvPlotGroup::changeNumBonuses(BonusTypes eBonus, int iChange)
 					{
 						CvBuildInfo const& kBuild = GC.getInfo(eLoopBuild);
 						if (kBuild.isGraphicalOnly())
+							continue;
+						if (kBuild.getImprovement() == NO_IMPROVEMENT)
 							continue;
 
 						if (kBuild.getTechPrereq() == AGRICULTURE || kBuild.getTechPrereq() == POTTERY || kBuild.getTechPrereq() == CALENDAR)
