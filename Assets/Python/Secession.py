@@ -44,10 +44,9 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		dClaimedCities[iClaim].append(city)
 		
 	lMinorCities = dClaimedCities.pop(-1, [])
-		
+	
+	game.setUpdatePlotGroups(False)
 	for iClaimant, claimedCities in dClaimedCities.items():
-		game.setUpdatePlotGroups(False)
-		
 		# assign cities to living civs
 		if player(iClaimant).isExisting():
 			for city in claimedCities:
@@ -63,16 +62,13 @@ def secedeCities(iPlayer, secedingCities, bRazeMinorCities = False):
 		else:
 			lMinorCities.extend(claimedCities)
 			
-		game.setUpdatePlotGroups(True)
-	
 	# secede remaining cities to minors
 	lPossibleMinors = getPossibleMinors(iPlayer)
 	for iMinor, minorCities in cities.of(lMinorCities).divide(lPossibleMinors):
-		game.setUpdatePlotGroups(False)
 		for city in minorCities:
 			secedeCity(city, iMinor, not bComplete, iArmyPercent)
-		
-		game.setUpdatePlotGroups(True)
+	
+	game.setUpdatePlotGroups(True)
 
 	# notify for partial secessions
 	if not bComplete and player().canContact(iPlayer):
