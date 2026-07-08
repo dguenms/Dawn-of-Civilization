@@ -355,7 +355,7 @@ def colonialAcquisition(iPlayer, tPlot):
 	if plot.getOwner() >= 0 and not is_minor(plot.getOwner()) and team(player(iPlayer).getTeam()).canChangeWarPeace(plot.getTeam()):
 		player(iPlayer).forcePeace(plot.getOwner())
 		
-	makeUnits(iPlayer, iWorker, tPlot, iNumUnits)
+	makeUnits(iPlayer, iWorker, plot, iNumUnits)
 	createRoleUnit(iPlayer, plot, iAttack, iNumUnits)
 		
 	iMissionary = missionary(player(iPlayer).getStateReligion())
