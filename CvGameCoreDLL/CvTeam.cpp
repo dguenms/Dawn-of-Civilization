@@ -1058,7 +1058,7 @@ void CvTeam::declareWar(TeamTypes eTarget, bool bNewDiplo, WarPlanTypes eWarPlan
 	PlayerTypes eSponsor, // advc.100
 	bool bRandomEvent, // advc.106g
     bool bIgnoreDefensivePacts, // doc
-    bool bFromDefensivePact, // doc
+    bool bFromDefensivePact) // doc
 {
 	PROFILE_FUNC();
 	FAssert(eTarget != NO_TEAM);
@@ -1106,7 +1106,7 @@ void CvTeam::declareWar(TeamTypes eTarget, bool bNewDiplo, WarPlanTypes eWarPlan
 
         // doc: Manchu UP yields require peace
         if (kMembers[i]->getCivilizationType() == MANCHU)
-            kMembers[i]->updateCityPlotYield();
+            kMembers[i]->updateYield();
     }
 
 	meet(eTarget, false);
@@ -1202,7 +1202,7 @@ void CvTeam::declareWar(TeamTypes eTarget, bool bNewDiplo, WarPlanTypes eWarPlan
 		a (primary) DoW has already occurred. */
 	triggerWars(true);
 	// advc: Moved down so that war status has already changed when event is reported
-	CvEventReporter::getInstance().changeWar(true, getID(), eTarget); // </kekm.26>
+	CvEventReporter::getInstance().changeWar(true, getID(), eTarget, bFromDefensivePact); // </kekm.26>
 }
 
 // advc: Cut from declareWar
@@ -1301,7 +1301,7 @@ void CvTeam::makePeace(TeamTypes eTarget, bool bBumpUnits,  // advc: refactored
 
         // doc: Manchu UP yields require peace
         if (kMembers[i]->getCivilizationType() == MANCHU)
-            kMembers[i]->updateCityPlotYield();
+            kMembers[i]->updateYield();
     }
 
 	// BETTER_BTS_AI_MOD, Efficiency: plot danger cache, 08/21/09, jdog5000: START
@@ -1335,7 +1335,7 @@ void CvTeam::makePeace(TeamTypes eTarget, bool bBumpUnits,  // advc: refactored
 	{	// advc: Moved into new function
 		announcePeace(eTarget, eBroker, pReparations, bRandomEvent);
 	}
-	CvEventReporter::getInstance().changeWar(false, getID(), eTarget);
+	CvEventReporter::getInstance().changeWar(false, getID(), eTarget, false);
 	for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
 	{
 		CvTeam& kVassal = *it;
@@ -1806,11 +1806,11 @@ int CvTeam::getPower(bool bIncludeVassals) const
     // rfc
     if (isBarbarian())
     {
-        iPower *= 2;
-        iPower /= 3;
+        iPow *= 2;
+        iPow /= 3;
     }
     else if (isMinorCiv())
-        iCount /= 3;
+        iPow /= 3;
 
 	return iPow;
 }
@@ -1873,7 +1873,7 @@ bool CvTeam::isVotingMember(VoteSourceTypes eVoteSource) const
         return false;
 
 	// doc: Apostolic Palace only has full members
-	if (GC.getInfo(eVoteSource).getReligion() != NO_RELIGION)
+	if (GC.getGame().getVoteSourceReligion(eVoteSource) != NO_RELIGION)
 	{
 		if (!isFullMember(eVoteSource))
 			return false;
@@ -2243,7 +2243,9 @@ int CvTeam::getResearchCost(TechTypes eTech,
 
 	// advc.251: To reduce rounding errors (as there are quite a few modifiers to apply)
 	scaled rCost = kTech.getResearchCost();
-	rCost *= per100(GC.getInfo(getHandicapType()).getResearchPercentByID()); // rfc: civilization based modifier
+	rCost *= per100(GC.getInfo(getHandicapType()).getResearchPercent());
+	rCost *= per100(getCivilizationResearchModifier()); // doc
+	rCost *= per100(getBirthResearchModifier()); // doc
 	// <advc.251>
 	if (!isHuman() && !isBarbarian())
 	{
@@ -2309,7 +2311,7 @@ int CvTeam::getResearchCost(TechTypes eTech,
 		scaled rNoTradeAdjustment =
 				(rTECH_COST_NOTRADE_MODIFIER + per100(5) *
 				(eTechEra - fixp(2.5)).abs().pow(fixp(1.5))) *
-				scaled::clamp(scaled(kWorld.getDefaultPlayers() - 2,
+				scaled::clamp(scaled(GC.getInfo(GC.getMap().getWorldSize()).getDefaultPlayers() - 2,
 				11 - eTechEra), 0, fixp(8/3.));
 		rNoTradeAdjustment.decreaseTo(0); // No Tech Trading can only lower tech costs
 		rModifier += rNoTradeAdjustment;
@@ -2348,7 +2350,6 @@ int CvTeam::getResearchCost(TechTypes eTech,
 }
 
 // doc: civilization based research cost modifier
-// TODO: unused???
 int CvTeam::getCivilizationResearchModifier() const
 {
     CvPlayer const& kPlayer = GET_PLAYER(getLeaderID());
@@ -2371,6 +2372,62 @@ int CvTeam::getCivilizationResearchModifier() const
 	}
 
 	return iCivModifier;
+}
+
+// doc: research cost modifier based on birth year
+int CvTeam::getBirthResearchModifier() const
+{
+	int iModifier = 100;
+
+	PlayerTypes eHuman = GC.getGame().getActivePlayer();
+	HandicapTypes eHandicap = GC.getGame().getHandicapType();
+
+	int iGameTurn = GC.getGame().getGameTurn();
+	int iMaxTurns = GC.getGame().getMaxTurns();
+
+	int iAIBaseModifier = 90;
+	int iHumanSpawnModifier = 80;
+	int iHumanSpawnModifierTurns = iMaxTurns / 4;
+
+	if (eHandicap == HANDICAP_HEIR)
+	{
+		iAIBaseModifier = 100;
+		iHumanSpawnModifier = 90;
+	}
+	else if (eHandicap == HANDICAP_EMPEROR || eHandicap == HANDICAP_PARAGON)
+	{
+		iAIBaseModifier = 75;
+		iHumanSpawnModifier = 70;
+	}
+
+	// edead: Epic/Marathon 1.22 late game balancing - progressive growth of research cost - 0% to 25% mid-game
+	if (GC.getInfo(GC.getGame().getGameSpeedType()).getResearchPercent() >= 150)
+	{
+		int iSpeedModifier = 10 * iGameTurn / iMaxTurns;
+
+		iModifier += std::min(25, 5 * iSpeedModifier);
+
+		// reduce human contribution penalty by 0-5% since the above does the same thing
+		iHumanSpawnModifier -= iSpeedModifier / 2;
+	}
+	// edead: end
+
+	// human and AI baseline modifications
+	if (!isHuman())
+	{
+		iModifier *= iAIBaseModifier;
+		iModifier /= 100;
+	}
+
+	// reduce tech costs before the human players enter the game
+	// Leoreth: limit this effect to a constant period, otherwise the effect scales too much with late spawns
+	if (GET_PLAYER(eHuman).getInitialBirthTurn() - iHumanSpawnModifierTurns <= iGameTurn && iGameTurn < GET_PLAYER(eHuman).getInitialBirthTurn())
+	{
+		iModifier *= iHumanSpawnModifier;
+		iModifier /= 100;
+	}
+
+	return iModifier;
 }
 
 // doc: research cost modifier based on difference to the median
@@ -2399,10 +2456,10 @@ int CvTeam::calculateTechDifferenceModifier() const
 	if (GC.getGame().getMedianTechValue() == 0)
 		return 0;
     // ignore if too few civs are alive because the median is too unstable
-	if (GC.getGameINLINE().countCivTeamsAlive() < 8)
+	if (GC.getGame().countCivTeamsAlive() < 8)
 		return 0;
     // ignore if very isolated to avoid being impacted by other parts of the world
-	if (countContacts() * 5 < GC.getGameINLINE().countCivTeamsAlive())
+	if (countContacts() * 5 < GC.getGame().countCivTeamsAlive())
 		return 0;
 
 	int iRelativeTechValue = 100 * getTotalTechValue() / GC.getGame().getMedianTechValue();
@@ -2438,15 +2495,11 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	int iBackwardsBonus = (iCurrentEra > iStartingEra) ? lTechBackwardsBonus[iCurrentEra] : 0;
 
 	// doc: slow down beelining, help catch up
-	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
+	int iCivsAlive = GC.getGame().countMajorPlayersAlive();
 	int iCivsWithTech = 0;
-    // TODO: refactor
-	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	for (TeamIter<MAJOR_CIV> it; it.hasNext(); ++it)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isMinorCiv())
-			continue;
-
-		if (GET_PLAYER((PlayerTypes)iI).isAlive() && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasTech(eTech))
+		if (it->isHasTech(eTech))
 			iCivsWithTech++;
 	}
 
@@ -2457,7 +2510,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// 0% for the fourth civ (iCivsWithTech == 3)
 	// limited to human players now
 	int iLowerThreshold = iCivsAlive / 4;
-	if (kPlayer.isHuman() && iCivsWithTech < iLowerThreshold)
+	if (isHuman() && iCivsWithTech < iLowerThreshold)
         iModifier += iLeaderPenalty * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
 
 	// more than three quarters know it -> less expensive
@@ -2487,25 +2540,21 @@ int CvTeam::getModernizationResearchModifier(TechTypes eTech) const
 	}
 
 	int iCount = 0;
-    // TODO: refactor
-	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
+	for (PlayerIter<MAJOR_CIV> it; it.hasNext(); ++it)
 	{
-		TeamTypes eTeam = GET_PLAYER((PlayerTypes)iI).getTeam();
-		if (GET_TEAM(eTeam).isMinorCiv())
-			continue;
+		TeamTypes eTeam = it->getTeam();
+		if (!GET_TEAM(eTeam).isHasTech(eTech)) continue;
+		if (isHuman() && !canContact(eTeam)) continue;
+		if (!GET_TEAM(eTeam).isHuman() && GET_TEAM(eTeam).AI_techTrade(eTech, getID()) != NO_DENIAL) continue;
 
-		if (GET_TEAM(eTeam).isHasTech(eTech) && (!isHuman() || canContact(eTeam)) && (GET_TEAM(eTeam).isHuman() || GET_TEAM(eTeam).AI_techTrade(eTech, getID(), true) == NO_DENIAL))
+		if (isAtWar(eTeam))
 		{
-			if (!isAtWar(eTeam))
+			scaled iOurSuccess = AI().AI_getWarSuccess(eTeam);
+			scaled iTheirSuccess = GET_TEAM(eTeam).AI_getWarSuccess(getID());
+			if (iOurSuccess - iTheirSuccess > 20 + 10 * kPlayer.getCurrentEra() + std::max(iOurSuccess, iTheirSuccess) / 10)
 				iCount++;
-			else
-			{
-				int iOurSuccess = AI_getWarSuccess(eTeam);
-				int iTheirSuccess = GET_TEAM(eTeam).AI_getWarSuccess(getID());
-				if (iOurSuccess - iTheirSuccess > 20 + 10 * kPlayer.getCurrentEra() + std::max(iOurSuccess, iTheirSuccess) / 10)
-					iCount++;
-			}
 		}
+		else iCount++;
 	}
 
 	if (iCount >= 3)
@@ -3135,19 +3184,11 @@ void CvTeam::changeExtraMoves(DomainTypes eIndex, int iChange)
 	FAssert(getExtraMoves(eIndex) >= 0);
 }
 
-// rfc
-// TODO: header
-bool CvTeam::isHasEverMet(TeamTypes eIndex) const
-{
-    return m_abHasEverMet[eIndex];
-}
-
 // advc.071: Now returns the location of the meeting, if any.
 CvPlot* CvTeam::makeHasMet(TeamTypes eOther, bool bNewDiplo,
 	FirstContactData* pData) // advc.071
 {
-    // rfc
-    setHasEverMet(eOther, true);
+    setHasEverMet(eOther, true); // rfc
 
 	if (isHasMet(eOther))
 		return NULL;
@@ -3158,7 +3199,7 @@ CvPlot* CvTeam::makeHasMet(TeamTypes eOther, bool bNewDiplo,
 	{
 		int iGameTurn = GC.getGame().getGameTurn();
 		FAssert(iGameTurn >= 0);
-		m_aiHasMetTurn.set(eOther, iGameTurn);
+		setHasMetTurn(eOther, iGameTurn);
 	} // </advc.091>
 	updateTechShare();
 
@@ -3208,7 +3249,7 @@ CvPlot* CvTeam::makeHasMet(TeamTypes eOther, bool bNewDiplo,
 		for (PlayerIter<HUMAN,MEMBER_OF> it(eOther); it.hasNext(); ++it)
 		{
 			CvPlayer const& kMember = *it;
-			if (GET_PLAYER(getLeaderID()).canContact(kMember.getID()) && !isHasEverMet(kMember.getTeam()) // rfc: not after contact had been cut)
+			if (GET_PLAYER(getLeaderID()).canContact(kMember.getID()) && !isHasEverMet(kMember.getTeam())) // rfc: not after contact had been cut
 			{
 				CvDiploParameters* pDiplo = new CvDiploParameters(getLeaderID());
 				pDiplo->setDiploComment(GC.getAIDiploCommentType("FIRST_CONTACT"));
@@ -3318,11 +3359,11 @@ bool CvTeam::isAtWarExternal(TeamTypes eIndex) const
 // rfc
 void CvTeam::cutContact(TeamTypes eTeam)
 {
-	if (isHasMet(eTeam))
-	{
-		m_abHasMet[eTeam] = false;
-		GET_TEAM(eTeam).m_abHasMet[getID()] = false;
-	}
+	if (!isHasMet(eTeam))
+		return;
+
+	setHasMetTurn(eTeam, -1);
+	GET_TEAM(eTeam).setHasMetTurn(getID(), -1);
 }
 
 
@@ -3840,12 +3881,12 @@ void CvTeam::setVassal(TeamTypes eMaster, bool bNewValue, bool bCapitulated)
 			if (m_bCapitulated)
 			{
 				szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT",
-						getReplayName().c_str(), GET_PLAYER(GET_TEAM(eMaster).getLeaderID()).getCivilizationShortDescription().c_str()); // rfc
+						getReplayName().c_str(), GET_PLAYER(GET_TEAM(eMaster).getLeaderID()).getCivilizationShortDescription()); // rfc
 			}
 			else
 			{
 				szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT",
-						getReplayName().c_str(), GET_PLAYER(GET_TEAM(eMaster).getLeaderID()).getCivilizationShortDescription().c_str()); // rfc
+						getReplayName().c_str(), GET_PLAYER(GET_TEAM(eMaster).getLeaderID()).getCivilizationShortDescription()); // rfc
 			}
 
 			GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT,
@@ -3920,7 +3961,7 @@ void CvTeam::setVassal(TeamTypes eMaster, bool bNewValue, bool bCapitulated)
 	} // </advc.130v>
 
 	if (GC.getGame().isFinalInitialized() && !gDLL->GetWorldBuilderMode())
-		CvEventReporter::getInstance().vassalState(eMaster, getID(), bNewValue);
+		CvEventReporter::getInstance().vassalState(eMaster, getID(), bNewValue, bCapitulated);
 	/*  <advc.001> Replacing K-Mod code that had only updated attitude between
 		members of the vassal and master team. Attitude of third parties may change too. */
 	for (TeamTypes eTeam = getID(); eTeam != NO_TEAM; eTeam =
@@ -4173,7 +4214,7 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 	if (iChange == 0)
 		return;
 
-    bool bFirst = GC.getGame().getProjectCreatedCount(eIndex) == 0 && iChange > 0;
+    bool bFirst = GC.getGame().getProjectCreatedCount(eProject) == 0 && iChange > 0;
 
 	GC.getGame().incrementProjectCreatedCount(eProject, iChange);
 
@@ -4226,7 +4267,7 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 
     // doc: reveals map
     if (kProject.isRevealsMap() && iChange > 0)
-        GC.getMapINLINE().setRevealedPlots(getID(), true, true);
+        GC.getMap().setRevealedPlots(getID(), true, true);
 
     // doc: satellite intercept
     if (kProject.isSatelliteIntercept())
@@ -4239,6 +4280,7 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
     // doc: first enemy anarchy
     if (bFirst && kProject.isFirstEnemyAnarchy())
     {
+		CvWString szBuffer;
         for (TeamIter<ALIVE,NOT_SAME_TEAM_AS> team(getID()); team.hasNext(); ++team)
         {
             for (MemberIter it(team->getID()); it.hasNext(); ++it)
@@ -4281,7 +4323,7 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 		{
 			if (iChange > 0)
 			{
-                FOR_EACH_UNIT(pUnit, it)
+                FOR_EACH_UNIT_VAR(pUnit, *it)
 				{
 					if (GC.getInfo(kProject.getFreePromotion()).getUnitCombat(pUnit->getUnitCombatType()))
 						pUnit->setHasPromotion(kProject.getFreePromotion(), true);
@@ -4322,9 +4364,9 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 		}
 
 		// doc: International Space Station effect
-		else if (eIndex == PROJECT_INTERNATIONAL_SPACE_STATION)
+		else if (eProject == PROJECT_INTERNATIONAL_SPACE_STATION)
 		{
-			FOR_EACH_CITY_VAR(pCity, it)
+			FOR_EACH_CITY_VAR(pCity, *it)
             {
 				pCity->changeBaseGreatPeopleRate(pCity->countSatellites() * iChange * 2);
 			}
@@ -4333,7 +4375,7 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 		// doc: Great Firewall effect
 		else if (eProject == PROJECT_GREAT_FIREWALL)
 		{
-			FOR_EACH_CITY_VAR(pCity, it)
+			FOR_EACH_CITY_VAR(pCity, *it)
             {
 				pCity->changeCommerceHappinessPer(COMMERCE_ESPIONAGE, iChange * 5);
 			}
@@ -4344,7 +4386,6 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 		{
 			it->changeSpaceProductionModifier(100);
 
-			for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
             FOR_EACH_ENUM(Specialist)
 			{
 				if (GC.getInfo(eLoopSpecialist).isSatellite())
@@ -4380,7 +4421,8 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 				kProject.nameNeedsArticle() ?
 				"TXT_KEY_MISC_COMPLETES_PROJECT_THE" :
 				"TXT_KEY_MISC_COMPLETES_PROJECT", // </advc.008e>
-				GET_PLAYER(getLeaderID()).getCivilizationShortDescription().GetCString(), kProject.getTextKeyWide()); // rfc
+				GET_PLAYER(getLeaderID()).getCivilizationShortDescription(), 
+				kProject.getTextKeyWide()); // rfc
 		GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer,
 				GC.getColorType("HIGHLIGHT_TEXT"));
 
@@ -4391,7 +4433,8 @@ void CvTeam::changeProjectCount(ProjectTypes eProject, int iChange)
 					kProject.nameNeedsArticle() ?
 					"TXT_KEY_MISC_SOMEONE_HAS_COMPLETED_THE" :
 					"TXT_KEY_MISC_SOMEONE_HAS_COMPLETED", // </advc.008e>
-					GET_PLAYER(getLeaderID()).getCivilizationShortDescription().GetCString(), kProject.getTextKeyWide()); // rfc
+					GET_PLAYER(getLeaderID()).getCivilizationShortDescription(), 
+					kProject.getTextKeyWide()); // rfc
 			gDLL->UI().addMessage(kObs.getID(), false, -1, szBuffer,
 					"AS2D_PROJECT_COMPLETED", MESSAGE_TYPE_MAJOR_EVENT, NULL,
 					GC.getColorType("HIGHLIGHT_TEXT"),
@@ -4924,7 +4967,7 @@ void CvTeam::setHasTech(TechTypes eTech, bool bNewValue, PlayerTypes ePlayer,
         {
             if (GC.getInfo(eLoopReligion).getTechPrereq() != eTech)
                 continue;
-            if (!canFoundReligion(eLoopReligion, ePlayer))
+            if (!canFoundReligion(eLoopReligion, eTech))
                 continue;
 
             PlayerTypes eFoundingPlayer = getFoundingPlayer(eLoopReligion);
@@ -4949,12 +4992,12 @@ void CvTeam::setHasTech(TechTypes eTech, bool bNewValue, PlayerTypes ePlayer,
 		}
 
 	    bool const bFirstToDiscover = kGame.countKnownTechNumTeams(eTech) == 1 && // advc.106
-                GC.getGame().getFirstDiscovered() == NO_CIVILIZATION; // doc: a civilization can discover a tech and collapse, no longer affecting the count
+                GC.getGame().getFirstDiscovered(eTech) == NO_CIVILIZATION; // doc: a civilization can discover a tech and collapse, no longer affecting the count
 		if (bFirst && bFirstToDiscover)
 		{
             // doc: track tech discovery
-		    GC.getGame().setFirstDiscovered(eIndex, GET_PLAYER(getLeaderID()).getCivilizationType());
-            GC.getGame().setFirstDiscoveredTurn(eIndex, GC.getGame().getGameTurn());
+		    GC.getGame().setFirstDiscovered(eTech, GET_PLAYER(getLeaderID()).getCivilizationType());
+            GC.getGame().setFirstDiscoveredTurn(eTech, GC.getGame().getGameTurn());
 
 			bool bAnnounceFirst = false; // advc.004
 			CvWString szBuffer;
@@ -4972,7 +5015,7 @@ void CvTeam::setHasTech(TechTypes eTech, bool bNewValue, PlayerTypes ePlayer,
             int iFirstFreeTechs = kTech.getFirstFreeTechs();
 		    if (bNewValue && GET_PLAYER(ePlayer).getFreeTechsOnDiscovery() > 0)
 		    {
-                if (GET_PLAYER(ePlayer).getFreeTechChosen() != eIndex)
+                if (GET_PLAYER(ePlayer).getFreeTechChosen() != eTech)
                 {
                     iFirstFreeTechs += 1;
                     szBuffer = gDLL->getText("TXT_KEY_BABYLONIAN_UP");
@@ -5869,7 +5912,7 @@ void CvTeam::testCircumnavigated()
 					getCapitalX(kObs.getTeam(), true), getCapitalY(kObs.getTeam(), true));
 		}
 		CvWString szBuffer(gDLL->getText("TXT_KEY_MISC_SOMEONE_CIRC_GLOBE",
-				GET_PLAYER(getLeaderID()).getCivilizationShortDescription().c_str())); // rfc
+				GET_PLAYER(getLeaderID()).getCivilizationShortDescription())); // rfc
 		GC.getGame().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT,
 				getLeaderID(), szBuffer, GC.getColorType("HIGHLIGHT_TEXT"));
 	}
@@ -6003,7 +6046,7 @@ void CvTeam::processTech(TechTypes eTech, int iChange,
 			changeObsoleteBuildingCount(eLoopBuilding, iChange);
 
 	        // doc: obsolete vote source when wonder obsoletes
-            if (GC.getInfo(eLoopBuilding).getVoteSourceType() != NO_VOTE_SOURCE)
+            if (GC.getInfo(eLoopBuilding).getVoteSourceType() != NO_VOTESOURCE)
             {
                 GC.getGame().changeDiploVote(GC.getInfo(eLoopBuilding).getVoteSourceType(), -1);
             }
@@ -6465,15 +6508,15 @@ void CvTeam::changeTotalTechValue(int iChange)
 // doc
 bool CvTeam::canCutContact(TeamTypes eTeam)
 {
-    // TODO: refactor
-    FOR_EACH_PLOT(pLoopPlot)
+    for (int i = 0; i < GC.getMap().numPlots(); i++)
     {
-        if (!pLoopPlot->isOwned())
+		CvPlot const& kPlot = GC.getMap().getPlotByIndex(i);
+        if (!kPlot.isOwned())
             continue;
 
-        if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == getID() && pLoopPlot->isVisible(eTeam, false))
+        if (kPlot.getTeam() == getID() && kPlot.isVisible(eTeam, false))
             return false;
-        if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == eTeam() && pLoopPlot->isVisible(getID(), false))
+        if (kPlot.getTeam() == eTeam && kPlot.isVisible(getID(), false))
             return false;
     }
 
@@ -6498,7 +6541,7 @@ PlayerTypes CvTeam::getFoundingPlayer(ReligionTypes eReligion) const
 	PlayerTypes eBestPlayer = NO_PLAYER;
     for (MemberIter it(getID()); it.hasNext(); ++it)
     {
-        int iValue = 10 + SyncRandom(10);
+        int iValue = 10 + SyncRandNum(10);
         FOR_EACH_ENUM(Religion)
         {
             iValue += it->getHasReligionCount(eLoopReligion) * 10;
@@ -6542,7 +6585,7 @@ bool CvTeam::isAtWarWithMajorPlayer() const
         if (it->isBarbarian())
             continue;
 
-        if (isAtWar(it->getID())
+        if (isAtWar(it->getID()))
             return true;
     }
 
@@ -6613,7 +6656,7 @@ bool CvTeam::isAllied(TeamTypes eTeam) const
 	{
 	    for (TeamIter<CIV_ALIVE,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
         {
-            if (isVassal(it->getID() && it->isAllied(eTeam))
+            if (isVassal(it->getID()) && it->isAllied(eTeam))
                 return true;
         }
 	}
@@ -6642,4 +6685,16 @@ int CvTeam::countContacts() const
             iNumContacts++;
     }
 	return iNumContacts;
+}
+
+// doc
+CvWString CvTeam::getCivilizationShortDescription() const
+{
+	return GET_PLAYER(getLeaderID()).getCivilizationShortDescription();
+}
+
+// doc
+bool CvTeam::isHasBuildingEffect(BuildingTypes eBuilding) const
+{
+	return GET_PLAYER(getLeaderID()).isHasBuildingEffect(eBuilding);
 }

@@ -1665,7 +1665,7 @@ int CvTeamAI::AI_warCommitmentCost(TeamTypes eTarget, WarPlanTypes eWarPlan,
 	}
 
 	// doc: avoid birth protected
-	if (GET_PLAYER(getLeader()).isBirthProtected())
+	if (GET_PLAYER(getLeaderID()).isBirthProtected())
 		iTotalCost *= 4;
 
 	return iTotalCost;
@@ -2098,7 +2098,7 @@ DenialTypes CvTeamAI::AI_techTrade(TechTypes eTech, TeamTypes eToTeam) const
 		// doc: use tech rank, increase threshold to 2/3, use current teams alive
 		//if ((GC.getGame().getTeamRank(getID()) < (GC.getGame().getCivTeamsEverAlive() / 2)) ||
 		//(GC.getGame().getTeamRank(eToTeam) < (GC.getGame().getCivTeamsEverAlive() / 2)))
-		if (GC.getGame().getTechRank(eTeam) < GC.getGame().countCivTeamsAlive() * 2 / 3)
+		if (GC.getGame().getTechRank(eToTeam) < GC.getGame().countCivTeamsAlive() * 2 / 3)
 		{
 			int iNoTechTradeThreshold = AI_noTechTradeThreshold();
 
@@ -2509,7 +2509,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eMasterTeam, int iPowerMultipl
 				return DENIAL_TOO_FAR;
 			}
             // doc (edead): do not allow far away vassals before Exploration
-			if (!kMasterTeam.isHasTech(EXPLORATION) && GET_PLAYER((PlayerTypes)eTeam).isDistant((PlayerTypes)getID()))
+			if (!kMasterTeam.isHasTech(EXPLORATION) && GET_PLAYER(kMasterTeam.getLeaderID()).isDistant(getLeaderID()))
 			{
 				return DENIAL_TOO_FAR;
 			}
@@ -2576,7 +2576,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eMasterTeam, int iPowerMultipl
 	if (rMasterPower + iOurPower > iTotalPower / 3)
 		return DENIAL_POWER_YOU;
 	// doc: vassal population limit
-	if (GET_TEAM(eTeam).getTotalPopulation() + getTotalPopulation() > getTotalPopulation() / 3)
+	if (kMasterTeam.getTotalPopulation() + getTotalPopulation() > getTotalPopulation() / 3)
 		return DENIAL_POWER_YOU;
 
 	if(!bWar && !isVassal(eMasterTeam))
@@ -4157,7 +4157,7 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 	// discount if in a chain of alliances but not directly allied yet
 	// TODO: refactor
 	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-	for (TeamIter<ALIVE,MAJOR_CIV,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
+	for (TeamIter<MAJOR_CIV,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
 	{
 		if (it->isDefensivePact(eTeam) && it->isDefensivePact(getID()))
 			iModifier -= 70;
@@ -4185,22 +4185,19 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eWithTeam) const
 	if (isHuman())
 		return NO_DENIAL;
 
-	int iGameTurn = GC.getGame().getGameTurn();
-
 	// rfc: war with friend
-	for (iI = 0; iI < MAX_CIV_PLAYERS; iI++)
-	for (TeamIter<ALIVE,MAJOR_CIV,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
+	for (TeamIter<MAJOR_CIV,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
 	{
-		if (it->isAtWar(getID()) && it->isDefensivePact(eTeam))
+		if (it->isAtWar(getID()) && it->isDefensivePact(eWithTeam))
 			return DENIAL_JOKING;
-		if (it->isAtWar(eTeam) && it->isDefensivePact(getID())
+		if (it->isAtWar(eWithTeam) && it->isDefensivePact(getID()))
 			return DENIAL_JOKING;
 	}
 
 	// rfc: no world alliances until industrial era
-	if (!AI_hasCitiesInPrimaryArea(eTeam) &&
-		AI_calculateAdjacentLandPlots(eTeam) == 0 &&
-		GET_PLAYER(GET_TEAM(eTeam).getLeaderID()).getCurrentEra() <= ERA_RENAISSANCE)
+	if (!AI_hasCitiesInPrimaryArea(eWithTeam) &&
+		AI_calculateAdjacentLandPlots(eWithTeam) == 0 &&
+		GET_PLAYER(GET_TEAM(eWithTeam).getLeaderID()).getCurrentEra() <= ERA_RENAISSANCE)
 	{
 		return DENIAL_TOO_FAR;
 	}
@@ -4211,7 +4208,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eWithTeam) const
 	std::set<TeamTypes> vassals;
 
 	std::set<TeamTypes> ourPartners = determineDefensivePactPartners(std::set<TeamTypes>());
-	std::set<TeamTypes> theirPartners = GET_TEAM(eTeam).determineDefensivePactPartners(std::set<TeamTypes>());
+	std::set<TeamTypes> theirPartners = GET_TEAM(eWithTeam).determineDefensivePactPartners(std::set<TeamTypes>());
 
 	for (std::set<TeamTypes>::iterator it = ourPartners.begin(); it != ourPartners.end(); ++it)
 		partners.insert(*it);
@@ -4232,12 +4229,12 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eWithTeam) const
 			bBerlaymont = true;
 
 		int iNumVassals = 0;
-		for (TeamIter<ALIVE,MAJOR_CIV> other; other.hasNext(); ++other)
+		for (TeamIter<MAJOR_CIV> other; other.hasNext(); ++other)
 		{
 			if (other->isVassal(*it))
 			{
 				iNumVassals += 1;
-				vassals.insert(it->getID());
+				vassals.insert(other->getID());
 			}
 		}
 
@@ -4247,7 +4244,7 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eWithTeam) const
 
 	// TODO: subfunction?
 	// doc: determine defensive pact limit
-	int iDefensivePactLimit = 2;
+	size_t iDefensivePactLimit = 2;
 	if (eMaxEra >= ERA_INDUSTRIAL)
 		iDefensivePactLimit += 1;
 	if (eMaxEra >= ERA_GLOBAL)
@@ -4257,11 +4254,11 @@ DenialTypes CvTeamAI::AI_defensivePactTrade(TeamTypes eWithTeam) const
 
 	// doc: never more defensive pact partners than limit
 	if (partners.size() > iDefensivePactLimit)
-		return DENIAL_NOT_POSSIBLE_US;
+		return DENIAL_NO_GAIN;
 
 	// doc: defensive pact partners and member with highest vassal count may not exceed twice the limit
 	if (partners.size() + iMaxVassals > 2 * iDefensivePactLimit)
-		return DENIAL_NOT_POSSIBLE_US;
+		return DENIAL_NO_GAIN;
 
 	// doc: sum of defensive pact partners and half of all their vassals may not exceed twice the limit
 	if (partners.size() + vassals.size() / 2 > 2 * iDefensivePactLimit)
@@ -4362,7 +4359,7 @@ void CvTeamAI::AI_updateWorstEnemy(/* advc.130p: */ bool bUpdateTradeMemory)
 		if(eLoopTeam == m_eWorstEnemy) // No need to evaluate this one twice
 			continue;
 		// doc: limit power difference between worst enemies
-		if (std::abs(GC.getGame().getTeamRank(eLoopTeam) - iOurRank) > iRankDifference))
+		if (std::abs(GC.getGame().getTeamRank(eLoopTeam) - iOurRank) > iRankDifference)
 			continue;
 		// Moved into new function
 		int iValue = AI_enmityValue(eLoopTeam);
@@ -4370,7 +4367,7 @@ void CvTeamAI::AI_updateWorstEnemy(/* advc.130p: */ bool bUpdateTradeMemory)
 		// doc: distance impacts enmity value
 		if (GET_PLAYER(it->getLeaderID()).isNeighbor(getLeaderID()))
 			iValue *= 2;
-		else if (GET_PLAYER(it->getLeaderID()).isDistant(getLeaderID())
+		else if (GET_PLAYER(it->getLeaderID()).isDistant(getLeaderID()))
 		{
 			iValue *= 2;
 			iValue /= 5;

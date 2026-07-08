@@ -15,7 +15,6 @@
 	DO(Climate, CLIMATE) \
 	DO(SeaLevel, SEALEVEL) \
 	DO(TurnTimer, TURNTIMER) \
-	DO(Handicap, HANDICAP) \
 	/* internal only */ \
 	/*DO(Camera, CAMERAANIMATION)*/ /* advc.003j: unused */ \
 	DO(Emphasize, EMPHASIZE) \
@@ -134,6 +133,7 @@
 	DO(Era, ERA) \
 	DO(Feature, FEATURE) \
 	DO(GameSpeed, GAMESPEED) \
+	DO(Handicap, HANDICAP) \
 	DO(History, HISTORY) \
 	DO(Hurry, HURRY) \
 	DO(Impact, IMPACT) \

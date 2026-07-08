@@ -7930,6 +7930,12 @@ bool CvCity::isBirthProtected() const
 }
 
 
+PlayerTypes CvCity::getExpansion() const
+{
+	return getPlot().getExpansion();
+}
+
+
 TeamTypes CvCity::getTeam() const
 {
 	/*  advc.inl (comment): Not inlined b/c I don't want to include

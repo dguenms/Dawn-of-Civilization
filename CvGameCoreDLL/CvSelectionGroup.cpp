@@ -1182,38 +1182,38 @@ void CvSelectionGroup::startMission()
 				if (pUnit->lead(iData1))
 					bAction = true;
 				break;
+			case MISSION_RESOLVE_CRISIS: // doc
+				if (pUnit->resolveCrisis())
+					bAction = true;
+				break;
+			case MISSION_REFORM_GOVERNMENT: // doc
+				if (pUnit->reformGovernment())
+					bAction = true;
+				break;
+			case MISSION_DIPLOMATIC_MISSION: // doc
+				if (pUnit->diplomaticMission())
+					bAction = true;
+				break;
+			case MISSION_PERSECUTE: // doc
+				if (pUnit->persecute(NO_RELIGION))
+					bAction = true;
+				break;
+			case MISSION_GREAT_MISSION: // doc
+				if (pUnit->greatMission())
+					bAction = true;
+				break;
+			case MISSION_SATELLITE_ATTACK: // doc
+				if (pUnit->satelliteAttack())
+					bAction = true;
+				break;
+			case MISSION_REBUILD: // doc
+				if (pUnit->rebuild())
+					bAction = true;
+				break;
 			case MISSION_ESPIONAGE:
 				if (pUnit->espionage((EspionageMissionTypes)iData1, iData2))
 					bAction = true;
 				goto exit_unit_loop; // allow one unit at a time to do espionage
-			case MISSION_RESOLVE_CRISIS: // doc
-				if (pLoopUnit->resolveCrisis())
-					bAction = true;
-				break;
-			case MISSION_REFORM_GOVERNMENT: // doc
-				if (pLoopUnit->reformGovernment())
-					bAction = true;
-				break;
-			case MISSION_DIPLOMATIC_MISSION: // doc
-				if (pLoopUnit->diplomaticMission())
-					bAction = true;
-				break;
-			case MISSION_PERSECUTE: // doc
-				if (pLoopUnit->persecute(NO_RELIGION))
-					bAction = true;
-				break;
-			case MISSION_GREAT_MISSION: // doc
-				if (pLoopUnit->greatMission())
-					bAction = true;
-				break;
-			case MISSION_SATELLITE_ATTACK: // doc
-				if (pLoopUnit->satelliteAttack())
-					bAction = true;
-				break;
-			case MISSION_REBUILD: // doc
-				if (pLoopUnit->rebuild())
-					bAction = true;
-				break;
 			case MISSION_DIE_ANIMATION:
 				bAction = true;
 				break;

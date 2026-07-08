@@ -740,6 +740,7 @@ public:
 	int getWarValue(CivilizationTypes eCivilization) const; // doc
 
 	bool isBirthProtected() const; // doc
+	PlayerTypes getExpansion() const; // doc
 
 	CultureLevelTypes getCultureLevel() const { return m_eCultureLevel; }										// Exposed to Python
 	CultureLevelTypes getCultureLevel(PlayerTypes ePlayer) const; // advc

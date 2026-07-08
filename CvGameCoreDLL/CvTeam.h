@@ -70,7 +70,9 @@ public:
 	void declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan,
 			bool bPrimaryDoW = true, // K-Mod added bPrimaryDoW, Exposed to Python
 			PlayerTypes eSponsor = NO_PLAYER, // advc.100
-			bool bRandomEvent = false); // advc.106g
+			bool bRandomEvent = false,  // advc.106g
+			bool bIgnoreDefensivePacts = false, // doc
+			bool bFromDefensivePact = false); // doc
 	void makePeace(TeamTypes eTarget, bool bBumpUnits = true,																		// Exposed to Python
 			TeamTypes eBroker = NO_TEAM, // advc.100b
 			bool bCapitulate = false, // advc.034
@@ -149,6 +151,7 @@ public:
 	int getResearchLeft(TechTypes eTech) const;																// Exposed to Python
 
 	int getCivilizationResearchModifier() const; // doc
+	int getBirthResearchModifier() const; // doc (edead)
 	int getTechDifferenceModifier() const; // doc
 	int getSpreadResearchModifier(TechTypes eTech) const; // doc
 	int getModernizationResearchModifier(TechTypes eTech) const; // doc
@@ -181,6 +184,7 @@ public:
 	HandicapTypes getHandicapType() const;																							// Exposed to Python
 	CvWString getName() const;																								// Exposed to Python
 	CvWString getReplayName() const; // K-Mod
+	CvWString getCivilizationShortDescription() const;
 
 	DllExport int getNumMembers() const { return m_iNumMembers; }										// Exposed to Python
 	void changeNumMembers(int iChange);
@@ -309,6 +313,7 @@ public:
 	{
 		return (m_aiHasMetTurn.get(eOther) >= 0); // advc.091
 	}
+	void setHasMetTurn(TeamTypes eOther, int iNewValue) { m_aiHasMetTurn.set(eOther, iNewValue); }
 	int getHasMetTurn(TeamTypes eOther) { return m_aiHasMetTurn.get(eOther); } // advc.091  (exposed to Python)
 	// advc.071: Return value, 2nd param added.
 	CvPlot* makeHasMet(TeamTypes eOther, bool bNewDiplo, FirstContactData* pData = NULL);
@@ -338,7 +343,8 @@ public:
 		setTurnsAtPeace(eTeam, getTurnsAtPeace(eTeam) + iChange);
 	}
 	void setTurnsAtPeace(TeamTypes eTeam, int iTurns); // </advc.130k>
-    bool isHasEverMet(TeamTypes eIndex) const; // rfc
+	bool isHasEverMet(TeamTypes eTeam) const { return m_abHasEverMet.get(eTeam); } // rfc
+	void setHasEverMet(TeamTypes eTeam, bool bNewValue) { m_abHasEverMet.set(eTeam, bNewValue); }
     void cutContact(TeamTypes eIndex); // rfc
     bool canCutContact(TeamTypes eIndex); // doc
 
@@ -597,6 +603,7 @@ public:
 
     bool isAllied(TeamTypes eTeam) const; // doc
     int countContacts() const; // doc
+	bool isHasBuildingEffect(BuildingTypes eBuilding) const;
 
 	// advc:
 	bool hasTechToClear(FeatureTypes eFeature, TechTypes eCurrentResearch = NO_TECH) const;
