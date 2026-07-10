@@ -7198,8 +7198,11 @@ bool CvTeam::canCutContact(TeamTypes eTeam)
 	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
 	{
 		pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
-		if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == getID() && pLoopPlot->isVisible(eTeam, false)) return false;
-		if (GET_PLAYER(pLoopPlot->getOwner()).getTeam() == eTeam && pLoopPlot->isVisible(getID(), false)) return false;
+		if (pLoopPlot->isOwned())
+		{
+			if (pLoopPlot->getTeam() == getID() && pLoopPlot->isVisible(eTeam, false)) return false;
+			if (pLoopPlot->getTeam() == eTeam && pLoopPlot->isVisible(getID(), false)) return false;
+		}
 	}
 
 	return true;
