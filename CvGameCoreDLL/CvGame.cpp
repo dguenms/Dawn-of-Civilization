@@ -10953,7 +10953,11 @@ void CvGame::setUpdatePlotGroups(bool bNewValue)
 	{
 		for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
 		{
-			GC.getMap().plotByIndex(iI)->updatePlotGroup();
+			CvPlot *plot = GC.getMap().plotByIndex(iI);
+			if (plot->shouldUpdatePlotGroup())
+			{
+				plot->updatePlotGroup();
+			}
 		}
 	}
 }

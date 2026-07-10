@@ -7892,7 +7892,10 @@ void CvPlot::updatePlotGroup()
 void CvPlot::updatePlotGroup(PlayerTypes ePlayer, bool bRecalculate)
 {
 	if (!GC.getGameINLINE().isUpdatePlotGroups())
+	{
+		m_bShouldUpdatePlotGroup = true;
 		return;
+	}
 
 	PROFILE("CvPlot::updatePlotGroup(Player)");
 
@@ -7992,6 +7995,14 @@ void CvPlot::updatePlotGroup(PlayerTypes ePlayer, bool bRecalculate)
 			GET_PLAYER(ePlayer).initPlotGroup(this);
 		}
 	}
+
+	m_bShouldUpdatePlotGroup = false;
+}
+
+
+bool CvPlot::shouldUpdatePlotGroup() const
+{
+	return m_bShouldUpdatePlotGroup;
 }
 
 

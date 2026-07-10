@@ -411,6 +411,7 @@ public:
 	void setPlotGroup(PlayerTypes ePlayer, CvPlotGroup* pNewValue);
 	void updatePlotGroup();
 	void updatePlotGroup(PlayerTypes ePlayer, bool bRecalculate = true);
+	bool shouldUpdatePlotGroup(void) const;
 
 	int getVisibilityCount(TeamTypes eTeam) const;																											// Exposed to Python
 	void changeVisibilityCount(TeamTypes eTeam, int iChange, InvisibleTypes eSeeInvisible, bool bUpdatePlotGroups);							// Exposed to Python
@@ -631,6 +632,8 @@ protected:
 	bool m_bFlagDirty:1;
 	bool m_bPlotLayoutDirty:1;
 	bool m_bLayoutStateWorked:1;
+
+	bool m_bShouldUpdatePlotGroup:1;
 
 	char /*PlayerTypes*/ m_eOwner;
 	CivilizationTypes m_eCultureConversionCivilization;
