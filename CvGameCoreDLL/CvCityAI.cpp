@@ -597,7 +597,7 @@ int CvCityAI::AI_specialistValue(SpecialistTypes eSpecialist, bool bAvoidGrowth,
 	}
 
 	int iHappiness = GC.getSpecialistInfo(eSpecialist).getHappiness();
-	if (angryPopulation(-iHappiness) > 0)
+	if (iHappiness < 0 && angryPopulation(-iHappiness) > 0)
 	{
 		return -1;
 	}
