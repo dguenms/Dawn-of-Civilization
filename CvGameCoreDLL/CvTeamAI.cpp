@@ -2584,15 +2584,11 @@ DenialTypes CvTeamAI::AI_openBordersTrade(TeamTypes eTeam) const
 
 int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 {
-	int iModifier = 280;
-	if (isHasTech(ELECTRICITY)) 
-	{
-		iModifier = 200;
-	}
-	if (isHasTech(GEOPOLITICS)) 
-	{
-		iModifier = 160;
-	}
+	int iModifier = 200;
+	if (isHasTech(ELECTRICITY))
+		iModifier += 60;
+	if (isHasTech(GEOPOLITICS))
+		iModifier += 40;
 
 	//discount if in a chain of alliances but not directly allied yet
 	for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
@@ -2633,7 +2629,7 @@ int CvTeamAI::AI_defensivePactTradeVal(TeamTypes eTeam) const
 		}
 	}
 
-	return iNumCities * std::max(iModifier, 10) / 100;
+	return iNumCities * iModifier / 100;
 }
 
 
