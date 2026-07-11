@@ -11309,6 +11309,7 @@ name_translations = {
 		iPortuguese: u"Leópolis",
 		iRussian: "Lvov",
 		iSpanish: u"Leópolis",
+		iTurkish: "Ilbav",
 		iUkrainian: _,
 	},
 	"Lwanda": {
@@ -14242,7 +14243,7 @@ name_translations = {
 		iMongol: found("Solkhat"),
 		iPolish: "Kercz",
 		iRussian: "Kerch",
-		iTurkish: "Kerch",
+		iTurkish: u"Keriç",
 	},
 	"Panyu": {
 		iChinese: (
