@@ -314,7 +314,7 @@ dGoals = {
 				plots.region(rIreland),
 				plots.region(rBritain),
 				plots.region(rIberia),
-				plots.region(rCentralEurope).named(PANNONIA),
+				plots.rectangle(tPannonia).without(lPannoniaExceptions).named(PANNONIA),
 				plots.region(rAnatolia),
 				required=3,
 			),

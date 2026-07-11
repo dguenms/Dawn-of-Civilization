@@ -47,6 +47,10 @@ tNewZealandWest = ((148, 4), (149, 7))
 tMarquesas = ((13, 27),	(13, 27))
 tEasterIsland = ((20, 18),	(20, 18))
 
+# second Celtic goal: settle three out of Ireland, Britain, Iberia, Pannonia, and Anatolia by 150 BC
+tPannonia = ((70, 57),	(77, 62))
+lPannoniaExceptions = [(70, 57), (73, 62), (74, 62), (75, 62), (76, 62), (77, 62)]
+
 # second Dravidian goal: control or vassalize the Deccan and Srivijaya in 1000 AD
 tSrivijaya = ((115, 26), (121, 34))
 
