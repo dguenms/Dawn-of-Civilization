@@ -337,8 +337,6 @@ public:
 
 	int getMedianTechValue();
 
-	void setUpdatePlotGroups(bool bNewValue);
-
 protected:
 	CvGame* m_pGame;
 };

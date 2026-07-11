@@ -535,9 +535,6 @@ void CvGame::reset(HandicapTypes eHandicap, bool bConstructorCall)
 	m_bPlayerOptionsSent = false;
 	m_bNukesValid = false;
 
-	// Leoreth
-	m_bUpdatePlotGroups = true;
-
 	m_eHandicap = eHandicap;
 	m_ePausePlayer = NO_PLAYER;
 	m_eBestLandUnit = NO_UNIT;
@@ -10937,23 +10934,5 @@ void CvGame::changePowerConsumedCount(int iChange)
 	if (iChange != 0)
 	{
 		setPowerConsumedCount(getPowerConsumedCount() + iChange);
-	}
-}
-
-bool CvGame::isUpdatePlotGroups() const
-{
-	return m_bUpdatePlotGroups;
-}
-
-void CvGame::setUpdatePlotGroups(bool bNewValue)
-{
-	m_bUpdatePlotGroups = bNewValue;
-
-	if (bNewValue)
-	{
-		for (int iI = 0; iI < GC.getMap().numPlots(); iI++)
-		{
-			GC.getMap().plotByIndex(iI)->updatePlotGroup();
-		}
 	}
 }

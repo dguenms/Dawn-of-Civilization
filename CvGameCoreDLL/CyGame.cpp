@@ -1385,8 +1385,3 @@ int CyGame::getMedianTechValue()
 {
 	return m_pGame ? m_pGame->getMedianTechValue() : -1;
 }
-
-void CyGame::setUpdatePlotGroups(bool bNewValue)
-{
-	if (m_pGame) m_pGame->setUpdatePlotGroups(bNewValue);
-}
