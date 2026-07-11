@@ -40755,7 +40755,6 @@ BeginPlot
 	x=90,y=54
 	RiverNSDirection=2
 	isWOfRiver
-	BonusType=BONUS_IRON
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot

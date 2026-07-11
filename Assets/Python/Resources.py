@@ -54,6 +54,7 @@ def setup():
 
 dResourcesDict = {
 	(103, 42) : (-1000, iHorse),	# Gujarat
+	(90, 54)  : (-800,  iIron),     # Caucasus
 	(78, 44)  : (-600,  iCotton),	# Egypt
 	(92, 52)  : (-400,  iRice),     # Mazandaran
 	(127, 44) : (-200,  iRice),     # South China
