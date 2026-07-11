@@ -15875,7 +15875,7 @@ int CvPlayer::getEspionageMissionBaseCost(EspionageMissionTypes eMission, Player
 	{
 		if (NULL != pPlot && !pPlot->isCity())
 		{
-			if (pPlot->getImprovementType() != NO_IMPROVEMENT || pPlot->getRouteType() != NO_ROUTE)
+			if ((pPlot->getImprovementType() != NO_IMPROVEMENT && !GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent()) || pPlot->getRouteType() != NO_ROUTE)
 			{
 				iMissionCost = (iBaseMissionCost * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getBuildPercent()) / 100;
 			}

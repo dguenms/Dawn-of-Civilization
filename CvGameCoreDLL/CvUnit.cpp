@@ -5388,6 +5388,11 @@ bool CvUnit::canSabotage(const CvPlot* pPlot, bool bTestVisible) const
 		return false;
 	}
 
+	if (GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+	{
+		return false;
+	}
+
 	if (!bTestVisible)
 	{
 		if (GET_PLAYER(getOwnerINLINE()).getGold() < sabotageCost(pPlot))
