@@ -1701,10 +1701,6 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_MINE
 EndPlot
 BeginPlot
-	x=32,y=9
-	ImprovementType=IMPROVEMENT_CAMP
-EndPlot
-BeginPlot
 	x=32,y=10
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -15822,7 +15818,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=124,y=28
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
 	x=124,y=30
