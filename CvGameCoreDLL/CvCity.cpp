@@ -7930,6 +7930,18 @@ bool CvCity::isBirthProtected() const
 }
 
 
+PlayerTypes CvCity::getBirthProtected() const
+{
+	return getPlot().getBirthProtected();
+}
+
+
+bool CvCity::isExpansionEffect(PlayerTypes ePlayer) const
+{
+	return getPlot().isExpansionEffect(ePlayer);
+}
+
+
 PlayerTypes CvCity::getExpansion() const
 {
 	return getPlot().getExpansion();
@@ -16749,20 +16761,25 @@ int CvCity::calculateBaseGreatPeopleRate() const
 // doc
 bool CvCity::isCore(CivilizationTypes eCivilization) const
 {
-	return plot()->isCore(eCivilization);
+	return getPlot().isCore(eCivilization);
 }
 
 // doc
 bool CvCity::isCore(PlayerTypes ePlayer) const
 {
-	return plot()->isCore(ePlayer);
+	return getPlot().isCore(ePlayer);
 }
 
 // doc
-// TODO: redundant?
 bool CvCity::isCore() const
 {
-	return plot()->isCore();
+	return getPlot().isCore();
+}
+
+// doc
+int CvCity::getSpreadFactor(ReligionTypes eReligion) const
+{
+	return getPlot().getSpreadFactor(eReligion);
 }
 
 // doc

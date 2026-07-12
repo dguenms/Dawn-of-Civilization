@@ -156,7 +156,8 @@ public:
 	bool nuke(int iX, int iY);
 	// <advc.650>
 	int nukeInterceptionChance(CvPlot const& kTarget, TeamTypes eObs = NO_TEAM,
-			TeamTypes* pBestTeam = NULL,
+			CvUnit* pInterceptUnit = NULL,
+			TeamTypes* eBestTeam = NULL,
 			EagerEnumMap<TeamTypes,bool> const* pTeamsAffected = NULL) const;
 	// <advc.650>
 	bool canRecon(const CvPlot* pPlot) const;																// Exposed to Python
@@ -367,6 +368,9 @@ public:
 				!m_pUnitInfo->isHiddenNationality());
 	}
 	bool isHuman() const;																					// Exposed to Python
+	bool isIndependent() const;
+	bool isNative() const;
+	bool isMinorCiv() const;
 
 	int visibilityRange() const;																			// Exposed to Python
 
@@ -469,7 +473,7 @@ public:
 		return (currHitPoints() - iDamage <= 0);
 	}
 
-	bool isExisting() const; // doc
+	bool isExisting() const { return getX() >= 0 && getY() >= 0; }; // doc
 
 	void setBaseCombatStr(int iCombat);																		// Exposed to Python
 	int baseCombatStr() const																				// Exposed to Python
@@ -774,7 +778,7 @@ public:
 	void changeEnemyRouteCount(int iChange);
 
 	int getAlwaysHealCount() const { return m_iAlwaysHealCount; }
-	bool isAlwaysHeal() const { return (getAlwaysHealCount() > 0); }										// Exposed to Python
+	bool isAlwaysHeal() const;																				// Exposed to Python
 	void changeAlwaysHealCount(int iChange);
 
 	int getHillsDoubleMoveCount() const { return m_iHillsDoubleMoveCount; }
@@ -784,8 +788,8 @@ public:
 	int getImmuneToFirstStrikesCount() const { return m_iImmuneToFirstStrikesCount; }
 	void changeImmuneToFirstStrikesCount(int iChange);
 
-	int getNoUpgradeCount() const; // doc
-	bool isNoUpgrade() const; // doc
+	int getNoUpgradeCount() const { return m_iNoUpgradeCount; } // doc
+	bool isNoUpgrade() const { return getNoUpgradeCount() > 0; } // doc
 	void changeNoUpgradeCount(int iChange); // doc
 
 	int getExtraVisibilityRange() const { return m_iExtraVisibilityRange; }									// Exposed to Python
@@ -1090,7 +1094,7 @@ public:
 
 	SpecialistTypes getSettledSpecialist() const; // doc
 
-	RegionTypes getOriginalRegion() const; // doc
+	RegionTypes getOriginalRegion() const { return m_eOriginalRegion; } // doc
 
 	DllExport const CvArtInfoUnit* getArtInfo(int i, EraTypes eEra) const;									// Exposed to Python
 	DllExport const TCHAR* getButton() const;																// Exposed to Python
@@ -1227,7 +1231,7 @@ protected:
 	DirectionTypes m_eFacingDirection;
 	int m_iImmobileTimer;
 	int m_iExtraUpkeep; // doc
-	int m_iOriginalRegion; // doc
+	RegionTypes m_eOriginalRegion; // doc
 
 	//bool m_bMadeAttack;
 	int m_iMadeAttacks; // advc.164
@@ -1306,7 +1310,7 @@ protected:
 	void updateFlatMovement();
 // <advc.003u>
 
-	ArtStyleTypes getOriginalArtStyle() const; // doc
+	UnitArtStyleTypes getOriginalArtStyle() const; // doc
 private:
 	void uninitEntity(); // I don't think subclasses should ever call this
 	// </advc.003u>

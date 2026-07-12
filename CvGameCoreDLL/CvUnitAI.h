@@ -67,8 +67,10 @@ public:
 	// Lead From Behind by UncutDragon (edited for K-Mod):
 	void LFBgetBetterAttacker(CvUnitAI** ppAttacker, const CvPlot* pPlot, bool bPotentialEnemy, int& iAIAttackOdds, int& iAttackerValue);
 
-	std::pair<CvPlot*, CvPlot*> AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission = false); // doc
-	CvCity* AI_persecutionTarget(); // doc
+	std::pair<CvPlot*, CvPlot*> AI_spreadTarget(ReligionTypes eReligion, bool bGreatMission = false) const; // doc
+	CvCity* AI_persecutionTarget() const; // doc
+
+	int AI_spyPromotionValue(PromotionTypes ePromotion); // doc
 
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);
@@ -219,11 +221,12 @@ protected:
     bool AI_foundFirstCity(); // advc.108
     bool AI_exploreCoasts(); // doc
     bool AI_exploreCircumnavigate(); // doc
-    bool AI_isTargetableCity(CvCity* pCity); // doc
+    bool AI_isTargetableCity(CvCity const* pCity) const; // doc
 
 	// BETTER_BTS_AI_MOD, War tactics AI, 03/29/10, jdog5000: START
 	CvCity* AI_pickTargetCity(MovementFlags eFlags = NO_MOVEMENT_FLAGS,
-			int iMaxPathTurns = MAX_INT, bool bHuntBarbs = false);
+			int iMaxPathTurns = MAX_INT, bool bHuntBarbs = false,
+			ListEnumMap<PlayerTypes, bool> abHuntPlayer = ListEnumMap<PlayerTypes, bool>());
 	bool AI_goToTargetCity(MovementFlags eFlags = NO_MOVEMENT_FLAGS,
 			int iMaxPathTurns = MAX_INT, CvCity* pTargetCity = NULL);
 	//bool AI_goToTargetBarbCity(int iMaxPathTurns = 10); // disabled by K-Mod. (duplicate code ftl)

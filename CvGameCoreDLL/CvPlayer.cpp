@@ -7242,12 +7242,15 @@ bool CvPlayer::canEverResearch(TechTypes eTech) const
 }
 
 
-TechTypes CvPlayer::getDiscoveryTech(UnitTypes eUnit) const
+TechTypes CvPlayer::getDiscoveryTech(UnitTypes eUnit, TechTypes eIgnoreTech) const
 {
 	TechTypes eBestTech = NO_TECH;
 	int iBestValue = 0;
 	FOR_EACH_ENUM(Tech)
 	{
+		if (eLoopTech == eIgnoreTech)
+			continue;
+
 		if (canResearch(eLoopTech))
 		{
 			int iValue = 0;

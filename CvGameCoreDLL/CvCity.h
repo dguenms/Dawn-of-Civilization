@@ -740,6 +740,8 @@ public:
 	int getWarValue(CivilizationTypes eCivilization) const; // doc
 
 	bool isBirthProtected() const; // doc
+	PlayerTypes getBirthProtected() const; // doc
+	bool isExpansionEffect(PlayerTypes ePlayer) const; // doc
 	PlayerTypes getExpansion() const; // doc
 
 	CultureLevelTypes getCultureLevel() const { return m_eCultureLevel; }										// Exposed to Python
@@ -1485,6 +1487,8 @@ public:
 	bool isCore(CivilizationTypes eCivilization) const; // doc
 	bool isCore(PlayerTypes ePlayer) const; // doc
 	bool isCore() const; // doc
+
+	int getSpreadFactor(ReligionTypes eReligion) const; // doc
 
 	bool rebuild(EraTypes eEra = NO_ERA); // doc
 

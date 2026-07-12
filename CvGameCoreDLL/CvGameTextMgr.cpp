@@ -23348,9 +23348,10 @@ void CvGameTextMgr::getNukePlotHelp(CvPlot const& kPlot,
 	if (kNuke.canNukeAt(kNuke.getPlot(), kPlot.getX(), kPlot.getY(),
 		kNuke.getTeam())) // kekm.7 (advc)
 	{	// <advc.650>
-		TeamTypes eInterceptTeam=NO_TEAM;
+		CvUnit* pInterceptUnit = NULL;
+		TeamTypes eInterceptTeam = NO_TEAM;
 		int iInterceptChance = kNuke.nukeInterceptionChance(
-				kPlot, kNuke.getTeam(), &eInterceptTeam);
+				kPlot, kNuke.getTeam(), pInterceptUnit, &eInterceptTeam);
 		if (eInterceptTeam != NO_TEAM)
 		{
 			FAssert(iInterceptChance > 0);

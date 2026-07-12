@@ -55,7 +55,7 @@ void CvPlayer::AI_makeProductionDirtyExternal() { reportCall;
 	AI().AI_makeProductionDirty();
 }
 void CvPlayer::AI_conquerCityExternal(CvCity* pCity) { reportCall;
-	AI().AI_conquerCity(*reinterpret_cast<CvCityAI*>(pCity)); // advc
+	AI().AI_conquerCity(*reinterpret_cast<CvCityAI*>(pCity), NO_PLAYER, 0, false); // advc
 }
 int CvPlayer::AI_foundValueExternal(int iX, int iY, int iMinUnitRange, bool bStartingLoc) { reportCall;
 	return AI().AI_foundValue(iX, iY, iMinUnitRange, bStartingLoc);

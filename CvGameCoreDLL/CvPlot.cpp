@@ -9217,7 +9217,7 @@ void CvPlot::setWarValue(CivilizationTypes eCivilization, int iNewValue)
 // doc
 int CvPlot::getSpreadFactor(ReligionTypes eReligion) const
 {
-	int iSpreadFactor = m_aiReligionSpreadFactor[eReligion];
+	int iSpreadFactor = m_aiReligionSpreadFactor.get(eReligion);
 
 	if (eReligion == JUDAISM)
 	{
@@ -9641,4 +9641,16 @@ int CvPlot::getRegionGroupForRegion(int iRegion)
 bool CvPlot::isSlaveImprovement() const
 {
 	return getImprovementType() == IMPROVEMENT_SLAVE_MINE || getImprovementType() == IMPROVEMENT_SLAVE_PLANTATION;
+}
+
+// doc
+bool CvPlot::isMinorCiv() const
+{
+	return isOwned() && GET_PLAYER(getOwner()).isMinorCiv();
+}
+
+// doc
+bool CvPlot::isIndependent() const
+{
+	return isOwned() && GET_PLAYER(getOwner()).isIndependent();
 }

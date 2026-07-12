@@ -25,7 +25,7 @@ public: // advc: All the const functions are exposed to Python
 	int getDerivativeCiv() const;
 	DllExport int getDefaultPlayerColor() const;
 	ArtStyleTypes getArtStyleType() const { return m_eArtStyleType; }
-	int getUnitArtStyleType() const;
+	UnitArtStyleTypes getUnitArtStyleType() const;
 	int getNumCityNames() const;
 	int getNumLeaders() const;
 	int getSelectionSoundScriptId() const;

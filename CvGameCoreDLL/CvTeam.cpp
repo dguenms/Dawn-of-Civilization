@@ -6578,13 +6578,8 @@ TeamTypes CvTeam::getMaster() const
 // doc
 bool CvTeam::isAtWarWithMajorPlayer() const
 {
-    for (TeamIter<CIV_ALIVE,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
+    for (TeamIter<MAJOR_CIV,NOT_SAME_TEAM_AS> it(getID()); it.hasNext(); ++it)
     {
-        if (it->isMinorCiv()) // TODO: redundant?
-            continue;
-        if (it->isBarbarian())
-            continue;
-
         if (isAtWar(it->getID()))
             return true;
     }

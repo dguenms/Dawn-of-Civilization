@@ -60,9 +60,9 @@ int CvCivilizationInfo::getDefaultPlayerColor() const
 	return m_iDefaultPlayerColor;
 }
 
-int CvCivilizationInfo::getUnitArtStyleType() const
+UnitArtStyleTypes CvCivilizationInfo::getUnitArtStyleType() const
 {
-	return m_iUnitArtStyleType;
+	return (UnitArtStyleTypes)m_iUnitArtStyleType;
 }
 
 int CvCivilizationInfo::getNumCityNames() const

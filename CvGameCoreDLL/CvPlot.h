@@ -249,6 +249,8 @@ public:
 	}
 	bool isBarbarian() const { return (getOwner() == BARBARIAN_PLAYER); }							// Exposed to Python
 	bool isRevealedBarbarian() const;																// Exposed to Python
+	bool isMinorCiv() const;
+	bool isIndependent() const;
 
 	bool isVisible(TeamTypes eTeam, bool bDebug) const;												// Exposed to Python
 	// advc: Make bDebug=false the default
