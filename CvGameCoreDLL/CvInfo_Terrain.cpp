@@ -327,6 +327,16 @@ const CvArtInfoFeature* CvFeatureInfo::getArtInfo() const
 	return ARTFILEMGR.getFeatureArtInfo( getArtDefineTag());
 }
 
+const TCHAR* CvFeatureInfo::getVarietyButton(int iVariety) const
+{
+	if (getArtInfo()->getVariety(iVariety).getVarietyButton().empty())
+	{
+		return NULL;
+	}
+	return getArtInfo()->getVariety(iVariety).getVarietyButton();
+}
+
+
 bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 {
 	if (!base_t::read(pXML))

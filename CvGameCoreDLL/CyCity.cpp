@@ -4,6 +4,7 @@
 #include "CvGameCoreDLL.h"
 #include "CyCity.h"
 #include "CvCityAI.h" // advc.003u
+#include "CvArea.h"
 #include "CyArea.h"
 #include "CvDLLPythonIFaceBase.h"
 
@@ -2541,21 +2542,21 @@ int CyCity::getNextCoveredPlot() const
 }
 
 // doc
-int CyCity::getCulturePlotIndex(int i) const
+int CyCity::getCulturePlotIndex(int iCulturePlot) const
 {
-	return m_pCity ? m_pCity->getCulturePlotIndex(i) : -1;
+	return m_pCity ? m_pCity->getCulturePlotIndex((CulturePlotTypes)iCulturePlot) : -1;
 }
 
 // doc
-CyPlot* CyCity::getCulturePlot(int i) const
+CyPlot* CyCity::getCulturePlot(int iCulturePlot) const
 {
-	return m_pCity ? new CyPlot(m_pCity->getCulturePlot(i)) : NULL;
+	return m_pCity ? new CyPlot(m_pCity->getCulturePlot((CulturePlotTypes)iCulturePlot)) : NULL;
 }
 
 // doc
-int CyCity::getCultureCost(int i) const
+int CyCity::getCultureCost(int iCulturePlot) const
 {
-	return m_pCity ? m_pCity->getCultureCost(i) : -1;
+	return m_pCity ? m_pCity->getCultureCost((CulturePlotTypes)iCulturePlot) : -1;
 }
 
 // doc
@@ -2565,9 +2566,9 @@ int CyCity::getEffectiveNextCoveredPlot() const
 }
 
 // doc
-bool CyCity::isCoveredBeforeExpansion(int i) const
+bool CyCity::isCoveredBeforeExpansion(int iCulturePlot) const
 {
-	return m_pCity ? m_pCity->isCoveredBeforeExpansion(i) : false;
+	return m_pCity ? m_pCity->isCoveredBeforeExpansion((CulturePlotTypes)iCulturePlot) : false;
 }
 
 // doc
@@ -2723,19 +2724,13 @@ int CyCity::getSatelliteSlots()
 // doc
 int CyCity::getArea()
 {
-	return m_pCity ? m_pCity->getArea() : -1;
+	return m_pCity ? m_pCity->area()->getID() : -1;
 }
 
 // doc
 bool CyCity::rebuild(int iEra)
 {
 	return m_pCity ? m_pCity->rebuild((EraTypes)iEra) : false;
-}
-
-// doc
-bool CyCity::isValidBuildingLocation(int iBuilding)
-{
-	return m_pCity ? m_pCity->isValidBuildingLocation((BuildingTypes)iBuilding) : false;
 }
 
 // doc

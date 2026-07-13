@@ -67,7 +67,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("setWallOverridePoints", &CyCity::setWallOverridePoints, "setWallOverridePoints(const python::tuple& kPoints)")
 		.def("getWallOverridePoints", &CyCity::getWallOverridePoints, "python::tuple getWallOverridePoints()")
 
-		.def("AI_avoidGrowth", &CyCity::AI_avoidGrowth, "bool ()")
 		.def("AI_isEmphasize", &CyCity::AI_isEmphasize, "bool (int iEmphasizeType)")
 		.def("AI_countBestBuilds", &CyCity::AI_countBestBuilds, "int (CyArea* pArea)")
 		.def("AI_cityValue", &CyCity::AI_cityValue, "int ()")
@@ -133,10 +132,8 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getSatelliteSlots", &CyCity::getSatelliteSlots, "int ()") // doc
 		.def("getArea", &CyCity::getArea, "int ()") // doc
 		.def("rebuild", &CyCity::rebuild, "bool (int iEra)") // doc
-		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)") // doc
 		.def("getArea", &CyCity::getArea, "int ()") // doc
 		.def("rebuild", &CyCity::rebuild, "bool ()") // doc
-		.def("isValidBuildingLocation", &CyCity::isValidBuildingLocation, "bool (int eBuilding)") // doc
 		.def("getPreviousCiv", &CyCity::getPreviousCiv, "int ()") // doc
 		.def("getOriginalCiv", &CyCity::getOriginalCiv, "int ()") // doc
 		.def("setOriginalCiv", &CyCity::setOriginalCiv, "void (int iCivilization)") // doc

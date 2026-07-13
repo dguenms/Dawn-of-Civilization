@@ -1240,3 +1240,25 @@ bool isHumanVictoryWonder(BuildingTypes eBuilding, BuildingTypes eWonder, Civili
 		GC.getGame().getActiveCivilizationType() == eCivilization &&
 		GC.getGame().getGameTurn() == getTurnForYear(GC.getInfo(eCivilization).getStartingYear()) + getTurns(5);
 }
+
+void log(char* format, ...)
+{
+	static char buf[2048];
+	_vsnprintf(buf, 2048 - 4, format, (char*)(&format + 1));
+	gDLL->logMsg("sdkDbg.log", buf);
+}
+
+void log(CvWString message)
+{
+	gDLL->logMsg("sdkDbg.log", CvString(message));
+}
+
+void log(CvString logfile, CvString message)
+{
+	gDLL->logMsg(logfile, message);
+}
+
+void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)
+{
+	gDLL->getInterfaceIFace()->setDirty(eDirtyBit, bNewValue);
+}

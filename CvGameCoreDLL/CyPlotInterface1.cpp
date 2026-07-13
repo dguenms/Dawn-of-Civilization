@@ -297,6 +297,7 @@ void CyPlotPythonInterface1(python::class_<CyPlot>& x)
 		.def("getBonusVarietyType", &CyPlot::getBonusVarietyType, "int ()")
 		.def("getContinentArea", &CyPlot::getContinentArea, "int ()")
 		.def("updateRevealedOwner", &CyPlot::updateRevealedOwner, "void (int eTeam)")
+		.def("canConstruct", &CyPlot::canConstruct, "bool (int eBuilding)")
 	;
 
 	// advc.enum: For CyMap::syncRandPlot

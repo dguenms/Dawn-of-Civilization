@@ -554,7 +554,6 @@ public:
 	int getSatelliteSlots(); // doc
 	int getArea(); // doc
 	bool rebuild(int iEra); // doc
-	bool isValidBuildingLocation(int eBuilding); // doc
 	void setOriginalCiv(int iCivilization); // doc
 	void setEverOwned(int iCivilization, bool bNewValue); // doc
 	void setGameTurnFounded(int iNewValue); // doc

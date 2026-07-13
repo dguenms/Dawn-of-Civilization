@@ -79,9 +79,10 @@ public: // advc: All the const functions are exposed to Python
 
 	// doc
 	int getLoadingTime(ScenarioTypes eScenario) const { return m_aeLoadingTime.get(eScenario); }
-
-	// doc
 	void setDescription(CvWString szString);
+	void setPlayable(bool bNewValue);
+	void setLeader(int iLeader, bool bNewValue);
+	bool isOriginalLeader(int iLeader) const;
 
 	bool read(CvXMLLoadUtility* pXML);
 	bool readPass2(CvXMLLoadUtility* pXML);
@@ -126,6 +127,9 @@ protected:
 	bool* m_pbCivilizationFreeBuildingClass;
 	bool* m_pbCivilizationFreeTechs;
 	bool* m_pbCivilizationDisableTechs;
+
+	// doc
+	bool* m_pbOriginalLeaders;
 
 	CvString* m_paszCityNames;
 

@@ -476,12 +476,6 @@ bool CyUnit::hasUpgrade(bool bSearch)
 {
 	return m_pUnit ? m_pUnit->hasUpgrade(bSearch) : false;
 }
-//Rhye - start
-void CyUnit::discountedUpgrade(int /*UnitTypes*/ eUnit, int percent)			
-{
-	m_pUnit->discountedUpgrade((UnitTypes)eUnit, percent);
-}
-//Rhye - end
 
 int /*HandicapTypes*/ CyUnit::getHandicapType()
 {

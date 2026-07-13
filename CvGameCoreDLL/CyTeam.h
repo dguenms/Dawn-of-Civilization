@@ -242,10 +242,8 @@ public:
 
 	void setOpenBorders(int eTeam, bool bNewValue); // doc
 	void setDefensivePact(int eTeam, bool bNewValue); // doc
-	bool isCapitulated(); // doc
 	int getTotalTechValue(); // doc
 	void changeObsoleteBuildingCount(int eBuilding, int iChange); // doc
-	int AI_getWarPlan(int eTeam); // doc
 
 protected:
 

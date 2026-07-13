@@ -144,6 +144,13 @@ bool CvInfoBase::isMatchForLink(std::wstring szLink, bool bKeysOnly) const
 	return false;
 }
 
+// doc
+void CvInfoBase::setDescription(std::wstring szDescription)
+{
+	m_aCachedDescriptions.clear();
+	m_szTextKey = szDescription;
+}
+
 // read from XML: TYPE, DESC, BUTTON
 bool CvInfoBase::read(CvXMLLoadUtility* pXML)
 {

@@ -271,7 +271,7 @@ public:
 
 	void saveReplay(int iPlayer);
 
-	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv);
+	void addPlayer(int /*PlayerTypes*/ eNewPlayer, int /*LeaderHeadTypes*/ eLeader, int /*CivilizationTypes*/ eCiv, int iBirthTurn, bool bAlive, bool bMinor);
 
 	// BETTER_BTS_AI_MOD, Debug, 8/1/08, jdog5000:
 	void changeHumanPlayer(int /*PlayerTypes*/ eNewHuman);

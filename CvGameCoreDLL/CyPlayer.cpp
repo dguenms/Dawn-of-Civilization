@@ -2353,25 +2353,25 @@ AttitudeTypes CyPlayer::AI_getAttitude(int /*PlayerTypes*/ ePlayer)
 // doc
 int CyPlayer::AI_getAttitudeVal(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_getAttitudeVal((PlayerTypes)ePlayer) : -1;
+	return m_pPlayer ? m_pPlayer->AI().AI_getAttitudeVal((PlayerTypes)ePlayer) : -1;
 }
 
 // doc
 int CyPlayer::AI_getSameReligionAttitude(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_getSameReligionAttitude((PlayerTypes)ePlayer) : -1;
+	return m_pPlayer ? m_pPlayer->AI().AI_getSameReligionAttitude((PlayerTypes)ePlayer) : -1;
 }
 
 // doc
 int CyPlayer::AI_getDifferentReligionAttitude(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_getDifferentReligionAttitude((PlayerTypes)ePlayer) : -1;
+	return m_pPlayer ? m_pPlayer->AI().AI_getDifferentReligionAttitude((PlayerTypes)ePlayer) : -1;
 }
 
 // doc
 int CyPlayer::AI_getFirstImpressionAttitude(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_getFirstImpressionAttitude((PlayerTypes)ePlayer) : -1;
+	return m_pPlayer ? m_pPlayer->AI().AI_getFirstImpressionAttitude((PlayerTypes)ePlayer) : -1;
 }
 
 int CyPlayer::AI_unitValue(int /*UnitTypes*/ eUnit, int /*UnitAITypes*/ eUnitAI, CyArea* pArea)
@@ -2445,41 +2445,6 @@ void CyPlayer::AI_setExtraGoldTarget(int iNewValue)
 	}
 }
 
-int CyPlayer::getScoreHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_SCORE, iTurn) : -1);
-}
-
-int CyPlayer::getEconomyHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_ECONOMY, iTurn) : -1);
-}
-
-int CyPlayer::getIndustryHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_INDUSTRY, iTurn) : -1);
-}
-
-int CyPlayer::getAgricultureHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_AGRICULTURE, iTurn) : -1);
-}
-
-int CyPlayer::getPowerHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_POWER, iTurn) : -1);
-}
-
-int CyPlayer::getCultureHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_CULTURE, iTurn) : -1);
-}
-
-int CyPlayer::getEspionageHistory(int iTurn) const
-{
-	return (NULL != m_pPlayer ? m_pPlayer->getHistorySafe(PLAYER_HISTORY_ESPIONAGE, iTurn) : -1);
-}
-
 std::string CyPlayer::getScriptData() const
 {
 	return m_pPlayer ? m_pPlayer->getScriptData() : "";
@@ -2519,11 +2484,11 @@ int CyPlayer::AI_maxGoldPerTurnTrade(int iPlayer)
 	return 0;
 }
 
-bool CyPlayer::splitEmpire(int iAreaId)
+bool CyPlayer::splitEmpire(int iCivilization)
 {
 	if (m_pPlayer)
 	{
-		return m_pPlayer->splitEmpire(iAreaId);
+		return m_pPlayer->splitEmpire((CivilizationTypes)iCivilization);
 	}
 
 	return false;
@@ -2578,7 +2543,7 @@ int CyPlayer::AI_corporationBonusVal(int eBonus) const
 {
 	if(m_pPlayer == NULL)
 		return -1;
-	return m_pPlayer->AI_corporationBonusVal((BonusTypes)eBonus);
+	return m_pPlayer->AI_corporationBonusVal((BonusTypes)eBonus, 1);
 }
 
 // <advc.085>
@@ -2795,7 +2760,7 @@ void CyPlayer::setReligiousTolerance(int iNewValue)
 // doc
 int CyPlayer::getSpreadType(CyPlot* pPlot, int iReligion) const
 {
-	return m_pPlayer ? m_pPlayer->getSpreadType(pPlot->getPlot(), (ReligionTypes)iReligion) : RELIGION_SPREAD_NONE;
+	return m_pPlayer ? m_pPlayer->getSpreadType(*pPlot->getPlot(), (ReligionTypes)iReligion) : RELIGION_SPREAD_NONE;
 }
 
 // doc
@@ -2826,7 +2791,7 @@ bool CyPlayer::canUseSlaves()
 // doc
 int CyPlayer::AI_bestCivic(int iCivicOptionType)
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_bestCivic((CivicOptionTypes)iCivicOptionType) : NO_CIVIC;
+	return m_pPlayer ? m_pPlayer->AI().AI_bestCivic((CivicOptionTypes)iCivicOptionType) : NO_CIVIC;
 }
 
 // doc
@@ -2839,19 +2804,19 @@ void CyPlayer::setFreeTechsOnDiscovery(int iNewValue)
 // doc
 CyPlot* CyPlayer::AI_getCitySite(int iIndex)
 {
-	return m_pPlayer ? new CyPlot(m_pPlayer->AI()->AI_getCitySite(iIndex)) : NULL;
+	return m_pPlayer ? new CyPlot(m_pPlayer->AI().AI_getCitySite(iIndex)) : NULL;
 }
 
 // doc
 int CyPlayer::AI_getNumCitySites()
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_getNumCitySites() : 0;
+	return m_pPlayer ? m_pPlayer->AI().AI_getNumCitySites() : 0;
 }
 
 // doc
 int CyPlayer::AI_getMemoryAttitude(int iPlayer, int iMemory)
 {
-	return m_pPlayer ? m_pPlayer->AI()->AI_getMemoryAttitude((PlayerTypes)iPlayer, (MemoryTypes)iMemory) : 0;
+	return m_pPlayer ? m_pPlayer->AI().AI_getMemoryAttitude((PlayerTypes)iPlayer, (MemoryTypes)iMemory) : 0;
 }
 
 // doc

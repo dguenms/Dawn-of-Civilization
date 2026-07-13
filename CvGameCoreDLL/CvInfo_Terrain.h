@@ -158,6 +158,9 @@ public: /*  All the const functions are exposed to Python except for those deali
 	bool isTerrain(int i) const;
 	int getNumVarieties() const;
 
+	// doc
+	const TCHAR* getVarietyButton(int iVariety) const;
+
 	DllExport const CvArtInfoFeature* getArtInfo() const;
 	const TCHAR* getButton() const;
 

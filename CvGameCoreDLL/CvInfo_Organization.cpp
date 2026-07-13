@@ -212,6 +212,7 @@ m_iMaintenance(0),
 m_eBonusProduced(NO_BONUS),
 m_iHappiness(0), // doc
 m_iHealth(0), // doc
+m_iMaxConsumableBonuses(0), // doc
 m_paiHeadquarterCommerce(NULL),
 m_paiCommerceProduced(NULL),
 m_paiYieldProduced(NULL)
@@ -285,6 +286,7 @@ bool CvCorporationInfo::read(CvXMLLoadUtility* pXML)
 	// doc
 	pXML->GetChildXmlValByName(&m_iHappiness, "iHappiness");
 	pXML->GetChildXmlValByName(&m_iHealth, "iHealth");
+	pXML->GetChildXmlValByName(&m_iMaxConsumableBonuses, "iMaxConsumableBonuses");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),
 		"HeadquarterCommerces"))

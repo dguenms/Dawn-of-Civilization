@@ -112,6 +112,7 @@ public: // All the const functions are exposed to Python
 	// doc
 	int getHappiness() const { return m_iHappiness; }
 	int getHealth() const { return m_iHealth; }
+	int getMaxConsumableBonuses() const { return m_iMaxConsumableBonuses; }
 
 	// Array access:
 	int getNumPrereqBonuses() const { return m_aePrereqBonuses.size(); }
@@ -142,6 +143,7 @@ protected:
 	// doc
 	int m_iHappiness;
 	int m_iHealth;
+	int m_iMaxConsumableBonuses;
 
 	std::vector<BonusTypes> m_aePrereqBonuses; // advc.003t: was int*
 	int* m_paiHeadquarterCommerce;

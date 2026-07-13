@@ -539,14 +539,6 @@ public:
 	int AI_getExtraGoldTarget() const;
 	void AI_setExtraGoldTarget(int iNewValue);
 
-	int getScoreHistory(int iTurn) const;
-	int getEconomyHistory(int iTurn) const;
-	int getIndustryHistory(int iTurn) const;
-	int getAgricultureHistory(int iTurn) const;
-	int getPowerHistory(int iTurn) const;
-	int getCultureHistory(int iTurn) const;
-	int getEspionageHistory(int iTurn) const;
-
 	std::string getScriptData() const;
 	void setScriptData(std::string szNewValue);
 

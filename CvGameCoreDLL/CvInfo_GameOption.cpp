@@ -712,6 +712,7 @@ m_iAIAttitudeChangePercent(1), // advc.148
 m_iAIAdvancedStartPercent(0),
 m_iNumGoodies(0),
 m_iDifficulty(-1), // advc.250a
+m_iBarbarianSpawnModifier(0), // doc
 m_piGoodies(NULL),
 m_pbFreeTechs(NULL),
 m_pbAIFreeTechs(NULL)
@@ -1016,6 +1017,11 @@ int CvHandicapInfo::getNumGoodies() const
 // advc.250a:
 int CvHandicapInfo::getDifficulty() const { return m_iDifficulty; }
 
+int CvHandicapInfo::getBarbarianSpawnModifier() const
+{
+	return m_iBarbarianSpawnModifier;
+}
+
 int CvHandicapInfo::getGoodies(int i) const
 {
 	FAssertBounds(0, getNumGoodies(), i);
@@ -1302,6 +1308,9 @@ bool CvHandicapInfo::read(CvXMLLoadUtility* pXML)
 	// advc.148:
 	pXML->GetChildXmlValByName(&m_iAIAttitudeChangePercent, "iAIAttitudeChangePercent");
 	pXML->GetChildXmlValByName(&m_iDifficulty, "iDifficulty"); // advc.250a
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iBarbarianSpawnModifier, "iBarbarianSpawnModifier");
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "Goodies"))
 	{

@@ -320,6 +320,8 @@ public:
 
 	int getContinentArea(); // doc
 
+	bool canConstruct(int eBuilding); // doc
+
 private:
 	CvPlot* m_pPlot;
 };

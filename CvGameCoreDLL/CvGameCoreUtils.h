@@ -241,6 +241,12 @@ UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit); // do
 
 bool isPrecursor(ReligionTypes ePrecursor, ReligionTypes eReligion); // doc
 
+void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue);
+
+void log(char* format, ...);
+void log(CvWString message);
+void log(CvString logfile, CvString message);
+
 bool canRespawn(CivilizationTypes eCivilization); // doc
 bool canEverRespawn(CivilizationTypes eCivilization); // doc
 bool isCivAlive(CivilizationTypes eCivilization); // doc

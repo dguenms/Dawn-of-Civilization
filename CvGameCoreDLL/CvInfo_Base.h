@@ -54,6 +54,9 @@ public: // All the const functions are exposed to Python
 	DllExport wchar const* getHelp() const;
 	wchar const* getStrategy() const;
 
+	// doc
+	void setDescription(std::wstring szDescription);
+
 	bool isMatchForLink(std::wstring szLink, bool bKeysOnly) const;
 	#if ENABLE_XML_FILE_CACHE
 	virtual void read(FDataStreamBase* pStream);

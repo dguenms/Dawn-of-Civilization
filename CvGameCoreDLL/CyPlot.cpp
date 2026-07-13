@@ -97,7 +97,7 @@ bool CyPlot::isAdjacentToLand()
 
 bool CyPlot::isCoastalLand()
 {
-	return m_pPlot ? m_pPlot->isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN()) : false;
+	return m_pPlot ? m_pPlot->isCoastalLand(GC.getDefineINT(CvGlobals::MIN_WATER_SIZE_FOR_OCEAN)) : false;
 }
 
 bool CyPlot::isWithinTeamCityRadius(int /*TeamTypes*/ eTeam, int /*PlayerTypes*/ eIgnorePlayer)
@@ -508,7 +508,7 @@ int CyPlot::getArea()
 void CyPlot::setArea(int iNewValue)
 {
 	if (m_pPlot)
-		m_pPlot->setArea(iNewValue);
+		m_pPlot->setArea(GC.getMap().getArea(iNewValue));
 }
 //Rhye - end
 
@@ -1279,10 +1279,16 @@ void CyPlot::setRevealedOwner(int eTeam, int eNewValue)
 
 int CyPlot::getContinentArea()
 {
-	return m_pPlot ? m_pPlot->getContinentArea() : -1;
+	return m_pPlot ? m_pPlot->getContinentArea().getID() : -1;
 }
 
 void CyPlot::updateRevealedOwner(int eTeam)
 {
 	if (m_pPlot) m_pPlot->updateRevealedOwner((TeamTypes)eTeam);
+}
+
+// TODO: replace CyCity.isValidBuildingLocation with this in Python
+bool CyPlot::canConstruct(int eBuilding)
+{
+	return m_pPlot ? m_pPlot->canConstruct((BuildingTypes)eBuilding) : false;
 }

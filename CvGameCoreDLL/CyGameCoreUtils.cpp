@@ -304,7 +304,9 @@ int cyGetTurnMonthForGame(int iGameTurn, int iStartYear, int /*CalendarTypes*/ e
 // doc
 void cyLog(std::string logfile, std::string message)
 {
-	log(CvString(logfile), CvString(message));
+	CvString szLogFile(logfile);
+	CvString szMessage(message);
+	log(szLogFile, szMessage);
 }
 
 // doc

@@ -45,10 +45,6 @@ void CyInfoPythonInterface1()
 		.def("getExperience", &CvSpecialistInfo::getExperience, "int ()")
 		.def("getFlavorValue", &CvSpecialistInfo::getFlavorValue, "int (int i)")
 
-		.def("getCultureLevelYieldChange", &CvSpecialistInfo::getCultureLevelYieldChange, "int (CultureLevelTypes eCultureLevel)") // doc
-		.def("getCultureLevelCommerceChange", &CvSpecialistInfo::getCultureLevelCommerceChange, "int (CultureLevelTypes eCultureLevel, CommerceTypes eCommerce") // doc
-		.def("getCultureLevelGreatPeopleRateChange", &CvSpecialistInfo::getCultureLevelGreatPeopleRateChange, "int (CultureLevelTypes eCultureLevel") // doc
-
 		.def("getTexture", &CvSpecialistInfo::getTexture, "string ()")
 
 		.def("isSatellite", &CvSpecialistInfo::isSatellite, "bool ()") // doc
@@ -560,7 +556,7 @@ void CyInfoPythonInterface1()
 		.def("getEspionageDefenseModifier", &CvBuildingInfo::getEspionageDefenseModifier, "int ()")
 		.def("getMissionType", &CvBuildingInfo::getMissionType, "int ()")
 		.def("getVoteSourceType", &CvBuildingInfo::getVoteSourceType, "int ()")
-		.def("getCultureCommerceModifier", &CvBuildingInfo::getCultureCommerceModifier, "int (CommerceTypes eCommerce)") // doc
+		.def("getCultureCommerceModifier", &CvBuildingInfo::py_getCultureCommerceModifier, "int (CommerceTypes eCommerce)") // doc
 		.def("getCultureGreatPeopleRateModifier", &CvBuildingInfo::getCultureGreatPeopleRateModifier, "int ()") // doc
 		.def("getCultureTradeRouteModifier", &CvBuildingInfo::getCultureTradeRouteModifier, "int ()") // doc
 
@@ -594,7 +590,7 @@ void CyInfoPythonInterface1()
 		.def("getMovie", &CvBuildingInfo::getMovie, "string ()")
 		.def("getMovieDefineTag", &CvBuildingInfo::getMovieDefineTag, "string ()")
 
-		.def("getOrPrereqReligion", &CvBuildingInfo::getOrPrereqReligion, "int ()") // doc
+		.def("getOrPrereqReligion", &CvBuildingInfo::getPrereqOrReligion, "int ()") // doc
 		.def("getOrStateReligion", &CvBuildingInfo::getOrStateReligion, "int ()") // doc
 		.def("isPagan", &CvBuildingInfo::isPagan, "bool ()") // doc
 

@@ -326,7 +326,7 @@ int CyGame::getStartTurn() const
 // doc
 void CyGame::setStartTurn(int iNewValue)
 {
-	if (m_pGame) m_pGame->setStartTurn(iNewValue);
+	m_kGame.setStartTurn(iNewValue);
 }
 
 int CyGame::getStartYear() const
@@ -362,7 +362,7 @@ int CyGame::getMinutesPlayed() const
 // doc
 int CyGame::getSecondsPlayed() const
 {
-	return m_pGame ? m_pGame->getSecondsPlayed() : 0;
+	return m_kGame.getSecondsPlayed();
 }
 
 int CyGame::getTargetScore() const
@@ -570,14 +570,13 @@ void CyGame::makeCircumnavigated()
 // rfc
 int CyGame::getCircumnavigated()
 {
-	return m_pGame ? m_pGame->getCircumnavigated() : false;
+	return m_kGame.getCircumnavigated();
 }
 
 // rfc
 void CyGame::setCircumnavigated(int iNewValue)
 {
-	if (m_pGame)
-		m_pGame->setCircumnavigated(iNewValue);
+	m_kGame.setCircumnavigated(iNewValue);
 }
 
 bool CyGame::isDiploVote(int /*VoteSourceTypes*/ eVoteSource) const
@@ -842,7 +841,7 @@ int CyGame::getReligionGameTurnFounded(int /*ReligionTypes*/ eIndex)
 // doc
 void CyGame::setReligionGameTurnFounded(int eReligion, int iGameTurn)
 {
-	if (m_pGame) m_pGame->setReligionGameTurnFounded((ReligionTypes)eReligion, iGameTurn);
+	m_kGame.setReligionGameTurnFounded((ReligionTypes)eReligion, iGameTurn);
 }
 
 bool CyGame::isReligionFounded(int /*ReligionTypes*/ eIndex)
@@ -1282,143 +1281,109 @@ bool CyGame::isScenario()
 // doc
 bool CyGame::isNeighbors(int ePlayer1, int ePlayer2)
 {
-	return m_pGame ? m_pGame->isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2) : false;
+	return m_kGame.isNeighbors((PlayerTypes)ePlayer1, (PlayerTypes)ePlayer2);
 }
 
 // doc
 int CyGame::determineWinner(int eTeam1, int eTeam2)
 {
-	return m_pGame ? m_pGame->determineWinner((TeamTypes)eTeam1, (TeamTypes)eTeam2) : eTeam1;
+	return m_kGame.determineWinner((TeamTypes)eTeam1, (TeamTypes)eTeam2);
 }
 
-// doc
-int CyGame::getXResolution() const
-{
-	return m_pGame ? m_pGame->getXResolution() : -1;
-}
-
-// doc
-void CyGame::setXResolution(int iNewValue)
-{
-	if (m_pGame) m_pGame->setXResolution(iNewValue);
-}
-
-// doc
-void CyGame::changeXResolution(int iChange)
-{
-	if (m_pGame) m_pGame->changeXResolution(iChange);
-}
-
-// doc
-int CyGame::getYResolution() const
-{
-	return m_pGame ? m_pGame->getYResolution() : -1;
-}
-
-// doc
-void CyGame::setYResolution(int iNewValue)
-{
-	if (m_pGame) m_pGame->setYResolution(iNewValue);
-}
-
-// doc
-void CyGame::changeYResolution(int iChange)
-{
-	if (m_pGame) m_pGame->changeYResolution(iChange);
-}
 
 // doc
 void CyGame::addGreatPersonBornName(std::wstring sName)
 {
-	if (m_pGame) m_pGame->addGreatPersonBornName(sName);
+	m_kGame.addGreatPersonBornName(sName);
 }
 
 // doc
 bool CyGame::isGreatPersonBorn(std::wstring sName)
 {
-	return m_pGame ? m_pGame->isGreatPersonBorn(CvWString(sName)) : false;
+	CvWString szName(sName);
+	return m_kGame.isGreatPersonBorn(szName);
 }
 
 // doc
 void CyGame::autosave()
 {
-	if (m_pGame) m_pGame->autosave();
+	m_kGame.autosave();
 }
 
 // doc
 void CyGame::initialSave()
 {
-	if (m_pGame) m_pGame->autosave(true);
+	m_kGame.autosave(true);
 }
 
 // doc
 void CyGame::incrementBuildingClassCreatedCount(int iBuildingClass)
 {
-	if (m_pGame) m_pGame->incrementBuildingClassCreatedCount((BuildingClassTypes)iBuildingClass);
+	m_kGame.incrementBuildingClassCreatedCount((BuildingClassTypes)iBuildingClass);
 }
 
 // doc
 void CyGame::setCityScreenOwner(int iPlayer)
 {
-	if (m_pGame) m_pGame->setCityScreenOwner((PlayerTypes)iPlayer);
+	m_kGame.setCityScreenOwner((PlayerTypes)iPlayer);
 }
 
 // doc
 void CyGame::resetCityScreenOwner()
 {
-	if (m_pGame) m_pGame->resetCityScreenOwner();
+	m_kGame.resetCityScreenOwner();
 }
 
 // doc
 void CyGame::setGreatPeopleNotifications(int iNotificationLevel)
 {
-	if (m_pGame) m_pGame->setGreatPeopleNotifications((NotificationLevelTypes)iNotificationLevel);
+	m_kGame.setGreatPeopleNotifications((NotificationLevelTypes)iNotificationLevel);
 }
 
 // doc
 void CyGame::setReligionSpreadNotifications(int iNotificationLevel)
 {
-	if (m_pGame) m_pGame->setReligionSpreadNotifications((NotificationLevelTypes)iNotificationLevel);
+	m_kGame.setReligionSpreadNotifications((NotificationLevelTypes)iNotificationLevel);
 }
 
 // doc
 void CyGame::setEventEffectNotifications(int iNotificationLevel)
 {
-	if (m_pGame) m_pGame->setEventEffectNotifications((NotificationLevelTypes)iNotificationLevel);
+	m_kGame.setEventEffectNotifications((NotificationLevelTypes)iNotificationLevel);
 }
 
 // doc
 int CyGame::getPeriod(int iCivilization)
 {
-	return m_pGame ? m_pGame->getPeriod((CivilizationTypes)iCivilization) : -1;
+	return m_kGame.getPeriod((CivilizationTypes)iCivilization);
 }
 
 // doc
 void CyGame::setPeriod(int iCivilization, int iPeriod)
 {
-	if (m_pGame) m_pGame->setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
+	m_kGame.setPeriod((CivilizationTypes)iCivilization, (PeriodTypes)iPeriod);
 }
 
 // doc
 int CyGame::getCivilizationHistory(int iHistoryType, int iCivilization, int iTurn)
 {
-	return m_pGame ? m_pGame->getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn) : -1;
+	return m_kGame.getCivilizationHistory((HistoryTypes)iHistoryType, (CivilizationTypes)iCivilization, iTurn);
 }
 
 // doc
 int CyGame::getFirstDiscovered(int iTech)
 {
-	return m_pGame ? m_pGame->getFirstDiscovered((TechTypes)iTech) : -1;
+	return m_kGame.getFirstDiscovered((TechTypes)iTech);
 }
 
 // doc
 int CyGame::getFirstDiscoveredTurn(int iTech)
 {
-	return m_pGame ? m_pGame->getFirstDiscoveredTurn((TechTypes)iTech) : -1;
+	return m_kGame.getFirstDiscoveredTurn((TechTypes)iTech);
 }
 
 // doc
 int CyGame::getMedianTechValue()
 {
-	return m_pGame ? m_pGame->getMedianTechValue() : -1;
+	return m_kGame.getMedianTechValue();
 }

@@ -540,6 +540,9 @@ public:
 	int getNumGoodies() const;
 	int getDifficulty() const; // advc.250a; exposed to Python
 
+	// doc
+	int getBarbarianSpawnModifier() const;
+
 	int getGoodies(int i) const;
 	// advc.003t: Return type was int for these two
 	bool isFreeTechs(int i) const;
@@ -628,6 +631,9 @@ protected:
 	int m_iAIAttitudeChangePercent; // advc.148
 	int m_iNumGoodies;
 	int m_iDifficulty; // advc.250a
+
+	// doc
+	int m_iBarbarianSpawnModifier;
 
 	CvString m_szHandicapName;
 

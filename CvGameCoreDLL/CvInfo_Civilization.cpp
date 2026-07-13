@@ -23,6 +23,7 @@ m_piCivilizationUnits(NULL),
 m_piCivilizationFreeUnitsClass(NULL),
 m_piCivilizationInitialCivics(NULL),
 m_pbLeaders(NULL),
+m_pbOriginalLeaders(NULL), // doc
 m_pbCivilizationFreeBuildingClass(NULL),
 m_pbCivilizationFreeTechs(NULL),
 m_pbCivilizationDisableTechs(NULL),
@@ -36,6 +37,7 @@ CvCivilizationInfo::~CvCivilizationInfo()
 	SAFE_DELETE_ARRAY(m_piCivilizationFreeUnitsClass);
 	SAFE_DELETE_ARRAY(m_piCivilizationInitialCivics);
 	SAFE_DELETE_ARRAY(m_pbLeaders);
+	SAFE_DELETE_ARRAY(m_pbOriginalLeaders); // doc
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeBuildingClass);
 	SAFE_DELETE_ARRAY(m_pbCivilizationFreeTechs);
 	SAFE_DELETE_ARRAY(m_pbCivilizationDisableTechs);
@@ -207,6 +209,24 @@ void CvCivilizationInfo::setDescription(CvWString szDescription)
 void CvCivilizationInfo::setDescriptionKeyPersistent(std::wstring szDescriptionKeyPersistent)
 {
 	m_szDescriptionKeyPersistent = szDescriptionKeyPersistent;
+}
+
+void CvCivilizationInfo::setPlayable(bool bNewValue)
+{
+	m_bPlayable = bNewValue;
+}
+
+void CvCivilizationInfo::setLeader(int iLeader, bool bNewValue)
+{
+	if (m_pbLeaders)
+	{
+		m_pbLeaders[iLeader] = bNewValue;
+	}
+}
+
+bool CvCivilizationInfo::isOriginalLeader(int iLeader) const
+{
+	return m_pbOriginalLeaders ? m_pbOriginalLeaders[iLeader] : false;
 }
 
 #if ENABLE_XML_FILE_CACHE
@@ -418,6 +438,8 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szIdentifier, "Identifier");
 	pXML->SetInfoIDFromChildXmlVal(m_eImpact, "Impact");
 	pXML->SetInfoIDFromChildXmlVal(m_ePaganReligion, "PaganReligion");
+
+	pXML->SetVariableListTagPair(&m_pbOriginalLeaders, "Leaders", GC.getNumLeaderHeadInfos());
 
 	return true;
 }

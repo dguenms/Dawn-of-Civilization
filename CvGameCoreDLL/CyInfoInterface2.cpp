@@ -115,20 +115,15 @@ void CyInfoPythonInterface2()
 		.def("getFreeUnits", &CvHandicapInfo::getFreeUnits, "int ()")
 		.def("getUnitCostPercent", &CvHandicapInfo::getUnitCostPercent, "int ()")
 		.def("getResearchPercent", &CvHandicapInfo::getResearchPercent, "int ()")
-		.def("getResearchPercentByID", &CvHandicapInfo::getResearchPercentByID, "int (int i)") // rfc
 		.def("getDistanceMaintenancePercent", &CvHandicapInfo::getDistanceMaintenancePercent, "int ()")
-		.def("getDistanceMaintenancePercentByID", &CvHandicapInfo::getDistanceMaintenancePercentByID, "int (int i)") // rfc
 		.def("getNumCitiesMaintenancePercent", &CvHandicapInfo::getNumCitiesMaintenancePercent, "int ()")
-		.def("getNumCitiesMaintenancePercentByID", &CvHandicapInfo::getNumCitiesMaintenancePercentByID, "int (int i)") // rfc
 		.def("getMaxNumCitiesMaintenance", &CvHandicapInfo::getMaxNumCitiesMaintenance, "int ()")
 		.def("getColonyMaintenancePercent", &CvHandicapInfo::getColonyMaintenancePercent, "int ()")
 		.def("getMaxColonyMaintenance", &CvHandicapInfo::getMaxColonyMaintenance, "int ()")
 		.def("getCorporationMaintenancePercent", &CvHandicapInfo::getCorporationMaintenancePercent, "int ()")
 		.def("getCivicUpkeepPercent", &CvHandicapInfo::getCivicUpkeepPercent, "int ()")
-		.def("getCivicUpkeepPercentByID", &CvHandicapInfo::getCivicUpkeepPercentByID, "int (int i)") // rfc
 		.def("getInflationPercent", &CvHandicapInfo::getInflationPercent, "int ()")
 		.def("getHealthBonus", &CvHandicapInfo::getHealthBonus, "int ()")
-		.def("getHealthBonusByID", &CvHandicapInfo::getHealthBonusByID, "int (int i)") // rfc
 		.def("getHappyBonus", &CvHandicapInfo::getHappyBonus, "int ()")
 		.def("getAttitudeChange", &CvHandicapInfo::getAttitudeChange, "int ()")
 		.def("getNoTechTradeModifier", &CvHandicapInfo::getNoTechTradeModifier, "int ()")
