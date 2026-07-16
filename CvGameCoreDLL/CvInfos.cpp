@@ -6452,6 +6452,7 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iWarWearinessModifier);
 	stream->Read(&m_iFreeSpecialist);
 	stream->Read(&m_iTradeRoutes);
+	stream->Read(&m_iDefensivePactTradeModifier); // Leoreth
 	stream->Read(&m_iCaptureGoldModifier); // Leoreth
 	stream->Read(&m_iTechPrereq);
 	stream->Read(&m_iCivicPercentAnger);
