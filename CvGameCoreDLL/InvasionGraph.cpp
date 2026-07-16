@@ -1045,10 +1045,10 @@ SimulationStep* InvasionGraph::Node::step(scaled rArmyPortionDefender,
 			// Don't try to predict lost army in cargo
 			scaled rLogisticsLosses = rrLossesWL.first *
 					rLogisticsPortion / rConfAtt;
-			kStep.reducePower(m_ePlayer, LOGISTICS, rLogisticsLosses);
+			kStep.reducePower(m_ePlayer, LOGISTICAL, rLogisticsLosses);
 			rLossesDef = rrLossesWL.second / rConfDef;
 			kStep.reducePower(kDefender.m_ePlayer, FLEET, rLossesDef);
-			kStep.reducePower(kDefender.m_ePlayer, LOGISTICS,
+			kStep.reducePower(kDefender.m_ePlayer, LOGISTICAL,
 					rrLossesWL.second * rLogisticsPortionDef / rConfDef);
 			if (bClashOnly)
 			{
@@ -1076,10 +1076,10 @@ SimulationStep* InvasionGraph::Node::step(scaled rArmyPortionDefender,
 			rLossesAtt = rrLossesWL.second / rConfAtt;
 			kStep.reducePower(m_ePlayer, FLEET, rLossesAtt);
 			scaled rLogisticsLosses = rLossesAtt * rLogisticsPortion;
-			kStep.reducePower(m_ePlayer, LOGISTICS, rLogisticsLosses);
+			kStep.reducePower(m_ePlayer, LOGISTICAL, rLogisticsLosses);
 			rLossesDef = rrLossesWL.first / rConfDef;
 			kStep.reducePower(kDefender.m_ePlayer, FLEET, rLossesDef);
-			kStep.reducePower(kDefender.m_ePlayer, LOGISTICS,
+			kStep.reducePower(kDefender.m_ePlayer, LOGISTICAL,
 					rLossesDef * rLogisticsPortionDef);
 			if (!bClashOnly)
 			{

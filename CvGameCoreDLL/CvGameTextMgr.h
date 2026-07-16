@@ -244,7 +244,7 @@ public:
 	void buildYieldChangeString(CvWStringBuffer& szBuffer, TechTypes eTech, ImprovementTypes eImprov, bool bList = false, bool bPlayerContext = false);
 	bool buildBonusRevealString(CvWStringBuffer& szBuffer, TechTypes eTech, BonusTypes eBonus, bool bFirst, bool bList = false, bool bPlayerContext = false);
 	bool buildCivicRevealString(CvWStringBuffer& szBuffer, TechTypes eTech, CivicTypes eCivic, bool bFirst, bool bList = false, bool bPlayerContext = false);
-	bool buildBonusTradeString(CvWStringBuffer& szBuffer, TechTypes eTech, int iBonusType, bool bFirst, bool bList = false, bool bPlayerContext = false ); // doc
+	bool buildBonusTradeString(CvWStringBuffer& szBuffer, TechTypes eTech, BonusTypes eBonusType, bool bFirst, bool bList = false, bool bPlayerContext = false ); // doc
 	bool buildProcessInfoString(CvWStringBuffer& szBuffer, TechTypes eTech, ProcessTypes eProcess, bool bFirst, bool bList = false, bool bPlayerContext = false);
 	bool buildFoundReligionString(CvWStringBuffer& szBuffer, TechTypes eTech, ReligionTypes eReligion, bool bFirst, bool bList = false, bool bPlayerContext = false);
 	bool buildFoundCorporationString(CvWStringBuffer& szBuffer, TechTypes eTech, CorporationTypes eCorp, bool bFirst, bool bList = false, bool bPlayerContext = false);

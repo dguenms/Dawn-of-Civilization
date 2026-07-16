@@ -319,14 +319,6 @@ public:
     bool isCheatingEnabled() const; // doc
     int determineWinner(int /*TeamTypes*/ eTeam1, int /*TeamTypes*/ eTeam2); // doc
 
-    int getXResolution() const; // doc
-    void setXResolution(int iNewValue); // doc
-    void changeXResolution(int iChange); // doc
-
-    int getYResolution() const; // doc
-    void setYResolution(int iNewValue); // doc
-    void changeYResolution(int iChange); // doc
-
     void addGreatPersonBornName(std::wstring sName); // doc
     bool isGreatPersonBorn(std::wstring sName); // doc
 

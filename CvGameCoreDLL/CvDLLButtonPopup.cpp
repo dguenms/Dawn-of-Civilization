@@ -2774,7 +2774,7 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 	EagerEnumMap<CivilizationTypes,bool> abCivFound;
     FOR_EACH_ENUM(Civilization)
     {
-        if (kPlayer.getCivilizationType() != eLoopCivilization && !isCivAlive(eLoopCivilization) && canRespawn(eLoopCivilization))
+        if (kPlayer.getCivilizationType() != eLoopCivilization && !isCivAlive(eLoopCivilization) && GC.getPythonCaller()->canRespawn(eLoopCivilization))
         {
             CvWString szCityList;
             FOR_EACH_CITY(pLoopCity, kPlayer)

@@ -582,16 +582,16 @@ public:
 
 	int getGreatPeopleCreated() const { return m_iGreatPeopleCreated; }												// Exposed to Python
 	void incrementGreatPeopleCreated();
-    void changeGreatPeopleCreated(int iChange, bool bUpdate = true); // doc
+    void changeGreatPeopleCreated(int iChange); // doc
 
 	int getGreatGeneralsCreated() const { return m_iGreatGeneralsCreated; }											// Exposed to Python
 	void incrementGreatGeneralsCreated();
     void decrementGreatGeneralsCreated(); // doc
-    void changeGreatGeneralsCreated(int iChange, bool bUpdate = true); // doc
+    void changeGreatGeneralsCreated(int iChange); // doc
 
-    int getGreatSpiesCreated() const; // doc
-    void incrementGreatSpiesCreated(bool bUpdate = true); // doc
-    void changeGreatSpiesCreated(int iChange, bool bUpdate = true); // doc
+	int getGreatSpiesCreated() const { return m_iGreatSpiesCreated; } // doc
+    void incrementGreatSpiesCreated(); // doc
+    void changeGreatSpiesCreated(int iChange); // doc
 
 	int getGreatPeopleThresholdModifier() const { return m_iGreatPeopleThresholdModifier; }							// Exposed to Python
 	void changeGreatPeopleThresholdModifier(int iChange);
@@ -599,7 +599,7 @@ public:
 	int getGreatGeneralsThresholdModifier() const { return m_iGreatGeneralsThresholdModifier; }						// Exposed to Python
 	void changeGreatGeneralsThresholdModifier(int iChange);
 
-    int getGreatSpiesThresholdModifier() const;
+	int getGreatSpiesThresholdModifier() const { return m_iGreatSpiesThresholdModifier; }
     void changeGreatSpiesThresholdModifier(int iChange);
 
 	int getGreatPeopleRateModifier() const { return m_iGreatPeopleRateModifier; }									// Exposed to Python
@@ -1043,7 +1043,7 @@ public:
 		return setCommercePercent(eCommerce, getCommercePercent(eCommerce) + iChange);
 	}
 
-    int getCommerceRateTimes100(CommerceTypes eCommerce) const; // doc
+	int getCommerceRateTimes100(CommerceTypes eCommerce) const { return m_aiCommerceRateTimes100.get(eCommerce); } // doc
 
 	int getCommerceRate(CommerceTypes eCommerce) const																// Exposed to Python
 	{

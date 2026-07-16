@@ -13652,3 +13652,95 @@ bool CvUnit::rebuild()
 	kill(true);
 	return true;
 }
+
+bool CvUnit::canBribe(const CvPlot* pPlot, bool bTestVisible) const
+{
+	if (isDelayedDeath())
+		return false;
+	if (!isSpy())
+		return false;
+	if (pPlot->plotCount(PUF_isOtherTeam, getOwner(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getOwner()) < 1)
+		return false;
+	if (pPlot->plotCount(PUF_isUnitAIType, UNITAI_WORKER, -1) < 1)
+		return false;
+
+	CvUnit* pTargetUnit = pPlot->plotCheck(PUF_isOtherTeam, getOwner(), -1, NO_PLAYER, NO_TEAM, PUF_isVisible, getOwner());
+	CvPlayer& kTarget = GET_PLAYER(pTargetUnit->getOwner());
+
+	if (kTarget.getTeam() == getTeam())
+		return false;
+	if (kTarget.isBarbarian())
+		return false;
+	if (GET_TEAM(getTeam()).isVassal(kTarget.getTeam()))
+		return false;
+
+	if (!bTestVisible)
+	{
+		if (isMadeAttack())
+			return false;
+		if (hasMoved())
+			return false;
+		if (kTarget.getTeam() != getTeam() && !isInvisible(kTarget.getTeam(), false))
+			return false;
+	}
+
+	return true;
+}
+
+bool CvUnit::canAssassin(const CvPlot* pPlot, bool bTestVisible) const
+{
+	if (isDelayedDeath())
+		return false;
+	if (!isSpy())
+		return false;
+
+	CvCity* pCity = pPlot->getPlotCity();
+	if (NULL == pCity)
+		return false;
+
+	int numGreatPeople = pCity->getNumGreatPeople();
+	if (numGreatPeople <= 0)
+		return false;
+
+	CvPlayer& kTarget = GET_PLAYER(pCity->getOwner());
+	if (kTarget.getTeam() == getTeam())
+		return false;
+	if (kTarget.isBarbarian())
+		return false;
+	if (GET_TEAM(getTeam()).isVassal(kTarget.getTeam()))
+		return false;
+
+	if (!bTestVisible)
+	{
+		if (isMadeAttack())
+			return false;
+		if (hasMoved())
+			return false;
+		if (kTarget.getTeam() != getTeam() && !isInvisible(kTarget.getTeam(), false))
+			return false;
+	}
+
+	return true;
+}
+
+bool CvUnit::awardSpyExperience(TeamTypes eTargetTeam, EspionageMissionTypes eMission, int iCostModifier)
+{
+	int iExperience = GC.getInfo(eMission).getBaseExperience();
+
+	int iDifficulty = getSpyInterceptPercent(eTargetTeam, true) * (100 + GC.getInfo(eMission).getDifficultyMod()) / 100;
+	iExperience += std::min(iDifficulty / 10, 5);
+	if (iExperience == 0)
+		return false;
+
+	iExperience *= std::min(iCostModifier, 200);
+	iExperience /= 100;
+
+	iExperience = std::max(iExperience, 1);
+
+	changeExperience(iExperience);
+	testPromotionReady();
+
+	GET_PLAYER(getOwner()).changeEspionageExperience(iExperience);
+
+	return true;
+}

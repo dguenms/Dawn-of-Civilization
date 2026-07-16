@@ -14392,16 +14392,7 @@ void CvGameTextMgr::setBadHealthHelp(CvWStringBuffer &szBuffer, CvCity const& kC
 			szBuffer.append(NEWLINE);
 		}
 	}
-	// doc: improvement health
-	{
-		int iHealth = kCity.getImprovementHealth();
-		if (iHealth < 0)
-		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HEALTH_FROM_IMPROVEMENTS", -iHealth));
-			szBuffer.append(NEWLINE);
-		}
-	}
-	// Leoreth
+	// doc
 	{
 		int iHealth = kCity.getCorporationUnhealth();
 		if (iHealth < 0)
@@ -24532,4 +24523,56 @@ void CvGameTextMgr::setCorporationLink(CvWString& szBuffer, CorporationTypes eCo
 	CvWString szCorpType = GC.getInfo(eCorp).getType();
 	szBuffer.append(CvWString::format(L"<link=%s>%s</link>",
 			szCorpType.c_str(), GC.getInfo(eCorp).getDescription()));
+}
+
+bool CvGameTextMgr::buildBonusTradeString(CvWStringBuffer& szBuffer, TechTypes eTech, BonusTypes eBonusType, bool bFirst, bool bList, bool bPlayerContext)
+{
+	CvWString szTempBuffer;
+	if (GC.getInfo(eBonusType).getTechPlayerTrade() == eTech)
+	{
+		if (bList && bFirst)
+			szBuffer.append(NEWLINE);
+		szTempBuffer.Format(SETCOLR L"<link=literal>%s</link>" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getInfo(eBonusType).getDescription());
+		setListHelp(szBuffer, gDLL->getText("TXT_KEY_MISC_BONUS_PLAYER_TRADE").c_str(), szTempBuffer, L", ", bFirst);
+		bFirst = false;
+	}
+	return bFirst;
+}
+
+void CvGameTextMgr::parsePaganReligionHelp(CvWStringBuffer& szBuffer, PaganReligionTypes ePaganReligion)
+{
+	szBuffer.append(CvWString::format(SETCOLR L"%s (%s)" ENDCOLR, TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), GC.getInfo(ePaganReligion).getText(), gDLL->getText("TXT_KEY_PEDIA_MINOR_RELIGION_PAGANISM").c_str()));
+}
+
+void CvGameTextMgr::setWonderLimitHelp(CvWStringBuffer& szBuffer, CvCity& city, int iWonderType)
+{
+	CultureLevelTypes eCultureLevel = city.getCultureLevel();
+	if (iWonderType == 0) // National wonders
+	{
+		int iNationalWonders = city.getNumNationalWonders();
+		int iNationalWondersLimit = GC.getInfo(eCultureLevel).getNationalWonderLimit();
+		szBuffer.append(gDLL->getText("INTERFACE_CITY_NATIONAL_WONDER_LIMIT_HELP", iNationalWonders, iNationalWondersLimit, GC.getInfo(eCultureLevel).getTextKeyWide()));
+	}
+	else
+	{
+		int iWorldWonders = city.getNumActiveWorldWonders();
+		int iWorldWondersLimit = GC.getInfo(eCultureLevel).getWonderLimit();
+		if (city.isCapital())
+			iWorldWondersLimit++;
+		szBuffer.append(gDLL->getText("INTERFACE_CITY_WORLD_WONDER_LIMIT_HELP", iWorldWonders, iWorldWondersLimit, GC.getInfo(eCultureLevel).getTextKeyWide()));
+	}
+}
+
+void CvGameTextMgr::setSatelliteLimitHelp(CvWStringBuffer& szBuffer, CvCity& city)
+{
+	int iSatellites = city.countSatellites();
+	int iSatelliteLimit = city.getSatelliteSlots();
+
+	int iSpecialistSlots = 0;
+	FOR_EACH_ENUM(Specialist)
+	{
+		iSpecialistSlots += city.getMaxSpecialistCount(eLoopSpecialist);
+	}
+
+	szBuffer.append(gDLL->getText("INTERFACE_CITY_SATELLITE_LIMIT_HELP", iSatellites, iSatelliteLimit, iSpecialistSlots));
 }

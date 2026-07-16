@@ -4519,7 +4519,7 @@ int ThirdPartyIntervention::preEvaluate()
 			militAnalyst().lostPower(eWe, HOME_GUARD) +
 			/*	Squared b/c logistics power is only the cargo capacity.
 				(Fixme: should track power of cargo ships separately.) */
-			SQR(militAnalyst().lostPower(eWe, LOGISTICS));
+			SQR(militAnalyst().lostPower(eWe, LOGISTICAL));
 	scaled const rGainedPow = militAnalyst().gainedPower(eWe, ARMY) +
 			militAnalyst().gainedPower(eWe, HOME_GUARD);
 	m_rDefPow = ourCache().getPowerValues()[ARMY]->power(); // includes HOME_GUARD

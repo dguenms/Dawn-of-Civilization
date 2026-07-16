@@ -316,13 +316,6 @@ void CyGamePythonInterface()
 		.def("isCheatingEnabled", &CyGame::isCheatingEnabled, "bool ()") // doc
 		.def("determineWinner", &CyGame::determineWinner, "int (int iTeam1, int iTeam2)") // doc
 
-		.def("getXResolution", &CyGame::getXResolution, "int ()") // doc
-		.def("setXResolution", &CyGame::setXResolution, "void (int iNewValue)") // doc
-		.def("changeXResolution", &CyGame::changeXResolution, "void (int iChange)") // doc
-		.def("getYResolution", &CyGame::getYResolution, "int ()") // doc
-		.def("setYResolution", &CyGame::setYResolution, "void (int iNewValue)") // doc
-		.def("changeYResolution", &CyGame::changeYResolution, "void (int iChange)") // doc
-
 		.def("addGreatPersonBornName", &CyGame::addGreatPersonBornName, "void (string sName)") // doc
 		.def("isGreatPersonBorn", &CyGame::isGreatPersonBorn, "bool (string sName)") // doc
 

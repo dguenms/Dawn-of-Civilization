@@ -10892,7 +10892,7 @@ PlayerVoteTypes CvPlayerAI::AI_diploVote(const VoteSelectionSubData& kVoteData,
 			bValid = false;
 			bDefy = true;
 		}
-		else if (kVoteData.ePlayer == getWorstEnemy() || GET_TEAM(GET_PLAYER(kVoteData.ePlayer).getTeam()).isAtWar(getTeam()))
+		else if (GET_PLAYER(kVoteData.ePlayer).getTeam() == getWorstEnemy() || GET_TEAM(GET_PLAYER(kVoteData.ePlayer).getTeam()).isAtWar(getTeam()))
 			bValid = true;
 		else
 			bValid = AI_getAttitude(kVoteData.ePlayer) < ATTITUDE_ANNOYED;
@@ -32087,4 +32087,14 @@ int CvPlayerAI::AI_getEnemyPower(bool bIncludeMinors) const
     }
 
     return iPower;
+}
+
+// doc
+int CvPlayerAI::AI_averageTradeMultiplier() const
+{
+	/*if (m_iAveragesCacheTurn != GC.getGame().getGameTurn())
+		AI_calculateAverages();*/
+
+	FAssert(m_aiAverageTradeMultiplier > 0);
+	return m_iAverageTradeMultiplier;
 }

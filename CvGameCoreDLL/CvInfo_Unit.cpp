@@ -2448,6 +2448,7 @@ CvEspionageMissionInfo::CvEspionageMissionInfo() // <kmodx>
 	m_iCounterespionageNumTurns(0),
 	m_iCounterespionageMod(0),
 	m_iDifficultyMod(0), // </kmodx>
+	m_iBaseExperience(0), // doc
 	m_bReturnToCapital(false)
 {}
 
@@ -2631,6 +2632,9 @@ bool CvEspionageMissionInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCounterespionageMod, "iCounterespionageMod");
 	pXML->GetChildXmlValByName(&m_iDifficultyMod, "iDifficultyMod");
 	pXML->GetChildXmlValByName(&m_bReturnToCapital, "bReturnToCapital"); // advc.103
+
+	// doc
+	pXML->GetChildXmlValByName(&m_iBaseExperience, "iBaseExperience");
 
 	return true;
 }

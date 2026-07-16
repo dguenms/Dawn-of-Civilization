@@ -708,18 +708,6 @@ bool CyCity::canCultureFlip()
 	return m_pCity ? m_pCity->canCultureFlip() : false;
 } // </advc.ctr>
 
-// rfc
-bool CyCity::hasBuilding(int /*BuildingTypes*/ eBuilding)
-{
-    return m_pCity ? m_pCity->hasBuilding((BuildingTypes)eBuilding) : false;
-}
-
-// rfc
-bool CyCity::hasActiveBuilding(int /*BuildingTypes*/ eBuilding)
-{
-    return m_pCity ? m_pCity->hasActiveBuilding((BuildingTypes)eBuilding) : false;
-}
-
 int CyCity::getNumBuilding(int /*BuildingTypes*/ iIndex)
 {
 	return m_pCity ? m_pCity->getNumBuilding((BuildingTypes) iIndex) : -1;
@@ -2784,7 +2772,7 @@ int CyCity::getCorporationCount()
 // doc
 void CyCity::doPlotCulture(bool bUpdate, int ePlayer, int iCultureRate, bool bOwned)
 {
-	if (m_pCity) m_pCity->doPlotCulture(bUpdate, (PlayerTypes)ePlayer, iCultureRate, bOwned);
+	if (m_pCity) m_pCity->doPlotCultureTimes100(bUpdate, (PlayerTypes)ePlayer, iCultureRate * 100, bOwned);
 }
 
 // doc

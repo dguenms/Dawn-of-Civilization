@@ -10663,7 +10663,7 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 				FOR_EACH_ENUM(Civilization)
 				{
 					if (isCivAlive(eLoopCivilization)) continue;
-					if (!canRespawn(eLoopCivilization)) continue;
+					if (!GC.getPythonCaller()->canRespawn(eLoopCivilization)) continue;
 
 					int iNumCities = 0;
 					FOR_EACH_CITY(pLoopCity, *it)
@@ -11609,4 +11609,10 @@ void CvGame::setFirstDiscovered(TechTypes eTech, CivilizationTypes eCivilization
 void CvGame::setFirstDiscoveredTurn(TechTypes eTech, int iTurn)
 {
 	m_aeFirstDiscoveredTurn.set(eTech, iTurn);
+}
+
+// doc
+void CvGame::setReligionGameTurnFounded(ReligionTypes eReligion, int iGameTurn)
+{
+	m_aiReligionGameTurnFounded.set(eReligion, iGameTurn);
 }

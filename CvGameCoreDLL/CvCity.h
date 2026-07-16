@@ -201,7 +201,7 @@ public:
 	int getBonusHappiness(BonusTypes eBonus) const;																// Exposed to Python
 	int getBonusPower(BonusTypes eBonus, bool bDirty) const;													// Exposed to Python
 	int getBonusYieldRateModifier(YieldTypes eYield, BonusTypes eBonus) const;									// Exposed to Python
-	int getBonusCommerceRateModifier(CommerceTypes eIndex, BonusTypes eBonus) const; // doc
+	int getBonusCommerceRateModifier(CommerceTypes eCommerce, BonusTypes eBonus) const; // doc
 
 	void processBonus(BonusTypes eBonus, int iChange);
 	void processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolete = false);
@@ -314,8 +314,7 @@ public:
 	int cultureGarrison(PlayerTypes ePlayer) const;																// Exposed to Python
 	PlayerTypes calculateCulturalOwner() const; // advc.099c
 
-	bool hasBuilding(BuildingTypes eIndex) const; // rfc								// Exposed to Python
-	bool hasActiveBuilding(BuildingTypes eIndex) const;	// rfc					// Exposed to Python
+	bool isHasActiveBuilding(BuildingTypes eBuilding) const { return getNumActiveBuilding(eBuilding) > 0; }	// rfc					// Exposed to Python
 
 	int getNumBuilding(BuildingTypes eBuilding) const;															// Exposed to Python
 	int getNumBuilding(BuildingClassTypes eBuildingClass) const; // advc.003w
@@ -586,11 +585,6 @@ public:
 	bool isBuildingOnlyHealthy() const;																			// Exposed to Python
 	void changeBuildingOnlyHealthyCount(int iChange);
 
-	int getImprovementHealth() const; // doc
-	int getImprovementHealthPercent() const; // doc
-	void setImprovementHealthPercent(int iNewValue); // doc
-	void changeImprovementHealthPercent(int iChange); // doc
-
 	int getFood() const { return m_iFood; }																		// Exposed to Python
 	void setFood(int iNewValue);																				// Exposed to Python
 	void changeFood(int iChange);																				// Exposed to Python
@@ -793,8 +787,8 @@ public:
 		return m_aiBonusYieldRateModifier.get(eYield);
 	}
 	void changeBonusYieldRateModifier(YieldTypes eYield, int iChange);
-	int getBonusCommerceRateModifier(CommerceTypes eIndex) const; // doc
-	void changeBonusCommerceRateModifier(CommerceTypes eIndex, int iChange); // doc
+	void changeBonusCommerceRateModifier(CommerceTypes eCommerce, int iChange); // doc
+	int getBonusCommerceRateModifier(CommerceTypes eCommerce) const { return m_aiBonusCommerceRateModifier.get(eCommerce); } // doc
 	int getTradeYield(YieldTypes eYield) const { return m_aiTradeYield.get(eYield); }							// Exposed to Python
 	int totalTradeModifier(CvCity const* pOtherCity = NULL) const;												// Exposed to Python
 	int getPopulationTradeModifier() const;
@@ -812,7 +806,7 @@ public:
 	// BULL - Trade Hover - end
 	void setTradeYield(YieldTypes eYield, int iNewValue);
 
-	int getExtraSpecialistYield(YieldTypes eYield) const;														// Exposed to Python
+	int getExtraSpecialistYield(YieldTypes eYield) const { return m_aiExtraSpecialistYield.get(eYield); }		// Exposed to Python
 	int getExtraSpecialistYield(YieldTypes eYield, SpecialistTypes eSpecialist) const;							// Exposed to Python
 	void updateExtraSpecialistYield(YieldTypes eYield);
 	void updateExtraSpecialistYield();
@@ -904,10 +898,10 @@ public:
 	}
 	void changeCommerceRateModifier(CommerceTypes eCommerce, int iChange);
 
-	int getPowerCommerceRateModifier(CommerceTypes eIndex) const; // doc
-	void changePowerCommerceRateModifier(CommerceTypes eIndex, int iChange); // doc
-	int getCultureCommerceRateModifier(CommerceTypes eIndex) const; // doc
-	void changeCultureCommerceRateModifier(CommerceTypes eIndex, int iChange); // doc
+	int getPowerCommerceRateModifier(CommerceTypes eCommerce) const; // doc
+	void changePowerCommerceRateModifier(CommerceTypes eCommerce, int iChange); // doc
+	int getCultureCommerceRateModifier(CommerceTypes eCommerce) const { return m_aiCultureCommerceRateModifier.get(eCommerce); } // doc
+	void changeCultureCommerceRateModifier(CommerceTypes eCommerce, int iChange); // doc
 
 	int getCommerceHappinessPer(CommerceTypes eCommerce) const													// Exposed to Python
 	{
@@ -1342,7 +1336,7 @@ public:
 		return m_aeiBuildingHealthChange.get(eBuildingClass);
 	}
 	void setBuildingHealthChange(BuildingClassTypes eBuildingClass, int iChange);								// Exposed to Python
-	int getBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass) const; // doc
+	int getBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass) const { return m_aeiBuildingGreatPeopleRateChange.get(eBuildingClass); } // doc
 	void setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // doc
 	void changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange); // doc
 
@@ -1502,9 +1496,6 @@ public:
 	void invalidateYieldRankCache(YieldTypes eYield = NO_YIELD);
 	void invalidateCommerceRankCache(CommerceTypes eCommerce = NO_COMMERCE);
 	//int getBestYieldAvailable(YieldTypes eYield) const; // advc.003j: obsolete
-
-	// doc: exposed for CvPlayer::acquireCity
-	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate, bool bOwned = false);
 
 	// <advc.003u>
 	// virtual for FFreeListTrashArray

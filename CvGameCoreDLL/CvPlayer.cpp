@@ -1881,7 +1881,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade, bool b
 	}
 
     // doc: manually update culture for owner
-    kNewCity.doPlotCulture(true, getID(), 0);
+	kNewCity.doPlotCultureTimes100(true, getID(), 0, true);
 
     // doc: track city loss for previous owner
     kNewCity.setGameTurnPlayerLost(eOldOwner, GC.getGame().getGameTurn());
@@ -4594,6 +4594,24 @@ int CvPlayer::getNumTradeBonusImports(PlayerTypes eFromPlayer) const
 		if (!pLoopDeal->isBetween(getID(), eFromPlayer))
 			continue;
 		FOR_EACH_TRADE_ITEM(pLoopDeal->getGivesList(eFromPlayer))
+		{
+			if (pItem->m_eItemType == TRADE_RESOURCES)
+				iCount++;
+		}
+	}
+	return iCount;
+}
+
+
+int CvPlayer::getNumTradeBonusExports(PlayerTypes eToPlayer) const
+{
+	FAssert(eToPlayer != getID());
+	int iCount = 0;
+	FOR_EACH_DEAL(pLoopDeal)
+	{
+		if (!pLoopDeal->isBetween(getID(), eToPlayer))
+			continue;
+		FOR_EACH_TRADE_ITEM(pLoopDeal->getReceivesList(eToPlayer))
 		{
 			if (pItem->m_eItemType == TRADE_RESOURCES)
 				iCount++;
@@ -22258,13 +22276,13 @@ void CvPlayer::setStabilityParameter(ParameterTypes eParameter, int iNewValue)
 // doc
 bool CvPlayer::canRespawn() const
 {
-	return ::canRespawn(getCivilizationType());
+	return GC.getPythonCaller()->canRespawn(getCivilizationType());
 }
 
 // doc
 bool CvPlayer::canEverRespawn() const
 {
-	return ::canEverRespawn(getCivilizationType());
+	return GC.getPythonCaller()->canEverRespawn(getCivilizationType());
 }
 
 // doc
@@ -23222,7 +23240,7 @@ CvCity* CvPlayer::findBuildingCity(BuildingTypes eBuilding, bool bEffect) const
 
 	FOR_EACH_CITY_VAR(pLoopCity, *this)
 	{
-		if (pLoopCity->hasBuilding(eBuilding))
+		if (pLoopCity->isHasRealBuilding(eBuilding))
 			return pLoopCity;
 	}
 	return NULL;
@@ -23252,4 +23270,116 @@ int CvPlayer::getModifiedCommerceRate(CommerceTypes eCommerce) const
 bool CvPlayer::isHasCivic(CivicTypes eCivic) const
 {
 	return getCivics(GC.getInfo(eCivic).getCivicOptionType()) == eCivic;
+}
+
+// doc
+void CvPlayer::changeGreatSpiesThresholdModifier(int iChange)
+{
+	m_iGreatSpiesThresholdModifier += iChange;
+}
+
+// doc
+void CvPlayer::incrementGreatSpiesCreated()
+{
+	m_iGreatSpiesCreated++;
+}
+
+// doc
+void CvPlayer::decrementGreatGeneralsCreated()
+{
+	m_iGreatGeneralsCreated = std::max(0, m_iGreatGeneralsCreated - 1);
+}
+
+// rfc
+void CvPlayer::setCivAdjective(std::wstring szNewAdj)
+{
+	GC.getInitCore().setCivAdjective(getID(), szNewAdj);
+}
+
+// rfc
+void CvPlayer::setCivDescription(std::wstring szNewDesc)
+{
+	m_szCivDescKey = szNewDesc;
+	CvWString delimiter(L":");
+	int pos = gDLL->getText(szNewDesc).find_first_of(delimiter, 0);
+	m_szCivDesc = gDLL->getText(szNewDesc).substr(0, pos);
+
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+}
+
+// rfc
+void CvPlayer::setCivShortDescription(std::wstring szNewShort)
+{
+	GC.getInitCore().setCivShortDesc(getID(), szNewShort);
+}
+
+// rfc
+void CvPlayer::setName(std::wstring szNewValue)
+{
+	CvWString szString(szNewValue);
+	if (!isCityNameValid(szString, false))
+		return;
+
+	m_szName = szNewValue;
+
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(MinimapSection_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(UnitInfo_DIRTY_BIT, true);
+}
+
+// rfc
+void CvPlayer::setCivName(std::wstring szNewDesc, std::wstring szNewShort, std::wstring szNewAdj)
+{
+	m_szCivDescKey = szNewDesc;
+	m_szCivShort = szNewShort;
+	m_szCivAdj = szNewAdj;
+
+	gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Foreign_Screen_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(InfoPane_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(Flag_DIRTY_BIT, true);
+	gDLL->getEngineIFace()->SetDirty(CultureBorders_DIRTY_BIT, true);
+	gDLL->getInterfaceIFace()->setDirty(GameData_DIRTY_BIT, true);
+}
+
+// doc
+void CvPlayer::setNumUnitGoldenAges(int iNewValue)
+{
+	m_iNumUnitGoldenAges = iNewValue;
+}
+
+// doc
+void CvPlayer::changeGreatPeopleCreated(int iChange)
+{
+	for (int iI = 0; iI < iChange; iI++)
+	{
+		incrementGreatPeopleCreated();
+	}
+}
+
+// doc
+void CvPlayer::changeGreatGeneralsCreated(int iChange)
+{
+	for (int iI = 0; iI < iChange; iI++)
+	{
+		incrementGreatGeneralsCreated();
+	}
+}
+
+// doc
+void CvPlayer::changeGreatSpiesCreated(int iChange)
+{
+	for (int iI = 0; iI < iChange; iI++)
+	{
+		incrementGreatSpiesCreated();
+	}
 }

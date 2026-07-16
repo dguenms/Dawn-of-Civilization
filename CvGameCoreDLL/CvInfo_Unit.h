@@ -821,6 +821,9 @@ public:
 	int getDifficultyMod() const;
 	bool isReturnToCapital() const { return m_bReturnToCapital; } // advc.103
 
+	// doc
+	int getBaseExperience() const { return m_iBaseExperience; }
+
 	bool read(CvXMLLoadUtility* pXML);
 
 protected:
@@ -858,6 +861,9 @@ protected:
 	int m_iCounterespionageMod;
 	int m_iDifficultyMod;
 	bool m_bReturnToCapital; // advc.103
+
+	// doc
+	int m_iBaseExperience;
 };
 
 #endif

@@ -15,7 +15,7 @@ MilitaryBranch* MilitaryBranch::create(MilitaryBranchTypes eBranch, PlayerTypes 
 	case HOME_GUARD: return new MilitaryBranch::HomeGuard(eOwner);
 	case ARMY: return new MilitaryBranch::Army(eOwner);
 	case FLEET: return new MilitaryBranch::Fleet(eOwner);
-	case LOGISTICS: return new MilitaryBranch::Logistics(eOwner);
+	case LOGISTICAL: return new MilitaryBranch::Logistics(eOwner);
 	case CAVALRY: return new MilitaryBranch::Cavalry(eOwner);
 	case NUCLEAR: return new MilitaryBranch::NuclearArsenal(eOwner);
 	default: FErrorMsg("Unknown military branch type"); return NULL;
@@ -603,7 +603,7 @@ MilitaryBranchTypes MilitaryBranch::Fleet::getID() const
 
 MilitaryBranchTypes MilitaryBranch::Logistics::getID() const
 {
-	return LOGISTICS;
+	return LOGISTICAL;
 }
 
 MilitaryBranchTypes MilitaryBranch::Cavalry::getID() const

@@ -3361,12 +3361,10 @@ int CvCity::getBonusYieldRateModifier(YieldTypes eYield, BonusTypes eBonus) cons
 int CvCity::getBonusCommerceRateModifier(CommerceTypes eCommerce, BonusTypes eBonus) const
 {
 	int iModifier = 0;
-
 	FOR_EACH_ENUM(Building)
 	{
 		iModifier += getNumActiveBuilding(eLoopBuilding) * GC.getInfo(eLoopBuilding).getBonusCommerceModifier(eBonus, eCommerce);
 	}
-
 	return iModifier;
 }
 
@@ -4928,7 +4926,6 @@ int CvCity::goodHealth() const
 	iHealth += std::max(0, getPowerGoodHealth());
 	iHealth += std::max(0, getBonusGoodHealth());
 	iHealth += std::max(0, totalGoodBuildingHealth());
-    iHealth += std::max(0, getImprovementHealth()); // doc: health from improvement // TODO: redundant with surrounding?
     iHealth += std::max(0, getCorporationHealth()); // doc: health from corporation
 	iHealth += std::max(0,
 			GET_PLAYER(getOwner()).getExtraHealth() + getExtraHealth());
@@ -4947,7 +4944,6 @@ int CvCity::badHealth(bool bNoAngry, int iExtra) const
 	iHealth += std::min(0, getPowerBadHealth());
 	iHealth += std::min(0, getBonusBadHealth());
 	iHealth += std::min(0, totalBadBuildingHealth());
-    iHealth += std::min(0, getImprovementHealth()); // doc: heaalth from improvement // TODO: redundant with surrounding?
     iHealth += std::min(0, -getCorporationUnhealth()); // doc: health from corporation
 	iHealth += std::min(0,
 			GET_PLAYER(getOwner()).getExtraHealth() + getExtraHealth());
@@ -16825,4 +16821,94 @@ int CvCity::getTempHappiness() const
 	int iHappinessTurns = getTurns(GC.getDefineINT("TEMP_HAPPY_TURNS"));
 
 	return (getHappinessTimer() + iHappinessTurns - 1) / iHappinessTurns;
+}
+
+void CvCity::changeBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, int iChange)
+{
+	changeBuildingYieldChange(GC.getInfo(eBuilding).getBuildingClassType(), eYield, iChange);
+}
+
+void CvCity::changeBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iChange)
+{
+	m_aeiBuildingGreatPeopleRateChange.add(eBuildingClass, iChange);
+}
+
+void CvCity::changeBuildingGreatPeopleRateChange(BuildingTypes eBuilding, int iChange)
+{
+	changeBuildingGreatPeopleRateChange(GC.getInfo(eBuilding).getBuildingClassType(), iChange);
+}
+
+void CvCity::spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iChange)
+{
+	int iSpreadRange = 2 * iRange;
+	for (SquareIter it(getPlot(), iSpreadRange); it.hasNext(); ++it)
+	{
+		CvPlot& kPlot = *it;
+		int iDistance = plotDistance(plot(), &kPlot);
+		if (iDistance <= iRange ||
+			(!kPlot.isOverseas(getPlot()) && kPlot.getSpreadFactor(eReligion) >= REGION_SPREAD_HISTORICAL && iDistance <= iSpreadRange))
+		{
+			kPlot.changeReligionInfluence(eReligion, iChange);
+		}
+	}
+}
+
+void CvCity::setBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eCommerce, int iNewValue)
+{
+	setBuildingCommerceChange(GC.getInfo(eBuilding).getBuildingClassType(), eCommerce, iNewValue);
+}
+
+void CvCity::changeBuildingCommerceChange(BuildingTypes eBuilding, CommerceTypes eCommerce, int iChange)
+{
+	changeBuildingCommerceChange(GC.getInfo(eBuilding).getBuildingClassType(), eCommerce, iChange);
+}
+
+void CvCity::setBuildingYieldChange(BuildingTypes eBuilding, YieldTypes eYield, int iNewValue)
+{
+	setBuildingYieldChange(GC.getInfo(eBuilding).getBuildingClassType(), eYield, iNewValue);
+}
+
+void CvCity::setBuildingGreatPeopleRateChange(BuildingClassTypes eBuildingClass, int iNewValue)
+{
+	m_aeiBuildingGreatPeopleRateChange.set(eBuildingClass, iNewValue);
+}
+
+void CvCity::setBuildingGreatPeopleRateChange(BuildingTypes eBuilding, int iNewValue)
+{
+	setBuildingGreatPeopleRateChange(GC.getInfo(eBuilding).getBuildingClassType(), iNewValue);
+}
+
+void CvCity::changeBonusCommerceRateModifier(CommerceTypes eCommerce, int iChange)
+{
+	if (iChange == 0)
+		return;
+
+	m_aiBonusCommerceRateModifier.add(eCommerce, iChange);
+
+	GET_PLAYER(getOwner()).invalidateCommerceRankCache(eCommerce);
+	updateCommerce(eCommerce);
+	AI().AI_setAssignWorkDirty(true);
+
+	if (GC.getGame().getActiveTeam() == getTeam())
+		setInfoDirty(true);
+}
+
+void CvCity::changeReligionYieldChange(ReligionTypes eReligion, YieldTypes eYield, int iChange)
+{
+	if (eReligion == NO_RELIGION) 
+		return;
+
+	FOR_EACH_ENUM(BuildingClass)
+	{
+		BuildingTypes eBuilding = GC.getInfo(getCivilizationType()).getCivilizationBuildings(eLoopBuildingClass);
+		if (eBuilding != NO_BUILDING && GC.getInfo(eBuilding).getReligionType() == eReligion)
+		{
+			changeBuildingYieldChange(eLoopBuildingClass, eYield, iChange);
+		}
+	}
+}
+
+CvWString CvPlayer::formatColor(CvWString string) const
+{
+	return CvWString::format(SETCOLR L"%s" ENDCOLR, getPlayerTextColorR(), getPlayerTextColorG(), getPlayerTextColorB(), getPlayerTextColorA(), string.c_str());
 }

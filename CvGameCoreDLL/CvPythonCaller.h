@@ -184,6 +184,9 @@ public:
 	CvWString getVictoryDescription(CivilizationTypes eCivilization) const;
 	CvWString getCityName(PlayerTypes ePlayer, CvPlot const& kPlot) const;
 
+	bool canRespawn(CivilizationTypes eCivilization) const;
+	bool canEverRespawn(CivilizationTypes eCivilization) const;
+
 private:
 	CvDLLPythonIFaceBase& m_python;
 	bool* m_abUseCallback; // Replacing all the USE_..._CALLBACK variables and getters

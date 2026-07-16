@@ -1262,3 +1262,28 @@ void setDirty(InterfaceDirtyBits eDirtyBit, bool bNewValue)
 {
 	gDLL->getInterfaceIFace()->setDirty(eDirtyBit, bNewValue);
 }
+
+bool isCivAlive(CivilizationTypes eCivilization)
+{
+	for (PlayerIter<CIV_ALIVE> it; it.hasNext(); ++it)
+	{
+		if (it->getCivilizationType() == eCivilization)
+			return true;
+	}
+	return false;
+}
+
+BuildingTypes getUniqueBuilding(CivilizationTypes eCivilization, BuildingTypes eBuilding)
+{
+	return GC.getInfo(eCivilization).getCivilizationBuildings(GC.getInfo(eBuilding).getBuildingClassType());
+}
+
+UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit)
+{
+	return GC.getInfo(eCivilization).getCivilizationUnits(GC.getInfo(eUnit).getUnitClassType());
+}
+
+bool validatePeriodConstant(PeriodTypes ePeriod)
+{
+	return ePeriod == NUM_PERIOD_TYPES;
+}

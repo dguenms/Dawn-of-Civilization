@@ -1673,3 +1673,26 @@ CvWString CvPythonCaller::getCityName(PlayerTypes ePlayer, CvPlot const& kPlot) 
 
 	return result;
 }
+
+bool CvPythonCaller::canRespawn(CivilizationTypes eCivilization) const
+{
+	long lResult = -1;
+
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+
+	call("canRespawn", argsList, lResult, PYScreensModule);
+	return toBool(lResult);
+}
+
+bool CvPythonCaller::canEverRespawn(CivilizationTypes eCivilization) const
+{
+	long lResult = -1;
+
+	CyArgsList argsList;
+	argsList.add(eCivilization);
+	argsList.add(GC.getGame().getGameTurn());
+
+	call("canEverRespawn", argsList, lResult, PYScreensModule);
+	return toBool(lResult);
+}

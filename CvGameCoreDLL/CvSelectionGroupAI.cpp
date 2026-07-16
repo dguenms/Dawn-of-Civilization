@@ -1145,6 +1145,12 @@ CvUnitAI* CvSelectionGroupAI::AI_getHeadUnit()
 } // </advc.003u>
 
 
+void CvSelectionGroupAI::AI_makeForceSeparate()
+{
+	m_bForceSeparate = true;
+}
+
+
 void CvSelectionGroupAI::read(FDataStreamBase* pStream)
 {
 	CvSelectionGroup::read(pStream);
