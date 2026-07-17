@@ -703,9 +703,10 @@ class Birth(object):
 					capital = completeCityFlip(city, self.iPlayer, city.getOwner(), 100)
 				else:
 					self.data.lPreservedWonders += [iWonder for iWonder in infos.buildings() if isWonder(iWonder) and city.isHasRealBuilding(iWonder)]
-				
-					plot_(city).eraseAIDevelopment()
-					plot_(city).setImprovementType(iCityRuins)
+
+					cityPlot = plot_(city)
+					cityPlot.eraseAIDevelopment()
+					cityPlot.setImprovementType(iCityRuins)
 		
 		if capital:
 			self.prepareCity(capital)
