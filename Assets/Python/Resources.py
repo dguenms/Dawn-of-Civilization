@@ -231,7 +231,7 @@ dResourcesDict = {
 	(83, 27)  : (1850,  iCoffee),   # Kenya
 	(81, 24)  : (1850,  iCoffee),   # Tanzania
 	(58, 32)  : (1850,  iCocoa),    # Ivory Coast
-	(61, 32)  : (1850,  iCocoa),    # Ghana
+	(62, 31)  : (1850,  iCocoa),    # Ghana
 	(68, 32)  : (1850,  iCocoa),    # Nigeria
 	(69, 29)  : (1850,  iCocoa),    # Cameroon
 	(82, 20)  : (1850,  iTobacco),  # Malawi

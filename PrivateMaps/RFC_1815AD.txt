@@ -4262,7 +4262,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=46
-	ImprovementType=IMPROVEMENT_ORCHARD
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -4483,6 +4482,11 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=60,y=46
+	ImprovementType=IMPROVEMENT_ORCHARD
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=60,y=47
 	RouteType=ROUTE_ROAD
 	BeginUnit
@@ -4624,7 +4628,6 @@ EndPlot
 BeginPlot
 	x=61,y=46
 	ImprovementType=IMPROVEMENT_MINE
-	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=61,y=47
@@ -14013,12 +14016,9 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=114,y=43
-	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
 	x=114,y=44
 	ImprovementType=IMPROVEMENT_ORCHARD
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=114,y=45
