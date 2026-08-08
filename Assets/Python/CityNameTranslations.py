@@ -12275,6 +12275,7 @@ name_translations = {
 	},
 	"Mombasa": {
 		iArabic: "Manbasa",
+		iEnglish: _,
 		iKiswahili: _,
 		iPortuguese: u"Mombaça",
 	},
