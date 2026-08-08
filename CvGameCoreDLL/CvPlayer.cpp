@@ -7117,7 +7117,12 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 	if (GC.getBuildingInfo(eBuilding).getFreeBuildingClass() != NO_BUILDINGCLASS)
 	{
 		BuildingTypes eFreeBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getFreeBuildingClass());
-		changeFreeBuildingCount(eFreeBuilding, iChange);
+		
+		// Leoreth: keep free buildings after obsoletion if they are eventually free
+		if (iChange > 0 || !GET_TEAM(getTeam()).isObsoleteBuilding(eBuilding) || GC.getBuildingInfo(eFreeBuilding).getFreeStartEra() == NO_ERA)
+		{
+			changeFreeBuildingCount(eFreeBuilding, iChange);
+		}
 	}
 
 	if (GC.getBuildingInfo(eBuilding).getCivicOption() != NO_CIVICOPTION)
