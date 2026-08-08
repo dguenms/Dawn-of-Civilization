@@ -111,6 +111,20 @@
 					<iCount>1</iCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<BuildingHappinessChanges>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_SCHOOL</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_MINT</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_COUNCIL</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+			</BuildingHappinessChanges>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_CONSUL</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
@@ -285,17 +299,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Theocracy.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
-			<iStateReligionHappiness>2</iStateReligionHappiness>
-			<SpecialistValids>
-				<SpecialistValid>
-					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<bValid>1</bValid>
-				</SpecialistValid>
-			</SpecialistValids>
-			<StateReligionBuildingYields>
-				<iYield>0</iYield>
-				<iYield>1</iYield>
-			</StateReligionBuildingYields>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<SpecialistTypeExtraYields>
 				<SpecialistTypeExtraYield>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
@@ -882,6 +886,14 @@
 					<BuildingType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingType>
 					<iHappinessChange>1</iHappinessChange>
 				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_TOMB</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
+				<BuildingHappinessChange>
+					<BuildingType>BUILDINGCLASS_SANCTUARY</BuildingType>
+					<iHappinessChange>1</iHappinessChange>
+				</BuildingHappinessChange>
 			</BuildingHappinessChanges>
 			<SpecialistCounts>
 				<SpecialistCount>
@@ -914,8 +926,8 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_LOW</Upkeep>
 			<bStateReligion>1</bStateReligion>
-			<iNonStateReligionHappiness>1</iNonStateReligionHappiness>
 			<bNoStateReligionAnarchy>1</bNoStateReligionAnarchy>
+			<bOtherReligionEffect>1</bOtherReligionEffect>
 			<ImprovementYieldChanges>
 				<ImprovementYieldChange>
 					<ImprovementType>IMPROVEMENT_PADDY_FIELD</ImprovementType>
@@ -924,11 +936,6 @@
 					</ImprovementYields>
 				</ImprovementYieldChange>
 			</ImprovementYieldChanges>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
 			<SpecialBuildingNotRequireds>
 				<SpecialBuildingNotRequired>
 					<SpecialBuildingType>SPECIALBUILDING_MONASTERY</SpecialBuildingType>
@@ -960,17 +967,17 @@
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
 			<bStateReligion>1</bStateReligion>
-			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
-			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
 			<iNonStateReligionHappiness>-1</iNonStateReligionHappiness>
-			<iShrineIncomeLimitChange>10</iShrineIncomeLimitChange>
+			<iStateReligionFreeExperience>2</iStateReligionFreeExperience>
+			<iReligiousBuildingCommerceModifier>100</iReligiousBuildingCommerceModifier>
+			<bNoNonStateReligionSpread>1</bNoNonStateReligionSpread>
+			<bNoReligiousBuildingExpiration>1</bNoReligiousBuildingExpiration>
 			<SpecialistTypeExtraYields>
 				<SpecialistTypeExtraYield>
-					<SpecialistType>SPECIALIST_GREAT_PRIEST</SpecialistType>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<YieldChanges>
 						<iYield>0</iYield>
-						<iYield>2</iYield>
-						<iYield>4</iYield>
+						<iYield>1</iYield>
 					</YieldChanges>
 				</SpecialistTypeExtraYield>
 			</SpecialistTypeExtraYields>
@@ -985,6 +992,7 @@
 			<Button>,Art/Interface/Buttons/Civics/Secularism.dds</Button>
 			<iAnarchyLength>1</iAnarchyLength>
 			<Upkeep>UPKEEP_MEDIUM</Upkeep>
+			<bAllReligionEffect>1</bAllReligionEffect>
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
@@ -995,20 +1003,6 @@
 					<bValid>1</bValid>
 				</SpecialistValid>
 			</SpecialistValids>
-			<BuildingHappinessChanges>
-				<BuildingHappinessChange>
-					<BuildingType>BUILDINGCLASS_UNIVERSITY</BuildingType>
-					<iHappinessChange>1</iHappinessChange>
-				</BuildingHappinessChange>
-				<BuildingHappinessChange>
-					<BuildingType>BUILDINGCLASS_OBSERVATORY</BuildingType>
-					<iHappinessChange>1</iHappinessChange>
-				</BuildingHappinessChange>
-				<BuildingHappinessChange>
-					<BuildingType>BUILDINGCLASS_LABORATORY</BuildingType>
-					<iHappinessChange>1</iHappinessChange>
-				</BuildingHappinessChange>
-			</BuildingHappinessChanges>
 		</CivicInfo>
 		<CivicInfo>
 			<CivicOptionType>CIVICOPTION_TERRITORY</CivicOptionType>

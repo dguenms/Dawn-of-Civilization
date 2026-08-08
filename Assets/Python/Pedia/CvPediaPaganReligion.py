@@ -92,17 +92,26 @@ class CvPediaPaganReligion:
 		screen.attachLabel(panel, "", "  ")
 		
 		paganTemples = set()
+		sanctuaries = set()
 		iPaganTempleClass = infos.building(iPaganTemple).getBuildingClassType()
+		iSanctuaryClass = infos.building(iSanctuary).getBuildingClassType()
 		for iCiv in infos.civs():
 			iPaganReligionTemple = infos.civ(iCiv).getCivilizationBuildings(iPaganTempleClass)
 			if infos.civ(iCiv).getPaganReligion() == self.iPaganReligion and iPaganReligionTemple != iPaganTemple:
 				paganTemples.add(iPaganReligionTemple)
+			
+			iPaganReligionSanctuary = infos.civ(iCiv).getCivilizationBuildings(iSanctuaryClass)
+			if infos.civ(iCiv).getPaganReligion() == self.iPaganReligion and iPaganReligionSanctuary != iSanctuary:
+				sanctuaries.add(iPaganReligionSanctuary)
 		
 		for iPaganReligionTemple in paganTemples:
 			screen.attachImageButton(panel, "", infos.building(iPaganReligionTemple).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iPaganReligionTemple, -1, False)
 		
+		for iPaganReligionSanctuary in sanctuaries:
+			screen.attachImageButton(panel, "", infos.building(iPaganReligionSanctuary).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iPaganReligionSanctuary, -1, False)
+		
 		for iBuilding in infos.buildings():
-			if isWonder(iBuilding) and infos.building(iBuilding).isPagan():
+			if isWonder(iBuilding) and infos.building(iBuilding).isPagan() and infos.building(iBuilding).getBuildingClassType() != iSanctuaryClass:
 				screen.attachImageButton(panel, "", infos.building(iBuilding).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_BUILDING, iBuilding, -1, False)
 
 

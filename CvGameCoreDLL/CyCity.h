@@ -410,7 +410,7 @@ public:
 // BUG - Building Additional Commerce - end
 	int getSpecialistCommerce(int /*CommerceTypes*/ eIndex);
 	void changeSpecialistCommerce(int /*CommerceTypes*/ eIndex, int iChange);
-	int getReligionCommerce(int /*CommerceTypes*/ eIndex);
+	int getReligionBuildingCommerce(int /*CommerceTypes*/ eIndex);
 	int getReligionCommerceByReligion(int /*CommerceTypes*/ eIndex, int /*ReligionTypes*/ iReligion);
 	int getCorporationCommerce(int /*CommerceTypes*/ eIndex);
 	int getCorporationCommerceByCorporation(int /*CommerceTypes*/ eIndex, int /*CorporationTypes*/ iCorporation);

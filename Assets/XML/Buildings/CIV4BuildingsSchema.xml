@@ -114,6 +114,7 @@
 	<ElementType name="bPrereqReligion" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bPagan" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bNoResistance" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bOtherReligionEffect" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="bCenterInCity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iAIWeight" content="textOnly" dt:type="int"/>
 	<ElementType name="iCost" content="textOnly" dt:type="int"/>
@@ -164,6 +165,8 @@
 	<ElementType name="iAreaHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iGlobalHappiness" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionHappiness" content="textOnly" dt:type="int"/>
+	<ElementType name="iStateReligionEffectModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iStateReligionBuildingCommerceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iWorkerSpeedModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iMilitaryProductionModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iSpaceProductionModifier" content="textOnly" dt:type="int"/>
@@ -174,6 +177,7 @@
 	<ElementType name="iTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iCultureTradeRouteModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iForeignTradeRouteModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iReligionTradeRouteModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
 	<ElementType name="iGlobalPopulationChange" content="textOnly" dt:type="int"/>
 	<ElementType name="iFreeTechs" content="textOnly" dt:type="int"/>
 	<ElementType name="iDefense" content="textOnly" dt:type="int"/>
@@ -232,6 +236,9 @@
 	<ElementType name="CommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
+	<ElementType name="StateReligionCommerceModifiers" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
 	<ElementType name="PowerCommerceModifiers" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
@@ -242,6 +249,9 @@
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="SpecialistExtraCommerces" content="eltOnly">
+		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ReligionCommerces" content="eltOnly">
 		<element type="iCommerce" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="StateReligionCommerces" content="eltOnly">
@@ -274,6 +284,9 @@
 	</ElementType>
 	<ElementType name="FreeSpecialistCounts" content="eltOnly">
 		<element type="FreeSpecialistCount" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="StateReligionSpecialistCounts" content="eltOnly">
+		<element type="SpecialistCount" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="bCommerce" content="textOnly" dt:type="boolean"/>
 	<ElementType name="CommerceFlexibles" content="eltOnly">
@@ -509,6 +522,7 @@
 		<element type="bPagan" minOccurs="0"/> <!-- Leoreth -->
 		<element type="bCenterInCity" minOccurs="0"/>
 		<element type="bNoResistance" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bOtherReligionEffect" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iAIWeight" minOccurs="0"/>
 		<element type="iCost" minOccurs="0"/>
 		<element type="iHurryCostModifier" minOccurs="0"/>
@@ -556,6 +570,8 @@
 		<element type="iAreaHappiness" minOccurs="0"/>
 		<element type="iGlobalHappiness" minOccurs="0"/>
 		<element type="iStateReligionHappiness" minOccurs="0"/>
+		<element type="iStateReligionEffectModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iStateReligionBuildingCommerceModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iWorkerSpeedModifier" minOccurs="0"/>
 		<element type="iMilitaryProductionModifier" minOccurs="0"/>
 		<element type="iSpaceProductionModifier" minOccurs="0"/>
@@ -566,6 +582,7 @@
 		<element type="iTradeRouteModifier" minOccurs="0"/>
 		<element type="iCultureTradeRouteModifier" minOccurs="0"/>
 		<element type="iForeignTradeRouteModifier" minOccurs="0"/>
+		<element type="iReligionTradeRouteModifier" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iGlobalPopulationChange" minOccurs="0"/>
 		<element type="iFreeTechs" minOccurs="0"/>
 		<element type="iDefense" minOccurs="0"/>
@@ -590,13 +607,16 @@
 		<element type="CommerceChangeDoubleTimes" minOccurs="0"/>
 		<element type="CommerceModifiers" minOccurs="0"/>
 		<element type="PowerCommerceModifiers" minOccurs="0"/>
+		<element type="StateReligionCommerceModifiers" minOccurs="0"/> <!-- Leoreth -->
 		<element type="CultureCommerceModifiers" minOccurs="0"/>
 		<element type="GlobalCommerceModifiers" minOccurs="0"/>
 		<element type="SpecialistExtraCommerces" minOccurs="0"/>
+		<element type="ReligionCommerces" minOccurs="0"/> <!-- Leoreth -->
 		<element type="StateReligionCommerces" minOccurs="0"/>
 		<element type="CommerceHappinesses" minOccurs="0"/>
 		<element type="ReligionChanges" minOccurs="0"/>
 		<element type="SpecialistCounts" minOccurs="0"/>
+		<element type="StateReligionSpecialistCounts" minOccurs="0"/> <!-- Leoreth -->
 		<element type="FreeSpecialistCounts" minOccurs="0"/>
 		<element type="CommerceFlexibles" minOccurs="0"/>
 		<element type="CommerceChangeOriginalOwners" minOccurs="0"/>

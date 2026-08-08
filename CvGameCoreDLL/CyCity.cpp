@@ -1868,9 +1868,9 @@ void CyCity::changeSpecialistCommerce(int /*CommerceTypes*/ eIndex, int iChange)
 		m_pCity->changeSpecialistCommerce((CommerceTypes)eIndex, iChange);
 }
 
-int CyCity::getReligionCommerce(int /*CommerceTypes*/ eIndex)
+int CyCity::getReligionBuildingCommerce(int /*CommerceTypes*/ eIndex)
 {
-	return m_pCity ? m_pCity->getReligionCommerce((CommerceTypes)eIndex) : -1;
+	return m_pCity ? m_pCity->getReligionBuildingCommerce((CommerceTypes)eIndex) : -1;
 }
 
 int CyCity::getReligionCommerceByReligion(int /*CommerceTypes*/ eIndex, int /*ReligionTypes*/ eReligion)

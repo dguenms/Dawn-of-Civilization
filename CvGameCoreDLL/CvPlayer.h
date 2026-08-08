@@ -1365,6 +1365,31 @@ public:
 	int getModifiedCommerceRateTimes100(CommerceTypes eCommerce) const;
 	int getModifiedCommerceRate(CommerceTypes eCommerce) const;
 
+	int getReligionEffectModifier(ReligionTypes eReligion) const;
+	void setReligionEffectModifier(ReligionTypes eReligion, int iNewValue);
+	void changeReligionEffectModifier(ReligionTypes eReligion, int iChange);
+
+	int getReligionBuildingCommerce(ReligionTypes eReligion, CommerceTypes eCommerce) const;
+	void changeReligionBuildingCommerce(ReligionTypes eReligion, CommerceTypes eCommerce, int iChange);
+
+	int getStateReligionEffectModifier() const;
+	void changeStateReligionEffectModifier(int iChange);
+
+	int getReligiousBuildingCommerceModifier() const;
+	void changeReligiousBuildingCommerceModifier(int iChange);
+
+	int getAllReligionEffectCount() const;
+	bool isAllReligionEffect() const;
+	void changeAllReligionEffectCount(int iChange);
+
+	int getOtherReligionEffectCount() const;
+	bool isOtherReligionEffect() const;
+	void changeOtherReligionEffectCount(int iChange);
+
+	int getNoReligiousBuildingExpirationCount() const;
+	bool isNoReligiousBuildingExpiration() const;
+	void changeNoReligiousBuildingExpirationCount(int iChange);
+
 	bool m_bTurnPlayed;
 
 protected:
@@ -1536,8 +1561,12 @@ protected:
 	int m_iReligiousTolerance;
 
 	int m_iWorkerCount;
-
 	int m_iFreeTechsOnDiscovery;
+	int m_iStateReligionEffectModifier;
+	int m_iReligiousBuildingCommerceModifier;
+	int m_iAllReligionEffectCount;
+	int m_iOtherReligionEffectCount;
+	int m_iNoReligiousBuildingExpirationCount;
 
 	PlayerTypes m_eID;
 	LeaderHeadTypes m_ePersonalityType;
@@ -1604,6 +1633,9 @@ protected:
 	int* m_paiUpkeepCount;
 	int* m_paiSpecialistValidCount;
 
+	// Leoreth
+	int* m_paiReligionEffectModifier;
+
 	bool* m_pabResearchingTech;
 	bool* m_pabLoyalMember;
 
@@ -1618,6 +1650,9 @@ protected:
 
 	int** m_ppaaiSpecialistExtraYield;
 	int** m_ppaaiImprovementYieldChange;
+
+	// Leoreth
+	int** m_ppaaiReligionBuildingCommerce;
 
 	CLinkList<int> m_groupCycle;
 

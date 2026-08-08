@@ -7,6 +7,7 @@ CAPITAL = "TXT_KEY_VICTORY_NAME_CAPITAL"
 
 # building descriptors
 CATHEDRALS = "TXT_KEY_VICTORY_NAME_CATHEDRALS"
+HOLY_SITES = "TXT_KEY_VICTORY_NAME_HOLY_SITES"
 SHRINES = "TXT_KEY_VICTORY_NAME_SHRINES"
 
 # goal descriptors
@@ -37,7 +38,7 @@ dGoals = {
 	),
 	iTaoism: (
 		HealthiestTurns(100),
-		ShrineIncome(sum(iConfucianism, iTaoism), 40),
+		ReligionPopulationCount(iTaoism, 120),
 		CityCultureLevel(holy_city(iTaoism), iCultureLevelLegendary),
 	),
 	iBuddhism: (
@@ -61,7 +62,10 @@ dGoals = {
 	iIslam: (
 		ReligionSpreadPercent(iIslam, 40),
 		CitySpecialistCount(holy_city(iIslam), great_people(), 7, subject=STATE_RELIGION),
-		BuildingCount(religious_buildings(shrine).named(SHRINES), 5),
+		BuildingCount(
+			(religious_buildings(shrine).named(SHRINES), 5),
+			(religious_buildings(shrine).named(HOLY_SITES), 5),
+		),
 	),
 	iProtestantism: (
 		FirstDiscover(iCivilLiberties, iSocialContract, iEconomics),

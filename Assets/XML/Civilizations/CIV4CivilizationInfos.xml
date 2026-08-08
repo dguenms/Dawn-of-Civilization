@@ -54,6 +54,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -153,6 +157,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -242,6 +250,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_INTI_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -324,6 +336,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BABYLONIAN_ZIGGURAT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ANUNNAKI_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -401,6 +417,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -515,6 +535,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -612,6 +636,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BABYLONIAN_ZIGGURAT</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ANUNNAKI_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -689,6 +717,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -775,6 +807,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_INTI_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -852,6 +888,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -954,6 +994,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1064,6 +1108,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1164,6 +1212,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BAALIST_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_BAALIST_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1274,6 +1326,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1388,6 +1444,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_SHENDAO_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1484,6 +1544,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_INTI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1589,6 +1653,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1709,6 +1777,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_PESEDJET_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_PESEDJET_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -1813,6 +1885,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -1935,6 +2011,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASTAR_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASTAR_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2036,6 +2116,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2163,6 +2247,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2293,6 +2381,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2403,6 +2495,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2476,6 +2572,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BABYLONIAN_ZIGGURAT</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ANUNNAKI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2569,6 +2669,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2665,6 +2769,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_INTI_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_INTI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2767,6 +2875,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -2880,6 +2992,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -2977,6 +3093,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3086,6 +3206,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_SHINTO_SHRINE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_SHINTO_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3186,6 +3310,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3298,6 +3426,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3401,6 +3533,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BUKONGO_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_BUKONGO_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3494,6 +3630,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_MUGYO_SADANG</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_MUGYO_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3575,6 +3715,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3659,6 +3803,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3773,6 +3921,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_BIDAIST_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_BIDAIST_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -3881,6 +4033,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_SHENDAO_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -3993,6 +4149,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4082,6 +4242,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4158,6 +4322,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4260,6 +4428,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4377,6 +4549,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4478,6 +4654,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4708,6 +4888,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4807,6 +4991,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -4896,6 +5084,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_PESEDJET_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_PESEDJET_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -4990,6 +5182,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -5113,6 +5309,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5233,6 +5433,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_RODNOVERY_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -5356,6 +5560,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ATUA_SHRINE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ATUA_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5463,6 +5671,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -5585,6 +5797,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_OLYMPIAN_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_OLYMPIAN_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5675,6 +5891,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_RODNOVERY_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5756,6 +5976,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_PERUN_SHRINE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_RODNOVERY_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -5858,6 +6082,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_HUBAL_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_HUBAL_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -5948,6 +6176,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_DRUIDIC_NEMETON</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_DRUIDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -6118,6 +6350,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_MAZDAIST_TEMPLE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_MAZDAIST_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -6191,6 +6427,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ASATRU_HOF</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_ASATRU_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -6273,6 +6513,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -6376,6 +6620,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_VEDIC_TEMPLE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_VEDIC_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -6504,6 +6752,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_BON_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -6581,6 +6833,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TEOTL_STEP_PYRAMID</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TEOTL_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>
@@ -6672,6 +6928,10 @@
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_TENGRI_OBO</BuildingType>
 				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_TENGRI_SANCTUARY</BuildingType>
+				</Building>
 			</Buildings>
 			<Units>
 				<Unit>
@@ -6748,6 +7008,10 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
 					<BuildingType>BUILDING_ANCESTOR_SHRINE</BuildingType>
+				</Building>
+				<Building>
+					<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+					<BuildingType>BUILDING_SHENDAO_SANCTUARY</BuildingType>
 				</Building>
 			</Buildings>
 			<Units>

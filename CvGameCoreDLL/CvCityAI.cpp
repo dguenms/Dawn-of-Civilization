@@ -3238,6 +3238,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 	CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 	BuildingClassTypes eBuildingClass = (BuildingClassTypes) kBuilding.getBuildingClassType();
+	ReligionTypes eBuildingReligion = (ReligionTypes)kBuilding.getReligionType();
 	int iLimitedWonderLimit = limitedWonderClassLimit(eBuildingClass);
 	bool bIsLimitedWonder = iLimitedWonderLimit >= 0 && kBuilding.getProductionCost() >= 0; // Leoreth: not for unbuildable buildings - selection of GP action targets should not be impacted
 
@@ -3462,11 +3463,14 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				iValue += (-kBuilding.getHurryAngerModifier() * getHurryPercentAnger()) / 100;
 
-				int iStateReligionHappiness = kBuilding.getStateReligionHappiness();
-				if (kBuilding.getReligionType() == eStateReligion && iStateReligionHappiness != 0)
+				if (eBuildingReligion != NO_RELIGION)
 				{
-					iValue += (std::min(iStateReligionHappiness, iAngryPopulation) * 8)
-						+ (std::max(0, iStateReligionHappiness - iAngryPopulation) * iHappyModifier);
+					int iStateReligionHappiness = kBuilding.getStateReligionHappiness() * getReligionEffectModifier(eBuildingReligion) / 100;
+					if (iStateReligionHappiness != 0)
+					{
+						iValue += (std::min(iStateReligionHappiness, iAngryPopulation) * 8)
+							+ (std::max(0, iStateReligionHappiness - iAngryPopulation) * iHappyModifier);
+					}
 				}
 
 				for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
@@ -3662,14 +3666,20 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 							}
 						}
 
+						int iSpecialistCount = kBuilding.getSpecialistCount(iI);
+						if (eBuildingReligion != NO_RELIGION)
+						{
+							iSpecialistCount += kBuilding.getStateReligionSpecialistCount((SpecialistTypes)iI) * getReligionEffectModifier(eBuildingReligion) / 100;
+						}
 
-						if (kBuilding.getSpecialistCount(iI) > 0)
+
+						if (iSpecialistCount > 0)
 						{
 							if ((!bUnlimited) && (iRunnable < 5))
 							{
 								iTempValue = AI_specialistValue(((SpecialistTypes)iI), false, false);
 
-								iTempValue *= (20 + (40 * kBuilding.getSpecialistCount(iI)));
+								iTempValue *= (20 + (40 * iSpecialistCount));
 								iTempValue /= 100;
 								
 /************************************************************************************************/
@@ -3725,6 +3735,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 				if (bForeignTrade)
 				{
 					iTempValue += ((kBuilding.getForeignTradeRouteModifier() * getTradeYield(YIELD_COMMERCE)) / 12);
+				}
+
+				if (eBuildingReligion != NO_RELIGION)
+				{
+					iTempValue += kBuilding.getReligionTradeRouteModifier() * getTradeYield(YIELD_COMMERCE) * (bForeignTrade ? GC.getGame().countReligionLevels(eBuildingReligion) : kOwner.countReligionCities(eBuildingReligion)) / (bForeignTrade ? GC.getGame().getNumCities() * 18 : kOwner.getNumCities() * 20);
 				}
 
 				if (bFinancialTrouble)
@@ -3980,6 +3995,24 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					}
 				}
 
+				if (eStateReligion != NO_RELIGION)
+				{
+					iValue += kBuilding.getStateReligionEffectModifier() * kOwner.getHasReligionCount(eStateReligion) * 3;
+
+					if (kBuilding.isOtherReligionEffect())
+					{
+						int iSharedReligionCount = 0;
+						int iLoop;
+						for (CvCity* pLoopCity = kOwner.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kOwner.nextCity(&iLoop))
+						{
+							if (pLoopCity->isHasReligion(eStateReligion))
+								iSharedReligionCount += pLoopCity->getReligionCount() - 1;
+						}
+
+						iValue += iSharedReligionCount * 2 * kOwner.getStateReligionEffectModifier() / 100;
+					}
+				}
+
 				// is this building needed to build other buildings?
 				for (iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 				{
@@ -4063,6 +4096,11 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if (bForeignTrade)
 					{
 						iValue += ((kBuilding.getForeignTradeRouteModifier() * getTradeYield((YieldTypes)iI)) / 12);
+					}
+
+					if (eBuildingReligion != NO_RELIGION)
+					{
+						iValue += kBuilding.getReligionTradeRouteModifier() * getTradeYield((YieldTypes)iI) * (bForeignTrade ? GC.getGame().countReligionLevels(eBuildingReligion) : kOwner.countReligionCities(eBuildingReligion)) / (bForeignTrade ? GC.getGame().getNumCities() * 10 : kOwner.getNumCities() * 8);
 					}
 
 					if (iFoodDifference > 0)
@@ -4247,7 +4285,17 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 					iTempValue += (kBuilding.getCommerceChange(iI) * 4);
 					iTempValue += (kBuilding.getObsoleteSafeCommerceChange(iI) * 4);
-					iTempValue *= 100 + kBuilding.getCommerceModifier(iI) + (isPower() ? kBuilding.getPowerCommerceModifier(iI) : 0) + kBuilding.getCultureCommerceModifier(iI) * getCultureLevel();
+
+					int iCommerceModifier = kBuilding.getCommerceModifier(iI);
+					if (isPower()) iCommerceModifier += kBuilding.getPowerCommerceModifier(iI);
+					iCommerceModifier += kBuilding.getCultureCommerceModifier(iI) * getCultureLevel();
+
+					if (eBuildingReligion != NO_RELIGION)
+					{
+						iCommerceModifier += kBuilding.getStateReligionCommerceRateModifier((CommerceTypes)iI) * getReligionEffectModifier(eBuildingReligion) / 100;
+					}
+
+					iTempValue *= 100 + iCommerceModifier;
 					iTempValue /= 100;
 
 					if ((CommerceTypes)iI == COMMERCE_CULTURE)
@@ -4267,9 +4315,6 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					}
 
 					// add value for a commerce modifier
-					int iCommerceModifier = kBuilding.getCommerceModifier(iI);
-					if (isPower()) iCommerceModifier += kBuilding.getPowerCommerceModifier(iI);
-					iCommerceModifier += kBuilding.getCommerceModifier(iI) * getCultureLevel();
 					int iBaseCommerceRate = getBaseCommerceRate((CommerceTypes) iI);
 					int iCommerceMultiplierValue = iCommerceModifier * iBaseCommerceRate;
 					if (((CommerceTypes) iI) == COMMERCE_CULTURE && iCommerceModifier != 0)
@@ -4345,6 +4390,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 					if (eStateReligion != NO_RELIGION)
 					{
 						iTempValue += (kBuilding.getStateReligionCommerce(iI) * kOwner.getHasReligionCount(eStateReligion) * 3);
+						iTempValue += kBuilding.getStateReligionBuildingCommerceModifier() * getReligionBuildingCommerce((CommerceTypes)iI) * kOwner.getHasReligionCount(eStateReligion);
 					}
 
 					if (kBuilding.getGlobalReligionCommerce() != NO_RELIGION)

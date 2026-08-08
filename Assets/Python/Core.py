@@ -373,8 +373,16 @@ def cathedral(iReligion):
 	return specialbuilding(infos.type('SPECIALBUILDING_CATHEDRAL'), iReligion)
 
 
+def reliquary(iReligion):
+	return specialbuilding(infos.type('SPECIALBUILDING_RELIQUARY'), iReligion)
+
+
+def holy_site(iReligion):
+	return specialbuilding(infos.type('SPECIALBUILDING_HOLY_SITE'), iReligion)
+
+
 def shrine(iReligion):
-	return next(iBuilding for iBuilding in range(iNumBuildings) if infos.building(iBuilding).getGlobalReligionCommerce() == iReligion)
+	return next(iBuilding for iBuilding in range(iNumBuildings) if infos.building(iBuilding).getHolyCity() == iReligion)
 
 
 def permutations(first, second):

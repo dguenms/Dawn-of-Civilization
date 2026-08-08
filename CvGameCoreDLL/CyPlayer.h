@@ -616,6 +616,7 @@ public:
 	int getModifiedCommerceRate(CommerceTypes eCommerce);
 	bool canBuySlaves() const;
 	int calculateTransmissionResearch() const;
+	int getReligionEffectModifier(int eReligion);
 	
 private:
 	CvPlayer* m_pPlayer;

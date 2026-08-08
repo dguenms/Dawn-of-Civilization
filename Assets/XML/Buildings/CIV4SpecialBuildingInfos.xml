@@ -39,12 +39,42 @@
 		<SpecialBuildingInfo>
 			<Type>SPECIALBUILDING_MONASTERY</Type>
 			<Description>TXT_KEY_SPECIALBUILDING_MONASTERY</Description>
-			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
+			<ObsoleteTech>TECH_PSYCHOLOGY</ObsoleteTech>
 			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
 			<TechPrereqAnyone>NONE</TechPrereqAnyone>
 			<bValid>1</bValid>
 			<ProductionTraits/>
 			<Button>Art/Interface/Buttons/Buildings/Monastery_Hindu.dds</Button>
+		</SpecialBuildingInfo>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_HOLY_SITE</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_HOLY_SITE</Description>
+			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
+			<TechPrereq>NONE</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>1</bValid>
+			<ProductionTraits/>
+			<Button>Art/Structures/Buildings/Christian_Holy_Site/catholic_holy_site.dds</Button>
+		</SpecialBuildingInfo>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_RELIQUARY</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_RELIQUARY</Description>
+			<ObsoleteTech>TECH_TELEVISION</ObsoleteTech>
+			<TechPrereq>TECH_DOCTRINE</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>1</bValid>
+			<ProductionTraits/>
+			<Button>Art/Interface/Buttons/Buildings/Reliquary.dds</Button>
+		</SpecialBuildingInfo>
+		<SpecialBuildingInfo>
+			<Type>SPECIALBUILDING_SANCTUARY</Type>
+			<Description>TXT_KEY_SPECIALBUILDING_SANCTUARY</Description>
+			<ObsoleteTech>TECH_SCIENTIFIC_METHOD</ObsoleteTech>
+			<TechPrereq>TECH_PRIESTHOOD</TechPrereq>
+			<TechPrereqAnyone>NONE</TechPrereqAnyone>
+			<bValid>1</bValid>
+			<ProductionTraits/>
+			<Button>Art/Structures/Buildings/Olympian_Sanctuary/Sanctuary.dds</Button>
 		</SpecialBuildingInfo>
 	</SpecialBuildingInfos>
 </Civ4SpecialBuildingInfos>

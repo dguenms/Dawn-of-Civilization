@@ -3841,6 +3841,142 @@
 		<Spanish>%D1: "We are rival powers."</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURN_CITIZEN_INTO_WITH_RELIGION</Tag>
+		<English>[ICON_BULLET]Can turn 1 Citizen into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_SpecName[\LINK][COLOR_REVERT] with %F2_RelIcon State Religion</English>
+		<French>[ICON_BULLET]Can turn 1 Citizen into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_SpecName[\LINK][COLOR_REVERT] with %F2_RelIcon State Religion</French>
+		<German>[ICON_BULLET]Can turn 1 Citizen into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_SpecName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</German>
+		<Italian>[ICON_BULLET]Can turn 1 Citizen into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_SpecName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</Italian>
+		<Spanish>[ICON_BULLET]Can turn 1 Citizen into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s1_SpecName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TURN_CITIZENS_INTO_WITH_RELIGION</Tag>
+		<English>[ICON_BULLET]Can turn %d1_Num Citizens into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2_SpclstName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</English>
+		<French>[ICON_BULLET]Can turn %d1_Num Citizens into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2_SpclstName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</French>
+		<German>[ICON_BULLET]Can turn %d1_Num Citizens into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2_SpclstName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</German>
+		<Italian>[ICON_BULLET]Can turn %d1_Num Citizens into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2_SpclstName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</Italian>
+		<Spanish>[ICON_BULLET]Can turn %d1_Num Citizens into [COLOR_HIGHLIGHT_TEXT][LINK=literal]%s2_SpclstName[\LINK][COLOR_REVERT] with %F3_RelIcon State Religion</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_YIELD_STATE_RELIGION</Tag>
+		<English>[ICON_BULLET]%D1%%%F2 from %F3_RelIcon</English>
+		<French>[ICON_BULLET]%D1%%%F2 from %F3_RelIcon</French>
+		<German>[ICON_BULLET]%D1%%%F2 from %F3_RelIcon</German>
+		<Italian>[ICON_BULLET]%D1%%%F2 from %F3_RelIcon</Italian>
+		<Spanish>[ICON_BULLET]%D1%%%F2 from %F3_RelIcon</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_WITH_STATE_RELIGION</Tag>
+		<English>[SPACE]with %F1_RelIcon State Religion</English>
+		<French>[SPACE]avec &#233;lectricit&#233; ([ICON_CLEAN_POWER])</French>
+		<German>[SPACE]mit Energie ([ICON_CLEAN_POWER])</German>
+		<Italian>[SPACE]con l'energia ([ICON_CLEAN_POWER])</Italian>
+		<Spanish>[SPACE]con energ&#237;a ([ICON_CLEAN_POWER])</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RELIGION_TRADE_ROUTE_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Trade Route Yield with %F2_RelIcon Cities</English>
+		<French>[ICON_BULLET]%D1_Mod%% Trade Route Yield with %F2_RelIcon Cities</French>
+		<German>[ICON_BULLET]%D1_Mod%% Trade Route Yield with %F2_RelIcon Cities</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Trade Route Yield with %F2_RelIcon Cities</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Trade Route Yield with %F2_RelIcon Cities</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STATE_RELIGION_EFFECT_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% for %F2_RelIcon State Religion effects</English>
+		<French>[ICON_BULLET]%D1_Mod%% for %F2_RelIcon State Religion effects</French>
+		<German>[ICON_BULLET]%D1_Mod%% for %F2_RelIcon State Religion effects</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% for %F2_RelIcon State Religion effects</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% for %F2_RelIcon State Religion effects</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REL_BUILDINGS</Tag>
+		<English>[SPACE]from All %F1_RelIcon Buildings</English>
+		<French>[SPACE]from All %F1_RelIcon Buildings</French>
+		<German>[SPACE]from All %F1_RelIcon Buildings</German>
+		<Italian>[SPACE]from All %F1_RelIcon Buildings</Italian>
+		<Spanish>[SPACE]from All %F1_RelIcon Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_REL_EFFECT_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D2_Mod%% Religion Effects from %F1_RelIcon Buildings</English>
+		<French>[ICON_BULLET]%D2_Mod%% Religion Effects from %F1_RelIcon Buildings</French>
+		<German>[ICON_BULLET]%D2_Mod%% Religion Effects from %F1_RelIcon Buildings</German>
+		<Italian>[ICON_BULLET]%D2_Mod%% Religion Effects from %F1_RelIcon Buildings</Italian>
+		<Spanish>[ICON_BULLET]%D2_Mod%% Religion Effects from %F1_RelIcon Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_STATE_REL_EFFECT_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Religion Effects from State [ICON_RELIGION] Buildings</English>
+		<French>[ICON_BULLET]%D1_Mod%% Religion Effects from State [ICON_RELIGION] Buildings</French>
+		<German>[ICON_BULLET]%D1_Mod%% Religion Effects from State [ICON_RELIGION] Buildings</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Religion Effects from State [ICON_RELIGION] Buildings</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Religion Effects from State [ICON_RELIGION] Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_RELIGIOUS_BUILDING_COMMERCE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Extra Commerce for [ICON_RELIGION] Buildings</English>
+		<French>[ICON_BULLET]%D1_Mod%% Extra Commerce for [ICON_RELIGION] Buildings</French>
+		<German>[ICON_BULLET]%D1_Mod%% Extra Commerce for [ICON_RELIGION] Buildings</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Extra Commerce for [ICON_RELIGION] Buildings</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Extra Commerce for [ICON_RELIGION] Buildings</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OTHER_STATE_RELIGION_EFFECT</Tag>
+		<English>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</English>
+		<French>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</French>
+		<German>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</German>
+		<Italian>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</Italian>
+		<Spanish>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_OTHER_RELIGION_EFFECT</Tag>
+		<English>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</English>
+		<French>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</French>
+		<German>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</German>
+		<Italian>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</Italian>
+		<Spanish>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_ALL_RELIGION_EFFECT</Tag>
+		<English>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect</English>
+		<French>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect</French>
+		<German>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect</German>
+		<Italian>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect</Italian>
+		<Spanish>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIVIC_NO_RELIGIOUS_BUILDING_EXPIRATION</Tag>
+		<English>[ICON_BULLET][ICON_RELIGION] Buildings Do Not Expire</English>
+		<French>[ICON_BULLET][ICON_RELIGION] Buildings Do Not Expire</French>
+		<German>[ICON_BULLET][ICON_RELIGION] Buildings Do Not Expire</German>
+		<Italian>[ICON_BULLET][ICON_RELIGION] Buildings Do Not Expire</Italian>
+		<Spanish>[ICON_BULLET][ICON_RELIGION] Buildings Do Not Expire</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OTHER_RELIGION_EFFECT</Tag>
+		<English>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</English>
+		<French>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</French>
+		<German>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</German>
+		<Italian>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</Italian>
+		<Spanish>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if %F1_RelIcon present</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_OTHER_STATE_RELIGION_EFFECT</Tag>
+		<English>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</English>
+		<French>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</French>
+		<German>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</German>
+		<Italian>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</Italian>
+		<Spanish>[ICON_BULLET]All [ICON_RELIGION] Buildings provide Religion Effect if State [ICON_RELIGION] present</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_STATE_RELIGION_BUILDING_COMMERCE_MODIFIER</Tag>
+		<English>[ICON_BULLET]%D1_Mod%% Extra Commerce for State [ICON_RELIGION] Buildings</English>
+		<French>[ICON_BULLET]%D1_Mod%% Extra Commerce for State [ICON_RELIGION] Buildings</French>
+		<German>[ICON_BULLET]%D1_Mod%% Extra Commerce for State [ICON_RELIGION] Buildings</German>
+		<Italian>[ICON_BULLET]%D1_Mod%% Extra Commerce for State [ICON_RELIGION] Buildings</Italian>
+		<Spanish>[ICON_BULLET]%D1_Mod%% Extra Commerce for State [ICON_RELIGION] Buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

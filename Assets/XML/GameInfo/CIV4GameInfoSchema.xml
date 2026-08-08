@@ -677,6 +677,11 @@
 	<ElementType name="iGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iDomesticGreatGeneralRateModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iStateReligionGreatPeopleRateModifier" content="textOnly" dt:type="int"/>
+	<ElementType name="iStateReligionEffectModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="iReligiousBuildingCommerceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
+	<ElementType name="bOtherReligionEffect" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bAllReligionEffect" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
+	<ElementType name="bNoReligiousBuildingExpiration" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="iDistanceMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iNumCitiesMaintenanceModifier" content="textOnly" dt:type="int"/>
 	<ElementType name="iColonyMaintenanceModifier" content="textOnly" dt:type="int"/> <!-- Leoreth -->
@@ -891,6 +896,11 @@
 		<element type="iGreatGeneralRateModifier" minOccurs="0"/>
 		<element type="iDomesticGreatGeneralRateModifier" minOccurs="0"/>
 		<element type="iStateReligionGreatPeopleRateModifier" minOccurs="0"/>
+		<element type="iStateReligionEffectModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="iReligiousBuildingCommerceModifier" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bOtherReligionEffect" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bAllReligionEffect" minOccurs="0"/> <!-- Leoreth -->
+		<element type="bNoReligiousBuildingExpiration" minOccurs="0"/> <!-- Leoreth -->
 		<element type="iDistanceMaintenanceModifier" minOccurs="0"/>
 		<element type="iNumCitiesMaintenanceModifier" minOccurs="0"/>
 		<element type="iColonyMaintenanceModifier" minOccurs="0"/> <!-- Leoreth -->

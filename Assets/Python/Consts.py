@@ -1054,19 +1054,26 @@ iOilDepot, iCinema, iHospital, iSupermarket, iPublicTransportation, iDepartmentS
 iWaterworks, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iContainerTerminal, iNuclearPlant, iDiagnosticsCenter, 
 iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm) = range(iNumBuildings)
 
-iNumReligiousBuildings = 40
+iNumReligiousBuildings = 60
 iFirstReligiousBuilding = iNumBuildings
 iNumBuildings += iNumReligiousBuildings
-(iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishShrine, iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxShrine, iCatholicTemple, iCatholicCathedral, 
-iCatholicMonastery, iCatholicShrine, iProtestantTemple, iProtestantCathedral, iProtestantMonastery, iProtestantShrine, iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicShrine, 
-iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduShrine, iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistShrine, iConfucianTemple, iConfucianCathedral, 
-iConfucianMonastery, iConfucianShrine, iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistShrine, iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianShrine) = range(iFirstReligiousBuilding, iNumBuildings)
+(iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishReliquary, iJewishHolySite, iJewishShrine, 
+iOrthodoxTemple, iOrthodoxCathedral, iOrthodoxMonastery, iOrthodoxReliquary, iOrthodoxHolySite, iOrthodoxShrine, 
+iCatholicTemple, iCatholicCathedral, iCatholicMonastery, iCatholicReliquary, iCatholicHolySite, iCatholicShrine, 
+iProtestantTemple, iProtestantCathedral, iProtestantMonastery, iProtestantReliquary, iProtestantHolySite, iProtestantShrine, 
+iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicReliquary, iIslamicHolySite, iIslamicShrine, 
+iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduReliquary, iHinduHolySite, iHinduShrine, 
+iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistReliquary, iBuddhistHolySite, iBuddhistShrine, 
+iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianReliquary, iConfucianHolySite, iConfucianShrine, 
+iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistReliquary, iTaoistHolySite, iTaoistShrine, 
+iZoroastrianTemple, iZoroastrianCathedral, iZoroastrianMonastery, iZoroastrianReliquary, iZoroastrianHolySite, iZoroastrianShrine) = range(iFirstReligiousBuilding, iNumBuildings)
 
-iNumNationalWonders = 19
+iNumNationalWonders = 26
 iFirstNationalWonder = iNumBuildings
 iNumBuildings += iNumNationalWonders
-(iAcademy, iAdministrativeCenter, iManufactory, iArmoury, iMuseum, iStockExchange, iTradingCompanyBuilding, iIberianTradingCompanyBuilding, iNationalMonument, iNationalTheatre, 
-iNationalGallery, iNationalCollege, iMilitaryAcademy, iSecretService, iIronworks, iRedCross, iNationalPark, iCentralBank, iSpaceport) = range(iFirstNationalWonder, iNumBuildings)
+(iAcademy, iAdministrativeCenter, iManufactory, iArmoury, iMuseum, iStockExchange, iCourt, iTomb, iArchive, iArch, 
+iMint, iSanctuary, iCouncil, iTradingCompanyBuilding, iIberianTradingCompanyBuilding, iNationalMonument, iNationalTheatre, iNationalGallery, iNationalCollege, iMilitaryAcademy, 
+iSecretService, iIronworks, iRedCross, iNationalPark, iCentralBank, iSpaceport) = range(iFirstNationalWonder, iNumBuildings)
 
 iNumGreatWonders = 140 # different from DLL constant because that includes national wonders
 iFirstWonder = iNumBuildings

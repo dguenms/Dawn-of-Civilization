@@ -49,7 +49,7 @@ CvCity::CvCity()
 	m_aiProductionToCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	m_aiBuildingCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiSpecialistCommerce = new int[NUM_COMMERCE_TYPES];
-	m_aiReligionCommerce = new int[NUM_COMMERCE_TYPES];
+	m_aiReligionBuildingCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCorporationCommerce = new int[NUM_COMMERCE_TYPES];
 	m_aiCommerceRateModifier = new int[NUM_COMMERCE_TYPES];
 	m_aiPowerCommerceRateModifier = new int[NUM_COMMERCE_TYPES]; // Leoreth
@@ -91,6 +91,7 @@ CvCity::CvCity()
 	m_paiImprovementFreeSpecialists = NULL;
 	m_paiReligionInfluence = NULL;
 	m_paiStateReligionHappiness = NULL;
+	m_paiReligionTradeRouteModifier = NULL; // Leoreth
 	m_paiUnitCombatFreeExperience = NULL;
 	m_paiFreePromotionCount = NULL;
 	m_paiNumRealBuilding = NULL;
@@ -104,6 +105,8 @@ CvCity::CvCity()
 
 	// Leoreth
 	m_ppaiBonusYield = NULL;
+	m_ppaiStateReligionSpecialistCount = NULL;
+	m_ppaiStateReligionCommerceRateModifier = NULL;
 
 	m_paTradeCities = NULL;
 
@@ -148,7 +151,7 @@ CvCity::~CvCity()
 	SAFE_DELETE_ARRAY(m_aiProductionToCommerceModifier);
 	SAFE_DELETE_ARRAY(m_aiBuildingCommerce);
 	SAFE_DELETE_ARRAY(m_aiSpecialistCommerce);
-	SAFE_DELETE_ARRAY(m_aiReligionCommerce);
+	SAFE_DELETE_ARRAY(m_aiReligionBuildingCommerce);
 	SAFE_DELETE_ARRAY(m_aiCorporationCommerce);
 	SAFE_DELETE_ARRAY(m_aiCommerceRateModifier);
 	SAFE_DELETE_ARRAY(m_aiPowerCommerceRateModifier); // Leoreth
@@ -438,6 +441,7 @@ void CvCity::uninit()
 	SAFE_DELETE_ARRAY(m_paiImprovementFreeSpecialists);
 	SAFE_DELETE_ARRAY(m_paiReligionInfluence);
 	SAFE_DELETE_ARRAY(m_paiStateReligionHappiness);
+	SAFE_DELETE_ARRAY(m_paiReligionTradeRouteModifier); // Leoreth
 	SAFE_DELETE_ARRAY(m_paiUnitCombatFreeExperience);
 	SAFE_DELETE_ARRAY(m_paiFreePromotionCount);
 	SAFE_DELETE_ARRAY(m_paiNumRealBuilding);
@@ -457,6 +461,24 @@ void CvCity::uninit()
 			SAFE_DELETE_ARRAY(m_ppaiBonusYield[i]);
 		}
 		SAFE_DELETE_ARRAY(m_ppaiBonusYield);
+	}
+
+	if (m_ppaiStateReligionSpecialistCount != NULL)
+	{
+		for (int i = 0; i < GC.getNumReligionInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiStateReligionSpecialistCount[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiStateReligionSpecialistCount);
+	}
+
+	if (m_ppaiStateReligionCommerceRateModifier != NULL)
+	{
+		for (int i = 0; i < GC.getNumReligionInfos(); i++)
+		{
+			SAFE_DELETE_ARRAY(m_ppaiStateReligionCommerceRateModifier[i]);
+		}
+		SAFE_DELETE_ARRAY(m_ppaiStateReligionCommerceRateModifier);
 	}
 
 	SAFE_DELETE_ARRAY(m_paTradeCities);
@@ -648,7 +670,7 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 		m_aiProductionToCommerceModifier[iI] = 0;
 		m_aiBuildingCommerce[iI] = 0;
 		m_aiSpecialistCommerce[iI] = 0;
-		m_aiReligionCommerce[iI] = 0;
+		m_aiReligionBuildingCommerce[iI] = 0;
 		m_aiCorporationCommerce[iI] = 0;
 		m_aiCommerceRateModifier[iI] = 0;
 		m_aiPowerCommerceRateModifier[iI] = 0; // Leoreth
@@ -789,11 +811,13 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 
 		m_paiReligionInfluence = new int[GC.getNumReligionInfos()];
 		m_paiStateReligionHappiness = new int[GC.getNumReligionInfos()];
+		m_paiReligionTradeRouteModifier = new int[GC.getNumReligionInfos()];
 		m_pabHasReligion = new bool[GC.getNumReligionInfos()];
 		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
 		{
 			m_paiReligionInfluence[iI] = 0;
 			m_paiStateReligionHappiness[iI] = 0;
+			m_paiReligionTradeRouteModifier[iI] = 0; // Leoreth
 			m_pabHasReligion[iI] = false;
 		}
 
@@ -832,6 +856,28 @@ void CvCity::reset(int iID, PlayerTypes eOwner, int iX, int iY, bool bConstructo
 			for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 			{
 				m_ppaiBonusYield[iI][iJ] = 0;
+			}
+		}
+
+		// Leoreth
+		m_ppaiStateReligionSpecialistCount = new int*[GC.getNumReligionInfos()];
+		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			m_ppaiStateReligionSpecialistCount[iI] = new int[GC.getNumSpecialistInfos()];
+			for (iJ = 0; iJ < GC.getNumSpecialistInfos(); iJ++)
+			{
+				m_ppaiStateReligionSpecialistCount[iI][iJ] = 0;
+			}
+		}
+
+		// Leoreth
+		m_ppaiStateReligionCommerceRateModifier = new int* [GC.getNumReligionInfos()];
+		for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			m_ppaiStateReligionCommerceRateModifier[iI] = new int[NUM_COMMERCE_TYPES];
+			for (iJ = 0; iJ < NUM_COMMERCE_TYPES; iJ++)
+			{
+				m_ppaiStateReligionCommerceRateModifier[iI][iJ] = 0;
 			}
 		}
 
@@ -1365,7 +1411,7 @@ void CvCity::doTurn()
 			FAssert(getBuildingCommerce((CommerceTypes)iI) >= 0);
 			int iSpecialistCommerce = getSpecialistCommerce((CommerceTypes)iI);
 			FAssert(getSpecialistCommerce((CommerceTypes)iI) >= 0);
-			FAssert(getReligionCommerce((CommerceTypes)iI) >= 0);
+			FAssert(getReligionBuildingCommerce((CommerceTypes)iI) >= 0);
 			FAssert(getCorporationCommerce((CommerceTypes)iI) >= 0);
 			FAssert(GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce((CommerceTypes)iI) >= 0);
 		}
@@ -4523,9 +4569,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			changeBuildingGoodHealth(iChange);
 		}
 
-		if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
+		ReligionTypes eReligion = (ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType();
+		if (eReligion != NO_RELIGION)
 		{
-			changeStateReligionHappiness(((ReligionTypes)(GC.getBuildingInfo(eBuilding).getReligionType())), (GC.getBuildingInfo(eBuilding).getStateReligionHappiness() * iChange));
+			changeStateReligionHappiness(eReligion, GC.getBuildingInfo(eBuilding).getStateReligionHappiness() * iChange);
+			changeReligionTradeRouteModifier(eReligion, GC.getBuildingInfo(eBuilding).getReligionTradeRouteModifier() * iChange);
+
+			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
+			{
+				changeStateReligionSpecialistCount(eReligion, (SpecialistTypes)iI, GC.getBuildingInfo(eBuilding).getStateReligionSpecialistCount((SpecialistTypes)iI));
+			}
+
+			for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
+			{
+				changeStateReligionCommerceRateModifier(eReligion, (CommerceTypes)iI, GC.getBuildingInfo(eBuilding).getStateReligionCommerceRateModifier((CommerceTypes)iI));
+			}
 		}
 
 		changeMilitaryProductionModifier(GC.getBuildingInfo(eBuilding).getMilitaryProductionModifier() * iChange);
@@ -5002,6 +5060,12 @@ void CvCity::processPlayerBuilding(BuildingTypes eBuilding, int iChange)
 	{
 		changeHealRate(10 * iChange);
 	}
+
+	// Sanctuary
+	else if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() == SPECIALBUILDING_SANCTUARY)
+	{
+		changeBuildingCommerceChange((BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_PAGAN_TEMPLE"), COMMERCE_GOLD, iChange);
+	}
 }
 
 
@@ -5020,6 +5084,14 @@ void CvCity::processPlayerBuildingEffects(int iChange)
 	processPlayerBuildingEffect(HIMEJI_CASTLE, iChange);
 	processPlayerBuildingEffect(OLD_SYNAGOGUE, iChange);
 	processPlayerBuildingEffect(LAS_LAJAS_SANCTUARY, iChange);
+
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (GC.getBuildingInfo((BuildingTypes)iI).getSpecialBuildingType() == SPECIALBUILDING_SANCTUARY)
+		{
+			processPlayerBuildingEffect((BuildingTypes)iI, iChange);
+		}
+	}
 }
 
 
@@ -7918,13 +7990,8 @@ int CvCity::getBuildingHappiness(BuildingTypes eBuilding) const
 
 	iHappiness += GC.getBuildingInfo(eBuilding).getCultureHappiness() * getCultureLevel();
 
-	if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
-	{
-		if (GC.getBuildingInfo(eBuilding).getReligionType() == GET_PLAYER(getOwnerINLINE()).getStateReligion())
-		{
-			iHappiness += GC.getBuildingInfo(eBuilding).getStateReligionHappiness();
-		}
-	}
+	ReligionTypes eReligion = (ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType();
+	iHappiness += GC.getBuildingInfo(eBuilding).getStateReligionHappiness() * getReligionEffectModifier(eReligion) / 100;
 
 	iHappiness += GET_PLAYER(getOwnerINLINE()).getExtraBuildingHappiness(eBuilding);
 
@@ -8076,10 +8143,8 @@ int CvCity::getAdditionalHappinessByBuilding(BuildingTypes eBuilding, int& iGood
 	addGoodOrBad(kBuilding.getGlobalHappiness(), iGood, iBad);
 
 	// Religion
-	if (kBuilding.getReligionType() != NO_RELIGION && kBuilding.getReligionType() == GET_PLAYER(getOwnerINLINE()).getStateReligion())
-	{
-		iGood += kBuilding.getStateReligionHappiness();
-	}
+	ReligionTypes eReligion = (ReligionTypes)kBuilding.getReligionType();
+	iGood += kBuilding.getStateReligionHappiness() * getReligionEffectModifier(eReligion) / 100;
 
 	// Bonus
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
@@ -8560,10 +8625,7 @@ int CvCity::getReligionHappiness(ReligionTypes eReligion) const
 		}
 		else
 		{
-			// Leoreth: no religion unhappiness from syncretic pairs Hinduism/Buddhism and Confucianism/Taoism
-			bool bSyncretism = ((eStateReligion == HINDUISM && eReligion == BUDDHISM) || (eStateReligion == BUDDHISM && eReligion == HINDUISM) || (eStateReligion == CONFUCIANISM && eReligion == TAOISM) || (eStateReligion == TAOISM && eReligion == CONFUCIANISM));
-			if (!bSyncretism)
-				iHappiness += GET_PLAYER(getOwnerINLINE()).getNonStateReligionHappiness();
+			iHappiness += GET_PLAYER(getOwnerINLINE()).getNonStateReligionHappiness();
 		}
 	}
 
@@ -9924,6 +9986,49 @@ void CvCity::changeBonusYield(BonusTypes eBonus, YieldTypes eYield, int iChange)
 	}
 }
 
+
+// Leoreth
+int CvCity::getStateReligionSpecialistCount(ReligionTypes eReligion, SpecialistTypes eSpecialist) const
+{
+	return m_ppaiStateReligionSpecialistCount[eReligion][eSpecialist];
+}
+
+
+// Leoreth
+void CvCity::setStateReligionSpecialistCount(ReligionTypes eReligion, SpecialistTypes eSpecialist, int iNewValue)
+{
+	m_ppaiStateReligionSpecialistCount[eReligion][eSpecialist] = iNewValue;
+}
+
+
+// Leoreth
+void CvCity::changeStateReligionSpecialistCount(ReligionTypes eReligion, SpecialistTypes eSpecialist, int iChange)
+{
+	m_ppaiStateReligionSpecialistCount[eReligion][eSpecialist] += iChange;
+}
+
+
+// Leoreth
+int CvCity::getStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce) const
+{
+	return m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce];
+}
+
+
+// Leoreth
+void CvCity::setStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce, int iNewValue)
+{
+	m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce] = iNewValue;
+}
+
+
+// Leoreth
+void CvCity::changeStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce, int iChange)
+{
+	m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce] += iChange;
+}
+
+
 // BUG - Building Additional Yield - start
 /*
  * Returns the total additional yield that adding one of the given buildings will provide.
@@ -10527,6 +10632,15 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			}
 		}
 
+		// Leoreth: religion trade modifier
+		for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+		{
+			if (pOtherCity->isHasReligion((ReligionTypes)iI))
+			{
+				iModifier += getReligionTradeRouteModifier((ReligionTypes)iI);
+			}
+		}
+
 		// Leoreth: new distance modifier
 		iModifier += getDistanceTradeModifier(pOtherCity);
 
@@ -10925,7 +11039,7 @@ int CvCity::getBaseCommerceRateTimes100(CommerceTypes eIndex) const
 	iBaseCommerceRate = getCommerceFromPercent(eIndex, getYieldRate(YIELD_COMMERCE) * 100);
 
 	iBaseCommerceRate += 100 * ((getSpecialistPopulation() + getNumGreatPeople() - countNoGlobalEffectsFreeSpecialists()) * GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCommerce(eIndex));
-	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
+	iBaseCommerceRate += 100 * (getBuildingCommerce(eIndex) + getSpecialistCommerce(eIndex) + getReligionBuildingCommerce(eIndex) + getCorporationCommerce(eIndex) + GET_PLAYER(getOwnerINLINE()).getFreeCityCommerce(eIndex));
 	iBaseCommerceRate += 100 * countSatellites() * GET_PLAYER(getOwnerINLINE()).getSatelliteExtraCommerce(eIndex);
 
 	// Leoreth: Himeji Castle effect
@@ -10967,6 +11081,12 @@ int CvCity::getTotalCommerceRateModifier(CommerceTypes eIndex) const
 	if (isPower())
 	{
 		iTotalModifier += getPowerCommerceRateModifier(eIndex);
+	}
+
+	// Leoreth
+	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		iTotalModifier += getStateReligionCommerceRateModifier((ReligionTypes)iI, eIndex) * getReligionEffectModifier((ReligionTypes)iI) / 100;
 	}
 
 	// Leoreth
@@ -11090,6 +11210,8 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 					{
 						iCommerce += GET_PLAYER(getOwnerINLINE()).getStateReligionBuildingCommerce(eIndex) * getNumActiveBuilding(eBuilding);
 					}
+
+					iCommerce += GET_PLAYER(getOwnerINLINE()).getReligionBuildingCommerce((ReligionTypes)GC.getBuildingInfo(eBuilding).getReligionType(), eIndex) * getNumActiveBuilding(eBuilding);
 				}
 				
 				// modified by Leoreth to account for the Dome of the Rock effect
@@ -11110,6 +11232,13 @@ int CvCity::getBuildingCommerceByBuilding(CommerceTypes eIndex, BuildingTypes eB
 				if (GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce() != NO_CORPORATION)
 				{
 					iCommerce += (GC.getCorporationInfo((CorporationTypes)(GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce())).getHeadquarterCommerce(eIndex) * GC.getGameINLINE().countCorporationLevels((CorporationTypes)(GC.getBuildingInfo(eBuilding).getGlobalCorporationCommerce()))) * getNumActiveBuilding(eBuilding);
+				}
+
+				// Leoreth: religious building commerce modifier
+				if (GC.getBuildingInfo(eBuilding).getReligionType() != NO_RELIGION)
+				{
+					iCommerce *= 100 + GET_PLAYER(getOwnerINLINE()).getReligiousBuildingCommerceModifier();
+					iCommerce /= 100;
 				}
 			}
 
@@ -11210,6 +11339,8 @@ int CvCity::getAdditionalBaseCommerceRateByBuildingImpl(CommerceTypes eIndex, Bu
 			{
 				iExtraRate += GET_PLAYER(getOwnerINLINE()).getStateReligionBuildingCommerce(eIndex);
 			}
+
+			iExtraRate += GET_PLAYER(getOwnerINLINE()).getReligionBuildingCommerce((ReligionTypes)kBuilding.getReligionType(), eIndex);
 		}
 		if (kBuilding.getGlobalReligionCommerce() != NO_RELIGION)
 		{
@@ -11549,11 +11680,11 @@ int CvCity::getAdditionalBaseCommerceRateBySpecialistImpl(CommerceTypes eIndex, 
 // BUG - Specialist Additional Commerce - end
 
 
-int CvCity::getReligionCommerce(CommerceTypes eIndex) const												 
+int CvCity::getReligionBuildingCommerce(CommerceTypes eIndex) const												 
 {
 	FAssertMsg(eIndex >= 0, "eIndex expected to be >= 0");
 	FAssertMsg(eIndex < NUM_COMMERCE_TYPES, "eIndex expected to be < NUM_COMMERCE_TYPES");
-	return m_aiReligionCommerce[eIndex];
+	return m_aiReligionBuildingCommerce[eIndex];
 }
 
 
@@ -11598,10 +11729,10 @@ void CvCity::updateReligionCommerce(CommerceTypes eIndex)
 		iNewReligionCommerce += getReligionCommerceByReligion(eIndex, ((ReligionTypes)iI));
 	}
 
-	if (getReligionCommerce(eIndex) != iNewReligionCommerce)
+	if (getReligionBuildingCommerce(eIndex) != iNewReligionCommerce)
 	{
-		m_aiReligionCommerce[eIndex] = iNewReligionCommerce;
-		FAssert(getReligionCommerce(eIndex) >= 0);
+		m_aiReligionBuildingCommerce[eIndex] = iNewReligionCommerce;
+		FAssert(getReligionBuildingCommerce(eIndex) >= 0);
 
 		updateCommerce(eIndex);
 	}
@@ -13383,6 +13514,12 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex, bool bIgnoreCivic) con
 	// Leoreth: extra specialist slots
 	iMaxSpecialistCount += GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCount(eIndex);
 
+	// Leoreth: state religion specialist slots
+	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		iMaxSpecialistCount += getStateReligionSpecialistCount((ReligionTypes)iI, eIndex) * getReligionEffectModifier((ReligionTypes)iI) / 100;
+	}
+
 	return iMaxSpecialistCount;
 }
 
@@ -13601,12 +13738,12 @@ void CvCity::spreadReligionInfluence(ReligionTypes eReligion, int iRange, int iC
 
 int CvCity::getCurrentStateReligionHappiness() const
 {
-	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION)
+	int iHappiness = 0;
+	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
-		return getStateReligionHappiness(GET_PLAYER(getOwnerINLINE()).getStateReligion());
+		iHappiness += getStateReligionHappiness((ReligionTypes)iI) * getReligionEffectModifier((ReligionTypes)iI) / 100;
 	}
-
-	return 0;
+	return iHappiness;
 }
 
 
@@ -13629,6 +13766,23 @@ void CvCity::changeStateReligionHappiness(ReligionTypes eIndex, int iChange)
 
 		AI_setAssignWorkDirty(true);
 	}
+}
+
+
+int CvCity::getReligionTradeRouteModifier(ReligionTypes eReligion) const
+{
+	return m_paiReligionTradeRouteModifier[eReligion];
+}
+
+
+void CvCity::changeReligionTradeRouteModifier(ReligionTypes eReligion, int iChange)
+{
+	if (iChange == 0)
+		return;
+
+	m_paiReligionTradeRouteModifier[eReligion] += iChange;
+
+	updateTradeRoutes();
 }
 
 
@@ -16304,7 +16458,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiProductionToCommerceModifier);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiBuildingCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiSpecialistCommerce);
-	pStream->Read(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
+	pStream->Read(NUM_COMMERCE_TYPES, m_aiReligionBuildingCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
 	pStream->Read(NUM_COMMERCE_TYPES, m_aiPowerCommerceRateModifier); // Leoreth
@@ -16350,6 +16504,7 @@ void CvCity::read(FDataStreamBase* pStream)
 	pStream->Read(GC.getNumImprovementInfos(), m_paiImprovementHealthPercentChange);
 	pStream->Read(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Read(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
+	pStream->Read(GC.getNumReligionInfos(), m_paiReligionTradeRouteModifier); // Leoreth
 	pStream->Read(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
 	pStream->Read(GC.getNumPromotionInfos(), m_paiFreePromotionCount);
 	pStream->Read(GC.getNumBuildingInfos(), m_paiNumRealBuilding);
@@ -16363,6 +16518,18 @@ void CvCity::read(FDataStreamBase* pStream)
 	for (int i = 0; i < GC.getNumBonusInfos(); i++)
 	{
 		pStream->Read(NUM_YIELD_TYPES, m_ppaiBonusYield[i]);
+	}
+
+	// Leoreth
+	for (int i = 0; i < GC.getNumReligionInfos(); i++)
+	{
+		pStream->Read(GC.getNumSpecialistInfos(), m_ppaiStateReligionSpecialistCount[i]);
+	}
+
+	// Leoreth
+	for (int i = 0; i < GC.getNumReligionInfos(); i++)
+	{
+		pStream->Read(NUM_COMMERCE_TYPES, m_ppaiStateReligionCommerceRateModifier[i]);
 	}
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
@@ -16614,7 +16781,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiProductionToCommerceModifier);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiBuildingCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiSpecialistCommerce);
-	pStream->Write(NUM_COMMERCE_TYPES, m_aiReligionCommerce);
+	pStream->Write(NUM_COMMERCE_TYPES, m_aiReligionBuildingCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCorporationCommerce);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiCommerceRateModifier);
 	pStream->Write(NUM_COMMERCE_TYPES, m_aiPowerCommerceRateModifier); // Leoreth
@@ -16660,6 +16827,7 @@ void CvCity::write(FDataStreamBase* pStream)
 	pStream->Write(GC.getNumImprovementInfos(), m_paiImprovementHealthPercentChange);
 	pStream->Write(GC.getNumReligionInfos(), m_paiReligionInfluence);
 	pStream->Write(GC.getNumReligionInfos(), m_paiStateReligionHappiness);
+	pStream->Write(GC.getNumReligionInfos(), m_paiReligionTradeRouteModifier);
 	pStream->Write(GC.getNumUnitCombatInfos(), m_paiUnitCombatFreeExperience);
 	pStream->Write(GC.getNumPromotionInfos(), m_paiFreePromotionCount);
 	pStream->Write(GC.getNumBuildingInfos(), m_paiNumRealBuilding);
@@ -16673,6 +16841,18 @@ void CvCity::write(FDataStreamBase* pStream)
 	for (iI = 0; iI < GC.getNumBonusInfos(); iI++)
 	{
 		pStream->Write(NUM_YIELD_TYPES, m_ppaiBonusYield[iI]);
+	}
+
+	// Leoreth
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		pStream->Write(GC.getNumSpecialistInfos(), m_ppaiStateReligionSpecialistCount[iI]);
+	}
+
+	// Leoreth
+	for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		pStream->Write(NUM_COMMERCE_TYPES, m_ppaiStateReligionCommerceRateModifier[iI]);
 	}
 
 	for (iI=0;iI<GC.getDefineINT("MAX_TRADE_ROUTES");iI++)
@@ -20134,4 +20314,33 @@ int CvCity::getTempHappiness() const
 	int iHappinessTurns = getTurns(GC.getDefineINT("TEMP_HAPPY_TURNS"));
 
 	return (getHappinessTimer() + iHappinessTurns - 1) / iHappinessTurns;
+}
+
+bool CvCity::isStateReligionEffect(ReligionTypes eReligion) const
+{
+	if (eReligion == NO_RELIGION)
+		return false;
+
+	if (GET_PLAYER(getOwnerINLINE()).isAllReligionEffect())
+		return true;
+
+	ReligionTypes eStateReligion = GET_PLAYER(getOwnerINLINE()).getStateReligion();
+	if (eStateReligion == NO_RELIGION)
+		return false;
+
+	if (eStateReligion == eReligion)
+		return true;
+
+	if (GET_PLAYER(getOwnerINLINE()).isOtherReligionEffect() && isHasReligion(eStateReligion))
+		return true;
+
+	return false;
+}
+
+int CvCity::getReligionEffectModifier(ReligionTypes eReligion) const
+{
+	if (!isStateReligionEffect(eReligion))
+		return 0;
+
+	return std::max(0, GET_PLAYER(getOwnerINLINE()).getReligionEffectModifier(eReligion));
 }

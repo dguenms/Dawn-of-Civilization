@@ -560,6 +560,7 @@ void CyInfoPythonInterface1()
 		.def("getCultureCommerceModifier", &CvBuildingInfo::getCultureCommerceModifier, "int (CommerceTypes eCommerce)")
 		.def("getCultureGreatPeopleRateModifier", &CvBuildingInfo::getCultureGreatPeopleRateModifier, "int ()")
 		.def("getCultureTradeRouteModifier", &CvBuildingInfo::getCultureTradeRouteModifier, "int ()")
+		.def("getStateReligionCommerceRateModifier", &CvBuildingInfo::getStateReligionCommerceRateModifier, "int (CommerceTypes eCommerce)")
 
 		.def("isTeamShare", &CvBuildingInfo::isTeamShare, "bool ()")
 		.def("isWater", &CvBuildingInfo::isWater, "bool ()")

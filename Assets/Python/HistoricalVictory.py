@@ -406,7 +406,7 @@ dGoals = {
 		),
 	),
 	iKorea: (
-		BuildingCount((iBuddhistCathedral, 1), (iConfucianCathedral, 1), by=1000),
+		BuildingCount((iBuddhistHolySite, 1), (iConfucianHolySite, 1), by=1000),
 		FirstDiscover(iEducation, iPrinting, iFirearms, iStatecraft),
 		SunkShips(20),
 	),
@@ -416,7 +416,7 @@ dGoals = {
 			CultureAmount(12000, by=1400),
 		),
 		All(
-			BuildingCount((iHinduMonastery, 4), (iBuddhistMonastery, 4)),
+			BuildingCount((iHinduHolySite, 1), (iHinduHolySite, 1)),
 			Wonder(iWatPreahPisnulok),
 			at=1200,
 		),

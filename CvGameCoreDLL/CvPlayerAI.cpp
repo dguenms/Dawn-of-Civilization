@@ -10639,6 +10639,37 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 		iValue += ((kCivic.getStateReligionUnitProductionModifier() * iHighestReligionCount) / 4);
 		iValue += ((kCivic.getStateReligionBuildingProductionModifier() * iHighestReligionCount * 2) / 5);
 		iValue += (kCivic.getStateReligionFreeExperience() * iHighestReligionCount * ((bWarPlan) ? 6 : 2));
+
+		iValue += kCivic.getStateReligionEffectModifier() * iHighestReligionCount * 3 / 100;
+		iValue += kCivic.getReligiousBuildingCommerceModifier() * iHighestReligionCount * 2 / 100;
+	}
+
+	if (eBestReligion != NO_RELIGION)
+	{
+		if (kCivic.isOtherReligionEffect())
+		{
+			int iOtherReligionCount = 0;
+			int iLoop;
+			for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+			{
+				if (pLoopCity->isHasReligion(eBestReligion))
+					iOtherReligionCount += pLoopCity->getReligionCount() - 1;
+			}
+
+			iValue += iOtherReligionCount * 3;
+		}
+
+		if (kCivic.isAllReligionEffect())
+		{
+			int iReligionCount = 0;
+			for (iI = 0; iI < GC.getNumReligionInfos(); iI++)
+			{
+				if (eBestReligion != iI)
+					iReligionCount += countReligionCities((ReligionTypes)iI);
+			}
+
+			iValue += iReligionCount * 3;
+		}
 	}
 
 	// Leoreth: no state religion change anarchy
@@ -17117,7 +17148,7 @@ void CvPlayerAI::AI_calculateAverages() const
 		for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 		{
 			iExtraCommerce +=((pLoopCity->getSpecialistPopulation() + pLoopCity->getNumGreatPeople()) * getSpecialistExtraCommerce((CommerceTypes)iI));
-			iExtraCommerce += (pLoopCity->getBuildingCommerce((CommerceTypes)iI) + pLoopCity->getSpecialistCommerce((CommerceTypes)iI) + pLoopCity->getReligionCommerce((CommerceTypes)iI) + getFreeCityCommerce((CommerceTypes)iI));
+			iExtraCommerce += (pLoopCity->getBuildingCommerce((CommerceTypes)iI) + pLoopCity->getSpecialistCommerce((CommerceTypes)iI) + pLoopCity->getReligionBuildingCommerce((CommerceTypes)iI) + getFreeCityCommerce((CommerceTypes)iI));
 		}
 		iTotalCommerce += iExtraCommerce;
 

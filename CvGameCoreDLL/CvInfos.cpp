@@ -5786,6 +5786,8 @@ m_iCulturedCityFreeSpecialists(0), // Leoreth
 m_iCapitalBuildingProductionModifier(0), // Leoreth
 m_iShrineIncomeLimitChange(0), // Leoreth
 m_iOccupationTimeChange(0), // Leoreth
+m_iStateReligionEffectModifier(0), // Leoreth
+m_iReligiousBuildingCommerceModifier(0), // Leoreth
 m_bMilitaryFoodProduction(false),
 m_bNoUnhealthyPopulation(false),
 m_bBuildingOnlyHealthy(false),
@@ -5800,6 +5802,9 @@ m_bNoSlavery(false), // Leoreth
 m_bColonialSlavery(false), // Leoreth
 m_bFreeImprovementUpgrade(false), // Leoreth
 m_bNoStateReligionAnarchy(false), // Leoreth
+m_bOtherReligionEffect(false), // Leoreth
+m_bAllReligionEffect(false), // Leoreth
+m_bNoReligiousBuildingExpiration(false), // Leoreth
 m_piYieldModifier(NULL),
 m_piCapitalYieldModifier(NULL),
 m_piTradeYieldModifier(NULL),
@@ -6408,9 +6413,34 @@ bool CvCivicInfo::isNoStateReligionAnarchy() const
 	return m_bNoStateReligionAnarchy;
 }
 
+bool CvCivicInfo::isOtherReligionEffect() const
+{
+	return m_bOtherReligionEffect;
+}
+
+bool CvCivicInfo::isAllReligionEffect() const
+{
+	return m_bAllReligionEffect;
+}
+
+bool CvCivicInfo::isNoReligiousBuildingExpiration() const
+{
+	return m_bNoReligiousBuildingExpiration;
+}
+
 int CvCivicInfo::getOccupationTimeChange() const
 {
 	return m_iOccupationTimeChange;
+}
+
+int CvCivicInfo::getStateReligionEffectModifier() const
+{
+	return m_iStateReligionEffectModifier;
+}
+
+int CvCivicInfo::getReligiousBuildingCommerceModifier() const
+{
+	return m_iReligiousBuildingCommerceModifier;
 }
 
 void CvCivicInfo::read(FDataStreamBase* stream)
@@ -6470,6 +6500,8 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iCapitalBuildingProductionModifier); // Leoreth
 	stream->Read(&m_iShrineIncomeLimitChange); // Leoreth
 	stream->Read(&m_iOccupationTimeChange); // Leoreth
+	stream->Read(&m_iStateReligionEffectModifier); // Leoreth
+	stream->Read(&m_iReligiousBuildingCommerceModifier); // Leoreth
 
 	stream->Read(&m_bMilitaryFoodProduction);
 	stream->Read(&m_bNoUnhealthyPopulation);
@@ -6485,6 +6517,9 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bColonialSlavery); // Leoreth
 	stream->Read(&m_bFreeImprovementUpgrade); // Leoreth
 	stream->Read(&m_bNoStateReligionAnarchy); // Leoreth
+	stream->Read(&m_bOtherReligionEffect); // Leoreth
+	stream->Read(&m_bAllReligionEffect); // Leoreth
+	stream->Read(&m_bNoReligiousBuildingExpiration); // Leoreth
 
 	// Arrays
 
@@ -6657,6 +6692,8 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iCapitalBuildingProductionModifier); // Leoreth
 	stream->Write(m_iShrineIncomeLimitChange); // Leoreth
 	stream->Write(m_iOccupationTimeChange); // Leoreth
+	stream->Write(m_iStateReligionEffectModifier); // Leoreth
+	stream->Write(m_iReligiousBuildingCommerceModifier); // Leoreth
 
 	stream->Write(m_bMilitaryFoodProduction);
 	stream->Write(m_bNoUnhealthyPopulation);
@@ -6672,6 +6709,9 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bColonialSlavery); // Leoreth
 	stream->Write(m_bFreeImprovementUpgrade); // Leoreth
 	stream->Write(m_bNoStateReligionAnarchy); // Leoreth
+	stream->Write(m_bOtherReligionEffect); // Leoreth
+	stream->Write(m_bAllReligionEffect); // Leoreth
+	stream->Write(m_bNoReligiousBuildingExpiration); // Leoreth
 
 	// Arrays
 
@@ -6777,6 +6817,9 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bSlavery, "bSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoSlavery, "bNoSlavery"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bColonialSlavery, "bColonialSlavery"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bOtherReligionEffect, "bOtherReligionEffect"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bAllReligionEffect, "bAllReligionEffect"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bNoReligiousBuildingExpiration, "bNoReligiousBuildingExpiration"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iStateReligionHappiness, "iStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iNonStateReligionHappiness, "iNonStateReligionHappiness");
 	pXML->GetChildXmlValByName(&m_iStateReligionUnitProductionModifier, "iStateReligionUnitProductionModifier");
@@ -6791,6 +6834,8 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iShrineIncomeLimitChange, "iShrineIncomeLimitChange"); // Leoreth
 	pXML->GetChildXmlValByName(&m_bNoStateReligionAnarchy, "bNoStateReligionAnarchy"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iOccupationTimeChange, "iOccupationTimeChange"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iStateReligionEffectModifier, "iStateReligionEffectModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iReligiousBuildingCommerceModifier, "iReligiousBuildingCommerceModifier"); // Leoreth
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"YieldModifiers"))
 	{
@@ -7380,6 +7425,9 @@ m_iAllCityDefenseModifier(0),
 m_iEspionageDefenseModifier(0),
 m_iMissionType(NO_MISSION),
 m_iVoteSourceType(NO_VOTESOURCE),
+m_iReligionTradeRouteModifier(0), // Leoreth
+m_iStateReligionEffectModifier(0), // Leoreth
+m_iStateReligionBuildingCommerceModifier(0), // Leoreth
 m_fVisibilityPriority(0.0f),
 m_bTeamShare(false),
 m_bWater(false),
@@ -7404,6 +7452,7 @@ m_bCenterInCity(false),
 m_bStateReligion(false),
 m_bAllowsNukes(false),
 m_bNoResistance(false), // Leoreth
+m_bOtherReligionEffect(false), // Leoreth
 m_piPrereqAndTechs(NULL),
 m_piPrereqOrBonuses(NULL),
 m_piProductionTraits(NULL),
@@ -7426,6 +7475,7 @@ m_piCultureCommerceModifier(NULL), // Leoreth
 m_piGlobalCommerceModifier(NULL),
 m_piSpecialistExtraCommerce(NULL),
 m_piStateReligionCommerce(NULL),
+m_piReligionCommerce(NULL), // Leoreth
 m_piCommerceHappiness(NULL),
 m_piReligionChange(NULL),
 m_piSpecialistCount(NULL),
@@ -7444,6 +7494,8 @@ m_piPrereqBuildingClassPercent(NULL), // Leoreth
 m_piReligionYieldChange(NULL), // Leoreth
 m_piImprovementHappinessPercent(NULL), // Leoreth
 m_piImprovementHealthPercent(NULL), // Leoreth
+m_piStateReligionSpecialistCount(NULL), // Leoreth
+m_piStateReligionCommerceModifier(NULL), // Leoreth
 m_pbCommerceFlexible(NULL),
 m_pbCommerceChangeOriginalOwner(NULL),
 m_pbBuildingClassNeededInCity(NULL),
@@ -7484,6 +7536,7 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piGlobalCommerceModifier);
 	SAFE_DELETE_ARRAY(m_piSpecialistExtraCommerce);
 	SAFE_DELETE_ARRAY(m_piStateReligionCommerce);
+	SAFE_DELETE_ARRAY(m_piReligionCommerce); // Leoreth
 	SAFE_DELETE_ARRAY(m_piCommerceHappiness);
 	SAFE_DELETE_ARRAY(m_piReligionChange);
 	SAFE_DELETE_ARRAY(m_piSpecialistCount);
@@ -7505,6 +7558,8 @@ CvBuildingInfo::~CvBuildingInfo()
 	SAFE_DELETE_ARRAY(m_piReligionYieldChange); // Leoreth
 	SAFE_DELETE_ARRAY(m_piImprovementHappinessPercent); // Leoreth
 	SAFE_DELETE_ARRAY(m_piImprovementHealthPercent); // Leoreth
+	SAFE_DELETE_ARRAY(m_piStateReligionSpecialistCount); // Leoreth
+	SAFE_DELETE_ARRAY(m_piStateReligionCommerceModifier); // Leoreth
 
 	if (m_ppaiSpecialistYieldChange != NULL)
 	{
@@ -8055,6 +8110,21 @@ int CvBuildingInfo::getVoteSourceType() const
 	return m_iVoteSourceType;
 }
 
+int CvBuildingInfo::getReligionTradeRouteModifier() const
+{
+	return m_iReligionTradeRouteModifier;
+}
+
+int CvBuildingInfo::getStateReligionEffectModifier() const
+{
+	return m_iStateReligionEffectModifier;
+}
+
+int CvBuildingInfo::getStateReligionBuildingCommerceModifier() const
+{
+	return m_iStateReligionBuildingCommerceModifier;
+}
+
 float CvBuildingInfo::getVisibilityPriority() const
 {
 	return m_fVisibilityPriority;
@@ -8412,6 +8482,16 @@ int* CvBuildingInfo::getStateReligionCommerceArray() const
 	return m_piStateReligionCommerce;
 }
 
+int CvBuildingInfo::getReligionCommerce(CommerceTypes eCommerce) const
+{
+	return m_piReligionCommerce ? m_piReligionCommerce[eCommerce] : -1;
+}
+
+int* CvBuildingInfo::getReligionCommerceArray() const
+{
+	return m_piReligionCommerce;
+}
+
 int CvBuildingInfo::getCommerceHappiness(int i) const
 {
 	FAssertMsg(i < NUM_COMMERCE_TYPES, "Index out of bounds");
@@ -8667,9 +8747,33 @@ bool CvBuildingInfo::isNoResistance() const
 }
 
 // Leoreth
+bool CvBuildingInfo::isOtherReligionEffect() const
+{
+	return m_bOtherReligionEffect;
+}
+
+// Leoreth
 BuildingClassTypes CvBuildingInfo::getBuildingClass() const
 {
 	return (BuildingClassTypes)getBuildingClassType();
+}
+
+// Leoreth
+int CvBuildingInfo::getStateReligionSpecialistCount(SpecialistTypes eSpecialist) const
+{
+	return m_piStateReligionSpecialistCount[eSpecialist];
+}
+
+// Leoreth
+int CvBuildingInfo::getStateReligionCommerceRateModifier(CommerceTypes eCommerce) const
+{
+	return m_piStateReligionCommerceModifier[eCommerce];
+}
+
+// Leoreth
+int* CvBuildingInfo::getStateReligionCommerceRateModifierArray() const
+{
+	return m_piStateReligionCommerceModifier;
 }
 
 const TCHAR* CvBuildingInfo::getButton() const
@@ -8827,6 +8931,9 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iEspionageDefenseModifier);
 	stream->Read(&m_iMissionType);
 	stream->Read(&m_iVoteSourceType);
+	stream->Read(&m_iReligionTradeRouteModifier); // Leoreth
+	stream->Read(&m_iStateReligionEffectModifier); // Leoreth
+	stream->Read(&m_iStateReligionBuildingCommerceModifier); // Leoreth
 
 	stream->Read(&m_fVisibilityPriority);
 
@@ -8853,6 +8960,7 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bStateReligion);
 	stream->Read(&m_bAllowsNukes);
 	stream->Read(&m_bNoResistance); // Leoreth
+	stream->Read(&m_bOtherReligionEffect); // Leoreth
 
 	stream->ReadString(m_szConstructSound);
 	stream->ReadString(m_szArtDefineTag);
@@ -8931,6 +9039,11 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piPowerCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piPowerCommerceModifier);
 
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piStateReligionCommerceModifier);
+	m_piStateReligionCommerceModifier = new int[NUM_COMMERCE_TYPES];
+	stream->Read(GC.getNumSpecialistInfos(), m_piStateReligionCommerceModifier);
+
 	SAFE_DELETE_ARRAY(m_piCultureCommerceModifier);
 	m_piCultureCommerceModifier = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piCultureCommerceModifier);
@@ -8947,6 +9060,10 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	m_piStateReligionCommerce = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piStateReligionCommerce);
 
+	SAFE_DELETE_ARRAY(m_piReligionCommerce);
+	m_piReligionCommerce = new int[NUM_COMMERCE_TYPES];
+	stream->Read(NUM_COMMERCE_TYPES, m_piReligionCommerce);
+
 	SAFE_DELETE_ARRAY(m_piCommerceHappiness);
 	m_piCommerceHappiness = new int[NUM_COMMERCE_TYPES];
 	stream->Read(NUM_COMMERCE_TYPES, m_piCommerceHappiness);
@@ -8962,6 +9079,11 @@ void CvBuildingInfo::read(FDataStreamBase* stream)
 	SAFE_DELETE_ARRAY(m_piFreeSpecialistCount);
 	m_piFreeSpecialistCount = new int[GC.getNumSpecialistInfos()];
 	stream->Read(GC.getNumSpecialistInfos(), m_piFreeSpecialistCount);
+
+	// Leoreth
+	SAFE_DELETE_ARRAY(m_piStateReligionSpecialistCount);
+	m_piStateReligionSpecialistCount = new int[GC.getNumSpecialistInfos()];
+	stream->Read(GC.getNumSpecialistInfos(), m_piStateReligionSpecialistCount);
 
 	SAFE_DELETE_ARRAY(m_piBonusHealthChanges);
 	m_piBonusHealthChanges = new int[GC.getNumBonusInfos()];
@@ -9209,6 +9331,9 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iEspionageDefenseModifier);
 	stream->Write(m_iMissionType);
 	stream->Write(m_iVoteSourceType);
+	stream->Write(m_iReligionTradeRouteModifier); // Leoreth
+	stream->Write(m_iStateReligionEffectModifier); // Leoreth
+	stream->Write(m_iStateReligionBuildingCommerceModifier); // Leoreth
 
 	stream->Write(m_fVisibilityPriority);
 
@@ -9235,6 +9360,7 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bStateReligion);
 	stream->Write(m_bAllowsNukes);
 	stream->Write(m_bNoResistance); // Leoreth
+	stream->Write(m_bOtherReligionEffect); // Leoreth
 
 	stream->WriteString(m_szConstructSound);
 	stream->WriteString(m_szArtDefineTag);
@@ -9258,14 +9384,17 @@ void CvBuildingInfo::write(FDataStreamBase* stream)
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceChangeDoubleTime);
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piPowerCommerceModifier);
+	stream->Write(NUM_COMMERCE_TYPES, m_piStateReligionCommerceModifier); // Leoreth
 	stream->Write(NUM_COMMERCE_TYPES, m_piCultureCommerceModifier); // Leoreth
 	stream->Write(NUM_COMMERCE_TYPES, m_piGlobalCommerceModifier);
 	stream->Write(NUM_COMMERCE_TYPES, m_piSpecialistExtraCommerce);
 	stream->Write(NUM_COMMERCE_TYPES, m_piStateReligionCommerce);
+	stream->Write(NUM_COMMERCE_TYPES, m_piReligionCommerce); // Leoreth
 	stream->Write(NUM_COMMERCE_TYPES, m_piCommerceHappiness);
 	stream->Write(GC.getNumReligionInfos(), m_piReligionChange);
 	stream->Write(GC.getNumSpecialistInfos(), m_piSpecialistCount);
 	stream->Write(GC.getNumSpecialistInfos(), m_piFreeSpecialistCount);
+	stream->Write(GC.getNumSpecialistInfos(), m_piStateReligionSpecialistCount); // Leoreth
 	stream->Write(GC.getNumBonusInfos(), m_piBonusHealthChanges);
 	stream->Write(GC.getNumBonusInfos(), m_piBonusHappinessChanges);
 	stream->Write(GC.getNumBonusInfos(), m_piBonusProductionModifier);
@@ -9517,6 +9646,7 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bCenterInCity, "bCenterInCity");
 	pXML->GetChildXmlValByName(&m_bStateReligion, "bStateReligion");
 	pXML->GetChildXmlValByName(&m_bNoResistance, "bNoResistance"); // Leoreth
+	pXML->GetChildXmlValByName(&m_bOtherReligionEffect, "bOtherReligionEffect"); // Leoreth
 	pXML->GetChildXmlValByName(&m_iAIWeight, "iAIWeight");
 	pXML->GetChildXmlValByName(&m_iProductionCost, "iCost");
 	pXML->GetChildXmlValByName(&m_iHurryCostModifier, "iHurryCostModifier");
@@ -9584,6 +9714,9 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iEspionageDefenseModifier, "iEspionageDefense");
 	pXML->GetChildXmlValByName(&m_iAssetValue, "iAsset");
 	pXML->GetChildXmlValByName(&m_iPowerValue, "iPower");
+	pXML->GetChildXmlValByName(&m_iReligionTradeRouteModifier, "iReligionTradeRouteModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iStateReligionEffectModifier, "iStateReligionEffectModifier"); // Leoreth
+	pXML->GetChildXmlValByName(&m_iStateReligionBuildingCommerceModifier, "iStateReligionBuildingCommerceModifier"); // Leoreth
 	pXML->GetChildXmlValByName(&m_fVisibilityPriority, "fVisibilityPriority");
 
 	// if we can set the current xml node to it's next sibling
@@ -9754,6 +9887,16 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_piPowerCommerceModifier, NUM_COMMERCE_TYPES);
 	}
 
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "StateReligionCommerceModifiers"))
+	{
+		pXML->SetCommerce(&m_piStateReligionCommerceModifier);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piStateReligionCommerceModifier, NUM_COMMERCE_TYPES);
+	}
+
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CultureCommerceModifiers"))
 	{
 		pXML->SetCommerce(&m_piCultureCommerceModifier);
@@ -9794,6 +9937,17 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 		pXML->InitList(&m_piStateReligionCommerce, NUM_COMMERCE_TYPES);
 	}
 
+	// Leoreth
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "ReligionCommerces"))
+	{
+		pXML->SetCommerce(&m_piReligionCommerce);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	else
+	{
+		pXML->InitList(&m_piReligionCommerce, NUM_COMMERCE_TYPES);
+	}
+
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CommerceHappinesses"))
 	{
 		pXML->SetCommerce(&m_piCommerceHappiness);
@@ -9808,6 +9962,9 @@ bool CvBuildingInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->SetVariableListTagPair(&m_piSpecialistCount, "SpecialistCounts", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 	pXML->SetVariableListTagPair(&m_piFreeSpecialistCount, "FreeSpecialistCounts", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
+
+	// Leoreth
+	pXML->SetVariableListTagPair(&m_piStateReligionSpecialistCount, "StateReligionSpecialistCounts", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
 
 	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(),"CommerceFlexibles"))
 	{

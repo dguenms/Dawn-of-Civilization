@@ -60,6 +60,34 @@ BUILDINGS
 * Bath: +1 health
 * Sewer: +1 health
 * Hospital: +1 health
+* Temple: +2 culture, +1 happiness, +1 happiness with state religion, +1 priest slot with state religion
+* Monastery: +3 culture, can train missionaries, +10% research with state religion, obsoletes with Psychology
+* Cathedral: +25% culture, +1 priest slot, +25% culture with state religion, +1 priest slot with state religion, +2 happiness with state religion
+* Shrine: +5 culture, +1 priest slot, +100% trade route yield with cities of same religion, +100% state religion effects of same religion, +1 gold from religious buildings of its religion, +1 priest slot with state religion
+
+NEW BUILDINGS
+* Reliquary (Doctrine): requires one Cathedral, +2 culture, +15% gold with state religion, +1 priest slot with state religion, obsoletes with Television
+
+NEW NATIONAL WONDERS
+* Holy Site: created by Great Prophet, requires four Monasteries, +4 culture, +1 priest slot, +50% trade route yield with cities of same religion, +100% state religion effects of same religion
+* Sanctuary (Priesthood): created by Great Prophet, requires Paganism, requires four Pagan Temples, +4 culture, +1 happiness, +1 priest slot, +1 gold from Pagan Temple
+* Court (Ceremony): requires Palace, +1 artist slot, obsoletes with Statecraft
+* Tomb (Divination): requires Palace, +1 priest slot, obsoletes with Theology
+* Mint (Contract): requires Palace, +1 merchant slot, obsoletes with Finance
+* School (Writing): requires Palace, +1 scientist slot, obsoletes with Academia
+* Arch (Mathematics): requires Palace, +1 engineer slot, obsoletes with Patronage
+* Council (Law): requires Palace, +1 statesman slot, obsoletes with Social Contract
+
+CIVICS
+* Republic: also +1 happiness from Mint, School, Council
+* Theocracy: +100% building state religion effects, +1 commerce from Priest
+* Deification: also +1 happiness from Tomb, Sanctuary
+* Syncretism: no anarchy from changing state religion, all religious buildings provide state religion effect if state religion is present, +2 food from Paddy Field, can train missionaries without Monastery
+* Fanaticism: +2 experience from state religion, +100% extra commerce from state religion buildings, no non-state religion spread, +1 unhappiness from non-state religions, religious buildings do not obsolete, +1 production from Priest
+* Secularism: no state religion, all religious buildings provide state religion effect, +10% research, double scientist slots
+
+GAME RULES
+* Removed unhappiness exceptions for Hinduism/Buddhism and Confucianism/Taoism combinations
 
 BUGFIXES
 * Fixed calculation of unit experience modifier

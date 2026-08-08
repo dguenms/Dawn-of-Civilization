@@ -6527,12 +6527,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -6545,12 +6546,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -6580,8 +6581,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_JUDAISM</ReligionType>
@@ -6591,10 +6597,16 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>´
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -6634,17 +6646,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_JUDAISM</ReligionType>
@@ -6652,6 +6664,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JEWISH_RELIQUARY</BuildingClass>
+			<Type>BUILDING_JEWISH_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_JEWISH_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JEWISH_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_JEWISH_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_JUDAISM</ReligionType>
+			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_JUDAISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_JEWISH_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_SILVER</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_JEWISH_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_JEWISH_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_JEWISH_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_JEWISH_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_JEWISH_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_JEWISH_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_JUDAISM</ReligionType>
+			<StateReligion>RELIGION_JUDAISM</StateReligion>
+			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_JUDAISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_JEWISH_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -6670,7 +6814,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_JEWISH</MovieDefineTag>
 			<HolyCity>RELIGION_JUDAISM</HolyCity>
 			<ReligionType>RELIGION_JUDAISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_JUDAISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -6681,11 +6824,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -6701,14 +6846,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -6733,12 +6887,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -6751,12 +6906,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -6786,8 +6941,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
@@ -6797,9 +6957,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -6840,17 +7006,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
@@ -6858,6 +7024,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ORTHODOX_RELIQUARY</BuildingClass>
+			<Type>BUILDING_ORTHODOX_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ORTHODOX_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ORTHODOX_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ORTHODOX_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ORTHODOX_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_ORTHODOX_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ORTHODOX_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ORTHODOX_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ORTHODOX_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ORTHODOX_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
+			<StateReligion>RELIGION_ORTHODOXY</StateReligion>
+			<PrereqReligion>RELIGION_ORTHODOXY</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_ORTHODOXY</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_ORTHODOX_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -6876,7 +7174,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_ORTHODOX</MovieDefineTag>
 			<HolyCity>RELIGION_ORTHODOXY</HolyCity>
 			<ReligionType>RELIGION_ORTHODOXY</ReligionType>
-			<GlobalReligionCommerce>RELIGION_ORTHODOXY</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -6887,11 +7184,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -6901,14 +7200,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -6933,12 +7241,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -6951,12 +7260,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -6986,8 +7295,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
@@ -6997,9 +7311,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -7040,17 +7360,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
@@ -7058,6 +7378,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CATHOLIC_RELIQUARY</BuildingClass>
+			<Type>BUILDING_CATHOLIC_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_CATHOLIC_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CATHOLIC_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CATHOLIC_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_CATHOLIC_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CATHOLIC_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_CATHOLIC_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_CATHOLIC_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CATHOLIC_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CATHOLIC_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CATHOLIC_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+			<StateReligion>RELIGION_CATHOLICISM</StateReligion>
+			<PrereqReligion>RELIGION_CATHOLICISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_CATHOLICISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_CATHOLIC_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -7076,7 +7528,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_CATHOLIC</MovieDefineTag>
 			<HolyCity>RELIGION_CATHOLICISM</HolyCity>
 			<ReligionType>RELIGION_CATHOLICISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_CATHOLICISM</GlobalReligionCommerce>
 			<VictoryPrereq>VICTORY_DIPLOMATIC</VictoryPrereq>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
@@ -7089,11 +7540,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7103,14 +7556,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7135,12 +7597,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7153,12 +7616,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7188,8 +7651,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
@@ -7199,9 +7667,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -7242,17 +7716,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
@@ -7260,6 +7734,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PROTESTANT_RELIQUARY</BuildingClass>
+			<Type>BUILDING_PROTESTANT_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_PROTESTANT_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PROTESTANT_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PROTESTANT_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_PROTESTANT_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_PROTESTANT_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_PROTESTANT_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PROTESTANT_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PROTESTANT_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PROTESTANT_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+			<StateReligion>RELIGION_PROTESTANTISM</StateReligion>
+			<PrereqReligion>RELIGION_PROTESTANTISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PROTESTANT_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -7278,7 +7884,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_PROTESTANT</MovieDefineTag>
 			<HolyCity>RELIGION_PROTESTANTISM</HolyCity>
 			<ReligionType>RELIGION_PROTESTANTISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_PROTESTANTISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -7289,11 +7894,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7303,14 +7910,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_CHRISTIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7335,12 +7951,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7353,12 +7970,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7388,8 +8005,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ISLAM</ReligionType>
@@ -7399,9 +8021,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -7442,17 +8070,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ISLAM</ReligionType>
@@ -7460,6 +8088,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ISLAMIC_RELIQUARY</BuildingClass>
+			<Type>BUILDING_ISLAMIC_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ISLAMIC_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ISLAMIC_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ISLAMIC_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_ISLAM</ReligionType>
+			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_ISLAM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ISLAMIC_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ISLAMIC_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_ISLAMIC_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ISLAMIC_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ISLAMIC_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ISLAMIC_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ISLAMIC_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_ISLAM</ReligionType>
+			<StateReligion>RELIGION_ISLAM</StateReligion>
+			<PrereqReligion>RELIGION_ISLAM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_ISLAM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_ISLAMIC_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -7478,7 +8238,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_ISLAMIC</MovieDefineTag>
 			<HolyCity>RELIGION_ISLAM</HolyCity>
 			<ReligionType>RELIGION_ISLAM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_ISLAM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -7489,11 +8248,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7503,14 +8264,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_ISLAMIC</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7535,12 +8305,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7553,12 +8324,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7588,8 +8359,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_HINDUISM</ReligionType>
@@ -7599,9 +8375,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -7642,17 +8424,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_HINDUISM</ReligionType>
@@ -7660,6 +8442,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HINDU_RELIQUARY</BuildingClass>
+			<Type>BUILDING_HINDU_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_HINDU_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HINDU_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HINDU_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_HINDU_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_HINDUISM</ReligionType>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_HINDUISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_HINDU_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_HINDU_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_HINDU_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_HINDU_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HINDU_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HINDU_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_HINDU_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_HINDUISM</ReligionType>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_HINDUISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_HINDU_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_HINDU_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -7678,7 +8592,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_HINDU</MovieDefineTag>
 			<HolyCity>RELIGION_HINDUISM</HolyCity>
 			<ReligionType>RELIGION_HINDUISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_HINDUISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -7689,11 +8602,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7703,14 +8618,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7735,12 +8659,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7753,12 +8678,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7788,8 +8713,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_BUDDHISM</ReligionType>
@@ -7799,9 +8729,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -7842,17 +8778,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_BUDDHISM</ReligionType>
@@ -7860,6 +8796,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BUDDHIST_RELIQUARY</BuildingClass>
+			<Type>BUILDING_BUDDHIST_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_BUDDHIST_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BUDDHIST_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BUDDHIST_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BUDDHIST_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_BUDDHISM</ReligionType>
+			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_BUDDHISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_BUDDHIST_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BUDDHIST_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_BUDDHIST_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_BUDDHIST_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BUDDHIST_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BUDDHIST_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BUDDHIST_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_BUDDHISM</ReligionType>
+			<StateReligion>RELIGION_BUDDHISM</StateReligion>
+			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_BUDDHISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_BUDDHIST_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -7878,7 +8946,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_BUDDHIST</MovieDefineTag>
 			<HolyCity>RELIGION_BUDDHISM</HolyCity>
 			<ReligionType>RELIGION_BUDDHISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_BUDDHISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -7889,11 +8956,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7903,14 +8972,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7935,12 +9013,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -7953,12 +9032,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -7988,8 +9067,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
@@ -7999,9 +9083,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -8042,17 +9132,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
@@ -8060,6 +9150,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CONFUCIAN_RELIQUARY</BuildingClass>
+			<Type>BUILDING_CONFUCIAN_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_CONFUCIAN_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONFUCIAN_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONFUCIAN_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CONFUCIAN_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
+			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_CONFUCIAN_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_SILVER</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_CONFUCIAN_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_CONFUCIAN_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_CONFUCIAN_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_CONFUCIAN_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_CONFUCIAN_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_CONFUCIAN_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
+			<StateReligion>RELIGION_CONFUCIANISM</StateReligion>
+			<PrereqReligion>RELIGION_CONFUCIANISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_CONFUCIAN_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -8078,7 +9300,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_CONFUCIAN</MovieDefineTag>
 			<HolyCity>RELIGION_CONFUCIANISM</HolyCity>
 			<ReligionType>RELIGION_CONFUCIANISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_CONFUCIANISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -8089,11 +9310,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -8103,14 +9326,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_CONFUCIAN</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -8135,12 +9367,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -8153,12 +9386,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -8188,8 +9421,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_TAOISM</ReligionType>
@@ -8199,9 +9437,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -8242,17 +9486,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_TAOISM</ReligionType>
@@ -8260,6 +9504,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_TAOIST_RELIQUARY</BuildingClass>
+			<Type>BUILDING_TAOIST_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_TAOIST_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TAOIST_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TAOIST_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TAOIST_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_TAOISM</ReligionType>
+			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_TAOISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_TAOIST_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_JADE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_TAOIST_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_TAOIST_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_TAOIST_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TAOIST_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TAOIST_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TAOIST_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_TAOISM</ReligionType>
+			<StateReligion>RELIGION_TAOISM</StateReligion>
+			<PrereqReligion>RELIGION_TAOISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_TAOISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_TAOIST_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -8278,7 +9654,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_TAOIST</MovieDefineTag>
 			<HolyCity>RELIGION_TAOISM</HolyCity>
 			<ReligionType>RELIGION_TAOISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_TAOISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -8289,11 +9664,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -8303,14 +9680,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_TAOIST</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -8335,12 +9721,13 @@
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iHappiness>1</iHappiness>
+			<iStateReligionHappiness>1</iStateReligionHappiness>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>1</iCommerce>
+				<iCommerce>2</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -8353,12 +9740,12 @@
 					<iReligionChange>1</iReligionChange>
 				</ReligionChange>
 			</ReligionChanges>
-			<SpecialistCounts>
+			<StateReligionSpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
 					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
-			</SpecialistCounts>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -8388,8 +9775,13 @@
 			<CommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>50</iCommerce>
+				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
+			<StateReligionCommerceModifiers>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>25</iCommerce>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
@@ -8399,9 +9791,15 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>2</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
@@ -8442,17 +9840,17 @@
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
+				<iCommerce>3</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
+			<StateReligionCommerceModifiers>
 				<iCommerce>0</iCommerce>
 				<iCommerce>10</iCommerce>
-			</CommerceModifiers>
+			</StateReligionCommerceModifiers>
 			<ReligionChanges>
 				<ReligionChange>
 					<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
@@ -8460,6 +9858,138 @@
 				</ReligionChange>
 			</ReligionChanges>
 			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_RELIQUARY</BuildingClass>
+			<Type>BUILDING_ZOROASTRIAN_RELIQUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_RELIQUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ZOROASTRIAN_RELIQUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ZOROASTRIAN_RELIQUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ZOROASTRIAN_RELIQUARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_RELIQUARY</ArtDefineTag>
+			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
+			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
+			<iCost>160</iCost>
+			<iConquestProb>70</iConquestProb>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>3</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<StateReligionCommerceModifiers>
+				<iCommerce>15</iCommerce>
+			</StateReligionCommerceModifiers>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
+					<iReligionChange>1</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ZOROASTRIAN_CATHEDRAL</BuildingClassType>
+					<iNumBuildingNeeded>1</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_SILVER</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ZOROASTRIAN_HOLY_SITE</BuildingClass>
+			<Type>BUILDING_ZOROASTRIAN_HOLY_SITE</Type>
+			<SpecialBuildingType>SPECIALBUILDING_HOLY_SITE</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ZOROASTRIAN_HOLY_SITE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ZOROASTRIAN_HOLY_SITE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ZOROASTRIAN_HOLY_SITE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ZOROASTRIAN_HOLY_SITE</ArtDefineTag>
+			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
+			<StateReligion>RELIGION_ZOROASTRIANISM</StateReligion>
+			<PrereqReligion>RELIGION_ZOROASTRIANISM</PrereqReligion>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iCost>-1</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>6</iAsset>
+			<iReligionTradeRouteModifier>50</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ReligionChanges>
+				<ReligionChange>
+					<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
+					<iReligionChange>3</iReligionChange>
+				</ReligionChange>
+			</ReligionChanges>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_ZOROASTRIAN_MONASTERY</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
@@ -8478,7 +10008,6 @@
 			<MovieDefineTag>ART_DEF_MOVIE_SHRINE_PROTESTANT</MovieDefineTag>
 			<HolyCity>RELIGION_ZOROASTRIANISM</HolyCity>
 			<ReligionType>RELIGION_ZOROASTRIANISM</ReligionType>
-			<GlobalReligionCommerce>RELIGION_ZOROASTRIANISM</GlobalReligionCommerce>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>1</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -8489,11 +10018,13 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>8</iAsset>
+			<iReligionTradeRouteModifier>100</iReligionTradeRouteModifier>
+			<iStateReligionEffectModifier>100</iStateReligionEffectModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>5</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -8503,14 +10034,23 @@
 			<SpecialistCounts>
 				<SpecialistCount>
 					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-					<iSpecialistCount>3</iSpecialistCount>
+					<iSpecialistCount>1</iSpecialistCount>
 				</SpecialistCount>
 			</SpecialistCounts>
+			<StateReligionSpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</StateReligionSpecialistCounts>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<ReligionCommerces>
+				<iCommerce>1</iCommerce>
+			</ReligionCommerces>
 			<ConstructSound>AS2D_BUILD_ZORO</ConstructSound>
 			<Flavors>
 				<Flavor>
@@ -8792,6 +10332,343 @@
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_COURT</BuildingClass>
+			<Type>BUILDING_COURT</Type>
+			<Description>TXT_KEY_BUILDING_COURT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_COURT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_COURT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_COURT</ArtDefineTag>
+			<PrereqTech>TECH_CEREMONY</PrereqTech>
+			<ObsoleteTech>TECH_STATECRAFT</ObsoleteTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>60</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_TOMB</BuildingClass>
+			<Type>BUILDING_TOMB</Type>
+			<Description>TXT_KEY_BUILDING_TOMB</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TOMB_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TOMB_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TOMB</ArtDefineTag>
+			<PrereqTech>TECH_DIVINATION</PrereqTech>
+			<ObsoleteTech>TECH_THEOLOGY</ObsoleteTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>60</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SCHOOL</BuildingClass>
+			<Type>BUILDING_SCHOOL</Type>
+			<Description>TXT_KEY_BUILDING_SCHOOL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SCHOOL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SCHOOL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_SCIENCE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SCHOOL</ArtDefineTag>
+			<PrereqTech>TECH_WRITING</PrereqTech>
+			<ObsoleteTech>TECH_ACADEMIA</ObsoleteTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>60</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_SCIENTIST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_LIBRARY</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_SCIENCE</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_ARCH</BuildingClass>
+			<Type>BUILDING_ARCH</Type>
+			<Description>TXT_KEY_BUILDING_ARCH</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ARCH_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ARCH_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ARCH</ArtDefineTag>
+			<PrereqTech>TECH_MATHEMATICS</PrereqTech>
+			<ObsoleteTech>TECH_PATRONAGE</ObsoleteTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>90</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MINT</BuildingClass>
+			<Type>BUILDING_MINT</Type>
+			<Description>TXT_KEY_BUILDING_MINT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MINT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MINT_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MINT</ArtDefineTag>
+			<PrereqTech>TECH_CONTRACT</PrereqTech>
+			<ObsoleteTech>TECH_FINANCE</ObsoleteTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>90</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_COUNCIL</BuildingClass>
+			<Type>BUILDING_COUNCIL</Type>
+			<Description>TXT_KEY_BUILDING_COUNCIL</Description>
+			<Civilopedia>TXT_KEY_BUILDING_COUNCIL_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_COUNCIL_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_COUNCIL</ArtDefineTag>
+			<PrereqTech>TECH_LAW</PrereqTech>
+			<ObsoleteTech>TECH_SOCIAL_CONTRACT</ObsoleteTech>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>90</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_PALACE</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
+			<ConstructSound>AS2D_BUILD_COURTHOUSE</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_ADMIN</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
@@ -11991,6 +13868,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
+			<bOtherReligionEffect>1</bOtherReligionEffect>
 			<iCost>600</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -12008,9 +13886,6 @@
 				<iCommerce>0</iCommerce>
 				<iCommerce>1000</iCommerce>
 			</CommerceChangeDoubleTimes>
-			<StateReligionCommerces>
-				<iCommerce>1</iCommerce>
-			</StateReligionCommerces>
 			<CommerceChangeOriginalOwners>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
@@ -12036,7 +13911,6 @@
 			<Description>TXT_KEY_BUILDING_DOME_OF_THE_ROCK</Description>
 			<Civilopedia>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_DOME_OF_THE_ROCK_HELP</Help>
 			<Advisor>ADVISOR_RELIGION</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_DOME_OF_THE_ROCK</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_DOME_OF_THE_ROCK</MovieDefineTag>
@@ -12047,13 +13921,13 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>100</iAIWeight>
 			<iCost>100</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
 			<iAsset>10</iAsset>
+			<iStateReligionBuildingCommerceModifier>100</iStateReligionBuildingCommerceModifier>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
@@ -17943,6 +19817,1238 @@
 					<FlavorType>FLAVOR_CULTURE</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_PESEDJET_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_PESEDJET_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_PESEDJET_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_PESEDJET_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_PESEDJET_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_ANUNNAKI_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ANUNNAKI_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ANUNNAKI_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ANUNNAKI_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ANUNNAKI_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_SHENDAO_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_SHENDAO_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SHENDAO_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SHENDAO_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SHENDAO_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_BON_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_BON_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BON_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BON_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BON_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_VEDIC_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_VEDIC_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VEDIC_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VEDIC_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VEDIC_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_OLYMPIAN_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_OLYMPIAN_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_OLYMPIAN_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_OLYMPIAN_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_OLYMPIAN_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_BAALIST_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_BAALIST_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BAALIST_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BAALIST_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BAALIST_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_ATUA_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ATUA_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ATUA_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ATUA_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ATUA_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_MAZDAIST_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_MAZDAIST_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MAZDAIST_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MAZDAIST_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MAZDAIST_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_TEOTL_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_TEOTL_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TEOTL_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TEOTL_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TEOTL_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_SHINTO_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_SHINTO_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_SHINTO_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SHINTO_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_SHINTO_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_ASATRU_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ASATRU_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ASATRU_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ASATRU_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ASATRU_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_DRUIDIC_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_DRUIDIC_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_DRUIDIC_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_DRUIDIC_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_DRUIDIC_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_RODNOVERY_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_RODNOVERY_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_RODNOVERY_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_RODNOVERY_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_RODNOVERY_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_YORUBA_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_YORUBA_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_YORUBA_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_YORUBA_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_YORUBA_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_INTI_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_INTI_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_INTI_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_INTI_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_INTI_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_TENGRI_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_TENGRI_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TENGRI_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TENGRI_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TENGRI_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_HUBAL_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_HUBAL_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HUBAL_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HUBAL_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_HUBAL_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_ASTAR_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_ASTAR_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_ASTAR_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_ASTAR_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_ASTAR_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_MUGYO_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_MUGYO_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MUGYO_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MUGYO_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MUGYO_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_BIDAIST_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_BIDAIST_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BIDAIST_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BIDAIST_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BIDAIST_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+			<bGraphicalOnly>1</bGraphicalOnly>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Type>BUILDING_BUKONGO_SANCTUARY</Type>
+			<SpecialBuildingType>SPECIALBUILDING_SANCTUARY</SpecialBuildingType>
+			<Description>TXT_KEY_BUILDING_BUKONGO_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BUKONGO_SANCTUARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BUKONGO_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BUKONGO_SANCTUARY</ArtDefineTag>
+			<bCenterInCity>1</bCenterInCity>
+			<bPagan>1</bPagan>
+			<iCost>-1</iCost>
+			<iConquestProb>100</iConquestProb>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iHappiness>1</iHappiness>
+			<iAsset>2</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<PrereqBuildingClasses>
+				<PrereqBuildingClass>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+				</PrereqBuildingClass>
+			</PrereqBuildingClasses>
+			<PrereqBuildingClassPercents>
+				<PrereqBuildingClassPercent>
+					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>
+					<iBuildingNeededPercent>50</iBuildingNeededPercent>
+				</PrereqBuildingClassPercent>
+			</PrereqBuildingClassPercents>
+			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_RELIGION</FlavorType>
 					<iFlavor>10</iFlavor>

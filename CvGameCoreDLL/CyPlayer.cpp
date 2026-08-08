@@ -2781,3 +2781,8 @@ int CyPlayer::calculateTransmissionResearch() const
 {
 	return m_pPlayer ? m_pPlayer->calculateTransmissionResearch(m_pPlayer->getCurrentResearch()) : -1;
 }
+	
+int CyPlayer::getReligionEffectModifier(int iReligion)
+{
+	return m_pPlayer ? m_pPlayer->getReligionEffectModifier((ReligionTypes)iReligion) : -1;
+}
