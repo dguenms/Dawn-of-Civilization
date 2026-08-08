@@ -3299,11 +3299,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PANTHEON_HELP</Tag>
-		<English>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</English>
-		<French>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</French>
-		<German>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</German>
-		<Italian>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</Italian>
-		<Spanish>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion.</Spanish>
+		<English>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion</English>
+		<French>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion</French>
+		<German>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion</German>
+		<Italian>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_GOLD] per [LINK=literal]Pagan Temple[\LINK][NEWLINE][ICON_BULLET]Extra [ICON_GOLD] when a [LINK=literal]Pagan Temple[\LINK] is removed[NEWLINE][ICON_BULLET]No [ICON_OCCUPATION] when converting from a Pagan to a Major Religion</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PANTHEON_EFFECT</Tag>
