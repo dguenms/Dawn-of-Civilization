@@ -326,7 +326,7 @@ def isBribableUnit(iPlayer, unit):
 
 def getPossibleBribes(iPlayer, location):
 	iTreasury = player(iPlayer).getGold()
-	targets = [(unit, infos.unit(unit).getProductionCost() * 3 / 2) for unit in units.at(location).owner(iBarbarian)]
+	targets = [(unit, scale(infos.unit(unit).getProductionCost()) * 3 / 2) for unit in units.at(location).owner(iBarbarian)]
 	return [(unit, iCost) for unit, iCost in targets if isBribableUnit(iPlayer, unit) and iCost <= iTreasury]
 
 
