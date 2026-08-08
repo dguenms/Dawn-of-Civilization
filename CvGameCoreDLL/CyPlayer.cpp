@@ -2776,3 +2776,8 @@ bool CyPlayer::canBuySlaves() const
 {
 	return m_pPlayer ? m_pPlayer->canBuySlaves() : false;
 }
+
+int CyPlayer::calculateTransmissionResearch() const
+{
+	return m_pPlayer ? m_pPlayer->calculateTransmissionResearch(m_pPlayer->getCurrentResearch()) : -1;
+}

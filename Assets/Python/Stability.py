@@ -1134,7 +1134,7 @@ def updateEconomyTrend(iPlayer):
 	if not pPlayer.isExisting(): return
 	
 	iPreviousCommerce = data.players[iPlayer].iPreviousCommerce
-	iCurrentCommerce = pPlayer.calculateTotalCommerce()
+	iCurrentCommerce = pPlayer.calculateTotalCommerce() - pPlayer.calculateTransmissionResearch()
 	
 	if iPreviousCommerce == 0: 
 		data.players[iPlayer].iPreviousCommerce = iCurrentCommerce
