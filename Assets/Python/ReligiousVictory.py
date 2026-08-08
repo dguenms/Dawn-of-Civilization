@@ -73,9 +73,9 @@ dGoals = {
 		NoReligionPercent(50),
 	),
 	iSecularVictory: (
-		BuildingCount(religious_buildings(cathedral).named(CATHEDRALS), 7, desc_key=FIRST_SECULAR_GOAL),
+		BuildingCount(religious_buildings(cathedral).named(CATHEDRALS), 7, bDistinct=True, desc_key=FIRST_SECULAR_GOAL),
 		All(
-			BuildingCount(iUniversity, 25, subject=SECULAR),
+			BuildingCount(iUniversity, 100, subject=SECULAR),
 			SpecialistCount(
 				(iSpecialistGreatScientist, 10),
 				(iSpecialistGreatStatesman, 10),

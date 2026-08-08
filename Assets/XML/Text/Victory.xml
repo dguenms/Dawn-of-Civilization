@@ -481,6 +481,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_SECULAR_CITIES</Tag>
+		<English>make sure there are %s1 in secular cities</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_FOUND</Tag>
 		<English>found %s1</English>
 		<French></French>
@@ -3945,7 +3953,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_GOAL_SECULAR_1</Tag>
-		<English>Control a cathedral of every religion</English>
+		<English>Control a cathedral of seven different religions</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

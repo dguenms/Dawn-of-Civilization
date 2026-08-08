@@ -170,13 +170,16 @@ class BuildingCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_COUNT"
 	
 	SUBJECT_DESC_KEYS = {
-		WORLD: "TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD"
+		WORLD: "TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD",
+		SECULAR: "TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_SECULAR_CITIES",
 	}
 	
 	def __init__(self, iBuilding, *args, **options):
 		ThresholdRequirement.__init__(self, iBuilding, *args, **options)
 		
 		self.iBuilding = iBuilding
+		
+		self.bDistinct = options.get("bDistinct", False)
 		
 		self.handle("cityAcquired", self.check)
 		self.handle("buildingBuilt", self.check_building_built)
@@ -190,7 +193,11 @@ class BuildingCount(ThresholdRequirement):
 		if iBuilding is NON_EXISTING:
 			return 0
 	
-		return player(iPlayer).countNumBuildings(unique_building(iPlayer, iBuilding))
+		iNumBuildings = player(iPlayer).countNumBuildings(unique_building(iPlayer, iBuilding))
+		if self.bDistinct:
+			return min(iNumBuildings, 1)
+		
+		return iNumBuildings
 	
 	def get_description(self):
 		if not isinstance(self.iBuilding, (Aggregate, DeferredArgument)) and isWonder(self.iBuilding):

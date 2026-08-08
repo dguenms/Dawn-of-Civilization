@@ -107,7 +107,6 @@ def generate_description(entries, key, arguments, suffixes, required):
 	if is_identical_threshold_requirement(entries):
 		first = entries[0]
 		description = WrappedDescription(entries[0].DESC_KEY, combine_descriptions([Description(entry.format_parameters(bPlural=True)[0]) for entry in entries]), first.format_parameters(bPlural=True)[-1])
-		print "DESCRIPTION: key=%s, wrapped=%s, arguments=%s" % (description.key, description.description, description.arguments)
 	
 	if required:
 		description = WrappedDescription("TXT_KEY_VICTORY_REQUIRED_OUT_OF", description, COUNT.format(required))
