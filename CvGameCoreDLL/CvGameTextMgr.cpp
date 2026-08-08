@@ -12779,6 +12779,11 @@ void CvGameTextMgr::setProcessHelp(CvWStringBuffer &szBuffer, ProcessTypes eProc
 		{
 			if (GC.getGameINLINE().getActivePlayer() != NO_PLAYER)
 			{
+				if (GC.getGameINLINE().getActiveCivilizationType() == MEXICO && iI == COMMERCE_RESEARCH)
+				{
+					iProductionToCommerceModifier *= 2;
+				}
+
 				iProductionToCommerceModifier += GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getProcessModifier();
 			}
 
