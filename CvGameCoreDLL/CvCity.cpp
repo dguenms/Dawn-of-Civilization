@@ -4713,6 +4713,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			setBuildingYieldChange(PRAMBANAN, YIELD_PRODUCTION, std::max(0, getBonusGoodHappiness() * iChange));
 		}
 
+		// Himeji Castle
+		if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HIMEJI_CASTLE))
+		{
+			changeCommerceRateModifier(COMMERCE_CULTURE, GC.getBuildingInfo(eBuilding).getDefenseModifier() * iChange);
+		}
+
 		// Louvre
 		if (eBuilding == LOUVRE)
 		{
