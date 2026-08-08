@@ -5158,6 +5158,9 @@ bool CvUnit::pillage()
 				iPillageGold *= 2;
 			}
 
+			iPillageGold *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getResearchPercent();
+			iPillageGold /= 100;
+
 			if (iPillageGold > 0)
 			{
 				GET_PLAYER(getOwnerINLINE()).changeGold(iPillageGold);
