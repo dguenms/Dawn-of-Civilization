@@ -1751,7 +1751,7 @@ void CvUnit::updateCombat(bool bQuick)
 				}
 			}
 
-			if (pPlot->getNumVisibleEnemyDefenders(this) == 0)
+			if (pPlot->getNumVisibleEnemyDefenders(this) == 0 && !pPlot->isUnconquerable(this))
 			{
 				getGroup()->groupMove(pPlot, true, ((bAdvance) ? this : NULL));
 			}
@@ -2835,15 +2835,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 	}
 
 	// Leoreth: cannot capture last city of recently born civilization
-	if (pPlot->getBirthProtected() == pPlot->getOwner())
+	if (!bAttack && pPlot->isUnconquerable(this))
 	{
-		if (!bAttack)
-		{
-			if (pPlot->isEnemyCity(*this) && GET_PLAYER(pPlot->getOwnerINLINE()).getNumCities() <= 1)
-			{
-				return false;
-			}
-		}
+		return false;
 	}
 
 /************************************************************************************************/

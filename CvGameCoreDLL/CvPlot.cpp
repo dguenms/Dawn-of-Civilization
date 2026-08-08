@@ -12109,6 +12109,11 @@ bool CvPlot::isExpansionEffect(PlayerTypes ePlayer) const
 	return getExpansion() == ePlayer && (getBirthProtected() == ePlayer || getBirthProtected() == NO_PLAYER);
 }
 
+bool CvPlot::isUnconquerable(const CvUnit* pUnit) const
+{
+	return isBirthProtected() && getBirthProtected() == getOwnerINLINE() && isEnemyCity(*pUnit) && GET_PLAYER(getOwnerINLINE()).getNumCities() <= 1;
+}
+
 int CvPlot::getContinentID() const
 {
 	switch (getRegionGroup())

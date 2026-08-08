@@ -579,6 +579,8 @@ public:
 	bool isExpansion() const;
 	bool isExpansionEffect(PlayerTypes ePlayer) const;
 
+	bool isUnconquerable(const CvUnit* pUnit) const;
+
 	int getContinentID() const;
 	int getRegionGroup() const;
 	int getOverseasGroup() const;
