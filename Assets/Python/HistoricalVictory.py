@@ -416,7 +416,7 @@ dGoals = {
 			CultureAmount(12000, by=1400),
 		),
 		All(
-			BuildingCount((iHinduHolySite, 1), (iHinduHolySite, 1)),
+			BuildingCount((iHinduHolySite, 1), (iBuddhistHolySite, 1)),
 			Wonder(iWatPreahPisnulok),
 			at=1200,
 		),
