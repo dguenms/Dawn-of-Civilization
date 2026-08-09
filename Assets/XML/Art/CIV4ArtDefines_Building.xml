@@ -812,7 +812,7 @@
 			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>1.45</fScale>
-			<fInterfaceScale>1.0</fInterfaceScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shrine/jewish-shrine.nif</NIF>
 			<KFM/>
 			<Button>,Art/Interface/Buttons/Buildings/Shrine_Jewish.dds,Art/Interface/Buttons/Buildings_Atlas.dds,7,14</Button>
@@ -872,7 +872,7 @@
 			<LSystem>LSYSTEM_3x3</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.00</fScale>
-			<fInterfaceScale>0.65</fInterfaceScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Christian_Cathedral/kathedrale.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/catholic_cathedral.dds</Button>
@@ -3912,7 +3912,7 @@
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.3</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Christian_Holy_Site/mission5.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Christian_Holy_Site/orthodox_holy_site.dds</Button>
@@ -3922,7 +3922,7 @@
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.3</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Christian_Holy_Site/mission.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Christian_Holy_Site/catholic_holy_site.dds</Button>
@@ -3932,7 +3932,7 @@
 			<LSystem>LSYSTEM_4x4</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>0.3</fScale>
-			<fInterfaceScale>0.6</fInterfaceScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Christian_Holy_Site/mission2.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Christian_Holy_Site/protestant_holy_site.dds</Button>
@@ -4273,7 +4273,7 @@
 			<bAnimated>1</bAnimated>
 			<fScale>2.4</fScale>
 			<fInterfaceScale>0.8</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Holy_Site/muslim.nif</NIF>
+			<NIF>Art/Structures/Buildings/Islamic_Reliquary/muslim.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/IslamicReliquary.dds</Button>
 		</BuildingArtInfo>
@@ -4312,7 +4312,7 @@
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>0</bAnimated>
 			<fScale>2.0</fScale>
-			<fInterfaceScale>0.9</fInterfaceScale>
+			<fInterfaceScale>0.55</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Shrine/Buddhist_shrine.nif</NIF>
 			<KFM/>
 			<Button>Art/Interface/Buttons/Buildings/BuddhistReliquary.dds</Button>
