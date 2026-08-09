@@ -615,6 +615,7 @@ public:
 	int getHurryPercentAnger();
 	int getConscriptPercentAnger();
 	bool canBeSelected();
+	int getNumActiveNationalWonders();
 
 private:
 	CvCity* m_pCity;

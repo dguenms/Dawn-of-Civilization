@@ -244,6 +244,7 @@ public:
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
+	int getNumActiveNationalWonders() const;
 
 	int getReligionCount(bool bCountLocalReligions = true) const;																						// Exposed to Python  
 	int getCorporationCount() const;																						// Exposed to Python  

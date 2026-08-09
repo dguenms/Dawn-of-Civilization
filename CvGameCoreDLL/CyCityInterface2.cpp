@@ -175,5 +175,6 @@ void CyCityPythonInterface2(python::class_<CyCity>& x)
 		.def("getHurryPercentAnger", &CyCity::getHurryPercentAnger, "int ()")
 		.def("getConscriptPercentAnger", &CyCity::getConscriptPercentAnger, "int ()")
 		.def("canBeSelected", &CyCity::canBeSelected, "bool ()")
+		.def("getNumActiveNationalWonders", &CyCity::getNumActiveNationalWonders, "int ()")
 		;
 }

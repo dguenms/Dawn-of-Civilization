@@ -2130,7 +2130,7 @@ bool CvCity::isNationalWondersMaxed() const
 		return false;
 	}
 
-	if (getNumNationalWonders() >= iMaxNumWonders)
+	if (getNumActiveNationalWonders() >= iMaxNumWonders)
 	{
 		return true;
 	}
@@ -6528,6 +6528,22 @@ int CvCity::getNumActiveWorldWonders() const
 /************************************************************************************************/
 /* UNOFFICIAL_PATCH                        END                                                  */
 /************************************************************************************************/
+
+int CvCity::getNumActiveNationalWonders() const
+{
+	int iCount = 0;
+	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		if (isNationalWonderClass((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()) && GC.getBuildingInfo((BuildingTypes)iI).getProductionCost() > 0 && !GC.getBuildingInfo((BuildingTypes)iI).isCapital())
+		{
+			if (isHasRealBuilding((BuildingTypes)iI) && !GET_TEAM(getTeam()).isObsoleteBuilding((BuildingTypes)iI))
+			{
+				iCount++;
+			}
+		}
+	}
+	return iCount;
+}
 
 int CvCity::getReligionCount(bool bCountLocalReligions) const
 {

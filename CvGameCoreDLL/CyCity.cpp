@@ -2908,3 +2908,8 @@ bool CyCity::canBeSelected()
 {
 	return m_pCity ? m_pCity->canBeSelected() : false;
 }
+
+int CyCity::getNumActiveNationalWonders()
+{
+	return m_pCity ? m_pCity->getNumActiveNationalWonders() : -1;
+}

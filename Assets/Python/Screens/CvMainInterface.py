@@ -4561,7 +4561,7 @@ class CvMainInterface:
 				screen.show( "WorldWonderLimitText" )
 
 				iIndicatorOffset += 40
-				iNationalWonders = pHeadSelectedCity.getNumNationalWonders()
+				iNationalWonders = pHeadSelectedCity.getNumActiveNationalWonders()
 				iNationalWondersLimit = gc.getCultureLevelInfo(pHeadSelectedCity.getCultureLevel()).getNationalWonderLimit()
 				szBuffer = localText.getText("INTERFACE_CITY_WONDER_LIMIT", (iNationalWonders, iNationalWondersLimit, CyGame().getSymbolID(FontSymbols.SILVER_STAR_CHAR)))
 				screen.setLabel( "NationalWonderLimitText", "Background", szBuffer, CvUtil.FONT_RIGHT_JUSTIFY, xResolution - iIndicatorOffset, 40, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_WONDER_LIMIT, 0, -1 )
