@@ -272,6 +272,10 @@ dResourcesDict = {
 	(131, 18) : (1900,  iCamel),	# Australia
 }
 
+dResourceVarieties = {
+	(59, 50) : iCitrusOranges, # Andalusia
+}
+
 dSpawnResourcesDict = {
 	(82, 54)  : (iHittites,    iIron),
 	(107, 61) : (iTurks,       iHorse),
@@ -293,6 +297,7 @@ dRemovedResourcesDict = {
 	(74, 44)  :  200, # Spices (silphium) in Cyrenaica
 	(87, 49)  :  200, # Horses in Syria
 	(125, 53) :  200, # Copper in North China
+	(59, 50)  :  200, # Copper in Iberia
 	(55, 53)  :  400, # Gold in Spain
 	(59, 51)  :  400, # Silver in Spain
 	(83, 48)  :  500, # Clams in Phoenicia
@@ -544,13 +549,17 @@ def createResource(iX, iY, iBonus, createTextKey="TXT_KEY_MISC_DISCOVERED_NEW_RE
 	
 	if iRemovedBonus == iBonus:
 		return
-		
+	
 	iBonusVariety = plot.getBaseBonusVarietyType()
 	
 	plot.setBonusType(iBonus)
 	
 	if iBonusVariety >= 0 and iRemovedBonus == -1:
 		plot.setBonusVarietyType(iBonusVariety)
+	
+	iChangedVariety = dResourceVarieties.get((iX, iY))
+	if iChangedVariety is not None:
+		plot.setBonusVarietyType(iChangedVariety)
 			
 	if iBonus == -1:
 		iImprovement = plot.getImprovementType()

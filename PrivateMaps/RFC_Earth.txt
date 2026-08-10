@@ -26373,7 +26373,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=50
-	BonusVarietyType=BONUS_CITRUS_ORANGES
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_FOREST, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
