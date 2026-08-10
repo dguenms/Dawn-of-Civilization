@@ -6822,7 +6822,7 @@
 			<Type>UNIT_GRENADIER</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_COUNTER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_COLLATERAL</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_GRENADIER</Description>
 			<Civilopedia>TXT_KEY_UNIT_GRENADIER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_GRENADIER_STRATEGY</Strategy>
@@ -6931,7 +6931,7 @@
 			<Type>UNIT_DRAVIDIAN_ROCKETEER</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_COUNTER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_COLLATERAL</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER</Description>
 			<Civilopedia>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_STRATEGY</Strategy>
@@ -7038,7 +7038,7 @@
 			<Type>UNIT_HOLY_ROMAN_GRENZER</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_COUNTER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_COLLATERAL</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER</Description>
 			<Civilopedia>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_HOLY_ROMAN_GRENZER_STRATEGY</Strategy>
@@ -7257,7 +7257,7 @@
 			<Type>UNIT_BELGIAN_CHASSEUR</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_COUNTER</DefaultUnitAI>
+			<DefaultUnitAI>UNITAI_COLLATERAL</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_BELGIAN_CHASSEUR</Description>
 			<Civilopedia>TXT_KEY_UNIT_BELGIAN_CHASSEUR_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_BELGIAN_CHASSEUR_STRATEGY</Strategy>
