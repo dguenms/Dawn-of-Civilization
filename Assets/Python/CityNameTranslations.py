@@ -14873,6 +14873,10 @@ name_translations = {
 		iLocal: "Polokwane",
 		iPortuguese: u"São Petersburgo",
 	},
+	u"Pinar del Río": {
+		iLocal: found("Guane"),
+		iSpanish: _,
+	},
 	"Pingcheng": {
 		iChinese: (
 			translate("Datong", iAfter=iMedieval),
