@@ -374,6 +374,7 @@ lNeighbours = [
 	(iMisr, iSaudis),
 	(iVietnam, iBurma),
 	(iVietnam, iThailand),
+	(iSwahili, iCongo),
 	(iBurma, iThailand),
 	(iPoland, iTatars),
 	(iPoland, iSweden),
