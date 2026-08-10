@@ -17185,6 +17185,12 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
+			<NotUnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_EXPLORE_SEA</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</NotUnitAIs>
 			<Builds>
 				<Build>
 					<BuildType>BUILD_FISHING_BOATS</BuildType>
@@ -20041,6 +20047,20 @@
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
+			<UnitClassTargets>
+				<UnitClassTarget>
+					<UnitClassTargetType>UNITCLASS_GALLEON</UnitClassTargetType>
+					<bUnitClassTarget>1</bUnitClassTarget>
+				</UnitClassTarget>
+				<UnitClassTarget>
+					<UnitClassTargetType>UNITCLASS_STEAMSHIP</UnitClassTargetType>
+					<bUnitClassTarget>1</bUnitClassTarget>
+				</UnitClassTarget>
+				<UnitClassTarget>
+					<UnitClassTargetType>UNITCLASS_TRANSPORT</UnitClassTargetType>
+					<bUnitClassTarget>1</bUnitClassTarget>
+				</UnitClassTarget>
+			</UnitClassTargets>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
@@ -20104,6 +20124,20 @@
 			<bCanMoveImpassable>1</bCanMoveImpassable>
 			<bMechanized>1</bMechanized>
 			<bRenderBelowWater>1</bRenderBelowWater>
+			<UnitClassTargets>
+				<UnitClassTarget>
+					<UnitClassTargetType>UNITCLASS_GALLEON</UnitClassTargetType>
+					<bUnitClassTarget>1</bUnitClassTarget>
+				</UnitClassTarget>
+				<UnitClassTarget>
+					<UnitClassTargetType>UNITCLASS_STEAMSHIP</UnitClassTargetType>
+					<bUnitClassTarget>1</bUnitClassTarget>
+				</UnitClassTarget>
+				<UnitClassTarget>
+					<UnitClassTargetType>UNITCLASS_TRANSPORT</UnitClassTargetType>
+					<bUnitClassTarget>1</bUnitClassTarget>
+				</UnitClassTarget>
+			</UnitClassTargets>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
