@@ -13521,6 +13521,12 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex, bool bIgnoreCivic) con
 		iMaxSpecialistCount *= 2;
 	}
 
+	// Leoreth: state religion specialist slots
+	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
+	{
+		iMaxSpecialistCount += getStateReligionSpecialistCount((ReligionTypes)iI, eIndex) * getReligionEffectModifier((ReligionTypes)iI) / 100;
+	}
+
 	// Leoreth: Korean UP
 	if (getCivilizationType() == KOREA && isCapital())
 	{
@@ -13529,12 +13535,6 @@ int CvCity::getMaxSpecialistCount(SpecialistTypes eIndex, bool bIgnoreCivic) con
 
 	// Leoreth: extra specialist slots
 	iMaxSpecialistCount += GET_PLAYER(getOwnerINLINE()).getSpecialistExtraCount(eIndex);
-
-	// Leoreth: state religion specialist slots
-	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
-	{
-		iMaxSpecialistCount += getStateReligionSpecialistCount((ReligionTypes)iI, eIndex) * getReligionEffectModifier((ReligionTypes)iI) / 100;
-	}
 
 	return iMaxSpecialistCount;
 }
