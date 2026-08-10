@@ -18223,6 +18223,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_COMPASS</PrereqTech>
+			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
@@ -18318,6 +18321,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_COMPASS</PrereqTech>
+			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
@@ -18514,6 +18520,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_GUNPOWDER</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_COMPASS</PrereqTech>
+			</TechTypes>
 			<PrereqBonuses>
 				<BonusType>BONUS_COPPER</BonusType>
 				<BonusType>BONUS_IRON</BonusType>
