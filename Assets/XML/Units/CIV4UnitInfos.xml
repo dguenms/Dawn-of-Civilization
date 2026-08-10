@@ -17962,6 +17962,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
+			</TechTypes>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>20</iMinAreaSize>
@@ -18047,6 +18050,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_ARTISANRY</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
+			</TechTypes>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>20</iMinAreaSize>
@@ -18133,6 +18139,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_GUILDS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_SHIPBUILDING</PrereqTech>
+			</TechTypes>
 			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>20</iMinAreaSize>
