@@ -127,6 +127,7 @@ MISCELLANEOUS
 * MacAurther: Straits implementation
 * Apple111111: game font symbol assignment fix
 * MaciejLipinski: city names
+* migck: unit changes
 
 PEDIA
 * Wikipedia
