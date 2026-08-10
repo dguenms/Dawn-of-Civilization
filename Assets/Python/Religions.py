@@ -108,7 +108,7 @@ def checkSchism(iGameTurn):
 	if not game.isReligionFounded(iOrthodoxy): return
 	if game.isReligionFounded(iCatholicism): return
 	
-	if game.countReligionLevels(iOrthodoxy) < 10: return
+	if game.countReligionLevels(iOrthodoxy) < 18: return
 	
 	religionCities = cities.all().religion(iOrthodoxy)
 	minorCities, majorCities = religionCities.split(is_minor)
