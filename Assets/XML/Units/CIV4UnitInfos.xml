@@ -19644,6 +19644,16 @@
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
+			<UnitClassDefenders>
+				<UnitClassDefender>
+					<UnitClassDefenderType>UNITCLASS_SUBMARINE</UnitClassDefenderType>
+					<bUnitClassDefender>1</bUnitClassDefender>
+				</UnitClassDefender>
+				<UnitClassDefender>
+					<UnitClassDefenderType>UNITCLASS_NUCLEAR_SUBMARINE</UnitClassDefenderType>
+					<bUnitClassDefender>1</bUnitClassDefender>
+				</UnitClassDefender>
+			</UnitClassDefenders>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
@@ -19744,6 +19754,16 @@
 					<bUnitClassUpgrade>1</bUnitClassUpgrade>
 				</UnitClassUpgrade>
 			</UnitClassUpgrades>
+			<UnitClassDefenders>
+				<UnitClassDefender>
+					<UnitClassDefenderType>UNITCLASS_SUBMARINE</UnitClassDefenderType>
+					<bUnitClassDefender>1</bUnitClassDefender>
+				</UnitClassDefender>
+				<UnitClassDefender>
+					<UnitClassDefenderType>UNITCLASS_NUCLEAR_SUBMARINE</UnitClassDefenderType>
+					<bUnitClassDefender>1</bUnitClassDefender>
+				</UnitClassDefender>
+			</UnitClassDefenders>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
@@ -19977,6 +19997,16 @@
 			<bMechanized>1</bMechanized>
 			<bRenderBelowWater>1</bRenderBelowWater>
 			<iWithdrawalProb>25</iWithdrawalProb>
+			<UnitClassDefenders>
+				<UnitClassDefender>
+					<UnitClassDefenderType>UNITCLASS_SUBMARINE</UnitClassDefenderType>
+					<bUnitClassDefender>1</bUnitClassDefender>
+				</UnitClassDefender>
+				<UnitClassDefender>
+					<UnitClassDefenderType>UNITCLASS_NUCLEAR_SUBMARINE</UnitClassDefenderType>
+					<bUnitClassDefender>1</bUnitClassDefender>
+				</UnitClassDefender>
+			</UnitClassDefenders>
 			<UnitAIs>
 				<UnitAI>
 					<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType>
