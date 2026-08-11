@@ -1955,6 +1955,12 @@
 			<bGoodyTech>0</bGoodyTech>
 			<iGridX>8</iGridX>
 			<iGridY>7</iGridY>
+			<TerrainTrades>
+				<TerrainTrade>
+					<TerrainType>TERRAIN_ARCTIC_COAST</TerrainType>
+					<bTerrainTrade>1</bTerrainTrade>
+				</TerrainTrade>
+			</TerrainTrades>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GOLD</FlavorType>
