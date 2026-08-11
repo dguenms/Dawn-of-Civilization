@@ -25497,7 +25497,10 @@ void CvPlayer::changeNoReligiousBuildingExpirationCount(int iChange)
 	int iObsoleteChange = isNoReligiousBuildingExpiration() ? -1 : 1;
 	for (int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
 	{
-		GET_TEAM(getTeam()).changeObsoleteBuildingCount((BuildingTypes)iI, iObsoleteChange);
+		if (GC.getBuildingInfo((BuildingTypes)iI).getReligionType() != NO_RELIGION)
+		{
+			GET_TEAM(getTeam()).changeObsoleteBuildingCount((BuildingTypes)iI, iObsoleteChange);
+		}
 	}
 }
 
