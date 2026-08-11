@@ -6,11 +6,9 @@ import os
 import csv
 import cStringIO
 
-MAPS_PATH = "Assets/Maps"
 
-
-def getPath(file_name):
-	return "%s\Mods\\RFC Dawn of Civilization\\Assets\\Maps\\%s" % (os.getcwd(), file_name)
+def getPath(file_name, directory="Maps"):
+	return "%s\Mods\\RFC Dawn of Civilization\\Assets\\%s\\%s" % (os.getcwd(), directory, file_name)
 
 
 class UnicodeWriter:
@@ -129,24 +127,24 @@ class FileMap(object):
 		self.write(self.map, "Export/%s" % self.path)
 
 
-class FileDict(object):
+class FileMatrix(object):
 
 	@staticmethod
 	def read(file_path):
 		try:
-			file = open(getPath(file_path))
+			file = open(getPath(file_path, "Data"))
 		except IOError:
 			return
 		
 		try:
-			for line in csv.reader(file):
+			for index, line in enumerate(csv.reader(file)):
+				if index == 0:
+					continue
+				
 				if len(line) < 2:
 					continue
 				
-				try:
-					yield line[0].decode("utf-8"), line[1].decode("utf-8")
-				except UnicodeDecodeError, e:
-					raise Exception("Failed decoding line '%s' of '%s': %s" % (line, file_path, e))
+				yield tuple(int(x) for x in line[1:])
 		except:
 			file.close()
 			raise
@@ -155,34 +153,31 @@ class FileDict(object):
 
 	def __init__(self, path):
 		self.path = path
-		self.dict = None
+		self.matrix = None
 	
-	def __getitem__(self, key):
-		if self.dict is None:
+	def __getitem__(self, (outer_key, inner_key)):
+		if self.matrix is None:
 			self.load()
 	
-		return self.dict[key]
-	
-	def __setitem__(self, key, value):
-		if self.dict is None:
-			self.load()
-		
-		self.dict[key] = value
-	
-	def __contains__(self, key):
-		if self.dict is None:
-			self.load()
-		
-		return key in self.dict
+		return self.matrix[outer_key][inner_key]
 	
 	def load(self):
-		self.dict = {}
+		self.matrix = tuple(self.read(self.path))
+
+
+class CivFileMatrix(FileMatrix):
 	
-		for key, value in self.read(self.path):
-			self[key] = value
+	def __init__(self, path, defaults):
+		FileMatrix.__init__(self, path)
+		
+		self.defaults = defaults
 	
-	def values(self):
-		if self.dict is None:
+	def __getitem__(self, (outer_key, iCiv)):
+		if iCiv not in lCivOrder:
+			return self.defaults[outer_key]
+		
+		if self.matrix is None:
 			self.load()
 		
-		return self.dict.values()
+		inner_key = lCivOrder.index(iCiv)
+		return self.matrix[outer_key][inner_key]
