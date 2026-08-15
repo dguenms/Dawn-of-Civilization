@@ -3955,7 +3955,7 @@
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Hindu_Holy_Site/mahabodhi.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Hindu_Holy_Site/hindu_holy_site.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Hindu_Holy_Site.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BUDDHIST_HOLY_SITE</Type>
@@ -4386,6 +4386,66 @@
 			<NIF>Art/Structures/Buildings/Council/senate.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Council/Council.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_TEMPLE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.9</fScale>
+			<fInterfaceScale>0.52</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Temple/hindu_temple.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Temple.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_CATHEDRAL</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Cathedral/Brihadeeswarar.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Cathedral.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_MONASTERY</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.55</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Monastery/Hindu_monastery.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Monastery.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_RELIQUARY</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Hindu_Reliquary/hindu.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Reliquary.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_HOLY_SITE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>10.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Hindu_Holy_Site/mahabodhi.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Holy_Site.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_SHRINE</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Shrine/2birla.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Shrine.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

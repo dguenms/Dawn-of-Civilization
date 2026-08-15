@@ -2670,6 +2670,7 @@ enum ReligionTypes				// Exposed to Python
 	PROTESTANTISM,
 	ISLAM,
 	HINDUISM,
+	JAINISM,
 	BUDDHISM,
 	CONFUCIANISM,
 	TAOISM,

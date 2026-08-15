@@ -1778,6 +1778,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAIN1</Tag>
+		<English>Ahimsa</English>
+		<French>Ahimsa</French>
+		<German>Ahimsa</German>
+		<Italian>Ahimsa</Italian>
+		<Spanish>Ahimsa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAIN2</Tag>
+		<English>Aparigraha</English>
+		<French>Aparigraha</French>
+		<German>Aparigraha</German>
+		<Italian>Aparigraha</Italian>
+		<Spanish>Aparigraha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAIN3</Tag>
+		<English>Anekantavada</English>
+		<French>Anekantavada</French>
+		<German>Anekantavada</German>
+		<Italian>Anekantavada</Italian>
+		<Spanish>Anekantavada</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_ISLA1</Tag>
 		<English>Shahada</English>
 		<French>Chahada</French>

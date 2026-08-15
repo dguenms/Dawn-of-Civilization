@@ -164,10 +164,11 @@ RELIGION_FOUNDING_DATES = {
 	iProtestantism: 1521,
 	iIslam: 622,
 	iHinduism: -1500,
+	iJainism: -600,
 	iBuddhism: 80,
 	iConfucianism: -500,
 	iTaoism: -400,
-	iZoroastrianism: -600
+	iZoroastrianism: -600,
 }
 
 ERA_START_DATES = {

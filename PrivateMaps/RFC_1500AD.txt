@@ -7743,7 +7743,11 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_JAIN_SHRINE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=250
 		EndCulture
@@ -8255,6 +8259,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		BuildingType=BUILDING_HINDU_HOLY_SITE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_DRAVIDIA, Culture=100
 		EndCulture
@@ -8377,7 +8382,9 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_JAIN_TEMPLE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture

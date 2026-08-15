@@ -1840,6 +1840,57 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_JAIN_MISSIONARY</Class>
+			<Type>UNIT_JAIN_MISSIONARY</Type>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_JAIN_MISSIONARY</Description>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_JAIN_MISSIONARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ReligionSpreads>
+				<ReligionSpread>
+					<ReligionType>RELIGION_JAINISM</ReligionType>
+					<iReligionSpread>40</iReligionSpread>
+				</ReligionSpread>
+			</ReligionSpreads>
+			<PrereqReligion>RELIGION_JAINISM</PrereqReligion>
+			<PrereqBuilding>BUILDING_HINDU_MONASTERY</PrereqBuilding>
+			<iCost>40</iCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<iAsset>2</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_JAIN_MISSIONARY</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_BUDDHIST_MISSIONARY</Class>
 			<Type>UNIT_BUDDHIST_MISSIONARY</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>

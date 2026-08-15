@@ -24608,7 +24608,7 @@ EraTypes CvPlayer::getSoundtrackEra()
 			return (EraTypes)ERA_EAST_ASIA;
 		}
 	}
-	else if (eStateReligion == BUDDHISM || eStateReligion == HINDUISM)
+	else if (eStateReligion == BUDDHISM || eStateReligion == HINDUISM || eStateReligion == JAINISM)
 	{
 		if (eCurrentEra == ERA_CLASSICAL || eCurrentEra == ERA_MEDIEVAL || eCurrentEra == ERA_RENAISSANCE)
 		{
@@ -25147,6 +25147,10 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 
 	if (eStateReligion == HINDUISM && eReligion == BUDDHISM) return true;
 	if (eStateReligion == BUDDHISM && eReligion == HINDUISM) return true;
+	if (eStateReligion == HINDUISM && eReligion == JAINISM) return true;
+	if (eStateReligion == JAINISM && eReligion == HINDUISM) return true;
+	if (eStateReligion == BUDDHISM && eReligion == JAINISM) return true;
+	if (eStateReligion == JAINISM && eReligion == BUDDHISM) return true;
 	if (eStateReligion == CONFUCIANISM && eReligion == TAOISM) return true;
 	if (eStateReligion == TAOISM && eReligion == CONFUCIANISM) return true;
 

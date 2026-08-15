@@ -915,21 +915,22 @@ iGermany : 2
 })
 
 # initialise religion variables to religion indices from XML
-iNumReligions = 10
-(iJudaism, iOrthodoxy, iCatholicism, iProtestantism, iIslam, iHinduism, iBuddhism, iConfucianism, iTaoism, iZoroastrianism) = range(iNumReligions)
+iNumReligions = 11
+(iJudaism, iOrthodoxy, iCatholicism, iProtestantism, iIslam, iHinduism, iJainism, iBuddhism, iConfucianism, iTaoism, iZoroastrianism) = range(iNumReligions)
 
 #Persecution preference
 tPersecutionPreference = (
-(iHinduism, iBuddhism, iTaoism, iConfucianism, iZoroastrianism, iIslam, iProtestantism, iCatholicism, iOrthodoxy), # Judaism
-(iIslam, iProtestantism, iCatholicism, iJudaism, iZoroastrianism, iHinduism, iBuddhism, iTaoism, iConfucianism), # Orthodoxy
-(iIslam, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iBuddhism, iTaoism, iConfucianism), # Catholicism
-(iIslam, iCatholicism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iBuddhism, iTaoism, iConfucianism), # Protestantism
-(iHinduism, iProtestantism, iCatholicism, iOrthodoxy, iJudaism, iTaoism, iConfucianism, iZoroastrianism, iBuddhism), # Islam
-(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iTaoism, iConfucianism, iBuddhism), # Hinduism
-(iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iTaoism, iIslam, iConfucianism, iHinduism), # Buddhism
-(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iBuddhism, iTaoism), # Confucianism
-(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iBuddhism, iConfucianism), # Taoism
-(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iBuddhism, iHinduism, iTaoism, iConfucianism), # Zoroastrianism
+(iHinduism, iJainism, iBuddhism, iTaoism, iConfucianism, iZoroastrianism, iIslam, iProtestantism, iCatholicism, iOrthodoxy), # Judaism
+(iIslam, iProtestantism, iCatholicism, iJudaism, iZoroastrianism, iHinduism, iJainism, iBuddhism, iTaoism, iConfucianism), # Orthodoxy
+(iIslam, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iJainism, iBuddhism, iTaoism, iConfucianism), # Catholicism
+(iIslam, iCatholicism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iJainism, iBuddhism, iTaoism, iConfucianism), # Protestantism
+(iHinduism, iJainism, iProtestantism, iCatholicism, iOrthodoxy, iJudaism, iTaoism, iConfucianism, iZoroastrianism, iBuddhism), # Islam
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iTaoism, iConfucianism, iJainism, iBuddhism), # Hinduism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iTaoism, iConfucianism, iBuddhism, iHinduism), # Jainism
+(iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iTaoism, iIslam, iConfucianism, iHinduism, iJainism), # Buddhism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iJainism, iBuddhism, iTaoism), # Confucianism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iZoroastrianism, iHinduism, iJainism, iBuddhism, iConfucianism), # Taoism
+(iIslam, iCatholicism, iProtestantism, iOrthodoxy, iJudaism, iBuddhism, iHinduism, iJainism, iTaoism, iConfucianism), # Zoroastrianism
 )
 
 # pagan religions
@@ -973,31 +974,31 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 236
+iNumUnits = 237
 (iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iPioneer, iWorker, iPunjabiWorker, iLabourer, 
 iMadeireiro, iScout, iExplorer, iBandeirante, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, 
-iIslamicMissionary, iHinduMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iNativeWarrior, iMilitia, iAxeman, 
-iLightSwordsman, iVulture, iDogSoldier, iOathsworn, iSwordsman, iJaguar, iLegion, iGallicWarrior, iPendekar, iAucac, 
-iShotelai, iHeavySwordsman, iGallowglass, iSamurai, iHuscarl, iGhazi, iDruzhina, iPombos, iSpearman, iAzmaru, 
-iHoplite, iSacredBand, iImmortal, iNativeRaider, iHeavySpearman, iKyundaw, iPikeman, iLandsknecht, iArquebusier, iFirelancer, 
-iTercio, iStrelets, iJanissary, iOromoWarrior, iQizilbash, iMohawk, iMusketeer, iRedcoat, iCarolean, iFusilier, 
-iRifleman, iMehalSefari, iGrenadier, iRocketeer, iGrenzer, iAlbionLegion, iChasseur, iAntiTank, iInfantry, iVietCong, 
-iDigger, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, 
-iNativeArcher, iSkirmisher, iHolkan, iAtlatl, iKelebolo, iLongbowman, iPatiyodha, iRattanArcher, iCrossbowman, iChokonu, 
-iBalestriere, iChariot, iWarChariot, iHuluganni, iCidainh, iHorseman, iCompanion, iNumidianCavalry, iAsvaka, iCamelRider, 
-iHorseArcher, iMangudai, iKhampa, iOghuz, iCamelArcher, iLancer, iSavaran, iFarari, iMobileGuard, iMamluk, 
-iKeshik, iCataphract, iChambul, iChangSuek, iPistolier, iHakkapeliitta, iMountedBrave, iCamelGunner, iZamburak, iCuirassier, 
-iGendarme, iConquistador, iWingedHussar, iSowar, iBannerman, iHussar, iCossack, iLlanero, iDragoon, iCassay, 
-iIkhwan, iGrenadierCavalry, iCavalry, iRural, iLightHorse, iWarElephant, iVaru, iBallistaElephant, iTank, iPanzer, 
-iMainBattleTank, iGunship, iCatapult, iSiegeRam, iBallista, iTrebuchet, iBombard, iHwacha, iLantaka, iSiegeElephant, 
-iGreatBombard, iCannon, iGribeauval, iArtillery, iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, 
-iBireme, iWarGalley, iHeavyGalley, iDromon, iLongship, iCog, iDharani, iDhow, iGalleass, iDjong, 
-iKobukson, iLanternas, iCaravel, iCarrack, iGalleon, iFluyt, iPrivateer, iCorsair, iFrigate, iShipOfTheLine, 
-iManOfWar, iSteamship, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, 
-iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, iSupercarrier, iBiplane, iFighter, iZero, iJetFighter, iBomber, 
-iFlyingFortress, iStealthBomber, iGuidedMissile, iDrone, iNuclearBomber, iICBM, iSatellite, iGreatProphet, iGreatArtist, iGreatScientist, 
-iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iArgentineGreatGeneral, iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, 
-iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
+iIslamicMissionary, iHinduMissionary, iJainMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iNativeWarrior, iMilitia, 
+iAxeman, iLightSwordsman, iVulture, iDogSoldier, iOathsworn, iSwordsman, iJaguar, iLegion, iGallicWarrior, iPendekar, 
+iAucac, iShotelai, iHeavySwordsman, iGallowglass, iSamurai, iHuscarl, iGhazi, iDruzhina, iPombos, iSpearman, 
+iAzmaru, iHoplite, iSacredBand, iImmortal, iNativeRaider, iHeavySpearman, iKyundaw, iPikeman, iLandsknecht, iArquebusier, 
+iFirelancer, iTercio, iStrelets, iJanissary, iOromoWarrior, iQizilbash, iMohawk, iMusketeer, iRedcoat, iCarolean, 
+iFusilier, iRifleman, iMehalSefari, iGrenadier, iRocketeer, iGrenzer, iAlbionLegion, iChasseur, iAntiTank, iInfantry, 
+iVietCong, iDigger, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, 
+iMedjay, iNativeArcher, iSkirmisher, iHolkan, iAtlatl, iKelebolo, iLongbowman, iPatiyodha, iRattanArcher, iCrossbowman, 
+iChokonu, iBalestriere, iChariot, iWarChariot, iHuluganni, iCidainh, iHorseman, iCompanion, iNumidianCavalry, iAsvaka, 
+iCamelRider, iHorseArcher, iMangudai, iKhampa, iOghuz, iCamelArcher, iLancer, iSavaran, iFarari, iMobileGuard, 
+iMamluk, iKeshik, iCataphract, iChambul, iChangSuek, iPistolier, iHakkapeliitta, iMountedBrave, iCamelGunner, iZamburak, 
+iCuirassier, iGendarme, iConquistador, iWingedHussar, iSowar, iBannerman, iHussar, iCossack, iLlanero, iDragoon, 
+iCassay, iIkhwan, iGrenadierCavalry, iCavalry, iRural, iLightHorse, iWarElephant, iVaru, iBallistaElephant, iTank, 
+iPanzer, iMainBattleTank, iGunship, iCatapult, iSiegeRam, iBallista, iTrebuchet, iBombard, iHwacha, iLantaka, 
+iSiegeElephant, iGreatBombard, iCannon, iGribeauval, iArtillery, iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, 
+iWaka, iBireme, iWarGalley, iHeavyGalley, iDromon, iLongship, iCog, iDharani, iDhow, iGalleass, 
+iDjong, iKobukson, iLanternas, iCaravel, iCarrack, iGalleon, iFluyt, iPrivateer, iCorsair, iFrigate, 
+iShipOfTheLine, iManOfWar, iSteamship, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, 
+iMissileCruiser, iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, iSupercarrier, iBiplane, iFighter, iZero, iJetFighter, 
+iBomber, iFlyingFortress, iStealthBomber, iGuidedMissile, iDrone, iNuclearBomber, iICBM, iSatellite, iGreatProphet, iGreatArtist, 
+iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iArgentineGreatGeneral, iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, 
+iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
 
 lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 
@@ -1055,7 +1056,7 @@ iOilDepot, iCinema, iHospital, iSupermarket, iPublicTransportation, iDepartmentS
 iWaterworks, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iContainerTerminal, iNuclearPlant, iDiagnosticsCenter, 
 iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm) = range(iNumBuildings)
 
-iNumReligiousBuildings = 60
+iNumReligiousBuildings = 66
 iFirstReligiousBuilding = iNumBuildings
 iNumBuildings += iNumReligiousBuildings
 (iJewishTemple, iJewishCathedral, iJewishMonastery, iJewishReliquary, iJewishHolySite, iJewishShrine, 
@@ -1064,6 +1065,7 @@ iCatholicTemple, iCatholicCathedral, iCatholicMonastery, iCatholicReliquary, iCa
 iProtestantTemple, iProtestantCathedral, iProtestantMonastery, iProtestantReliquary, iProtestantHolySite, iProtestantShrine, 
 iIslamicTemple, iIslamicCathedral, iIslamicMonastery, iIslamicReliquary, iIslamicHolySite, iIslamicShrine, 
 iHinduTemple, iHinduCathedral, iHinduMonastery, iHinduReliquary, iHinduHolySite, iHinduShrine, 
+iJainTemple, iJainCathedral, iJainMonastery, iJainReliquary, iJainHolySite, iJainShrine,
 iBuddhistTemple, iBuddhistCathedral, iBuddhistMonastery, iBuddhistReliquary, iBuddhistHolySite, iBuddhistShrine, 
 iConfucianTemple, iConfucianCathedral, iConfucianMonastery, iConfucianReliquary, iConfucianHolySite, iConfucianShrine, 
 iTaoistTemple, iTaoistCathedral, iTaoistMonastery, iTaoistReliquary, iTaoistHolySite, iTaoistShrine, 

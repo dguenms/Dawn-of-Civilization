@@ -145,43 +145,19 @@ enum OverseasGroup
 static const int lTechLeaderPenalty[NUM_ERAS] = {0, 0, 20, 25, 25, 25, 25};
 static const int lTechBackwardsBonus[NUM_ERAS] = {0, 20, 30, 40, 50, 50, 50};
 
-// Leoreth: order of persecution
-static const int persecutionOrder[NUM_RELIGIONS][NUM_RELIGIONS-1] = 
-{
-	// Judaism
-	{HINDUISM, BUDDHISM, TAOISM, CONFUCIANISM, ZOROASTRIANISM, ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY},
-	// Orthodoxy
-	{ISLAM, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
-	// Catholicism
-	{ISLAM, PROTESTANTISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
-	// Protestantism
-	{ISLAM, CATHOLICISM, ORTHODOXY, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
-	// Islam
-	{ZOROASTRIANISM, HINDUISM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, JUDAISM, BUDDHISM, CONFUCIANISM, TAOISM},
-	// Hinduism
-	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, CONFUCIANISM, TAOISM, ZOROASTRIANISM, BUDDHISM},
-	// Buddhism
-	{ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, TAOISM, ISLAM, CONFUCIANISM, HINDUISM},
-	// Confucianism
-	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, TAOISM},
-	// Taoism
-	{ISLAM, ORTHODOXY, PROTESTANTISM, CATHOLICISM, JUDAISM, ZOROASTRIANISM, HINDUISM, BUDDHISM, CONFUCIANISM},
-	// Zoroastrianism
-	{ISLAM, PROTESTANTISM, CATHOLICISM, ORTHODOXY, JUDAISM, HINDUISM, BUDDHISM, CONFUCIANISM, TAOISM},
-};
-
 // Leoreth: persecution priority
 static const int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS] =
 {
-	// JUD ORT CAT PRO ISL HIN BUD CON TAO ZOR
-	{  -1,  1,  1,  1,  1,  1,  1,  1,  1,  1 }, // Judaism
-	{   1, -1,  3,  3,  4,  1,  1,  1,  1,  2 }, // Orthodoxy
-	{   2,  2, -1,  3,  4,  1,  1,  1,  1,  2 }, // Catholicism
-	{   3,  2,  3, -1,  4,  1,  1,  1,  1,  2 }, // Protestantism
-	{   1,  2,  2,  2, -1,  3,  1,  1,  1,  4 }, // Islam
-	{   1,  3,  3,  3,  4, -1,  0,  1,  1,  2 }, // Hinduism
-	{   1,  3,  3,  3,  4,  0, -1,  1,  1,  2 }, // Buddhism
-	{   1,  2,  2,  2,  3,  1,  1, -1,  0,  1 }, // Confucianism
-	{   1,  2,  2,  2,  3,  1,  1,  0, -1,  1 }, // Taoism
-	{   1,  3,  3,  3,  4,  1,  1,  1,  1, -1 }, // Zoroastrianism
+	// JUD ORT CAT PRO ISL HIN JAI BUD CON TAO ZOR
+	{  -1,  1,  1,  1,  1,  1,  1,  1,  1,  1,  1 }, // Judaism
+	{   1, -1,  3,  3,  4,  1,  1,  1,  1,  1,  2 }, // Orthodoxy
+	{   2,  2, -1,  3,  4,  1,  1,  1,  1,  1,  2 }, // Catholicism
+	{   3,  2,  3, -1,  4,  1,  1,  1,  1,  1,  2 }, // Protestantism
+	{   1,  2,  2,  2, -1,  3,  3,  1,  1,  1,  4 }, // Islam
+	{   1,  3,  3,  3,  4, -1,  0,  0,  1,  1,  2 }, // Hinduism
+	{   1,  3,  3,  3,  4,  0, -1,  0,  1,  1,  2 }, // Jainism
+	{   1,  3,  3,  3,  4,  0,  0, -1,  1,  1,  2 }, // Buddhism
+	{   1,  2,  2,  2,  3,  1,  1,  1, -1,  0,  1 }, // Confucianism
+	{   1,  2,  2,  2,  3,  1,  1,  1,  0, -1,  1 }, // Taoism
+	{   1,  3,  3,  3,  4,  1,  1,  1,  1,  1, -1 }, // Zoroastrianism
 };

@@ -481,6 +481,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD_SINGULAR</Tag>
+		<English>make sure there is %s1 in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_SECULAR_CITIES</Tag>
 		<English>make sure there are %s1 in secular cities</English>
 		<French></French>
@@ -1366,6 +1374,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_TERRAIN_COUNT</Tag>
 		<English>%s2 %s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_UNIMPROVED_RESOURCE_COUNT</Tag>
+		<English>%s2 unimproved %s1 resources</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -2273,6 +2289,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TERRAIN_COUNT</Tag>
 		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_UNIMPROVED_RESOURCE_COUNT</Tag>
+		<English>unimproved %s1 resources</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

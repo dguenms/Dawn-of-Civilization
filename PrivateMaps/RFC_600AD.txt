@@ -490,8 +490,8 @@ BeginPlot
 		BuildingType=BUILDING_CATHOLIC_TEMPLE
 		BuildingType=BUILDING_CATHOLIC_MONASTERY
 		BuildingType=BUILDING_CATHOLIC_SHRINE
-		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
 		BuildingType=BUILDING_AQUA_APPIA
+		BuildingType=BUILDING_FLAVIAN_AMPHITHEATRE
 		BuildingType=BUILDING_PANTHEON
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_CATHOLICISM
@@ -1742,6 +1742,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		ReligionType=RELIGION_JAINISM
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
@@ -1800,7 +1801,11 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_JEWELLER
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_JAIN_SHRINE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT2, Culture=50
 		EndCulture
@@ -1926,6 +1931,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		BuildingType=BUILDING_IRON_PILLAR
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
@@ -2080,6 +2086,7 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_DRAVIDIA, Culture=10
 		EndCulture

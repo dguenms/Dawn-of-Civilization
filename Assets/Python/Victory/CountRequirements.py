@@ -696,9 +696,14 @@ class PopulationCount(ThresholdRequirement):
 
 
 # First Rus UHV goal
+# Third Jain URV goal
 class ReligionPopulationCount(ThresholdRequirement):
 
 	TYPES = (RELIGION_ADJECTIVE, COUNT)
+	
+	SUBJECT_DESC_KEYS = {
+		WORLD: "TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD_SINGULAR"
+	}
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_POPULATION"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_POPULATION"
@@ -790,6 +795,7 @@ class SettledCityCount(ThresholdRequirement):
 # Second Ethiopian UHV goal
 # Third Ottoman UHV goal
 # First Jewish URV goal
+# Second Jain URV goal
 # Second Catholic URV goal
 # Second Protestant URV goal
 # Second Secular URV goal
@@ -877,6 +883,19 @@ class TradeRouteCount(ThresholdRequirement):
 	
 	def value(self, iPlayer):
 		return cities.owner(iPlayer).sum(self.count_trade_routes)
+
+
+# First Jain URV goal
+class UnimprovedResourceCount(ThresholdRequirement):
+
+	TYPES = (RESOURCE, COUNT)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_UNIMPROVED_RESOURCE_COUNT"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_UNIMPROVED_RESOURCE_COUNT"
+	
+	def value(self, iPlayer, iBonus):
+		return plots.owner(iPlayer).where(lambda plot: plot.getBonusType(player(iPlayer).getTeam()) == iBonus and plot.getImprovementType() == -1).count()
 
 
 # Third Confucian URV goal

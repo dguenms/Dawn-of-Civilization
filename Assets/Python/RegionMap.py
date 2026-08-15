@@ -66,6 +66,11 @@ tSpreadFactors = (
 	iCore : 	[rHindustan, rRajputana, rDeccan, rBengal, rDravida],
 	iHistorical : 	[rPunjab, rSindh, rIndochina, rIndonesia, rPhilippines],
 },
+# Jainism
+{
+	iHistorical: [rRajputana, rDeccan, rPunjab],
+	iMinority: [rHindustan, rDravida],
+},
 # Buddhism
 {
 	iCore : 	[rHindustan, rRajputana, rBengal, rTibet, rIndochina],

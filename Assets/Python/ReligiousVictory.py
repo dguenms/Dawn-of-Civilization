@@ -31,6 +31,14 @@ dGoals = {
 		CityCultureLevel(holy_city(iJudaism), iCultureLevelLegendary),
 		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 6, iReligion=iJudaism),
 	),
+	iJainism: (
+		All(
+			UnimprovedResourceCount(improvement_resources(iCamp, iPasture, iFishingBoats), 12),
+			NoCityConquered(),
+		),
+		SpecialistCount(sum(iSpecialistGreatMerchant, iSpecialistGreatStatesman), 8),
+		ReligionPopulationCount(iJainism, 60, subject=WORLD),
+	),
 	iConfucianism: (
 		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5),
 		CityBuildingCount(holy_city(iConfucianism), wonders(), 5),

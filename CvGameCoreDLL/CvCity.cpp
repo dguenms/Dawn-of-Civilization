@@ -16124,6 +16124,7 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 	if (eReligion == CONFUCIANISM) return isHasReligion(TAOISM);
 	if (eReligion == TAOISM) return isHasReligion(CONFUCIANISM);
 	if (eReligion == BUDDHISM) return isHasReligion(HINDUISM);
+	if (eReligion == JAINISM) return isHasReligion(HINDUISM);
 
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == eReligion)
 	{

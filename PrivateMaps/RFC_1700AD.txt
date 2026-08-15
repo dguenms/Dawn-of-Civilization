@@ -9413,7 +9413,9 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_JAIN_TEMPLE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		FreeSpecialistType=SPECIALIST_GREAT_GENERAL
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=75
@@ -9518,9 +9520,13 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_JAIN_SHRINE
 		BuildingType=BUILDING_VIJAYA_STAMBHA
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=100
 		EndCulture
@@ -9982,6 +9988,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=100
 		EndCulture

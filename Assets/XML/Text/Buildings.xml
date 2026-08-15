@@ -3930,6 +3930,102 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Council[COLOR_REVERT] provides a [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] slot in the capital city.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_TEMPLE</Tag>
+		<English>Jain Basadi</English>
+		<French>Jain Basadi</French>
+		<German>Jain Basadi</German>
+		<Italian>Jain Basadi</Italian>
+		<Spanish>Jain Basadi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</English>
+		<French>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</French>
+		<German>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_MONASTERY</Tag>
+		<English>Jain Matha</English>
+		<French>Jain Matha</French>
+		<German>Jain Matha</German>
+		<Italian>Jain Matha</Italian>
+		<Spanish>Jain Matha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_MONASTERY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</English>
+		<French>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</French>
+		<German>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_CATHEDRAL</Tag>
+		<English>Jain Shikhara</English>
+		<French>Jain Shikhara</French>
+		<German>Jain Shikhara</German>
+		<Italian>Jain Shikhara</Italian>
+		<Spanish>Jain Shikhara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</English>
+		<French>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</French>
+		<German>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_RELIQUARY</Tag>
+		<English>Jain Reliquary</English>
+		<French>Jain Reliquary</French>
+		<German>Jain Reliquary</German>
+		<Italian>Jain Reliquary</Italian>
+		<Spanish>Jain Reliquary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_RELIQUARY_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_HOLY_SITE</Tag>
+		<English>Jain Holy Site</English>
+		<French>Jain Holy Site</French>
+		<German>Jain Holy Site</German>
+		<Italian>Jain Holy Site</Italian>
+		<Spanish>Jain Holy Site</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_HOLY_SITE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_SHRINE</Tag>
+		<English>Palitana</English>
+		<French>Palitana</French>
+		<German>Palitana</German>
+		<Italian>Palitana</Italian>
+		<Spanish>Palitana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_SHRINE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>
