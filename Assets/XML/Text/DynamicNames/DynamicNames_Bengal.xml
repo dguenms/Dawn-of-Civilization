@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_DESC</Tag>
+		<English>The Bengalis</English>
+		<French>The Bengalis</French>
+		<German>The Bengalis</German>
+		<Italian>The Bengalis</Italian>
+		<Spanish>The Bengalis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_PEOPLES</Tag>
+		<English>Vangala Peoples</English>
+		<French>Vangala Peoples</French>
+		<German>Vangala Peoples</German>
+		<Italian>Vangala Peoples</Italian>
+		<Spanish>Vangala Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_ADJECTIVE</Tag>
+		<English>Bengali</English>
+		<French>Bengali</French>
+		<German>Bengali</German>
+		<Italian>Bengali</Italian>
+		<Spanish>Bengali</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_SHORT_DESC</Tag>
+		<English>Bengal</English>
+		<French>Bengal</French>
+		<German>Bengal</German>
+		<Italian>Bengal</Italian>
+		<Spanish>Bengal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+</Civ4GameText>

@@ -4026,6 +4026,14 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BENGALI_KATRA</Tag>
+		<English>Katra</English>
+		<French>Katra</French>
+		<German>Katra</German>
+		<Italian>Katra</Italian>
+		<Spanish>Katra</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

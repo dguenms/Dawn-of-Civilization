@@ -3270,7 +3270,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_VARU</Tag>
+		<Tag>TXT_KEY_UNIT_BENGALI_VARU</Tag>
 		<English>Varu</English>
 		<French>
 			<Text>Varu</Text>
@@ -3282,12 +3282,12 @@
 		<Spanish>Varu</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_VARU_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
+		<Tag>TXT_KEY_UNIT_BENGALI_VARU_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MALAY_DJONG</Tag>
@@ -3724,6 +3724,14 @@
 		<German>Jain Muni</German>
 		<Italian>Jain Muni</Italian>
 		<Spanish>Jain Muni</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BENGALI_PAIK</Tag>
+		<English>Paik</English>
+		<French>Paik</French>
+		<German>Paik</German>
+		<Italian>Paik</Italian>
+		<Spanish>Paik</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>

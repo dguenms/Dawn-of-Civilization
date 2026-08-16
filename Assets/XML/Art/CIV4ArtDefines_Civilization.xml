@@ -444,5 +444,11 @@
 			<Path>Art/Interface/TeamColor/FlagDECAL_PalmTree.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_BENGAL</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Bengal.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Lotus.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
 	</CivilizationArtInfos>
 </Civ4ArtDefines>

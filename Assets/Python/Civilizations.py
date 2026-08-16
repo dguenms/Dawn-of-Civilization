@@ -361,6 +361,13 @@ lCivilizations = [
 		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
 	),
 	Civilization(
+		iBengal,
+		iGold=200,
+		iStateReligion=iBuddhism,
+		lCivics=[iElective, iCitizenship, iCasteSystem, iMerchantTrade, iSyncretism, iThalassocracy],
+		techs=techs.column(5).including(iArchitecture, iArtisanry, iScholarship, iEthics)
+	),
+	Civilization(
 		iArabia,
 		iGold=300,
 		iAdvancedStartPoints=150,
@@ -856,6 +863,16 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iHarass: 7,
 		iExplore: 1,
+	},
+	iBengal: {
+		iSettle: 2,
+		iWork: 3,
+		iDefend: 3,
+		iShock: 2,
+		iAttack: 2,
+		iWorkerSea: 1,
+		iExploreSea: 2,
+		iMissionary: 2,
 	},
 	iArabia: {
 		iSettle: 2,

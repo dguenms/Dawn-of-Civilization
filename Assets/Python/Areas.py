@@ -30,6 +30,7 @@ iMalays :		(120, 27), # Palembang
 iJapan :		(137, 53), # Kyoto
 iNorse :		(68, 75), # Nidaros
 iTurks :		(104, 58), # Orduqent
+iBengal :		(112, 44), # Gauda
 iArabia :		(87, 39), # Mecca
 iTibet :		(113, 48), # Lhasa
 iMoors :		(57, 49), # Cordoba
@@ -238,6 +239,7 @@ iMalays :		((119, 26),	(121, 31)),
 iJapan :		((135, 52),	(140, 55)),
 iNorse :		((65, 67),	(68, 75)),
 iTurks :		((96, 54),	(107, 59)),
+iBengal :		((111, 42), (113, 45)),
 iArabia :		((84, 39),	(90, 48)),
 iTibet :		((111, 47),	(114, 49)),
 iMoors :		((56, 44),	(61, 50)),

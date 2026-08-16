@@ -3490,6 +3490,39 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
+			<Type>BUILDING_BENGALI_KATRA</Type>
+			<Description>TXT_KEY_BUILDING_BENGALI_KATRA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_BENGALI_KATRA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_BENGALI_KATRA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_BENGALI_KATRA</ArtDefineTag>
+			<PrereqTech>TECH_COMMUNE</PrereqTech>
+			<iCost>200</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>50</iConquestProb>
+			<iAsset>5</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<iForeignTradeRouteModifier>50</iForeignTradeRouteModifier>
+			<CommerceModifiers>
+				<iCommerce>25</iCommerce>
+			</CommerceModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<ConstructSound>AS2D_BUILD_BANK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_BANK</BuildingClass>
 			<Type>BUILDING_MANCHU_PIAOHAO</Type>
 			<Description>TXT_KEY_BUILDING_MANCHU_PIAOHAO</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MANCHU_PIAOHAO_PEDIA</Civilopedia>

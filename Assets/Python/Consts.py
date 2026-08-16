@@ -13,15 +13,15 @@ iWorldY = 80
 iNumPlayers = gc.getMAX_PLAYERS()
 
 # civilizations, not players
-iNumCivs = 74
-(iAmerica, iArabia, iArgentina, iAssyria, iAustralia, iAztecs, iBabylonia, iBelgium, iBrazil, iBurma, 
-iByzantium, iCanada, iCarthage, iCelts, iChina, iColombia, iDravidia, iEgypt, iEngland, iEthiopia, 
-iFrance, iGermany, iGreece, iHarappa, iHittites, iHolyRome, iInca, iIndia, iIran, iItaly, 
-iJapan, iJava, iKhmer, iCongo, iKorea, iKushans, iMalays, iMali, iManchuria, iMaya, 
-iMexico, iMisr, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iNorse, iNubia, iOttomans, 
-iPersia, iPoland, iPolynesia, iPortugal, iRome, iRus, iRussia, iSaudis, iSpain, iSumeria, 
-iSwahili, iSweden, iTatars, iThailand, iTibet, iToltecs, iTurks, iVietnam, iZulu, iIndependent, 
-iIndependent2, iNative, iMinor, iBarbarian) = tuple(Civ(i) for i in range(iNumCivs))
+iNumCivs = 75
+(iAmerica, iArabia, iArgentina, iAssyria, iAustralia, iAztecs, iBabylonia, iBelgium, iBengal, iBrazil, 
+iBurma, iByzantium, iCanada, iCarthage, iCelts, iChina, iColombia, iDravidia, iEgypt, iEngland, 
+iEthiopia, iFrance, iGermany, iGreece, iHarappa, iHittites, iHolyRome, iInca, iIndia, iIran, 
+iItaly, iJapan, iJava, iKhmer, iCongo, iKorea, iKushans, iMalays, iMali, iManchuria, 
+iMaya, iMexico, iMisr, iMongols, iMoors, iMughals, iNativeAmericans, iNetherlands, iNorse, iNubia, 
+iOttomans, iPersia, iPoland, iPolynesia, iPortugal, iRome, iRus, iRussia, iSaudis, iSpain, 
+iSumeria, iSwahili, iSweden, iTatars, iThailand, iTibet, iToltecs, iTurks, iVietnam, iZulu, 
+iIndependent, iIndependent2, iNative, iMinor, iBarbarian) = tuple(Civ(i) for i in range(iNumCivs))
 
 iPhoenicia = iCarthage
 
@@ -54,6 +54,7 @@ lBirthOrder = [
 	iJapan,
 	iNorse,
 	iTurks,
+	iBengal,
 	iArabia,
 	iTibet,
 	iMoors,
@@ -109,7 +110,7 @@ iNumCivGroups = 6
 dCivGroups = {
 iCivGroupEurope : [iGreece, iRome, iCelts, iByzantium, iFrance, iNorse, iSpain, iEngland, iHolyRome, iRus, iItaly, iPoland, iPortugal, iSweden, iRussia, iTatars, iNetherlands, iGermany, iBelgium],
 iCivGroupEastAsia : [iChina, iJapan, iKorea, iTibet, iVietnam, iMongols, iRussia, iTurks, iManchuria],
-iCivGroupSouthAsia : [iIndia, iHarappa, iPolynesia, iDravidia, iKushans, iKhmer, iMalays, iJava, iBurma, iVietnam, iMughals, iThailand, iAustralia],
+iCivGroupSouthAsia : [iIndia, iHarappa, iPolynesia, iDravidia, iKushans, iKhmer, iBengal, iMalays, iJava, iBurma, iVietnam, iMughals, iThailand, iAustralia],
 iCivGroupMiddleEast : [iEgypt, iBabylonia, iAssyria, iHittites, iPersia, iKushans, iByzantium, iArabia, iMoors, iSwahili, iMisr, iOttomans, iCarthage, iTurks, iTatars, iIran, iSaudis],
 iCivGroupAfrica : [iEgypt, iNubia, iCarthage, iEthiopia, iMali, iMoors, iMisr, iSwahili, iCongo],
 iCivGroupAmerica : [iMaya, iToltecs, iInca, iAztecs, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iCanada],
@@ -122,7 +123,7 @@ iNumTechGroups = 4
 
 dTechGroups = {
 iTechGroupWestern : [iRome, iGreece, iCelts, iByzantium, iFrance, iNorse, iSpain, iEngland, iHolyRome, iRus, iPoland, iPortugal, iItaly, iSweden, iRussia, iNetherlands, iGermany, iAmerica, iArgentina, iMexico, iColombia, iBrazil, iBelgium, iAustralia, iCanada],
-iTechGroupMiddleEast : [iEgypt, iBabylonia, iHarappa, iAssyria, iNubia, iHittites, iIndia, iCarthage, iPersia, iEthiopia, iKushans, iMali, iArabia, iMoors, iSwahili, iMisr, iOttomans, iTatars, iMughals, iDravidia, iCongo, iTurks, iIran, iSaudis],
+iTechGroupMiddleEast : [iEgypt, iBabylonia, iHarappa, iAssyria, iNubia, iHittites, iIndia, iCarthage, iPersia, iEthiopia, iKushans, iMali, iBengal, iArabia, iMoors, iSwahili, iMisr, iOttomans, iTatars, iMughals, iDravidia, iCongo, iTurks, iIran, iSaudis],
 iTechGroupFarEast : [iChina, iKorea, iKhmer, iMalays, iJapan, iJava, iTibet, iBurma, iVietnam, iMongols, iThailand, iManchuria],
 iTechGroupNativeAmerica : [iPolynesia, iMaya, iToltecs, iInca, iAztecs],
 }
@@ -225,6 +226,7 @@ lNeighbours = [
 	(iIndia, iDravidia),
 	(iIndia, iKushans),
 	(iIndia, iMalays),
+	(iIndia, iBengal),
 	(iIndia, iTibet),
 	(iIndia, iJava),
 	(iIndia, iKhmer),
@@ -273,6 +275,7 @@ lNeighbours = [
 	(iDravidia, iMalays),
 	(iDravidia, iJava),
 	(iDravidia, iKhmer),
+	(iDravidia, iBengal),
 	(iDravidia, iBurma),
 	(iDravidia, iMughals),
 	(iEthiopia, iArabia),
@@ -337,6 +340,9 @@ lNeighbours = [
 	(iTurks, iTatars),
 	(iTurks, iOttomans),
 	(iTurks, iIran),
+	(iBengal, iTibet),
+	(iBengal, iBurma),
+	(iBengal, iMughals),
 	(iArabia, iMoors),
 	(iArabia, iSwahili),
 	(iArabia, iMisr),
@@ -434,6 +440,7 @@ lInfluences = [
 	(iMalays, iNetherlands),
 	(iJava, iJapan),
 	(iJava, iNetherlands),
+	(iBengal, iEngland),
 	(iArabia, iBabylonia),
 	(iArabia, iGreece),
 	(iArabia, iPersia),
@@ -499,6 +506,7 @@ iMalays : 500,
 iJapan : 525,
 iNorse : 551,
 iTurks : 552,
+iBengal: 554,
 iArabia : 620,
 iTibet : 630,
 iMoors : 711,
@@ -568,6 +576,7 @@ iMali : 1600,
 iByzantium : 1204,
 iNorse : 1300,
 iTurks : 1507,
+iBengal : 1757,
 iArabia : 900,
 iTibet : 1500,
 iMoors : 1500,
@@ -617,6 +626,7 @@ iMalays : [(500, 1500), (1940, 2025)],
 iJapan : [(1800, 2025)],
 iNorse : [(1520, 2025)],
 iTurks : [(1350, 1500)],
+iBengal : [(1971, 2025)],
 iMoors : [(1000, 2025)],
 iJava : [(720, 1755), (1900, 2025)],
 iSpain : [(1700, 2025)],
@@ -796,6 +806,7 @@ iFrance : 100,
 iJapan : 100,
 iNorse : 60,
 iTurks : 30,
+iBengal : 100,
 iArabia : 100,
 iTibet : 60,
 iMoors : 70,
@@ -864,6 +875,7 @@ iFrance : 20,
 iJapan : 25,
 iNorse : 30,
 iTurks : 30,
+iBengal : 50,
 iArabia : 30,
 iTibet : 50,
 iMoors : 20,
@@ -974,7 +986,7 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 237
+iNumUnits = 238
 (iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iPioneer, iWorker, iPunjabiWorker, iLabourer, 
 iMadeireiro, iScout, iExplorer, iBandeirante, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, 
 iIslamicMissionary, iHinduMissionary, iJainMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iNativeWarrior, iMilitia, 
@@ -984,21 +996,21 @@ iAzmaru, iHoplite, iSacredBand, iImmortal, iNativeRaider, iHeavySpearman, iKyund
 iFirelancer, iTercio, iStrelets, iJanissary, iOromoWarrior, iQizilbash, iMohawk, iMusketeer, iRedcoat, iCarolean, 
 iFusilier, iRifleman, iMehalSefari, iGrenadier, iRocketeer, iGrenzer, iAlbionLegion, iChasseur, iAntiTank, iInfantry, 
 iVietCong, iDigger, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, iArcher, iAsharittuBowman, 
-iMedjay, iNativeArcher, iSkirmisher, iHolkan, iAtlatl, iKelebolo, iLongbowman, iPatiyodha, iRattanArcher, iCrossbowman, 
-iChokonu, iBalestriere, iChariot, iWarChariot, iHuluganni, iCidainh, iHorseman, iCompanion, iNumidianCavalry, iAsvaka, 
-iCamelRider, iHorseArcher, iMangudai, iKhampa, iOghuz, iCamelArcher, iLancer, iSavaran, iFarari, iMobileGuard, 
-iMamluk, iKeshik, iCataphract, iChambul, iChangSuek, iPistolier, iHakkapeliitta, iMountedBrave, iCamelGunner, iZamburak, 
-iCuirassier, iGendarme, iConquistador, iWingedHussar, iSowar, iBannerman, iHussar, iCossack, iLlanero, iDragoon, 
-iCassay, iIkhwan, iGrenadierCavalry, iCavalry, iRural, iLightHorse, iWarElephant, iVaru, iBallistaElephant, iTank, 
-iPanzer, iMainBattleTank, iGunship, iCatapult, iSiegeRam, iBallista, iTrebuchet, iBombard, iHwacha, iLantaka, 
-iSiegeElephant, iGreatBombard, iCannon, iGribeauval, iArtillery, iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, 
-iWaka, iBireme, iWarGalley, iHeavyGalley, iDromon, iLongship, iCog, iDharani, iDhow, iGalleass, 
-iDjong, iKobukson, iLanternas, iCaravel, iCarrack, iGalleon, iFluyt, iPrivateer, iCorsair, iFrigate, 
-iShipOfTheLine, iManOfWar, iSteamship, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, 
-iMissileCruiser, iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, iSupercarrier, iBiplane, iFighter, iZero, iJetFighter, 
-iBomber, iFlyingFortress, iStealthBomber, iGuidedMissile, iDrone, iNuclearBomber, iICBM, iSatellite, iGreatProphet, iGreatArtist, 
-iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iArgentineGreatGeneral, iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, 
-iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
+iMedjay, iNativeArcher, iSkirmisher, iHolkan, iAtlatl, iKelebolo, iLongbowman, iPatiyodha, iPaik, iRattanArcher, 
+iCrossbowman, iChokonu, iBalestriere, iChariot, iWarChariot, iHuluganni, iCidainh, iHorseman, iCompanion, iNumidianCavalry, 
+iAsvaka, iCamelRider, iHorseArcher, iMangudai, iKhampa, iOghuz, iCamelArcher, iLancer, iSavaran, iFarari, 
+iMobileGuard, iMamluk, iKeshik, iCataphract, iChambul, iChangSuek, iPistolier, iHakkapeliitta, iMountedBrave, iCamelGunner, 
+iZamburak, iCuirassier, iGendarme, iConquistador, iWingedHussar, iSowar, iBannerman, iHussar, iCossack, iLlanero, 
+iDragoon, iCassay, iIkhwan, iGrenadierCavalry, iCavalry, iRural, iLightHorse, iWarElephant, iVaru, iBallistaElephant, 
+iTank, iPanzer, iMainBattleTank, iGunship, iCatapult, iSiegeRam, iBallista, iTrebuchet, iBombard, iHwacha, 
+iLantaka, iSiegeElephant, iGreatBombard, iCannon, iGribeauval, iArtillery, iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, 
+iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDromon, iLongship, iCog, iDharani, iDhow, 
+iGalleass, iDjong, iKobukson, iLanternas, iCaravel, iCarrack, iGalleon, iFluyt, iPrivateer, iCorsair, 
+iFrigate, iShipOfTheLine, iManOfWar, iSteamship, iIronclad, iTorpedoBoat, iCruiser, iTransport, iDestroyer, iCorvette, 
+iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, iSupercarrier, iBiplane, iFighter, iZero, 
+iJetFighter, iBomber, iFlyingFortress, iStealthBomber, iGuidedMissile, iDrone, iNuclearBomber, iICBM, iSatellite, iGreatProphet, 
+iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iArgentineGreatGeneral, iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, 
+iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, iAztecSlave) = range(iNumUnits)
 
 lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 
@@ -1039,7 +1051,7 @@ iNumBonusVarieties = 19
 iGemsEmeralds, iSheepLlama, iSheepBlack, iCowBrown, iPigFurry, iIvoryAfrican, iCitrusOranges, iCrabShrimp) = range(iNumBonuses, iNumBonuses + iNumBonusVarieties)
 
 
-iNumBuildings = 148
+iNumBuildings = 149
 (iPalace, iBarracks, iKalliu, iSoldattorp, iIkhanda, iGranary, iTannery, iPaganTemple, iWeaver, iMbwadi, 
 iMonument, iObelisk, iMenhir, iStele, iCandi, iEdict, iMalae, iMudbrickPyramid, iTotemPole, iWalls, 
 iDun, iStable, iOrtege, iLibrary, iEdubba, iTaixue, iKyaung, iCalmecac, iHarbor, iAqueduct, 
@@ -1048,13 +1060,13 @@ iBallCourt, iCharreadaArena, iSambadrome, iGarden, iLighthouse, iGudang, iTradin
 iObsidianWorkshop, iMarket, iForum, iCaravanserai, iWangara, iSouk, iFloatingMarket, iJail, iDivan, iOstrog, 
 iBath, iReservoir, iHammam, iForge, iBloomeryBuilding, iArtStudio, iCastle, iCitadel, iIslandFort, iPharmacy, 
 iAlchemist, iGrocer, iPostOffice, iTambo, iBasqaq, iWharf, iCoffeehouse, iSalon, iChocolaterie, iBank, 
-iPiaohao, iConstabulary, iMountedPolice, iCustomsHouse, iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, iGopuram, 
-iRathaus, iSejmik, iSewer, iStarFort, iEstate, iMausoleum, iHacienda, iDrydock, iLevee, iPolder, 
-iObservatory, iWarehouse, iCourthouse, iExchequer, iFactory, iAssemblyPlant, iZaibatsu, iDistillery, iPark, iBagh, 
-iCoalPlant, iRailwayStation, iLaboratory, iCsiro, iAbattoir, iColdStoragePlant, iGrainSilo, iNewsPress, iGasPlant, iIndustrialPark, 
-iOilDepot, iCinema, iHospital, iSupermarket, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, iIntelligenceAgency, iElectricalGrid, 
-iWaterworks, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iContainerTerminal, iNuclearPlant, iDiagnosticsCenter, 
-iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm) = range(iNumBuildings)
+iKatra, iPiaohao, iConstabulary, iMountedPolice, iCustomsHouse, iFeitoria, iUniversity, iSeowon, iGompa, iCivicSquare, 
+iGopuram, iRathaus, iSejmik, iSewer, iStarFort, iEstate, iMausoleum, iHacienda, iDrydock, iLevee, 
+iPolder, iObservatory, iWarehouse, iCourthouse, iExchequer, iFactory, iAssemblyPlant, iZaibatsu, iDistillery, iPark, 
+iBagh, iCoalPlant, iRailwayStation, iLaboratory, iCsiro, iAbattoir, iColdStoragePlant, iGrainSilo, iNewsPress, iGasPlant, 
+iIndustrialPark, iOilDepot, iCinema, iHospital, iSupermarket, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, iIntelligenceAgency, 
+iElectricalGrid, iWaterworks, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iContainerTerminal, iNuclearPlant, 
+iDiagnosticsCenter, iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm) = range(iNumBuildings)
 
 iNumReligiousBuildings = 66
 iFirstReligiousBuilding = iNumBuildings
@@ -1248,23 +1260,23 @@ iVictorySecularism = 11
 
 
 #leaders
-iNumLeaders = 154
+iNumLeaders = 155
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iDjoser, iHatshepsut, iRamesses, iPtolemy, iSargon, iHammurabi, iWentAntu, 
 iAshurbanipal, iWu, iTaizong, iHongwu, iMao, iMursili, iPericles, iAlexanderTheGreat, iGeorge, iAsoka, 
 iChandragupta, iShivaji, iGandhi, iHiram, iHannibal, iTaharqa, iAmanirena, iAhoeitu, iCyrus, iDarius, 
 iShapur, iBrennus, iBoudica, iBrianBoru, iScipio, iJuliusCaesar, iAugustus, iPacal, iRajendra, iKrishnaDevaRaya, 
 iEzana, iZaraYaqob, iMenelik, iTopiltzin, iKanishka, iWangKon, iSejong, iNeangNeak, iSuryavarman, iDinga, 
 iMansaMusa, iJustinian, iBasil, iCharlemagne, iLouis, iNapoleon, iDeGaulle, iSriJayanasa, iTunPerak, iKammu, 
-iOdaNobunaga, iMeiji, iCanute, iHaakon, iChristian, iGerhardsen, iBumin, iAlpArslan, iTamerlane, iHarun, 
-iSongtsen, iLobsangGyatso, iRahman, iYaqub, iHayamWuruk, iSuharto, iIsabella, iPhilip, iFranco, iAlfred, 
-iElizabeth, iVictoria, iChurchill, iBarbarossa, iCharles, iFrancis, iAnawrahta, iBayinnaung, iYaroslav, iKhmelnytsky, 
-iLeLoi, iHoChiMinh, iDawud, iSaladin, iBaibars, iMuhammadAli, iNasser, iCasimir, iSobieski, iPilsudski, 
-iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, iLorenzo, iCavour, iMussolini, iGenghisKhan, 
-iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iUzbeg, iNaresuan, iMongkut, iGustav, iErlander, 
-iIvan, iPeter, iCatherine, iAlexanderI, iStalin, iMehmed, iSuleiman, iAtaturk, iMbemba, iAbbas, 
-iKhomeini, iWillemVanOranje, iWilliam, iKangxi, iFrederick, iBismarck, iHitler, iIbnSaud, iWashington, iLincoln, 
-iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, iCardenas, iBolivar, iPedro, iVargas, iLeopold, 
-iCurtin, iMacDonald, iTrudeau, iSittingBull) = range(iNumLeaders)
+iOdaNobunaga, iMeiji, iCanute, iHaakon, iChristian, iGerhardsen, iBumin, iAlpArslan, iTamerlane, iAlauddin, 
+iHarun, iSongtsen, iLobsangGyatso, iRahman, iYaqub, iHayamWuruk, iSuharto, iIsabella, iPhilip, iFranco, 
+iAlfred, iElizabeth, iVictoria, iChurchill, iBarbarossa, iCharles, iFrancis, iAnawrahta, iBayinnaung, iYaroslav, 
+iKhmelnytsky, iLeLoi, iHoChiMinh, iDawud, iSaladin, iBaibars, iMuhammadAli, iNasser, iCasimir, iSobieski, 
+iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, iLorenzo, iCavour, iMussolini, 
+iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iUzbeg, iNaresuan, iMongkut, iGustav, 
+iErlander, iIvan, iPeter, iCatherine, iAlexanderI, iStalin, iMehmed, iSuleiman, iAtaturk, iMbemba, 
+iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iKangxi, iFrederick, iBismarck, iHitler, iIbnSaud, iWashington, 
+iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, iCardenas, iBolivar, iPedro, iVargas, 
+iLeopold, iCurtin, iMacDonald, iTrudeau, iSittingBull) = range(iNumLeaders)
 
 dResurrectionLeaders = CivDict({
 	iChina : iHongwu,

@@ -77,6 +77,7 @@ LEADER_DATES = {
 	iBumin: 550,
 	iAlpArslan: 1070,
 	iTamerlane: 1370,
+	iAlauddin: 1500,
 	iHarun: 790,
 	iSongtsen: 620,
 	iLobsangGyatso: 1650,
