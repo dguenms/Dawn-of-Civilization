@@ -347,35 +347,32 @@ class Languages(object):
 		bOriginalMinor = self.city and is_minor(Civ(self.city.getOriginalCiv()))
 		bNonlocalMajor = not is_minor(self.identifier) and self.plot.getSettlerValue(self.iCiv) > 0 and (not self.city or self.city.getOriginalCiv() == self.iCiv)
 		
+		local_languages = getLocalLanguages(self.tile)
+		
 		if bOriginalMinor or bNonlocalMajor:
-			for iLanguage in getLocalLanguages(self.tile):
+			for iLanguage in local_languages:
 				# print "yield local for original minor or nonlocal major: %s" % iLanguage
 				yield iLanguage
 		
-		local_languages = self.getLocalLanguages()
-		local_civs = self.getValidLanguageCivs(local_languages)
+		tile_languages = self.getTileLanguages()
+		tile_civs = self.getValidLanguageCivs(tile_languages)
 		
 		if self.plot.getRegionID() in lAmerica and civ(self.identifier) in dCivGroups[iCivGroupAmerica] and True not in data.dFirstContactConquerors.values():
-			local_civs = local_civs.group(iCivGroupAmerica)
+			tile_civs = tile_civs.group(iCivGroupAmerica)
 		
-		similar_civs, different_civs = local_civs.split(self.isSimilar)
+		similar_civs, different_civs = tile_civs.split(self.isSimilar)
 		
-		# print "similar: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in similar_civs.sort(self.getSortingKey, reverse=True)]
-		# print "different: %s" % [(infos.civ(iCiv).getText(), self.getSortingKey(iCiv)) for iCiv in different_civs.sort(self.getSortingKey, reverse=True)]
-		
-		for iSimilarCiv in similar_civs.sort(self.getSortingKey, reverse=True):
-			for iLanguage in getPrimaryLanguages(iSimilarCiv):
-				# print "yield similar for %s: %s" % (infos.civ(iSimilarCiv).getText(), iLanguage)
-				yield iLanguage
+		for iSimilarCiv, iLanguage in self.getSortedLanguages(similar_civs):
+			# print "yield similar language for %s: %s" % (infos.civ(iSimilarCiv).getDescription(), iLanguage)
+			yield iLanguage
 		
 		for iLanguage in local_languages:
 			# print "yield local: %s" % iLanguage
 			yield iLanguage
 		
-		for iDifferentCiv in different_civs.sort(self.getSortingKey, reverse=True):
-			for iLanguage in getPrimaryLanguages(iDifferentCiv):
-				# print "yield different for %s: %s" % (infos.civ(iDifferentCiv).getText(), iLanguage)
-				yield iLanguage
+		for iDifferentCiv, iLanguage in self.getSortedLanguages(different_civs):
+			# print "yield different for %s: %s" % (infos.civ(iDifferentCiv).getText(), iLanguage)
+			yield iLanguage
 	
 	@property
 	def iCiv(self):
@@ -393,7 +390,7 @@ class Languages(object):
 	def player(self):
 		return player(identifier)
 	
-	def getLocalLanguages(self):
+	def getTileLanguages(self):
 		base_name, changed_name = getTileNames(self.tile)
 		
 		tile_languages = Translations.of(changed_name).getLanguages()
@@ -460,6 +457,10 @@ class Languages(object):
 			self.getValue(iCiv),
 			self.getCulture(iCiv),
 		)
+	
+	def getSortedLanguages(self, civilizations):
+		similar_languages = [(iCiv, index, iLanguage) for iCiv in civilizations.sort(self.getSortingKey, reverse=True) for index, iLanguage in enumerate(getPrimaryLanguages(iCiv))]
+		return [(iCiv, iLanguage) for iCiv, index, iLanguage in sorted(similar_languages, key=lambda item: item[1])]
 
 
 ### NAMES ###
