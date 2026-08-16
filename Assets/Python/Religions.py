@@ -196,6 +196,18 @@ def spreadIslamIndonesia():
 			spreadCity.spreadReligion(iIslam)
 
 
+@handler("BeginGameTurn")
+def checkRemoveBuddhismIndia():
+	if year() == year(1000):
+		removeBuddhismIndia()
+
+
+@handler("BeginGameTurn")
+def checkRemoveJainismIndia():
+	if year() == year(1200):
+		removeJainismIndia()
+
+
 @handler("techAcquired")
 def checkReformation(iTech, iTeam, iPlayer):
 	if scenario() == i1700AD:
@@ -405,6 +417,23 @@ def foundReligionInCore(iReligion):
 	city = cities.all().where(lambda c: c.plot().getSpreadFactor(iReligion) == RegionSpreadTypes.REGION_SPREAD_CORE).random()
 	if city:
 		foundReligion(location(city), iReligion)
+		
+		
+def removeBuddhismIndia():
+	lPeripheryRegions = [rHindustan, rRajputana, rBengal, rDeccan]
+	lMinorityRegions = [rPunjab, rHinduKush]
+	
+	for plot in plots.regions(*lPeripheryRegions):
+		plot.setSpreadFactor(iBuddhism, iPeriphery)
+	
+	for plot in plots.regions(*lMinorityRegions):
+		plot.setSpreadFactor(iBuddhism, iMinority)
+
+
+def removeJainismIndia():
+	lMinorityRegions = [rRajputana, rDeccan, rPunjab]
+	for plot in plots.regions(*lMinorityRegions):
+		plot.setSpreadFactor(iJainism, iMinority)
 
 
 ### popup handlers - transition to using Popups module ###

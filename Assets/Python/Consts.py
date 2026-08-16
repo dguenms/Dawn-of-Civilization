@@ -1310,6 +1310,9 @@ dCivPeriods = {
 iNumImpacts = 5
 (iImpactMarginal, iImpactLimited, iImpactSignificant, iImpactCritical, iImpactPlayer) = range(iNumImpacts)
 
+iNumReligionMapTypes = 5
+(iNone, iMinority, iPeriphery, iHistorical, iCore) = range(iNumReligionMapTypes)
+
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
 lLateColonyCivs = lTradingCompanyCivs + [iGermany]
 

@@ -2,8 +2,6 @@ from Core import *
 from Files import FileMap
 from Events import handler
 
-iNumReligionMapTypes = 5
-(iNone, iMinority, iPeriphery, iHistorical, iCore) = range(iNumReligionMapTypes)
 
 def getSpreadFactor(iReligion, plot):
 	iRegion = plot.getRegionID()

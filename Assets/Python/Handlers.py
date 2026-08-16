@@ -1,7 +1,6 @@
 import StoredData
 import Setup
 
-import RegionMap
 import CityNames
 import Civilizations
 import Modifiers
