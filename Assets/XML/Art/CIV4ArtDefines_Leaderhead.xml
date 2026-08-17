@@ -1265,10 +1265,10 @@
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ALAUDDIN</Type>
 			<Button>Art/Leaderheads/Alauddin/Alauddin.dds</Button>
-			<NIF>art/LeaderHeads/Alauddin/tokugawa.nif</NIF>
-			<KFM>art/LeaderHeads/Alauddin/tokugawa.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Alauddin/tokugawa.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Alauddin/tokugawa_BG.kfm</BackgroundKFM>
+			<NIF>Art/Leaderheads/Alauddin/tokugawa.nif</NIF>
+			<KFM>Art/Leaderheads/Alauddin/tokugawa.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Alauddin/tokugawa.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Alauddin/tokugawa_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
