@@ -648,11 +648,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SHIVAJI</Type>
-			<Button>Art/leaderheads/Bhoja/Bhoja.dds</Button>
-			<NIF>art/leaderheads/Bhoja/Asoka.nif</NIF>
-			<KFM>art/leaderheads/Bhoja/Asoka.kfm</KFM>
-			<NoShaderNIF>art/leaderheads/Bhoja/Asoka.nif</NoShaderNIF>
-			<BackgroundKFM>art/leaderheads/Bhoja/Asoka_bg.kfm</BackgroundKFM>
+			<Button>Art/leaderheads/Shivaji/Shivaji.dds</Button>
+			<NIF>art/leaderheads/Shivaji/Asoka.nif</NIF>
+			<KFM>art/leaderheads/Shivaji/Asoka.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Shivaji/Asoka.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Shivaji/Asoka_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ISABELLA_NEW</Type>
@@ -1269,6 +1269,14 @@
 			<KFM>Art/Leaderheads/Alauddin/tokugawa.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Alauddin/tokugawa.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Alauddin/tokugawa_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BHOJA</Type>
+			<Button>Art/Leaderheads/Bhoja/Bhoja.dds</Button>
+			<NIF>art/LeaderHeads/Bhoja/Tachnechobrus.nif</NIF>
+			<KFM>art/LeaderHeads/Bhoja/Tachnechobrus.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Bhoja/Tachnechobrus.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Bhoja/Tachnechobrus_Background.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

@@ -33,6 +33,7 @@ iTurks :		(104, 58), # Orduqent
 iBengal :		(112, 44), # Gauda
 iArabia :		(87, 39), # Mecca
 iTibet :		(113, 48), # Lhasa
+iRajputs :		(104, 42), # Avanti
 iMoors :		(57, 49), # Cordoba
 iJava :			(126, 25), # Trowulan
 iSpain :		(57, 52), # Madrid
@@ -242,6 +243,7 @@ iTurks :		((96, 54),	(107, 59)),
 iBengal :		((111, 42), (113, 45)),
 iArabia :		((84, 39),	(90, 48)),
 iTibet :		((111, 47),	(114, 49)),
+iRajputs :		((104, 42), (104, 42)),
 iMoors :		((56, 44),	(61, 50)),
 iJava :			((125, 24),	(128, 25)),
 iSpain :		((54, 51),	(59, 54)),

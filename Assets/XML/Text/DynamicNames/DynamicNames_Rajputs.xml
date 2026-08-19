@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_DESC</Tag>
+		<English>The Rajputs</English>
+		<French>The Rajputs</French>
+		<German>The Rajputs</German>
+		<Italian>The Rajputs</Italian>
+		<Spanish>The Rajputs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_PEOPLES</Tag>
+		<English>Rajput Peoples</English>
+		<French>Rajput Peoples</French>
+		<German>Rajput Peoples</German>
+		<Italian>Rajput Peoples</Italian>
+		<Spanish>Rajput Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_ADJECTIVE</Tag>
+		<English>Rajput</English>
+		<French>Rajput</French>
+		<German>Rajput</German>
+		<Italian>Rajput</Italian>
+		<Spanish>Rajput</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_SHORT_DESC</Tag>
+		<English>Rajputana</English>
+		<French>Rajputana</French>
+		<German>Rajputana</German>
+		<Italian>Rajputana</Italian>
+		<Spanish>Rajputana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+</Civ4GameText>

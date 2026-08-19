@@ -81,6 +81,7 @@ LEADER_DATES = {
 	iHarun: 790,
 	iSongtsen: 620,
 	iLobsangGyatso: 1650,
+	iBhoja: 850,
 	iRahman: 920,
 	iYaqub: 1190,
 	iHayamWuruk: 1350,

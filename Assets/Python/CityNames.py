@@ -48,6 +48,7 @@ dBaseLanguages = {
 	iBengal: (iIndian, iDravidian),
 	iArabia: (iArabic,),
 	iTibet: (iTibetan,),
+	iRajputs: (iIndian, iDravidian),
 	iMoors: (iArabic, iBerber),
 	iJava: (iJavanese, iMalay, iIndian),
 	iSpain: (iSpanish,),

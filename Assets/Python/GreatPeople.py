@@ -64,6 +64,7 @@ def getPrimary(iCiv):
 	elif iCiv == iBengal:
 		if player(iCiv).getStateReligion() == iIslam: return iMughals
 		return iIndia
+	elif iCiv == iRajputs: return iIndia
 	elif iCiv == iMisr: return iArabia
 	elif iCiv == iTatars: return iMongols
 	elif iCiv == iIran: return iPersia

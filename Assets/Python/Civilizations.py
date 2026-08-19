@@ -363,6 +363,7 @@ lCivilizations = [
 	Civilization(
 		iBengal,
 		iGold=200,
+		iAdvancedStartPoints=100,
 		iStateReligion=iBuddhism,
 		lCivics=[iElective, iCitizenship, iCasteSystem, iMerchantTrade, iSyncretism, iThalassocracy],
 		techs=techs.column(5).including(iArchitecture, iArtisanry, iScholarship, iEthics)
@@ -383,6 +384,14 @@ lCivilizations = [
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iMerchantTrade, iMonasticism, iHegemony],
 		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
+	),
+	Civilization(
+		iRajputs,
+		iGold=150,
+		iAdvancedStartPoints=100,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iClergy, iHegemony],
+		techs=techs.column(5).including(iNobility, iSteel, iArtisanry)
 	),
 	Civilization(
 		iMoors,
@@ -890,6 +899,14 @@ dStartingUnits = CivDict({
 		iHarass: 4,
 		iMissionary: 2,
 	},
+	iRajputs: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 3,
+		iHarass: 4,
+		iExplore: 1,
+		iMissionary: 1,
+	},
 	iMoors: {
 		iSettle: 2,
 		iWork: 1,
@@ -1393,12 +1410,19 @@ dAdditionalUnits = CivDict({
 	iTurks: {
 		iHarass: 4,
 	},
+	iBengal: {
+		iShock: 2,
+		iAttack: 2,
+	},
 	iArabia: {
 		iAttack: 2,
 		iShock: 1,
 	},
 	iTibet: {
 		iHarass: 2,
+	},
+	iRajputs: {
+		iHarass: 3,
 	},
 	iKhmer: {
 		iAttack: 3,
@@ -1780,7 +1804,8 @@ dTechPreferences = {
 	iIndia : {
 		iCeremony: 200,
 		iPriesthood: 200,
-		iPhilosophy: 50,
+		iPhilosophy: 100,
+		iMedicine: 100,
 		
 		iEngineering: -20,
 		iTheology: -20,
@@ -2414,6 +2439,9 @@ dBuildingPreferences = {
 	},
 	iTibet : {
 		iPotalaPalace: 40,
+	},
+	iRajputs : {
+		iVijayaStambha: 100,
 	},
 	iMoors : {
 		iMezquita: 100,

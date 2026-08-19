@@ -568,6 +568,7 @@ dStartingLeaders = [
 	iBengal : iAlauddin,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
+	iRajputs : iBhoja,
 	iKhmer : iNeangNeak,
 	iMoors : iRahman,
 	iJava : iHayamWuruk,

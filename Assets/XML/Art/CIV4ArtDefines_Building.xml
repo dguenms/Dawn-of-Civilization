@@ -1908,14 +1908,14 @@
 			<Button>Art/Structures/Buildings/Taixue/taixue.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INDIAN_STEPWELL</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<Type>ART_DEF_BUILDING_RAJPUT_STEPWELL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Stepwell/Khmer_Baray.nif</NIF>
+			<fScale>0.65</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Stepwell/Stepwell.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Aqueduct.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,7</Button>
+			<Button>Art/Structures/Buildings/Stepwell/Stepwell.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_THAI_HO_TRAI</Type>
