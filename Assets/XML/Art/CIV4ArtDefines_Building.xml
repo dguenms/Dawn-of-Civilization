@@ -4457,5 +4457,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Katra/Katra.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KARNATIC_VIRAGALLU</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>3.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Viragallu/stele.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Viragallu/Viragallu.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

@@ -558,6 +558,7 @@ dStartingLeaders = [
 	iDravidia : iRajendra,
 	iEthiopia : iEzana,
 	iVietnam: iLeLoi,
+	iKarnataka: iAmoghavarsha,
 	iToltecs : iTopiltzin,
 	iKushans: iKanishka,
 	iKorea : iWangKon,

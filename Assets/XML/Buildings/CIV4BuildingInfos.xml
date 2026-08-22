@@ -574,6 +574,46 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
+			<Type>BUILDING_KARNATIC_VIRAGALLU</Type>
+			<Description>TXT_KEY_BUILDING_KARNATIC_VIRAGALLU</Description>
+			<Civilopedia>TXT_KEY_NEW_BUILDING_KARNATIC_VIRAGALLU_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_KARNATIC_VIRAGALLU_STRATEGY</Strategy>
+			<Advisor>ADVISOR_CULTURE</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_KARNATIC_VIRAGALLU</ArtDefineTag>
+			<PrereqTech>TECH_CEREMONY</PrereqTech>
+			<FreePromotion>PROMOTION_COMBAT1</FreePromotion>
+			<bCenterInCity>1</bCenterInCity>
+			<iCost>40</iCost>
+			<iConquestProb>65</iConquestProb>
+			<iHealRateChange>10</iHealRateChange>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iAsset>1</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>2</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_CULTURE</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_MONUMENT</BuildingClass>
 			<Type>BUILDING_JAVANESE_CANDI</Type>
 			<Description>TXT_KEY_BUILDING_JAVANESE_CANDI</Description>
 			<Civilopedia>TXT_KEY_BUILDING_JAVANESE_CANDI_PEDIA</Civilopedia>

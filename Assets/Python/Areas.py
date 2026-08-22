@@ -20,6 +20,7 @@ iCelts :		(62, 57), # Nemessos
 iMaya :			(22, 41), # Tikal
 iDravidia :		(106, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
+iKarnataka :	(105, 39), # Kalyani
 iToltecs :		(17, 43), # Tollan
 iKushans :		(102, 49), # Taxila
 iKorea :		(131, 54), # Seoul
@@ -230,6 +231,7 @@ iMaya :			((21, 41),	(23, 44)),
 iDravidia :		((105, 31),	(108, 35)),
 iEthiopia :		((82, 33),	(85, 36)),
 iVietnam :		((120, 41),	(122, 43)),
+iKarnataka :	((105, 39), (105, 39)),
 iToltecs :		((16, 42),	(18, 44)),
 iKushans :		((100, 46),	(104, 53)),
 iKorea :		((130, 53),	(132, 56)),

@@ -55,6 +55,7 @@ LEADER_DATES = {
 	iMenelik: 1890,
 	iLeLoi: 1400,
 	iHoChiMinh: 1945,
+	iAmoghavarsha: 820,
 	iTopiltzin: 900,
 	iKanishka: 130,
 	iWangKon: 920,

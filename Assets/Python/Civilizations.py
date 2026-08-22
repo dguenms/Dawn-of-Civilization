@@ -284,6 +284,12 @@ lCivilizations = [
 		techs=techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood)
 	),
 	Civilization(
+		iKarnataka,
+		iGold=100,
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iSyncretism],
+		techs=techs.column(4).including(iAesthetics, iPhilosophy, iMedicine),
+	),
+	Civilization(
 		iToltecs,
 		iGold=50,
 		lCivics=[iRedistribution, iDeification],
@@ -782,6 +788,14 @@ dStartingUnits = CivDict({
 		iWorkerSea: 1,
 		iEscort: 1,
 		# 1 Shotelai
+	},
+	iKarnataka: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 2,
+		iAttack: 1,
+		iCounter: 1,
+		iMissionary: 1,
 	},
 	iToltecs: {
 		iSettle: 1,

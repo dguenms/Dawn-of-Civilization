@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_DESC</Tag>
+		<English>The Kannadigas</English>
+		<French>The Kannadigas</French>
+		<German>The Kannadigas</German>
+		<Italian>The Kannadigas</Italian>
+		<Spanish>The Kannadigas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_PEOPLES</Tag>
+		<English>Kannada Peoples</English>
+		<French>Kannada Peoples</French>
+		<German>Kannada Peoples</German>
+		<Italian>Kannada Peoples</Italian>
+		<Spanish>Kannada Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_ADJECTIVE</Tag>
+		<English>Karnatic</English>
+		<French>Karnatic</French>
+		<German>Karnatic</German>
+		<Italian>Karnatic</Italian>
+		<Spanish>Karnatic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_SHORT_DESC</Tag>
+		<English>Karnataka</English>
+		<French>Karnataka</French>
+		<German>Karnataka</German>
+		<Italian>Karnataka</Italian>
+		<Spanish>Karnataka</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_DEFAULT</Tag>
+		<English>%s1 Kingdom</English>
+		<French>%s1 Kingdom</French>
+		<German>%s1 Kingdom</German>
+		<Italian>%s1 Kingdom</Italian>
+		<Spanish>%s1 Kingdom</Spanish>
+	</TEXT>
+</Civ4GameText>

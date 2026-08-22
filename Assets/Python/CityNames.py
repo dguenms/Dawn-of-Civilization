@@ -34,6 +34,7 @@ dBaseLanguages = {
 	iMaya: (iMayan,),
 	iDravidia: (iDravidian, iIndian),
 	iEthiopia: (iEthiopian, iArabic),
+	iKarnataka: (iDravidian, iIndian),
 	iToltecs: (iToltec, iNahuatl, iMayan),
 	iKushans: (iKushan, iTurkish, iGreek),
 	iKorea: (iKorean,),
