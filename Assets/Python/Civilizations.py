@@ -1819,8 +1819,8 @@ dTechPreferences = {
 	iIndia : {
 		iCeremony: 200,
 		iPriesthood: 200,
-		iPhilosophy: 100,
-		iMedicine: 100,
+		iPhilosophy: 200,
+		iMedicine: 200,
 		
 		iEngineering: -20,
 		iTheology: -20,
