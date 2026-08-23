@@ -970,6 +970,22 @@
 		<Spanish>+1 [ICON_TRADE] route in overseas colonies until the Industrial era</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_RAJ_TITLE</Tag>
+		<English>The Power of Agnivanshi:</English>
+		<French>The Power of Agnivanshi:</French>
+		<German>The Power of Agnivanshi:</German>
+		<Italian>The Power of Agnivanshi:</Italian>
+		<Spanish>The Power of Agnivanshi:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_RAJ</Tag>
+		<English>+1 Experience from combat outside borders</English>
+		<French>+1 Experience from combat outside borders</French>
+		<German>+1 Experience from combat outside borders</German>
+		<Italian>+1 Experience from combat outside borders</Italian>
+		<Spanish>+1 Experience from combat outside borders</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>
 		<English>The Power of Infrastructure:</English>
 		<French>Le pouvoir de l'infrastructure :</French>
