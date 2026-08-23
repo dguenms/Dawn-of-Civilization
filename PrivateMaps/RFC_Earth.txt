@@ -45582,6 +45582,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=39
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46966,7 +46967,6 @@ BeginPlot
 	x=104,y=40
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -47431,6 +47431,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	BonusType=BONUS_COW
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48805,7 +48806,6 @@ BeginPlot
 	x=108,y=38
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_IRON
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -49275,6 +49275,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=39
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
