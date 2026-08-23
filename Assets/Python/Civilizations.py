@@ -333,6 +333,14 @@ lCivilizations = [
 		techs=techs.column(5).including(iArchitecture, iPolitics, iEthics)
 	),
 	Civilization(
+		iRajputs,
+		iGold=150,
+		iAdvancedStartPoints=100,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iClergy, iHegemony],
+		techs=techs.column(5).including(iNobility, iSteel, iArtisanry)
+	),
+	Civilization(
 		iFrance,
 		iGold=100,
 		iStateReligion=iCatholicism,
@@ -391,14 +399,6 @@ lCivilizations = [
 		iStateReligion=iBuddhism,
 		lCivics=[iMonarchy, iMerchantTrade, iMonasticism, iHegemony],
 		techs=techs.column(5).including(iNobility, iScholarship, iEthics)
-	),
-	Civilization(
-		iRajputs,
-		iGold=150,
-		iAdvancedStartPoints=100,
-		iStateReligion=iHinduism,
-		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iClergy, iHegemony],
-		techs=techs.column(5).including(iNobility, iSteel, iArtisanry)
 	),
 	Civilization(
 		iMoors,
@@ -844,6 +844,14 @@ dStartingUnits = CivDict({
 		iFerry: 2,
 		iEscort: 2,
 	},
+	iRajputs: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 3,
+		iHarass: 4,
+		iExplore: 1,
+		iMissionary: 1,
+	},
 	iFrance: {
 		iSettle: 2,
 		iWork: 2,
@@ -913,14 +921,6 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iHarass: 4,
 		iMissionary: 2,
-	},
-	iRajputs: {
-		iSettle: 2,
-		iWork: 2,
-		iDefend: 3,
-		iHarass: 4,
-		iExplore: 1,
-		iMissionary: 1,
 	},
 	iMoors: {
 		iSettle: 2,
@@ -1415,6 +1415,9 @@ dAdditionalUnits = CivDict({
 		iAttack: 3,
 		iCounter: 1,
 	},
+	iRajputs: {
+		iHarass: 3,
+	},
 	iFrance: {
 		iDefend: 3,
 		iAttack: 3,
@@ -1435,9 +1438,6 @@ dAdditionalUnits = CivDict({
 	},
 	iTibet: {
 		iHarass: 2,
-	},
-	iRajputs: {
-		iHarass: 3,
 	},
 	iKhmer: {
 		iAttack: 3,
@@ -2393,6 +2393,9 @@ dBuildingPreferences = {
 		iSistineChapel: -20,
 		iSaintSophia: -50,
 	},
+	iRajputs : {
+		iVijayaStambha: 100,
+	},
 	iFrance : {
 		iTradingCompanyBuilding: 40,
 		iNotreDame: 40,
@@ -2454,9 +2457,6 @@ dBuildingPreferences = {
 	},
 	iTibet : {
 		iPotalaPalace: 40,
-	},
-	iRajputs : {
-		iVijayaStambha: 100,
 	},
 	iMoors : {
 		iMezquita: 100,
