@@ -14891,6 +14891,14 @@ void CvCity::pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bo
 		CvEventReporter::getInstance().cityBuildingBuilding(this, (BuildingTypes)iData1);
 	}*/
 
+	if (getCivilizationType() == KARNATAKA)
+	{
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			getCityIndexPlot(iI)->updateYield();
+		}
+	}
+
 	if ((getTeam() == GC.getGameINLINE().getActiveTeam()) || GC.getGameINLINE().isDebugMode())
 	{
 		setInfoDirty(true);

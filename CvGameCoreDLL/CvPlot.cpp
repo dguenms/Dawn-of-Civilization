@@ -7212,6 +7212,22 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Karnatic UP
+		if (eCivilization == KARNATAKA)
+		{
+			pWorkingCity = getWorkingCity();
+			if (pWorkingCity != NULL && pWorkingCity->isProductionBuilding())
+			{
+				if (!bDisplay || pWorkingCity->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
+				{
+					if (isHills() && eYield == YIELD_PRODUCTION)
+					{
+						iYield += 1;
+					}
+				}
+			}
+		}
+
 		// Leoreth: unimproved land tiles by civic effect
 		// yield is subtracted again in calculateImprovementYieldChange()
 		if (!isWater() && !isImpassable() && !isCity())

@@ -602,6 +602,22 @@
 		<Spanish>Improvements that provide [ICON_FOOD] have twice the effect on islands</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_KAR_TITLE</Tag>
+		<English>The Power of Rock-Cut Architecture:</English>
+		<French>The Power of Rock-Cut Architecture:</French>
+		<German>The Power of Rock-Cut Architecture:</German>
+		<Italian>The Power of Rock-Cut Architecture:</Italian>
+		<Spanish>The Power of Rock-Cut Architecture:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KAR</Tag>
+		<English>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</English>
+		<French>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</French>
+		<German>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</German>
+		<Italian>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</Italian>
+		<Spanish>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_KHM_TITLE</Tag>
 		<English>The Power of Hydraulic Engineering:</English>
 		<French>The Power of Hydraulic Engineering:</French>
