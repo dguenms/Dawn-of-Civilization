@@ -381,7 +381,7 @@ lCivilizations = [
 		iAdvancedStartPoints=100,
 		iStateReligion=iBuddhism,
 		lCivics=[iElective, iCitizenship, iCasteSystem, iMerchantTrade, iSyncretism, iThalassocracy],
-		techs=techs.column(5).including(iArchitecture, iArtisanry, iScholarship, iEthics)
+		techs=techs.column(5).including(iArchitecture, iArtisanry, iPolitics, iEthics)
 	),
 	Civilization(
 		iArabia,
