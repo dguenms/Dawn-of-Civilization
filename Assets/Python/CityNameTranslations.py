@@ -19942,6 +19942,13 @@ name_translations = {
 			_,
 		),
 	},
+	"Vatapi": {
+		iIndian: (
+			relocate("Vijayanagara", bCapital=True, iAfter=iRenaissance),
+			translate("Badami", iAfter=iIndustrial),
+			_,
+		),
+	},
 	"Vatsagulma": {
 		iIndian: (
 			relocate("Akola", iAfter=iRenaissance),
@@ -20052,7 +20059,7 @@ name_translations = {
 		iIndian: _,
 		iVietnamese: "Quy Nhon",
 	},
-	"Vijayanagara": {
+	"Vijayanagara": {  # relocated from Vatapi
 		iEnglish: relocate("Ballari"),
 		iIndian: _,
 		iPersian: relocate("Ballari"),
