@@ -304,6 +304,10 @@ class CvTechChooser:
 		# Corporations
 		for iCorporation in xrange(gc.getNumCorporationInfos()):
 			iTech = gc.getCorporationInfo(iCorporation).getTechPrereq()
+			
+			if self.iCivilization == iBengal and iCorporation == iTextileIndustry:
+				iTech = iCompanies
+			
 			if iTech > -1:
 				self.TechEffects[iTech].append(("Corporation", iCorporation))
 

@@ -55,6 +55,10 @@ def getCompanyLimit(iCompany):
 	
 	
 def canHaveCompany(iCompany, iPlayer):
+	# Bengal UP: Textile Industry is unlocked with Companies
+	if civ(iPlayer) == iBengal and iCompany == iTextileIndustry and team(player(iPlayer).getTeam()).isHasTech(iCompanies):
+		return True
+	
 	return all(team(iPlayer).isHasTech(iTech) for iTech in dCompanyTechs[iCompany])
 	
 
