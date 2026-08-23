@@ -3446,7 +3446,7 @@
 			<ShortDescription>TXT_KEY_CIV_KARNATAKA_SHORT_DESC</ShortDescription>
 			<Adjective>TXT_KEY_CIV_KARNATAKA_ADJECTIVE</Adjective>
 			<Civilopedia>TXT_KEY_CIV_KARNATAKA_PEDIA</Civilopedia>
-			<DefaultPlayerColor>PLAYERCOLOR_DARK_LIME</DefaultPlayerColor>
+			<DefaultPlayerColor>PLAYERCOLOR_MIDDLE_YELLOW</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_KARNATAKA</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_INDIA</ArtStyleType>
 			<UnitArtStyleType>UNIT_ARTSTYLE_TAMILS</UnitArtStyleType>
