@@ -286,8 +286,9 @@ lCivilizations = [
 	Civilization(
 		iKarnataka,
 		iGold=100,
+		iStateReligion=iHinduism,
 		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iSyncretism],
-		techs=techs.column(4).including(iAesthetics, iPhilosophy, iMedicine),
+		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature, iPriesthood),
 	),
 	Civilization(
 		iToltecs,
