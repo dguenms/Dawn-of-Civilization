@@ -10648,6 +10648,7 @@ name_translations = {
 	"Lakshmanavati": {
 		iEnglish: relocate("English Bazar"),
 		iIndian: (
+			translate("Gauda", bCapital=True),
 			translate("Gauda", iAfter=iMedieval),
 			_,
 		),
