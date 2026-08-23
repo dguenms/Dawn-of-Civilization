@@ -67,6 +67,7 @@ lInvasionCivs = [
 dClearedForBirth = {
 	iIndia: iHarappa,
 	iByzantium: iGreece,
+	iBengal: iIndia,
 	iItaly: iRome,
 	iAztecs: iToltecs,
 	iRussia: iRus,
@@ -76,6 +77,7 @@ dClearedForBirth = {
 
 lAlwaysClear = [
 	iHarappa,
+	iIndia,
 	iToltecs,
 ]
 
