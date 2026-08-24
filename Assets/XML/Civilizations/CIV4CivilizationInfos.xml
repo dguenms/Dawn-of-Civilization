@@ -835,6 +835,10 @@
 			</InitialCivics>
 			<Leaders>
 				<Leader>
+					<LeaderName>LEADER_DHARMAPALA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
 					<LeaderName>LEADER_ALAUDDIN</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>

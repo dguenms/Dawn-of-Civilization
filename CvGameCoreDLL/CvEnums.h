@@ -1377,6 +1377,7 @@ enum LeaderHeadTypes			// Exposed to Python
 	ALP_ARSLAN,
 	TAMERLANE,
 
+	DHARMAPALA,
 	ALAUDDIN,
 
 	HARUN,

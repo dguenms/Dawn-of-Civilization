@@ -896,11 +896,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_KRISHNA_DEVA_RAYA</Type>
-			<Button>Art/LeaderHeads/Dharmapala/Krishnadevaraya.dds</Button>
-			<NIF>art/LeaderHeads/Dharmapala/masinissa.nif</NIF>
-			<KFM>art/LeaderHeads/Dharmapala/augustus_caesar.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Dharmapala/masinissa.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Dharmapala/Augustus_Caesar_BG2.kfm</BackgroundKFM>
+			<Button>Art/LeaderHeads/Krishnadevaraya/Krishnadevaraya.dds</Button>
+			<NIF>art/LeaderHeads/Krishnadevaraya/masinissa.nif</NIF>
+			<KFM>art/LeaderHeads/Krishnadevaraya/augustus_caesar.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Krishnadevaraya/masinissa.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Krishnadevaraya/Augustus_Caesar_BG2.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BHUTTO</Type>
@@ -1285,6 +1285,14 @@
 			<KFM>Art/Leaderheads/Amoghavarsha/asoka.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Amoghavarsha/asoka.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Amoghavarsha/Asoka_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DHARMAPALA</Type>
+			<Button>Art/LeaderHeads/Dharmapala/Dharmapala.dds</Button>
+			<NIF>art/LeaderHeads/Dharmapala/Tokugawa.nif</NIF>
+			<KFM>art/LeaderHeads/Dharmapala/Tokugawa.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Dharmapala/Tokugawa.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Dharmapala/Tokugawa_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

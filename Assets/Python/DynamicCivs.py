@@ -566,7 +566,7 @@ dStartingLeaders = [
 	iMalays : iSriJayanasa,
 	iNorse : iCanute,
 	iTurks : iBumin,
-	iBengal : iAlauddin,
+	iBengal : iDharmapala,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
 	iRajputs : iBhoja,
