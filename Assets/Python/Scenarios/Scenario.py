@@ -227,7 +227,7 @@ WONDER_ORIGINAL_BUILDERS = {
 	iPantheon : (iRome, 126),
 	iTempleOfKukulkan : (iMaya, 800),
 	iMonolithicChurch : (iEthiopia, 1181),
-	iJetavanaramaya : (iDravidia, 273),
+	iJetavanaramaya : (iTamils, 273),
 	iCheomseongdae : (iKorea, 632),
 	iPyramidOfTheSun : (iToltecs, 200),
 	iSalsalBuddha : (iKushans, 570),

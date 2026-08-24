@@ -3708,7 +3708,7 @@
 			<Button>Art/Structures/Buildings/Ostrog/Ostrog.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_DRAVIDIAN_GOPURAM</Type>
+			<Type>ART_DEF_BUILDING_TAMIL_GOPURAM</Type>
 			<LSystem>LSYSTEM_3x2</LSystem>
 			<bAnimated>1</bAnimated>
 			<fScale>1.5</fScale>

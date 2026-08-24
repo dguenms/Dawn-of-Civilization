@@ -145,7 +145,7 @@ HISTORIANS = {
 			"TXT_KEY_HISTORIAN_ZEWDE_GEBRE_SELLASSIE",
 		),
 	},
-	iDravidia: {
+	iTamils: {
 		iIndustrial: (
 			"TXT_KEY_HISTORIAN_NILAKANTA_SASTRI",
 		),

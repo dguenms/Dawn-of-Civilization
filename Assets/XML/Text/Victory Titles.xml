@@ -401,7 +401,7 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_DRA1</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAM1</Tag>
 		<English>Indian Ocean Trade</English>
 		<French>Indian Ocean Trade</French>
 		<German>Indian Ocean Trade</German>
@@ -409,7 +409,7 @@
 		<Spanish>Indian Ocean Trade</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_DRA2</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAM2</Tag>
 		<English>The Chola Empire</English>
 		<French>L'empire Chola </French>
 		<German>Das Chola-Reich</German>
@@ -417,7 +417,7 @@
 		<Spanish>The Chola Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_DRA3</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAM3</Tag>
 		<English>City of Victory</English>
 		<French>City of Victory</French>
 		<German>Stadt des Sieges</German>

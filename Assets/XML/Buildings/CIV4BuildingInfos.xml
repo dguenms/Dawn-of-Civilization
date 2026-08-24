@@ -4067,12 +4067,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CIVIC_SQUARE</BuildingClass>
-			<Type>BUILDING_DRAVIDIAN_GOPURAM</Type>
-			<Description>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM_STRATEGY</Strategy>
+			<Type>BUILDING_TAMIL_GOPURAM</Type>
+			<Description>TXT_KEY_BUILDING_TAMIL_GOPURAM</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TAMIL_GOPURAM_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TAMIL_GOPURAM_STRATEGY</Strategy>
 			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_DRAVIDIAN_GOPURAM</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_TAMIL_GOPURAM</ArtDefineTag>
 			<PrereqTech>TECH_COMMUNE</PrereqTech>
 			<bCenterInCity>1</bCenterInCity>
 			<iCost>150</iCost>

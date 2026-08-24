@@ -1210,13 +1210,12 @@ enum CivilizationTypes		// Exposed to Python
 	CELTS,
 	CHINA, 
 	COLOMBIA,
-	DRAVIDIA,
 	EGYPT,
 	ENGLAND,
 	ETHIOPIA, 
 	FRANCE,
-
 	GERMANY,
+
 	GREECE,
 	HARAPPA,
 	HITTITES,
@@ -1226,8 +1225,8 @@ enum CivilizationTypes		// Exposed to Python
 	IRAN,
 	ITALY,
 	JAPAN,
-
 	JAVA,
+
 	KARNATAKA,
 	KHMER,
 	CONGO,
@@ -1237,8 +1236,8 @@ enum CivilizationTypes		// Exposed to Python
 	MALI,
 	MANCHU,
 	MAYA,
-
 	MEXICO,
+
 	MISR,
 	MONGOLS,
 	MOORS,
@@ -1248,8 +1247,8 @@ enum CivilizationTypes		// Exposed to Python
 	NORSE,
 	NUBIA,
 	OTTOMANS,
-
 	PERSIA,
+
 	POLAND,
 	POLYNESIA,
 	PORTUGAL,
@@ -1259,10 +1258,11 @@ enum CivilizationTypes		// Exposed to Python
 	RUSSIA,
 	SAUDIS,
 	SPAIN,
-
 	SUMERIA,
+
 	SWAHILI,
 	SWEDEN,
+	TAMILS,
 	TATARS,
 	THAILAND,
 	TIBET,

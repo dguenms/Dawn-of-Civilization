@@ -358,7 +358,7 @@ def updateData():
 	
 	data.civs[iChina].iResurrections = 2
 	data.civs[iIndia].iResurrections = 1
-	data.civs[iDravidia].iResurrections = 1
+	data.civs[iTamils].iResurrections = 1
 	data.civs[iMisr].iResurrections = 1
 	data.civs[iItaly].iResurrections = 1
 
@@ -433,7 +433,7 @@ scenario1815AD = Scenario(
 		iChina: 12,
 		iIndia: 8,
 		iPersia: 4,
-		iDravidia: 5,
+		iTamils: 5,
 		iKorea: 8,
 		iJapan: 8,
 		iNorse: 8,
@@ -456,7 +456,7 @@ scenario1815AD = Scenario(
 		iChina: 4,
 		iIndia: 3,
 		iPersia: 2,
-		iDravidia: 2,
+		iTamils: 2,
 		iKorea: 4,
 		iJapan: 4,
 		iNorse: 3,

@@ -20,7 +20,7 @@ lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
 lAztecTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope]]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
-lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
+lSouthAsianCivs = [iIndia, iTamils, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
 
 # first Russian goal: control three Orthodox Cathedrals and three Orthodox wonders by 1550 AD
 lOrthodoxWonders = [iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding) and iOrthodoxy in [infos.building(iBuilding).getPrereqReligion(), infos.building(iBuilding).getOrPrereqReligion()]]
@@ -344,7 +344,7 @@ dGoals = {
 		Wonder(iTempleOfKukulkan, by=600),
 		ContactBeforeRevealed(civs(*lBioOldWorld).named(OLD_WORLD_CIVILIZATION), plots.regions(*lAmerica).named(AMERICAS)),
 	),
-	iDravidia: (
+	iTamils: (
 		All(
 			GoldAmount(5000, at=600),
 			CultureAmount(7500, at=600),

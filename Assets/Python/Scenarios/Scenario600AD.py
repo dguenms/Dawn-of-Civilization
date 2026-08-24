@@ -37,7 +37,7 @@ lCivilizations = [
 		techs=techs.column(4).including(iCurrency, iLaw, iMedicine, iPhilosophy, iEthics),
 	),
 	Civilization(
-		iDravidia,
+		iTamils,
 		iGold=100,
 		iStateReligion=iHinduism,
 		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iMerchantTrade, iMonasticism, iThalassocracy],
@@ -156,11 +156,11 @@ def createStartingUnits():
 	capital = plots.capital(iCelts)
 	createRoleUnit(iCelts, capital, iFerry, 1)
 
-	# Dravidia
-	capital = plots.capital(iDravidia)
-	createRoleUnit(iDravidia, capital, iFerry, 2)
-	createRoleUnit(iDravidia, capital, iEscort, 1)
-	createRoleUnit(iDravidia, capital, iWorkerSea, 2)
+	# Tamils
+	capital = plots.capital(iTamils)
+	createRoleUnit(iTamils, capital, iFerry, 2)
+	createRoleUnit(iTamils, capital, iEscort, 1)
+	createRoleUnit(iTamils, capital, iWorkerSea, 2)
 	
 	# Korea
 	capital = plots.capital(iKorea)
@@ -234,7 +234,7 @@ scenario600AD = Scenario(
 	dGreatPeopleCreated = {
 		iChina: 5,
 		iIndia: 4,
-		iDravidia: 2,
+		iTamils: 2,
 		iKorea: 1,
 		iToltecs: 1,
 	},
@@ -243,7 +243,7 @@ scenario600AD = Scenario(
 		iIndia: 1,
 	},
 	
-	lAllGoalsFailed = [iNubia, iIndia, iCelts, iDravidia, iToltecs],
+	lAllGoalsFailed = [iNubia, iIndia, iCelts, iTamils, iToltecs],
 	setupGoals = setupGoals,
 	
 	updateData = updateData,

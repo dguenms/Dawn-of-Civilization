@@ -163,7 +163,7 @@ class CompleteEra(ThresholdRequirement):
 # Second Assyrian UHV goal
 # Second Greek UHV goal
 # Second Phoenician UHV goal
-# Second Dravidian UHV goal
+# Second Tamil UHV goal
 # Third Byzantine UHV goal
 # Second Japanese UHV goal
 # First Norse UHV goal

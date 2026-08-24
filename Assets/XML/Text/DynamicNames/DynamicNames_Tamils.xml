@@ -2,27 +2,23 @@
 <!-- Dravidia -->
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_DESC</Tag>
-		<English>The Dravidians</English>
-		<French>The Dravidians</French>
-		<German>The Dravidians</German>
-		<Italian>The Dravidians</Italian>
-		<Spanish>The Dravidians</Spanish>
+		<Tag>TXT_KEY_CIV_TAMILS_DESC</Tag>
+		<English>The Tamils</English>
+		<French>The Tamils</French>
+		<German>The Tamils</German>
+		<Italian>The Tamils</Italian>
+		<Spanish>The Tamils</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_PEOPLES</Tag>
-		<English>Dravidian Peoples</English>
-		<French>
-			<Text>Peuplades dravidiennes</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>Dravidian Peoples</German>
-		<Italian>Dravidian Peoples</Italian>
-		<Spanish>Dravidian Peoples</Spanish>
+		<Tag>TXT_KEY_CIV_TAMILS_PEOPLES</Tag>
+		<English>Tamil Peoples</English>
+		<French>Tamil Peoples</French>
+		<German>Tamil Peoples</German>
+		<Italian>Tamil Peoples</Italian>
+		<Spanish>Tamil Peoples</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_DEFAULT</Tag>
+		<Tag>TXT_KEY_CIV_TAMILAKAM_DEFAULT</Tag>
 		<English>%s2 Kingdom</English>
 		<French>
 			<Text>Royaume %s2</Text>
@@ -34,7 +30,7 @@
 		<Spanish>%s2 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_REPUBLIC</Tag>
+		<Tag>TXT_KEY_CIV_TAMILAKAM_REPUBLIC</Tag>
 		<English>Republic of Tamil Nadu</English>
 		<French>
 			<Text>R&#233;publique du Tamil Nadu</Text>
@@ -46,7 +42,7 @@
 		<Spanish>Republic of Tamil Nadu</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_FASCIST</Tag>
+		<Tag>TXT_KEY_CIV_TAMILAKAM_FASCIST</Tag>
 		<English>Dravidian Empire</English>
 		<French>
 			<Text>Empire dravidien</Text>
@@ -58,7 +54,7 @@
 		<Spanish>Dravidian Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_VIJAYANAGARA</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
 		<English>Vijayanagara</English>
 		<French>Vijayan&#226;gara</French>
 		<German>Vijayanagara</German>
@@ -66,7 +62,7 @@
 		<Spanish>Vijayanagara</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_MYSORE</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_MYSORE</Tag>
 		<English>Mysore</English>
 		<French>Mysore</French>
 		<German>Mysore</German>
@@ -74,7 +70,7 @@
 		<Spanish>Mysore</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_CHOLA</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_CHOLA</Tag>
 		<English>Chola</English>
 		<French>Chola</French>
 		<German>Chola</German>
@@ -82,7 +78,7 @@
 		<Spanish>Chola</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_PANDYAN</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_PANDYAN</Tag>
 		<English>Pandyan</English>
 		<French>Pandyan</French>
 		<German>Pandyan</German>
@@ -90,7 +86,7 @@
 		<Spanish>Pandyan</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_CHERA</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_CHERA</Tag>
 		<English>Chera</English>
 		<French>Chera</French>
 		<German>Chera</German>
@@ -98,7 +94,7 @@
 		<Spanish>Chera</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_DRAVIDA</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_DRAVIDA</Tag>
 		<English>Dravida</English>
 		<French>Dr&#226;vida</French>
 		<German>Dravida</German>
@@ -106,7 +102,7 @@
 		<Spanish>Dravida</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_BAHMANI</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_BAHMANI</Tag>
 		<English>Bahmani</English>
 		<French>Bahman&#238;</French>
 		<German>Bahmani</German>
@@ -114,7 +110,7 @@
 		<Spanish>Bahmani</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_TAMIL_NADU</Tag>
+		<Tag>TXT_KEY_CIV_TAMILS_TAMIL_NADU</Tag>
 		<English>Tamil Nadu</English>
 		<French>
 			<Text>Tamil Nadu</Text>
@@ -126,19 +122,19 @@
 		<Spanish>Tamil Nadu</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_ADJECTIVE</Tag>
-		<English>Dravidian</English>
-		<French>Dravidian</French>
-		<German>Dravidian</German>
-		<Italian>Dravidian</Italian>
-		<Spanish>Dravidian</Spanish>
+		<Tag>TXT_KEY_CIV_TAMILS_ADJECTIVE</Tag>
+		<English>Tamil</English>
+		<French>Tamil</French>
+		<German>Tamil</German>
+		<Italian>Tamil</Italian>
+		<Spanish>Tamil</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_DRAVIDIA_SHORT_DESC</Tag>
-		<English>Dravidia</English>
-		<French>Dravidia</French>
-		<German>Dravidia</German>
-		<Italian>Dravidia</Italian>
-		<Spanish>Dravidia</Spanish>
+		<Tag>TXT_KEY_CIV_TAMILS_SHORT_DESC</Tag>
+		<English>Tamilakam</English>
+		<French>Tamilakam</French>
+		<German>Tamilakam</German>
+		<Italian>Tamilakam</Italian>
+		<Spanish>Tamilakam</Spanish>
 	</TEXT>
 </Civ4GameText>

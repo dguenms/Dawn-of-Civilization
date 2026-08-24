@@ -860,7 +860,7 @@ class SunkShips(TrackRequirement):
 			goal.check()
 
 
-# First Dravidian UHV goal
+# First Tamil UHV goal
 class TradeGold(TrackRequirement):
 
 	TYPES = (AMOUNT,)

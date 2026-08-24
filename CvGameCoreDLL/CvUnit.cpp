@@ -14585,7 +14585,7 @@ int CvUnit::getOriginalArtStyle() const
 	case REGION_DECCAN:
 		return GC.getCivilizationInfo(INDIA).getUnitArtStyleType();
 	case REGION_DRAVIDA:
-		return GC.getCivilizationInfo(DRAVIDIA).getUnitArtStyleType();
+		return GC.getCivilizationInfo(TAMILS).getUnitArtStyleType();
 	case REGION_INDOCHINA:
 		return GC.getCivilizationInfo(KHMER).getUnitArtStyleType();
 	case REGION_INDONESIA:

@@ -51,7 +51,7 @@ tEasterIsland = ((20, 18),	(20, 18))
 tPannonia = ((70, 57),	(77, 62))
 lPannoniaExceptions = [(70, 57), (73, 62), (74, 62), (75, 62), (76, 62), (77, 62)]
 
-# second Dravidian goal: control or vassalize the Deccan and Srivijaya in 1000 AD
+# second Tamil goal: control or vassalize the Deccan and Srivijaya in 1000 AD
 tSrivijaya = ((115, 26), (121, 34))
 
 # third Byzantine goal: control Greece, the Balkans, Anatolia, the Caucasus, the Levant, Egypt, Africa, Andalusia and Italy in 1450 AD

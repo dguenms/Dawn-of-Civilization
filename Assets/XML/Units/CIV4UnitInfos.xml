@@ -18491,13 +18491,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_COG</Class>
-			<Type>UNIT_DRAVIDIAN_DHARANI</Type>
+			<Type>UNIT_TAMIL_DHARANI</Type>
 			<Combat>UNITCOMBAT_NAVAL</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_DRAVIDIAN_DHARANI</Description>
-			<Civilopedia>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_TAMIL_DHARANI</Description>
+			<Civilopedia>TXT_KEY_UNIT_TAMIL_DHARANI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -18573,7 +18573,7 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_DRAVIDIAN_DHARANI</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_TAMIL_DHARANI</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>

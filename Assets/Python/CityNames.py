@@ -32,7 +32,7 @@ dBaseLanguages = {
 	iCelts: (iCeltic,),
 	iRome: (iLatin, iGreek),
 	iMaya: (iMayan,),
-	iDravidia: (iDravidian, iIndian),
+	iTamils: (iDravidian, iIndian),
 	iEthiopia: (iEthiopian, iArabic),
 	iKarnataka: (iDravidian, iIndian),
 	iToltecs: (iToltec, iNahuatl, iMayan),

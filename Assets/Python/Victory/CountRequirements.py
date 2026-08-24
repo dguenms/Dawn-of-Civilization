@@ -611,7 +611,7 @@ class PeakCount(ThresholdRequirement):
 		return plots.owner(iPlayer).where(CyPlot.isPeak).count()
 
 
-# Third Dravidian UHV goal
+# Third Tamil UHV goal
 class PopulationCity(ThresholdRequirement):
 
 	TYPES = (NUMBER,)

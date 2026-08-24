@@ -314,7 +314,7 @@
 		<Spanish>%s1 has fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_DRA_TITLE</Tag>
+		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Trade Guilds:</English>
 		<French>The Power of Trade Guilds:</French>
 		<German>The Power of Trade Guilds:</German>
@@ -322,7 +322,7 @@
 		<Spanish>The Power of Trade Guilds:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_DRA</Tag>
+		<Tag>TXT_KEY_UP_TAM</Tag>
 		<English>+10% foreign [ICON_TRADE] yield for every traded resource</English>
 		<French>+10% foreign [ICON_TRADE] yield for every traded resource</French>
 		<German>+10% foreign [ICON_TRADE] yield for every traded resource</German>
@@ -1082,12 +1082,12 @@
 		<Spanish>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_DRAVIDIA_CONQUESTS_TARGET</Tag>
-		<English>The Dravidians have fielded an army to conquer our civilization!</English>
-		<French>The Dravidians have fielded an army to conquer our civilization!</French>
-		<German>The Dravidians have fielded an army to conquer our civilization!</German>
-		<Italian>The Dravidians have fielded an army to conquer our civilization!</Italian>
-		<Spanish>The Dravidians have fielded an army to conquer our civilization!</Spanish>
+		<Tag>TXT_KEY_UP_TAMILAKAM_CONQUESTS_TARGET</Tag>
+		<English>The Tamils have fielded an army to conquer our civilization!</English>
+		<French>The Tamils have fielded an army to conquer our civilization!</French>
+		<German>The Tamils have fielded an army to conquer our civilization!</German>
+		<Italian>The Tamils have fielded an army to conquer our civilization!</Italian>
+		<Spanish>The Tamils have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAT_TITLE</Tag>

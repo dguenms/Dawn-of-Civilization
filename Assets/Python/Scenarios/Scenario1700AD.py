@@ -20,7 +20,7 @@ lCivilizations = [
 		},
 	),
 	Civilization(
-		iDravidia,
+		iTamils,
 		iLeader=iKrishnaDevaRaya,
 		sLeaderName="TXT_KEY_LEADER_TIPU_SULTAN",
 		iGold=400,
@@ -313,7 +313,7 @@ def updateData():
 	
 	data.civs[iChina].iResurrections = 2
 	data.civs[iIndia].iResurrections = 1
-	data.civs[iDravidia].iResurrections = 1
+	data.civs[iTamils].iResurrections = 1
 
 
 scenario1700AD = Scenario(
@@ -369,7 +369,7 @@ scenario1700AD = Scenario(
 		iChina: 12,
 		iIndia: 8,
 		iPersia: 4,
-		iDravidia: 5,
+		iTamils: 5,
 		iKorea: 6,
 		iJapan: 6,
 		iNorse: 8,
@@ -390,7 +390,7 @@ scenario1700AD = Scenario(
 		iChina: 4,
 		iIndia: 3,
 		iPersia: 2,
-		iDravidia: 2,
+		iTamils: 2,
 		iKorea: 3,
 		iJapan: 3,
 		iNorse: 3,
@@ -426,7 +426,7 @@ scenario1700AD = Scenario(
 		(iIndia, iMughals, WarPlanTypes.WARPLAN_TOTAL)
 	],
 	
-	lAllGoalsFailed = [iChina, iIndia, iDravidia, iKorea, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iPoland, iPortugal, iMughals, iSweden, iRussia, iOttomans, iThailand],
+	lAllGoalsFailed = [iChina, iIndia, iTamils, iKorea, iNorse, iTurks, iSpain, iHolyRome, iBurma, iVietnam, iPoland, iPortugal, iMughals, iSweden, iRussia, iOttomans, iThailand],
 	lGoalsSucceeded = [(iIran, 0), (iJapan, 0), (iFrance, 0), (iCongo, 0), (iNetherlands, 1)],
 	setupGoals = setupGoals,
 	
