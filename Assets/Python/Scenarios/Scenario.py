@@ -49,6 +49,7 @@ LEADER_DATES = {
 	iAugustus: -20,
 	iPacal: 620,
 	iRajendra: 1020,
+	iMangammal: 1700,
 	iEzana: 320,
 	iZaraYaqob: 1440,
 	iMenelik: 1890,
