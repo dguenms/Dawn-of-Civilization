@@ -1293,23 +1293,23 @@ iVictorySecularism = 11
 
 
 #leaders
-iNumLeaders = 158
+iNumLeaders = 159
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iDjoser, iHatshepsut, iRamesses, iPtolemy, iSargon, iHammurabi, iWentAntu, 
 iAshurbanipal, iWu, iTaizong, iHongwu, iMao, iMursili, iPericles, iAlexanderTheGreat, iGeorge, iAsoka, 
 iChandragupta, iShivaji, iGandhi, iHiram, iHannibal, iTaharqa, iAmanirena, iAhoeitu, iCyrus, iDarius, 
 iShapur, iBrennus, iBoudica, iBrianBoru, iScipio, iJuliusCaesar, iAugustus, iPacal, iRajendra, iKrishnaDevaRaya, 
 iEzana, iZaraYaqob, iMenelik, iAmoghavarsha, iTopiltzin, iKanishka, iWangKon, iSejong, iNeangNeak, iSuryavarman, 
-iDinga, iMansaMusa, iJustinian, iBasil, iBhoja, iCharlemagne, iLouis, iNapoleon, iDeGaulle, iSriJayanasa, 
-iTunPerak, iKammu, iOdaNobunaga, iMeiji, iCanute, iHaakon, iChristian, iGerhardsen, iBumin, iAlpArslan, 
-iTamerlane, iDharmapala, iAlauddin, iHarun, iSongtsen, iLobsangGyatso, iRahman, iYaqub, iHayamWuruk, iSuharto, 
-iIsabella, iPhilip, iFranco, iAlfred, iElizabeth, iVictoria, iChurchill, iBarbarossa, iCharles, iFrancis, 
-iAnawrahta, iBayinnaung, iYaroslav, iKhmelnytsky, iLeLoi, iHoChiMinh, iDawud, iSaladin, iBaibars, iMuhammadAli, 
-iNasser, iCasimir, iSobieski, iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, iCastilla, 
-iLorenzo, iCavour, iMussolini, iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, iUzbeg, 
-iNaresuan, iMongkut, iGustav, iErlander, iIvan, iPeter, iCatherine, iAlexanderI, iStalin, iMehmed, 
-iSuleiman, iAtaturk, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iKangxi, iFrederick, iBismarck, 
-iHitler, iIbnSaud, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, iCardenas, 
-iBolivar, iPedro, iVargas, iLeopold, iCurtin, iMacDonald, iTrudeau, iSittingBull) = range(iNumLeaders)
+iDinga, iMansaMusa, iJustinian, iBasil, iBhoja, iSanga, iCharlemagne, iLouis, iNapoleon, iDeGaulle, 
+iSriJayanasa, iTunPerak, iKammu, iOdaNobunaga, iMeiji, iCanute, iHaakon, iChristian, iGerhardsen, iBumin, 
+iAlpArslan, iTamerlane, iDharmapala, iAlauddin, iHarun, iSongtsen, iLobsangGyatso, iRahman, iYaqub, iHayamWuruk, 
+iSuharto, iIsabella, iPhilip, iFranco, iAlfred, iElizabeth, iVictoria, iChurchill, iBarbarossa, iCharles, 
+iFrancis, iAnawrahta, iBayinnaung, iYaroslav, iKhmelnytsky, iLeLoi, iHoChiMinh, iDawud, iSaladin, iBaibars, 
+iMuhammadAli, iNasser, iCasimir, iSobieski, iPilsudski, iWalesa, iAfonso, iJoao, iMaria, iHuaynaCapac, 
+iCastilla, iLorenzo, iCavour, iMussolini, iGenghisKhan, iKublaiKhan, iMontezuma, iTughluq, iAkbar, iBhutto, 
+iUzbeg, iNaresuan, iMongkut, iGustav, iErlander, iIvan, iPeter, iCatherine, iAlexanderI, iStalin, 
+iMehmed, iSuleiman, iAtaturk, iMbemba, iAbbas, iKhomeini, iWillemVanOranje, iWilliam, iKangxi, iFrederick, 
+iBismarck, iHitler, iIbnSaud, iWashington, iLincoln, iRoosevelt, iSanMartin, iPeron, iJuarez, iSantaAnna, 
+iCardenas, iBolivar, iPedro, iVargas, iLeopold, iCurtin, iMacDonald, iTrudeau, iSittingBull) = range(iNumLeaders)
 
 dResurrectionLeaders = CivDict({
 	iChina : iHongwu,

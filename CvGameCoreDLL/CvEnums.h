@@ -1357,6 +1357,9 @@ enum LeaderHeadTypes			// Exposed to Python
 	JUSTINIAN,
 	BASIL,
 
+	BHOJA,
+	SANGA,
+
 	CHARLEMAGNE,
 	LOUIS,
 	NAPOLEON,
@@ -1384,8 +1387,6 @@ enum LeaderHeadTypes			// Exposed to Python
 
 	SONGTSEN,
 	LOBSANG_GYATSO,
-
-	BHOJA,
 
 	RAHMAN,
 	YAQUB,

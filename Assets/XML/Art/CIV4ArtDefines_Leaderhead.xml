@@ -1294,5 +1294,13 @@
 			<NoShaderNIF>art/LeaderHeads/Dharmapala/Tokugawa.nif</NoShaderNIF>
 			<BackgroundKFM>art/LeaderHeads/Dharmapala/Tokugawa_BG.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SANGA</Type>
+			<Button>Art/Leaderheads/Sanga/Sanga.dds</Button>
+			<NIF>art/LeaderHeads/Sanga/Pacal.nif</NIF>
+			<KFM>art/LeaderHeads/Sanga/Pacal.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Sanga/Pacal_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Sanga/Pacal_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>
