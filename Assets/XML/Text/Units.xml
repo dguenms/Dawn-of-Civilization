@@ -3310,7 +3310,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Malay replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER</Tag>
+		<Tag>TXT_KEY_UNIT_KARNATIC_ROCKETEER</Tag>
 		<English>Rocketeer</English>
 		<French>
 			<Text>Tireur de fus&#233;es</Text>
@@ -3322,12 +3322,12 @@
 		<Spanish>Rocketeer</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
-		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
-		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
+		<Tag>TXT_KEY_UNIT_KARNATIC_ROCKETEER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
+		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
+		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>

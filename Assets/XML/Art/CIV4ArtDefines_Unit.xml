@@ -9243,7 +9243,7 @@
 			<ActionSound>AS3D_UN_OCEAN_END1</ActionSound>
 		</UnitArtInfo>
 		<UnitArtInfo>
-			<Type>ART_DEF_UNIT_DRAVIDIAN_ROCKETEER</Type>
+			<Type>ART_DEF_UNIT_KARNATIC_ROCKETEER</Type>
 			<Button>Art/Units/Rocketeer/Rocketeer.dds</Button>
 			<fScale>0.42</fScale>
 			<fInterfaceScale>0.9</fInterfaceScale>

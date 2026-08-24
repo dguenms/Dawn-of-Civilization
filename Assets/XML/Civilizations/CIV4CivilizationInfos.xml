@@ -1750,10 +1750,6 @@
 					<UnitClassType>UNITCLASS_COG</UnitClassType>
 					<UnitType>UNIT_DRAVIDIAN_DHARANI</UnitType>
 				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
-					<UnitType>UNIT_DRAVIDIAN_ROCKETEER</UnitType>
-				</Unit>
 			</Units>
 			<FreeUnitClasses>
 				<FreeUnitClass>
@@ -3488,6 +3484,10 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_SWORDSMAN</UnitClassType>
 					<UnitType>UNIT_KARNATIC_KARNATABALA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_GRENADIER</UnitClassType>
+					<UnitType>UNIT_KARNATIC_ROCKETEER</UnitType>
 				</Unit>
 			</Units>
 			<FreeUnitClasses>
