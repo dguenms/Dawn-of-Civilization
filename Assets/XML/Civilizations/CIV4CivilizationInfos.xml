@@ -1782,10 +1782,6 @@
 					<LeaderName>LEADER_RAJENDRA</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
-				<Leader>
-					<LeaderName>LEADER_KRISHNA_DEVA_RAYA</LeaderName>
-					<bLeaderAvailability>1</bLeaderAvailability>
-				</Leader>
 			</Leaders>
 			<DerivativeCiv>CIVILIZATION_INDIA</DerivativeCiv>
 			<CivilizationSelectionSound>AS3D_INDIA_SELECT</CivilizationSelectionSound>
@@ -3515,6 +3511,10 @@
 			<Leaders>
 				<Leader>
 					<LeaderName>LEADER_AMOGHAVARSHA</LeaderName>
+					<bLeaderAvailability>1</bLeaderAvailability>
+				</Leader>
+				<Leader>
+					<LeaderName>LEADER_KRISHNA_DEVA_RAYA</LeaderName>
 					<bLeaderAvailability>1</bLeaderAvailability>
 				</Leader>
 			</Leaders>

@@ -616,7 +616,6 @@ dStartingLeaders = [
 # 1500 AD
 {
 	iChina : iHongwu,
-	iDravidia : iKrishnaDevaRaya,
 	iEthiopia : iZaraYaqob,
 	iKorea : iSejong,
 	iMali : iMansaMusa,
@@ -650,7 +649,6 @@ dStartingLeaders = [
 {
 	iChina : iHongwu,
 	iIndia : iShivaji,
-	iDravidia : iKrishnaDevaRaya,
 	iKorea : iSejong,
 	iNorse : iChristian,
 	iJapan : iOdaNobunaga,
@@ -2859,11 +2857,6 @@ def leader(iPlayer):
 		
 		if iEra >= iMedieval: return iZaraYaqob
 		
-	elif iCiv == iDravidia:
-		if iEra >= iRenaissance: return iKrishnaDevaRaya
-		
-		if scenarioStartYear() >= 1500: return iKrishnaDevaRaya
-		
 	elif iCiv == iByzantium:
 		if year() >= year(1000): return iBasil
 	
@@ -3035,7 +3028,7 @@ def leaderName(iPlayer):
 	pPlayer = player(iPlayer)
 	iLeader = pPlayer.getLeader()
 	
-	if iCiv == iDravidia:
+	if iCiv == iKarnataka:
 		if iLeader == iKrishnaDevaRaya:
 			if year() >= year(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"
