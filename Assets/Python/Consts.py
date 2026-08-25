@@ -1064,6 +1064,7 @@ iAttackSea, iAssaultSea, iFerry, iEscort, iExplore, iShockCity, iSiege, iCitySie
 iLightEscort, iWork, iMissionary) = range(iNumUnitRoles)
 
 # Promotions
+iMobility = 47
 iMercenary = 81
 iDesertAdaptation = 82
 iSteppeAdaptation = 83

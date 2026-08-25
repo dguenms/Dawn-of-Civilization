@@ -259,3 +259,11 @@ def panamaCanalEffect(city, iProject):
 	if iProject == iPanamaCanal:
 		for plot in plots.of(lPanamaStraits):
 			plot.setFeatureType(iStrait, 0)
+
+
+# Edict effect: free Mobility promotion for civilian units
+@handler("unitBuilt")
+def spaceElevatorEffect(city, unit):
+	if city.isHasBuildingEffect(iEdict):
+		if unit.getUnitCombatType() == -1:
+			unit.setHasPromotion(iMobility, True)

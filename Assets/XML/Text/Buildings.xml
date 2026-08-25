@@ -538,6 +538,14 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], lowers city maintenance costs.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT_HELP</Tag>
+		<English>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</English>
+		<French>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</French>
+		<German>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</German>
+		<Italian>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</Italian>
+		<Spanish>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_DURBAR</Tag>
 		<English>Durbar</English>
 		<French>Durbar</French>
