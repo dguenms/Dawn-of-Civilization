@@ -1017,32 +1017,32 @@ iTranshumanism) = range(iNumTechs)
 
 # initialise unit variables to unit indices from XML
 
-iNumUnits = 241
+iNumUnits = 242
 (iLion, iBear, iPanther, iWolf, iSettler, iCityBuilder, iPioneer, iWorker, iPunjabiWorker, iLabourer, 
 iMadeireiro, iScout, iExplorer, iBandeirante, iSpy, iReligiousPersecutor, iJewishMissionary, iOrthodoxMissionary, iCatholicMissionary, iProtestantMissionary, 
 iIslamicMissionary, iHinduMissionary, iJainMissionary, iBuddhistMissionary, iConfucianMissionary, iTaoistMissionary, iZoroastrianMissionary, iWarrior, iNativeWarrior, iMilitia, 
-iAxeman, iLightSwordsman, iVulture, iDogSoldier, iOathsworn, iSwordsman, iJaguar, iLegion, iGallicWarrior, iKarnatabala, 
-iPendekar, iAucac, iShotelai, iHeavySwordsman, iGallowglass, iSamurai, iHuscarl, iGhazi, iDruzhina, iPombos, 
-iSpearman, iAzmaru, iHoplite, iSacredBand, iImmortal, iNativeRaider, iHeavySpearman, iKyundaw, iPikeman, iLandsknecht, 
-iArquebusier, iFirelancer, iPurbiya, iTercio, iStrelets, iJanissary, iOromoWarrior, iQizilbash, iMohawk, iMusketeer, 
-iRedcoat, iCarolean, iFusilier, iRifleman, iMehalSefari, iGrenadier, iRocketeer, iGrenzer, iAlbionLegion, iChasseur, 
-iAntiTank, iInfantry, iVietCong, iDigger, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, iMechanizedInfantry, 
-iArcher, iAsharittuBowman, iMedjay, iNativeArcher, iSkirmisher, iHolkan, iAtlatl, iKelebolo, iLongbowman, iPatiyodha, 
-iPaik, iRattanArcher, iCrossbowman, iChokonu, iBalestriere, iChariot, iWarChariot, iHuluganni, iCidainh, iHorseman, 
-iCompanion, iNumidianCavalry, iAsvaka, iCamelRider, iHorseArcher, iMangudai, iKhampa, iOghuz, iKathiawari, iCamelArcher, 
-iLancer, iSavaran, iFarari, iMobileGuard, iMamluk, iKeshik, iCataphract, iChambul, iChangSuek, iPistolier, 
-iHakkapeliitta, iMountedBrave, iCamelGunner, iZamburak, iCuirassier, iGendarme, iConquistador, iWingedHussar, iSowar, iBannerman, 
-iHussar, iCossack, iLlanero, iDragoon, iCassay, iIkhwan, iGrenadierCavalry, iCavalry, iRural, iLightHorse, 
-iWarElephant, iVaru, iBallistaElephant, iTank, iPanzer, iMainBattleTank, iGunship, iCatapult, iSiegeRam, iBallista, 
-iTrebuchet, iBombard, iHwacha, iLantaka, iSiegeElephant, iGreatBombard, iCannon, iGribeauval, iArtillery, iMachineGun, 
-iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDromon, iLongship, 
-iCog, iDharani, iDhow, iGalleass, iDjong, iKobukson, iLanternas, iCaravel, iCarrack, iGalleon, 
-iFluyt, iPrivateer, iCorsair, iFrigate, iShipOfTheLine, iManOfWar, iSteamship, iIronclad, iTorpedoBoat, iCruiser, 
-iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, iSupercarrier, 
-iBiplane, iFighter, iZero, iJetFighter, iBomber, iFlyingFortress, iStealthBomber, iGuidedMissile, iDrone, iNuclearBomber, 
-iICBM, iSatellite, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iArgentineGreatGeneral, 
-iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, iSlave, 
-iAztecSlave) = range(iNumUnits)
+iAxeman, iLightSwordsman, iVulture, iDogSoldier, iKshatriya, iOathsworn, iSwordsman, iJaguar, iLegion, iGallicWarrior, 
+iKarnatabala, iPendekar, iAucac, iShotelai, iHeavySwordsman, iGallowglass, iSamurai, iHuscarl, iGhazi, iDruzhina, 
+iPombos, iSpearman, iAzmaru, iHoplite, iSacredBand, iImmortal, iNativeRaider, iHeavySpearman, iKyundaw, iPikeman, 
+iLandsknecht, iArquebusier, iFirelancer, iPurbiya, iTercio, iStrelets, iJanissary, iOromoWarrior, iQizilbash, iMohawk, 
+iMusketeer, iRedcoat, iCarolean, iFusilier, iRifleman, iMehalSefari, iGrenadier, iRocketeer, iGrenzer, iAlbionLegion, 
+iChasseur, iAntiTank, iInfantry, iVietCong, iDigger, iSamInfantry, iMobileSam, iMarine, iNavySeal, iParatrooper, 
+iMechanizedInfantry, iArcher, iAsharittuBowman, iMedjay, iPatiyodha, iNativeArcher, iSkirmisher, iHolkan, iAtlatl, iKelebolo, 
+iLongbowman, iPaik, iRattanArcher, iCrossbowman, iChokonu, iBalestriere, iChariot, iWarChariot, iHuluganni, iCidainh, 
+iHorseman, iCompanion, iNumidianCavalry, iAsvaka, iCamelRider, iHorseArcher, iMangudai, iKhampa, iOghuz, iKathiawari, 
+iCamelArcher, iLancer, iSavaran, iFarari, iMobileGuard, iMamluk, iKeshik, iCataphract, iChambul, iChangSuek, 
+iPistolier, iHakkapeliitta, iMountedBrave, iCamelGunner, iZamburak, iCuirassier, iGendarme, iConquistador, iWingedHussar, iSowar, 
+iBannerman, iHussar, iCossack, iLlanero, iDragoon, iCassay, iIkhwan, iGrenadierCavalry, iCavalry, iRural, 
+iLightHorse, iWarElephant, iVaru, iBallistaElephant, iTank, iPanzer, iMainBattleTank, iGunship, iCatapult, iSiegeRam, 
+iBallista, iTrebuchet, iBombard, iHwacha, iLantaka, iSiegeElephant, iGreatBombard, iCannon, iGribeauval, iArtillery, 
+iMachineGun, iHowitzer, iMobileArtillery, iWorkboat, iGalley, iWaka, iBireme, iWarGalley, iHeavyGalley, iDromon, 
+iLongship, iCog, iDharani, iDhow, iGalleass, iDjong, iKobukson, iLanternas, iCaravel, iCarrack, 
+iGalleon, iFluyt, iPrivateer, iCorsair, iFrigate, iShipOfTheLine, iManOfWar, iSteamship, iIronclad, iTorpedoBoat, 
+iCruiser, iTransport, iDestroyer, iCorvette, iBattleship, iMissileCruiser, iStealthDestroyer, iSubmarine, iNuclearSubmarine, iCarrier, 
+iSupercarrier, iBiplane, iFighter, iZero, iJetFighter, iBomber, iFlyingFortress, iStealthBomber, iGuidedMissile, iDrone, 
+iNuclearBomber, iICBM, iSatellite, iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, 
+iArgentineGreatGeneral, iGreatSpy, iFemaleGreatProphet, iFemaleGreatArtist, iFemaleGreatScientist, iFemaleGreatMerchant, iFemaleGreatEngineer, iFemaleGreatStatesman, iFemaleGreatGeneral, iFemaleGreatSpy, 
+iSlave, iAztecSlave) = range(iNumUnits)
 
 lGreatPeopleUnits = [iGreatProphet, iGreatArtist, iGreatScientist, iGreatMerchant, iGreatEngineer, iGreatStatesman, iGreatGeneral, iGreatSpy]
 

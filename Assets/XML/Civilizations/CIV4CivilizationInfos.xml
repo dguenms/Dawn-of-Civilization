@@ -2856,7 +2856,11 @@
 			</Buildings>
 			<Units>
 				<Unit>
-					<UnitClassType>UNITCLASS_LONGBOWMAN</UnitClassType>
+					<UnitClassType>UNITCLASS_LIGHT_SWORDSMAN</UnitClassType>
+					<UnitType>UNIT_INDIAN_KSHATRIYA</UnitType>
+				</Unit>
+				<Unit>
+					<UnitClassType>UNITCLASS_ARCHER</UnitClassType>
 					<UnitType>UNIT_INDIAN_PATIYODHA</UnitType>
 				</Unit>
 			</Units>

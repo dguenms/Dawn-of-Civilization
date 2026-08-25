@@ -815,11 +815,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
-		<French>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</French>
-		<German>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Spanish>
+		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has additional combat strength, is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, and has reduced modifiers when defending cities or fighting [COLOR_HIGHLIGHT_TEXT]Light Cavalry[COLOR_REVERT] units.</English>
+		<French>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has additional combat strength, is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, and has reduced modifiers when defending cities or fighting [COLOR_HIGHLIGHT_TEXT]Light Cavalry[COLOR_REVERT] units.</French>
+		<German>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has additional combat strength, is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, and has reduced modifiers when defending cities or fighting [COLOR_HIGHLIGHT_TEXT]Light Cavalry[COLOR_REVERT] units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has additional combat strength, is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, and has reduced modifiers when defending cities or fighting [COLOR_HIGHLIGHT_TEXT]Light Cavalry[COLOR_REVERT] units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], has additional combat strength, is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, and has reduced modifiers when defending cities or fighting [COLOR_HIGHLIGHT_TEXT]Light Cavalry[COLOR_REVERT] units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
@@ -3756,6 +3756,14 @@
 		<German>Karnatabala</German>
 		<Italian>Karnatabala</Italian>
 		<Spanish>Karnatabala</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_KSHATRIYA</Tag>
+		<English>Kshatriya</English>
+		<French>Kshatriya</French>
+		<German>Kshatriya</German>
+		<Italian>Kshatriya</Italian>
+		<Spanish>Kshatriya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>
