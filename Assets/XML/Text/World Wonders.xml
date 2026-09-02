@@ -3354,6 +3354,22 @@
 		<Spanish>[ICON_BULLET]+1[ICON_COMMERCE] during Golden Ages</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KAILASA_TEMPLE</Tag>
+		<English>Kailasa Temple</English>
+		<French>Kailasa Temple</French>
+		<German>Kailasa Temple</German>
+		<Italian>Kailasa Temple</Italian>
+		<Spanish>Kailasa Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KAILASA_TEMPLE_HELP</Tag>
+		<English>[ICON_BULLET]+50%[ICON_GREATPEOPLE] in Cities without Growth</English>
+		<French>[ICON_BULLET]+50%[ICON_GREATPEOPLE] in Cities without Growth</French>
+		<German>[ICON_BULLET]+50%[ICON_GREATPEOPLE] in Cities without Growth</German>
+		<Italian>[ICON_BULLET]+50%[ICON_GREATPEOPLE] in Cities without Growth</Italian>
+		<Spanish>[ICON_BULLET]+50%[ICON_GREATPEOPLE] in Cities without Growth</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

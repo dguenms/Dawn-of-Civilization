@@ -1124,23 +1124,24 @@ iNumBuildings += iNumNationalWonders
 iMint, iSanctuary, iCouncil, iTradingCompanyBuilding, iIberianTradingCompanyBuilding, iNationalMonument, iNationalTheatre, iNationalGallery, iNationalCollege, iMilitaryAcademy, 
 iSecretService, iIronworks, iRedCross, iNationalPark, iCentralBank, iSpaceport) = range(iFirstNationalWonder, iNumBuildings)
 
-iNumGreatWonders = 140 # different from DLL constant because that includes national wonders
+iNumGreatWonders = 141 # different from DLL constant because that includes national wonders
 iFirstWonder = iNumBuildings
 iNumBuildings += iNumGreatWonders
-(iGreatSphinx, iPyramids, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, iHangingGardens, iGreatCothon, iDujiangyan, iApadanaPalace, 
-iColossus, iGreatMausoleum, iAquaAppia, iParthenon, iPyramidOfTheSun, iStatueOfZeus, iTempleOfArtemis, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre, 
-iPantheon, iAlKhazneh, iTempleOfKukulkan, iMachuPicchu, iGreatLibrary, iFloatingGardens, iGondeshapur, iJetavanaramaya, iNalanda, iTheodosianWalls, 
-iHagiaSophia, iBorobudur, iMezquita, iShwedagonPaya, iMountAthos, iIronPillar, iPrambanan, iSalsalBuddha, iCheomseongdae, iHimejiCastle, 
-iGrandCanal, iWatPreahPisnulok, iKhajuraho, iGreatAdobeMosque, iSpiralMinaret, iDomeOfTheRock, iHouseOfWisdom, iKrakDesChevaliers, iMonolithicChurch, iUniversityOfSankore, 
-iNotreDame, iOldSynagogue, iSaintSophia, iSilverTreeFountain, iSantaMariaDelFiore, iAlamut, iSanMarcoBasilica, iSistineChapel, iPorcelainTower, iTopkapiPalace, 
-iKremlin, iSaintThomasChurch, iVijayaStambha, iGurEAmir, iRedFort, iTajMahal, iForbiddenPalace, iVersailles, iBlueMosque, iEscorial, 
-iTorreDeBelem, iPotalaPalace, iOxfordUniversity, iHarmandirSahib, iSaintBasilsCathedral, iBourse, iItsukushimaShrine, iImageOfTheWorldSquare, iLouvre, iEmeraldBuddha, 
-iShalimarGardens, iTrafalgarSquare, iHermitage, iGuadalupeBasilica, iSaltCathedral, iAmberRoom, iStatueOfLiberty, iBrandenburgGate, iAbbeyMills, iBellRockLighthouse, 
-iChapultepecCastle, iEiffelTower, iWestminsterPalace, iTriumphalArch, iMenloPark, iCrystalPalace, iTsukijiFishMarket, iBrooklynBridge, iHollywood, iEmpireStateBuilding, 
-iLasLajasSanctuary, iPalaceOfNations, iMoleAntonelliana, iNeuschwanstein, iFrontenac, iWembley, iLubyanka, iCristoRedentor, iMetropolitain, iNobelPrize, 
-iGoldenGateBridge, iBletchleyPark, iSagradaFamilia, iTiananmenSquare, iCERN, iItaipuDam, iGraceland, iCNTower, iPentagon, iUnitedNations, 
-iCrystalCathedral, iMotherlandCalls, iBerlaymont, iWorldTradeCenter, iAtomium, iIronDome, iHarbourOpera, iLotusTemple, iFloralisGenerica, iGlobalSeedVault, 
-iGardensByTheBay, iBurjKhalifa, iHubbleSpaceTelescope, iChannelTunnel, iSkytree, iOrientalPearlTower, iDeltaWorks, iSpaceElevator, iLargeHadronCollider, iITER) = range(iFirstWonder, iNumBuildings)
+(iPyramids, iGreatSphinx, iOracle, iGreatWall, iIshtarGate, iTerracottaArmy, iApadanaPalace, iDujiangyan, iHangingGardens, iGreatCothon,
+iColossus, iGreatMausoleum, iAquaAppia, iParthenon, iPyramidOfTheSun, iStatueOfZeus, iTempleOfArtemis, iGreatLighthouse, iMoaiStatues, iFlavianAmphitheatre,
+iPantheon, iTempleOfKukulkan, iJetavanaramaya, iAlKhazneh, iMachuPicchu, iGreatLibrary, iNalanda, iGondeshapur, iIronPillar, iTheodosianWalls,
+iHagiaSophia, iKailasaTemple, iSalsalBuddha, iCheomseongdae, iUniversityOfSankore, iFloatingGardens, iMountAthos, iKhajuraho, iHimejiCastle, iKrakDesChevaliers, 
+iBorobudur, iGrandCanal, iHouseOfWisdom, iMonolithicChurch, iSaintSophia, iPrambanan, iSpiralMinaret, iDomeOfTheRock, iNotreDame, iOldSynagogue,
+iWatPreahPisnulok, iSilverTreeFountain, iAlamut, iGurEAmir, iShwedagonPaya, iSantaMariaDelFiore, iMezquita, iGreatAdobeMosque, iKremlin, iVijayaStambha,
+iSanMarcoBasilica, iSistineChapel, iSaintThomasChurch, iPorcelainTower, iTopkapiPalace, iSaintBasilsCathedral, iRedFort, iItsukushimaShrine, iEscorial, iTorreDeBelem,
+iBlueMosque, iOxfordUniversity, iForbiddenPalace, iPotalaPalace, iVersailles, iHarmandirSahib, iBourse, iImageOfTheWorldSquare, iTajMahal, iEmeraldBuddha,
+iLouvre, iShalimarGardens, iSaltCathedral, iAmberRoom, iTrafalgarSquare, iHermitage, iGuadalupeBasilica, iAbbeyMills, iBellRockLighthouse, iStatueOfLiberty,
+iBrandenburgGate, iChapultepecCastle, iTriumphalArch, iCrystalPalace, iEiffelTower, iMenloPark, iTsukijiFishMarket, iBrooklynBridge, iWestminsterPalace, iNeuschwanstein,
+iMetropolitain, iMoleAntonelliana, iFrontenac, iNobelPrize, iHollywood, iLasLajasSanctuary, iEmpireStateBuilding, iPalaceOfNations, iGoldenGateBridge, iWembley,
+iBletchleyPark, iLubyanka, iSagradaFamilia, iTiananmenSquare, iCristoRedentor, iCERN, iItaipuDam, iGraceland, iCNTower, iCrystalCathedral,
+iPentagon, iMotherlandCalls, iUnitedNations, iBerlaymont, iWorldTradeCenter, iAtomium, iIronDome, iHarbourOpera, iLotusTemple, iFloralisGenerica,
+iGardensByTheBay, iBurjKhalifa, iHubbleSpaceTelescope, iSkytree, iLargeHadronCollider, iChannelTunnel, iOrientalPearlTower, iDeltaWorks, iGlobalSeedVault, iSpaceElevator,
+iITER) = range(iFirstWonder, iNumBuildings)
 
 iTemple = iJewishTemple #generic
 iCathedral = iJewishCathedral #generic

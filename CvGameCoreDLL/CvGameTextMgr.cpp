@@ -19020,6 +19020,17 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 		}
 	}
 
+	// Kailasa Temple effect
+	if (GET_PLAYER(city.getOwner()).isHasBuildingEffect(KAILASA_TEMPLE))
+	{
+		if (city.foodDifference() <= 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_GREATPEOPLE_WITHOUT_GROWTH", 50));
+			szBuffer.append(NEWLINE);
+			iModifier += 50;
+		}
+	}
+
 	// Leoreth: Shwedagon Paya effect
 	if (city.isHasBuildingEffect(SHWEDAGON_PAYA))
 	{

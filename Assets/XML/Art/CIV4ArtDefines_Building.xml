@@ -4467,5 +4467,15 @@
 			<KFM/>
 			<Button>Art/Structures/Buildings/Viragallu/Viragallu.dds</Button>
 		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KAILASA_TEMPLE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>7.5</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Kailasa/pagod5.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Kailasa/Kailasa.dds</Button>
+		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

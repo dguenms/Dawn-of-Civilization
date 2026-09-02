@@ -6962,12 +6962,22 @@ void CvCity::changeBaseGreatPeopleRate(int iChange)
 
 int CvCity::getGreatPeopleRateModifier() const
 {
-	if (isHasBuildingEffect(SHWEDAGON_PAYA))
+	int iGreatPeopleRateModifier = m_iGreatPeopleRateModifier;
+
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(KAILASA_TEMPLE))
 	{
-		return m_iGreatPeopleRateModifier + GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD);
+		if (foodDifference() <= 0)
+		{
+			iGreatPeopleRateModifier += 50;
+		}
 	}
 
-	return m_iGreatPeopleRateModifier;
+	if (isHasBuildingEffect(SHWEDAGON_PAYA))
+	{
+		iGreatPeopleRateModifier += GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD);
+	}
+
+	return iGreatPeopleRateModifier;
 }
 
 
@@ -7090,6 +7100,14 @@ int CvCity::getAdditionalGreatPeopleRateModifierByBuilding(BuildingTypes eBuildi
 		iExtraModifier += kBuilding.getGlobalGreatPeopleRateModifier();
 
 		// Special wonder effects
+		if (eBuilding == KAILASA_TEMPLE)
+		{
+			if (foodDifference() <= 0)
+			{
+				iExtraModifier += 50;
+			}
+		}
+
 		if (eBuilding == SHWEDAGON_PAYA)
 		{
 			iExtraModifier += GET_PLAYER(getOwnerINLINE()).getCommerceRate(COMMERCE_GOLD);

@@ -3819,7 +3819,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				iGreatPeopleRateModifier += kBuilding.getCultureGreatPeopleRateModifier() * getCultureLevel();
 
-				if (eBuilding == SHWEDAGON_PAYA)
+				if (eBuilding == SHWEDAGON_PAYA || eBuilding == KAILASA_TEMPLE)
 				{
 					iGreatPeopleRateModifier += 50;
 				}

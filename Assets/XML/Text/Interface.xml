@@ -2735,6 +2735,14 @@
 		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from [ICON_GOLD] Rate</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MISC_HELP_GREATPEOPLE_WITHOUT_GROWTH</Tag>
+		<English>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from No Growth</English>
+		<French>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from No Growth</French>
+		<German>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from No Growth</German>
+		<Italian>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from No Growth</Italian>
+		<Spanish>[ICON_BULLET]%D1%%[ICON_GREATPEOPLE] from No Growth</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MISC_HELP_YIELD_PLAYER</Tag>
 		<English>[ICON_BULLET]%D1%%%F2 from Unique Power</English>
 		<French>[ICON_BULLET]%D1%%%F2 gr&#226;ce au pouvoir unique</French>
