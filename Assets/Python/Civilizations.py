@@ -148,6 +148,9 @@ class Civilization(object):
 			if iNewStateReligion == iCatholicism and not game.isReligionFounded(iCatholicism):
 				iNewStateReligion = iOrthodoxy
 			
+			if iNewStateReligion == iJainism and not game.isReligionFounded(iJainism):
+				iNewStateReligion = iHinduism
+			
 			if game.isReligionFounded(iNewStateReligion) or self.canFoundReligion(iNewStateReligion):
 				self.player.setLastStateReligion(iNewStateReligion)
 				events.fireEvent("playerChangeStateReligion", self.player.getID(), iNewStateReligion, iOldStateReligion)
@@ -286,7 +289,7 @@ lCivilizations = [
 	Civilization(
 		iKarnataka,
 		iGold=100,
-		iStateReligion=iHinduism,
+		iStateReligion=iJainism,
 		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iSyncretism],
 		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature, iPriesthood),
 	),
