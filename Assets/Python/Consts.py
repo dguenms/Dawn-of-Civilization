@@ -1084,23 +1084,22 @@ iNumBonusVarieties = 19
 iGemsEmeralds, iSheepLlama, iSheepBlack, iCowBrown, iPigFurry, iIvoryAfrican, iCitrusOranges, iCrabShrimp) = range(iNumBonuses, iNumBonuses + iNumBonusVarieties)
 
 
-iNumBuildings = 151
+iNumBuildings = 150
 (iPalace, iBarracks, iKalliu, iSoldattorp, iIkhanda, iGranary, iTannery, iPaganTemple, iWeaver, iMbwadi, 
 iMonument, iObelisk, iMenhir, iStele, iViragallu, iCandi, iEdict, iMalae, iMudbrickPyramid, iTotemPole, 
 iWalls, iDun, iStable, iOrtege, iLibrary, iEdubba, iTaixue, iKyaung, iCalmecac, iHarbor, 
-iAqueduct, iQanat, iBaray, iNoria, iStepwell, iTheatre, iOdeon, iWaterPuppetTheatre, iHippodrome, iPavilion, 
-iArena, iBallCourt, iCharreadaArena, iSambadrome, iGarden, iLighthouse, iGudang, iTradingPost, iVolok, iJeweller, 
-iGlassmaker, iObsidianWorkshop, iMarket, iForum, iCaravanserai, iWangara, iSouk, iFloatingMarket, iJail, iDivan, 
-iOstrog, iBath, iReservoir, iStepwell, iHammam, iForge, iBloomeryBuilding, iArtStudio, iCastle, iCitadel, 
-iIslandFort, iPharmacy, iAlchemist, iGrocer, iPostOffice, iTambo, iBasqaq, iWharf, iCoffeehouse, iSalon, 
-iChocolaterie, iBank, iKatra, iPiaohao, iConstabulary, iMountedPolice, iCustomsHouse, iFeitoria, iUniversity, iSeowon, 
-iGompa, iCivicSquare, iGopuram, iRathaus, iSejmik, iSewer, iStarFort, iEstate, iMausoleum, iHacienda, 
-iDrydock, iLevee, iPolder, iObservatory, iWarehouse, iCourthouse, iExchequer, iFactory, iAssemblyPlant, iZaibatsu, 
-iDistillery, iPark, iBagh, iCoalPlant, iRailwayStation, iLaboratory, iCsiro, iAbattoir, iColdStoragePlant, iGrainSilo, 
-iNewsPress, iGasPlant, iIndustrialPark, iOilDepot, iCinema, iHospital, iSupermarket, iPublicTransportation, iDepartmentStore, iMall, 
-iBroadcastTower, iIntelligenceAgency, iElectricalGrid, iWaterworks, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, 
-iContainerTerminal, iNuclearPlant, iDiagnosticsCenter, iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, 
-iVerticalFarm) = range(iNumBuildings)
+iAqueduct, iQanat, iBaray, iNoria, iTheatre, iOdeon, iWaterPuppetTheatre, iHippodrome, iPavilion, iArena, 
+iBallCourt, iCharreadaArena, iSambadrome, iGarden, iLighthouse, iGudang, iTradingPost, iVolok, iJeweller, iGlassmaker, 
+iObsidianWorkshop, iMarket, iForum, iCaravanserai, iWangara, iSouk, iFloatingMarket, iJail, iDivan, iOstrog, 
+iBath, iReservoir, iStepwell, iHammam, iForge, iBloomeryBuilding, iArtStudio, iCastle, iCitadel, iIslandFort, 
+iPharmacy, iAlchemist, iGrocer, iPostOffice, iTambo, iBasqaq, iWharf, iCoffeehouse, iSalon, iChocolaterie, 
+iBank, iKatra, iPiaohao, iConstabulary, iMountedPolice, iCustomsHouse, iFeitoria, iUniversity, iSeowon, iGompa, 
+iCivicSquare, iGopuram, iRathaus, iSejmik, iSewer, iStarFort, iEstate, iMausoleum, iHacienda, iDrydock, 
+iLevee, iPolder, iObservatory, iWarehouse, iCourthouse, iExchequer, iFactory, iAssemblyPlant, iZaibatsu, iDistillery, 
+iPark, iBagh, iCoalPlant, iRailwayStation, iLaboratory, iCsiro, iAbattoir, iColdStoragePlant, iGrainSilo, iNewsPress, 
+iGasPlant, iIndustrialPark, iOilDepot, iCinema, iHospital, iSupermarket, iPublicTransportation, iDepartmentStore, iMall, iBroadcastTower, 
+iIntelligenceAgency, iElectricalGrid, iWaterworks, iAirport, iBunker, iBombShelters, iHydroPlant, iSecurityBureau, iStadium, iContainerTerminal, 
+iNuclearPlant, iDiagnosticsCenter, iSupercomputer, iHotel, iRecyclingCenter, iLogisticsCenter, iSolarPlant, iFiberNetwork, iAutomatedFactory, iVerticalFarm) = range(iNumBuildings)
 
 iNumReligiousBuildings = 66
 iFirstReligiousBuilding = iNumBuildings

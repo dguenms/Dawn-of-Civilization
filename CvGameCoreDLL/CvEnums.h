@@ -1644,7 +1644,7 @@ enum BuildingClassTypes				// Exposed to Python
 	NO_BUILDINGCLASS = -1,
 };
 
-#define BEGIN_WONDERS				(230) // increment if normal building (not for wonders) is added
+#define BEGIN_WONDERS				(229) // increment if normal building (not for wonders) is added
 #define BEGIN_GREAT_WONDERS			(BEGIN_WONDERS+19) // increment if a national wonder is added
 
 enum BuildingTypes						// Exposed to Python
