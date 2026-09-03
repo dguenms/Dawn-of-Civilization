@@ -205,7 +205,7 @@
 			<TechPrereq>TECH_MEDICINE</TechPrereq>
 			<FreeUnitClass>UNITCLASS_JAIN_MISSIONARY</FreeUnitClass>
 			<iFreeUnits>0</iFreeUnits>
-			<iSpreadFactor>80</iSpreadFactor>
+			<iSpreadFactor>90</iSpreadFactor>
 			<GlobalReligionCommerces>
 				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
 				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>

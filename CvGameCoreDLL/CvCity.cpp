@@ -16122,12 +16122,18 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 	int iI;
 
 	ReligionTypes eLoopReligion;
+	bool bLowest = true;
 	for (iI = 0; iI < NUM_RELIGIONS; iI++)
 	{
 		eLoopReligion = (ReligionTypes)iI;
-		if (isHasReligion(eLoopReligion) && !GET_PLAYER(getOwner()).isTolerating(eLoopReligion))
+		if (isHasReligion(eLoopReligion) && GET_PLAYER(getOwner()).getStateReligion() != eLoopReligion)
 		{
 			iTurns += iIncrement;
+
+			if (plot()->getSpreadFactor(eLoopReligion) * GC.getReligionInfo(eLoopReligion).getSpreadFactor() < plot()->getSpreadFactor(eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor())
+			{
+				bLowest = false;
+			}
 		}
 	}
 
@@ -16140,6 +16146,16 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 	if (GC.getReligionInfo(eReligion).isLocal() && eSpread == RELIGION_SPREAD_MINORITY && !isHasPrecursor(eReligion))
 	{
 		iTurns *= 2;
+	}
+
+	if (bLowest && eSpread != RELIGION_SPREAD_MINORITY)
+	{
+		iTurns += iIncrement;
+
+		if (getReligionCount() > 2)
+		{
+			iTurns *= 2;
+		}
 	}
 
 	return getTurns(iTurns);
@@ -19388,9 +19404,20 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 
 	ReligionTypes eDisappearingReligion = disappearingReligion(eReligion);
 
-	int iDisappearanceChance = bMissionary ? 2 : 3;
+	if (eDisappearingReligion == NO_RELIGION)
+		return;
 
-	if (eDisappearingReligion != NO_RELIGION && GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
+	int iDisappearanceChance = 3;
+	if (plot()->getReligionInfluence(eDisappearingReligion) * GC.getReligionInfo(eDisappearingReligion).getSpreadFactor() < plot()->getReligionInfluence(eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor())
+	{
+		iDisappearanceChance = 1;
+	}
+	else if (bMissionary)
+	{
+		iDisappearanceChance = 2;
+	}
+
+	if (GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
 	{
 		removeReligion(eDisappearingReligion);
 	}
@@ -19410,8 +19437,8 @@ struct disappearingReligionCompare
 			iLeftValue += GET_PLAYER(city->getOwnerINLINE()).getSpreadType(city->plot(), eLeftReligion, false, true) * 3;
 			iRightValue += GET_PLAYER(city->getOwnerINLINE()).getSpreadType(city->plot(), eRightReligion, false, true) * 3;
 
-			iLeftValue += city->getReligionInfluence(eLeftReligion);
-			iRightValue += city->getReligionInfluence(eRightReligion);
+			iLeftValue += city->getReligionInfluence(eLeftReligion) * GC.getReligionInfo(eLeftReligion).getSpreadFactor();
+			iRightValue += city->getReligionInfluence(eRightReligion) * GC.getReligionInfo(eRightReligion).getSpreadFactor();
 		}
 		else 
 		{
@@ -19459,7 +19486,7 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 		return NO_RELIGION;
 	}
 
-	int iMaxReligions = std::max(2, 1 + getPopulation() / 5);
+	int iMaxReligions = std::max(2, 1 + getPopulation() / 10);
 
 	ReligionSpreadTypes eCurrentSpread;
 	ReligionSpreadTypes eNewReligionSpread = eNewReligion != NO_RELIGION ? GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eNewReligion, false, true) : RELIGION_SPREAD_MINORITY;
