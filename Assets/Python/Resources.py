@@ -104,7 +104,9 @@ dResourcesDict = {
 	(52, 44)  : (1400,  iSugar),	# Madeira
 	(112, 43) : (1400,  iCotton),   # Bengal
 	(130, 48) : (1400,  iFish),     # South China
+	(114, 43) : (1400,  iCotton),   # Bengal
 	(63, 65)  : (1500,  iCow),      # Netherlands
+	(114, 41) : (1500,  iClam),     # Bengal
 	(81, 18)  : (1500,  iCitrus),   # Mozambique
 	(70, 48)  : (1500,  iCitrus),   # Sicily
 	(28, 44)  : (1500,  iSugar),	# Cuba
@@ -279,6 +281,7 @@ dResourceVarieties = {
 dSpawnResourcesDict = {
 	(82, 54)  : (iHittites,    iIron),
 	(107, 61) : (iTurks,       iHorse),
+	(110, 42) : (iBengal,      iIvory),
 	(113, 47) : (iTibet,       iWheat),
 	(55, 52)  : (iPortugal,    iIron),
 	(85, 64)  : (iRussia,      iIron),
@@ -318,6 +321,7 @@ dRemovedResourcesDict = {
 	(78, 56)  : 1300, # Silk in Thrace
 	(75, 58)  : 1400, # Gold in Transylvania
 	(89, 54)  : 1500, # Dye in Armenia
+	(110, 42) : 1500, # Ivory in Bengal
 	(92, 60)  : 1600, # Silk in the Volga Delta
 	(32, 42)  : 1650, # Gold in Hispaniola
 	(47, 24)  : 1650, # Dye (brazilwood) in Brazil
@@ -333,6 +337,7 @@ dFeaturesDict = {
 	(66, 57)  : (1100, iFloodPlains), # Lombardy
 	(68, 57)  : (1100, iFloodPlains), # Lombardy
 	(67, 55)  : (1100, iFloodPlains), # Tuscany
+	(114, 43) : (1200, iRainforest),  # Bengal
 	(120, 40) : (1700, iRainforest),  # Laos
 	(8, 55)   : (1850, iFloodPlains), # California
 	(8, 54)   : (1850, iFloodPlains), # California
@@ -365,8 +370,9 @@ dRemovedFeaturesDict = {
 }
 
 dTerrainsDict = {
-	(78, 45) : (900, iSemidesert), # Egypt
-	(79, 45) : (900, iSemidesert), # Egypt
+	(78,  45) : (900,  iSemidesert), # Egypt
+	(79,  45) : (900,  iSemidesert), # Egypt
+	(114, 43) : (1200, iGrass),      # Bengal
 }
 
 dConquerorPlotTypesDict = {
