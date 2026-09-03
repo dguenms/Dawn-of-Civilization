@@ -24,7 +24,7 @@ dGoals = {
 	iZoroastrianism: (
 		ResourceCount(iIncense, 6),
 		ReligionSpreadPercent(iZoroastrianism, 10),
-		CityCultureLevel(holy_city(iZoroastrianism), iCultureLevelLegendary),
+		CityCultureLevel(holy_city(iZoroastrianism), iCultureLevelRenowned),
 	),
 	iJudaism: (
 		SpecialistCount(sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatStatesman), 15, subject=STATE_RELIGION, iReligion=iJudaism),

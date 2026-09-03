@@ -1260,8 +1260,8 @@ iNumEras = 7
 
 # Culture
 
-iNumCultureLevels = 7
-(iCultureLevelNone, iCultureLevelPoor, iCultureLevelFledgling, iCultureLevelDeveloping, iCultureLevelRefined, iCultureLevelInfluential, iCultureLevelLegendary) = range(iNumCultureLevels)
+iNumCultureLevels = 9
+(iCultureLevelNone, iCultureLevelPoor, iCultureLevelFledgling, iCultureLevelDeveloping, iCultureLevelRefined, iCultureLevelInfluential, iCultureLevelFlourishing, iCultureLevelRenowned, iCultureLevelLegendary) = range(iNumCultureLevels)
 
 
 #Improvements

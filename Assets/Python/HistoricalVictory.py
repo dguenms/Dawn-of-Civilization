@@ -612,7 +612,7 @@ dGoals = {
 	iVietnam: (
 		GreatPeople(iGreatGeneral, 2, by=1500),
 		BuildingCount(iConfucianCathedral, 1, by=1600),
-		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1700),
+		CultureLevelCityCount(iCultureLevelFlourishing, 3, by=1700),
 	),
 	iSwahili: (
 		ImportCount(sum(lHappinessResources).named(HAPPINESS_RESOURCES), 100, by=1300),
@@ -672,7 +672,7 @@ dGoals = {
 	),
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore, by=1500),
-		CultureLevelCityCount(iCultureLevelInfluential, 4, by=1600),
+		CultureLevelCityCount(iCultureLevelFlourishing, 4, by=1600),
 		AreaPercent(plots.all().adjacent_region(rMediterraneanSea).named(MEDITERRANEAN), 65, by=1930),
 	),
 	iMongols: (
@@ -843,7 +843,7 @@ dGoals = {
 	),
 	iArgentina: (
 		GoldenAges(2, by=1930),
-		CityCultureLevel(start(iArgentina).named(BUENOS_AIRES), iCultureLevelLegendary, by=1960),
+		CityCultureLevel(start(iArgentina).named(BUENOS_AIRES), iCultureLevelRenowned, by=1960),
 		GoldenAges(6, by=2000),
 	),
 	iMexico: (
