@@ -964,6 +964,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_RELIGION</Tag>
+		<English>no %s2 cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_STATE_RELIGION</Tag>
 		<English>no %s2 civilizations in %s1</English>
 		<French></French>
@@ -1913,6 +1921,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_AREA_BLOCKADE_GOLD</Tag>
 		<English>Gold from blockading and pillaging in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_NO_RELIGION</Tag>
+		<English>No %s2 cities in %s1</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>

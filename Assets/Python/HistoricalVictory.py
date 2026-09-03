@@ -478,6 +478,21 @@ dGoals = {
 			at=1450,
 		),
 	),
+	iRajputs: (
+		BuildingCount(
+			(iCastle, 6),
+			(iBath, 6),
+			(iForge, 4),
+			(iGrocer, 4),
+			by=1000,
+		),
+		SpecialistCount(iSpecialistGreatMerchant, 3, by=1400),
+		All(
+			AreaNoReligion(plots.regions(*lIndia).named(INDIA), iIslam, at=1100),
+			AreaNoReligion(plots.regions(*lIndia).named(INDIA), iIslam, by=1500),
+			GreatPeople(iGreatGeneral, 3, by=1500),
+		),
+	),
 	iFrance: (
 		CityCultureLevel(start(iFrance).named(PARIS), iCultureLevelLegendary, at=1700),
 		All(
