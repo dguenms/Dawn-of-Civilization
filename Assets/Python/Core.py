@@ -126,6 +126,10 @@ def concat(*lists):
 
 def isWonder(iBuilding):
 	return isWorldWonderClass(infos.building(iBuilding).getBuildingClassType())
+	
+
+def isNationalWonder(iBuilding):
+	return isNationalWonderClass(infos.building(iBuilding).getBuildingClassType())
 
 
 def log_with_trace(context = ""):

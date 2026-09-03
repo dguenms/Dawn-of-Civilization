@@ -3832,6 +3832,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NATIONAL_WONDERS</Tag>
+		<English>national wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_CHRISTIAN_CATHEDRALS</Tag>
 		<English>Christian cathedrals</English>
 		<French></French>

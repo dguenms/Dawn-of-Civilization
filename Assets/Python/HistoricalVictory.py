@@ -344,6 +344,25 @@ dGoals = {
 		Wonder(iTempleOfKukulkan, by=600),
 		ContactBeforeRevealed(civs(*lBioOldWorld).named(OLD_WORLD_CIVILIZATION), plots.regions(*lAmerica).named(AMERICAS)),
 	),
+	iKarnataka: (
+		CityCount(
+			(plots.region(rDeccan).named(DECCAN), 1),
+			(plots.region(rDravida), 1),
+			(plots.region(rRajputana), 1),
+			(plots.region(rHindustan), 1),
+			by=800,
+		),
+		All(
+			BuildingCount(iJainCathedral, 1),
+			SpecialistCount(sum(iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatStatesman), 5),
+			by=1100,
+		),
+		All(
+			CityPopulation(capital().named(CAPITAL), 25),
+			CityBuildingCount(capital().named(CAPITAL), national_wonders(), 3, desc_key="TXT_KEY_VICTORY_DESC_HAVE_IN_CITY"),
+			by=1500,
+		),
+	),
 	iTamils: (
 		All(
 			GoldAmount(5000, at=600),

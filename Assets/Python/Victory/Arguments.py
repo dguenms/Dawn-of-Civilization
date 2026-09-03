@@ -528,6 +528,9 @@ def religious_buildings(func):
 
 def wonders():
 	return SumAggregate(iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding)).named("TXT_KEY_VICTORY_NAME_WONDERS")
+
+def national_wonders():
+	return SumAggregate(iBuilding for iBuilding in infos.buildings() if isNationalWonder(iBuilding) and iBuilding != iPalace).named("TXT_KEY_VICTORY_NAME_NATIONAL_WONDERS")
 	
 def group(iGroup):
 	return CivsArgument.group(iGroup)
