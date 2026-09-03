@@ -12234,8 +12234,11 @@
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
 			<RiverPlotYieldChanges>
-				<iYield>1</iYield>
+				<iYield>2</iYield>
 			</RiverPlotYieldChanges>
+			<FlatRiverPlotYieldChanges>
+				<iYield>-2</iYield>
+			</FlatRiverPlotYieldChanges>
 			<ConstructSound>AS2D_BUILD_AQUEDUCT</ConstructSound>
 			<Flavors>
 				<Flavor>
