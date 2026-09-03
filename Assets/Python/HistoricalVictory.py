@@ -564,6 +564,23 @@ dGoals = {
 		ReligionSpreadPopulationCount(iBuddhism, 60, by=1400),
 		CitySpecialistCount(start(iTibet).named(LHASA), iSpecialistGreatProphet, 7, by=1700),
 	),
+	iBengal: (
+		BuildingCount(
+			(iBuddhistMonastery, 6),
+			(wonders(), 4),
+			by=1000,
+		),
+		All(
+			CultureLevelCityCount(iCultureLevelFlourishing, 3),
+			TradeNetworkReligionCityCount(iIslam, 30),
+			by=1500,
+		),
+		All(
+			CompleteEra(iRenaissance),
+			GoldAmount(15000),
+			by=1750,
+		),
+	),
 	iMoors: (
 		All(
 			CityCount(plots.region(rMaghreb).named(MAGHREB), 4),
