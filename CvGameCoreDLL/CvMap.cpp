@@ -1419,6 +1419,82 @@ void CvMap::calculateAreas()
 		}
 	}
 
+	// Fresol - start
+	// A small water area that a sea unit can leave through a strait is not an enclosed lake, so it
+	// is merged into the water area on the other side of that strait. Areas are only merged into
+	// areas that are too large to be lakes themselves, so that several lakes connected by straits
+	// (such as the Great Lakes) keep their individual lakes.
+	bool bMergedStraits = true;
+
+	while (bMergedStraits)
+	{
+		bMergedStraits = false;
+
+		for (iI = 0; iI < numPlotsINLINE() && !bMergedStraits; iI++)
+		{
+			pLoopPlot = plotByIndexINLINE(iI);
+
+			if (!pLoopPlot->isWater() || !pLoopPlot->isStrait())
+			{
+				continue;
+			}
+
+			int iOwnArea = pLoopPlot->getArea();
+			CvArea* pOwnArea = getArea(iOwnArea);
+
+			if (pOwnArea == NULL || pOwnArea->getNumTiles() > GC.getLAKE_MAX_AREA_SIZE())
+			{
+				continue;
+			}
+
+			for (int iDX = -1; iDX <= 1 && !bMergedStraits; iDX++)
+			{
+				for (int iDY = -1; iDY <= 1; iDY++)
+				{
+					// a strait is crossed diagonally, exactly the way a sea unit crosses it
+					if (iDX == 0 || iDY == 0)
+					{
+						continue;
+					}
+
+					CvPlot* pDiagonal = plotINLINE(pLoopPlot->getX_INLINE() + iDX, pLoopPlot->getY_INLINE() + iDY);
+
+					if (pDiagonal == NULL || !pDiagonal->isWater() || !pDiagonal->isStrait())
+					{
+						continue;
+					}
+
+					if (pDiagonal->getArea() == iOwnArea)
+					{
+						continue;
+					}
+
+					int iTargetArea = pDiagonal->getArea();
+					CvArea* pTargetArea = getArea(iTargetArea);
+
+					if (pTargetArea == NULL || pTargetArea->getNumTiles() <= GC.getLAKE_MAX_AREA_SIZE())
+					{
+						continue;
+					}
+
+					for (int iJ = 0; iJ < numPlotsINLINE(); iJ++)
+					{
+						CvPlot* pLoopPlot2 = plotByIndexINLINE(iJ);
+
+						if (pLoopPlot2->getArea() == iOwnArea)
+						{
+							pLoopPlot2->setArea(iTargetArea);
+						}
+					}
+
+					bMergedStraits = true;
+					break;
+				}
+			}
+		}
+	}
+	// Fresol - end
+
 	// Leoreth: create different continents for Europe, Africa and South America, plus separate Scandinavia and Denmark
 	CvArea* europe = addArea();
 	CvArea* africa = addArea();
