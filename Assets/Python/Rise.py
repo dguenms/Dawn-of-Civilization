@@ -819,6 +819,16 @@ class Birth(object):
 			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
 				return False
 		
+		# Rajputs require India not to control Rajputana or be below Solid
+		if self.iCiv == iRajputs:
+			if player(iIndia).isExisting() and isControlled(iIndia, plots.region(rRajputana)) and stability(iIndia) == iStabilitySolid:
+				return False
+		
+		# Bengal requires India not to control Bengal or be below Solid
+		if self.iCiv == iBengal:
+			if player(iIndia).isExisting() and isControlled(iIndia, plots.region(rBengal)) and stability(iIndia) == iStabilitySolid:
+				return False
+		
 		# Misr requires Egypt to be dead and Arabia to be shaky or worse
 		if self.iCiv == iMisr:
 			if player(iEgypt).isExisting():
