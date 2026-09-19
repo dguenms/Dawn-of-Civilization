@@ -55,8 +55,8 @@ tSpreadFactors = (
 # Islam
 {
 	iCore : 	[rArabia, rMesopotamia, rEgypt, rLevant],
-	iHistorical : 	[rPersia, rKhorasan, rSindh, rPunjab, rTransoxiana, rMaghreb, rIndonesia, rSahel, rSahara, rHornOfAfrica, rVolga],
-	iPeriphery : 	[rNubia, rIberia, rAnatolia, rBalkans, rHinduKush, rHindustan, rRajputana, rBengal, rDeccan, rPonticSteppe, rCentralAsianSteppe, rSwahiliCoast],
+	iHistorical : 	[rPersia, rKhorasan, rSindh, rPunjab, rBengal, rTransoxiana, rMaghreb, rIndonesia, rSahel, rSahara, rHornOfAfrica, rVolga],
+	iPeriphery : 	[rNubia, rIberia, rAnatolia, rBalkans, rHinduKush, rHindustan, rRajputana, rDeccan, rPonticSteppe, rCentralAsianSteppe, rSwahiliCoast],
 	iMinority : 	[rUrals, rSiberia, rCaucasus, rTarimBasin, rMongolia],
 },
 # Hinduism

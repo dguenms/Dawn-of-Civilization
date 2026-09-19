@@ -420,12 +420,7 @@ def foundReligionInCore(iReligion):
 		
 		
 def removeBuddhismIndia():
-	lPeripheryRegions = [rHindustan, rRajputana, rBengal, rDeccan]
-	lMinorityRegions = [rPunjab, rHinduKush]
-	
-	for plot in plots.regions(*lPeripheryRegions):
-		plot.setSpreadFactor(iBuddhism, iPeriphery)
-	
+	lMinorityRegions = [rPunjab, rHinduKush, rHindustan, rRajputana, rBengal, rDeccan]
 	for plot in plots.regions(*lMinorityRegions):
 		plot.setSpreadFactor(iBuddhism, iMinority)
 
