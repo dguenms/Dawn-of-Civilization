@@ -22,7 +22,7 @@ iTamils :		(106, 34), # Thanjavur
 iEthiopia :		(84, 35), # Aksum
 iKarnataka :	(105, 37), # Vatapi
 iToltecs :		(17, 43), # Tollan
-iKushans :		(102, 49), # Taxila
+iKushans :		(102, 50), # Taxila
 iKorea :		(131, 54), # Seoul
 iKhmer :		(121, 37), # Angkor
 iMali :			(59, 35), # Djenne
