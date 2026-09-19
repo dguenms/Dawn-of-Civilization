@@ -19945,7 +19945,7 @@ name_translations = {
 	},
 	"Vatapi": {
 		iIndian: (
-			relocate("Vijayanagara", bCapital=True, iAfter=iRenaissance),
+			relocate("Vijayanagara", bCapital=True, iAfter=iMedieval),
 			translate("Badami", iAfter=iIndustrial),
 			_,
 		),
@@ -20062,7 +20062,10 @@ name_translations = {
 	},
 	"Vijayanagara": {  # relocated from Vatapi
 		iEnglish: relocate("Ballari"),
-		iIndian: _,
+		iIndian: (
+			translate(_, bCapital=True),
+			"Hampi",
+		),
 		iPersian: relocate("Ballari"),
 	},
 	"Vijayapura": {
