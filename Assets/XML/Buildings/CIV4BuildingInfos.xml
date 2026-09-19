@@ -4073,82 +4073,6 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_CIVIC_SQUARE</BuildingClass>
-			<Type>BUILDING_TAMIL_GOPURAM</Type>
-			<Description>TXT_KEY_BUILDING_TAMIL_GOPURAM</Description>
-			<Civilopedia>TXT_KEY_BUILDING_TAMIL_GOPURAM_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_TAMIL_GOPURAM_STRATEGY</Strategy>
-			<Advisor>ADVISOR_CULTURE</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_TAMIL_GOPURAM</ArtDefineTag>
-			<PrereqTech>TECH_COMMUNE</PrereqTech>
-			<bCenterInCity>1</bCenterInCity>
-			<iCost>150</iCost>
-			<iConquestProb>70</iConquestProb>
-			<iAdvancedStartCost>100</iAdvancedStartCost>
-			<iMinAreaSize>-1</iMinAreaSize>
-			<iMaxLatitude>90</iMaxLatitude>
-			<iGreatPeopleRateModifier>25</iGreatPeopleRateModifier>
-			<iAsset>4</iAsset>
-			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<YieldModifiers>
-				<iYield>10</iYield>
-			</YieldModifiers>
-			<ObsoleteSafeCommerceChanges>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>2</iCommerce>
-			</ObsoleteSafeCommerceChanges>
-			<CommerceChangeDoubleTimes>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>1000</iCommerce>
-			</CommerceChangeDoubleTimes>
-			<CommerceModifiers>
-				<iCommerce>0</iCommerce>
-				<iCommerce>0</iCommerce>
-				<iCommerce>25</iCommerce>
-			</CommerceModifiers>
-			<SpecialistCounts>
-				<SpecialistCount>
-					<SpecialistType>SPECIALIST_STATESMAN</SpecialistType>
-					<iSpecialistCount>1</iSpecialistCount>
-				</SpecialistCount>
-			</SpecialistCounts>
-			<ConstructSound>AS2D_BUILD_COLOSSEUM</ConstructSound>
-			<BuildingClassNeededs>
-				<BuildingClassNeeded>
-					<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType>
-					<bNeededInCity>1</bNeededInCity>
-				</BuildingClassNeeded>
-			</BuildingClassNeededs>
-			<Flavors>
-				<Flavor>
-					<FlavorType>FLAVOR_CULTURE</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_ADMIN</FlavorType>
-					<iFlavor>3</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GROWTH</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_SCIENCE</FlavorType>
-					<iFlavor>2</iFlavor>
-				</Flavor>
-			</Flavors>
-		</BuildingInfo>
-		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_CIVIC_SQUARE</BuildingClass>
 			<Type>BUILDING_HOLY_ROMAN_RATHAUS</Type>
 			<Description>TXT_KEY_BUILDING_HOLY_ROMAN_RATHAUS</Description>
 			<Civilopedia>TXT_KEY_BUILDING_HOLY_ROMAN_RATHAUS_PEDIA</Civilopedia>
@@ -13567,11 +13491,11 @@
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_ARCHITECTURE</PrereqTech>
 			<ObsoleteTech>TECH_HORTICULTURE</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>350</iCost>
+			<iCost>450</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -13594,6 +13518,12 @@
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
 			<ConstructSound>AS2D_BUILD_HANGGARDENS</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
@@ -13884,7 +13814,7 @@
 			<OrPrereqReligion>RELIGION_JAINISM</OrPrereqReligion>
 			<MaxStartEra>ERA_INDUSTRIAL</MaxStartEra>
 			<PrereqTech>TECH_ETHICS</PrereqTech>
-			<ObsoleteTech>TECH_CIVIL_LIBERTIES</ObsoleteTech>
+			<ObsoleteTech>TECH_LOGISTICS</ObsoleteTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_PROPHET</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
@@ -14578,35 +14508,36 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_OLD_SYNAGOGUE</BuildingClass>
-			<Type>BUILDING_OLD_SYNAGOGUE</Type>
-			<Description>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Description>
-			<Civilopedia>TXT_KEY_BUILDING_OLD_SYNAGOGUE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_OLD_SYNAGOGUE_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_OLD_SYNAGOGUE_HELP</Help>
-			<Advisor>ADVISOR_RELIGION</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_OLD_SYNAGOGUE</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_OLD_SYNAGOGUE</MovieDefineTag>
-			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<BuildingClass>BUILDINGCLASS_VIJAYA_STAMBHA</BuildingClass>
+			<Type>BUILDING_VIJAYA_STAMBHA</Type>
+			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
+			<Civilopedia>TXT_KEY_BUILDING_VIJAYA_STAMBHA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_VIJAYA_STAMBHA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_VIJAYA_STAMBHA</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_VIJAYA_STAMBHA</MovieDefineTag>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
+			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_COMMUNE</PrereqTech>
-			<ObsoleteTech>TECH_SOCIAL_SERVICES</ObsoleteTech>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
+			<FreePromotion>PROMOTION_CITY_GARRISON1</FreePromotion>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>150</iAIWeight>
-			<iCost>400</iCost>
+			<iCost>500</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iAsset>14</iAsset>
+			<iGreatGeneralRateModifier>100</iGreatGeneralRateModifier>
+			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
 				<iCommerce>0</iCommerce>
 				<iCommerce>0</iCommerce>
-				<iCommerce>4</iCommerce>
+				<iCommerce>6</iCommerce>
 			</ObsoleteSafeCommerceChanges>
 			<CommerceChangeDoubleTimes>
 				<iCommerce>0</iCommerce>
@@ -14618,7 +14549,7 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
 			<BonusProductionModifiers>
 				<BonusProductionModifier>
 					<BonusType>BONUS_STONE</BonusType>
@@ -14627,12 +14558,8 @@
 			</BonusProductionModifiers>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_RELIGION</FlavorType>
-					<iFlavor>5</iFlavor>
-				</Flavor>
-				<Flavor>
-					<FlavorType>FLAVOR_GOLD</FlavorType>
-					<iFlavor>5</iFlavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>
 		</BuildingInfo>
@@ -15043,6 +14970,65 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_OLD_SYNAGOGUE</BuildingClass>
+			<Type>BUILDING_OLD_SYNAGOGUE</Type>
+			<Description>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_OLD_SYNAGOGUE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_OLD_SYNAGOGUE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_OLD_SYNAGOGUE_HELP</Help>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_OLD_SYNAGOGUE</ArtDefineTag>
+			<MovieDefineTag>ART_DEF_MOVIE_OLD_SYNAGOGUE</MovieDefineTag>
+			<PrereqReligion>RELIGION_JUDAISM</PrereqReligion>
+			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
+			<PrereqTech>TECH_EDUCATION</PrereqTech>
+			<ObsoleteTech>TECH_SOCIAL_SERVICES</ObsoleteTech>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_MERCHANT</GreatPeopleUnitClass>
+			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
+			<bTeamShare>1</bTeamShare>
+			<bNukeImmune>1</bNukeImmune>
+			<iAIWeight>150</iAIWeight>
+			<iCost>400</iCost>
+			<iHurryCostModifier>100</iHurryCostModifier>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>100</iConquestProb>
+			<iAsset>14</iAsset>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<ObsoleteSafeCommerceChanges>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>4</iCommerce>
+			</ObsoleteSafeCommerceChanges>
+			<CommerceChangeDoubleTimes>
+				<iCommerce>0</iCommerce>
+				<iCommerce>0</iCommerce>
+				<iCommerce>1000</iCommerce>
+			</CommerceChangeDoubleTimes>
+			<CommerceChangeOriginalOwners>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
+				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
+			</CommerceChangeOriginalOwners>
+			<ConstructSound>AS2D_BUILD_JEWISH</ConstructSound>
+			<BonusProductionModifiers>
+				<BonusProductionModifier>
+					<BonusType>BONUS_STONE</BonusType>
+					<iProductonModifier>100</iProductonModifier>
+				</BonusProductionModifier>
+			</BonusProductionModifiers>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_RELIGION</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_GOLD</FlavorType>
+					<iFlavor>5</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_GREAT_ADOBE_MOSQUE</BuildingClass>
 			<Type>BUILDING_GREAT_ADOBE_MOSQUE</Type>
 			<Description>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE</Description>
@@ -15170,30 +15156,28 @@
 			</Flavors>
 		</BuildingInfo>
 		<BuildingInfo>
-			<BuildingClass>BUILDINGCLASS_VIJAYA_STAMBHA</BuildingClass>
-			<Type>BUILDING_VIJAYA_STAMBHA</Type>
-			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
-			<Civilopedia>TXT_KEY_BUILDING_VIJAYA_STAMBHA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_VIJAYA_STAMBHA_STRATEGY</Strategy>
-			<Advisor>ADVISOR_MILITARY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_VIJAYA_STAMBHA</ArtDefineTag>
-			<MovieDefineTag>ART_DEF_MOVIE_VIJAYA_STAMBHA</MovieDefineTag>
+			<BuildingClass>BUILDINGCLASS_MINAKSHI_TEMPLE</BuildingClass>
+			<Type>BUILDING_MINAKSHI_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_MINAKSHI_TEMPLE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_HELP</Help>
+			<Advisor>ADVISOR_GROWTH</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_MINAKSHI_TEMPLE</ArtDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<PrereqReligion>RELIGION_HINDUISM</PrereqReligion>
 			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra>
 			<PrereqTech>TECH_COMPANIES</PrereqTech>
-			<ObsoleteTech>TECH_REPLACEABLE_PARTS</ObsoleteTech>
-			<FreePromotion>PROMOTION_CITY_GARRISON1</FreePromotion>
-			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
+			<GreatPeopleUnitClass>UNITCLASS_GREAT_ARTIST</GreatPeopleUnitClass>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iCost>500</iCost>
+			<iAIWeight>200</iAIWeight>
+			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>100</iConquestProb>
-			<iGreatGeneralRateModifier>50</iGreatGeneralRateModifier>
 			<iAsset>10</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ObsoleteSafeCommerceChanges>
@@ -15211,16 +15195,10 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<ConstructSound>AS2D_BUILD_OBELISK</ConstructSound>
-			<BonusProductionModifiers>
-				<BonusProductionModifier>
-					<BonusType>BONUS_STONE</BonusType>
-					<iProductonModifier>100</iProductonModifier>
-				</BonusProductionModifier>
-			</BonusProductionModifiers>
+			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<Flavors>
 				<Flavor>
-					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<FlavorType>FLAVOR_GROWTH</FlavorType>
 					<iFlavor>10</iFlavor>
 				</Flavor>
 			</Flavors>

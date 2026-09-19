@@ -3370,6 +3370,22 @@
 		<Spanish>[ICON_BULLET]+50%[ICON_GREATPEOPLE] in Cities without Growth</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MINAKSHI_TEMPLE</Tag>
+		<English>Minakshi Temple</English>
+		<French>Minakshi Temple</French>
+		<German>Minakshi Temple</German>
+		<Italian>Minakshi Temple</Italian>
+		<Spanish>Minakshi Temple</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_HELP</Tag>
+		<English>[ICON_BULLET]+20%[ICON_FOOD] from [ICON_TRADE] Routes</English>
+		<French>[ICON_BULLET]+20%[ICON_FOOD] from [ICON_TRADE] Routes</French>
+		<German>[ICON_BULLET]+20%[ICON_FOOD] from [ICON_TRADE] Routes</German>
+		<Italian>[ICON_BULLET]+20%[ICON_FOOD] from [ICON_TRADE] Routes</Italian>
+		<Spanish>[ICON_BULLET]+20%[ICON_FOOD] from [ICON_TRADE] Routes</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
 		<English></English>
 		<French></French>

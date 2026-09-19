@@ -1979,13 +1979,13 @@
 			<DefaultBuilding>BUILDING_NOTRE_DAME</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_OLD_SYNAGOGUE</Type>
-			<Description>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Description>
+			<Type>BUILDINGCLASS_VIJAYA_STAMBHA</Type>
+			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_OLD_SYNAGOGUE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_VIJAYA_STAMBHA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_WAT_PREAH_PISNULOK</Type>
@@ -2051,6 +2051,15 @@
 			<DefaultBuilding>BUILDING_LA_MEZQUITA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_OLD_SYNAGOGUE</Type>
+			<Description>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_OLD_SYNAGOGUE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GREAT_ADOBE_MOSQUE</Type>
 			<Description>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2069,13 +2078,13 @@
 			<DefaultBuilding>BUILDING_KREMLIN</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_VIJAYA_STAMBHA</Type>
-			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
+			<Type>BUILDINGCLASS_MINAKSHI_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_MINAKSHI_TEMPLE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_VIJAYA_STAMBHA</DefaultBuilding>
+			<DefaultBuilding>BUILDING_MINAKSHI_TEMPLE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SAN_MARCO_BASILICA</Type>

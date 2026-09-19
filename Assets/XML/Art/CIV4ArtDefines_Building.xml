@@ -3708,16 +3708,6 @@
 			<Button>Art/Structures/Buildings/Ostrog/Ostrog.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_TAMIL_GOPURAM</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Gopuram/india_temple.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Gopuram/Gopuram.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_THAI_FLOATING_MARKET</Type>
 			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
@@ -4476,6 +4466,26 @@
 			<NIF>Art/Structures/Wonders/Kailasa/pagod5.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Wonders/Kailasa/Kailasa.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TAMIL_URUKKU_FORGE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.17</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Urukku/caravan1.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Urukku/Urukku.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MINAKSHI_TEMPLE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Minakshi/india_temple.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Minakshi/Minakshi.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>
