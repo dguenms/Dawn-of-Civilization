@@ -101,6 +101,7 @@ NEW_ZEALAND = "TXT_KEY_VICTORY_NAME_NEW_ZEALAND"
 NORTH_AFRICA = "TXT_KEY_VICTORY_NAME_NORTH_AFRICA"
 NORTH_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_AMERICA"
 NORTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA"
+NORTHWEST_INDIA = "TXT_KEY_VICTORY_NAME_NORTHWEST_INDIA"
 NUBIA = "TXT_KEY_VICTORY_NAME_NUBIA"
 OCEANIA = "TXT_KEY_VICTORY_NAME_OCEANIA"
 PACIFIC_COAST = "TXT_KEY_VICTORY_NAME_PACIFIC_COAST"
@@ -480,17 +481,17 @@ dGoals = {
 	),
 	iRajputs: (
 		BuildingCount(
-			(iCastle, 6),
-			(iBath, 6),
+			(iCastle, 5),
+			(iStepwell, 5),
 			(iForge, 4),
-			(iGrocer, 4),
+			(iJeweller, 4),
 			by=1000,
 		),
-		SpecialistCount(iSpecialistGreatMerchant, 3, by=1400),
+		SpecialistCount(iSpecialistGreatMerchant, 3, by=1300),
 		All(
-			AreaNoReligion(plots.regions(*lIndia).named(INDIA), iIslam, at=1100),
-			AreaNoReligion(plots.regions(*lIndia).named(INDIA), iIslam, by=1500),
-			GreatPeople(iGreatGeneral, 3, by=1500),
+			AreaNoReligion(plots.regions(rSindh, rPunjab, rRajputana, rHindustan).named(NORTHWEST_INDIA), iIslam, at=1100),
+			AreaNoReligion(plots.regions(*lIndia).named(INDIA), iIslam, at=1500),
+			GreatPeople(iGreatGeneral, 4, at=1500),
 		),
 	),
 	iFrance: (
@@ -546,6 +547,23 @@ dGoals = {
 			CityCultureLevel(capital().named(ANOTHER_CAPITAL), iCultureLevelInfluential, by=1400),
 		),
 	),
+	iBengal: (
+		BuildingCount(
+			(iBuddhistMonastery, 6),
+			(wonders(), 3),
+			by=1000,
+		),
+		All(
+			CultureLevelCityCount(iCultureLevelInfluential, 3),
+			TradeNetworkReligionCityCount(iIslam, 30),
+			by=1500,
+		),
+		All(
+			CompleteEra(iRenaissance),
+			GoldAmount(15000),
+			by=1750,
+		),
+	),
 	iArabia: (
 		CompleteEra(iMedieval, by=1200),
 		Control(
@@ -563,23 +581,6 @@ dGoals = {
 		AcquiredCities(7, by=1000),
 		ReligionSpreadPopulationCount(iBuddhism, 60, by=1400),
 		CitySpecialistCount(start(iTibet).named(LHASA), iSpecialistGreatProphet, 7, by=1700),
-	),
-	iBengal: (
-		BuildingCount(
-			(iBuddhistMonastery, 6),
-			(wonders(), 4),
-			by=1000,
-		),
-		All(
-			CultureLevelCityCount(iCultureLevelFlourishing, 3),
-			TradeNetworkReligionCityCount(iIslam, 30),
-			by=1500,
-		),
-		All(
-			CompleteEra(iRenaissance),
-			GoldAmount(15000),
-			by=1750,
-		),
 	),
 	iMoors: (
 		All(
