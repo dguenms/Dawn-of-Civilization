@@ -4034,12 +4034,28 @@
 		<Spanish>Katra</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BENGALI_KATRA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</English>
+		<French>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</French>
+		<German>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_RAJPUT_STEPWELL</Tag>
 		<English>Stepwell</English>
 		<French>Stepwell</French>
 		<German>Stepwell</German>
 		<Italian>Stepwell</Italian>
 		<Spanish>Stepwell</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RAJPUT_STEPWELL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_KARNATIC_VIRAGALLU</Tag>
@@ -4050,12 +4066,28 @@
 		<Spanish>Viragallu</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARNATIC_VIRAGALLU_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</English>
+		<French>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</French>
+		<German>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE</Tag>
 		<English>Urukku Forge</English>
 		<French>Urukku Forge</French>
 		<German>Urukku Forge</German>
 		<Italian>Urukku Forge</Italian>
 		<Spanish>Urukku Forge</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</English>
+		<French>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</French>
+		<German>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
