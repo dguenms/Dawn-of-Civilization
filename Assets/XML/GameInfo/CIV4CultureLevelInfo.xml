@@ -72,7 +72,7 @@
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_DEVELOPING</Type>
 			<Description>TXT_KEY_CULTURELEVEL_DEVELOPING</Description>
-			<iCityDefenseModifier>25</iCityDefenseModifier>
+			<iCityDefenseModifier>40</iCityDefenseModifier>
 			<iWonderLimit>2</iWonderLimit>
 			<iNationalWonderLimit>1</iNationalWonderLimit>
 			<SpeedThresholds>
@@ -93,7 +93,7 @@
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_REFINED</Type>
 			<Description>TXT_KEY_CULTURELEVEL_REFINED</Description>
-			<iCityDefenseModifier>50</iCityDefenseModifier>
+			<iCityDefenseModifier>60</iCityDefenseModifier>
 			<iWonderLimit>3</iWonderLimit>
 			<iNationalWonderLimit>2</iNationalWonderLimit>
 			<SpeedThresholds>
@@ -114,7 +114,7 @@
 		<CultureLevelInfo>
 			<Type>CULTURELEVEL_INFLUENTIAL</Type>
 			<Description>TXT_KEY_CULTURELEVEL_INFLUENTIAL</Description>
-			<iCityDefenseModifier>75</iCityDefenseModifier>
+			<iCityDefenseModifier>80</iCityDefenseModifier>
 			<iWonderLimit>5</iWonderLimit>
 			<iNationalWonderLimit>3</iNationalWonderLimit>
 			<SpeedThresholds>
