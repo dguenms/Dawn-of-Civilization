@@ -106,7 +106,6 @@ dResourcesDict = {
 	(130, 48) : (1400,  iFish),     # South China
 	(114, 43) : (1400,  iCotton),   # Bengal
 	(63, 65)  : (1500,  iCow),      # Netherlands
-	(114, 41) : (1500,  iClam),     # Bengal
 	(81, 18)  : (1500,  iCitrus),   # Mozambique
 	(70, 48)  : (1500,  iCitrus),   # Sicily
 	(28, 44)  : (1500,  iSugar),	# Cuba
@@ -328,6 +327,8 @@ dRemovedResourcesDict = {
 	(110, 49) : 1750, # Gold in Tibet
 	(83, 55)  : 1850, # Spices (saffron) in Anatolia
 	(84, 55)  : 1850, # Spices (saffron) in Anatolia
+	(105, 47) : 1850, # Ivory in Hindustan
+	(108, 43) : 1850, # Ivory in Hindustan
 }
 
 dFeaturesDict = {
