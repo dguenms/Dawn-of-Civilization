@@ -21659,6 +21659,10 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_JAIN_HOLY_SITE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_BUDDHIST_HOLY_SITE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
@@ -21696,6 +21700,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_HINDU_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_JAIN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -22539,6 +22547,10 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_JAIN_HOLY_SITE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_BUDDHIST_HOLY_SITE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
@@ -22576,6 +22588,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_HINDU_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_JAIN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
