@@ -51,7 +51,7 @@ def getCompanyLimit(iCompany):
 	
 	iEnabledCount = players.major().existing().count(lambda p: canHaveCompany(iCompany, p))
 	
-	return min(3 * iEnabledCount, tCompaniesLimit[iCompany])
+	return min(3 * max(2, iEnabledCount), tCompaniesLimit[iCompany])
 	
 	
 def canHaveCompany(iCompany, iPlayer):

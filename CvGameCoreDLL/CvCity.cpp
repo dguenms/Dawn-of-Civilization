@@ -11844,6 +11844,12 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 		
 		if (iNumBonuses > 0)
 		{
+			// Bengal UP: +2 base resources for Textile Industry
+			if (getCivilizationType() == BENGAL && eCorporation == TEXTILE_INDUSTRY)
+			{
+				iNumBonuses += 2;
+			}
+
 			iYield = (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(GC.getCorporationInfo(eCorporation).getMaxConsumableBonuses(), iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			
 			// Dutch UP: double yield from trading company
@@ -11882,11 +11888,17 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 
 		if (iNumBonuses > 0)
 		{
+			// Bengal UP: +2 base resources for Textile Industry
+			if (getCivilizationType() == BENGAL && eCorporation == TEXTILE_INDUSTRY)
+			{
+				iNumBonuses += 2;
+			}
+
 			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
 			iCommerce = (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(GC.getCorporationInfo(eCorporation).getMaxConsumableBonuses(), iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			
 			// Dutch UP: double commerce from trading company
-			if (getCivilizationType() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+			if (getCivilizationType() == NETHERLANDS && eCorporation == TRADING_COMPANY)
 			{
 				iCommerce *= 2;
 			}
