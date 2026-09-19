@@ -1856,7 +1856,7 @@
 				</ReligionSpread>
 			</ReligionSpreads>
 			<PrereqReligion>RELIGION_JAINISM</PrereqReligion>
-			<PrereqBuilding>BUILDING_HINDU_MONASTERY</PrereqBuilding>
+			<PrereqBuilding>BUILDING_JAIN_MONASTERY</PrereqBuilding>
 			<iCost>40</iCost>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
