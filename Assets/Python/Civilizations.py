@@ -288,9 +288,9 @@ lCivilizations = [
 	),
 	Civilization(
 		iKarnataka,
-		iGold=100,
+		iGold=50,
 		iStateReligion=iJainism,
-		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iSyncretism],
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iClergy],
 		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature, iPriesthood),
 	),
 	Civilization(
@@ -794,7 +794,7 @@ dStartingUnits = CivDict({
 		# 1 Shotelai
 	},
 	iKarnataka: {
-		iSettle: 2,
+		iSettle: 1,
 		iWork: 2,
 		iDefend: 2,
 		iAttack: 1,
@@ -850,9 +850,12 @@ dStartingUnits = CivDict({
 	iRajputs: {
 		iSettle: 2,
 		iWork: 2,
-		iDefend: 3,
+		iDefend: 1,
+		iAttack: 2,
+		iSkirmish: 2,
 		iHarass: 4,
 		iExplore: 1,
+		iExploreSea: 1,
 		iMissionary: 1,
 	},
 	iFrance: {
@@ -903,8 +906,8 @@ dStartingUnits = CivDict({
 		iSettle: 2,
 		iWork: 3,
 		iDefend: 3,
-		iShock: 3,
-		iAttack: 3,
+		iShock: 2,
+		iAttack: 2,
 		iSiege: 2,
 		iWorkerSea: 1,
 		iExploreSea: 2,
