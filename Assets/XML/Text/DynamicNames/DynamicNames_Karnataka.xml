@@ -35,10 +35,66 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_KARNATAKA_DEFAULT</Tag>
-		<English>%s1 Kingdom</English>
-		<French>%s1 Kingdom</French>
-		<German>%s1 Kingdom</German>
-		<Italian>%s1 Kingdom</Italian>
-		<Spanish>%s1 Kingdom</Spanish>
+		<English>%s2 Maharajate</English>
+		<French>%s2 Maharajate</French>
+		<German>%s2 Maharajate</German>
+		<Italian>%s2 Maharajate</Italian>
+		<Spanish>%s2 Maharajate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_MYSORE</Tag>
+		<English>Mysore</English>
+		<French>Mysore</French>
+		<German>Mysore</German>
+		<Italian>Mysore</Italian>
+		<Spanish>Mysore</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_BAHMANI</Tag>
+		<English>Bahmani</English>
+		<French>Bahmani</French>
+		<German>Bahmani</German>
+		<Italian>Bahmani</Italian>
+		<Spanish>Bahmani</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_RASHTRAKUTA</Tag>
+		<English>Rashtrakuta</English>
+		<French>Rashtrakuta</French>
+		<German>Rashtrakuta</German>
+		<Italian>Rashtrakuta</Italian>
+		<Spanish>Rashtrakuta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_CHALUKYA</Tag>
+		<English>Chalukya</English>
+		<French>Chalukya</French>
+		<German>Chalukya</German>
+		<Italian>Chalukya</Italian>
+		<Spanish>Chalukya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_SATAVAHANA</Tag>
+		<English>Satavahana</English>
+		<French>Satavahana</French>
+		<German>Satavahana</German>
+		<Italian>Satavahana</Italian>
+		<Spanish>Satavahana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_FASCIST</Tag>
+		<English>National Republic of %s1</English>
+		<French>National Republic of %s1</French>
+		<German>National Republic of %s1</German>
+		<Italian>National Republic of %s1</Italian>
+		<Spanish>National Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_VASSAL</Tag>
+		<English>Rashtra of %s1</English>
+		<French>Rashtra of %s1</French>
+		<German>Rashtra of %s1</German>
+		<Italian>Rashtra of %s1</Italian>
+		<Spanish>Rashtra of %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

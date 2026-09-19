@@ -35,10 +35,54 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_BENGAL_DEFAULT</Tag>
-		<English>%s2 Kingdom</English>
-		<French>%s2 Kingdom</French>
-		<German>%s2 Kingdom</German>
-		<Italian>%s2 Kingdom</Italian>
-		<Spanish>%s2 Kingdom</Spanish>
+		<English>%s1 Maharajate</English>
+		<French>%s1 Maharajate</French>
+		<German>%s1 Maharajate</German>
+		<Italian>%s1 Maharajate</Italian>
+		<Spanish>%s1 Maharajate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_SENA</Tag>
+		<English>Sena</English>
+		<French>Sena</French>
+		<German>Sena</German>
+		<Italian>Sena</Italian>
+		<Spanish>Sena</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_PALA</Tag>
+		<English>Pala</English>
+		<French>Pala</French>
+		<German>Pala</German>
+		<Italian>Pala</Italian>
+		<Spanish>Pala</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_BANGLADESH</Tag>
+		<English>Bangladesh</English>
+		<French>Bangladesh</French>
+		<German>Bangladesh</German>
+		<Italian>Bangladesh</Italian>
+		<Spanish>Bangladesh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_FASCIST</Tag>
+		<English>National Republic of %s1</English>
+		<French>National Republic of %s1</French>
+		<German>National Republic of %s1</German>
+		<Italian>National Republic of %s1</Italian>
+		<Spanish>National Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_VASSAL</Tag>
+		<English>Janapada of %s1</English>
+		<French>
+			<Text>Janapada de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Janapada of %s1</German>
+		<Italian>Janapada of %s1</Italian>
+		<Spanish>Janapada of %s1</Spanish>
 	</TEXT>
 </Civ4GameText>
