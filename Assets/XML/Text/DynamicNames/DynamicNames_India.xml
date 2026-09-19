@@ -146,16 +146,16 @@
 		<Spanish>Gupta</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_VARMAN</Tag>
-		<English>Varman</English>
+		<Tag>TXT_KEY_CIV_INDIA_AYUDHA</Tag>
+		<English>Ayudha</English>
 		<French>
-			<Text>Varman</Text>
+			<Text>Ayudha</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Varman</German>
-		<Italian>Varman</Italian>
-		<Spanish>Varman</Spanish>
+		<German>Ayudha</German>
+		<Italian>Ayudha</Italian>
+		<Spanish>Ayudha</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIAN_VASSAL</Tag>

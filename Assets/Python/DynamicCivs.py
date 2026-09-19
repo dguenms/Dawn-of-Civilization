@@ -1574,8 +1574,8 @@ def specificAdjective(iPlayer):
 			if iEra >= iRenaissance:
 				return "TXT_KEY_CIV_INDIA_MARATHA"
 			
-			if iEra >= iMedieval:
-				return "TXT_KEY_CIV_INDIA_VARMAN"
+			if getColumn(iPlayer) >= 7:
+				return "TXT_KEY_CIV_INDIA_AYUDHA"
 			
 			if iReligion == iBuddhism:
 				return "TXT_KEY_CIV_INDIA_MAURYA"
