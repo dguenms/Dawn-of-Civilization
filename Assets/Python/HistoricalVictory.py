@@ -354,13 +354,14 @@ dGoals = {
 			by=800,
 		),
 		All(
+			BuildingCount(religious_buildings(temple).named(TEMPLES), 10),
 			BuildingCount(iJainCathedral, 1),
-			SpecialistCount(sum(iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatStatesman), 5),
+			SpecialistCount(sum(iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatStatesman), 4),
 			by=1100,
 		),
 		All(
-			CityPopulation(capital().named(CAPITAL), 25),
-			CityBuildingCount(capital().named(CAPITAL), national_wonders(), 3, desc_key="TXT_KEY_VICTORY_DESC_HAVE_IN_CITY"),
+			CityPopulation(capital().named(CAPITAL), 28),
+			GoldenAges(2),
 			by=1500,
 		),
 	),
