@@ -201,6 +201,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEN1</Tag>
+		<English>Pala Dynasty</English>
+		<French>Pala Dynasty</French>
+		<German>Pala Dynasty</German>
+		<Italian>Pala Dynasty</Italian>
+		<Spanish>Pala Dynasty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEN2</Tag>
+		<English>Paradise of Nations</English>
+		<French>Paradise of Nations</French>
+		<German>Paradise of Nations</German>
+		<Italian>Paradise of Nations</Italian>
+		<Spanish>Paradise of Nations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEN3</Tag>
+		<English>The Golden Bird</English>
+		<French>The Golden Bird</French>
+		<German>The Golden Bird</German>
+		<Italian>The Golden Bird</Italian>
+		<Spanish>The Golden Bird</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_BRA1</Tag>
 		<English>Economic Titles</English>
 		<French>Economic Titles</French>
@@ -826,6 +851,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KAR1</Tag>
+		<English>Tripartite Struggle</English>
+		<French>Tripartite Struggle</French>
+		<German>Tripartite Struggle</German>
+		<Italian>Tripartite Struggle</Italian>
+		<Spanish>Tripartite Struggle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KAR2</Tag>
+		<English>Jain Patronage</English>
+		<French>Jain Patronage</French>
+		<German>Jain Patronage</German>
+		<Italian>Jain Patronage</Italian>
+		<Spanish>Jain Patronage</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KAR3</Tag>
+		<English>City of Victory</English>
+		<French>City of Victory</French>
+		<German>City of Victory</German>
+		<Italian>City of Victory</Italian>
+		<Spanish>City of Victory</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_KHM1</Tag>
 		<English>Sculpture and Architecture</English>
 		<French>Sculpture and Architecture</French>
@@ -1323,6 +1373,31 @@
 		<German>Vertrag von Tordesilhas</German>
 		<Italian>Treaty of Tordesilhas</Italian>
 		<Spanish>Treaty of Tordesilhas</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_RAJ1</Tag>
+		<English>Imperial Pratiharas</English>
+		<French>Imperial Pratiharas</French>
+		<German>Imperial Pratiharas</German>
+		<Italian>Imperial Pratiharas</Italian>
+		<Spanish>Imperial Pratiharas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_RAJ2</Tag>
+		<English>Traders of Gujarat</English>
+		<French>Traders of Gujarat</French>
+		<German>Traders of Gujarat</German>
+		<Italian>Traders of Gujarat</Italian>
+		<Spanish>Traders of Gujarat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_RAJ3</Tag>
+		<English>Hindupati</English>
+		<French>Hindupati</French>
+		<German>Hindupati</German>
+		<Italian>Hindupati</Italian>
+		<Spanish>Hindupati</Spanish>
 	</TEXT>
 	
 	<TEXT>
