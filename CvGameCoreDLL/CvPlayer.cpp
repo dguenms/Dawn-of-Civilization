@@ -12448,6 +12448,13 @@ void CvPlayer::applyCivilization(CivilizationTypes eCivilization, int iChange)
 		GET_TEAM(getTeam()).changeTerrainTradeCount(TERRAIN_DESERT, iChange);
 	}
 
+	// Bengal UP: +1 production +1 commerce from Workshop
+	if (eCivilization == BENGAL)
+	{
+		changeImprovementYieldChange(IMPROVEMENT_WORKSHOP, YIELD_PRODUCTION, 1);
+		changeImprovementYieldChange(IMPROVEMENT_WORKSHOP, YIELD_COMMERCE, 1);
+	}
+
 	// Saudi UP: +1 food for Priest and Great Prophet
 	if (eCivilization == SAUDIS)
 	{

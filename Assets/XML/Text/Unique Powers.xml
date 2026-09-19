@@ -163,11 +163,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BEN</Tag>
-		<English>Textile Industry is unlocked with Companies</English>
-		<French>Textile Industry is unlocked with Companies</French>
-		<German>Textile Industry is unlocked with Companies</German>
-		<Italian>Textile Industry is unlocked with Companies</Italian>
-		<Spanish>Textile Industry is unlocked with Companies</Spanish>
+		<English>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</English>
+		<French>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</French>
+		<German>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</German>
+		<Italian>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</Italian>
+		<Spanish>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
