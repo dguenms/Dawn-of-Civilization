@@ -9070,18 +9070,18 @@
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
 			</FeatureImpassables>
-			<iCombat>3</iCombat>
+			<iCombat>4</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
-					<iUnitCombatMod>50</iUnitCombatMod>
+					<iUnitCombatMod>25</iUnitCombatMod>
 				</UnitCombatMod>
 			</UnitCombatMods>
 			<iFirstStrikes>1</iFirstStrikes>
-			<iCityDefense>50</iCityDefense>
+			<iCityDefense>25</iCityDefense>
 			<iHillsDefense>25</iHillsDefense>
 			<iCultureGarrison>4</iCultureGarrison>
 			<iAsset>1</iAsset>
