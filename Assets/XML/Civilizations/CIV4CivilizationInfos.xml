@@ -6679,8 +6679,8 @@
 			</Cities>
 			<Buildings>
 				<Building>
-					<BuildingClassType>BUILDINGCLASS_CIVIC_SQUARE</BuildingClassType>
-					<BuildingType>BUILDING_TAMIL_GOPURAM</BuildingType>
+					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
+					<BuildingType>BUILDING_TAMIL_URUKKU_FORGE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

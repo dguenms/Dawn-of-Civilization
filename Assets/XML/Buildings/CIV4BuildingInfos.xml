@@ -2794,6 +2794,62 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
+			<Type>BUILDING_TAMIL_URUKKU_FORGE</Type>
+			<Description>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE_STRATEGY</Strategy>
+			<Advisor>ADVISOR_ECONOMY</Advisor>
+			<ArtDefineTag>ART_DEF_BUILDING_TAMIL_URUKKU_FORGE</ArtDefineTag>
+			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
+			<PrereqTech>TECH_STEEL</PrereqTech>
+			<iCost>120</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iConquestProb>75</iConquestProb>
+			<iHealth>-1</iHealth>
+			<iAsset>4</iAsset>
+			<iPower>2</iPower>
+			<fVisibilityPriority>1.0</fVisibilityPriority>
+			<YieldModifiers>
+				<iYield>0</iYield>
+				<iYield>25</iYield>
+			</YieldModifiers>
+			<SpecialistCounts>
+				<SpecialistCount>
+					<SpecialistType>SPECIALIST_ENGINEER</SpecialistType>
+					<iSpecialistCount>1</iSpecialistCount>
+				</SpecialistCount>
+			</SpecialistCounts>
+			<UnitCombatFreeExperiences>
+				<UnitCombatFreeExperience>
+					<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
+					<iExperience>3</iExperience>
+				</UnitCombatFreeExperience>
+			</UnitCombatFreeExperiences>
+			<ConstructSound>AS2D_BUILD_FORGE</ConstructSound>
+			<BonusHappinessChanges>
+				<BonusHappinessChange>
+					<BonusType>BONUS_GOLD</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+				<BonusHappinessChange>
+					<BonusType>BONUS_SILVER</BonusType>
+					<iHappinessChange>1</iHappinessChange>
+				</BonusHappinessChange>
+			</BonusHappinessChanges>
+			<Flavors>
+				<Flavor>
+					<FlavorType>FLAVOR_PRODUCTION</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+				<Flavor>
+					<FlavorType>FLAVOR_MILITARY</FlavorType>
+					<iFlavor>10</iFlavor>
+				</Flavor>
+			</Flavors>
+		</BuildingInfo>
+		<BuildingInfo>
+			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
 			<Type>BUILDING_ITALIAN_ART_STUDIO</Type>
 			<Description>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO</Description>
 			<Civilopedia>TXT_KEY_BUILDING_ITALIAN_ART_STUDIO_PEDIA</Civilopedia>

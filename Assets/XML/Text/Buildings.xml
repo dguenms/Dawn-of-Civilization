@@ -1126,14 +1126,6 @@
 		<Spanish>[COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT] increase food output in cities with access to power.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_TAMIL_GOPURAM</Tag>
-		<English>Gopuram</English>
-		<French>Gopuram</French>
-		<German>Gopuram</German>
-		<Italian>Gopuram</Italian>
-		<Spanish>Gopuram</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZULU_IKHANDA_STRATEGY</Tag>
 		<English>The [COLOR_BUILDING_TEXT]Ikhanda[COLOR_REVERT], the Zulu replacement for the [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT], are more expensive and lower city maintenance costs.</English>
 		<French>The [COLOR_BUILDING_TEXT]Ikhanda[COLOR_REVERT], the Zulu replacement for the [COLOR_BUILDING_TEXT]Barracks[COLOR_REVERT], are more expensive and lower city maintenance costs.</French>
@@ -4056,6 +4048,14 @@
 		<German>Viragallu</German>
 		<Italian>Viragallu</Italian>
 		<Spanish>Viragallu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE</Tag>
+		<English>Urukku Forge</English>
+		<French>Urukku Forge</French>
+		<German>Urukku Forge</German>
+		<Italian>Urukku Forge</Italian>
+		<Spanish>Urukku Forge</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>
