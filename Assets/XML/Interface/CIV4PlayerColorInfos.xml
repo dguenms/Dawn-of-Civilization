@@ -135,7 +135,7 @@
 		<PlayerColorInfo>
 			<Type>PLAYERCOLOR_LIGHT_BLUE</Type> <!-- Tamils -->
 			<ColorTypePrimary>COLOR_PLAYER_LIGHT_BLUE</ColorTypePrimary>
-			<ColorTypeSecondary>COLOR_PLAYER_LIGHT_YELLOW</ColorTypeSecondary>
+			<ColorTypeSecondary>COLOR_PLAYER_MIDDLE_OCHRE</ColorTypeSecondary>
 			<TextColorType>COLOR_PLAYER_LIGHT_BLUE_TEXT</TextColorType>
 		</PlayerColorInfo>
 		<PlayerColorInfo>
