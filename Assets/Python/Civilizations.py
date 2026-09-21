@@ -1288,7 +1288,12 @@ dExtraAIUnits = CivDict({
 	},
 	iTamils: {
 		iShock: 1,
+		iDefend: 1,
 		iMissionary: 1,
+	},
+	iKarnataka: {
+		iShock: 1,
+		iDefend: 1,
 	},
 	iKushans: {
 		iShockCity: 4,
@@ -1308,6 +1313,15 @@ dExtraAIUnits = CivDict({
 	iNorse: {
 		iExploreSea: 1,
 		iAssaultSea: 1,
+	},
+	iRajputs: {
+		iCounter: 1,
+		iShock: 1,
+		iDefend: 1,
+	},
+	iBengal: {
+		iCounter: 1,
+		iDefend: 1,
 	},
 	iJava: {
 		iCityAttack: 2,
@@ -1629,6 +1643,7 @@ dAlwaysTrain = CivDict({
 	iGreece: [iHoplite, iCatapult],
 	iPhoenicia: [iNumidianCavalry],
 	iTamils: [iWarElephant],
+	iKarnataka: [iWarElephant],
 	iByzantium: [iLegion, iDromon],
 	iArabia: [iMobileGuard, iGhazi],
 	iVietnam: [iRattanArcher],
