@@ -73,6 +73,7 @@ CAUCASUS = "TXT_KEY_VICTORY_NAME_CAUCASUS"
 CENTRAL_ASIA = "TXT_KEY_VICTORY_NAME_CENTRAL_ASIA"
 CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
 CHINA_AND_MANCHURIA = "TXT_KEY_VICTORY_NAME_CHINA_AND_MANCHURIA"
+COASTAL_INDIA = "TXT_KEY_VICTORY_NAME_COASTAL_INDIA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
 DZUNGARIA = "TXT_KEY_VICTORY_NAME_DZUNGARIA"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
@@ -367,19 +368,23 @@ dGoals = {
 	),
 	iTamils: (
 		All(
-			GoldAmount(5000, at=600),
-			CultureAmount(7500, at=600),
-			TradeGold(7500, by=1200),
+			GoldAmount(5000),
+			CultureAmount(5000),
+			by=600,
 		),
 		Control(
-			plots.regions(rDravida, rDeccan, rRajputana).named(DECCAN),
+			plots.region(rDeccan).named(DECCAN),
 			plots.region(rBengal),
 			plots.rectangle(tSrivijaya).named(SRIVIJAYA),
 			plots.birth(iBurma),
 			subject=VASSALS,
 			at=1000,
 		),
-		PopulationCity(25, by=1500),
+		All(
+			TradeGold(7500, by=1200),
+			TradeGold(15000, by=1500),
+			AreaPopulationCount(plots.regions(*lIndia).coastal().named(COASTAL_INDIA), 80, by=1500),
+		),
 	),
 	iEthiopia: (
 		ResourceCount(iIncense, 5, by=400),
