@@ -54,22 +54,6 @@
 		<Spanish>Dravidian Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_VIJAYANAGARA</Tag>
-		<English>Vijayanagara</English>
-		<French>Vijayan&#226;gara</French>
-		<German>Vijayanagara</German>
-		<Italian>Vijayanagara</Italian>
-		<Spanish>Vijayanagara</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_MYSORE</Tag>
-		<English>Mysore</English>
-		<French>Mysore</French>
-		<German>Mysore</German>
-		<Italian>Mysore</Italian>
-		<Spanish>Mysore</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_CHOLA</Tag>
 		<English>Chola</English>
 		<French>Chola</French>
@@ -94,20 +78,36 @@
 		<Spanish>Chera</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_PALLAVA</Tag>
+		<English>Pallava</English>
+		<French>Pallava</French>
+		<German>Pallava</German>
+		<Italian>Pallava</Italian>
+		<Spanish>Pallava</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_GAJAPATI</Tag>
+		<English>Gajapati</English>
+		<French>Gajapati</French>
+		<German>Gajapati</German>
+		<Italian>Gajapati</Italian>
+		<Spanish>Gajapati</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_KAKATIYA</Tag>
+		<English>Kakatiya</English>
+		<French>Kakatiya</French>
+		<German>Kakatiya</German>
+		<Italian>Kakatiya</Italian>
+		<Spanish>Kakatiya</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_DRAVIDA</Tag>
 		<English>Dravida</English>
 		<French>Dr&#226;vida</French>
 		<German>Dravida</German>
 		<Italian>Dravida</Italian>
 		<Spanish>Dravida</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_TAMILS_BAHMANI</Tag>
-		<English>Bahmani</English>
-		<French>Bahman&#238;</French>
-		<German>Bahmani</German>
-		<Italian>Bahmani</Italian>
-		<Spanish>Bahmani</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_TAMIL_NADU</Tag>
@@ -120,6 +120,14 @@
 		<German>Tamil Nadu</German>
 		<Italian>Tamil Nadu</Italian>
 		<Spanish>Tamil Nadu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_TAMILS_NAYAKA</Tag>
+		<English>Nayaka of %s1</English>
+		<French>Nayaka of %s1</French>
+		<German>Nayaka of %s1</German>
+		<Italian>Nayaka of %s1</Italian>
+		<Spanish>Nayaka of %s1</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_TAMILS_ADJECTIVE</Tag>

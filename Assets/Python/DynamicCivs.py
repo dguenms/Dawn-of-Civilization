@@ -1158,11 +1158,8 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_CELTS_GAUL"
 		
 	elif iCiv == iTamils:
-		if getColumn(iPlayer) >= 11 or scenario() == i1700AD:
-			return "TXT_KEY_CIV_TAMILS_MYSORE"
-			
-		if getColumn(iPlayer) >= 9:
-			return "TXT_KEY_CIV_TAMILS_VIJAYANAGARA"
+		if iEra == iIndustrial and not bEmpire:
+			return capitalName(iPlayer)
 			
 	elif iCiv == iEthiopia:
 		if not game.isReligionFounded(iIslam):
@@ -1720,16 +1717,21 @@ def specificAdjective(iPlayer):
 			return "TXT_KEY_CIV_ROME_WESTERN"
 			
 	elif iCiv == iTamils:
-		if iReligion == iIslam:
-			if iEra in [iMedieval, iRenaissance]:
-				return "TXT_KEY_CIV_TAMILS_BAHMANI"
-	
+		if iEra == iRenaissance:
+			if capital.isCoastal(20):
+				return "TXT_KEY_CIV_TAMILS_GAJAPATI"
+			
+			return "TXT_KEY_CIV_TAMILS_KAKATIYA"
+		
 		if iEra <= iMedieval:
 			if isCurrentCapital(iPlayer, "Madurai", "Vizhinjam", "Yapanaya"):
 				return "TXT_KEY_CIV_TAMILS_PANDYAN"
 				
 			if isCurrentCapital(iPlayer, "Desinganadu", "Kallikkottai", "Mangalapuram"):
 				return "TXT_KEY_CIV_TAMILS_CHERA"
+			
+			if iEra == iClassical and isCurrentCapital(iPlayer, "Kanchipuram"):
+				return "TXT_KEY_CIV_TAMILS_PALLAVA"
 				
 			return "TXT_KEY_CIV_TAMILS_CHOLA"
 			
@@ -2344,13 +2346,10 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	elif iCiv == iTamils:
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
-	
-		if getColumn(iPlayer) >= 9:
-			if bEmpire:
-				return "TXT_KEY_EMPIRE_NAME"
-			
-			return "TXT_KEY_KINGDOM_OF"
 		
+		if iEra == iIndustrial and not bEmpire:
+			return "TXT_KEY_CIV_TAMILS_NAYAKA"
+	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
