@@ -7329,12 +7329,6 @@ void CvPlayer::processBuilding(BuildingTypes eBuilding, int iChange, CvArea* pAr
 		}
 	}
 
-	// Minakshi Temple
-	else if (eBuilding == MINAKSHI_TEMPLE)
-	{
-		changeTradeYieldModifier(YIELD_FOOD, iChange * 20);
-	}
-
 	// Sagrada Familia
 	else if (eBuilding == SAGRADA_FAMILIA)
 	{

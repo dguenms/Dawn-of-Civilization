@@ -15216,7 +15216,6 @@
 			<Description>TXT_KEY_BUILDING_MINAKSHI_TEMPLE</Description>
 			<Civilopedia>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_STRATEGY</Strategy>
-			<Help>TXT_KEY_BUILDING_MINAKSHI_TEMPLE_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_MINAKSHI_TEMPLE</ArtDefineTag>
 			<StateReligion>RELIGION_HINDUISM</StateReligion>
@@ -15227,7 +15226,7 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>200</iAIWeight>
+			<iAIWeight>100</iAIWeight>
 			<iCost>400</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
@@ -15250,6 +15249,20 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
+			<SpecialistYieldChanges>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+				<SpecialistYieldChange>
+					<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+					<YieldChanges>
+						<iYield>1</iYield>
+					</YieldChanges>
+				</SpecialistYieldChange>
+			</SpecialistYieldChanges>
 			<ConstructSound>AS2D_BUILD_HINDU</ConstructSound>
 			<Flavors>
 				<Flavor>
