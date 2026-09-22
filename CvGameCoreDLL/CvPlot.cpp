@@ -7285,6 +7285,15 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay) const
 			}
 		}
 
+		// Leoreth: Jetavanaramaya effect
+		if (GET_PLAYER(ePlayer).isHasBuildingEffect(JETAVANARAMAYA))
+		{
+			if (isHills() && isCoastalLand() && eYield == YIELD_FOOD)
+			{
+				iYield += 1;
+			}
+		}
+
 		// Leoreth: Great Adobe Mosque effect
 		if (GET_PLAYER(ePlayer).isHasBuildingEffect(GREAT_ADOBE_MOSQUE))
 		{

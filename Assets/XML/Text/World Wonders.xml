@@ -1315,11 +1315,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JETAVANARAMAYA_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
-		<French>The [COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
-		<German>The [COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] adds additional food to all of your [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialists. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] grants additional food on coastal hill tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] grants additional food on coastal hill tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] grants additional food on coastal hill tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] grants additional food on coastal hill tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Jetavanaramaya[COLOR_REVERT] grants additional food on coastal hill tiles. It also increases the chance of generating a [COLOR_UNIT_TEXT]Great Artist[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JETAVANARAMAYA_HELP</Tag>
+		<English>[ICON_BULLET]+1[ICON_FOOD] on Coastal Hill tiles</English>
+		<French>[ICON_BULLET]+1[ICON_FOOD] on Coastal Hill tiles</French>
+		<German>[ICON_BULLET]+1[ICON_FOOD] on Coastal Hill tiles</German>
+		<Italian>[ICON_BULLET]+1[ICON_FOOD] on Coastal Hill tiles</Italian>
+		<Spanish>[ICON_BULLET]+1[ICON_FOOD] on Coastal Hill tiles</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_GONDESHAPUR</Tag>

@@ -13017,6 +13017,7 @@
 			<Description>TXT_KEY_BUILDING_JETAVANARAMAYA</Description>
 			<Civilopedia>TXT_KEY_BUILDING_JETAVANARAMAYA_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_JETAVANARAMAYA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_JETAVANARAMAYA_HELP</Help>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JETAVANARAMAYA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_JETAVANARAMAYA</MovieDefineTag>
@@ -13030,8 +13031,8 @@
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
-			<iAIWeight>100</iAIWeight>
-			<iCost>350</iCost>
+			<iAIWeight>250</iAIWeight>
+			<iCost>250</iCost>
 			<iHurryCostModifier>100</iHurryCostModifier>
 			<iAdvancedStartCost>-1</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
@@ -13053,15 +13054,13 @@
 				<bCommerceChangeOriginalOwner>0</bCommerceChangeOriginalOwner>
 				<bCommerceChangeOriginalOwner>1</bCommerceChangeOriginalOwner>
 			</CommerceChangeOriginalOwners>
-			<SpecialistYieldChanges>
-				<SpecialistYieldChange>
-					<SpecialistType>SPECIALIST_ARTIST</SpecialistType>
-					<YieldChanges>
-						<iYield>1</iYield>
-					</YieldChanges>
-				</SpecialistYieldChange>
-			</SpecialistYieldChanges>
-			<ConstructSound>AS2D_BUILD_ORACLE</ConstructSound>
+			<ConstructSound>AS2D_BUILD_BUDDHIST</ConstructSound>
+			<BuildingClassNeededs>
+				<BuildingClassNeeded>
+					<BuildingClassType>BUILDINGCLASS_HARBOR</BuildingClassType>
+					<bNeededInCity>1</bNeededInCity>
+				</BuildingClassNeeded>
+			</BuildingClassNeededs>
 			<Flavors>
 				<Flavor>
 					<FlavorType>FLAVOR_GROWTH</FlavorType>
