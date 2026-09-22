@@ -257,9 +257,12 @@ dGoals = {
 		Wonders(iParthenon, iColossus, iStatueOfZeus, iTempleOfArtemis, by=-250),
 	),
 	iIndia: (
-		BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),
-		BuildingCount(religious_buildings(temple).named(TEMPLES), 25, by=700),
-		PopulationPercent(20, at=1200),
+		All(
+			BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),
+			BuildingCount(religious_buildings(temple).named(TEMPLES), 30, by=800),
+		),
+		EraFirstDiscover(iClassical, 5),
+		PopulationPercent(16, at=1200),
 	),
 	iPhoenicia: (
 		All(
