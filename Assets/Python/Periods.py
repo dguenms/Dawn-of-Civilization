@@ -18,7 +18,6 @@ dPeriods600AD = {
 
 dPeriods1500AD = {
 	iChina : iPeriodMing,
-	iTamils : iPeriodVijayanagara,
 	iNorse : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,
 	iMoors : iPeriodMorocco,
@@ -67,7 +66,6 @@ dPeriodNames = {
 	iPeriodModernGreece:			"Modern_Greece",
 	iPeriodCarthage:				"Carthage",
 	iPeriodInsularCelts:			"Insular_Celts",
-	iPeriodVijayanagara:			"Vijayanagara",
 	iPeriodByzantineConstantinople:	"Byzantine_Constantinople",
 	iPeriodSeljuks:					"Seljuks",
 	iPeriodNationalFrance:			"National_France",
@@ -269,10 +267,6 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 	if iCiv == iNubia:
 		if iEra == iMedieval:
 			setPeriod(iNubia, iPeriodMakuria)
-	
-	if iCiv == iTamils:
-		if iEra == iMedieval:
-			setPeriod(iTamils, iPeriodVijayanagara)
 	
 	if iCiv == iMoors:
 		if iEra == iIndustrial:

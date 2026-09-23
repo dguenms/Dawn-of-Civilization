@@ -8,7 +8,6 @@ from Events import handler
 
 dRelocatedCapitals = {
 	(iChina, iMedieval): tBeijing,
-	(iTamils, iRenaissance): tVijayanagara,
 	(iJapan, iIndustrial): tTokyo,
 	(iNorse, iRenaissance): tCopenhagen,
 	(iHolyRome, iRenaissance): tVienna,
