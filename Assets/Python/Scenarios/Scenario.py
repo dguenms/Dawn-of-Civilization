@@ -228,6 +228,8 @@ WONDER_ORIGINAL_BUILDERS = {
 	iTempleOfKukulkan : (iMaya, 800),
 	iMonolithicChurch : (iEthiopia, 1181),
 	iJetavanaramaya : (iTamils, 273),
+	iMinakshiTemple : (iTamils, 1200),
+	iKailasaTemple : (iKarnataka, 750),
 	iCheomseongdae : (iKorea, 632),
 	iPyramidOfTheSun : (iToltecs, 200),
 	iSalsalBuddha : (iKushans, 570),

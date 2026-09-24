@@ -15427,7 +15427,10 @@ name_translations = {
 			_,
 		),
 		iGreek: "Peukelaitis",
-		iPersian: "Vaekereta",
+		iPersian: (
+			relocate("Peshawar", iReligion=iIslam),
+			"Vaekereta",
+		),
 	},
 	"Pwn": {
 		iArabic: "Binzart",
