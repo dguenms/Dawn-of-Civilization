@@ -1450,14 +1450,22 @@ void CvTeam::declareWar(TeamTypes eTeam, bool bNewDiplo, WarPlanTypes eWarPlan, 
 						else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
 						{
 							//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARED_WAR", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
-							szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARED_WAR", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+							// Fresol: copy the names into locals first. These getters hand out a pointer into
+							// a buffer shared by every name lookup, so the second lookup overwrote the first
+							// name and the message substituted an empty string for it.
+							CvWString szWarDeclarer = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+							CvWString szWarDefender = GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription();
+							szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARED_WAR", szWarDeclarer.GetCString(), szWarDefender.GetCString()); //Rhye
 							gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRDECLAREWAR", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 						}
 					}
 				}
 
 				//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARES_WAR", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
-				szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARES_WAR", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription());
+				// Fresol: copy the names into locals first - same reason as the war declaration message.
+				CvWString szReplayDeclarer = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+				CvWString szReplayDefender = GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription();
+				szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_DECLARES_WAR", szReplayDeclarer.GetCString(), szReplayDefender.GetCString());
 				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_WARNING_TEXT"));
 			}
 		}
@@ -1767,14 +1775,20 @@ void CvTeam::makePeace(TeamTypes eTeam, bool bBumpUnits)
 					else if (GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(getID()) && GET_TEAM(GET_PLAYER((PlayerTypes)iI).getTeam()).isHasMet(eTeam))
 					{
 						//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
-						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+						// Fresol: copy the names into locals first - same reason as the war declaration message.
+						CvWString szPeaceA1 = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+						CvWString szPeaceB1 = GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription();
+						szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", szPeaceA1.GetCString(), szPeaceB1.GetCString()); //Rhye
 						gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_THEIRMAKEPEACE", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 					}
 				}
 			}
 
 			//szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", getName().GetCString(), GET_TEAM(eTeam).getName().GetCString()); //Rhye
-			szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription()); //Rhye
+			// Fresol: copy the names into locals first - same reason as the war declaration message.
+			CvWString szPeaceA2 = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+			CvWString szPeaceB2 = GET_PLAYER((PlayerTypes)eTeam).getCivilizationShortDescription();
+			szBuffer = gDLL->getText("TXT_KEY_MISC_SOMEONE_MADE_PEACE", szPeaceA2.GetCString(), szPeaceB2.GetCString()); //Rhye
 			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 		} //Rhye
 
@@ -4294,7 +4308,10 @@ void CvTeam::setDefensivePact(TeamTypes eIndex, bool bNewValue)
 		if (bNewValue && !GET_TEAM(eIndex).isDefensivePact(getID()))
 		{
 			//CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
-			CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
+			// Fresol: copy the names into locals first - same reason as the war declaration message.
+			CvWString szPactA = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+			CvWString szPactB = GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription();
+			CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_PLAYERS_SIGN_DEFENSIVE_PACT", szPactA.GetCString(), szPactB.GetCString()); //Rhye
 			GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szBuffer, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
 
@@ -4563,12 +4580,18 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 				if (bCapitulated)
 				{
 					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_CAPITULATE_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_CAPITULATE_AGREEMENT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
+					// Fresol: copy the names into locals first - same reason as the war declaration message.
+					CvWString szCapA = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+					CvWString szCapB = GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription();
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_CAPITULATE_AGREEMENT", szCapA.GetCString(), szCapB.GetCString()); //Rhye
 				}
 				else
 				{
 					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_AGREEMENT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_AGREEMENT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
+					// Fresol: copy the names into locals first - same reason as the war declaration message.
+					CvWString szVassalA = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+					CvWString szVassalB = GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription();
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_AGREEMENT", szVassalA.GetCString(), szVassalB.GetCString()); //Rhye
 				}
 				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szReplayMessage, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
@@ -4597,12 +4620,18 @@ void CvTeam::setVassal(TeamTypes eIndex, bool bNewValue, bool bCapitulated)
 				if (m_bCapitulated)
 				{
 					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
+					// Fresol: copy the names into locals first - same reason as the war declaration message.
+					CvWString szSurA = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+					CvWString szSurB = GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription();
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_SURRENDER_REVOLT", szSurA.GetCString(), szSurB.GetCString()); //Rhye
 				}
 				else
 				{
 					//szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT", getName().GetCString(), GET_TEAM(eIndex).getName().GetCString()); //Rhye
-					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT", GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription(), GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription()); //Rhye
+					// Fresol: copy the names into locals first - same reason as the war declaration message.
+					CvWString szRevA = GET_PLAYER((PlayerTypes)getID()).getCivilizationShortDescription();
+					CvWString szRevB = GET_PLAYER((PlayerTypes)eIndex).getCivilizationShortDescription();
+					szReplayMessage = gDLL->getText("TXT_KEY_MISC_VASSAL_REVOLT", szRevA.GetCString(), szRevB.GetCString()); //Rhye
 				}
 
 				GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, getLeaderID(), szReplayMessage, -1, -1, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
@@ -4970,7 +4999,9 @@ void CvTeam::changeProjectCount(ProjectTypes eIndex, int iChange)
 										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY", GET_PLAYER(getLeaderID()).getCivilizationShortDescription(), GC.getProjectInfo(eIndex).getTextKeyWide());
 										gDLL->getInterfaceIFace()->addMessage((PlayerTypes)iJ, false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_RED"));
 
-										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY_CAUSED", GC.getProjectInfo(eIndex).getTextKeyWide(), GET_PLAYER((PlayerTypes)iJ).getCivilizationAdjective());
+										// Fresol: copy the adjective into a local first, for the same reason.
+										CvWString szAnarchyAdj = GET_PLAYER((PlayerTypes)iJ).getCivilizationAdjective();
+										szBuffer = gDLL->getText("TXT_KEY_MISC_PROJECT_ANARCHY_CAUSED", GC.getProjectInfo(eIndex).getTextKeyWide(), szAnarchyAdj.GetCString());
 										gDLL->getInterfaceIFace()->addMessage(getLeaderID(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_REVOLTSTART", MESSAGE_TYPE_MAJOR_EVENT, NULL, (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 									}
 								}
