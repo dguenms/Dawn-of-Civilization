@@ -20,7 +20,7 @@ lCivilizations = [
 		},
 	),
 	Civilization(
-		iTamils,
+		iKarnataka,
 		iLeader=iKrishnaDevaRaya,
 		sLeaderName="TXT_KEY_LEADER_TIPU_SULTAN",
 		iGold=400,
@@ -313,7 +313,6 @@ def updateData():
 	
 	data.civs[iChina].iResurrections = 2
 	data.civs[iIndia].iResurrections = 1
-	data.civs[iTamils].iResurrections = 1
 
 
 scenario1700AD = Scenario(
@@ -370,6 +369,7 @@ scenario1700AD = Scenario(
 		iIndia: 8,
 		iPersia: 4,
 		iTamils: 5,
+		iKarnataka: 5,
 		iKorea: 6,
 		iJapan: 6,
 		iNorse: 8,
@@ -391,6 +391,7 @@ scenario1700AD = Scenario(
 		iIndia: 3,
 		iPersia: 2,
 		iTamils: 2,
+		iKarnataka: 2,
 		iKorea: 3,
 		iJapan: 3,
 		iNorse: 3,

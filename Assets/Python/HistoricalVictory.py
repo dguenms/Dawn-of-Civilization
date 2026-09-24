@@ -11,7 +11,7 @@ lAfricanCoastRegions = [rRegion for rRegion in lAfrica if rRegion != rMadagascar
 lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv not in (iCelts, iNorse) and dBirth[iCiv] <= 1050] + [plots.core(iCelts, iPeriod=iPeriodInsularCelts)]
 
 # first Portuguese goal
-lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rDravida, rHornOfAfrica, rSwahiliCoast, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara, rMaghreb]
+lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rTamilakam, rHornOfAfrica, rSwahiliCoast, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara, rMaghreb]
 
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
@@ -352,7 +352,7 @@ dGoals = {
 	iKarnataka: (
 		CityCount(
 			(plots.region(rDeccan).named(DECCAN), 1),
-			(plots.region(rDravida), 1),
+			(plots.region(rTamilakam), 1),
 			(plots.region(rRajputana), 1),
 			(plots.region(rHindustan), 1),
 			by=800,
@@ -762,7 +762,7 @@ dGoals = {
 	iThailand: (
 		OpenBorderCount(10, at=1650),
 		BestPopulationCity(start(iThailand).named(AYUTTHAYA), at=1700),
-		AllowOnly(plots.regions(rDravida, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
+		AllowOnly(plots.regions(rTamilakam, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
 	),
 	iSweden: (
 		StateReligionCount(group(iCivGroupEurope).named(EUROPEAN), iProtestantism, 6, by=1650),

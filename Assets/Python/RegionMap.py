@@ -43,7 +43,7 @@ tSpreadFactors = (
 	iCore :		[rFrance, rCentralEurope, rPoland, rIreland, rItaly, rIberia],
 	iHistorical :	[rBritain, rLowerGermany, rQuebec, rMaritimes, rAtlanticSeaboard, rCaribbean, rAridoamerica, rMesoamerica, rCentralAmerica, rNewGranada, rAndes, rAmazonia, rBrazil, rSouthernCone, rCongo, rKalahari, rCape, rPhilippines],
 	iPeriphery :	[rBalkans, rGreece, rRuthenia, rAmericanArctic, rOntario, rMidwest, rDeepSouth, rGreatPlains, rCalifornia, rAustralia, rOceania, rGuinea, rSwahiliCoast, rMadagascar],
-	iMinority :		[rDravida, rIndochina, rSouthChina],
+	iMinority :		[rTamilakam, rIndochina, rSouthChina],
 },
 # Protestantism
 {
@@ -61,18 +61,18 @@ tSpreadFactors = (
 },
 # Hinduism
 {
-	iCore : 	[rHindustan, rRajputana, rDeccan, rBengal, rDravida],
+	iCore : 	[rHindustan, rRajputana, rDeccan, rBengal, rTamilakam],
 	iHistorical : 	[rPunjab, rSindh, rIndochina, rIndonesia, rPhilippines],
 },
 # Jainism
 {
 	iHistorical: [rRajputana, rDeccan, rPunjab],
-	iMinority: [rHindustan, rDravida],
+	iMinority: [rHindustan, rTamilakam],
 },
 # Buddhism
 {
 	iCore : 	[rHindustan, rRajputana, rBengal, rTibet, rIndochina],
-	iHistorical : 	[rDeccan, rDravida, rPunjab, rSindh, rHinduKush, rTarimBasin, rMongolia, rNorthChina, rSouthChina, rKorea, rJapan, rIndonesia, rKhorasan],
+	iHistorical : 	[rDeccan, rTamilakam, rPunjab, rSindh, rHinduKush, rTarimBasin, rMongolia, rNorthChina, rSouthChina, rKorea, rJapan, rIndonesia, rKhorasan],
 	iMinority :	[rTransoxiana, rKhorasan],
 },
 # Confucianism

@@ -150,7 +150,7 @@ def getCityValue(city, iCompany):
 			
 	elif iCompany == iTradingCompany:
 		if not city.isHasRealBuilding(unique_building(city.getOwner(), iTradingCompanyBuilding)):
-			if city.getRegionID() not in [rCaribbean, rArabia, rDeccan, rDravida, rBengal, rIndochina, rIndonesia, rPhilippines] + lSubSaharanAfrica:
+			if city.getRegionID() not in [rCaribbean, rArabia, rDeccan, rTamilakam, rBengal, rIndochina, rIndonesia, rPhilippines] + lSubSaharanAfrica:
 				return -1
 			
 			if not city.isCoastal(20):

@@ -438,6 +438,7 @@ scenario1500AD = Scenario(
 	dGreatPeopleCreated = {
 		iChina: 10,
 		iIndia: 8,
+		iTamils: 4,
 		iKarnataka: 4,
 		iKorea: 4,
 		iJapan: 4,
@@ -460,6 +461,7 @@ scenario1500AD = Scenario(
 		iChina: 4,
 		iIndia: 3,
 		iPersia: 2,
+		iTamils: 2,
 		iKarnataka: 2,
 		iKorea: 3,
 		iRajputs: 2,

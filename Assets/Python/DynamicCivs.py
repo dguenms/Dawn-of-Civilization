@@ -1166,7 +1166,7 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
 	
 	elif iCiv == iKarnataka:
-		if getColumn(iPlayer) >= 11 and iReligion == iIslam:
+		if getColumn(iPlayer) >= 11 and (iReligion == iIslam or capital.getRegionID() == rTamilakam):
 			return "TXT_KEY_CIV_KARNATAKA_MYSORE"
 		
 		if getColumn(iPlayer) >= 7:
@@ -2365,7 +2365,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 	
 	elif iCiv == iKarnataka:
 		if getColumn(iPlayer) >= 11:
-			if iReligion == iIslam:
+			if iReligion == iIslam or capital.getRegionID() == rTamilakam:
 				return "TXT_KEY_KINGDOM_OF"
 			
 			return "TXT_KEY_KINGDOM_ADJECTIVE"

@@ -7928,6 +7928,7 @@ BeginPlot
 			Civilization=CIVILIZATION_KARNATAKA, Culture=100
 		EndCulture
 		YearFounded=100
+		PreviousOwner=CIVILIZATION_TAMILS
 	EndCity
 EndPlot
 BeginPlot
@@ -8019,6 +8020,7 @@ BeginPlot
 			Civilization=CIVILIZATION_KARNATAKA, Culture=750
 		EndCulture
 		YearFounded=1300
+		PreviousOwner=CIVILIZATION_TAMILS
 	EndCity
 EndPlot
 BeginPlot
