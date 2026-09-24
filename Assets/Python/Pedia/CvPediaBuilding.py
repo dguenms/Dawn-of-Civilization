@@ -196,11 +196,11 @@ class CvPediaBuilding:
 			screen.attachLabel(panel, "", "(")
 		
 		if iPrereq >= 0:
-			screen.attachImageButton( panel, "", gc.getReligionInfo(iPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]), False )
+			self.attachReligionRequirement(screen, panel, iPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]))
 
 		if iOrPrereq >= 0:
 			screen.attachLabel(panel, "", CyTranslator().getText("TXT_KEY_OR", ()))
-			screen.attachImageButton(panel, "", gc.getReligionInfo(iOrPrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]), False )
+			self.attachReligionRequirement(screen, panel, iOrPrereq, self.isStateReligionRequirement([iPrereq, iOrPrereq], [iStatePrereq, iOrStatePrereq]))
 			
 		if iOrPrereq >= 0 and iStatePrereq >= 0:
 			screen.attachLabel(panel, "", ")")
@@ -213,11 +213,11 @@ class CvPediaBuilding:
 				screen.attachLabel(panel, "", "(")
 				
 			if iStatePrereq >= 0:
-				screen.attachImageButton(panel, "", gc.getReligionInfo(iStatePrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iStatePrereq, 1, False )
+				self.attachReligionRequirement(screen, panel, iStatePrereq, 1)
 				
 			if iOrStatePrereq >= 0:
 				screen.attachLabel(panel, "", CyTranslator().getText("TXT_KEY_OR", ()))
-				screen.attachImageButton(panel, "", gc.getReligionInfo(iOrStatePrereq).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iOrStatePrereq, 1, False)
+				self.attachReligionRequirement(screen, panel, iOrStatePrereq, 1)
 
 			if iPrereq >= 0 and iOrStatePrereq >= 0:
 				screen.attachLabel(panel, "", ")")
@@ -234,6 +234,22 @@ class CvPediaBuilding:
 			screen.attachImageButton(panel, "", gc.getCorporationInfo(iPrereqCorporation).getButton(), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_CORPORATION, iPrereqCorporation, 1, False)
 
 	
+	# Fresol - start
+	# A religion required as the state religion uses its own "_State" button: the religion's icon
+	# with the state religion badge composited into its bottom right corner. Two icons cannot be
+	# overlapped here, the row lays them out one after another.
+	def getReligionButton(self, iReligion, iStateReligion):
+		szButton = gc.getReligionInfo(iReligion).getButton()
+
+		if iStateReligion > 0 and szButton.endswith(".dds"):
+			return szButton[:-4] + "_State.dds"
+
+		return szButton
+
+	def attachReligionRequirement(self, screen, panel, iReligion, iStateReligion):
+		screen.attachImageButton(panel, "", self.getReligionButton(iReligion, iStateReligion), GenericButtonSizes.BUTTON_SIZE_CUSTOM, WidgetTypes.WIDGET_PEDIA_JUMP_TO_RELIGION, iReligion, iStateReligion, False)
+	# Fresol - end
+
 	def isStateReligionRequirement(self, lReligions, lStateReligions):
 		if set(lReligions) == set(lStateReligions): return 1
 		
