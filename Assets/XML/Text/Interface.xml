@@ -490,13 +490,46 @@
 		<Spanish>[COLOR_WARNING_TEXT]Requires at least %d1_Num Colony[COLOR_REVERT]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY</Tag>
+		<!-- Fresol: the game's own line reads "(... Total)" and prints the raw XML number, which the
+		     world size modifier then doubles; stating the requirement as "at least" is clearer and
+		     matches the colony line above. Used where only a limited number of the building can
+		     exist, so the requirement does not grow with the copies already built. -->
+		<English>[COLOR_WARNING_TEXT]Requires %s1_Name (%d2_NumTotal at least)[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_FOR_EACH</Tag>
+		<!-- Fresol: a building that can be built more than once charges its prerequisite per copy
+		     (CvPlayer::getBuildingClassPrereqBuildingStatic multiplies by the number already built),
+		     so say so - otherwise "(4 at least)" reads as if four were enough for good. -->
+		<English>[COLOR_WARNING_TEXT]Requires %s1_Name (%d2_NumTotal at least for each)[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_PERCENT_SPECIAL_BUILDINGS_NO_CITY</Tag>
 		<!-- %s1_Name = Can be Buildings, Units, etc -->
-		<English>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</English>
+		<English>[COLOR_WARNING_TEXT]Requires %s1_Name (in at least %d2% of your cities)[COLOR_REVERT]</English>
 		<French>[COLOR_WARNING_TEXT]N&#233;cessite : %s1_Name (dans %d2% de toutes les villes)[COLOR_REVERT]</French>
-		<German>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</German>
-		<Italian>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</Italian>
-		<Spanish>[COLOR_WARNING_TEXT]Requires %s1_Name (In %d2% Of All Cities)[COLOR_REVERT]</Spanish>
+		<German>[COLOR_WARNING_TEXT]Requires %s1_Name (in at least %d2% of your cities)[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Requires %s1_Name (in at least %d2% of your cities)[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Requires %s1_Name (in at least %d2% of your cities)[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_RELIGION</Tag>
+		<!-- Fresol: %s1 is the religion's name. Religions have no icon character to embed here -
+		     getReligionInfo().getChar() is 0 in this mod - so the name is spelled out. -->
+		<English>[COLOR_WARNING_TEXT]Requires %s1[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_RELIGION_OR</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires %s1 or %s2[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_STATE_RELIGION_OF</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires %s1 as the State Religion[COLOR_REVERT]</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_REQUIRES_STATE_RELIGION_OF_OR</Tag>
+		<English>[COLOR_WARNING_TEXT]Requires %s1 or %s2 as the State Religion[COLOR_REVERT]</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_REQUIRES_RIVER</Tag>
