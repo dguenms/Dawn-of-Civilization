@@ -13021,8 +13021,7 @@
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_JETAVANARAMAYA</ArtDefineTag>
 			<MovieDefineTag>ART_DEF_MOVIE_JETAVANARAMAYA</MovieDefineTag>
-			<StateReligion>RELIGION_BUDDHISM</StateReligion>
-			<OrStateReligion>RELIGION_HINDUISM</OrStateReligion>
+			<StateReligion>RELIGION_HINDUISM</StateReligion>
 			<PrereqReligion>RELIGION_BUDDHISM</PrereqReligion>
 			<MaxStartEra>ERA_MEDIEVAL</MaxStartEra>
 			<PrereqTech>TECH_AESTHETICS</PrereqTech>
