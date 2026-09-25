@@ -7621,6 +7621,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
+	x=101,y=39
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=101,y=41
 	ImprovementType=IMPROVEMENT_HARVEST_BOATS
 EndPlot
@@ -7660,7 +7664,7 @@ BeginPlot
 	EndUnit
 	BeginCity
 		CityOwner=CIVILIZATION_MUGHALS
-		CityName=Vaekereta
+		CityName=Peshawar
 		CityPopulation=5
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_TANNERY
@@ -7865,6 +7869,7 @@ EndPlot
 BeginPlot
 	x=104,y=43
 	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=104,y=44
@@ -8248,11 +8253,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=32
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_CAMP
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=106,y=33
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=106,y=34

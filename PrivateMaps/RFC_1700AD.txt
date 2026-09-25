@@ -9120,6 +9120,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=101,y=39
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=101,y=41
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
@@ -9298,7 +9302,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=50
-	ImprovementType=IMPROVEMENT_ORCHARD
+	ImprovementType=IMPROVEMENT_WINDMILL
 EndPlot
 BeginPlot
 	x=102,y=55
@@ -9413,8 +9417,8 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
-		BuildingType=BUILDING_KAILASA_TEMPLE
 		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_KAILASA_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_JAINISM
 		FreeSpecialistType=SPECIALIST_GREAT_GENERAL
@@ -9453,6 +9457,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
+	x=103,y=50
+	ImprovementType=IMPROVEMENT_ORCHARD
+EndPlot
+BeginPlot
 	x=103,y=51
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
@@ -9466,7 +9474,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=35
-	ImprovementType=IMPROVEMENT_COTTAGE
+	BonusType=BONUS_MILLET
+	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=104,y=36
@@ -9575,6 +9584,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=35
+	BonusType=NONE
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
@@ -9647,7 +9657,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=36
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -9656,7 +9666,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=38
-	ImprovementType=IMPROVEMENT_CAMP
+	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
 	x=105,y=39
@@ -9803,7 +9813,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=32
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
 	x=106,y=33
@@ -10543,6 +10553,14 @@ BeginPlot
 	x=113,y=58
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=114,y=40
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=114,y=43
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=114,y=44

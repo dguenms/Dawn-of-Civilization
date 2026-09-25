@@ -1938,7 +1938,7 @@ BeginPlot
 		ReligionType=RELIGION_JAINISM
 		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
-			Civilization=CIVILIZATION_RAJPUTS, Culture=75
+			Civilization=CIVILIZATION_RAJPUTS, Culture=100
 		EndCulture
 		YearFounded=-705
 		YearAcquired=490
