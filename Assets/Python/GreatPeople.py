@@ -61,6 +61,11 @@ def create(iPlayer, iUnit, tile):
 def getPrimary(iCiv):
 	if iCiv == iHarappa: return iIndia
 	elif iCiv == iEgypt and player(iCiv).getStateReligion() == iIslam: return iArabia
+	elif iCiv == iKarnataka: return iTamils
+	elif iCiv == iBengal:
+		if player(iCiv).getStateReligion() == iIslam: return iMughals
+		return iIndia
+	elif iCiv == iRajputs: return iIndia
 	elif iCiv == iMisr: return iArabia
 	elif iCiv == iTatars: return iMongols
 	elif iCiv == iIran: return iPersia
@@ -1381,7 +1386,7 @@ dGreatPeople = {
 			"Tecun Uman", # 16th
 		),
 	},
-	iDravidia : {
+	iTamils : {
 		iGreatProphet : (
 			"Iyarpagai Nayanar", # 3rd BC
 			iMedieval,

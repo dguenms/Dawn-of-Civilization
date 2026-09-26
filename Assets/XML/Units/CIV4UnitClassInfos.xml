@@ -143,6 +143,14 @@
 			<DefaultUnit>UNIT_HINDU_MISSIONARY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_JAIN_MISSIONARY</Type>
+			<Description>TXT_KEY_UNIT_JAIN_MISSIONARY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>5</iMaxPlayerInstances>
+			<DefaultUnit>UNIT_JAIN_MISSIONARY</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_BUDDHIST_MISSIONARY</Type>
 			<Description>TXT_KEY_UNIT_BUDDHIST_MISSIONARY</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>

@@ -1840,6 +1840,57 @@
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
 		</UnitInfo>
 		<UnitInfo>
+			<Class>UNITCLASS_JAIN_MISSIONARY</Class>
+			<Type>UNIT_JAIN_MISSIONARY</Type>
+			<Special>SPECIALUNIT_PEOPLE</Special>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_MISSIONARY</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_JAIN_MISSIONARY</Description>
+			<Civilopedia>TXT_KEY_UNIT_MISSIONARY_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_JAIN_MISSIONARY_STRATEGY</Strategy>
+			<Advisor>ADVISOR_RELIGION</Advisor>
+			<ReligionSpreads>
+				<ReligionSpread>
+					<ReligionType>RELIGION_JAINISM</ReligionType>
+					<iReligionSpread>40</iReligionSpread>
+				</ReligionSpread>
+			</ReligionSpreads>
+			<PrereqReligion>RELIGION_JAINISM</PrereqReligion>
+			<PrereqBuilding>BUILDING_JAIN_MONASTERY</PrereqBuilding>
+			<iCost>40</iCost>
+			<iAdvancedStartCost>-1</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<iAsset>2</iAsset>
+			<UnitMeshGroups>
+				<iGroupSize>1</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>1</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_JAIN_MISSIONARY</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+		</UnitInfo>
+		<UnitInfo>
 			<Class>UNITCLASS_BUDDHIST_MISSIONARY</Class>
 			<Type>UNIT_BUDDHIST_MISSIONARY</Type>
 			<Special>SPECIALUNIT_PEOPLE</Special>
@@ -2751,6 +2802,110 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_LIGHT_SWORDSMAN</Class>
+			<Type>UNIT_INDIAN_KSHATRIYA</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_INDIAN_KSHATRIYA</Description>
+			<Civilopedia>TXT_KEY_UNIT_INDIAN_KSHATRIYA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_INDIAN_KSHATRIYA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_SWORDSMAN</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_ALLOYS</PrereqTech>
+			<PrereqBonuses>
+				<BonusType>BONUS_COPPER</BonusType>
+				<BonusType>BONUS_IRON</BonusType>
+				<BonusType>BONUS_OBSIDIAN</BonusType>
+			</PrereqBonuses>
+			<iCost>35</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<FeatureImpassables>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+			</FeatureImpassables>
+			<iCombat>5</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<iConscription>2</iConscription>
+			<iCultureGarrison>4</iCultureGarrison>
+			<iAsset>2</iAsset>
+			<iPower>5</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_INDIAN_KSHATRIYA</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SHOCK</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_LIGHT_SWORDSMAN</Class>
 			<Type>UNIT_CELTIC_OATHSWORN</Type>
 			<Combat>UNITCOMBAT_MELEE</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -3247,6 +3402,107 @@
 			<FreePromotions>
 				<FreePromotion>
 					<PromotionType>PROMOTION_GUERILLA1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_SWORDSMAN</Class>
+			<Type>UNIT_KARNATIC_KARNATABALA</Type>
+			<Combat>UNITCOMBAT_MELEE</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_KARNATIC_KARNATABALA</Description>
+			<Civilopedia>TXT_KEY_UNIT_KARNATIC_KARNATABALA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_KARNATIC_KARNATABALA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_HEAVY_SWORDSMAN</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK_CITY</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_BLOOMERY</PrereqTech>
+			<BonusType>BONUS_IRON</BonusType>
+			<iCost>40</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<FeatureImpassables>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+			</FeatureImpassables>
+			<iCombat>6</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<iCityAttack>10</iCityAttack>
+			<iConscription>1</iConscription>
+			<iCultureGarrison>5</iCultureGarrison>
+			<iAsset>2</iAsset>
+			<iPower>6</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_KARNATIC_KARNATABALA</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_KARNATIC_KARNATABALA</EarlyArtDefineTag>
+				</UnitMeshGroup>
+				<UnitMeshGroup>
+					<iRequired>1</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_KARNATIC_KARNATABALA</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_GUERILLA1</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_FORMATION</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 			</FreePromotions>
@@ -5543,6 +5799,102 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_ARQUEBUSIER</Class>
+			<Type>UNIT_RAJPUT_PURBIYA</Type>
+			<Combat>UNITCOMBAT_GUN</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_RAJPUT_PURBIYA</Description>
+			<Civilopedia>TXT_KEY_UNIT_RAJPUT_PURBIYA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_RAJPUT_PURBIYA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<bIgnoreBuildingDefense>1</bIgnoreBuildingDefense>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_MUSKETEER</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_RESERVE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_FIREARMS</PrereqTech>
+			<iCost>70</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<FeatureImpassables>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+			</FeatureImpassables>
+			<iCombat>10</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<iConscription>4</iConscription>
+			<iCultureGarrison>7</iCultureGarrison>
+			<iAsset>3</iAsset>
+			<iPower>10</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>0</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_RAJPUT_PURBIYA</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_LEADERSHIP</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_ARQUEBUSIER</Class>
 			<Type>UNIT_SPANISH_TERCIO</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
@@ -6928,13 +7280,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_GRENADIER</Class>
-			<Type>UNIT_DRAVIDIAN_ROCKETEER</Type>
+			<Type>UNIT_KARNATIC_ROCKETEER</Type>
 			<Combat>UNITCOMBAT_GUN</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_COLLATERAL</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER</Description>
-			<Civilopedia>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_KARNATIC_ROCKETEER</Description>
+			<Civilopedia>TXT_KEY_UNIT_KARNATIC_ROCKETEER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_KARNATIC_ROCKETEER_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -7028,7 +7380,7 @@
 				<iRangedWaveSize>0</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_DRAVIDIAN_ROCKETEER</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_KARNATIC_ROCKETEER</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -8445,6 +8797,10 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
@@ -8542,6 +8898,10 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
@@ -8638,6 +8998,10 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
@@ -8658,6 +9022,111 @@
 				<UnitMeshGroup>
 					<iRequired>3</iRequired>
 					<EarlyArtDefineTag>ART_DEF_UNIT_NUBIAN_MEDJAY</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_ARCHER</Class>
+			<Type>UNIT_INDIAN_PATIYODHA</Type>
+			<Combat>UNITCOMBAT_ARCHER</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_CITY_DEFENSE</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_INDIAN_PATIYODHA</Description>
+			<Civilopedia>TXT_KEY_UNIT_INDIAN_PATIYODHA_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_CROSSBOWMAN</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_CITY_DEFENSE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_TANNING</PrereqTech>
+			<iCost>25</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>1</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<FeatureImpassables>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+			</FeatureImpassables>
+			<FeatureAttacks>
+				<FeatureAttack>
+					<FeatureType>FEATURE_FOREST</FeatureType>
+					<iFeatureAttack>25</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureAttack>25</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<iFeatureAttack>25</iFeatureAttack>
+				</FeatureAttack>
+			</FeatureAttacks>
+			<iCombat>3</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iWithdrawalProb>25</iWithdrawalProb>
+			<iHillsAttack>25</iHillsAttack>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<UnitCombatMods>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<iUnitCombatMod>50</iUnitCombatMod>
+				</UnitCombatMod>
+			</UnitCombatMods>
+			<iFirstStrikes>1</iFirstStrikes>
+			<iCityDefense>50</iCityDefense>
+			<iHillsDefense>25</iHillsDefense>
+			<iCultureGarrison>4</iCultureGarrison>
+			<iAsset>1</iAsset>
+			<iPower>3</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>3</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_INDIAN_PATIYODHA</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
@@ -8704,6 +9173,10 @@
 			<iXPValueDefense>2</iXPValueDefense>
 			<UnitCombatMods>
 				<UnitCombatMod>
+					<UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType>
+					<iUnitCombatMod>25</iUnitCombatMod>
+				</UnitCombatMod>
+				<UnitCombatMod>
 					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
 					<iUnitCombatMod>50</iUnitCombatMod>
 				</UnitCombatMod>
@@ -8726,6 +9199,7 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_SKIRMISHER</Class>
@@ -9288,13 +9762,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_LONGBOWMAN</Class>
-			<Type>UNIT_INDIAN_PATIYODHA</Type>
+			<Type>UNIT_BENGALI_PAIK</Type>
 			<Combat>UNITCOMBAT_ARCHER</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_COLLATERAL</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_INDIAN_PATIYODHA</Description>
-			<Civilopedia>TXT_KEY_UNIT_INDIAN_PATIYODHA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_BENGALI_PAIK</Description>
+			<Civilopedia>TXT_KEY_UNIT_BENGALI_PAIK_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_BENGALI_PAIK_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -9328,8 +9802,8 @@
 					<bUnitAI>1</bUnitAI>
 				</UnitAI>
 			</UnitAIs>
-			<PrereqTech>TECH_NOBILITY</PrereqTech>
-			<iCost>50</iCost>
+			<PrereqTech>TECH_COMMUNE</PrereqTech>
+			<iCost>60</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iMoves>1</iMoves>
@@ -9350,6 +9824,14 @@
 			</TerrainImpassables>
 			<FeatureImpassables>
 				<FeatureImpassable>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
 					<FeatureType>FEATURE_MARSH</FeatureType>
 					<bFeatureImpassable>1</bFeatureImpassable>
 				</FeatureImpassable>
@@ -9357,27 +9839,27 @@
 			<FeatureAttacks>
 				<FeatureAttack>
 					<FeatureType>FEATURE_FOREST</FeatureType>
-					<iFeatureAttack>50</iFeatureAttack>
+					<iFeatureAttack>25</iFeatureAttack>
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
-					<iFeatureAttack>50</iFeatureAttack>
+					<iFeatureAttack>25</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
-			<iCombat>5</iCombat>
+			<iCombat>6</iCombat>
 			<iCombatLimit>100</iCombatLimit>
 			<iXPValueAttack>4</iXPValueAttack>
 			<iXPValueDefense>2</iXPValueDefense>
-			<iFirstStrikes>1</iFirstStrikes>
+			<iFirstStrikes>3</iFirstStrikes>
 			<iWithdrawalProb>30</iWithdrawalProb>
 			<iCollateralDamage>50</iCollateralDamage>
-			<iCollateralDamageLimit>25</iCollateralDamageLimit>
+			<iCollateralDamageLimit>30</iCollateralDamageLimit>
 			<iCollateralDamageMaxUnits>2</iCollateralDamageMaxUnits>
 			<iHillsAttack>25</iHillsAttack>
 			<iHillsDefense>25</iHillsDefense>
 			<iCultureGarrison>6</iCultureGarrison>
 			<iAsset>2</iAsset>
-			<iPower>5</iPower>
+			<iPower>6</iPower>
 			<UnitMeshGroups>
 				<iGroupSize>3</iGroupSize>
 				<fMaxSpeed>1.75</fMaxSpeed>
@@ -9385,26 +9867,18 @@
 				<iMeleeWaveSize>3</iMeleeWaveSize>
 				<iRangedWaveSize>3</iRangedWaveSize>
 				<UnitMeshGroup>
-					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_INDIAN_PATIYODHA_BROWN_SHIRT</EarlyArtDefineTag>
-				</UnitMeshGroup>
-				<UnitMeshGroup>
-					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_INDIAN_PATIYODHA_CHAINMAIL</EarlyArtDefineTag>
-				</UnitMeshGroup>
-				<UnitMeshGroup>
-					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_INDIAN_PATIYODHA_PARTIAL_SCALE</EarlyArtDefineTag>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_BENGALI_PAIK</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
 			<FreePromotions>
 				<FreePromotion>
-					<PromotionType>PROMOTION_FORMATION</PromotionType>
+					<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 				<FreePromotion>
-					<PromotionType>PROMOTION_WOODSMAN1</PromotionType>
+					<PromotionType>PROMOTION_RIVER_COMBAT</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 			</FreePromotions>
@@ -11281,6 +11755,109 @@
 				</FreePromotion>
 				<FreePromotion>
 					<PromotionType>PROMOTION_STEPPE_ADAPTATION</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
+		</UnitInfo>
+		<UnitInfo>
+			<Class>UNITCLASS_HORSE_ARCHER</Class>
+			<Type>UNIT_RAJPUT_KATHIAWARI</Type>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Description>TXT_KEY_UNIT_RAJPUT_KATHIAWARI</Description>
+			<Civilopedia>TXT_KEY_UNIT_RAJPUT_KATHIAWARI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_RAJPUT_KATHIAWARI_STRATEGY</Strategy>
+			<Advisor>ADVISOR_MILITARY</Advisor>
+			<bMilitaryHappiness>1</bMilitaryHappiness>
+			<bMilitarySupport>1</bMilitarySupport>
+			<bMilitaryProduction>1</bMilitaryProduction>
+			<bPillage>1</bPillage>
+			<bNoDefensiveBonus>1</bNoDefensiveBonus>
+			<UnitClassUpgrades>
+				<UnitClassUpgrade>
+					<UnitClassUpgradeType>UNITCLASS_PISTOLIER</UnitClassUpgradeType>
+					<bUnitClassUpgrade>1</bUnitClassUpgrade>
+				</UnitClassUpgrade>
+			</UnitClassUpgrades>
+			<UnitAIs>
+				<UnitAI>
+					<UnitAIType>UNITAI_ATTACK</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_COUNTER</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+				<UnitAI>
+					<UnitAIType>UNITAI_PILLAGE</UnitAIType>
+					<bUnitAI>1</bUnitAI>
+				</UnitAI>
+			</UnitAIs>
+			<PrereqTech>TECH_NOBILITY</PrereqTech>
+			<BonusType>BONUS_HORSE</BonusType>
+			<iCost>70</iCost>
+			<iAdvancedStartCost>100</iAdvancedStartCost>
+			<iMinAreaSize>-1</iMinAreaSize>
+			<iMoves>2</iMoves>
+			<iNukeRange>-1</iNukeRange>
+			<TerrainImpassables>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_DESERT</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_TUNDRA</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+				<TerrainImpassable>
+					<TerrainType>TERRAIN_SNOW</TerrainType>
+					<bTerrainImpassable>1</bTerrainImpassable>
+				</TerrainImpassable>
+			</TerrainImpassables>
+			<FeatureImpassables>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_JUNGLE</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+				<FeatureImpassable>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<bFeatureImpassable>1</bFeatureImpassable>
+				</FeatureImpassable>
+			</FeatureImpassables>
+			<iCombat>6</iCombat>
+			<iCombatLimit>100</iCombatLimit>
+			<iXPValueAttack>4</iXPValueAttack>
+			<iXPValueDefense>2</iXPValueDefense>
+			<iWithdrawalProb>30</iWithdrawalProb>
+			<iPlainsAttack>50</iPlainsAttack>
+			<iPlainsDefense>50</iPlainsDefense>
+			<iCultureGarrison>5</iCultureGarrison>
+			<iAsset>2</iAsset>
+			<iPower>8</iPower>
+			<UnitMeshGroups>
+				<iGroupSize>3</iGroupSize>
+				<fMaxSpeed>1.75</fMaxSpeed>
+				<fPadTime>1</fPadTime>
+				<iMeleeWaveSize>3</iMeleeWaveSize>
+				<iRangedWaveSize>3</iRangedWaveSize>
+				<UnitMeshGroup>
+					<iRequired>3</iRequired>
+					<EarlyArtDefineTag>ART_DEF_UNIT_RAJPUT_KATHIAWARI</EarlyArtDefineTag>
+				</UnitMeshGroup>
+			</UnitMeshGroups>
+			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_SHOCK</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+				<FreePromotion>
+					<PromotionType>PROMOTION_DISENGAGE1</PromotionType>
 					<bFreePromotion>1</bFreePromotion>
 				</FreePromotion>
 			</FreePromotions>
@@ -15055,13 +15632,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_WAR_ELEPHANT</Class>
-			<Type>UNIT_INDIAN_VARU</Type>
+			<Type>UNIT_BENGALI_VARU</Type>
 			<Combat>UNITCOMBAT_HEAVY_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_INDIAN_VARU</Description>
-			<Civilopedia>TXT_KEY_UNIT_INDIAN_VARU_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_INDIAN_VARU_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_BENGALI_VARU</Description>
+			<Civilopedia>TXT_KEY_UNIT_BENGALI_VARU_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_BENGALI_VARU_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitaryHappiness>1</bMilitaryHappiness>
 			<bMilitarySupport>1</bMilitarySupport>
@@ -15135,7 +15712,7 @@
 				<iRangedWaveSize>2</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>2</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_INDIAN_VARU</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_BENGALI_VARU</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_DEFAULT</FormationType>
@@ -18017,13 +18594,13 @@
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_COG</Class>
-			<Type>UNIT_DRAVIDIAN_DHARANI</Type>
+			<Type>UNIT_TAMIL_DHARANI</Type>
 			<Combat>UNITCOMBAT_NAVAL</Combat>
 			<Domain>DOMAIN_SEA</Domain>
 			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_DRAVIDIAN_DHARANI</Description>
-			<Civilopedia>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_STRATEGY</Strategy>
+			<Description>TXT_KEY_UNIT_TAMIL_DHARANI</Description>
+			<Civilopedia>TXT_KEY_UNIT_TAMIL_DHARANI_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Strategy>
 			<Advisor>ADVISOR_MILITARY</Advisor>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
@@ -18099,7 +18676,7 @@
 				<iRangedWaveSize>1</iRangedWaveSize>
 				<UnitMeshGroup>
 					<iRequired>1</iRequired>
-					<EarlyArtDefineTag>ART_DEF_UNIT_DRAVIDIAN_DHARANI</EarlyArtDefineTag>
+					<EarlyArtDefineTag>ART_DEF_UNIT_TAMIL_DHARANI</EarlyArtDefineTag>
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_MACHINE</FormationType>
@@ -21118,6 +21695,10 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_JAIN_HOLY_SITE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_BUDDHIST_HOLY_SITE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
@@ -21155,6 +21736,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_HINDU_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_JAIN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
@@ -21998,6 +22583,10 @@
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>
+					<BuildingType>BUILDING_JAIN_HOLY_SITE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
 					<BuildingType>BUILDING_BUDDHIST_HOLY_SITE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
@@ -22035,6 +22624,10 @@
 				</Building>
 				<Building>
 					<BuildingType>BUILDING_HINDU_SHRINE</BuildingType>
+					<bBuilding>1</bBuilding>
+				</Building>
+				<Building>
+					<BuildingType>BUILDING_JAIN_SHRINE</BuildingType>
 					<bBuilding>1</bBuilding>
 				</Building>
 				<Building>

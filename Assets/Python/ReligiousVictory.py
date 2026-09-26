@@ -24,12 +24,20 @@ dGoals = {
 	iZoroastrianism: (
 		ResourceCount(iIncense, 6),
 		ReligionSpreadPercent(iZoroastrianism, 10),
-		CityCultureLevel(holy_city(iZoroastrianism), iCultureLevelLegendary),
+		CityCultureLevel(holy_city(iZoroastrianism), iCultureLevelRenowned),
 	),
 	iJudaism: (
 		SpecialistCount(sum(iSpecialistGreatProphet, iSpecialistGreatScientist, iSpecialistGreatStatesman), 15, subject=STATE_RELIGION, iReligion=iJudaism),
 		CityCultureLevel(holy_city(iJudaism), iCultureLevelLegendary),
 		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 6, iReligion=iJudaism),
+	),
+	iJainism: (
+		All(
+			UnimprovedResourceCount(improvement_resources(iCamp, iPasture, iFishingBoats), 12),
+			NoCityConquered(),
+		),
+		SpecialistCount(sum(iSpecialistGreatMerchant, iSpecialistGreatStatesman), 8),
+		ReligionPopulationCount(iJainism, 60, subject=WORLD),
 	),
 	iConfucianism: (
 		AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5),

@@ -9120,6 +9120,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=101,y=39
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=101,y=41
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
@@ -9298,7 +9302,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=50
-	ImprovementType=IMPROVEMENT_ORCHARD
+	ImprovementType=IMPROVEMENT_WINDMILL
 EndPlot
 BeginPlot
 	x=102,y=55
@@ -9413,7 +9417,10 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_KAILASA_TEMPLE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		FreeSpecialistType=SPECIALIST_GREAT_GENERAL
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=75
@@ -9450,6 +9457,10 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
+	x=103,y=50
+	ImprovementType=IMPROVEMENT_ORCHARD
+EndPlot
+BeginPlot
 	x=103,y=51
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
@@ -9463,7 +9474,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=35
-	ImprovementType=IMPROVEMENT_COTTAGE
+	BonusType=BONUS_MILLET
+	ImprovementType=IMPROVEMENT_FARM
 EndPlot
 BeginPlot
 	x=104,y=36
@@ -9518,9 +9530,13 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_ISLAMIC_TEMPLE
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_JAIN_SHRINE
 		BuildingType=BUILDING_VIJAYA_STAMBHA
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=100
 		EndCulture
@@ -9568,53 +9584,54 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=35
+	BonusType=NONE
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARQUEBUSIER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_BOMBARD
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_DRAVIDIA
+		CityOwner=CIVILIZATION_KARNATAKA
 		CityName=Mahisuru
 		CityPopulation=5
 		BuildingType=BUILDING_PALACE
@@ -9629,19 +9646,18 @@ BeginPlot
 		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_JAIL
 		BuildingType=BUILDING_FORGE
-		BuildingType=BUILDING_DRAVIDIAN_GOPURAM
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
 		BeginCulture
-			Civilization=CIVILIZATION_DRAVIDIA, Culture=50
+			Civilization=CIVILIZATION_KARNATAKA, Culture=50
 		EndCulture
 		YearFounded=1525
 	EndCity
 EndPlot
 BeginPlot
 	x=105,y=36
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -9650,7 +9666,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=38
-	ImprovementType=IMPROVEMENT_CAMP
+	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
 	x=105,y=39
@@ -9797,7 +9813,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=32
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
 	x=106,y=33
@@ -9940,6 +9956,7 @@ BeginPlot
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_MINAKSHI_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
 		CorporationType=CORPORATION_TRADING_COMPANY
@@ -9982,6 +9999,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=100
 		EndCulture
@@ -10225,7 +10243,7 @@ BeginPlot
 		EndCulture
 		YearFounded=1100
 		YearAcquired=1600
-		PreviousOwner=CIVILIZATION_DRAVIDIA
+		PreviousOwner=CIVILIZATION_TAMILS
 		PreviousOwner=CIVILIZATION_INDIA
 	EndCity
 EndPlot
@@ -10535,6 +10553,14 @@ BeginPlot
 	x=113,y=58
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=114,y=40
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=114,y=43
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=114,y=44

@@ -12326,6 +12326,10 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=101,y=39
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
 	x=101,y=41
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
@@ -12503,6 +12507,7 @@ BeginPlot
 		BuildingType=BUILDING_SHALIMAR_GARDENS
 		ReligionType=RELIGION_ISLAM
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=500
 		EndCulture
@@ -12524,6 +12529,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=50
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	ImprovementType=IMPROVEMENT_ORCHARD
 EndPlot
 BeginPlot
@@ -12599,8 +12606,11 @@ BeginPlot
 		BuildingType=BUILDING_PROTESTANT_TEMPLE
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_KAILASA_TEMPLE
 		ReligionType=RELIGION_PROTESTANTISM
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		FreeSpecialistType=SPECIALIST_GREAT_GENERAL
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=500
@@ -12642,6 +12652,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=50
+	BonusType=NONE
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_MUSKETEER
@@ -12831,8 +12842,12 @@ BeginPlot
 		BuildingType=BUILDING_GROCER
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_JAIN_SHRINE
 		BuildingType=BUILDING_VIJAYA_STAMBHA
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=500
 		EndCulture
@@ -12903,23 +12918,24 @@ BeginPlot
 		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_JAIL
+		BuildingType=BUILDING_MINAKSHI_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		BeginCulture
 			Civilization=CIVILIZATION_ENGLAND, Culture=500
 		EndCulture
 		YearFounded=100
 		YearAcquired=1800
-		PreviousOwner=CIVILIZATION_DRAVIDIA
+		PreviousOwner=CIVILIZATION_TAMILS
 	EndCity
 EndPlot
 BeginPlot
 	x=105,y=35
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_FARM
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=105,y=36
-	ImprovementType=IMPROVEMENT_FARM
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -12929,7 +12945,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=38
-	ImprovementType=IMPROVEMENT_CAMP
+	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
 	x=105,y=39
@@ -13058,11 +13074,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=32
-	ImprovementType=IMPROVEMENT_MINE
+	ImprovementType=IMPROVEMENT_CAMP
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=106,y=33
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=106,y=34
@@ -13204,7 +13222,7 @@ BeginPlot
 		EndCulture
 		YearFounded=1645
 		YearAcquired=1800
-		PreviousOwner=CIVILIZATION_DRAVIDIA
+		PreviousOwner=CIVILIZATION_TAMILS
 	EndCity
 EndPlot
 BeginPlot
@@ -13254,6 +13272,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		BuildingType=BUILDING_HINDU_MONASTERY
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDIA, Culture=500
 		EndCulture
@@ -13534,7 +13553,7 @@ BeginPlot
 		EndCulture
 		YearFounded=1100
 		YearAcquired=1727
-		PreviousOwner=CIVILIZATION_DRAVIDIA
+		PreviousOwner=CIVILIZATION_TAMILS
 		PreviousOwner=CIVILIZATION_INDIA
 	EndCity
 EndPlot
@@ -14028,6 +14047,14 @@ EndPlot
 BeginPlot
 	x=113,y=69
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=114,y=40
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=114,y=43
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=114,y=44

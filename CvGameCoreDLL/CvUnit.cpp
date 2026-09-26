@@ -1421,6 +1421,10 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 			{
 				int iExperience = defenseXPValue();
 				iExperience = ((iExperience * iAttackerStrength) / iDefenderStrength);
+
+				if (pDefender->getCivilizationType() == RAJPUTS && pDefender->getOwnerINLINE() != pPlot->getOwnerINLINE())
+					iExperience += 1;
+
 				iExperience = range(iExperience, GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT"), GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT"));
 				pDefender->changeExperience(iExperience, maxXPValue(), true, pPlot->getOwnerINLINE() == pDefender->getOwnerINLINE(), !isBarbarian());
 			}
@@ -1430,6 +1434,10 @@ void CvUnit::resolveCombat(CvUnit* pDefender, CvPlot* pPlot, CvBattleDefinition&
 
 				int iExperience = pDefender->attackXPValue();
 				iExperience = ((iExperience * iDefenderStrength) / iAttackerStrength);
+
+				if (getCivilizationType() == RAJPUTS && getOwnerINLINE() != pPlot->getOwnerINLINE())
+					iExperience += 1;
+
 				iExperience = range(iExperience, GC.getDefineINT("MIN_EXPERIENCE_PER_COMBAT"), GC.getDefineINT("MAX_EXPERIENCE_PER_COMBAT"));
 				changeExperience(iExperience, pDefender->maxXPValue(), true, pPlot->getOwnerINLINE() == getOwnerINLINE(), !pDefender->isBarbarian());
 			}
@@ -14577,7 +14585,7 @@ int CvUnit::getOriginalArtStyle() const
 	case REGION_DECCAN:
 		return GC.getCivilizationInfo(INDIA).getUnitArtStyleType();
 	case REGION_DRAVIDA:
-		return GC.getCivilizationInfo(DRAVIDIA).getUnitArtStyleType();
+		return GC.getCivilizationInfo(TAMILS).getUnitArtStyleType();
 	case REGION_INDOCHINA:
 		return GC.getCivilizationInfo(KHMER).getUnitArtStyleType();
 	case REGION_INDONESIA:

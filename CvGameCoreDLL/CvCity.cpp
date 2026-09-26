@@ -6962,12 +6962,22 @@ void CvCity::changeBaseGreatPeopleRate(int iChange)
 
 int CvCity::getGreatPeopleRateModifier() const
 {
-	if (isHasBuildingEffect(SHWEDAGON_PAYA))
+	int iGreatPeopleRateModifier = m_iGreatPeopleRateModifier;
+
+	if (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(KAILASA_TEMPLE))
 	{
-		return m_iGreatPeopleRateModifier + GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD);
+		if (foodDifference() <= 0)
+		{
+			iGreatPeopleRateModifier += 50;
+		}
 	}
 
-	return m_iGreatPeopleRateModifier;
+	if (isHasBuildingEffect(SHWEDAGON_PAYA))
+	{
+		iGreatPeopleRateModifier += GET_PLAYER(getOwnerINLINE()).getCommercePercent(COMMERCE_GOLD);
+	}
+
+	return iGreatPeopleRateModifier;
 }
 
 
@@ -7090,6 +7100,14 @@ int CvCity::getAdditionalGreatPeopleRateModifierByBuilding(BuildingTypes eBuildi
 		iExtraModifier += kBuilding.getGlobalGreatPeopleRateModifier();
 
 		// Special wonder effects
+		if (eBuilding == KAILASA_TEMPLE)
+		{
+			if (foodDifference() <= 0)
+			{
+				iExtraModifier += 50;
+			}
+		}
+
 		if (eBuilding == SHWEDAGON_PAYA)
 		{
 			iExtraModifier += GET_PLAYER(getOwnerINLINE()).getCommerceRate(COMMERCE_GOLD);
@@ -10632,8 +10650,8 @@ int CvCity::totalTradeModifier(CvCity* pOtherCity) const
 			// Leoreth: new modifier for trade routes with vassals
 			iModifier += getVassalTradeModifier(pOtherCity);
 
-			// Leoreth: Dravidian UP: Trade Guilds: +10% foreign trade yield per traded resource
-			if (getCivilizationType() == DRAVIDIA)
+			// Leoreth: Tamil UP: Trade Guilds: +10% foreign trade yield per traded resource
+			if (getCivilizationType() == TAMILS)
 			{
 				iModifier += 10 * (GET_PLAYER(getOwnerINLINE()).getNumTradeBonusImports(pOtherCity->getOwner()) + GET_PLAYER(getOwnerINLINE()).getNumTradeBonusExports(pOtherCity->getOwner()));
 			}
@@ -11826,6 +11844,12 @@ int CvCity::getCorporationYieldByCorporation(YieldTypes eIndex, CorporationTypes
 		
 		if (iNumBonuses > 0)
 		{
+			// Bengal UP: +2 base resources for Textile Industry
+			if (getCivilizationType() == BENGAL && eCorporation == TEXTILE_INDUSTRY)
+			{
+				iNumBonuses += 2;
+			}
+
 			iYield = (GC.getCorporationInfo(eCorporation).getYieldProduced(eIndex) * std::min(GC.getCorporationInfo(eCorporation).getMaxConsumableBonuses(), iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			
 			// Dutch UP: double yield from trading company
@@ -11864,11 +11888,17 @@ int CvCity::getCorporationCommerceByCorporation(CommerceTypes eIndex, Corporatio
 
 		if (iNumBonuses > 0)
 		{
+			// Bengal UP: +2 base resources for Textile Industry
+			if (getCivilizationType() == BENGAL && eCorporation == TEXTILE_INDUSTRY)
+			{
+				iNumBonuses += 2;
+			}
+
 			//iCommerce += (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * iNumBonuses * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100;
 			iCommerce = (GC.getCorporationInfo(eCorporation).getCommerceProduced(eIndex) * std::min(GC.getCorporationInfo(eCorporation).getMaxConsumableBonuses(), iNumBonuses) * GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getCorporationMaintenancePercent()) / 100; //Rhye - corporation cap
 			
 			// Dutch UP: double commerce from trading company
-			if (getCivilizationType() == NETHERLANDS && eCorporation == (CorporationTypes)1)
+			if (getCivilizationType() == NETHERLANDS && eCorporation == TRADING_COMPANY)
 			{
 				iCommerce *= 2;
 			}
@@ -14891,6 +14921,14 @@ void CvCity::pushOrder(OrderTypes eOrder, int iData1, int iData2, bool bSave, bo
 		CvEventReporter::getInstance().cityBuildingBuilding(this, (BuildingTypes)iData1);
 	}*/
 
+	if (getCivilizationType() == KARNATAKA)
+	{
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			getCityIndexPlot(iI)->updateYield();
+		}
+	}
+
 	if ((getTeam() == GC.getGameINLINE().getActiveTeam()) || GC.getGameINLINE().isDebugMode())
 	{
 		setInfoDirty(true);
@@ -16096,12 +16134,18 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 	int iI;
 
 	ReligionTypes eLoopReligion;
+	bool bLowest = true;
 	for (iI = 0; iI < NUM_RELIGIONS; iI++)
 	{
 		eLoopReligion = (ReligionTypes)iI;
-		if (isHasReligion(eLoopReligion) && !GET_PLAYER(getOwner()).isTolerating(eLoopReligion))
+		if (isHasReligion(eLoopReligion) && GET_PLAYER(getOwner()).getStateReligion() != eLoopReligion)
 		{
 			iTurns += iIncrement;
+
+			if (plot()->getSpreadFactor(eLoopReligion) * GC.getReligionInfo(eLoopReligion).getSpreadFactor() < plot()->getSpreadFactor(eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor())
+			{
+				bLowest = false;
+			}
 		}
 	}
 
@@ -16116,6 +16160,16 @@ int CvCity::getTurnsToSpread(ReligionTypes eReligion) const
 		iTurns *= 2;
 	}
 
+	if (bLowest && eSpread != RELIGION_SPREAD_MINORITY)
+	{
+		iTurns += iIncrement;
+
+		if (getReligionCount() > 2)
+		{
+			iTurns *= 2;
+		}
+	}
+
 	return getTurns(iTurns);
 }
 
@@ -16124,6 +16178,7 @@ bool CvCity::isHasPrecursor(ReligionTypes eReligion) const
 	if (eReligion == CONFUCIANISM) return isHasReligion(TAOISM);
 	if (eReligion == TAOISM) return isHasReligion(CONFUCIANISM);
 	if (eReligion == BUDDHISM) return isHasReligion(HINDUISM);
+	if (eReligion == JAINISM) return isHasReligion(HINDUISM);
 
 	if (GET_PLAYER(getOwnerINLINE()).getStateReligion() == eReligion)
 	{
@@ -19361,9 +19416,20 @@ void CvCity::spreadReligion(ReligionTypes eReligion, bool bMissionary)
 
 	ReligionTypes eDisappearingReligion = disappearingReligion(eReligion);
 
-	int iDisappearanceChance = bMissionary ? 2 : 3;
+	if (eDisappearingReligion == NO_RELIGION)
+		return;
 
-	if (eDisappearingReligion != NO_RELIGION && GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
+	int iDisappearanceChance = 3;
+	if (plot()->getReligionInfluence(eDisappearingReligion) * GC.getReligionInfo(eDisappearingReligion).getSpreadFactor() < plot()->getReligionInfluence(eReligion) * GC.getReligionInfo(eReligion).getSpreadFactor())
+	{
+		iDisappearanceChance = 1;
+	}
+	else if (bMissionary)
+	{
+		iDisappearanceChance = 2;
+	}
+
+	if (GC.getGame().getSorenRandNum(iDisappearanceChance, "Religion disappearance") == 0)
 	{
 		removeReligion(eDisappearingReligion);
 	}
@@ -19383,8 +19449,8 @@ struct disappearingReligionCompare
 			iLeftValue += GET_PLAYER(city->getOwnerINLINE()).getSpreadType(city->plot(), eLeftReligion, false, true) * 3;
 			iRightValue += GET_PLAYER(city->getOwnerINLINE()).getSpreadType(city->plot(), eRightReligion, false, true) * 3;
 
-			iLeftValue += city->getReligionInfluence(eLeftReligion);
-			iRightValue += city->getReligionInfluence(eRightReligion);
+			iLeftValue += city->getReligionInfluence(eLeftReligion) * GC.getReligionInfo(eLeftReligion).getSpreadFactor();
+			iRightValue += city->getReligionInfluence(eRightReligion) * GC.getReligionInfo(eRightReligion).getSpreadFactor();
 		}
 		else 
 		{
@@ -19432,7 +19498,7 @@ ReligionTypes CvCity::disappearingReligion(ReligionTypes eNewReligion, bool bCon
 		return NO_RELIGION;
 	}
 
-	int iMaxReligions = std::max(2, 1 + getPopulation() / 5);
+	int iMaxReligions = std::max(2, 1 + getPopulation() / 10);
 
 	ReligionSpreadTypes eCurrentSpread;
 	ReligionSpreadTypes eNewReligionSpread = eNewReligion != NO_RELIGION ? GET_PLAYER(getOwnerINLINE()).getSpreadType(plot(), eNewReligion, false, true) : RELIGION_SPREAD_MINORITY;

@@ -18,7 +18,6 @@ dPeriods600AD = {
 
 dPeriods1500AD = {
 	iChina : iPeriodMing,
-	iDravidia : iPeriodVijayanagara,
 	iNorse : iPeriodDenmark,
 	iTurks : iPeriodUzbeks,
 	iMoors : iPeriodMorocco,
@@ -62,11 +61,11 @@ dPeriodNames = {
 	iPeriodPtolemaicEgypt:			"Ptolemaic_Egypt",
 	iPeriodMakuria:					"Makuria",
 	iPeriodMing:					"Ming",
+	iPeriodLateGupta:				"Late_Gupta",
 	iPeriodMaratha:					"Maratha",
 	iPeriodModernGreece:			"Modern_Greece",
 	iPeriodCarthage:				"Carthage",
 	iPeriodInsularCelts:			"Insular_Celts",
-	iPeriodVijayanagara:			"Vijayanagara",
 	iPeriodByzantineConstantinople:	"Byzantine_Constantinople",
 	iPeriodSeljuks:					"Seljuks",
 	iPeriodNationalFrance:			"National_France",
@@ -269,10 +268,6 @@ def onTechAcquired(iTech, iTeam, iPlayer):
 		if iEra == iMedieval:
 			setPeriod(iNubia, iPeriodMakuria)
 	
-	if iCiv == iDravidia:
-		if iEra == iMedieval:
-			setPeriod(iDravidia, iPeriodVijayanagara)
-	
 	if iCiv == iMoors:
 		if iEra == iIndustrial:
 			if player(iPlayer).getCapitalCity().getRegionID() != rIberia:
@@ -331,6 +326,12 @@ def onChangeWar(bWar, iPlayer, iOtherPlayer):
 		if civ(iPlayer) == iEgypt and civ(iOtherPlayer) in [iGreece, iRome]:
 			if cities.region(rEgypt).owner(iOtherPlayer):
 				setPeriod(iEgypt, iPeriodPtolemaicEgypt)
+
+
+@handler("BeginGameTurn")
+def onGameTurn(iGameTurn):
+	if year(iGameTurn) == 450 and not player(iIndia).isHuman():
+		setPeriod(iIndia, iPeriodLateGupta)
 			
 			
 def getNorsePeriod(iPlayer):

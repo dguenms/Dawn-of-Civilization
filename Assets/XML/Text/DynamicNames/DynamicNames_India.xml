@@ -146,28 +146,16 @@
 		<Spanish>Gupta</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_PALA</Tag>
-		<English>Pala</English>
+		<Tag>TXT_KEY_CIV_INDIA_AYUDHA</Tag>
+		<English>Ayudha</English>
 		<French>
-			<Text>Pala</Text>
+			<Text>Ayudha</Text>
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</French>
-		<German>Pala</German>
-		<Italian>Pala</Italian>
-		<Spanish>Pala</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_CIV_INDIA_VIJAYANAGARA</Tag>
-		<English>Vijayanagara</English>
-		<French>
-			<Text>Vijayanagara</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Vijayanagara</German>
-		<Italian>Vijayanagara</Italian>
-		<Spanish>Vijayanagara</Spanish>
+		<German>Ayudha</German>
+		<Italian>Ayudha</Italian>
+		<Spanish>Ayudha</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_INDIAN_VASSAL</Tag>

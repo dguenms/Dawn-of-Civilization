@@ -168,32 +168,56 @@ def spreadHinduismSoutheastAsia():
 
 @handler("BeginGameTurn")
 def spreadIslamIndonesia():
-	if not game.isReligionFounded(iIslam): 
-		return
-		
-	if not player(iJava).isExisting() and not player(iMalays).isExisting(): 
-		return
-
-	if not turn().between(1250, 1600): 
+	if not turn().between(1250, 1600):
 		return
 	
+	spreadReligionByContact(iIslam, rIndonesia, [iJava, iMalays])
+
+
+@handler("BeginGameTurn")
+def spreadIslamBengal():
+	if not turn().between(1100, 1500):
+		return
+	
+	spreadReligionByContact(iIslam, rBengal, [iBengal, iIndia, iMughals])
+
+
+def spreadReligionByContact(iReligion, rRegion, lCivilizations):
+	if not game.isReligionFounded(iReligion): 
+		return
+		
+	if none(player(iCiv).isExisting() for iCiv in lCivilizations):
+		return
+
 	if not periodic(10): 
 		return
 	
-	indonesianContacts = players.major().where(lambda p: (player(iJava).canContact(p) or player(iMalays).canContact(p)) and player(p).getStateReligion() == iIslam)
-	if not indonesianContacts:
+	contacts = players.major().where(lambda p: any(player(iCiv).canContact(p) for iCiv in lCivilizations) and player(p).getStateReligion() == iReligion)
+	if not contacts:
 		return
 		
-	indonesianCities = cities.region(rIndonesia)
-	potentialCities = indonesianCities.where(lambda c: not c.isHasReligion(iIslam))
+	regionCities = cities.region(rRegion)
+	potentialCities = regionCities.where(lambda c: not c.isHasReligion(iReligion))
 	
 	iMaxCitiesMultiplier = 2
-	if player(iMalays).getStateReligion() == iIslam or player(iJava).getStateReligion() == iIslam: iMaxCitiesMultiplier = 5
+	if any(player(iCiv).getStateReligion() == iReligion for iCiv in lCivilizations): iMaxCitiesMultiplier = 5
 	
-	if len(potentialCities) * iMaxCitiesMultiplier >= len(indonesianCities):
+	if len(potentialCities) * iMaxCitiesMultiplier >= len(regionCities):
 		spreadCity = potentialCities.random()
 		if spreadCity:
-			spreadCity.spreadReligion(iIslam)
+			spreadCity.spreadReligion(iReligion)
+
+
+@handler("BeginGameTurn")
+def checkRemoveBuddhismIndia():
+	if year() == year(1000):
+		removeBuddhismIndia()
+
+
+@handler("BeginGameTurn")
+def checkRemoveJainismIndia():
+	if year() == year(1200):
+		removeJainismIndia()
 
 
 @handler("techAcquired")
@@ -405,6 +429,18 @@ def foundReligionInCore(iReligion):
 	city = cities.all().where(lambda c: c.plot().getSpreadFactor(iReligion) == RegionSpreadTypes.REGION_SPREAD_CORE).random()
 	if city:
 		foundReligion(location(city), iReligion)
+		
+		
+def removeBuddhismIndia():
+	lMinorityRegions = [rPunjab, rHinduKush, rHindustan, rRajputana, rBengal, rDeccan]
+	for plot in plots.regions(*lMinorityRegions):
+		plot.setSpreadFactor(iBuddhism, iMinority)
+
+
+def removeJainismIndia():
+	lMinorityRegions = [rRajputana, rDeccan, rPunjab]
+	for plot in plots.regions(*lMinorityRegions):
+		plot.setSpreadFactor(iJainism, iMinority)
 
 
 ### popup handlers - transition to using Popups module ###

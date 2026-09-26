@@ -5462,6 +5462,14 @@ int CvPlayerAI::AI_getDifferentReligionAttitude(PlayerTypes ePlayer) const
 	{
 		iAttitude /= 2;
 	}
+	else if (((getStateReligion() == HINDUISM) && (GET_PLAYER(ePlayer).getStateReligion() == JAINISM)) || ((getStateReligion() == JAINISM) && (GET_PLAYER(ePlayer).getStateReligion() == HINDUISM)))
+	{
+		iAttitude /= 2;
+	}
+	else if (((getStateReligion() == JAINISM) && (GET_PLAYER(ePlayer).getStateReligion() == BUDDHISM)) || ((getStateReligion() == BUDDHISM) && (GET_PLAYER(ePlayer).getStateReligion() == JAINISM)))
+	{
+		iAttitude /= 2;
+	}
 
 	// Same with Orthodoxy combined with Catholicism or Protestantism
 	if (((getStateReligion() == ORTHODOXY) && (GET_PLAYER(ePlayer).getStateReligion() == CATHOLICISM)) || ((getStateReligion() == CATHOLICISM) && (GET_PLAYER(ePlayer).getStateReligion() == ORTHODOXY)))
@@ -12605,7 +12613,7 @@ void CvPlayerAI::AI_doCommerce()
 				iIdealPercent = 40;
 			}
 
-			if ((getCivilizationType() == INDIA || getCivilizationType() == DRAVIDIA) && getCurrentEra() >= ERA_MEDIEVAL)
+			if ((getCivilizationType() == INDIA || getCivilizationType() == TAMILS) && getCurrentEra() >= ERA_MEDIEVAL)
 			{
 				iIdealPercent = 40;
 			}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_DESC</Tag>
+		<English>The Kannadigas</English>
+		<French>The Kannadigas</French>
+		<German>The Kannadigas</German>
+		<Italian>The Kannadigas</Italian>
+		<Spanish>The Kannadigas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_PEOPLES</Tag>
+		<English>Kannada Peoples</English>
+		<French>Kannada Peoples</French>
+		<German>Kannada Peoples</German>
+		<Italian>Kannada Peoples</Italian>
+		<Spanish>Kannada Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_ADJECTIVE</Tag>
+		<English>Karnatic</English>
+		<French>Karnatic</French>
+		<German>Karnatic</German>
+		<Italian>Karnatic</Italian>
+		<Spanish>Karnatic</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_SHORT_DESC</Tag>
+		<English>Karnataka</English>
+		<French>Karnataka</French>
+		<German>Karnataka</German>
+		<Italian>Karnataka</Italian>
+		<Spanish>Karnataka</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_DEFAULT</Tag>
+		<English>%s2 Maharajate</English>
+		<French>%s2 Maharajate</French>
+		<German>%s2 Maharajate</German>
+		<Italian>%s2 Maharajate</Italian>
+		<Spanish>%s2 Maharajate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_MYSORE</Tag>
+		<English>Mysore</English>
+		<French>Mysore</French>
+		<German>Mysore</German>
+		<Italian>Mysore</Italian>
+		<Spanish>Mysore</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_BAHMANI</Tag>
+		<English>Bahmani</English>
+		<French>Bahmani</French>
+		<German>Bahmani</German>
+		<Italian>Bahmani</Italian>
+		<Spanish>Bahmani</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_RASHTRAKUTA</Tag>
+		<English>Rashtrakuta</English>
+		<French>Rashtrakuta</French>
+		<German>Rashtrakuta</German>
+		<Italian>Rashtrakuta</Italian>
+		<Spanish>Rashtrakuta</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_CHALUKYA</Tag>
+		<English>Chalukya</English>
+		<French>Chalukya</French>
+		<German>Chalukya</German>
+		<Italian>Chalukya</Italian>
+		<Spanish>Chalukya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_SATAVAHANA</Tag>
+		<English>Satavahana</English>
+		<French>Satavahana</French>
+		<German>Satavahana</German>
+		<Italian>Satavahana</Italian>
+		<Spanish>Satavahana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_FASCIST</Tag>
+		<English>National Republic of %s1</English>
+		<French>National Republic of %s1</French>
+		<German>National Republic of %s1</German>
+		<Italian>National Republic of %s1</Italian>
+		<Spanish>National Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_KARNATAKA_VASSAL</Tag>
+		<English>Rashtra of %s1</English>
+		<French>Rashtra of %s1</French>
+		<German>Rashtra of %s1</German>
+		<Italian>Rashtra of %s1</Italian>
+		<Spanish>Rashtra of %s1</Spanish>
+	</TEXT>
+</Civ4GameText>

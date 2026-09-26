@@ -1908,14 +1908,14 @@
 			<Button>Art/Structures/Buildings/Taixue/taixue.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_INDIAN_STEPWELL</Type>
-			<LSystem>LSYSTEM_3x3</LSystem>
+			<Type>ART_DEF_BUILDING_RAJPUT_STEPWELL</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
 			<bAnimated>0</bAnimated>
-			<fScale>1.0</fScale>
-			<fInterfaceScale>0.4</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Stepwell/Khmer_Baray.nif</NIF>
+			<fScale>0.65</fScale>
+			<fInterfaceScale>0.7</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Stepwell/Stepwell.nif</NIF>
 			<KFM/>
-			<Button>,Art/Interface/Buttons/Buildings/Aqueduct.dds,Art/Interface/Buttons/Beyond_the_Sword_Atlas.dds,8,7</Button>
+			<Button>Art/Structures/Buildings/Stepwell/Stepwell.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_THAI_HO_TRAI</Type>
@@ -3708,16 +3708,6 @@
 			<Button>Art/Structures/Buildings/Ostrog/Ostrog.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
-			<Type>ART_DEF_BUILDING_DRAVIDIAN_GOPURAM</Type>
-			<LSystem>LSYSTEM_3x2</LSystem>
-			<bAnimated>1</bAnimated>
-			<fScale>1.5</fScale>
-			<fInterfaceScale>0.2</fInterfaceScale>
-			<NIF>Art/Structures/Buildings/Gopuram/india_temple.nif</NIF>
-			<KFM/>
-			<Button>Art/Structures/Buildings/Gopuram/Gopuram.dds</Button>
-		</BuildingArtInfo>
-		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_THAI_FLOATING_MARKET</Type>
 			<LSystem>LSYSTEM_RIVER</LSystem>
 			<bAnimated>0</bAnimated>
@@ -3955,7 +3945,7 @@
 			<fInterfaceScale>0.5</fInterfaceScale>
 			<NIF>Art/Structures/Buildings/Hindu_Holy_Site/mahabodhi.nif</NIF>
 			<KFM/>
-			<Button>Art/Structures/Buildings/Hindu_Holy_Site/hindu_holy_site.dds</Button>
+			<Button>Art/Interface/Buttons/Buildings/Hindu_Holy_Site.dds</Button>
 		</BuildingArtInfo>
 		<BuildingArtInfo>
 			<Type>ART_DEF_BUILDING_BUDDHIST_HOLY_SITE</Type>
@@ -4386,6 +4376,116 @@
 			<NIF>Art/Structures/Buildings/Council/senate.nif</NIF>
 			<KFM/>
 			<Button>Art/Structures/Buildings/Council/Council.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_TEMPLE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.9</fScale>
+			<fInterfaceScale>0.52</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Temple/hindu_temple.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Temple.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_CATHEDRAL</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Cathedral/Brihadeeswarar.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Cathedral.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_MONASTERY</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.55</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Monastery/Hindu_monastery.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Monastery.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_RELIQUARY</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Hindu_Reliquary/hindu.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Reliquary.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_HOLY_SITE</Type>
+			<LSystem>LSYSTEM_3x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>10.0</fScale>
+			<fInterfaceScale>0.5</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Hindu_Holy_Site/mahabodhi.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Holy_Site.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_JAIN_SHRINE</Type>
+			<LSystem>LSYSTEM_2x3</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>2.0</fScale>
+			<fInterfaceScale>0.45</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Jain_Shrine/2birla.nif</NIF>
+			<KFM/>
+			<Button>Art/Interface/Buttons/Buildings/Jain_Shrine.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_BENGALI_KATRA</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.9</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Katra/Maristan.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Katra/Katra.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KARNATIC_VIRAGALLU</Type>
+			<LSystem>LSYSTEM_1x1</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.5</fScale>
+			<fInterfaceScale>3.0</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Viragallu/stele.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Viragallu/Viragallu.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_KAILASA_TEMPLE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>7.5</fScale>
+			<fInterfaceScale>0.8</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Kailasa/pagod5.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Kailasa/Kailasa.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_TAMIL_URUKKU_FORGE</Type>
+			<LSystem>LSYSTEM_2x2</LSystem>
+			<bAnimated>0</bAnimated>
+			<fScale>0.17</fScale>
+			<fInterfaceScale>0.6</fInterfaceScale>
+			<NIF>Art/Structures/Buildings/Urukku/caravan1.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Buildings/Urukku/Urukku.dds</Button>
+		</BuildingArtInfo>
+		<BuildingArtInfo>
+			<Type>ART_DEF_BUILDING_MINAKSHI_TEMPLE</Type>
+			<LSystem>LSYSTEM_3x2</LSystem>
+			<bAnimated>1</bAnimated>
+			<fScale>1.5</fScale>
+			<fInterfaceScale>0.4</fInterfaceScale>
+			<NIF>Art/Structures/Wonders/Minakshi/india_temple.nif</NIF>
+			<KFM/>
+			<Button>Art/Structures/Wonders/Minakshi/Minakshi.dds</Button>
 		</BuildingArtInfo>
 	</BuildingArtInfos>
 </Civ4ArtDefines>

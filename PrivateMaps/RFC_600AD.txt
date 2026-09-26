@@ -917,8 +917,8 @@ BeginPlot
 		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_ORTHODOX_MONASTERY
-		BuildingType=BUILDING_GREAT_SPHINX
 		BuildingType=BUILDING_PYRAMIDS
+		BuildingType=BUILDING_GREAT_SPHINX
 		ReligionType=RELIGION_JUDAISM
 		ReligionType=RELIGION_ORTHODOXY
 		BeginCulture
@@ -1646,15 +1646,15 @@ BeginPlot
 	x=100,y=43
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginCity
@@ -1704,6 +1704,14 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
+	x=101,y=39
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=101,y=49
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=101,y=55
 	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
@@ -1712,22 +1720,65 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=102,y=39
+	BeginUnit
+		UnitType=UNIT_WAR_GALLEY
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+EndPlot
+BeginPlot
+	x=102,y=47
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_INDEPENDENT2
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_INDEPENDENT2
+		CityName=Lahore
+		CityPopulation=4
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_BATH
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		ReligionType=RELIGION_JAINISM
+		ReligionType=RELIGION_BUDDHISM
+		BeginCulture
+			Civilization=CIVILIZATION_INDEPENDENT2, Culture=50
+		EndCulture
+	EndCity
+EndPlot
+BeginPlot
 	x=102,y=48
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=102,y=49
+	x=102,y=50
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
@@ -1743,6 +1794,7 @@ BeginPlot
 		BuildingType=BUILDING_MARKET
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		ReligionType=RELIGION_JAINISM
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=50
@@ -1763,6 +1815,37 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=103,y=40
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_KARNATAKA
+		CityName=Bharutkachha
+		CityPopulation=2
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_KARNATIC_VIRAGALLU
+		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_MARKET
+		ReligionType=RELIGION_HINDUISM
+		BeginCulture
+			Civilization=CIVILIZATION_KARNATAKA, Culture=10
+		EndCulture
+	EndCity
+EndPlot
+BeginPlot
+	x=103,y=42
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=103,y=47
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -1775,40 +1858,98 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=104,y=40
+	ImprovementType=IMPROVEMENT_PASTURE
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=104,y=42
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDEPENDENT2
+		UnitType=UNIT_RAJPUT_KATHIAWARI
+		UnitOwner=CIVILIZATION_RAJPUTS
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDEPENDENT2
+		UnitType=UNIT_RAJPUT_KATHIAWARI
+		UnitOwner=CIVILIZATION_RAJPUTS
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDEPENDENT2
+		UnitType=UNIT_RAJPUT_KATHIAWARI
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RAJPUT_KATHIAWARI
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_RAJPUT_KATHIAWARI
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_HEAVY_SPEARMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWORDSMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWORDSMAN
+		UnitOwner=CIVILIZATION_RAJPUTS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_INDEPENDENT2
+		UnitOwner=CIVILIZATION_RAJPUTS
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDEPENDENT2
+		CityOwner=CIVILIZATION_RAJPUTS
 		CityName=Ujjayni
-		CityPopulation=3
+		CityPopulation=5
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_STABLE
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_JEWELLER
+		BuildingType=BUILDING_MARKET
+		BuildingType=BUILDING_RAJPUT_STEPWELL
 		BuildingType=BUILDING_HINDU_TEMPLE
+		BuildingType=BUILDING_JAIN_TEMPLE
+		BuildingType=BUILDING_JAIN_SHRINE
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		HolyCityReligionType=RELIGION_JAINISM
 		BeginCulture
-			Civilization=CIVILIZATION_INDEPENDENT2, Culture=50
+			Civilization=CIVILIZATION_RAJPUTS, Culture=100
 		EndCulture
 		YearFounded=-705
-		YearAcquired=-3000
+		YearAcquired=490
 		PreviousOwner=CIVILIZATION_INDIA
 	EndCity
+EndPlot
+BeginPlot
+	x=104,y=43
+	ImprovementType=IMPROVEMENT_FARM
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=104,y=46
@@ -1883,8 +2024,65 @@ BeginPlot
 			Civilization=CIVILIZATION_TURKS, Culture=10
 		EndCulture
 		YearFounded=550
-		YearAcquired=550
 	EndCity
+EndPlot
+BeginPlot
+	x=105,y=37
+	RouteType=ROUTE_ROAD
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WAR_ELEPHANT
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_KARNATIC_KARNATABALA
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_KARNATIC_KARNATABALA
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SPEARMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
+	BeginCity
+		CityOwner=CIVILIZATION_KARNATAKA
+		CityName=Vatapi
+		CityPopulation=5
+		BuildingType=BUILDING_PALACE
+		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_KARNATIC_VIRAGALLU
+		BuildingType=BUILDING_WALLS
+		BuildingType=BUILDING_LIBRARY
+		BuildingType=BUILDING_AQUEDUCT
+		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
+		BeginCulture
+			Civilization=CIVILIZATION_KARNATAKA, Culture=50
+		EndCulture
+	EndCity
+EndPlot
+BeginPlot
+	x=105,y=38
+	ImprovementType=IMPROVEMENT_QUARRY
+EndPlot
+BeginPlot
+	x=105,y=39
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=105,y=43
@@ -1894,19 +2092,15 @@ BeginPlot
 	x=105,y=46
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDEPENDENT
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitType=UNIT_CROSSBOWMAN
 		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
@@ -1927,6 +2121,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_MONASTERY
 		BuildingType=BUILDING_IRON_PILLAR
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
 			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
@@ -1959,6 +2154,25 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
+	x=106,y=32
+	ImprovementType=IMPROVEMENT_CAMP
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=106,y=33
+	ImprovementType=IMPROVEMENT_PADDY_FIELD
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=106,y=35
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=106,y=38
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
 	x=106,y=43
 	RouteType=ROUTE_ROAD
 EndPlot
@@ -1975,36 +2189,36 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_WAR_ELEPHANT
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_HEAVY_SPEARMAN
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_DRAVIDIA
+		CityOwner=CIVILIZATION_TAMILS
 		CityName=Kanchipuram
-		CityPopulation=2
+		CityPopulation=4
 		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
@@ -2012,7 +2226,7 @@ BeginPlot
 		BuildingType=BUILDING_HINDU_TEMPLE
 		ReligionType=RELIGION_HINDUISM
 		BeginCulture
-			Civilization=CIVILIZATION_DRAVIDIA, Culture=50
+			Civilization=CIVILIZATION_TAMILS, Culture=50
 		EndCulture
 		YearFounded=-300
 	EndCity
@@ -2026,7 +2240,8 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=107,y=37
+	x=107,y=38
+	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -2042,12 +2257,12 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitOwner=CIVILIZATION_TAMILS
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_DRAVIDIA
+		CityOwner=CIVILIZATION_TAMILS
 		CityName=Anuratapuram
-		CityPopulation=2
+		CityPopulation=3
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
@@ -2055,25 +2270,30 @@ BeginPlot
 		BuildingType=BUILDING_JETAVANARAMAYA
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_DRAVIDIA, Culture=10
+			Civilization=CIVILIZATION_TAMILS, Culture=10
 		EndCulture
 		YearFounded=-500
 	EndCity
+EndPlot
+BeginPlot
+	x=108,y=37
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=108,y=38
 	BonusType=NONE
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_ARCHER
-		UnitOwner=CIVILIZATION_DRAVIDIA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_KARNATAKA
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_DRAVIDIA
+		CityOwner=CIVILIZATION_KARNATAKA
 		CityName=Vengipuram
 		CityPopulation=3
 		BuildingType=BUILDING_BARRACKS
@@ -2081,8 +2301,9 @@ BeginPlot
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
 		ReligionType=RELIGION_HINDUISM
+		ReligionType=RELIGION_JAINISM
 		BeginCulture
-			Civilization=CIVILIZATION_DRAVIDIA, Culture=10
+			Civilization=CIVILIZATION_KARNATAKA, Culture=10
 		EndCulture
 		YearFounded=-300
 		YearAcquired=-180
@@ -2104,14 +2325,22 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 	BeginUnit
 		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitOwner=CIVILIZATION_INDEPENDENT2
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitOwner=CIVILIZATION_INDEPENDENT2
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_WORKER
+		UnitOwner=CIVILIZATION_INDEPENDENT2
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDIA
+		CityOwner=CIVILIZATION_INDEPENDENT2
 		CityName=Kashi
 		CityPopulation=4
 		BuildingType=BUILDING_HINDU_TEMPLE
@@ -2122,7 +2351,7 @@ BeginPlot
 		HolyCityReligionType=RELIGION_HINDUISM
 		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_INDIA, Culture=100
+			Civilization=CIVILIZATION_INDEPENDENT2, Culture=100
 		EndCulture
 		YearFounded=-795
 	EndCity
@@ -2130,6 +2359,22 @@ EndPlot
 BeginPlot
 	x=108,y=56
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=109,y=30
+	ImprovementType=IMPROVEMENT_MINE
+	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=109,y=35
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=109,y=37
+	BeginUnit
+		UnitType=UNIT_WAR_GALLEY
+		UnitOwner=CIVILIZATION_KARNATAKA
+	EndUnit
 EndPlot
 BeginPlot
 	x=109,y=39
@@ -2144,57 +2389,41 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=110,y=32
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=110,y=42
+	ImprovementType=IMPROVEMENT_CAMP
+EndPlot
+BeginPlot
 	x=110,y=43
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=110,y=45
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT
-		UnitOwner=CIVILIZATION_INDIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WAR_ELEPHANT
-		UnitOwner=CIVILIZATION_INDIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SWORDSMAN
-		UnitOwner=CIVILIZATION_INDIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_SWORDSMAN
-		UnitOwner=CIVILIZATION_INDIA
+		UnitType=UNIT_INDIAN_PATIYODHA
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginUnit
 		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_INDIA
-	EndUnit
-	BeginUnit
-		UnitType=UNIT_WORKER
-		UnitOwner=CIVILIZATION_INDIA
+		UnitOwner=CIVILIZATION_INDEPENDENT
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDIA
+		CityOwner=CIVILIZATION_INDEPENDENT
 		CityName=Pataliputra
-		CityPopulation=8
-		BuildingType=BUILDING_PALACE
+		CityPopulation=6
 		BuildingType=BUILDING_BARRACKS
 		BuildingType=BUILDING_GRANARY
 		BuildingType=BUILDING_LIBRARY
@@ -2207,7 +2436,7 @@ BeginPlot
 		ReligionType=RELIGION_BUDDHISM
 		HolyCityReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_INDIA, Culture=100
+			Civilization=CIVILIZATION_INDEPENDENT, Culture=100
 		EndCulture
 		YearFounded=-490
 	EndCity
@@ -2220,28 +2449,32 @@ BeginPlot
 	x=111,y=42
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_BENGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_BENGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_BENGAL
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDIA
+		CityOwner=CIVILIZATION_BENGAL
 		CityName=Tamralipta
-		CityPopulation=2
+		CityPopulation=4
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
 		BuildingType=BUILDING_WALLS
 		BuildingType=BUILDING_HARBOR
+		BuildingType=BUILDING_AQUEDUCT
+		BuildingType=BUILDING_LIGHTHOUSE
 		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_INDIA, Culture=50
+			Civilization=CIVILIZATION_BENGAL, Culture=50
 		EndCulture
 		YearFounded=-705
 	EndCity
@@ -2259,6 +2492,21 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
+	x=112,y=40
+	ImprovementType=IMPROVEMENT_FISHING_BOATS
+EndPlot
+BeginPlot
+	x=112,y=41
+	BeginUnit
+		UnitType=UNIT_WAR_GALLEY
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_GALLEY
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+EndPlot
+BeginPlot
 	x=112,y=42
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
 EndPlot
@@ -2266,26 +2514,59 @@ BeginPlot
 	x=112,y=44
 	RouteType=ROUTE_ROAD
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitType=UNIT_BENGALI_VARU
+		UnitOwner=CIVILIZATION_BENGAL
 	EndUnit
 	BeginUnit
-		UnitType=UNIT_INDIAN_PATIYODHA
-		UnitOwner=CIVILIZATION_INDIA
+		UnitType=UNIT_BENGALI_VARU
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CROSSBOWMAN
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWORDSMAN
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_SWORDSMAN
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CATAPULT
+		UnitOwner=CIVILIZATION_BENGAL
+	EndUnit
+	BeginUnit
+		UnitType=UNIT_CATAPULT
+		UnitOwner=CIVILIZATION_BENGAL
 	EndUnit
 	BeginCity
-		CityOwner=CIVILIZATION_INDIA
-		CityName=Lakshmanavati
-		CityPopulation=3
+		CityOwner=CIVILIZATION_BENGAL
+		CityName=Gauda
+		CityPopulation=4
+		BuildingType=BUILDING_PALACE
 		BuildingType=BUILDING_GRANARY
+		BuildingType=BUILDING_WEAVER
+		BuildingType=BUILDING_AQUEDUCT
 		BuildingType=BUILDING_FORGE
 		BuildingType=BUILDING_HINDU_TEMPLE
-		ReligionType=RELIGION_HINDUISM
+		BuildingType=BUILDING_BUDDHIST_TEMPLE
+		BuildingType=BUILDING_BUDDHIST_MONASTERY
+		ReligionType=RELIGION_BUDDHISM
 		BeginCulture
-			Civilization=CIVILIZATION_INDIA, Culture=50
+			Civilization=CIVILIZATION_BENGAL, Culture=50
 		EndCulture
 		YearFounded=-500
 	EndCity
+EndPlot
+BeginPlot
+	x=112,y=45
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=112,y=57
@@ -2306,6 +2587,10 @@ BeginPlot
 		EndCulture
 		YearFounded=-1005
 	EndCity
+EndPlot
+BeginPlot
+	x=113,y=45
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=113,y=56

@@ -45582,6 +45582,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=39
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46110,8 +46111,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=50
-	BonusType=BONUS_SPICES
-	BonusVarietyType=BONUS_SPICES_SAFFRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -46486,7 +46485,7 @@ EndPlot
 BeginPlot
 	x=103,y=37
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -46567,6 +46566,8 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=50
+	BonusType=BONUS_SPICES
+	BonusVarietyType=BONUS_SPICES_SAFFRON
 	FeatureType=FEATURE_FOREST, FeatureVariety=1
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -46946,7 +46947,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_INCENSE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -46967,7 +46968,6 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	BonusType=BONUS_COW
-	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -47389,14 +47389,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=35
-	TerrainType=TERRAIN_PLAINS
-	PlotType=1
-EndPlot
-BeginPlot
-	x=105,y=36
 	BonusType=BONUS_MILLET
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
+EndPlot
+BeginPlot
+	x=105,y=36
+	TerrainType=TERRAIN_PLAINS
+	PlotType=1
 EndPlot
 BeginPlot
 	x=105,y=37
@@ -47407,7 +47407,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=105,y=38
-	BonusType=BONUS_IVORY
+	BonusType=BONUS_STONE
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
@@ -47835,6 +47835,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=106,y=32
+	BonusType=BONUS_IVORY
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -48805,7 +48806,6 @@ BeginPlot
 	x=108,y=38
 	isNOfRiver
 	RiverWEDirection=1
-	BonusType=BONUS_IRON
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
@@ -48825,7 +48825,7 @@ EndPlot
 BeginPlot
 	x=108,y=41
 	BonusType=BONUS_CITRUS
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -49275,6 +49275,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=39
+	BonusType=BONUS_IRON
 	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
@@ -51511,6 +51512,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=40
+	BonusType=BONUS_CLAM
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

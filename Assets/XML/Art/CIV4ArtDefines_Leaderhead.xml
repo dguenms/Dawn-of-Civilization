@@ -648,11 +648,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_SHIVAJI</Type>
-			<Button>Art/leaderheads/Bhoja/Bhoja.dds</Button>
-			<NIF>art/leaderheads/Bhoja/Asoka.nif</NIF>
-			<KFM>art/leaderheads/Bhoja/Asoka.kfm</KFM>
-			<NoShaderNIF>art/leaderheads/Bhoja/Asoka.nif</NoShaderNIF>
-			<BackgroundKFM>art/leaderheads/Bhoja/Asoka_bg.kfm</BackgroundKFM>
+			<Button>Art/leaderheads/Shivaji/Shivaji.dds</Button>
+			<NIF>art/leaderheads/Shivaji/Asoka.nif</NIF>
+			<KFM>art/leaderheads/Shivaji/Asoka.kfm</KFM>
+			<NoShaderNIF>art/leaderheads/Shivaji/Asoka.nif</NoShaderNIF>
+			<BackgroundKFM>art/leaderheads/Shivaji/Asoka_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_ISABELLA_NEW</Type>
@@ -896,11 +896,11 @@
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_KRISHNA_DEVA_RAYA</Type>
-			<Button>Art/LeaderHeads/Dharmapala/Krishnadevaraya.dds</Button>
-			<NIF>art/LeaderHeads/Dharmapala/masinissa.nif</NIF>
-			<KFM>art/LeaderHeads/Dharmapala/augustus_caesar.kfm</KFM>
-			<NoShaderNIF>art/LeaderHeads/Dharmapala/masinissa.nif</NoShaderNIF>
-			<BackgroundKFM>art/LeaderHeads/Dharmapala/Augustus_Caesar_BG2.kfm</BackgroundKFM>
+			<Button>Art/LeaderHeads/Krishnadevaraya/Krishnadevaraya.dds</Button>
+			<NIF>art/LeaderHeads/Krishnadevaraya/masinissa.nif</NIF>
+			<KFM>art/LeaderHeads/Krishnadevaraya/augustus_caesar.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Krishnadevaraya/masinissa.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Krishnadevaraya/Augustus_Caesar_BG2.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 		<LeaderheadArtInfo>
 			<Type>ART_DEF_LEADER_BHUTTO</Type>
@@ -1261,6 +1261,54 @@
 			<KFM>Art/Leaderheads/Songtsen/Stuyvesant.kfm</KFM>
 			<NoShaderNIF>Art/Leaderheads/Songtsen/S_Gampo.nif</NoShaderNIF>
 			<BackgroundKFM>Art/Leaderheads/Songtsen/Zara Yaqob_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_ALAUDDIN</Type>
+			<Button>Art/Leaderheads/Alauddin/Alauddin.dds</Button>
+			<NIF>Art/Leaderheads/Alauddin/tokugawa.nif</NIF>
+			<KFM>Art/Leaderheads/Alauddin/tokugawa.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Alauddin/tokugawa.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Alauddin/tokugawa_bg.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_BHOJA</Type>
+			<Button>Art/Leaderheads/Bhoja/Bhoja.dds</Button>
+			<NIF>art/LeaderHeads/Bhoja/Tachnechobrus.nif</NIF>
+			<KFM>art/LeaderHeads/Bhoja/Tachnechobrus.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Bhoja/Tachnechobrus.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Bhoja/Tachnechobrus_Background.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_AMOGHAVARSHA</Type>
+			<Button>Art/Leaderheads/Amoghavarsha/Amoghavarsha.dds</Button>
+			<NIF>Art/Leaderheads/Amoghavarsha/asoka.nif</NIF>
+			<KFM>Art/Leaderheads/Amoghavarsha/asoka.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Amoghavarsha/asoka.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Amoghavarsha/Asoka_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_DHARMAPALA</Type>
+			<Button>Art/LeaderHeads/Dharmapala/Dharmapala.dds</Button>
+			<NIF>art/LeaderHeads/Dharmapala/Tokugawa.nif</NIF>
+			<KFM>art/LeaderHeads/Dharmapala/Tokugawa.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Dharmapala/Tokugawa.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Dharmapala/Tokugawa_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_SANGA</Type>
+			<Button>Art/Leaderheads/Sanga/Sanga.dds</Button>
+			<NIF>art/LeaderHeads/Sanga/Pacal.nif</NIF>
+			<KFM>art/LeaderHeads/Sanga/Pacal.kfm</KFM>
+			<NoShaderNIF>art/LeaderHeads/Sanga/Pacal_NONSHADER.nif</NoShaderNIF>
+			<BackgroundKFM>art/LeaderHeads/Sanga/Pacal_BG.kfm</BackgroundKFM>
+		</LeaderheadArtInfo>
+		<LeaderheadArtInfo>
+			<Type>ART_DEF_LEADER_MANGAMMAL</Type>
+			<Button>Art/Leaderheads/Mangammal/Button_Mangammal.dds</Button>
+			<NIF>Art/Leaderheads/Mangammal/mansa_musa.nif</NIF>
+			<KFM>Art/Leaderheads/Mangammal/mansa_musa.kfm</KFM>
+			<NoShaderNIF>Art/Leaderheads/Mangammal/mansa_musa.nif</NoShaderNIF>
+			<BackgroundKFM>Art/Leaderheads/Mangammal/mansa_musa_bg.kfm</BackgroundKFM>
 		</LeaderheadArtInfo>
 	</LeaderheadArtInfos>
 </Civ4ArtDefines>

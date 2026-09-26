@@ -23,25 +23,24 @@ lCivilizations = [
 		techs=techs.column(6).including(iMachinery, iAlchemy, iCivilService).without(iNobility)
 	),
 	Civilization(
-		iIndia,
-		iLeader=iChandragupta,
-		iGold=200,
-		iStateReligion=iHinduism,
-		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iRedistribution, iClergy],
-		techs=techs.column(5).including(iArchitecture, iArtisanry, iScholarship, iEthics),
-	),
-	Civilization(
 		iCelts,
 		iStateReligion=iCatholicism,
 		lCivics=[iMonarchy, iManorialism, iRedistribution, iMonasticism],
 		techs=techs.column(4).including(iCurrency, iLaw, iMedicine, iPhilosophy, iEthics),
 	),
 	Civilization(
-		iDravidia,
+		iTamils,
 		iGold=100,
 		iStateReligion=iHinduism,
 		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iMerchantTrade, iMonasticism, iThalassocracy],
 		techs=techs.column(5).including(iArtisanry, iPolitics, iEthics),
+	),
+	Civilization(
+		iKarnataka,
+		iGold=200,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iCitizenship, iCasteSystem, iRedistribution, iSyncretism],
+		techs=techs.column(5).including(iArchitecture, iArtisanry, iScholarship, iEthics),
 	),
 	Civilization(
 		iToltecs,
@@ -84,6 +83,13 @@ lCivilizations = [
 		techs=techs.column(6).including(iFeudalism)
 	),
 	Civilization(
+		iRajputs,
+		iGold=100,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iMerchantTrade, iClergy],
+		techs=techs.column(5).including(iNobility, iSteel, iArchitecture, iArtisanry),
+	),
+	Civilization(
 		iMalays,
 		iGold=100,
 		iStateReligion=iBuddhism,
@@ -110,6 +116,13 @@ lCivilizations = [
 		lCivics=[iDespotism, iSlavery, iMerchantTrade, iHegemony],
 		lEnemies=[iIndependent, iIndependent2],
 		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
+	),
+	Civilization(
+		iBengal,
+		iGold=200,
+		iStateReligion=iHinduism,
+		lCivics=[iElective, iCitizenship, iCasteSystem, iMerchantTrade, iClergy],
+		techs=techs.column(5).including(iArchitecture, iArtisanry, iPolitics, iEthics),
 	),
 	Civilization(
 		iNative,
@@ -156,11 +169,11 @@ def createStartingUnits():
 	capital = plots.capital(iCelts)
 	createRoleUnit(iCelts, capital, iFerry, 1)
 
-	# Dravidia
-	capital = plots.capital(iDravidia)
-	createRoleUnit(iDravidia, capital, iFerry, 2)
-	createRoleUnit(iDravidia, capital, iEscort, 1)
-	createRoleUnit(iDravidia, capital, iWorkerSea, 2)
+	# Tamils
+	capital = plots.capital(iTamils)
+	createRoleUnit(iTamils, capital, iFerry, 2)
+	createRoleUnit(iTamils, capital, iEscort, 1)
+	createRoleUnit(iTamils, capital, iWorkerSea, 2)
 	
 	# Korea
 	capital = plots.capital(iKorea)
@@ -233,17 +246,16 @@ scenario600AD = Scenario(
 	
 	dGreatPeopleCreated = {
 		iChina: 5,
-		iIndia: 4,
-		iDravidia: 2,
+		iTamils: 2,
+		iKarnataka: 1,
 		iKorea: 1,
 		iToltecs: 1,
 	},
 	dGreatGeneralsCreated = {
 		iChina: 1,
-		iIndia: 1,
 	},
 	
-	lAllGoalsFailed = [iNubia, iIndia, iCelts, iDravidia, iToltecs],
+	lAllGoalsFailed = [iNubia, iCelts, iTamils, iToltecs],
 	setupGoals = setupGoals,
 	
 	updateData = updateData,

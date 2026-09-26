@@ -51,10 +51,14 @@ def getCompanyLimit(iCompany):
 	
 	iEnabledCount = players.major().existing().count(lambda p: canHaveCompany(iCompany, p))
 	
-	return min(3 * iEnabledCount, tCompaniesLimit[iCompany])
+	return min(3 * max(2, iEnabledCount), tCompaniesLimit[iCompany])
 	
 	
 def canHaveCompany(iCompany, iPlayer):
+	# Bengal UP: Textile Industry is unlocked with Companies
+	if civ(iPlayer) == iBengal and iCompany == iTextileIndustry and team(player(iPlayer).getTeam()).isHasTech(iCompanies):
+		return True
+	
 	return all(team(iPlayer).isHasTech(iTech) for iTech in dCompanyTechs[iCompany])
 	
 
@@ -146,7 +150,7 @@ def getCityValue(city, iCompany):
 			
 	elif iCompany == iTradingCompany:
 		if not city.isHasRealBuilding(unique_building(city.getOwner(), iTradingCompanyBuilding)):
-			if city.getRegionID() not in [rCaribbean, rArabia, rDeccan, rDravida, rBengal, rIndochina, rIndonesia, rPhilippines] + lSubSaharanAfrica:
+			if city.getRegionID() not in [rCaribbean, rArabia, rDeccan, rTamilakam, rBengal, rIndochina, rIndonesia, rPhilippines] + lSubSaharanAfrica:
 				return -1
 			
 			if not city.isCoastal(20):

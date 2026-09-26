@@ -538,6 +538,14 @@
 		<Spanish>The [COLOR_BUILDING_TEXT]Edict[COLOR_REVERT], the Indian replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], lowers city maintenance costs.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_INDIAN_EDICT_HELP</Tag>
+		<English>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</English>
+		<French>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</French>
+		<German>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</German>
+		<Italian>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</Italian>
+		<Spanish>[ICON_BULLET]Free [LINK=literal]Mobility[\LINK] Promotion for Civilian Units</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_MUGHAL_DURBAR</Tag>
 		<English>Durbar</English>
 		<French>Durbar</French>
@@ -1116,14 +1124,6 @@
 		<German>[COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT] increase food output in cities with access to power.</German>
 		<Italian>[COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT] increase food output in cities with access to power.</Italian>
 		<Spanish>[COLOR_BUILDING_TEXT]Supermarkets[COLOR_REVERT] increase food output in cities with access to power.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILDING_DRAVIDIAN_GOPURAM</Tag>
-		<English>Gopuram</English>
-		<French>Gopuram</French>
-		<German>Gopuram</German>
-		<Italian>Gopuram</Italian>
-		<Spanish>Gopuram</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZULU_IKHANDA_STRATEGY</Tag>
@@ -3928,6 +3928,166 @@
 		<German>The [COLOR_BUILDING_TEXT]Council[COLOR_REVERT] provides a [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] slot in the capital city.</German>
 		<Italian>The [COLOR_BUILDING_TEXT]Council[COLOR_REVERT] provides a [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] slot in the capital city.</Italian>
 		<Spanish>The [COLOR_BUILDING_TEXT]Council[COLOR_REVERT] provides a [COLOR_HIGHLIGHT_TEXT]Statesman[COLOR_REVERT] slot in the capital city.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_TEMPLE</Tag>
+		<English>Jain Basadi</English>
+		<French>Jain Basadi</French>
+		<German>Jain Basadi</German>
+		<Italian>Jain Basadi</Italian>
+		<Spanish>Jain Basadi</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_TEMPLE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</English>
+		<French>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</French>
+		<German>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Temples[COLOR_REVERT]) increase a city's happiness and culture. In addition, they provide additional happiness and a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. [COLOR_BUILDING_TEXT]Basadis[COLOR_REVERT] are required to build the [COLOR_BUILDING_TEXT]Jain Shikhara[COLOR_REVERT] building.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_MONASTERY</Tag>
+		<English>Jain Matha</English>
+		<French>Jain Matha</French>
+		<German>Jain Matha</German>
+		<Italian>Jain Matha</Italian>
+		<Spanish>Jain Matha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_MONASTERY_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</English>
+		<French>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</French>
+		<German>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Mathas[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Jain Munis[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_CATHEDRAL</Tag>
+		<English>Jain Shikhara</English>
+		<French>Jain Shikhara</French>
+		<German>Jain Shikhara</German>
+		<Italian>Jain Shikhara</Italian>
+		<Spanish>Jain Shikhara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_CATHEDRAL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</English>
+		<French>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</French>
+		<German>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shikhara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Cathedral[COLOR_REVERT]) increases its city's cultural output and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. If [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion, this effect is increased, and the building provides additional happiness.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_RELIQUARY</Tag>
+		<English>Jain Reliquary</English>
+		<French>Jain Reliquary</French>
+		<German>Jain Reliquary</German>
+		<Italian>Jain Reliquary</Italian>
+		<Spanish>Jain Reliquary</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_RELIQUARY_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_HOLY_SITE</Tag>
+		<English>Jain Holy Site</English>
+		<French>Jain Holy Site</French>
+		<German>Jain Holy Site</German>
+		<Italian>Jain Holy Site</Italian>
+		<Spanish>Jain Holy Site</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_HOLY_SITE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_SHRINE</Tag>
+		<English>Palitana</English>
+		<French>Palitana</French>
+		<German>Palitana</German>
+		<Italian>Palitana</Italian>
+		<Spanish>Palitana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_JAIN_SHRINE_STRATEGY</Tag>
+		<English>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</English>
+		<French>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</French>
+		<German>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</German>
+		<Italian>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Palitana[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Shrine[COLOR_REVERT]) increases the gold output and the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot, and additional slots if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion. It spreads [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] throughout the world and increases the chances of generating a [COLOR_UNIT_TEXT]Great Prophet[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BENGALI_KATRA</Tag>
+		<English>Katra</English>
+		<French>Katra</French>
+		<German>Katra</German>
+		<Italian>Katra</Italian>
+		<Spanish>Katra</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_BENGALI_KATRA_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</English>
+		<French>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</French>
+		<German>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Katra[COLOR_REVERT], the Bengali replacement for the [COLOR_BUILDING_TEXT]Bank[COLOR_REVERT], is available with [COLOR_TECH_TEXT]Commune[COLOR_REVERT] and provides additional foreign trade route yield.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RAJPUT_STEPWELL</Tag>
+		<English>Stepwell</English>
+		<French>Stepwell</French>
+		<German>Stepwell</German>
+		<Italian>Stepwell</Italian>
+		<Spanish>Stepwell</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_RAJPUT_STEPWELL_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Stepwell[COLOR_REVERT], the Rajput replacement for the [COLOR_BUILDING_TEXT]Bath[COLOR_REVERT], does not require an [COLOR_BUILDING_TEXT]Aqueduct[COLOR_REVERT] and provides additional food and an additional [COLOR_HIGHLIGHT_TEXT]Engineer[COLOR_REVERT] slot.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARNATIC_VIRAGALLU</Tag>
+		<English>Viragallu</English>
+		<French>Viragallu</French>
+		<German>Viragallu</German>
+		<Italian>Viragallu</Italian>
+		<Spanish>Viragallu</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_KARNATIC_VIRAGALLU_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</English>
+		<French>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</French>
+		<German>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Viragallu[COLOR_REVERT], the Karnatic replacement for the [COLOR_BUILDING_TEXT]Monument[COLOR_REVERT], grants a free [COLOR_HIGHLIGHT_TEXT]Combat I[COLOR_REVERT] promotion to units built in the city and increases unit heal rate.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE</Tag>
+		<English>Urukku Forge</English>
+		<French>Urukku Forge</French>
+		<German>Urukku Forge</German>
+		<Italian>Urukku Forge</Italian>
+		<Spanish>Urukku Forge</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_BUILDING_TAMIL_URUKKU_FORGE_STRATEGY</Tag>
+		<English>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</English>
+		<French>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</French>
+		<German>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Urukku Forge[COLOR_REVERT], the Tamil replacement for the [COLOR_BUILDING_TEXT]Forge[COLOR_REVERT], grants additional experience to Melee units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_</Tag>

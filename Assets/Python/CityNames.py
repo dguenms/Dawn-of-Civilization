@@ -32,8 +32,9 @@ dBaseLanguages = {
 	iCelts: (iCeltic,),
 	iRome: (iLatin, iGreek),
 	iMaya: (iMayan,),
-	iDravidia: (iDravidian, iIndian),
+	iTamils: (iDravidian, iIndian),
 	iEthiopia: (iEthiopian, iArabic),
+	iKarnataka: (iDravidian, iIndian),
 	iToltecs: (iToltec, iNahuatl, iMayan),
 	iKushans: (iKushan, iTurkish, iGreek),
 	iKorea: (iKorean,),
@@ -45,8 +46,10 @@ dBaseLanguages = {
 	iJapan: (iJapanese,),
 	iNorse: (iNordic,),
 	iTurks: (iTurkish, iPersian, iArabic),
+	iBengal: (iIndian, iDravidian),
 	iArabia: (iArabic,),
 	iTibet: (iTibetan,),
+	iRajputs: (iIndian, iDravidian),
 	iMoors: (iArabic, iBerber),
 	iJava: (iJavanese, iMalay, iIndian),
 	iSpain: (iSpanish,),
@@ -299,6 +302,10 @@ def getPrimaryLanguages(identifier):
 	elif iCiv == iGreece:
 		if player(identifier).getPeriod() == iPeriodModernGreece:
 			return iModernGreek, iGreek
+	
+	elif iCiv == iBengal:
+		if player(identifier).getStateReligion() == iIslam:
+			return iPersian, iIndian, iDravidian
 	
 	elif iCiv == iInca:
 		if player(identifier).getPeriod() == iPeriodPeru:

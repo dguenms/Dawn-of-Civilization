@@ -289,9 +289,9 @@
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
-			<Type>ART_DEF_CIVILIZATION_DRAVIDIA</Type>
-			<Button>Art/Interface/Buttons/Civilizations/Dravidia.dds</Button>
-			<Path>Art/Interface/TeamColor/FlagDECAL_Dravidia.dds</Path>
+			<Type>ART_DEF_CIVILIZATION_TAMILS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Tamils.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Tiger.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 		<CivilizationArtInfo>
@@ -442,6 +442,24 @@
 			<Type>ART_DEF_CIVILIZATION_SAUDI</Type>
 			<Button>Art/Interface/Buttons/Civilizations/Saudi.dds</Button>
 			<Path>Art/Interface/TeamColor/FlagDECAL_PalmTree.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_BENGAL</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Bengal.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Lotus.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_RAJPUTS</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Rajputs.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Suryavanshi.dds</Path>
+			<bWhiteFlag>0</bWhiteFlag>
+		</CivilizationArtInfo>
+		<CivilizationArtInfo>
+			<Type>ART_DEF_CIVILIZATION_KARNATAKA</Type>
+			<Button>Art/Interface/Buttons/Civilizations/Karnataka.dds</Button>
+			<Path>Art/Interface/TeamColor/FlagDECAL_Gandabherunda.dds</Path>
 			<bWhiteFlag>0</bWhiteFlag>
 		</CivilizationArtInfo>
 	</CivilizationArtInfos>

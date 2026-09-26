@@ -1031,6 +1031,62 @@
 			<DefaultBuilding>BUILDING_HINDU_SHRINE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JAIN_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_JAIN_TEMPLE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_JAIN_TEMPLE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JAIN_CATHEDRAL</Type>
+			<Description>TXT_KEY_BUILDING_JAIN_CATHEDRAL</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<bMonument>1</bMonument>
+			<DefaultBuilding>BUILDING_JAIN_CATHEDRAL</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JAIN_MONASTERY</Type>
+			<Description>TXT_KEY_BUILDING_JAIN_MONASTERY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JAIN_MONASTERY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JAIN_RELIQUARY</Type>
+			<Description>TXT_KEY_BUILDING_JAIN_RELIQUARY</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JAIN_RELIQUARY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JAIN_HOLY_SITE</Type>
+			<Description>TXT_KEY_BUILDING_JAIN_HOLY_SITE</Description>
+			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
+			<iMaxTeamInstances>1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JAIN_HOLY_SITE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JAIN_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_JAIN_SHRINE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JAIN_SHRINE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BUDDHIST_TEMPLE</Type>
 			<Description>TXT_KEY_BUILDING_BUDDHIST_TEMPLE</Description>
 			<iMaxGlobalInstances>-1</iMaxGlobalInstances>
@@ -1480,15 +1536,6 @@
 			<DefaultBuilding>BUILDING_SPACEPORT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GREAT_SPHINX</Type>
-			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_GREAT_SPHINX</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PYRAMIDS</Type>
 			<Description>TXT_KEY_BUILDING_PYRAMIDS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1496,6 +1543,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_PYRAMIDS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_GREAT_SPHINX</Type>
+			<Description>TXT_KEY_BUILDING_GREAT_SPHINX</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_GREAT_SPHINX</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ORACLE</Type>
@@ -1534,6 +1590,24 @@
 			<DefaultBuilding>BUILDING_TERRACOTTA_ARMY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_APADANA_PALACE</Type>
+			<Description>TXT_KEY_BUILDING_APADANA_PALACE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_APADANA_PALACE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_DUJIANGYAN</Type>
+			<Description>TXT_KEY_BUILDING_DUJIANGYAN</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_DUJIANGYAN</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_HANGING_GARDENS</Type>
 			<Description>TXT_KEY_BUILDING_HANGING_GARDENS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1550,24 +1624,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_GREAT_COTHON</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_DUJIANGYAN</Type>
-			<Description>TXT_KEY_BUILDING_DUJIANGYAN</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_DUJIANGYAN</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_APADANA_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_APADANA_PALACE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_APADANA_PALACE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_COLOSSUS</Type>
@@ -1671,15 +1727,6 @@
 			<DefaultBuilding>BUILDING_PANTHEON</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_AL_KHAZNEH</Type>
-			<Description>TXT_KEY_BUILDING_AL_KHAZNEH</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_AL_KHAZNEH</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TEMPLE_OF_KUKULKAN</Type>
 			<Description>TXT_KEY_BUILDING_TEMPLE_OF_KUKULKAN</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1687,6 +1734,24 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_TEMPLE_OF_KUKULKAN</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_JETAVANARAMAYA</Type>
+			<Description>TXT_KEY_BUILDING_JETAVANARAMAYA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_JETAVANARAMAYA</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_AL_KHAZNEH</Type>
+			<Description>TXT_KEY_BUILDING_AL_KHAZNEH</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_AL_KHAZNEH</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MACHU_PICCHU</Type>
@@ -1707,13 +1772,13 @@
 			<DefaultBuilding>BUILDING_GREAT_LIBRARY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_FLOATING_GARDENS</Type>
-			<Description>TXT_KEY_BUILDING_FLOATING_GARDENS</Description>
+			<Type>BUILDINGCLASS_NALANDA</Type>
+			<Description>TXT_KEY_BUILDING_NALANDA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_FLOATING_GARDENS</DefaultBuilding>
+			<DefaultBuilding>BUILDING_NALANDA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GONDESHAPUR</Type>
@@ -1725,22 +1790,13 @@
 			<DefaultBuilding>BUILDING_GONDESHAPUR</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_JETAVANARAMAYA</Type>
-			<Description>TXT_KEY_BUILDING_JETAVANARAMAYA</Description>
+			<Type>BUILDINGCLASS_IRON_PILLAR</Type>
+			<Description>TXT_KEY_BUILDING_IRON_PILLAR</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_JETAVANARAMAYA</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_NALANDA</Type>
-			<Description>TXT_KEY_BUILDING_NALANDA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_NALANDA</DefaultBuilding>
+			<DefaultBuilding>BUILDING_IRON_PILLAR</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_THEODOSIAN_WALLS</Type>
@@ -1761,58 +1817,13 @@
 			<DefaultBuilding>BUILDING_HAGIA_SOPHIA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_BOROBUDUR</Type>
-			<Description>TXT_KEY_BUILDING_BOROBUDUR</Description>
+			<Type>BUILDINGCLASS_KAILASA_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_KAILASA_TEMPLE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_BOROBUDUR</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LA_MEZQUITA</Type>
-			<Description>TXT_KEY_BUILDING_LA_MEZQUITA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_LA_MEZQUITA</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_SHWEDAGON_PAYA</Type>
-			<Description>TXT_KEY_BUILDING_SHWEDAGON_PAYA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_SHWEDAGON_PAYA</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MOUNT_ATHOS</Type>
-			<Description>TXT_KEY_BUILDING_MOUNT_ATHOS</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MOUNT_ATHOS</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_IRON_PILLAR</Type>
-			<Description>TXT_KEY_BUILDING_IRON_PILLAR</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_IRON_PILLAR</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_PRAMBANAN</Type>
-			<Description>TXT_KEY_BUILDING_PRAMBANAN</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_PRAMBANAN</DefaultBuilding>
+			<DefaultBuilding>BUILDING_KAILASA_TEMPLE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SALSAL_BUDDHA</Type>
@@ -1833,31 +1844,31 @@
 			<DefaultBuilding>BUILDING_CHEOMSEONGDAE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_HIMEJI_CASTLE</Type>
-			<Description>TXT_KEY_BUILDING_HIMEJI_CASTLE</Description>
+			<Type>BUILDINGCLASS_UNIVERSITY_OF_SANKORE</Type>
+			<Description>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_HIMEJI_CASTLE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_UNIVERSITY_OF_SANKORE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GRAND_CANAL</Type>
-			<Description>TXT_KEY_BUILDING_GRAND_CANAL</Description>
+			<Type>BUILDINGCLASS_FLOATING_GARDENS</Type>
+			<Description>TXT_KEY_BUILDING_FLOATING_GARDENS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_GRAND_CANAL</DefaultBuilding>
+			<DefaultBuilding>BUILDING_FLOATING_GARDENS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_WAT_PREAH_PISNULOK</Type>
-			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
+			<Type>BUILDINGCLASS_MOUNT_ATHOS</Type>
+			<Description>TXT_KEY_BUILDING_MOUNT_ATHOS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_WAT_PREAH_PISNULOK</DefaultBuilding>
+			<DefaultBuilding>BUILDING_MOUNT_ATHOS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_KHAJURAHO</Type>
@@ -1869,13 +1880,76 @@
 			<DefaultBuilding>BUILDING_KHAJURAHO</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GREAT_ADOBE_MOSQUE</Type>
-			<Description>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE</Description>
+			<Type>BUILDINGCLASS_HIMEJI_CASTLE</Type>
+			<Description>TXT_KEY_BUILDING_HIMEJI_CASTLE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_GREAT_ADOBE_MOSQUE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_HIMEJI_CASTLE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_KRAK_DES_CHEVALIERS</Type>
+			<Description>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_KRAK_DES_CHEVALIERS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_BOROBUDUR</Type>
+			<Description>TXT_KEY_BUILDING_BOROBUDUR</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_BOROBUDUR</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_GRAND_CANAL</Type>
+			<Description>TXT_KEY_BUILDING_GRAND_CANAL</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_GRAND_CANAL</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_HOUSE_OF_WISDOM</Type>
+			<Description>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_HOUSE_OF_WISDOM</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MONOLITHIC_CHURCH</Type>
+			<Description>TXT_KEY_BUILDING_MONOLITHIC_CHURCH</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MONOLITHIC_CHURCH</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SAINT_SOPHIA</Type>
+			<Description>TXT_KEY_BUILDING_SAINT_SOPHIA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SAINT_SOPHIA</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_PRAMBANAN</Type>
+			<Description>TXT_KEY_BUILDING_PRAMBANAN</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_PRAMBANAN</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SPIRAL_MINARET</Type>
@@ -1896,42 +1970,6 @@
 			<DefaultBuilding>BUILDING_DOME_OF_THE_ROCK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_HOUSE_OF_WISDOM</Type>
-			<Description>TXT_KEY_BUILDING_HOUSE_OF_WISDOM</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_HOUSE_OF_WISDOM</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_KRAK_DES_CHEVALIERS</Type>
-			<Description>TXT_KEY_BUILDING_KRAK_DES_CHEVALIERS</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_KRAK_DES_CHEVALIERS</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MONOLITHIC_CHURCH</Type>
-			<Description>TXT_KEY_BUILDING_MONOLITHIC_CHURCH</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MONOLITHIC_CHURCH</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_UNIVERSITY_OF_SANKORE</Type>
-			<Description>TXT_KEY_BUILDING_UNIVERSITY_OF_SANKORE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_UNIVERSITY_OF_SANKORE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NOTRE_DAME</Type>
 			<Description>TXT_KEY_BUILDING_NOTRE_DAME</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1941,22 +1979,22 @@
 			<DefaultBuilding>BUILDING_NOTRE_DAME</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_OLD_SYNAGOGUE</Type>
-			<Description>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Description>
+			<Type>BUILDINGCLASS_VIJAYA_STAMBHA</Type>
+			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_OLD_SYNAGOGUE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_VIJAYA_STAMBHA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_SAINT_SOPHIA</Type>
-			<Description>TXT_KEY_BUILDING_SAINT_SOPHIA</Description>
+			<Type>BUILDINGCLASS_WAT_PREAH_PISNULOK</Type>
+			<Description>TXT_KEY_BUILDING_WAT_PREAH_PISNULOK</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_SAINT_SOPHIA</DefaultBuilding>
+			<DefaultBuilding>BUILDING_WAT_PREAH_PISNULOK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SILVER_TREE_FOUNTAIN</Type>
@@ -1968,6 +2006,33 @@
 			<DefaultBuilding>BUILDING_SILVER_TREE_FOUNTAIN</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_ALAMUT</Type>
+			<Description>TXT_KEY_BUILDING_ALAMUT</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_ALAMUT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_GUR_E_AMIR</Type>
+			<Description>TXT_KEY_BUILDING_GUR_E_AMIR</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_GUR_E_AMIR</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SHWEDAGON_PAYA</Type>
+			<Description>TXT_KEY_BUILDING_SHWEDAGON_PAYA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SHWEDAGON_PAYA</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SANTA_MARIA_DEL_FIORE</Type>
 			<Description>TXT_KEY_BUILDING_SANTA_MARIA_DEL_FIORE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -1977,13 +2042,49 @@
 			<DefaultBuilding>BUILDING_SANTA_MARIA_DEL_FIORE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ALAMUT</Type>
-			<Description>TXT_KEY_BUILDING_ALAMUT</Description>
+			<Type>BUILDINGCLASS_LA_MEZQUITA</Type>
+			<Description>TXT_KEY_BUILDING_LA_MEZQUITA</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_ALAMUT</DefaultBuilding>
+			<DefaultBuilding>BUILDING_LA_MEZQUITA</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_OLD_SYNAGOGUE</Type>
+			<Description>TXT_KEY_BUILDING_OLD_SYNAGOGUE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_OLD_SYNAGOGUE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_GREAT_ADOBE_MOSQUE</Type>
+			<Description>TXT_KEY_BUILDING_GREAT_ADOBE_MOSQUE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_GREAT_ADOBE_MOSQUE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_KREMLIN</Type>
+			<Description>TXT_KEY_BUILDING_KREMLIN</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_KREMLIN</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MINAKSHI_TEMPLE</Type>
+			<Description>TXT_KEY_BUILDING_MINAKSHI_TEMPLE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MINAKSHI_TEMPLE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SAN_MARCO_BASILICA</Type>
@@ -2004,6 +2105,15 @@
 			<DefaultBuilding>BUILDING_SISTINE_CHAPEL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SAINT_THOMAS_CHURCH</Type>
+			<Description>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SAINT_THOMAS_CHURCH</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_PORCELAIN_TOWER</Type>
 			<Description>TXT_KEY_BUILDING_PORCELAIN_TOWER</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2022,40 +2132,13 @@
 			<DefaultBuilding>BUILDING_TOPKAPI_PALACE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_KREMLIN</Type>
-			<Description>TXT_KEY_BUILDING_KREMLIN</Description>
+			<Type>BUILDINGCLASS_ST_BASILS_CATHEDRAL</Type>
+			<Description>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_KREMLIN</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_SAINT_THOMAS_CHURCH</Type>
-			<Description>TXT_KEY_BUILDING_SAINT_THOMAS_CHURCH</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_SAINT_THOMAS_CHURCH</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_VIJAYA_STAMBHA</Type>
-			<Description>TXT_KEY_BUILDING_VIJAYA_STAMBHA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_VIJAYA_STAMBHA</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GUR_E_AMIR</Type>
-			<Description>TXT_KEY_BUILDING_GUR_E_AMIR</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_GUR_E_AMIR</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ST_BASILS_CATHEDRAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_RED_FORT</Type>
@@ -2067,40 +2150,13 @@
 			<DefaultBuilding>BUILDING_RED_FORT</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_TAJ_MAHAL</Type>
-			<Description>TXT_KEY_BUILDING_TAJ_MAHAL</Description>
+			<Type>BUILDINGCLASS_ITSUKUSHIMA_SHRINE</Type>
+			<Description>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_TAJ_MAHAL</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_FORBIDDEN_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_FORBIDDEN_PALACE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_FORBIDDEN_PALACE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_VERSAILLES</Type>
-			<Description>TXT_KEY_BUILDING_VERSAILLES</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_VERSAILLES</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_BLUE_MOSQUE</Type>
-			<Description>TXT_KEY_BUILDING_BLUE_MOSQUE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_BLUE_MOSQUE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ITSUKUSHIMA_SHRINE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ESCORIAL</Type>
@@ -2121,13 +2177,13 @@
 			<DefaultBuilding>BUILDING_TORRE_DE_BELEM</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_POTALA_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_POTALA_PALACE</Description>
+			<Type>BUILDINGCLASS_BLUE_MOSQUE</Type>
+			<Description>TXT_KEY_BUILDING_BLUE_MOSQUE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_POTALA_PALACE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_BLUE_MOSQUE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_OXFORD_UNIVERSITY</Type>
@@ -2139,6 +2195,33 @@
 			<DefaultBuilding>BUILDING_OXFORD_UNIVERSITY</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FORBIDDEN_PALACE</Type>
+			<Description>TXT_KEY_BUILDING_FORBIDDEN_PALACE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FORBIDDEN_PALACE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_POTALA_PALACE</Type>
+			<Description>TXT_KEY_BUILDING_POTALA_PALACE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_POTALA_PALACE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_VERSAILLES</Type>
+			<Description>TXT_KEY_BUILDING_VERSAILLES</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_VERSAILLES</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_HARMANDIR_SAHIB</Type>
 			<Description>TXT_KEY_BUILDING_HARMANDIR_SAHIB</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2146,15 +2229,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_HARMANDIR_SAHIB</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ST_BASILS_CATHEDRAL</Type>
-			<Description>TXT_KEY_BUILDING_ST_BASILS_CATHEDRAL</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_ST_BASILS_CATHEDRAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BOURSE</Type>
@@ -2166,15 +2240,6 @@
 			<DefaultBuilding>BUILDING_BOURSE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ITSUKUSHIMA_SHRINE</Type>
-			<Description>TXT_KEY_BUILDING_ITSUKUSHIMA_SHRINE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_ITSUKUSHIMA_SHRINE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_IMAGE_OF_THE_WORLD_SQUARE</Type>
 			<Description>TXT_KEY_BUILDING_IMAGE_OF_THE_WORLD_SQUARE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2184,13 +2249,13 @@
 			<DefaultBuilding>BUILDING_IMAGE_OF_THE_WORLD_SQUARE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LOUVRE</Type>
-			<Description>TXT_KEY_BUILDING_LOUVRE</Description>
+			<Type>BUILDINGCLASS_TAJ_MAHAL</Type>
+			<Description>TXT_KEY_BUILDING_TAJ_MAHAL</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_LOUVRE</DefaultBuilding>
+			<DefaultBuilding>BUILDING_TAJ_MAHAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_EMERALD_BUDDHA</Type>
@@ -2202,6 +2267,15 @@
 			<DefaultBuilding>BUILDING_EMERALD_BUDDHA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LOUVRE</Type>
+			<Description>TXT_KEY_BUILDING_LOUVRE</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LOUVRE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SHALIMAR_GARDENS</Type>
 			<Description>TXT_KEY_BUILDING_SHALIMAR_GARDENS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2209,6 +2283,24 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SHALIMAR_GARDENS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_SALT_CATHEDRAL</Type>
+			<Description>TXT_KEY_BUILDING_SALT_CATHEDRAL</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_SALT_CATHEDRAL</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_AMBER_ROOM</Type>
+			<Description>TXT_KEY_BUILDING_AMBER_ROOM</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_AMBER_ROOM</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TRAFALGAR_SQUARE</Type>
@@ -2238,22 +2330,22 @@
 			<DefaultBuilding>BUILDING_GUADALUPE_BASILICA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_SALT_CATHEDRAL</Type>
-			<Description>TXT_KEY_BUILDING_SALT_CATHEDRAL</Description>
+			<Type>BUILDINGCLASS_ABBEY_MILLS</Type>
+			<Description>TXT_KEY_BUILDING_ABBEY_MILLS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_SALT_CATHEDRAL</DefaultBuilding>
+			<DefaultBuilding>BUILDING_ABBEY_MILLS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_AMBER_ROOM</Type>
-			<Description>TXT_KEY_BUILDING_AMBER_ROOM</Description>
+			<Type>BUILDINGCLASS_BELL_ROCK_LIGHTHOUSE</Type>
+			<Description>TXT_KEY_BUILDING_BELL_ROCK_LIGHTHOUSE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_AMBER_ROOM</DefaultBuilding>
+			<DefaultBuilding>BUILDING_BELL_ROCK_LIGHTHOUSE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_STATUE_OF_LIBERTY</Type>
@@ -2274,24 +2366,6 @@
 			<DefaultBuilding>BUILDING_BRANDENBURG_GATE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_ABBEY_MILLS</Type>
-			<Description>TXT_KEY_BUILDING_ABBEY_MILLS</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_ABBEY_MILLS</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_BELL_ROCK_LIGHTHOUSE</Type>
-			<Description>TXT_KEY_BUILDING_BELL_ROCK_LIGHTHOUSE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_BELL_ROCK_LIGHTHOUSE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CHAPULTEPEC_CASTLE</Type>
 			<Description>TXT_KEY_BUILDING_CHAPULTEPEC_CASTLE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2299,24 +2373,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_CHAPULTEPEC_CASTLE</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_EIFFEL_TOWER</Type>
-			<Description>TXT_KEY_BUILDING_EIFFEL_TOWER</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_EIFFEL_TOWER</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_WESTMINSTER_PALACE</Type>
-			<Description>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_WESTMINSTER_PALACE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TRIUMPHAL_ARCH</Type>
@@ -2328,15 +2384,6 @@
 			<DefaultBuilding>BUILDING_TRIUMPHAL_ARCH</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MENLO_PARK</Type>
-			<Description>TXT_KEY_BUILDING_MENLO_PARK</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MENLO_PARK</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CRYSTAL_PALACE</Type>
 			<Description>TXT_KEY_BUILDING_CRYSTAL_PALACE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2344,6 +2391,24 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_CRYSTAL_PALACE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_EIFFEL_TOWER</Type>
+			<Description>TXT_KEY_BUILDING_EIFFEL_TOWER</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_EIFFEL_TOWER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MENLO_PARK</Type>
+			<Description>TXT_KEY_BUILDING_MENLO_PARK</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MENLO_PARK</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TSUKIJI</Type>
@@ -2364,49 +2429,13 @@
 			<DefaultBuilding>BUILDING_BROOKLYN_BRIDGE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_HOLLYWOOD</Type>
-			<Description>TXT_KEY_BUILDING_HOLLYWOOD</Description>
+			<Type>BUILDINGCLASS_WESTMINSTER_PALACE</Type>
+			<Description>TXT_KEY_BUILDING_WESTMINSTER_PALACE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
 			<iMaxTeamInstances>-1</iMaxTeamInstances>
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_HOLLYWOOD</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_EMPIRE_STATE_BUILDING</Type>
-			<Description>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_EMPIRE_STATE_BUILDING</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LAS_LAJAS_SANCTUARY</Type>
-			<Description>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_LAS_LAJAS_SANCTUARY</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_PALACE_OF_NATIONS</Type>
-			<Description>TXT_KEY_BUILDING_PALACE_OF_NATIONS</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_PALACE_OF_NATIONS</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_MOLE_ANTONELLIANA</Type>
-			<Description>TXT_KEY_BUILDING_MOLE_ANTONELLIANA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_MOLE_ANTONELLIANA</DefaultBuilding>
+			<DefaultBuilding>BUILDING_WESTMINSTER_PALACE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NEUSCHWANSTEIN</Type>
@@ -2418,42 +2447,6 @@
 			<DefaultBuilding>BUILDING_NEUSCHWANSTEIN</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_FRONTENAC</Type>
-			<Description>TXT_KEY_BUILDING_FRONTENAC</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_FRONTENAC</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_WEMBLEY</Type>
-			<Description>TXT_KEY_BUILDING_WEMBLEY</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_WEMBLEY</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LUBYANKA</Type>
-			<Description>TXT_KEY_BUILDING_LUBYANKA</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_LUBYANKA</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CRISTO_REDENTOR</Type>
-			<Description>TXT_KEY_BUILDING_CRISTO_REDENTOR</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_CRISTO_REDENTOR</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_METROPOLITAIN</Type>
 			<Description>TXT_KEY_BUILDING_METROPOLITAIN</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2461,6 +2454,24 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_METROPOLITAIN</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_MOLE_ANTONELLIANA</Type>
+			<Description>TXT_KEY_BUILDING_MOLE_ANTONELLIANA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_MOLE_ANTONELLIANA</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_FRONTENAC</Type>
+			<Description>TXT_KEY_BUILDING_FRONTENAC</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_FRONTENAC</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_NOBEL_PRIZE</Type>
@@ -2472,6 +2483,42 @@
 			<DefaultBuilding>BUILDING_NOBEL_PRIZE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_HOLLYWOOD</Type>
+			<Description>TXT_KEY_BUILDING_HOLLYWOOD</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_HOLLYWOOD</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LAS_LAJAS_SANCTUARY</Type>
+			<Description>TXT_KEY_BUILDING_LAS_LAJAS_SANCTUARY</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LAS_LAJAS_SANCTUARY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_EMPIRE_STATE_BUILDING</Type>
+			<Description>TXT_KEY_BUILDING_EMPIRE_STATE_BUILDING</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_EMPIRE_STATE_BUILDING</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_PALACE_OF_NATIONS</Type>
+			<Description>TXT_KEY_BUILDING_PALACE_OF_NATIONS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_PALACE_OF_NATIONS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GOLDEN_GATE_BRIDGE</Type>
 			<Description>TXT_KEY_BUILDING_GOLDEN_GATE_BRIDGE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2481,6 +2528,15 @@
 			<DefaultBuilding>BUILDING_GOLDEN_GATE_BRIDGE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_WEMBLEY</Type>
+			<Description>TXT_KEY_BUILDING_WEMBLEY</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_WEMBLEY</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BLETCHLEY_PARK</Type>
 			<Description>TXT_KEY_BUILDING_BLETCHLEY_PARK</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2488,6 +2544,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_BLETCHLEY_PARK</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LUBYANKA</Type>
+			<Description>TXT_KEY_BUILDING_LUBYANKA</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LUBYANKA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SAGRADA_FAMILIA</Type>
@@ -2506,6 +2571,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_TIANANMEN_SQUARE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CRISTO_REDENTOR</Type>
+			<Description>TXT_KEY_BUILDING_CRISTO_REDENTOR</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CRISTO_REDENTOR</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CERN_RESEARCH_COMPLEX</Type>
@@ -2544,24 +2618,6 @@
 			<DefaultBuilding>BUILDING_CN_TOWER</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_PENTAGON</Type>
-			<Description>TXT_KEY_BUILDING_PENTAGON</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_PENTAGON</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_UNITED_NATIONS</Type>
-			<Description>TXT_KEY_BUILDING_UNITED_NATIONS</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_UNITED_NATIONS</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_CRYSTAL_CATHEDRAL</Type>
 			<Description>TXT_KEY_BUILDING_CRYSTAL_CATHEDRAL</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2571,6 +2627,15 @@
 			<DefaultBuilding>BUILDING_CRYSTAL_CATHEDRAL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_PENTAGON</Type>
+			<Description>TXT_KEY_BUILDING_PENTAGON</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_PENTAGON</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_MOTHERLAND_CALLS</Type>
 			<Description>TXT_KEY_BUILDING_MOTHERLAND_CALLS</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2578,6 +2643,15 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_MOTHERLAND_CALLS</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_UNITED_NATIONS</Type>
+			<Description>TXT_KEY_BUILDING_UNITED_NATIONS</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_UNITED_NATIONS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_BERLAYMONT</Type>
@@ -2643,15 +2717,6 @@
 			<DefaultBuilding>BUILDING_FLORALIS_GENERICA</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_GLOBAL_SEED_VAULT</Type>
-			<Description>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_GLOBAL_SEED_VAULT</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_GARDENS_BY_THE_BAY</Type>
 			<Description>TXT_KEY_BUILDING_GARDENS_BY_THE_BAY</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2679,15 +2744,6 @@
 			<DefaultBuilding>BUILDING_HUBBLE_SPACE_TELESCOPE</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CHANNEL_TUNNEL</Type>
-			<Description>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_CHANNEL_TUNNEL</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SKYTREE</Type>
 			<Description>TXT_KEY_BUILDING_SKYTREE</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2695,6 +2751,24 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SKYTREE</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_LARGE_HADRON_COLLIDER</Type>
+			<Description>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_LARGE_HADRON_COLLIDER</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_CHANNEL_TUNNEL</Type>
+			<Description>TXT_KEY_BUILDING_CHANNEL_TUNNEL</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_CHANNEL_TUNNEL</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ORIENTAL_PEARL_TOWER</Type>
@@ -2715,6 +2789,15 @@
 			<DefaultBuilding>BUILDING_DELTA_WORKS</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
+			<Type>BUILDINGCLASS_GLOBAL_SEED_VAULT</Type>
+			<Description>TXT_KEY_BUILDING_GLOBAL_SEED_VAULT</Description>
+			<iMaxGlobalInstances>1</iMaxGlobalInstances>
+			<iMaxTeamInstances>-1</iMaxTeamInstances>
+			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
+			<iExtraPlayerInstances>0</iExtraPlayerInstances>
+			<DefaultBuilding>BUILDING_GLOBAL_SEED_VAULT</DefaultBuilding>
+		</BuildingClassInfo>
+		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_SPACE_ELEVATOR</Type>
 			<Description>TXT_KEY_BUILDING_SPACE_ELEVATOR</Description>
 			<iMaxGlobalInstances>1</iMaxGlobalInstances>
@@ -2722,15 +2805,6 @@
 			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
 			<iExtraPlayerInstances>0</iExtraPlayerInstances>
 			<DefaultBuilding>BUILDING_SPACE_ELEVATOR</DefaultBuilding>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_LARGE_HADRON_COLLIDER</Type>
-			<Description>TXT_KEY_BUILDING_LARGE_HADRON_COLLIDER</Description>
-			<iMaxGlobalInstances>1</iMaxGlobalInstances>
-			<iMaxTeamInstances>-1</iMaxTeamInstances>
-			<iMaxPlayerInstances>-1</iMaxPlayerInstances>
-			<iExtraPlayerInstances>0</iExtraPlayerInstances>
-			<DefaultBuilding>BUILDING_LARGE_HADRON_COLLIDER</DefaultBuilding>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_ITER</Type>

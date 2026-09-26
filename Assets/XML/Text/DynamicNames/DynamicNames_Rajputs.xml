@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_DESC</Tag>
+		<English>The Rajputs</English>
+		<French>The Rajputs</French>
+		<German>The Rajputs</German>
+		<Italian>The Rajputs</Italian>
+		<Spanish>The Rajputs</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_PEOPLES</Tag>
+		<English>Rajput Peoples</English>
+		<French>Rajput Peoples</French>
+		<German>Rajput Peoples</German>
+		<Italian>Rajput Peoples</Italian>
+		<Spanish>Rajput Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_ADJECTIVE</Tag>
+		<English>Rajput</English>
+		<French>Rajput</French>
+		<German>Rajput</German>
+		<Italian>Rajput</Italian>
+		<Spanish>Rajput</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTS_SHORT_DESC</Tag>
+		<English>Rajputana</English>
+		<French>Rajputana</French>
+		<German>Rajputana</German>
+		<Italian>Rajputana</Italian>
+		<Spanish>Rajputana</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_DEFAULT</Tag>
+		<English>%s2 Kingdom</English>
+		<French>%s2 Kingdom</French>
+		<German>%s2 Kingdom</German>
+		<Italian>%s2 Kingdom</Italian>
+		<Spanish>%s2 Kingdom</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_MEWAR</Tag>
+		<English>Mewar</English>
+		<French>Mewar</French>
+		<German>Mewar</German>
+		<Italian>Mewar</Italian>
+		<Spanish>Mewar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_MALWA</Tag>
+		<English>Malwa</English>
+		<French>Malwa</French>
+		<German>Malwa</German>
+		<Italian>Malwa</Italian>
+		<Spanish>Malwa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_SISODIA</Tag>
+		<English>Sisodia</English>
+		<French>Sisodia</French>
+		<German>Sisodia</German>
+		<Italian>Sisodia</Italian>
+		<Spanish>Sisodia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_PARAMARA</Tag>
+		<English>Paramara</English>
+		<French>Paramara</French>
+		<German>Paramara</German>
+		<Italian>Paramara</Italian>
+		<Spanish>Paramara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_GURJARA_PRATIHARA</Tag>
+		<English>Gurjara-Pratihara</English>
+		<French>Gurjara-Pratihara</French>
+		<German>Gurjara-Pratihara</German>
+		<Italian>Gurjara-Pratihara</Italian>
+		<Spanish>Gurjara-Pratihara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_CHANDELA</Tag>
+		<English>Chandela</English>
+		<French>Chandela</French>
+		<German>Chandela</German>
+		<Italian>Chandela</Italian>
+		<Spanish>Chandela</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_SOLANKI</Tag>
+		<English>Solanki</English>
+		<French>Solanki</French>
+		<German>Solanki</German>
+		<Italian>Solanki</Italian>
+		<Spanish>Solanki</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_CHAUHAN</Tag>
+		<English>Chauhan</English>
+		<French>Chauhan</French>
+		<German>Chauhan</German>
+		<Italian>Chauhan</Italian>
+		<Spanish>Chauhan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_PRATIHARA</Tag>
+		<English>Pratihara</English>
+		<French>Pratihara</French>
+		<German>Pratihara</German>
+		<Italian>Pratihara</Italian>
+		<Spanish>Pratihara</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_RAJASTHAN</Tag>
+		<English>Rajasthan</English>
+		<French>Rajasthan</French>
+		<German>Rajasthan</German>
+		<Italian>Rajasthan</Italian>
+		<Spanish>Rajasthan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_VASSAL</Tag>
+		<English>%s2 Jagir</English>
+		<French>%s2 Jagir</French>
+		<German>%s2 Jagir</German>
+		<Italian>%s2 Jagir</Italian>
+		<Spanish>%s2 Jagir</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_RAJPUTANA_FASCIST</Tag>
+		<English>National Republic of %s1</English>
+		<French>National Republic of %s1</French>
+		<German>National Republic of %s1</German>
+		<Italian>National Republic of %s1</Italian>
+		<Spanish>National Republic of %s1</Spanish>
+	</TEXT>
+</Civ4GameText>

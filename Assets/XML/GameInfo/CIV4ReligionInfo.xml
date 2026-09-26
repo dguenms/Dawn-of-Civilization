@@ -198,6 +198,37 @@
 			<Sound>AS2D_BUILD_HINDU</Sound>
 		</ReligionInfo>
 		<ReligionInfo>
+			<Type>RELIGION_JAINISM</Type>
+			<Description>TXT_KEY_RELIGION_JAINISM</Description>
+			<Adjective>TXT_KEY_RELIGION_JAINISM_ADJECTIVE</Adjective>
+			<Civilopedia>TXT_KEY_RELIGION_JAINISM_PEDIA</Civilopedia>
+			<TechPrereq>TECH_MEDICINE</TechPrereq>
+			<FreeUnitClass>UNITCLASS_JAIN_MISSIONARY</FreeUnitClass>
+			<iFreeUnits>0</iFreeUnits>
+			<iSpreadFactor>90</iSpreadFactor>
+			<GlobalReligionCommerces>
+				<iGlobalReligionCommerce>1</iGlobalReligionCommerce>
+				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
+				<iGlobalReligionCommerce>0</iGlobalReligionCommerce>
+			</GlobalReligionCommerces>
+			<HolyCityCommerces>
+				<iHolyCityCommerce>0</iHolyCityCommerce>
+				<iHolyCityCommerce>0</iHolyCityCommerce>
+				<iHolyCityCommerce>3</iHolyCityCommerce>
+			</HolyCityCommerces>
+			<StateReligionCommerces>
+				<iStateReligionCommerce>0</iStateReligionCommerce>
+				<iStateReligionCommerce>0</iStateReligionCommerce>
+				<iStateReligionCommerce>1</iStateReligionCommerce>
+			</StateReligionCommerces>
+			<Button>Art/Interface/Buttons/Religions/Jainism.dds</Button>
+			<TechButton>Art/Interface/Buttons/TechTree/Medicine.dds</TechButton>
+			<GenericTechButton>,Art/Interface/Buttons/TechTree/Hinduism.dds,Art/Interface/Buttons/Beyond the Sword_Atlas.dds,2,3</GenericTechButton>
+			<MovieFile>Art/Movies/Religion/Hinduism/Hin_Found.nif</MovieFile>
+			<MovieSound>AS2D_BUILD_HINDU_MOVIE</MovieSound>
+			<Sound>AS2D_BUILD_HINDU</Sound>
+		</ReligionInfo>
+		<ReligionInfo>
 			<Type>RELIGION_BUDDHISM</Type>
 			<Description>TXT_KEY_RELIGION_BUDDHISM</Description>
 			<Adjective>TXT_KEY_RELIGION_BUDDHISM_ADJECTIVE</Adjective>

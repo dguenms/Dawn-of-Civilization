@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Culture Levels -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_CULTURELEVEL_FLOURISHING</Tag>
+		<English>Flourishing</English>
+		<French>Flourishing</French>
+		<German>Flourishing</German>
+		<Italian>Flourishing</Italian>
+		<Spanish>Flourishing</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CULTURELEVEL_RENOWNED</Tag>
+		<English>Renowned</English>
+		<French>Renowned</French>
+		<German>Renowned</German>
+		<Italian>Renowned</Italian>
+		<Spanish>Renowned</Spanish>
+	</TEXT>
+</Civ4GameText>

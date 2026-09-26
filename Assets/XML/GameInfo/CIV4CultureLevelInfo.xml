@@ -94,7 +94,7 @@
 			<Type>CULTURELEVEL_REFINED</Type>
 			<Description>TXT_KEY_CULTURELEVEL_REFINED</Description>
 			<iCityDefenseModifier>60</iCityDefenseModifier>
-			<iWonderLimit>4</iWonderLimit>
+			<iWonderLimit>3</iWonderLimit>
 			<iNationalWonderLimit>2</iNationalWonderLimit>
 			<SpeedThresholds>
 				<SpeedThreshold>
@@ -115,7 +115,7 @@
 			<Type>CULTURELEVEL_INFLUENTIAL</Type>
 			<Description>TXT_KEY_CULTURELEVEL_INFLUENTIAL</Description>
 			<iCityDefenseModifier>80</iCityDefenseModifier>
-			<iWonderLimit>6</iWonderLimit>
+			<iWonderLimit>5</iWonderLimit>
 			<iNationalWonderLimit>3</iNationalWonderLimit>
 			<SpeedThresholds>
 				<SpeedThreshold>
@@ -133,8 +133,29 @@
 			</SpeedThresholds>
 		</CultureLevelInfo>
 		<CultureLevelInfo>
-			<Type>CULTURELEVEL_LEGENDARY</Type>
-			<Description>TXT_KEY_CULTURELEVEL_LEGENDARY</Description>
+			<Type>CULTURELEVEL_FLOURISHING</Type>
+			<Description>TXT_KEY_CULTURELEVEL_FLOURISHING</Description>
+			<iCityDefenseModifier>100</iCityDefenseModifier>
+			<iWonderLimit>6</iWonderLimit>
+			<iNationalWonderLimit>3</iNationalWonderLimit>
+			<SpeedThresholds>
+				<SpeedThreshold>
+					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
+					<iThreshold>30000</iThreshold>
+				</SpeedThreshold>
+				<SpeedThreshold>
+					<GameSpeedType>GAMESPEED_EPIC</GameSpeedType>
+					<iThreshold>15000</iThreshold>
+				</SpeedThreshold>
+				<SpeedThreshold>
+					<GameSpeedType>GAMESPEED_NORMAL</GameSpeedType>
+					<iThreshold>10000</iThreshold>
+				</SpeedThreshold>
+			</SpeedThresholds>
+		</CultureLevelInfo>
+		<CultureLevelInfo>
+			<Type>CULTURELEVEL_RENOWNED</Type>
+			<Description>TXT_KEY_CULTURELEVEL_RENOWNED</Description>
 			<iCityDefenseModifier>100</iCityDefenseModifier>
 			<iWonderLimit>8</iWonderLimit>
 			<iNationalWonderLimit>3</iNationalWonderLimit>
@@ -150,6 +171,27 @@
 				<SpeedThreshold>
 					<GameSpeedType>GAMESPEED_NORMAL</GameSpeedType>
 					<iThreshold>50000</iThreshold>
+				</SpeedThreshold>
+			</SpeedThresholds>
+		</CultureLevelInfo>
+		<CultureLevelInfo>
+			<Type>CULTURELEVEL_LEGENDARY</Type>
+			<Description>TXT_KEY_CULTURELEVEL_LEGENDARY</Description>
+			<iCityDefenseModifier>100</iCityDefenseModifier>
+			<iWonderLimit>8</iWonderLimit>
+			<iNationalWonderLimit>3</iNationalWonderLimit>
+			<SpeedThresholds>
+				<SpeedThreshold>
+					<GameSpeedType>GAMESPEED_MARATHON</GameSpeedType>
+					<iThreshold>300000</iThreshold>
+				</SpeedThreshold>
+				<SpeedThreshold>
+					<GameSpeedType>GAMESPEED_EPIC</GameSpeedType>
+					<iThreshold>150000</iThreshold>
+				</SpeedThreshold>
+				<SpeedThreshold>
+					<GameSpeedType>GAMESPEED_NORMAL</GameSpeedType>
+					<iThreshold>100000</iThreshold>
 				</SpeedThreshold>
 			</SpeedThresholds>
 		</CultureLevelInfo>

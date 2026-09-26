@@ -2497,7 +2497,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, AdvisorTypes eIgnoreAdvisor, UnitAI
 		aiUnitAIVal[UNITAI_SETTLE] *= 2;
 		aiUnitAIVal[UNITAI_SETTLE] /= 3;
 		break;*/
-	case DRAVIDIA:
+	case TAMILS:
 		aiUnitAIVal[UNITAI_ASSAULT_SEA] *= 3;
 		aiUnitAIVal[UNITAI_SETTLER_SEA] *= 3;
 		break;
@@ -3819,7 +3819,7 @@ int CvCityAI::AI_buildingValueThreshold(BuildingTypes eBuilding, int iFocusFlags
 
 				iGreatPeopleRateModifier += kBuilding.getCultureGreatPeopleRateModifier() * getCultureLevel();
 
-				if (eBuilding == SHWEDAGON_PAYA)
+				if (eBuilding == SHWEDAGON_PAYA || eBuilding == KAILASA_TEMPLE)
 				{
 					iGreatPeopleRateModifier += 50;
 				}

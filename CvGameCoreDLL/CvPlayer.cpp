@@ -12442,6 +12442,13 @@ void CvPlayer::applyCivilization(CivilizationTypes eCivilization, int iChange)
 		GET_TEAM(getTeam()).changeTerrainTradeCount(TERRAIN_DESERT, iChange);
 	}
 
+	// Bengal UP: +1 production +1 commerce from Workshop
+	if (eCivilization == BENGAL)
+	{
+		changeImprovementYieldChange(IMPROVEMENT_WORKSHOP, YIELD_PRODUCTION, 1);
+		changeImprovementYieldChange(IMPROVEMENT_WORKSHOP, YIELD_COMMERCE, 1);
+	}
+
 	// Saudi UP: +1 food for Priest and Great Prophet
 	if (eCivilization == SAUDIS)
 	{
@@ -24608,7 +24615,7 @@ EraTypes CvPlayer::getSoundtrackEra()
 			return (EraTypes)ERA_EAST_ASIA;
 		}
 	}
-	else if (eStateReligion == BUDDHISM || eStateReligion == HINDUISM)
+	else if (eStateReligion == BUDDHISM || eStateReligion == HINDUISM || eStateReligion == JAINISM)
 	{
 		if (eCurrentEra == ERA_CLASSICAL || eCurrentEra == ERA_MEDIEVAL || eCurrentEra == ERA_RENAISSANCE)
 		{
@@ -25147,6 +25154,10 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 
 	if (eStateReligion == HINDUISM && eReligion == BUDDHISM) return true;
 	if (eStateReligion == BUDDHISM && eReligion == HINDUISM) return true;
+	if (eStateReligion == HINDUISM && eReligion == JAINISM) return true;
+	if (eStateReligion == JAINISM && eReligion == HINDUISM) return true;
+	if (eStateReligion == BUDDHISM && eReligion == JAINISM) return true;
+	if (eStateReligion == JAINISM && eReligion == BUDDHISM) return true;
 	if (eStateReligion == CONFUCIANISM && eReligion == TAOISM) return true;
 	if (eStateReligion == TAOISM && eReligion == CONFUCIANISM) return true;
 
@@ -25156,7 +25167,7 @@ bool CvPlayer::isTolerating(ReligionTypes eReligion) const
 ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligion, bool bDistant, bool bRemove) const
 {
 	bool bStateReligion = getStateReligion() == eReligion;
-	bool bPromoted = bStateReligion || (isTolerating(eReligion) && isStateReligion());
+	//bool bPromoted = bStateReligion || (isTolerating(eReligion) && isStateReligion());
 	int iSpreadFactor = pPlot->getSpreadFactor(eReligion);
 
 	if (!bRemove && !bStateReligion && isNoNonStateReligionSpread()) return RELIGION_SPREAD_NONE;
@@ -25171,14 +25182,14 @@ ReligionSpreadTypes CvPlayer::getSpreadType(CvPlot* pPlot, ReligionTypes eReligi
 	if (iCurrentTurn - iFoundingTurn <= getTurns(GC.getDefineINT("RELIGION_FOUNDING_SPREAD_TURNS")))
 	{
 		if (iSpreadFactor == REGION_SPREAD_CORE) return RELIGION_SPREAD_FAST;
-		if (iSpreadFactor == REGION_SPREAD_HISTORICAL && GC.getReligionInfo(eReligion).isProselytizing() && (bPromoted || getStateReligion() == NO_RELIGION)) return RELIGION_SPREAD_FAST;
+		if (iSpreadFactor == REGION_SPREAD_HISTORICAL && GC.getReligionInfo(eReligion).isProselytizing() && (bStateReligion || getStateReligion() == NO_RELIGION)) return RELIGION_SPREAD_FAST;
 	}
 
 	switch (iSpreadFactor)
 	{
 		case REGION_SPREAD_CORE: return RELIGION_SPREAD_NORMAL;
-		case REGION_SPREAD_HISTORICAL: return bPromoted ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_MINORITY;
-		case REGION_SPREAD_PERIPHERY: return bPromoted ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_NONE;
+		case REGION_SPREAD_HISTORICAL: return bStateReligion ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_MINORITY;
+		case REGION_SPREAD_PERIPHERY: return bStateReligion ? RELIGION_SPREAD_NORMAL : RELIGION_SPREAD_NONE;
 		case REGION_SPREAD_MINORITY: return RELIGION_SPREAD_MINORITY;
 		case REGION_SPREAD_NONE: return bStateReligion ? RELIGION_SPREAD_MINORITY : RELIGION_SPREAD_NONE;
 		default: return RELIGION_SPREAD_NONE;

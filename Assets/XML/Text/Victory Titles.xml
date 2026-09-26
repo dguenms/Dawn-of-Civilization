@@ -201,6 +201,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEN1</Tag>
+		<English>Pala Dynasty</English>
+		<French>Pala Dynasty</French>
+		<German>Pala Dynasty</German>
+		<Italian>Pala Dynasty</Italian>
+		<Spanish>Pala Dynasty</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEN2</Tag>
+		<English>Paradise of Nations</English>
+		<French>Paradise of Nations</French>
+		<German>Paradise of Nations</German>
+		<Italian>Paradise of Nations</Italian>
+		<Spanish>Paradise of Nations</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_BEN3</Tag>
+		<English>The Golden Bird</English>
+		<French>The Golden Bird</French>
+		<German>The Golden Bird</German>
+		<Italian>The Golden Bird</Italian>
+		<Spanish>The Golden Bird</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_BRA1</Tag>
 		<English>Economic Titles</English>
 		<French>Economic Titles</French>
@@ -401,15 +426,15 @@
 	</TEXT>
 	
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_DRA1</Tag>
-		<English>Indian Ocean Trade</English>
-		<French>Indian Ocean Trade</French>
-		<German>Indian Ocean Trade</German>
-		<Italian>Indian Ocean Trade</Italian>
-		<Spanish>Indian Ocean Trade</Spanish>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAM1</Tag>
+		<English>Three Crowned Kings</English>
+		<French>Three Crowned Kings</French>
+		<German>Three Crowned Kings</German>
+		<Italian>Three Crowned Kings</Italian>
+		<Spanish>Three Crowned Kings</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_DRA2</Tag>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAM2</Tag>
 		<English>The Chola Empire</English>
 		<French>L'empire Chola </French>
 		<German>Das Chola-Reich</German>
@@ -417,12 +442,12 @@
 		<Spanish>The Chola Empire</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_VICTORY_TITLE_DRA3</Tag>
-		<English>City of Victory</English>
-		<French>City of Victory</French>
-		<German>Stadt des Sieges</German>
-		<Italian>City of Victory</Italian>
-		<Spanish>City of Victory</Spanish>
+		<Tag>TXT_KEY_VICTORY_TITLE_TAM3</Tag>
+		<English>Indian Ocean Trade</English>
+		<French>Indian Ocean Trade</French>
+		<German>Indian Ocean Trade</German>
+		<Italian>Indian Ocean Trade</Italian>
+		<Spanish>Indian Ocean Trade</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -710,11 +735,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_IND2</Tag>
-		<English>Land of Temples</English>
-		<French>Terre des temples </French>
-		<German>Land der Tempel</German>
-		<Italian>Land of Temples</Italian>
-		<Spanish>Land of Temples</Spanish>
+		<English>Gupta Golden Age</English>
+		<French>Gupta Golden Age</French>
+		<German>Gupta Golden Age</German>
+		<Italian>Gupta Golden Age</Italian>
+		<Spanish>Gupta Golden Age</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_IND3</Tag>
@@ -823,6 +848,31 @@
 		<German>Wali Sanga</German>
 		<Italian>Wali Sanga</Italian>
 		<Spanish>Wali Sanga</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KAR1</Tag>
+		<English>Tripartite Struggle</English>
+		<French>Tripartite Struggle</French>
+		<German>Tripartite Struggle</German>
+		<Italian>Tripartite Struggle</Italian>
+		<Spanish>Tripartite Struggle</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KAR2</Tag>
+		<English>Jain Patronage</English>
+		<French>Jain Patronage</French>
+		<German>Jain Patronage</German>
+		<Italian>Jain Patronage</Italian>
+		<Spanish>Jain Patronage</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_KAR3</Tag>
+		<English>City of Victory</English>
+		<French>City of Victory</French>
+		<German>City of Victory</German>
+		<Italian>City of Victory</Italian>
+		<Spanish>City of Victory</Spanish>
 	</TEXT>
 	
 	<TEXT>
@@ -1326,6 +1376,31 @@
 	</TEXT>
 	
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_RAJ1</Tag>
+		<English>Imperial Pratiharas</English>
+		<French>Imperial Pratiharas</French>
+		<German>Imperial Pratiharas</German>
+		<Italian>Imperial Pratiharas</Italian>
+		<Spanish>Imperial Pratiharas</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_RAJ2</Tag>
+		<English>Traders of Gujarat</English>
+		<French>Traders of Gujarat</French>
+		<German>Traders of Gujarat</German>
+		<Italian>Traders of Gujarat</Italian>
+		<Spanish>Traders of Gujarat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_RAJ3</Tag>
+		<English>Hindupati</English>
+		<French>Hindupati</French>
+		<German>Hindupati</German>
+		<Italian>Hindupati</Italian>
+		<Spanish>Hindupati</Spanish>
+	</TEXT>
+	
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_TITLE_ROM1</Tag>
 		<English>Bread and Circuses</English>
 		<French>Du pain et des jeux </French>
@@ -1775,6 +1850,31 @@
 		<German>Kama</German>
 		<Italian>Kama</Italian>
 		<Spanish>Kama</Spanish>
+	</TEXT>
+	
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAIN1</Tag>
+		<English>Ahimsa</English>
+		<French>Ahimsa</French>
+		<German>Ahimsa</German>
+		<Italian>Ahimsa</Italian>
+		<Spanish>Ahimsa</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAIN2</Tag>
+		<English>Aparigraha</English>
+		<French>Aparigraha</French>
+		<German>Aparigraha</German>
+		<Italian>Aparigraha</Italian>
+		<Spanish>Aparigraha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_TITLE_JAIN3</Tag>
+		<English>Anekantavada</English>
+		<French>Anekantavada</French>
+		<German>Anekantavada</German>
+		<Italian>Anekantavada</Italian>
+		<Spanish>Anekantavada</Spanish>
 	</TEXT>
 	
 	<TEXT>

@@ -154,6 +154,22 @@
 		<Spanish>Guaranteed to be included in Congresses</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_BEN_TITLE</Tag>
+		<English>The Power of Muslin:</English>
+		<French>The Power of Muslin:</French>
+		<German>The Power of Muslin:</German>
+		<Italian>The Power of Muslin:</Italian>
+		<Spanish>The Power of Muslin:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_BEN</Tag>
+		<English>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</English>
+		<French>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</French>
+		<German>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</German>
+		<Italian>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</Italian>
+		<Spanish>Textile Industry is unlocked with Companies and extra [ICON_PRODUCTION] and [ICON_COMMERCE] from Workshops</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_BRA_TITLE</Tag>
 		<English>The Power of Cordiality:</English>
 		<French>The Power of Cordiality:</French>
@@ -298,7 +314,7 @@
 		<Spanish>%s1 has fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_DRA_TITLE</Tag>
+		<Tag>TXT_KEY_UP_TAM_TITLE</Tag>
 		<English>The Power of Trade Guilds:</English>
 		<French>The Power of Trade Guilds:</French>
 		<German>The Power of Trade Guilds:</German>
@@ -306,7 +322,7 @@
 		<Spanish>The Power of Trade Guilds:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_DRA</Tag>
+		<Tag>TXT_KEY_UP_TAM</Tag>
 		<English>+10% foreign [ICON_TRADE] yield for every traded resource</English>
 		<French>+10% foreign [ICON_TRADE] yield for every traded resource</French>
 		<German>+10% foreign [ICON_TRADE] yield for every traded resource</German>
@@ -584,6 +600,22 @@
 		<German>Improvements that provide [ICON_FOOD] have twice the effect on islands</German>
 		<Italian>Improvements that provide [ICON_FOOD] have twice the effect on islands</Italian>
 		<Spanish>Improvements that provide [ICON_FOOD] have twice the effect on islands</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KAR_TITLE</Tag>
+		<English>The Power of Rock-Cut Architecture:</English>
+		<French>The Power of Rock-Cut Architecture:</French>
+		<German>The Power of Rock-Cut Architecture:</German>
+		<Italian>The Power of Rock-Cut Architecture:</Italian>
+		<Spanish>The Power of Rock-Cut Architecture:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_KAR</Tag>
+		<English>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</English>
+		<French>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</French>
+		<German>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</German>
+		<Italian>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</Italian>
+		<Spanish>Extra [ICON_PRODUCTION] on Hill tiles when constructing buildings</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_KHM_TITLE</Tag>
@@ -938,6 +970,22 @@
 		<Spanish>+1 [ICON_TRADE] route in overseas colonies until the Industrial era</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UP_RAJ_TITLE</Tag>
+		<English>The Power of Agnivanshi:</English>
+		<French>The Power of Agnivanshi:</French>
+		<German>The Power of Agnivanshi:</German>
+		<Italian>The Power of Agnivanshi:</Italian>
+		<Spanish>The Power of Agnivanshi:</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UP_RAJ</Tag>
+		<English>+1 Experience from combat outside borders</English>
+		<French>+1 Experience from combat outside borders</French>
+		<German>+1 Experience from combat outside borders</German>
+		<Italian>+1 Experience from combat outside borders</Italian>
+		<Spanish>+1 Experience from combat outside borders</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UP_ROM_TITLE</Tag>
 		<English>The Power of Infrastructure:</English>
 		<French>Le pouvoir de l'infrastructure :</French>
@@ -1034,12 +1082,12 @@
 		<Spanish>Celebrating cities gain +50% [ICON_GREATPEOPLE] birth rate</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UP_DRAVIDIA_CONQUESTS_TARGET</Tag>
-		<English>The Dravidians have fielded an army to conquer our civilization!</English>
-		<French>The Dravidians have fielded an army to conquer our civilization!</French>
-		<German>The Dravidians have fielded an army to conquer our civilization!</German>
-		<Italian>The Dravidians have fielded an army to conquer our civilization!</Italian>
-		<Spanish>The Dravidians have fielded an army to conquer our civilization!</Spanish>
+		<Tag>TXT_KEY_UP_TAMILAKAM_CONQUESTS_TARGET</Tag>
+		<English>The Tamils have fielded an army to conquer our civilization!</English>
+		<French>The Tamils have fielded an army to conquer our civilization!</French>
+		<German>The Tamils have fielded an army to conquer our civilization!</German>
+		<Italian>The Tamils have fielded an army to conquer our civilization!</Italian>
+		<Spanish>The Tamils have fielded an army to conquer our civilization!</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UP_TAT_TITLE</Tag>

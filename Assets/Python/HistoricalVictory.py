@@ -11,7 +11,7 @@ lAfricanCoastRegions = [rRegion for rRegion in lAfrica if rRegion != rMadagascar
 lNorseTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope] if iCiv not in (iCelts, iNorse) and dBirth[iCiv] <= 1050] + [plots.core(iCelts, iPeriod=iPeriodInsularCelts)]
 
 # first Portuguese goal
-lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rDravida, rHornOfAfrica, rSwahiliCoast, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara, rMaghreb]
+lIndianTradeRegions = [rArabia, rSindh, rRajputana, rDeccan, rTamilakam, rHornOfAfrica, rSwahiliCoast, rCape, rKalahari, rCongo, rGuinea, rSahel, rSahara, rMaghreb]
 
 # second Portuguese goal: acquire 12 colonial resources by 1650 AD
 lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
@@ -20,7 +20,7 @@ lColonialResources = [iBanana, iSpices, iSugar, iCoffee, iTea, iTobacco, iCocoa]
 lAztecTargets = [plots.core(iCiv) for iCiv in dCivGroups[iCivGroupEurope]]
 
 # third Thai goal: allow no foreign powers in South Asia in 1900 AD
-lSouthAsianCivs = [iIndia, iDravidia, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
+lSouthAsianCivs = [iIndia, iTamils, iVietnam, iMalays, iJava, iKhmer, iBurma, iMughals, iThailand]
 
 # first Russian goal: control three Orthodox Cathedrals and three Orthodox wonders by 1550 AD
 lOrthodoxWonders = [iBuilding for iBuilding in infos.buildings() if isWonder(iBuilding) and iOrthodoxy in [infos.building(iBuilding).getPrereqReligion(), infos.building(iBuilding).getOrPrereqReligion()]]
@@ -73,6 +73,7 @@ CAUCASUS = "TXT_KEY_VICTORY_NAME_CAUCASUS"
 CENTRAL_ASIA = "TXT_KEY_VICTORY_NAME_CENTRAL_ASIA"
 CHINA = "TXT_KEY_VICTORY_NAME_CHINA"
 CHINA_AND_MANCHURIA = "TXT_KEY_VICTORY_NAME_CHINA_AND_MANCHURIA"
+COASTAL_INDIA = "TXT_KEY_VICTORY_NAME_COASTAL_INDIA"
 DECCAN = "TXT_KEY_VICTORY_NAME_DECCAN"
 DZUNGARIA = "TXT_KEY_VICTORY_NAME_DZUNGARIA"
 EASTER_ISLAND = "TXT_KEY_VICTORY_NAME_EASTER_ISLAND"
@@ -101,6 +102,7 @@ NEW_ZEALAND = "TXT_KEY_VICTORY_NAME_NEW_ZEALAND"
 NORTH_AFRICA = "TXT_KEY_VICTORY_NAME_NORTH_AFRICA"
 NORTH_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_AMERICA"
 NORTH_CENTRAL_AMERICA = "TXT_KEY_VICTORY_NAME_NORTH_CENTRAL_AMERICA"
+NORTHWEST_INDIA = "TXT_KEY_VICTORY_NAME_NORTHWEST_INDIA"
 NUBIA = "TXT_KEY_VICTORY_NAME_NUBIA"
 OCEANIA = "TXT_KEY_VICTORY_NAME_OCEANIA"
 PACIFIC_COAST = "TXT_KEY_VICTORY_NAME_PACIFIC_COAST"
@@ -255,9 +257,12 @@ dGoals = {
 		Wonders(iParthenon, iColossus, iStatueOfZeus, iTempleOfArtemis, by=-250),
 	),
 	iIndia: (
-		BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),
-		BuildingCount(religious_buildings(temple).named(TEMPLES), 25, by=700),
-		PopulationPercent(20, at=1200),
+		All(
+			BuildingCount((iHinduShrine, 1), (iBuddhistShrine, 1), at=-100),
+			BuildingCount(religious_buildings(temple).named(TEMPLES), 30, by=800),
+		),
+		EraFirstDiscover(iClassical, 5),
+		PopulationPercent(16, at=1200),
 	),
 	iPhoenicia: (
 		All(
@@ -344,21 +349,45 @@ dGoals = {
 		Wonder(iTempleOfKukulkan, by=600),
 		ContactBeforeRevealed(civs(*lBioOldWorld).named(OLD_WORLD_CIVILIZATION), plots.regions(*lAmerica).named(AMERICAS)),
 	),
-	iDravidia: (
+	iKarnataka: (
+		CityCount(
+			(plots.region(rDeccan).named(DECCAN), 1),
+			(plots.region(rTamilakam), 1),
+			(plots.region(rRajputana), 1),
+			(plots.region(rHindustan), 1),
+			by=800,
+		),
 		All(
-			GoldAmount(5000, at=600),
-			CultureAmount(7500, at=600),
-			TradeGold(7500, by=1200),
+			BuildingCount(religious_buildings(temple).named(TEMPLES), 10),
+			BuildingCount(iJainCathedral, 1),
+			SpecialistCount(sum(iSpecialistGreatArtist, iSpecialistGreatScientist, iSpecialistGreatStatesman), 4),
+			by=1100,
+		),
+		All(
+			CityPopulation(capital().named(CAPITAL), 28),
+			GoldenAges(2),
+			by=1500,
+		),
+	),
+	iTamils: (
+		All(
+			GoldAmount(5000),
+			CultureAmount(5000),
+			by=600,
 		),
 		Control(
-			plots.regions(rDravida, rDeccan, rRajputana).named(DECCAN),
+			plots.region(rDeccan).named(DECCAN),
 			plots.region(rBengal),
 			plots.rectangle(tSrivijaya).named(SRIVIJAYA),
 			plots.birth(iBurma),
 			subject=VASSALS,
 			at=1000,
 		),
-		PopulationCity(25, by=1500),
+		All(
+			TradeGold(7500, by=1200),
+			TradeGold(15000, by=1500),
+			AreaPopulationCount(plots.regions(*lIndia).coastal().named(COASTAL_INDIA), 80, by=1500),
+		),
 	),
 	iEthiopia: (
 		ResourceCount(iIncense, 5, by=400),
@@ -459,6 +488,21 @@ dGoals = {
 			at=1450,
 		),
 	),
+	iRajputs: (
+		BuildingCount(
+			(iCastle, 5),
+			(iStepwell, 5),
+			(iForge, 4),
+			(iJeweller, 4),
+			by=1000,
+		),
+		SpecialistCount(iSpecialistGreatMerchant, 3, by=1300),
+		All(
+			AreaNoReligion(plots.regions(rSindh, rPunjab, rRajputana, rHindustan).named(NORTHWEST_INDIA), iIslam, at=1100),
+			AreaNoReligion(plots.regions(*lIndia).named(INDIA), iIslam, at=1500),
+			GreatPeople(iGreatGeneral, 4, at=1500),
+		),
+	),
 	iFrance: (
 		CityCultureLevel(start(iFrance).named(PARIS), iCultureLevelLegendary, at=1700),
 		All(
@@ -510,6 +554,23 @@ dGoals = {
 			CityCultureLevel(capital().named(CAPITAL), iCultureLevelDeveloping, by=900),
 			CityCultureLevel(capital().named(DIFFERENT_CAPITAL), iCultureLevelRefined, by=1100),
 			CityCultureLevel(capital().named(ANOTHER_CAPITAL), iCultureLevelInfluential, by=1400),
+		),
+	),
+	iBengal: (
+		BuildingCount(
+			(iBuddhistMonastery, 6),
+			(wonders(), 3),
+			by=1000,
+		),
+		All(
+			CultureLevelCityCount(iCultureLevelInfluential, 3),
+			TradeNetworkReligionCityCount(iIslam, 30),
+			by=1500,
+		),
+		All(
+			CompleteEra(iRenaissance),
+			GoldAmount(15000),
+			by=1750,
 		),
 	),
 	iArabia: (
@@ -612,7 +673,7 @@ dGoals = {
 	iVietnam: (
 		GreatPeople(iGreatGeneral, 2, by=1500),
 		BuildingCount(iConfucianCathedral, 1, by=1600),
-		CultureLevelCityCount(iCultureLevelInfluential, 3, by=1700),
+		CultureLevelCityCount(iCultureLevelFlourishing, 3, by=1700),
 	),
 	iSwahili: (
 		ImportCount(sum(lHappinessResources).named(HAPPINESS_RESOURCES), 100, by=1300),
@@ -672,7 +733,7 @@ dGoals = {
 	),
 	iItaly: (
 		Wonders(iSanMarcoBasilica, iSistineChapel, iSantaMariaDelFiore, by=1500),
-		CultureLevelCityCount(iCultureLevelInfluential, 4, by=1600),
+		CultureLevelCityCount(iCultureLevelFlourishing, 4, by=1600),
 		AreaPercent(plots.all().adjacent_region(rMediterraneanSea).named(MEDITERRANEAN), 65, by=1930),
 	),
 	iMongols: (
@@ -701,7 +762,7 @@ dGoals = {
 	iThailand: (
 		OpenBorderCount(10, at=1650),
 		BestPopulationCity(start(iThailand).named(AYUTTHAYA), at=1700),
-		AllowOnly(plots.regions(rDravida, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
+		AllowOnly(plots.regions(rTamilakam, rDeccan, rBengal, rIndochina, rIndonesia).named(SOUTH_ASIA), civs(*lSouthAsianCivs).named(LOCAL), at=1900),
 	),
 	iSweden: (
 		StateReligionCount(group(iCivGroupEurope).named(EUROPEAN), iProtestantism, 6, by=1650),
@@ -843,7 +904,7 @@ dGoals = {
 	),
 	iArgentina: (
 		GoldenAges(2, by=1930),
-		CityCultureLevel(start(iArgentina).named(BUENOS_AIRES), iCultureLevelLegendary, by=1960),
+		CityCultureLevel(start(iArgentina).named(BUENOS_AIRES), iCultureLevelRenowned, by=1960),
 		GoldenAges(6, by=2000),
 	),
 	iMexico: (

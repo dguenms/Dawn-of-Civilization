@@ -629,4 +629,28 @@
 		<Italian>Mugyo</Italian>
 		<Spanish>Mugyo</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_JAINISM</Tag>
+		<English>Jainism</English>
+		<French>Jainism</French>
+		<German>Jainism</German>
+		<Italian>Jainism</Italian>
+		<Spanish>Jainism</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_JAINISM_ADJECTIVE</Tag>
+		<English>Jain</English>
+		<French>Jain</French>
+		<German>Jain</German>
+		<Italian>Jain</Italian>
+		<Spanish>Jain</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_RELIGION_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>

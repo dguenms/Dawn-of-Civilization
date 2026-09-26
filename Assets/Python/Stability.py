@@ -722,7 +722,7 @@ def calculateStability(iPlayer):
 
 	
 	if iCurrentEra <= iMedieval:
-		if iStateReligion == iHinduism:
+		if iStateReligion in [iHinduism, iJainism]:
 			if iCasteSystem in civics: iCivicEraTechStability += 3
 
 		elif iStateReligion == iIslam:
@@ -735,6 +735,9 @@ def calculateStability(iPlayer):
 		if iStateReligion == iConfucianism:
 			if iBureaucracy in civics: iCivicEraTechStability += 3
 			if iIsolationism in civics: iCivicEraTechStability += 3
+		
+		elif iStateReligion == iJainism:
+			if iHegemony in civics: iCivicEraTechStability -= 3
 
 		elif iStateReligion in [iZoroastrianism, iOrthodoxy, iCatholicism, iProtestantism]:
 			if iSlavery in civics: iCivicEraTechStability -= 3

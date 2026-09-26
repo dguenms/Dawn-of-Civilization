@@ -814,14 +814,6 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Holkan[COLOR_REVERT], the Mayan replacement for the [COLOR_UNIT_TEXT]Skirmisher[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], provides food to the nearest city when it wins a fight and has a higher chance to withdraw from combat.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</English>
-		<French>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</French>
-		<German>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], requires [COLOR_TECH_TEXT]Nobility[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Commune[COLOR_REVERT], has one less strength point, is cheaper, has an combat bonus when attacking [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and begins with the [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Woodsman I[COLOR_REVERT] promotions.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_HITTITE_HULUGANNI</Tag>
 		<English>Huluganni</English>
 		<French>
@@ -880,6 +872,14 @@
 		<German>Patiyodha</German>
 		<Italian>Patiyodha</Italian>
 		<Spanish>Patiyodha</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_PATIYODHA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, has a chance to withdraw from combat, and has additional attack on [COLOR_HIGHLIGHT_TEXT]Hills[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Forest[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles.</English>
+		<French>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, has a chance to withdraw from combat, and has additional attack on [COLOR_HIGHLIGHT_TEXT]Hills[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Forest[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles.</French>
+		<German>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, has a chance to withdraw from combat, and has additional attack on [COLOR_HIGHLIGHT_TEXT]Hills[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Forest[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, has a chance to withdraw from combat, and has additional attack on [COLOR_HIGHLIGHT_TEXT]Hills[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Forest[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Patiyodha[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Archer[COLOR_REVERT], is able to enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles, has a chance to withdraw from combat, and has additional attack on [COLOR_HIGHLIGHT_TEXT]Hills[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Forest[COLOR_REVERT], [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT], and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] tiles.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIAN_PUNJABI_WORKER</Tag>
@@ -1842,7 +1842,7 @@
 		<Spanish>[COLOR_UNIT_TEXT]Aztec Slaves[COLOR_REVERT] build improvements including [COLOR_HIGHLIGHT_TEXT]Slave Plantations[COLOR_REVERT], can settle in a city as a [COLOR_HIGHLIGHT_TEXT]Slave[COLOR_REVERT] specialist, can hurry production in a city and can be sacrificed in cities for temporary happiness.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DRAVIDIAN_DHARANI</Tag>
+		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI</Tag>
 		<English>Dharani</English>
 		<French>
 			<Text>Dharani</Text>
@@ -1862,12 +1862,12 @@
 		<Spanish>[COLOR_UNIT_TEXT]Tanks[COLOR_REVERT] don't receive defensive bonuses and begin with the [COLOR_HIGHLIGHT_TEXT]Blitz[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DRAVIDIAN_DHARANI_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</English>
-		<French>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</French>
-		<German>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Spanish>
+		<Tag>TXT_KEY_UNIT_TAMIL_DHARANI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</English>
+		<French>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</French>
+		<German>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Dharani[COLOR_REVERT], the Tamil replacement for the [COLOR_UNIT_TEXT]Cog[COLOR_REVERT], has two extra strength points, two extra movement points and two first strikes.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_THAI_CHANG_SUEK</Tag>
@@ -3270,7 +3270,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Savaran[COLOR_REVERT], the Persian replacement for the [COLOR_UNIT_TEXT]Lancer[COLOR_REVERT], requires [COLOR_TECH_TEXT]Generalship[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Feudalism[COLOR_REVERT], has two less strength points and doesn't have a combat penalty when attacking cities.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_VARU</Tag>
+		<Tag>TXT_KEY_UNIT_BENGALI_VARU</Tag>
 		<English>Varu</English>
 		<French>
 			<Text>Varu</Text>
@@ -3282,12 +3282,12 @@
 		<Spanish>Varu</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIAN_VARU_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
-		<French>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
-		<German>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
+		<Tag>TXT_KEY_UNIT_BENGALI_VARU_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Varu[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]War Elephant[COLOR_REVERT], begins with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MALAY_DJONG</Tag>
@@ -3310,7 +3310,7 @@
 		<Spanish>The [COLOR_UNIT_TEXT]Djong[COLOR_REVERT], the Malay replacement for the [COLOR_UNIT_TEXT]Galeass[COLOR_REVERT], requires [COLOR_TECH_TEXT]Compass[COLOR_REVERT] instead of [COLOR_TECH_TEXT]Gunpowder[COLOR_REVERT], has an additional defensive combat bonus on [COLOR_HIGHLIGHT_TEXT]Coast[COLOR_REVERT] and has a combat bonus against [COLOR_UNIT_TEXT]Privateers[COLOR_REVERT].</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER</Tag>
+		<Tag>TXT_KEY_UNIT_KARNATIC_ROCKETEER</Tag>
 		<English>Rocketeer</English>
 		<French>
 			<Text>Tireur de fus&#233;es</Text>
@@ -3322,12 +3322,12 @@
 		<Spanish>Rocketeer</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_DRAVIDIAN_ROCKETEER_STRATEGY</Tag>
-		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
-		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
-		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
-		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
-		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Dravidian replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
+		<Tag>TXT_KEY_UNIT_KARNATIC_ROCKETEER_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</English>
+		<French>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</French>
+		<German>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Rocketeer[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Grenadier[COLOR_REVERT], has two additional strength points and does collateral damage to two more units.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OROMO_WARRIOR</Tag>
@@ -3716,6 +3716,94 @@
 		<German>Chambul</German>
 		<Italian>Chambul</Italian>
 		<Spanish>Chambul</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_JAIN_MISSIONARY</Tag>
+		<English>Jain Muni</English>
+		<French>Jain Muni</French>
+		<German>Jain Muni</German>
+		<Italian>Jain Muni</Italian>
+		<Spanish>Jain Muni</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BENGALI_PAIK</Tag>
+		<English>Paik</English>
+		<French>Paik</French>
+		<German>Paik</German>
+		<Italian>Paik</Italian>
+		<Spanish>Paik</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BENGALI_PAIK_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Paik[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has additional first strikes and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]River Combat[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Paik[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has additional first strikes and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]River Combat[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Paik[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has additional first strikes and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]River Combat[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Paik[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has additional first strikes and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]River Combat[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Paik[COLOR_REVERT], the Bengali replacement for the [COLOR_UNIT_TEXT]Longbowman[COLOR_REVERT], has additional first strikes and starts with the [COLOR_HIGHLIGHT_TEXT]Amphibious[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]River Combat[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAJPUT_KATHIAWARI</Tag>
+		<English>Kathiawari</English>
+		<French>Kathiawari</French>
+		<German>Kathiawari</German>
+		<Italian>Kathiawari</Italian>
+		<Spanish>Kathiawari</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAJPUT_KATHIAWARI_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kathiawari[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Kathiawari[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Kathiawari[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Kathiawari[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Kathiawari[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Horse Archer[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Disengage I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAJPUT_PURBIYA</Tag>
+		<English>Purbiya</English>
+		<French>Purbiya</French>
+		<German>Purbiya</German>
+		<Italian>Purbiya</Italian>
+		<Spanish>Purbiya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAJPUT_PURBIYA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Purbiya[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Purbiya[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Purbiya[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Purbiya[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Purbiya[COLOR_REVERT], the Rajput replacement for the [COLOR_UNIT_TEXT]Arquebusier[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Leadership[COLOR_REVERT] promotion.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KARNATIC_KARNATABALA</Tag>
+		<English>Karnatabala</English>
+		<French>Karnatabala</French>
+		<German>Karnatabala</German>
+		<Italian>Karnatabala</Italian>
+		<Spanish>Karnatabala</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_KARNATIC_KARNATABALA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Karnatabala[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and starts with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</English>
+		<French>The [COLOR_UNIT_TEXT]Karnatabala[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and starts with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</French>
+		<German>The [COLOR_UNIT_TEXT]Karnatabala[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and starts with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Karnatabala[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and starts with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Karnatabala[COLOR_REVERT], the Karnatic replacement for the [COLOR_UNIT_TEXT]Swordsman[COLOR_REVERT], can enter [COLOR_HIGHLIGHT_TEXT]Rainforest[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Jungle[COLOR_REVERT] and starts with the [COLOR_HIGHLIGHT_TEXT]Guerilla I[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Formation[COLOR_REVERT] promotions.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_KSHATRIYA</Tag>
+		<English>Kshatriya</English>
+		<French>Kshatriya</French>
+		<German>Kshatriya</German>
+		<Italian>Kshatriya</Italian>
+		<Spanish>Kshatriya</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIAN_KSHATRIYA_STRATEGY</Tag>
+		<English>The [COLOR_UNIT_TEXT]Kshatriya[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Light Swordsman[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</English>
+		<French>The [COLOR_UNIT_TEXT]Kshatriya[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Light Swordsman[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</French>
+		<German>The [COLOR_UNIT_TEXT]Kshatriya[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Light Swordsman[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</German>
+		<Italian>The [COLOR_UNIT_TEXT]Kshatriya[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Light Swordsman[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Italian>
+		<Spanish>The [COLOR_UNIT_TEXT]Kshatriya[COLOR_REVERT], the Indian replacement for the [COLOR_UNIT_TEXT]Light Swordsman[COLOR_REVERT], starts with the [COLOR_HIGHLIGHT_TEXT]Shock[COLOR_REVERT] promotion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_</Tag>

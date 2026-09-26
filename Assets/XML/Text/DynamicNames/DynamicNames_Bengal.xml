@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<Civ4GameText xmlns="http://www.firaxis.com">
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_DESC</Tag>
+		<English>The Bengalis</English>
+		<French>The Bengalis</French>
+		<German>The Bengalis</German>
+		<Italian>The Bengalis</Italian>
+		<Spanish>The Bengalis</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_PEOPLES</Tag>
+		<English>Vangala Peoples</English>
+		<French>Vangala Peoples</French>
+		<German>Vangala Peoples</German>
+		<Italian>Vangala Peoples</Italian>
+		<Spanish>Vangala Peoples</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_ADJECTIVE</Tag>
+		<English>Bengali</English>
+		<French>Bengali</French>
+		<German>Bengali</German>
+		<Italian>Bengali</Italian>
+		<Spanish>Bengali</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_SHORT_DESC</Tag>
+		<English>Bengal</English>
+		<French>Bengal</French>
+		<German>Bengal</German>
+		<Italian>Bengal</Italian>
+		<Spanish>Bengal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_DEFAULT</Tag>
+		<English>%s1 Maharajate</English>
+		<French>%s1 Maharajate</French>
+		<German>%s1 Maharajate</German>
+		<Italian>%s1 Maharajate</Italian>
+		<Spanish>%s1 Maharajate</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_SENA</Tag>
+		<English>Sena</English>
+		<French>Sena</French>
+		<German>Sena</German>
+		<Italian>Sena</Italian>
+		<Spanish>Sena</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_PALA</Tag>
+		<English>Pala</English>
+		<French>Pala</French>
+		<German>Pala</German>
+		<Italian>Pala</Italian>
+		<Spanish>Pala</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_BANGLADESH</Tag>
+		<English>Bangladesh</English>
+		<French>Bangladesh</French>
+		<German>Bangladesh</German>
+		<Italian>Bangladesh</Italian>
+		<Spanish>Bangladesh</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_FASCIST</Tag>
+		<English>National Republic of %s1</English>
+		<French>National Republic of %s1</French>
+		<German>National Republic of %s1</German>
+		<Italian>National Republic of %s1</Italian>
+		<Spanish>National Republic of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BENGAL_VASSAL</Tag>
+		<English>Janapada of %s1</English>
+		<French>
+			<Text>Janapada de %s1</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Janapada of %s1</German>
+		<Italian>Janapada of %s1</Italian>
+		<Spanish>Janapada of %s1</Spanish>
+	</TEXT>
+</Civ4GameText>

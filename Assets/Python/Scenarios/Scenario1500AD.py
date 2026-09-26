@@ -17,7 +17,7 @@ lCivilizations = [
 		dAttitudes={iKorea: 2},
 	),
 	Civilization(
-		iDravidia,
+		iKarnataka,
 		iLeader=iKrishnaDevaRaya,
 		iStateReligion=iHinduism,
 		iGold=200,
@@ -68,6 +68,17 @@ lCivilizations = [
 		},
 	),
 	Civilization(
+		iRajputs,
+		iLeader=iBhoja,
+		iStateReligion=iHinduism,
+		iGold=100,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iMerchantTrade, iClergy, iHegemony],
+		techs=techs.column(8).including(iGunpowder, iCompanies),
+		dMemories={
+			iMughals: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
+	),
+	Civilization(
 		iMalays,
 		iLeader=iTunPerak,
 		iStateReligion=iIslam,
@@ -104,6 +115,17 @@ lCivilizations = [
 		techs=techs.column(8).without(iCropRotation).including(iGunpowder),
 		dMemories={
 			iIran: {MemoryTypes.MEMORY_DECLARED_WAR: 2},
+		},
+	),
+	Civilization(
+		iBengal,
+		iLeader=iAlauddin,
+		iStateReligion=iIslam,
+		iGold=300,
+		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iClergy],
+		techs=techs.column(8).including(iGunpowder, iCompanies, iCartography, iHumanities),
+		dMemories={
+			iMughals: {MemoryTypes.MEMORY_DECLARED_WAR: 4},
 		},
 	),
 	Civilization(
@@ -250,7 +272,9 @@ lCivilizations = [
 		lCivics=[iDespotism, iVassalage, iSlavery, iRegulatedTrade, iClergy, iHegemony],
 		techs=techs.column(8).including(iGunpowder, iCompanies, iHumanities, iJudiciary),
 		dMemories={
-			iDravidia: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+			iKarnataka: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+			iRajputs: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+			iBengal: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
 		},
 	),
 	Civilization(
@@ -414,11 +438,14 @@ scenario1500AD = Scenario(
 	dGreatPeopleCreated = {
 		iChina: 10,
 		iIndia: 8,
-		iDravidia: 4,
+		iTamils: 4,
+		iKarnataka: 4,
 		iKorea: 4,
 		iJapan: 4,
 		iNorse: 4,
 		iTurks: 4,
+		iRajputs: 3,
+		iBengal: 3,
 		iSpain: 4,
 		iFrance: 4,
 		iEngland: 3,
@@ -434,8 +461,11 @@ scenario1500AD = Scenario(
 		iChina: 4,
 		iIndia: 3,
 		iPersia: 2,
-		iDravidia: 2,
+		iTamils: 2,
+		iKarnataka: 2,
 		iKorea: 3,
+		iRajputs: 2,
+		iBengal: 2,
 		iJapan: 3,
 		iNorse: 3,
 		iTurks: 3,
@@ -476,7 +506,7 @@ scenario1500AD = Scenario(
 	
 	lUnexpiredWonders = [iOxfordUniversity, iSaintThomasChurch],
 	
-	lAllGoalsFailed = [iChina, iDravidia, iEthiopia, iKorea, iKhmer, iMali, iMalays, iJapan, iNorse, iTurks, iTibet, iMoors, iJava, iSwahili, iMisr, iItaly, iAztecs],
+	lAllGoalsFailed = [iChina, iKarnataka, iEthiopia, iKorea, iKhmer, iMali, iMalays, iJapan, iNorse, iTurks, iRajputs, iBengal, iTibet, iMoors, iJava, iSwahili, iMisr, iItaly, iAztecs],
 	lGoalsSucceeded = [(iSpain, 0), (iBurma, 0), (iVietnam, 0), (iPoland, 0), (iMughals, 0), (iRussia, 0)],
 	setupGoals = setupGoals,
 	

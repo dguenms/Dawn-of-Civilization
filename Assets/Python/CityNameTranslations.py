@@ -10648,6 +10648,7 @@ name_translations = {
 	"Lakshmanavati": {
 		iEnglish: relocate("English Bazar"),
 		iIndian: (
+			translate("Gauda", bCapital=True),
 			translate("Gauda", iAfter=iMedieval),
 			_,
 		),
@@ -15426,7 +15427,10 @@ name_translations = {
 			_,
 		),
 		iGreek: "Peukelaitis",
-		iPersian: "Vaekereta",
+		iPersian: (
+			relocate("Peshawar", iReligion=iIslam),
+			"Vaekereta",
+		),
 	},
 	"Pwn": {
 		iArabic: "Binzart",
@@ -19942,6 +19946,13 @@ name_translations = {
 			_,
 		),
 	},
+	"Vatapi": {
+		iIndian: (
+			relocate("Vijayanagara", bCapital=True, iAfter=iMedieval),
+			translate("Badami", iAfter=iIndustrial),
+			_,
+		),
+	},
 	"Vatsagulma": {
 		iIndian: (
 			relocate("Akola", iAfter=iRenaissance),
@@ -20052,9 +20063,12 @@ name_translations = {
 		iIndian: _,
 		iVietnamese: "Quy Nhon",
 	},
-	"Vijayanagara": {
+	"Vijayanagara": {  # relocated from Vatapi
 		iEnglish: relocate("Ballari"),
-		iIndian: _,
+		iIndian: (
+			translate(_, bCapital=True),
+			"Hampi",
+		),
 		iPersian: relocate("Ballari"),
 	},
 	"Vijayapura": {

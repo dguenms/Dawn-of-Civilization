@@ -33,6 +33,7 @@ lExpansionCivs = [
 	iArabia,
 	iSpain,
 	iMongols,
+	iTatars,
 	iMughals,
 	iOttomans,
 	iManchuria,
@@ -40,6 +41,7 @@ lExpansionCivs = [
 
 lIndependenceCivs = [
 	iByzantium,
+	iBengal,
 	iTatars,
 	iArgentina,
 	iMexico,
@@ -67,6 +69,7 @@ lInvasionCivs = [
 dClearedForBirth = {
 	iIndia: iHarappa,
 	iByzantium: iGreece,
+	iBengal: iIndia,
 	iItaly: iRome,
 	iAztecs: iToltecs,
 	iRussia: iRus,
@@ -76,6 +79,7 @@ dClearedForBirth = {
 
 lAlwaysClear = [
 	iHarappa,
+	iIndia,
 	iToltecs,
 ]
 
@@ -546,6 +550,11 @@ class Birth(object):
 			self.area += additionalPlots.where(lambda p: p.getOwner() in owners and none(p.isPlayerCore(iPlayer) for iPlayer in players.major().existing().without(self.iPlayer)))
 			self.area = self.area.unique()
 		
+		if self.iCiv == iBengal:
+			if not player(iIndia).isExisting() or not player(iIndia).isHuman():
+				self.area += plots.region(rHindustan)
+				self.area = self.area.unique()
+		
 		if self.iCiv == iTatars:
 			if player(iMongols).isExisting():
 				self.area += plots.owner(iMongols).regions(*lEurope)
@@ -808,6 +817,16 @@ class Birth(object):
 			elif player(iGreece).isExisting():
 				return False
 			elif player(iRome).isHuman() and stability(iRome) == iStabilitySolid:
+				return False
+		
+		# Rajputs require India not to control Rajputana or be below Solid
+		if self.iCiv == iRajputs:
+			if player(iIndia).isExisting() and isControlled(iIndia, plots.region(rRajputana)) and stability(iIndia) == iStabilitySolid:
+				return False
+		
+		# Bengal requires India not to control Bengal or be below Solid
+		if self.iCiv == iBengal:
+			if player(iIndia).isExisting() and isControlled(iIndia, plots.region(rBengal)) and stability(iIndia) == iStabilitySolid:
 				return False
 		
 		# Misr requires Egypt to be dead and Arabia to be shaky or worse

@@ -7071,7 +7071,7 @@ void CvGame::createBarbarianUnits()
 
 	bAnimals = false;
 
-	if (GC.getEraInfo(getCurrentEra()).isNoBarbUnits())
+	if (getCurrentEra() != NO_ERA && GC.getEraInfo(getCurrentEra()).isNoBarbUnits())
 	{
 		bAnimals = true;
 	}
@@ -7258,7 +7258,7 @@ void CvGame::createAnimals()
 	int iLoop;
 	int iI, iJ;
 
-	if (GC.getEraInfo(getCurrentEra()).isNoAnimals())
+	if (getCurrentEra() != NO_ERA && GC.getEraInfo(getCurrentEra()).isNoAnimals())
 	{
 		return;
 	}

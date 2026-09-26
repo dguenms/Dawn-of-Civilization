@@ -108,6 +108,25 @@ class AllowOnly(Requirement):
 		return False
 
 
+# Third Rajput UHV goal
+class AreaNoReligion(Requirement):
+	
+	TYPES = (AREA, RELIGION_ADJECTIVE)
+	
+	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ALLOW"
+	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_NO_RELIGION"
+	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_NO_RELIGION"
+	
+	def __init__(self, area, iReligion, **options):
+		Requirement.__init__(self, area, iReligion, **options)
+		
+		self.area = area
+		self.iReligion = iReligion
+	
+	def fulfilled(self, evaluator):
+		return self.area.cities().none(lambda city: city.isHasReligion(self.iReligion))
+
+
 # Third Spanish UHV goal
 class AreaNoStateReligion(Requirement):
 
@@ -163,7 +182,7 @@ class CompleteEra(ThresholdRequirement):
 # Second Assyrian UHV goal
 # Second Greek UHV goal
 # Second Phoenician UHV goal
-# Second Dravidian UHV goal
+# Second Tamil UHV goal
 # Third Byzantine UHV goal
 # Second Japanese UHV goal
 # First Norse UHV goal

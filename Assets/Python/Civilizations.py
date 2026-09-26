@@ -148,6 +148,9 @@ class Civilization(object):
 			if iNewStateReligion == iCatholicism and not game.isReligionFounded(iCatholicism):
 				iNewStateReligion = iOrthodoxy
 			
+			if iNewStateReligion == iJainism and not game.isReligionFounded(iJainism):
+				iNewStateReligion = iHinduism
+			
 			if game.isReligionFounded(iNewStateReligion) or self.canFoundReligion(iNewStateReligion):
 				self.player.setLastStateReligion(iNewStateReligion)
 				events.fireEvent("playerChangeStateReligion", self.player.getID(), iNewStateReligion, iOldStateReligion)
@@ -270,7 +273,7 @@ lCivilizations = [
 		techs=techs.column(1).including(iProperty, iMasonry, iSmelting, iCeremony).without(iSailing)
 	),
 	Civilization(
-		iDravidia,
+		iTamils,
 		iGold=200,
 		iAdvancedStartPoints=80,
 		iStateReligion=iHinduism,
@@ -282,6 +285,13 @@ lCivilizations = [
 		iGold=100,
 		lCivics=[iMonarchy, iSlavery, iDeification],
 		techs=techs.column(2).including(iAlloys, iWriting, iCalendar, iPriesthood)
+	),
+	Civilization(
+		iKarnataka,
+		iGold=50,
+		iStateReligion=iJainism,
+		lCivics=[iMonarchy, iCasteSystem, iRedistribution, iClergy],
+		techs=techs.column(3).including(iBloomery, iCement, iMathematics, iLiterature, iPriesthood),
 	),
 	Civilization(
 		iToltecs,
@@ -326,6 +336,14 @@ lCivilizations = [
 		techs=techs.column(5).including(iArchitecture, iPolitics, iEthics)
 	),
 	Civilization(
+		iRajputs,
+		iGold=150,
+		iAdvancedStartPoints=100,
+		iStateReligion=iHinduism,
+		lCivics=[iMonarchy, iVassalage, iCasteSystem, iRedistribution, iClergy, iHegemony],
+		techs=techs.column(5).including(iNobility, iSteel, iArtisanry)
+	),
+	Civilization(
 		iFrance,
 		iGold=100,
 		iStateReligion=iCatholicism,
@@ -359,6 +377,14 @@ lCivilizations = [
 		iGold=100,
 		lCivics=[iDespotism, iSlavery, iMerchantTrade, iHegemony],
 		techs=techs.column(5).including(iNobility, iSteel).without(iNavigation, iMedicine, iPhilosophy)
+	),
+	Civilization(
+		iBengal,
+		iGold=200,
+		iAdvancedStartPoints=100,
+		iStateReligion=iBuddhism,
+		lCivics=[iElective, iCitizenship, iCasteSystem, iMerchantTrade, iSyncretism],
+		techs=techs.column(5).including(iArtisanry, iPolitics)
 	),
 	Civilization(
 		iArabia,
@@ -747,7 +773,7 @@ dStartingUnits = CivDict({
 		iWork: 1,
 		iSkirmish: 2,
 	},
-	iDravidia: {
+	iTamils: {
 		iSettle: 1,
 		iSettleSea: 1,
 		iWork: 2,
@@ -766,6 +792,14 @@ dStartingUnits = CivDict({
 		iWorkerSea: 1,
 		iEscort: 1,
 		# 1 Shotelai
+	},
+	iKarnataka: {
+		iSettle: 1,
+		iWork: 2,
+		iDefend: 2,
+		iAttack: 1,
+		iCounter: 1,
+		iMissionary: 1,
 	},
 	iToltecs: {
 		iSettle: 1,
@@ -813,6 +847,17 @@ dStartingUnits = CivDict({
 		iFerry: 2,
 		iEscort: 2,
 	},
+	iRajputs: {
+		iSettle: 2,
+		iWork: 2,
+		iDefend: 1,
+		iAttack: 2,
+		iSkirmish: 2,
+		iHarass: 4,
+		iExplore: 1,
+		iExploreSea: 1,
+		iMissionary: 1,
+	},
 	iFrance: {
 		iSettle: 2,
 		iWork: 2,
@@ -856,6 +901,17 @@ dStartingUnits = CivDict({
 		iDefend: 3,
 		iHarass: 7,
 		iExplore: 1,
+	},
+	iBengal: {
+		iSettle: 2,
+		iWork: 3,
+		iDefend: 3,
+		iShock: 2,
+		iAttack: 2,
+		iSiege: 2,
+		iWorkerSea: 1,
+		iExploreSea: 2,
+		iMissionary: 2,
 	},
 	iArabia: {
 		iSettle: 2,
@@ -1230,9 +1286,14 @@ dExtraAIUnits = CivDict({
 		iDefend: 2,
 		iAttack: 3,
 	},
-	iDravidia: {
+	iTamils: {
 		iShock: 1,
+		iDefend: 1,
 		iMissionary: 1,
+	},
+	iKarnataka: {
+		iShock: 1,
+		iDefend: 1,
 	},
 	iKushans: {
 		iShockCity: 4,
@@ -1252,6 +1313,15 @@ dExtraAIUnits = CivDict({
 	iNorse: {
 		iExploreSea: 1,
 		iAssaultSea: 1,
+	},
+	iRajputs: {
+		iCounter: 1,
+		iShock: 1,
+		iDefend: 1,
+	},
+	iBengal: {
+		iCounter: 1,
+		iDefend: 1,
 	},
 	iJava: {
 		iCityAttack: 2,
@@ -1345,7 +1415,7 @@ dAdditionalUnits = CivDict({
 		iDefend: 2,
 		iAttack: 2,
 	},
-	iDravidia: {
+	iTamils: {
 		iAttack: 2,
 		iShock: 1,
 	},
@@ -1366,6 +1436,9 @@ dAdditionalUnits = CivDict({
 		iAttack: 3,
 		iCounter: 1,
 	},
+	iRajputs: {
+		iHarass: 3,
+	},
 	iFrance: {
 		iDefend: 3,
 		iAttack: 3,
@@ -1375,6 +1448,10 @@ dAdditionalUnits = CivDict({
 	},
 	iTurks: {
 		iHarass: 4,
+	},
+	iBengal: {
+		iShock: 2,
+		iAttack: 2,
 	},
 	iArabia: {
 		iAttack: 2,
@@ -1565,7 +1642,8 @@ dAlwaysTrain = CivDict({
 	iAssyria: [iAzmaru, iSiegeRam],
 	iGreece: [iHoplite, iCatapult],
 	iPhoenicia: [iNumidianCavalry],
-	iDravidia: [iWarElephant],
+	iTamils: [iWarElephant],
+	iKarnataka: [iWarElephant],
 	iByzantium: [iLegion, iDromon],
 	iArabia: [iMobileGuard, iGhazi],
 	iVietnam: [iRattanArcher],
@@ -1600,7 +1678,7 @@ def createSpecificUnits(iPlayer, tile):
 		makeUnit(iPlayer, iWarElephant, tile)
 	if iCiv == iKorea:
 		makeUnit(iPlayer, iConfucianMissionary, tile)
-	elif iCiv == iDravidia:
+	elif iCiv == iTamils:
 		makeUnit(iPlayer, iWarElephant, tile)
 	elif iCiv == iEthiopia:
 		makeUnit(iPlayer, iShotelai, tile)
@@ -1763,7 +1841,8 @@ dTechPreferences = {
 	iIndia : {
 		iCeremony: 200,
 		iPriesthood: 200,
-		iPhilosophy: 50,
+		iPhilosophy: 200,
+		iMedicine: 200,
 		
 		iEngineering: -20,
 		iTheology: -20,
@@ -1806,7 +1885,7 @@ dTechPreferences = {
 		iCalendar: 40,
 		iAesthetics: 30,
 	},
-	iDravidia : {
+	iTamils : {
 		iCement: 20,
 		iCompass: 20,
 		iCalendar: 20,
@@ -2236,23 +2315,22 @@ dBuildingPreferences = {
 		iGreatCothon: -100,
 	},
 	iIndia : {
-		iKhajuraho: 30,
-		iIronPillar: 30,
+		iKhajuraho: 100,
+		iIronPillar: 100,
 		iVijayaStambha: 30,
-		iNalanda: 30,
-		iLotusTemple: 30,
+		iNalanda: 100,
+		iLotusTemple: 50,
 		iTajMahal: 20,
-		iWatPreahPisnulok: 20,
-		iShwedagonPaya: 20,
-		iHarmandirSahib: 20,
-		iJetavanaramaya: 20,
-		iSalsalBuddha: 20,
-		iPotalaPalace: 20,
-		iBorobudur: 15,
-		iPrambanan: 15,
 		
 		iParthenon: -30,
 		iStatueOfZeus: -20,
+		iWatPreahPisnulok: -20,
+		iShwedagonPaya: -20,
+		iBorobudur: -20, 
+		iPotalaPalace: -20,
+		iJetavanaramaya: -20,
+		iKailasaTemple: -20,
+		iHimejiCastle: -20,
 	},
 	iCarthage : {
 		iGreatCothon: 30,
@@ -2287,9 +2365,8 @@ dBuildingPreferences = {
 	iMaya : {
 		iTempleOfKukulkan: 40,
 	},
-	iDravidia : {
-		iJetavanaramaya: 30,
-		iKhajuraho: 20,
+	iTamils : {
+		iJetavanaramaya: 50,
 	},
 	iEthiopia : {
 		iMonolithicChurch: 40,
@@ -2299,6 +2376,17 @@ dBuildingPreferences = {
 		iSaintBasilsCathedral: -20,
 		iSaintSophia: -20,
 		iKremlin: -20,
+	},
+	iKarnataka: {
+		iKailasaTemple: 50,
+		iKhajuraho: 20,
+		iLotusTemple: 20,
+		
+		iWatPreahPisnulok: -20,
+		iShwedagonPaya: -20,
+		iBorobudur: -20, 
+		iPotalaPalace: -20,
+		iHimejiCastle: -20,
 	},
 	iToltecs : {
 		iPyramidOfTheSun: 30,
@@ -2335,6 +2423,20 @@ dBuildingPreferences = {
 		iNotreDame: -20,
 		iSistineChapel: -20,
 		iSaintSophia: -50,
+	},
+	iRajputs : {
+		iVijayaStambha: 100,
+		iIronPillar: 50,
+		iKhajuraho: 20,
+		iNalanda: 20,
+		iLotusTemple: 20,
+		
+		iWatPreahPisnulok: -20,
+		iShwedagonPaya: -20,
+		iBorobudur: -20, 
+		iPotalaPalace: -20,
+		iJetavanaramaya: -20,
+		iHimejiCastle: -20,
 	},
 	iFrance : {
 		iTradingCompanyBuilding: 40,
@@ -2383,6 +2485,24 @@ dBuildingPreferences = {
 		iGlobalSeedVault: 30,
 		iCERN: 15,
 	},
+	iBengal: {
+		iTajMahal: 50,
+		iRedFort: 30,
+		iShalimarGardens: 30,
+		iKhajuraho: 20,
+		iNalanda: 20,
+		iIronPillar: 20,
+		iLotusTemple: 20,
+		
+		
+		iWatPreahPisnulok: -20,
+		iShwedagonPaya: -20,
+		iBorobudur: -20, 
+		iPotalaPalace: -20,
+		iJetavanaramaya: -20,
+		iHimejiCastle: -20,
+		iKailasaTemple: -20,
+	},
 	iArabia: {
 		iSpiralMinaret: 100,
 		iDomeOfTheRock: 100,
@@ -2409,8 +2529,8 @@ dBuildingPreferences = {
 		iGreatAdobeMosque: -30,
 	},
 	iJava : {
-		iBorobudur: 40,
-		iPrambanan: 40,
+		iBorobudur: 100,
+		iPrambanan: 100,
 		iGardensByTheBay: 30,
 		iShwedagonPaya: 20,
 		iWatPreahPisnulok: 20,

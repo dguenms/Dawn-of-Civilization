@@ -19020,6 +19020,17 @@ void CvGameTextMgr::parseGreatPeopleHelp(CvWStringBuffer &szBuffer, CvCity& city
 		}
 	}
 
+	// Kailasa Temple effect
+	if (GET_PLAYER(city.getOwner()).isHasBuildingEffect(KAILASA_TEMPLE))
+	{
+		if (city.foodDifference() <= 0)
+		{
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_GREATPEOPLE_WITHOUT_GROWTH", 50));
+			szBuffer.append(NEWLINE);
+			iModifier += 50;
+		}
+	}
+
 	// Leoreth: Shwedagon Paya effect
 	if (city.isHasBuildingEffect(SHWEDAGON_PAYA))
 	{
@@ -20360,8 +20371,8 @@ void CvGameTextMgr::setTradeRouteHelp(CvWStringBuffer &szBuffer, int iRoute, CvC
 						iModifier += iNewMod;
 					}
 
-					// Leoreth: Dravidian UP: Trade Guilds: +10% foreign trade yield per traded resource
-					if (pCity->getCivilizationType() == DRAVIDIA)
+					// Leoreth: Tamil UP: Trade Guilds: +10% foreign trade yield per traded resource
+					if (pCity->getCivilizationType() == TAMILS)
 					{
 						iNewMod = 10 * (GET_PLAYER(pCity->getOwnerINLINE()).getNumTradeBonusImports(pOtherCity->getOwner()) + GET_PLAYER(pCity->getOwnerINLINE()).getNumTradeBonusExports(pOtherCity->getOwner()));
 						if (0 != iNewMod)

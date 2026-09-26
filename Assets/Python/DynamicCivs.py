@@ -22,7 +22,7 @@ encoding = "utf-8"
 dDefaultInsertNames = {
 	iKhmer : "TXT_KEY_CIV_KHMER_CAMBODIAN",
 	iNetherlands : "TXT_KEY_CIV_NETHERLANDS_ARTICLE",
-	iDravidia : "TXT_KEY_CIV_DRAVIDIA_TAMIL_NADU",
+	iTamils : "TXT_KEY_CIV_TAMILS_TAMIL_NADU",
 	iMaya : "TXT_KEY_CIV_MAYA_YUCATAN",
 	iThailand : "TXT_KEY_CIV_THAILAND_SIAM",
 	iMoors : "TXT_KEY_CIV_MOORS_MOROCCO",
@@ -250,8 +250,10 @@ dMasterTitles = {
 	iKushans : "TXT_KEY_CIV_KUSHAN_VASSAL",
 	iJapan : "TXT_KEY_CIV_JAPANESE_VASSAL",
 	iByzantium : "TXT_KEY_CIV_BYZANTINE_VASSAL",
+	iRajputs : "TXT_KEY_CIV_RAJPUTANA_VASSAL",
 	iTurks : "TXT_KEY_CIV_TURKIC_VASSAL",
 	iNorse : "TXT_KEY_CIV_NORSE_VASSAL",
+	iBengal : "TXT_KEY_CIV_BENGAL_VASSAL",
 	iArabia : "TXT_KEY_CIV_ARABIAN_VASSAL",
 	iTibet : "TXT_KEY_CIV_TIBETAN_VASSAL",
 	iMoors : "TXT_KEY_CIV_ARABIAN_VASSAL",
@@ -455,16 +457,16 @@ dForeignNames = deepdict({
 	},
 })
 
-lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iNorse, iTurks, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran, iManchuria, iSaudis]
-lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina, iSaudis, iBelgium]
+lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKorea, iRajputs, iNorse, iTurks, iBengal, iTibet, iKhmer, iJava, iHolyRome, iMali, iVietnam, iPoland, iMughals, iSweden, iOttomans, iThailand, iIran, iManchuria, iSaudis]
+lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iKarnataka, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina, iSaudis, iBelgium]
 
 lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iMisr, iBrazil, iNorse, iSweden, iColombia]
 lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iArgentina]
 
-lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
-lPeoplesRepublicAdj = [iDravidia, iByzantium, iRus, iMongols]
+lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iRajputs, iBengal, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
+lPeoplesRepublicAdj = [iTamils, iKarnataka, iByzantium, iRus, iMongols]
 
-lIslamicRepublicOf = [iIndia, iPersia, iMali, iMughals, iIran, iSaudis]
+lIslamicRepublicOf = [iIndia, iPersia, iMali, iBengal, iMughals, iIran, iSaudis]
 
 dEmpireThreshold = {
 	iBabylonia: 2,
@@ -472,10 +474,13 @@ dEmpireThreshold = {
 	iHittites: 2,
 	iPhoenicia : 4,
 	iPolynesia : 3,
-	iDravidia : 3,
+	iTamils : 3,
+	iKarnataka: 2,
 	iToltecs: 2,
 	iKorea : 4,
 	iKhmer : 3,
+	iRajputs: 5,
+	iBengal: 5,
 	iTibet : 2,
 	iMoors : 3,
 	iHolyRome : 3,
@@ -555,9 +560,10 @@ dStartingLeaders = [
 	iCelts : iBrennus,
 	iMaya : iPacal,
 	iJapan : iKammu,
-	iDravidia : iRajendra,
+	iTamils : iRajendra,
 	iEthiopia : iEzana,
 	iVietnam: iLeLoi,
+	iKarnataka: iAmoghavarsha,
 	iToltecs : iTopiltzin,
 	iKushans: iKanishka,
 	iKorea : iWangKon,
@@ -565,8 +571,10 @@ dStartingLeaders = [
 	iMalays : iSriJayanasa,
 	iNorse : iCanute,
 	iTurks : iBumin,
+	iBengal : iDharmapala,
 	iArabia : iHarun,
 	iTibet : iSongtsen,
+	iRajputs : iBhoja,
 	iKhmer : iNeangNeak,
 	iMoors : iRahman,
 	iJava : iHayamWuruk,
@@ -613,7 +621,6 @@ dStartingLeaders = [
 # 1500 AD
 {
 	iChina : iHongwu,
-	iDravidia : iKrishnaDevaRaya,
 	iEthiopia : iZaraYaqob,
 	iKorea : iSejong,
 	iMali : iMansaMusa,
@@ -647,7 +654,6 @@ dStartingLeaders = [
 {
 	iChina : iHongwu,
 	iIndia : iShivaji,
-	iDravidia : iKrishnaDevaRaya,
 	iKorea : iSejong,
 	iNorse : iChristian,
 	iJapan : iOdaNobunaga,
@@ -1085,6 +1091,8 @@ def specificName(iPlayer):
 	iGameEra = game.getCurrentEra()
 	bWar = isAtWar(iPlayer)
 	
+	bMonarchy = not isCommunist(iPlayer) and not isFascist(iPlayer) and not isRepublic(iPlayer)
+	
 	if iCiv == iNubia:
 		if iEra >= iIndustrial:
 			return "TXT_KEY_CIV_NUBIA_SUDAN"
@@ -1149,16 +1157,20 @@ def specificName(iPlayer):
 		if cities.owner(iPlayer).count() == cities.owner(iPlayer).region(rFrance).count():
 			return "TXT_KEY_CIV_CELTS_GAUL"
 		
-	elif iCiv == iDravidia:
-		if getColumn(iPlayer) >= 11 or scenario() == i1700AD:
-			return "TXT_KEY_CIV_DRAVIDIA_MYSORE"
-			
-		if getColumn(iPlayer) >= 9:
-			return "TXT_KEY_CIV_DRAVIDIA_VIJAYANAGARA"
+	elif iCiv == iTamils:
+		if iEra == iIndustrial and not bEmpire:
+			return capitalName(iPlayer)
 			
 	elif iCiv == iEthiopia:
 		if not game.isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUM"
+	
+	elif iCiv == iKarnataka:
+		if getColumn(iPlayer) >= 11 and (iReligion == iIslam or capital.getRegionID() == rTamilakam):
+			return "TXT_KEY_CIV_KARNATAKA_MYSORE"
+		
+		if getColumn(iPlayer) >= 7:
+			return capital.getName()
 	
 	elif iCiv == iToltecs:
 		return capital.getName()
@@ -1193,6 +1205,17 @@ def specificName(iPlayer):
 		
 		if iEra <= iClassical:
 			return "TXT_KEY_CIV_MALI_GHANA"
+		
+	elif iCiv == iRajputs:
+		if not bMonarchy:
+			return "TXT_KEY_CIV_RAJPUTANA_RAJASTHAN"
+		
+		if not bEmpire:
+			if iEra >= iRenaissance:
+				return "TXT_KEY_CIV_RAJPUTANA_MEWAR"
+			
+			if getColumn(iPlayer) >= 7:
+				return "TXT_KEY_CIV_RAJPUTANA_MALWA"
 		
 	elif iCiv == iMalays:
 		if iEra >= iGlobal:
@@ -1242,6 +1265,17 @@ def specificName(iPlayer):
 					return "TXT_KEY_CIV_TURKS_UZBEKISTAN"
 				
 				return capitalName(iPlayer)
+	
+	elif iCiv == iBengal:
+		if not bMonarchy:
+			return "TXT_KEY_CIV_BENGAL_BANGLADESH"
+		
+		if iEra <= iRenaissance:
+			if iReligion == iHinduism:
+				return "TXT_KEY_CIV_BENGAL_SENA"
+			
+			if iReligion == iBuddhism:
+				return "TXT_KEY_CIV_BENGAL_PALA"
 		
 	elif iCiv == iArabia:
 		if bResurrected:
@@ -1537,8 +1571,8 @@ def specificAdjective(iPlayer):
 			if iEra >= iRenaissance:
 				return "TXT_KEY_CIV_INDIA_MARATHA"
 			
-			if iEra >= iMedieval:
-				return "TXT_KEY_CIV_INDIA_PALA"
+			if getColumn(iPlayer) >= 7:
+				return "TXT_KEY_CIV_INDIA_AYUDHA"
 			
 			if iReligion == iBuddhism:
 				return "TXT_KEY_CIV_INDIA_MAURYA"
@@ -1682,19 +1716,24 @@ def specificAdjective(iPlayer):
 		if player(iByzantium).isExisting() and not team(iByzantium).isVassal(team(iCiv).getID()):
 			return "TXT_KEY_CIV_ROME_WESTERN"
 			
-	elif iCiv == iDravidia:
-		if iReligion == iIslam:
-			if iEra in [iMedieval, iRenaissance]:
-				return "TXT_KEY_CIV_DRAVIDIA_BAHMANI"
-	
+	elif iCiv == iTamils:
+		if iEra == iRenaissance:
+			if capital.isCoastal(20):
+				return "TXT_KEY_CIV_TAMILS_GAJAPATI"
+			
+			return "TXT_KEY_CIV_TAMILS_KAKATIYA"
+		
 		if iEra <= iMedieval:
 			if isCurrentCapital(iPlayer, "Madurai", "Vizhinjam", "Yapanaya"):
-				return "TXT_KEY_CIV_DRAVIDIA_PANDYAN"
+				return "TXT_KEY_CIV_TAMILS_PANDYAN"
 				
 			if isCurrentCapital(iPlayer, "Desinganadu", "Kallikkottai", "Mangalapuram"):
-				return "TXT_KEY_CIV_DRAVIDIA_CHERA"
+				return "TXT_KEY_CIV_TAMILS_CHERA"
+			
+			if iEra == iClassical and isCurrentCapital(iPlayer, "Kanchipuram"):
+				return "TXT_KEY_CIV_TAMILS_PALLAVA"
 				
-			return "TXT_KEY_CIV_DRAVIDIA_CHOLA"
+			return "TXT_KEY_CIV_TAMILS_CHOLA"
 			
 	elif iCiv == iEthiopia:
 		if iReligion == iIslam:
@@ -1702,6 +1741,24 @@ def specificAdjective(iPlayer):
 			
 		if not game.isReligionFounded(iIslam):
 			return "TXT_KEY_CIV_ETHIOPIA_AKSUMITE"
+	
+	elif iCiv == iKarnataka:
+		if iEra >= iIndustrial:
+			return civAdjective(iPlayer)
+		
+		if iReligion == iIslam:
+			return "TXT_KEY_CIV_KARNATAKA_BAHMANI"
+		
+		if getColumn(iPlayer) >= 7:
+			return civAdjective(iPlayer)
+		
+		if getColumn(iPlayer) >= 5:
+			if iReligion == iJainism:
+				return "TXT_KEY_CIV_KARNATAKA_RASHTRAKUTA"
+			
+			return "TXT_KEY_CIV_KARNATAKA_CHALUKYA"
+		
+		return "TXT_KEY_CIV_KARNATAKA_SATAVAHANA"
 	
 	elif iCiv == iToltecs:
 		if iEra == iAncient:
@@ -1717,6 +1774,28 @@ def specificAdjective(iPlayer):
 			
 		if bEmpire and controlsCity(iPlayer, location(plots.capital(iRome))):
 			return infos.civ(iRome).getAdjective(0)
+	
+	elif iCiv == iRajputs:
+		if bEmpire:
+			if iEra >= iRenaissance:
+				return "TXT_KEY_CIV_RAJPUTANA_SISODIA"
+			
+			if getColumn(iPlayer) >= 7:
+				return "TXT_KEY_CIV_RAJPUTANA_PARAMARA"
+			
+			return "TXT_KEY_CIV_RAJPUTANA_GURJARA_PRATIHARA"
+		
+		if capital.getRegionID() == rHindustan:
+			return "TXT_KEY_CIV_RAJPUTANA_CHANDELA"
+		
+		if capital.getRegionID() == rRajputana:
+			if capital.isCoastal(20): 
+				return "TXT_KEY_CIV_RAJPUTANA_SOLANKI"
+			
+			if capital.plot().isHills():
+				return "TXT_KEY_CIV_RAJPUTANA_CHAUHAN"
+		
+		return "TXT_KEY_CIV_RAJPUTANA_PRATIHARA"
 		
 	elif iCiv == iMalays:
 		if iEra >= iGlobal:
@@ -2264,16 +2343,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		if iEra >= iIndustrial:
 			return "TXT_KEY_EMPIRE_OF"
 			
-	elif iCiv == iDravidia:
+	elif iCiv == iTamils:
 		if iReligion == iIslam:
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
-	
-		if getColumn(iPlayer) >= 9:
-			if bEmpire:
-				return "TXT_KEY_EMPIRE_NAME"
-			
-			return "TXT_KEY_KINGDOM_OF"
 		
+		if iEra == iIndustrial and not bEmpire:
+			return "TXT_KEY_CIV_TAMILS_NAYAKA"
+	
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 			
@@ -2285,6 +2361,25 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_SULTANATE_ADJECTIVE"
 	
 		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+	
+	elif iCiv == iKarnataka:
+		if getColumn(iPlayer) >= 11:
+			if iReligion == iIslam or capital.getRegionID() == rTamilakam:
+				return "TXT_KEY_KINGDOM_OF"
+			
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
+		
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_ADJECTIVE"
+		
+		if getColumn(iPlayer) >= 7:
+			if bEmpire:
+				return "TXT_KEY_EMPIRE_NAME"
+			
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
+		
+		if bEmpire:			
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 	
 	elif iCiv == iToltecs:
@@ -2325,6 +2420,20 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 				return "TXT_KEY_EMPIRE_OF"
 				
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
+	
+	elif iCiv == iRajputs:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_ADJECTIVE"
+		
+		if capital.getRegionID() == rHindustan:
+			return "TXT_KEY_KINGDOM_ADJECTIVE"
+		
+		if capital.getRegionID() == rRajputana:
+			if capital.isCoastal(20) or capital.plot().isHills():
+				return "TXT_KEY_KINGDOM_ADJECTIVE"
+			
+		if getColumn(iPlayer) >= 7:
+			return "TXT_KEY_KINGDOM_OF"
 	
 	elif iCiv == iMalays:
 		if iEra >= iGlobal:
@@ -2391,6 +2500,13 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			
 		if bEmpire:
 			return "TXT_KEY_CIV_TURKS_KHAGANATE"
+	
+	elif iCiv == iBengal:
+		if bEmpire:
+			return "TXT_KEY_EMPIRE_NAME"
+		
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_NAME"
 			
 	elif iCiv == iArabia:
 		if bResurrected:
@@ -2855,11 +2971,9 @@ def leader(iPlayer):
 		if iEra >= iIndustrial: return iMenelik
 		
 		if iEra >= iMedieval: return iZaraYaqob
-		
-	elif iCiv == iDravidia:
-		if iEra >= iRenaissance: return iKrishnaDevaRaya
-		
-		if scenarioStartYear() >= 1500: return iKrishnaDevaRaya
+	
+	elif iCiv == iKarnataka:
+		if getColumn(iPlayer) >= 11: return iKrishnaDevaRaya
 		
 	elif iCiv == iByzantium:
 		if year() >= year(1000): return iBasil
@@ -2877,7 +2991,7 @@ def leader(iPlayer):
 		
 		if scenarioStartYear() >= 1500: return iChristian
 		
-		if getColumn(iPlayer) >= 8 and capital in cities.rectangle(tNorway): return iHaakon
+		if iReligion != -1 and capital in cities.rectangle(tNorway): return iHaakon
 		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
@@ -3032,7 +3146,7 @@ def leaderName(iPlayer):
 	pPlayer = player(iPlayer)
 	iLeader = pPlayer.getLeader()
 	
-	if iCiv == iDravidia:
+	if iCiv == iKarnataka:
 		if iLeader == iKrishnaDevaRaya:
 			if year() >= year(1700):
 				return "TXT_KEY_LEADER_TIPU_SULTAN"

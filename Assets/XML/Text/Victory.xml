@@ -481,6 +481,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_THE_WORLD_SINGULAR</Tag>
+		<English>make sure there is %s1 in the world</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_MAKE_SURE_IN_SECULAR_CITIES</Tag>
 		<English>make sure there are %s1 in secular cities</English>
 		<French></French>
@@ -956,6 +964,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_RELIGION</Tag>
+		<English>no %s2 cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_AREA_NO_STATE_RELIGION</Tag>
 		<English>no %s2 civilizations in %s1</English>
 		<French></French>
@@ -1366,6 +1382,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_DESC_TERRAIN_COUNT</Tag>
 		<English>%s2 %s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_DESC_UNIMPROVED_RESOURCE_COUNT</Tag>
+		<English>%s2 unimproved %s1 resources</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -1903,6 +1927,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_AREA_NO_RELIGION</Tag>
+		<English>No %s2 cities in %s1</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_AREA_NO_STATE_RELIGION</Tag>
 		<English>No %s2 civilizations in %s1</English>
 		<French></French>
@@ -2273,6 +2305,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_PROGR_TERRAIN_COUNT</Tag>
 		<English>%s1 tiles</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_PROGR_UNIMPROVED_RESOURCE_COUNT</Tag>
+		<English>unimproved %s1 resources</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -3486,6 +3526,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NORTHWEST_INDIA</Tag>
+		<English>Northwest India</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_NUBIA</Tag>
 		<English>Nubia</English>
 		<French></French>
@@ -3677,6 +3725,14 @@
 		<Italian></Italian>
 		<Spanish></Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_COASTAL_INDIA</Tag>
+		<English>Coastal India</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 	
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_ANDEAN_COAST</Tag>
@@ -3802,6 +3858,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_NAME_WONDERS</Tag>
 		<English>wonders</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_VICTORY_NAME_NATIONAL_WONDERS</Tag>
+		<English>national wonders</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
