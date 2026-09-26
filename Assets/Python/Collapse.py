@@ -32,14 +32,18 @@ def checkAvailableSlots():
 		
 
 def freeSlotFor(iCiv):
+	iSlot = findSlotToFree(iCiv)
+	if iSlot is not None:
+		completeCollapse(iSlot)
+
+def findSlotToFree(iCiv):
 	iCivImpact = getImpact(iCiv)
 	availableSlots = players.major().ai().existing().where(lambda p: getImpact(civ(p)) <= iCivImpact).where(lambda p: data.players[p].iTurnsToCollapse == -1)
 	metric = lambda iPlayer: (getImpact(civ(iPlayer)), until(year(dFall[iPlayer])))
 	
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityCollapsing).minimum(metric)
 	if iSlot is not None:
-		completeCollapse(iSlot)
-		return
+		return iSlot
 	
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityUnstable and since(year(dFall[p])) >= 0).minimum(metric)
 	if iSlot is not None:
@@ -48,20 +52,19 @@ def freeSlotFor(iCiv):
 	
 	iSlot = availableSlots.where(lambda p: stability(p) == iStabilityUnstable and getImpact(civ(p)) < iCivImpact).minimum(metric)
 	if iSlot is not None:
-		completeCollapse(iSlot)
-		return
+		return iSlot
 	
 	if iCivImpact > 1:
 		iSlot = availableSlots.where(lambda p: since(year(dFall[p])) >= 0 and getImpact(civ(p)) == 0).minimum(stability)
 		if iSlot is not None:
-			completeCollapse(iSlot)
-			return
+			return iSlot
 	
 	if iCivImpact > 2:
 		iSlot = availableSlots.where(lambda p: since(year(dFall[p])) >= 0 and getImpact(civ(p)) == 1).minimum(stability)
 		if iSlot is not None:
-			completeCollapse(iSlot)
-			return
+			return iSlot
+	
+	return None
 	
 def scheduleCollapse(iPlayer):
 	# AI Rome does not collapse during Byzantine autoplay
