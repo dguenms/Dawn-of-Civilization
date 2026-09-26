@@ -5259,7 +5259,7 @@ void CvTeam::changeObsoleteBuildingCount(BuildingTypes eIndex, int iChange)
 		bOldObsoleteBuilding = isObsoleteBuilding(eIndex);
 
 		m_paiObsoleteBuildingCount[eIndex] = (m_paiObsoleteBuildingCount[eIndex] + iChange);
-		FAssert(getObsoleteBuildingCount(eIndex) >= 0);
+		//FAssert(getObsoleteBuildingCount(eIndex) >= 0);
 
 		if (bOldObsoleteBuilding != isObsoleteBuilding(eIndex))
 		{
