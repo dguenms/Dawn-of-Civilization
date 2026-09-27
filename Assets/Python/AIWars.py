@@ -351,11 +351,10 @@ def planWars(iGameTurn):
 			return
 
 	iAttackingPlayer = determineAttackingPlayer()
-	iTargetPlayer = determineTargetPlayer(iAttackingPlayer)
-	
 	if iAttackingPlayer is None:
 		return
-
+	
+	iTargetPlayer = determineTargetPlayer(iAttackingPlayer)
 	data.players[iAttackingPlayer].iAggressionLevel = 0
 	
 	if iTargetPlayer == -1:
@@ -403,7 +402,7 @@ def determineTargetPlayer(iPlayer):
 	
 	lPotentialTargets = []
 	dTargetValues = defaultdict({}, 0)
-
+	
 	# determine potential targets
 	for iLoopPlayer in possibleTargets(iPlayer):
 		pLoopPlayer = player(iLoopPlayer)
