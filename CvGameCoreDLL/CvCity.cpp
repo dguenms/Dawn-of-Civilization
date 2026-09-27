@@ -18492,7 +18492,11 @@ void CvCity::liberate(bool bConquest)
 			iOldVassalLand = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).getTotalLand(false);
 		}
 
-		CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_LIBERATED", getNameKey(), GET_PLAYER(eOwner).getNameKey(), GET_PLAYER(ePlayer).getCivilizationAdjectiveKey());
+		// Fresol: copy the names into locals first - these getters hand out a pointer into a buffer
+		// shared by every name lookup, so the second one overwrote the first.
+		CvWString szLiberatorName = GET_PLAYER(eOwner).getNameKey();
+		CvWString szLiberatedAdj = GET_PLAYER(ePlayer).getCivilizationAdjectiveKey();
+		CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_LIBERATED", getNameKey(), szLiberatorName.GetCString(), szLiberatedAdj.GetCString());
 		for (int iI = 0; iI < MAX_PLAYERS; ++iI)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
