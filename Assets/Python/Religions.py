@@ -208,15 +208,33 @@ def spreadReligionByContact(iReligion, rRegion, lCivilizations):
 			spreadCity.spreadReligion(iReligion)
 
 
+# Fresol: from that year on these declines are a state rather than an event, so a scenario whose
+# first turn is already later applies them there too. Each one is swept once, not every turn.
+lReligionDeclinesApplied = []
+
+
 @handler("BeginGameTurn")
 def checkRemoveBuddhismIndia():
-	if year() == year(1000):
+	if year() >= year(1000) and iBuddhism not in lReligionDeclinesApplied:
 		removeBuddhismIndia()
+		lReligionDeclinesApplied.append(iBuddhism)
 
 
 @handler("BeginGameTurn")
 def checkRemoveJainismIndia():
-	if year() == year(1200):
+	if year() >= year(1200) and iJainism not in lReligionDeclinesApplied:
+		removeJainismIndia()
+		lReligionDeclinesApplied.append(iJainism)
+
+
+# Fresol: also on loading, so a scenario starting after the year shows the declined state from its
+# first turn instead of its second. This one leaves no mark on purpose: if the regions are not ready
+# to be swept this early it simply does nothing, and the turn check above still applies it.
+@handler("GameStart")
+def applyReligionDeclinesOnStart():
+	if year() >= year(1000):
+		removeBuddhismIndia()
+	if year() >= year(1200):
 		removeJainismIndia()
 
 
