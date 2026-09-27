@@ -246,18 +246,11 @@ def moveOutAttackers(bWar, iAttacker, iDefender):
 	
 	aroundCities = cities.owner(iDefender).plots().expand(2)
 	birthProtected = plots.all().where(lambda p: p.getBirthProtected() == iDefender and not p.isPlayerCore(iAttacker) and not p.getOwner() == iAttacker)
-	for plot in aroundCities.including(birthProtected):
+	evacuatedArea = aroundCities.including(birthProtected).where(lambda p: not (p.isCity() and p.getOwner() == iAttacker))
+	for plot in evacuatedArea:
 		attackers = units.at(plot).owner(iAttacker)
 		if attackers:
-			destination = cities.owner(iAttacker).closest(plot)
-			for unit in attackers:
-				if destination:
-					move(unit, destination)
-				else:
-					unit.kill(-1, False)
-			
-			if destination:
-				message(iAttacker, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", attackers.count(), adjective(iDefender), city(destination).getName(), button=attackers.first().getButton(), location=plot)
+			expelUnits(iDefender, iAttacker, attackers, plot, evacuatedArea)
 
 
 @handler("changeWar")
@@ -699,7 +692,7 @@ class Birth(object):
 			ensureDefenders(self.iPlayer, city, 2)
 	
 	def prepareCapital(self):
-		expelUnits(self.iPlayer, plots.surrounding(self.location), self.flippedArea())
+		expelAreaUnits(self.iPlayer, plots.surrounding(self.location), self.flippedArea())
 		
 		capital = None
 	
@@ -1245,7 +1238,7 @@ class Birth(object):
 	
 		flippedPlayerCities = dict((p, format_separators(flippedCities.owner(p), ",", text("TXT_KEY_AND"), CyCity.getName)) for p in flippedCities.owners().major())
 		
-		expelUnits(self.iPlayer, flippedPlots)
+		expelAreaUnits(self.iPlayer, flippedPlots)
 		
 		for city in flippedCities:
 			city = completeCityFlip(city, self.iPlayer, city.getOwner(), 100, bFlipUnits=True)

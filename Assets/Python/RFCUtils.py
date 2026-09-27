@@ -803,30 +803,37 @@ def evacuate(iPlayer, tPlot):
 			move(unit, target)
 
 # used: Rise
-def expelUnits(iPlayer, area, excluded_area = None):
+def expelAreaUnits(iPlayer, area, excluded_area = None):
 	if excluded_area is None:
 		excluded_area = area
-
+		
 	for plot in area:
 		for iOwner, ownerUnits in units.at(plot).notowner(iPlayer).grouped(CyUnit.getOwner):
-			ownerUnits = ownerUnits.where(lambda unit: not unit.isNone() and not unit.isCargo())
-			landUnits, seaUnits = ownerUnits.split(lambda unit: unit.getDomainType() != DomainTypes.DOMAIN_SEA)
-		
-			possibleDestinations = cities.owner(iOwner).without(excluded_area.cities())
-			
-			if landUnits:
-				moveDomainUnits(iPlayer, iOwner, landUnits, possibleDestinations.closest(plot))
-			
-			if seaUnits:
-				moveDomainUnits(iPlayer, iOwner, seaUnits, possibleDestinations.coastal().closest(plot))
+			expelUnits(iPlayer, iOwner, ownerUnits, plot, excluded_area)
+
+# used: RFCUtils
+def expelUnits(iPlayer, iOwner, units, origin, excluded_area):
+	units = units.where(lambda unit: not unit.isNone() and not unit.isCargo())
+	landUnits, seaUnits = units.split(lambda unit: unit.getDomainType() != DomainTypes.DOMAIN_SEA)
+	
+	possibleDestinations = cities.owner(iOwner).without(excluded_area.cities())
+	
+	if landUnits:
+		moveDomainUnits(iPlayer, iOwner, landUnits, origin, possibleDestinations.closest(origin))
+	
+	if seaUnits:
+		moveDomainUnits(iPlayer, iOwner, seaUnits, origin, possibleDestinations.coastal().closest(origin))
 				
 # used: RFCUtils
-def moveDomainUnits(iPlayer, iOwner, units, destination):
+def moveDomainUnits(iPlayer, iOwner, units, origin, destination):
+	if not units:
+		return
+	
 	if not is_minor(iOwner) and destination:
 		for unit in units:
 			move(unit, destination)
 		
-		message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", len(units), adjective(iPlayer), destination.getName())
+		message(iOwner, "TXT_KEY_MESSAGE_ATTACKERS_EXPELLED", units.count(), adjective(iPlayer), destination.getName(), button=units.first().getButton(), location=origin)
 	
 	else:
 		for unit in units:
