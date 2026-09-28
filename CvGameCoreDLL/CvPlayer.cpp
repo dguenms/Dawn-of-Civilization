@@ -20340,11 +20340,15 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 	{
 		int iText = GC.getGameINLINE().getSorenRandNum(kTrigger.getNumWorldNews(), "Trigger World News choice");
 
+		// Fresol: copy the names into locals first - these getters hand out a pointer into a
+		// buffer shared by every name lookup, so the second one overwrote the first.
+		CvWString szTriggerAdj = getCivilizationAdjectiveKey();
+		CvWString szTriggerOtherAdj = eOtherPlayer != NO_PLAYER ? GET_PLAYER(eOtherPlayer).getCivilizationAdjectiveKey() : L"";
 		pTriggerData->m_szGlobalText = gDLL->getText(kTrigger.getWorldNews(iText).GetCString(),
-			getCivilizationAdjectiveKey(),
+			szTriggerAdj.GetCString(),
 			NULL != pCity ? pCity->getNameKey() : L"",
 			pTriggerData->m_eReligion != NO_RELIGION ? GC.getReligionInfo(pTriggerData->m_eReligion).getAdjectiveKey() : L"",
-			eOtherPlayer != NO_PLAYER ? GET_PLAYER(eOtherPlayer).getCivilizationAdjectiveKey() : L"",
+			szTriggerOtherAdj.GetCString(),
 			NULL != pOtherPlayerCity ? pOtherPlayerCity->getNameKey() : L"",
 			pTriggerData->m_eCorporation != NO_CORPORATION ? GC.getCorporationInfo(pTriggerData->m_eCorporation).getTextKeyWide() : L""
 			);
@@ -21277,10 +21281,13 @@ void CvPlayer::applyEvent(EventTypes eEvent, int iEventTriggeredId, bool bUpdate
 			eTheirWorstEnemy = GET_TEAM(GET_PLAYER(pTriggeredData->m_eOtherPlayer).getTeam()).AI_getWorstEnemy();
 		}
 
+		// Fresol: copy the names into locals first - same reason as the trigger text above.
+		CvWString szNewsOwnAdj = getCivilizationAdjectiveKey();
+		CvWString szNewsOtherAdj = pTriggeredData->m_eOtherPlayer != NO_PLAYER ? GET_PLAYER(pTriggeredData->m_eOtherPlayer).getCivilizationAdjectiveKey() : L"";
 		szGlobalText = gDLL->getText(kEvent.getWorldNews(iText).GetCString(),
-			getCivilizationAdjectiveKey(),
+			szNewsOwnAdj.GetCString(),
 			NULL != pCity ? pCity->getNameKey() : L"",
-			pTriggeredData->m_eOtherPlayer != NO_PLAYER ? GET_PLAYER(pTriggeredData->m_eOtherPlayer).getCivilizationAdjectiveKey() : L"",
+			szNewsOtherAdj.GetCString(),
 			NULL != pOtherPlayerCity ? pOtherPlayerCity->getNameKey() : L"",
 			NO_RELIGION != pTriggeredData->m_eReligion ? GC.getReligionInfo(pTriggeredData->m_eReligion).getAdjectiveKey() : L"",
 			NO_TEAM != eTheirWorstEnemy ? GET_TEAM(eTheirWorstEnemy).getName().GetCString() : L"",
@@ -21336,10 +21343,13 @@ void CvPlayer::applyEvent(EventTypes eEvent, int iEventTriggeredId, bool bUpdate
 			eTheirWorstEnemy = GET_TEAM(GET_PLAYER(pTriggeredData->m_eOtherPlayer).getTeam()).AI_getWorstEnemy();
 		}
 
+		// Fresol: copy the names into locals first - same reason as the trigger text above.
+		CvWString szLocalOwnAdj = getCivilizationAdjectiveKey();
+		CvWString szLocalOtherAdj = pTriggeredData->m_eOtherPlayer != NO_PLAYER ? GET_PLAYER(pTriggeredData->m_eOtherPlayer).getCivilizationAdjectiveKey() : L"";
 		szLocalText = gDLL->getText(kEvent.getLocalInfoTextKey(),
-			getCivilizationAdjectiveKey(),
+			szLocalOwnAdj.GetCString(),
 			NULL != pCity ? pCity->getNameKey() : L"",
-			pTriggeredData->m_eOtherPlayer != NO_PLAYER ? GET_PLAYER(pTriggeredData->m_eOtherPlayer).getCivilizationAdjectiveKey() : L"",
+			szLocalOtherAdj.GetCString(),
 			NULL != pOtherPlayerCity ? pOtherPlayerCity->getNameKey() : L"",
 			NO_RELIGION != pTriggeredData->m_eReligion ? GC.getReligionInfo(pTriggeredData->m_eReligion).getAdjectiveKey() : L"",
 			NO_TEAM != eTheirWorstEnemy ? GET_TEAM(eTheirWorstEnemy).getName().GetCString() : L"",

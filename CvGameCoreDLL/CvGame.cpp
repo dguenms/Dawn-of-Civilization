@@ -9929,7 +9929,11 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 
 										if (isValidVoteSelection(eVoteSource, kData))
 										{
-											kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_ASSIGN_CITY", kPlayer1.getCivilizationAdjectiveKey(), pLoopCity->getNameKey(), GET_PLAYER(kData.eOtherPlayer).getCivilizationDescriptionKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+											// Fresol: copy the names into locals first - these getters all hand out a
+											// pointer into the same buffer, so the second lookup overwrote the first.
+											CvWString szElectionAdj = kPlayer1.getCivilizationAdjectiveKey();
+											CvWString szElectionLoser = GET_PLAYER(kData.eOtherPlayer).getCivilizationDescriptionKey();
+											kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_ASSIGN_CITY", szElectionAdj.GetCString(), pLoopCity->getNameKey(), szElectionLoser.GetCString(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
 											pData->aVoteOptions.push_back(kData);
 											continue;
 										}
@@ -9946,7 +9950,10 @@ VoteSelectionData* CvGame::addVoteSelection(VoteSourceTypes eVoteSource)
 									if (isValidVoteSelection(eVoteSource, kData))
 									{
 										//kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_ASSIGN_CITY", kPlayer1.getCivilizationAdjectiveKey(), pLoopCity->getNameKey(), GET_PLAYER(eNewOwner).getNameKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
-										kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_ASSIGN_CITY", kPlayer1.getCivilizationAdjectiveKey(), pLoopCity->getNameKey(), GET_PLAYER(eNewOwner).getCivilizationDescriptionKey(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
+										// Fresol: copy the names into locals first - same reason as the popup above.
+										CvWString szElectionNewAdj = kPlayer1.getCivilizationAdjectiveKey();
+										CvWString szElectionNewOwner = GET_PLAYER(eNewOwner).getCivilizationDescriptionKey();
+										kData.szText = gDLL->getText("TXT_KEY_POPUP_ELECTION_ASSIGN_CITY", szElectionNewAdj.GetCString(), pLoopCity->getNameKey(), szElectionNewOwner.GetCString(), getVoteRequired(kData.eVote, eVoteSource), countPossibleVote(kData.eVote, eVoteSource)); //Rhye
 										pData->aVoteOptions.push_back(kData);
 									}
 								}
