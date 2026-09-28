@@ -12043,6 +12043,47 @@ void CvGameTextMgr::setBuildingHelpActual(CvWStringBuffer &szBuffer, BuildingTyp
 	//Rhye - end comment
 }
 
+// Fresol - start
+// The requirement for a single instance of eBuilding: what CvPlayer::getBuildingClassPrereqBuildingStatic
+// returns before it is scaled by the number of instances the player already owns. Lines that describe
+// the rule rather than the current state - the Civilopedia has no player to count with - need this,
+// otherwise the number they print silently grows with every building the player already has.
+static int getBuildingClassPrereqNumPerInstance(BuildingTypes eBuilding, BuildingClassTypes ePrereqBuildingClass, PlayerTypes ePlayer)
+{
+	int iPrereqs = GC.getBuildingInfo(eBuilding).getPrereqNumOfBuildingClass(ePrereqBuildingClass);
+
+	if (iPrereqs < 1)
+	{
+		return 0;
+	}
+
+	iPrereqs *= std::max(0, (GC.getWorldInfo(GC.getMapINLINE().getWorldSize()).getBuildingClassPrereqModifier() + 100));
+	iPrereqs /= 100;
+
+	if (ePlayer != NO_PLAYER && GC.getGameINLINE().isOption(GAMEOPTION_ONE_CITY_CHALLENGE) && GET_PLAYER(ePlayer).isHuman())
+	{
+		iPrereqs = std::min(1, iPrereqs);
+	}
+
+	return iPrereqs;
+}
+// Fresol - end
+
+// Fresol - start
+// A building that can be built more than once charges its prerequisite per copy (see
+// CvPlayer::getBuildingClassPrereqBuildingStatic), so only it may say "for each" to the reader;
+// a limited wonder charges it once, however many of it could theoretically exist.
+static const char* getBuildingClassPrereqTextKey(BuildingTypes eBuilding)
+{
+	if (isLimitedWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
+	{
+		return "TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY";
+	}
+
+	return "TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_FOR_EACH";
+}
+// Fresol - end
+
 void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, BuildingTypes eBuilding, bool bCivilopediaText, bool bTechChooserText, const CvCity* pCity)
 {
 	bool bFirst;
@@ -12115,7 +12156,14 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			if (ePlayer == NO_PLAYER && kBuilding.getPrereqNumOfBuildingClass((BuildingClassTypes)iI) > 0)
 			{
 				eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo((BuildingClassTypes)iI).getDefaultBuildingIndex();
-				szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), kBuilding.getPrereqNumOfBuildingClass((BuildingClassTypes)iI)).c_str());
+
+				// Fresol - start
+				// No player context here, so the number of instances the player owns is unknown:
+				// state the requirement for one instance (see getBuildingClassPrereqNumPerInstance).
+				// Fresol - end
+				int iPrereqNum = getBuildingClassPrereqNumPerInstance(eBuilding, (BuildingClassTypes)iI, NO_PLAYER);
+
+				szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText(getBuildingClassPrereqTextKey(eBuilding), GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), iPrereqNum).c_str());
 
 				szBuffer.append(szTempBuffer);
 			}
@@ -12133,7 +12181,7 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 						}
 						else
 						{
-							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassPrereqBuildingStatic(eBuilding, ((BuildingClassTypes)iI))).c_str());
+							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText(getBuildingClassPrereqTextKey(eBuilding), GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), getBuildingClassPrereqNumPerInstance(eBuilding, (BuildingClassTypes)iI, ePlayer)).c_str()); // Fresol: state the requirement per instance, not the running total
 						}
 
 						szBuffer.append(szTempBuffer);
@@ -12157,11 +12205,11 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 					{
 						if (pCity != NULL)
 						{
-							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassCount((BuildingClassTypes)iI), GET_PLAYER(ePlayer).getBuildingClassPrereqBuildingPercent(eBuilding, ((BuildingClassTypes)iI))).c_str());
+							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_PERCENT_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), kBuilding.getPrereqBuildingClassPercent((BuildingClassTypes)iI)).c_str()); // Fresol: state the required share itself, not the number of cities it works out to
 						}
 						else
 						{
-							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassPrereqBuildingPercent(eBuilding, ((BuildingClassTypes)iI))).c_str());
+							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_PERCENT_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), kBuilding.getPrereqBuildingClassPercent((BuildingClassTypes)iI)).c_str()); // Fresol: state the required share itself, not the number of cities it works out to
 						}
 
 						szBuffer.append(szTempBuffer);
@@ -12200,6 +12248,76 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			}
 		}
 
+		// Fresol - start
+		// Religion requirements had no line at all: isStateReligion() - the boolean tag - is unused
+		// in this mod, so only that branch existed and it never fired. Name the religion in words,
+		// because a religion has no icon character to put in a sentence (getReligionInfo().getChar()
+		// is 0 - see TXT_KEY_ACTION_ONLY_HOLY_CONSTRUCT, whose %F1_RelIcon has nothing to draw).
+		// These tests mirror CvPlayer::canConstruct, including its empire wide religion check.
+		// Fresol - end
+		ReligionTypes ePrereqReligion = (ReligionTypes)kBuilding.getPrereqReligion();
+		ReligionTypes eOrPrereqReligion = (ReligionTypes)kBuilding.getOrPrereqReligion();
+		ReligionTypes eStateReligion = (ReligionTypes)kBuilding.getStateReligion();
+		ReligionTypes eOrStateReligion = (ReligionTypes)kBuilding.getOrStateReligion();
+
+		bool bShowReligion = (NULL == pCity || NO_PLAYER == ePlayer);
+		bool bShowStateReligion = bShowReligion;
+
+		if (!bShowReligion)
+		{
+			bool bReligion = (ePrereqReligion == NO_RELIGION) || (GET_PLAYER(ePlayer).getHasReligionCount(ePrereqReligion) > 0);
+			bool bOrReligion = (eOrPrereqReligion != NO_RELIGION) && (GET_PLAYER(ePlayer).getHasReligionCount(eOrPrereqReligion) > 0);
+			bool bStateReligion = (eStateReligion == NO_RELIGION) || (GET_PLAYER(ePlayer).getStateReligion() == eStateReligion);
+			bool bOrStateReligion = (eOrStateReligion != NO_RELIGION) && (GET_PLAYER(ePlayer).getStateReligion() == eOrStateReligion);
+
+			bShowReligion = !(bReligion || bOrReligion);
+			bShowStateReligion = !(bStateReligion || bOrStateReligion);
+		}
+
+		if (bShowReligion)
+		{
+			if (ePrereqReligion != NO_RELIGION)
+			{
+				szBuffer.append(NEWLINE);
+
+				if (eOrPrereqReligion != NO_RELIGION)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RELIGION_OR", GC.getReligionInfo(ePrereqReligion).getDescription(), GC.getReligionInfo(eOrPrereqReligion).getDescription()));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RELIGION", GC.getReligionInfo(ePrereqReligion).getDescription()));
+				}
+			}
+			else if (eOrPrereqReligion != NO_RELIGION)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_RELIGION", GC.getReligionInfo(eOrPrereqReligion).getDescription()));
+			}
+		}
+
+		if (bShowStateReligion)
+		{
+			if (eStateReligion != NO_RELIGION)
+			{
+				szBuffer.append(NEWLINE);
+
+				if (eOrStateReligion != NO_RELIGION)
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_STATE_RELIGION_OF_OR", GC.getReligionInfo(eStateReligion).getDescription(), GC.getReligionInfo(eOrStateReligion).getDescription()));
+				}
+				else
+				{
+					szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_STATE_RELIGION_OF", GC.getReligionInfo(eStateReligion).getDescription()));
+				}
+			}
+			else if (eOrStateReligion != NO_RELIGION)
+			{
+				szBuffer.append(NEWLINE);
+				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_STATE_RELIGION_OF", GC.getReligionInfo(eOrStateReligion).getDescription()));
+			}
+		}
+
 		if (kBuilding.isStateReligion())
 		{
 			if (NULL == pCity || NO_PLAYER == ePlayer || NO_RELIGION == GET_PLAYER(ePlayer).getStateReligion() || !pCity->isHasReligion(GET_PLAYER(ePlayer).getStateReligion()))
@@ -12225,9 +12343,14 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 			}
 		}
 
+		// Fresol - start
+		// Without the pCity check this hides the requirement from a reader who already meets it,
+		// and the Civilopedia has no pCity - so a player with eight cities never sees the number
+		// of cities the building asks for. Every other requirement line below is written this way.
+		// Fresol - end
 		if (kBuilding.getNumCitiesPrereq() > 0)
 		{
-			if (NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).getNumCities() < kBuilding.getNumCitiesPrereq())
+			if (NULL == pCity || NO_PLAYER == ePlayer || GET_PLAYER(ePlayer).getNumCities() < kBuilding.getNumCitiesPrereq())
 			{
 				szBuffer.append(NEWLINE);
 				szBuffer.append(gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_CITIES", kBuilding.getNumCitiesPrereq()));
