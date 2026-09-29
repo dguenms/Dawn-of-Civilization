@@ -14886,7 +14886,8 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 				if (pCity->isHasRealBuilding((BuildingTypes)iI) && GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() == eReligion)
 				{
 					iLoot += iLootModifier;
-					if (GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()).getMaxGlobalInstances() > 1)
+					// Fresol: was "> 1", but every building class is either -1 (unlimited) or 1 (unique), so this never fired and persecution never removed a temple, monastery or cathedral. Keep uniques, remove the rest.
+					if (GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()).getMaxGlobalInstances() != 1)
 					{
 						pCity->setHasRealBuilding((BuildingTypes)iI, false);
 					}
@@ -14899,6 +14900,8 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 			}
 
 			iLoot += GC.getGame().getSorenRandNum(iLoot, "Random loot");
+			// Fresol: scale the loot with game speed, exactly the way goody hut gold does in CvPlayer::receiveGoody
+			iLoot = (iLoot * GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent()) / 100;
 			GET_PLAYER(getOwner()).changeGold(iLoot);
 
 			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
