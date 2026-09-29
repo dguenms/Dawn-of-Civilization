@@ -2604,39 +2604,41 @@ bool CvDLLButtonPopup::launchFreeColonyPopup(CvPopup* pPopup, CvPopupInfo &info)
 	}
 
 	// Leoreth: allow to release dead players based on their cores
-	for (int iI = 0; iI < NUM_CIVS; iI++)
+	if (isResurrectionPossible())
 	{
-		CivilizationTypes eReleasableCivilization = (CivilizationTypes)iI;
-		int iYear = GC.getGame().getGameTurnYear();
-		if (GET_PLAYER(ePlayer).getCivilizationType() != eReleasableCivilization && !isCivAlive(eReleasableCivilization) && canRespawn(eReleasableCivilization))
+		for (int iI = 0; iI < NUM_CIVS; iI++)
 		{
-			CvWString szCityList;
-			int iCityLoop;
-			int iNumCities = 0;
-
-			for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
+			CivilizationTypes eReleasableCivilization = (CivilizationTypes)iI;
+			int iYear = GC.getGame().getGameTurnYear();
+			if (GET_PLAYER(ePlayer).getCivilizationType() != eReleasableCivilization && !isCivAlive(eReleasableCivilization) && canRespawn(eReleasableCivilization))
 			{
-				if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(ePlayer) && !pLoopCity->isCapital())
+				CvWString szCityList;
+				int iCityLoop;
+				int iNumCities = 0;
+
+				for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
 				{
-					if (!szCityList.empty())
+					if (pLoopCity->isCore(eReleasableCivilization) && !pLoopCity->isCore(ePlayer) && !pLoopCity->isCapital())
 					{
-						szCityList += L", ";
+						if (!szCityList.empty())
+						{
+							szCityList += L", ";
+						}
+						++iNumCities;
+						abCivFound[eReleasableCivilization] = true;
+
+						szCityList += pLoopCity->getName();
 					}
-					++iNumCities;
-					abCivFound[eReleasableCivilization] = true;
-
-					szCityList += pLoopCity->getName();
 				}
-			}
 
-			if (iNumCities > 0)
-			{
-				CvWString szBuffer = gDLL->getText("TXT_KEY_RELEASE_CIVILIZATION", szCityList.GetCString(), GC.getCivilizationInfo(eReleasableCivilization).getShortDescription());
-				gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(eReleasableCivilization).getButton(), eReleasableCivilization+1, WIDGET_GENERAL);
+				if (iNumCities > 0)
+				{
+					CvWString szBuffer = gDLL->getText("TXT_KEY_RELEASE_CIVILIZATION", szCityList.GetCString(), GC.getCivilizationInfo(eReleasableCivilization).getShortDescription());
+					gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getCivilizationInfo(eReleasableCivilization).getButton(), eReleasableCivilization + 1, WIDGET_GENERAL);
+				}
 			}
 		}
 	}
-
 
 	for (CvCity* pLoopCity = GET_PLAYER(ePlayer).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iLoop))
 	{

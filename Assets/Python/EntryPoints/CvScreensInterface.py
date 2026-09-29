@@ -58,6 +58,7 @@ from RFCUtils import toggleStabilityOverlay as toggleStabilityOverlayUtils
 
 import CityNames as cn
 import Victories
+import Resurrection
 
 from Scenarios import getScenario
 from Locations import *
@@ -919,6 +920,9 @@ def canEverRespawn(argsList):
 	if canEverRespawnUtils(Civ(iCiv), iGameTurn): return 1
 	
 	return 0
+
+def isResurrectionPossible(argsList):
+	return Resurrection.isResurrectionPossible()
 
 def toggleStabilityOverlay():
 	toggleStabilityOverlayUtils()

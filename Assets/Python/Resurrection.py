@@ -5,6 +5,8 @@ from Slots import *
 from Popups import popup
 from Events import events, handler
 
+import Logging as log
+
 
 def makePeace(iRebelCiv):
 	team().makePeace(iRebelCiv)

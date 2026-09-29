@@ -8192,7 +8192,6 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 		if (kVote.isDecolonize())
 		{
 			CvCity* pCity = GET_PLAYER(kData.kVoteOption.ePlayer).getCity(kData.kVoteOption.iCityId);
-			log(CvWString::format(L"Decolonize city %s", pCity->getName().c_str()));
 
 			pCity->liberate(false);
 

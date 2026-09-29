@@ -408,6 +408,7 @@ bool canRespawn(CivilizationTypes eCivilization);
 bool canEverRespawn(CivilizationTypes eCivilization);
 bool isCivAlive(CivilizationTypes eCivilization);
 bool validatePeriodConstant(PeriodTypes ePeriod);
+bool isResurrectionPossible();
 
 void getDirectionTypeString(CvWString& szString, DirectionTypes eDirectionType);
 void getCardinalDirectionTypeString(CvWString& szString, CardinalDirectionTypes eDirectionType);

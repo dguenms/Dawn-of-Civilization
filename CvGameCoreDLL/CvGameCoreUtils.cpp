@@ -2772,3 +2772,14 @@ bool validatePeriodConstant(PeriodTypes ePeriod)
 {
 	return ePeriod == NUM_PERIODS;
 }
+
+bool isResurrectionPossible()
+{
+	long lResult = -1;
+	CyArgsList argsList;
+	argsList.add(1);
+
+	gDLL->getPythonIFace()->callFunction(PYScreensModule, "isResurrectionPossible", argsList.makeFunctionArgs(), &lResult);
+
+	return (lResult == 1);
+}
