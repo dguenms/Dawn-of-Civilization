@@ -17221,6 +17221,11 @@ name_translations = {
 		iTurkish: "Shushter",
 	},
 	"Shurparaka": {
+		iDravidian: (
+			relocate("Mumbai", iAfter=iRenaissance),
+			translate("Sopara", iAfter=iMedieval),
+			_,
+		),
 		iEnglish: relocate("Mumbai"),
 		iIndian: (
 			relocate("Mumbai", iAfter=iRenaissance),
