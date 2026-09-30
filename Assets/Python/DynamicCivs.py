@@ -2977,6 +2977,9 @@ def leader(iPlayer):
 		
 		if iEra >= iMedieval: return iZaraYaqob
 	
+	elif iCiv == iTamils:
+		if iEra >= iRenaissance: return iMangammal
+	
 	elif iCiv == iKarnataka:
 		if getColumn(iPlayer) >= 11: return iKrishnaDevaRaya
 		
@@ -2985,6 +2988,9 @@ def leader(iPlayer):
 	
 	elif iCiv == iMali:
 		if getColumn(iPlayer) >= 6: return iMansaMusa
+		
+	elif iCiv == iRajputs:
+		if getColumn(iPlayer) >= 9: return iSanga
 	
 	elif iCiv == iMalays:
 		if iEra >= iRenaissance: return iTunPerak
@@ -2997,6 +3003,9 @@ def leader(iPlayer):
 		if scenarioStartYear() >= 1500: return iChristian
 		
 		if iReligion != -1 and capital in cities.rectangle(tNorway): return iHaakon
+	
+	elif iCiv == iBengal:
+		if iReligion == iIslam: return iAlauddin
 		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
