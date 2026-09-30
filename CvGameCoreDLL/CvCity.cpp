@@ -1295,6 +1295,13 @@ void CvCity::doTurn()
 		setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, getCultureLevel());
 	}
 
+	// Fresol: Thai floating market effect, also covers buildings that are already on the map
+	// (scenario maps) and cities that changed owner without the building being touched
+	if (isHasRealBuilding(THAI_FLOATING_MARKET))
+	{
+		setBuildingYieldChange(THAI_FLOATING_MARKET, YIELD_FOOD, plot()->isRiver() ? 2 : 0);
+	}
+
 	// ITER effect
 	if (isHasBuildingEffect(ITER))
 	{
@@ -4736,6 +4743,21 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 			else if (iChange > 0)
 			{
 				setBuildingYieldChange(AQUA_APPIA, YIELD_FOOD, getCultureLevel());
+			}
+		}
+
+		// Fresol: the Thai floating market can be built anywhere, but only provides its food
+		// bonus in cities on a river. Unique buildings are converted to the owner's own building
+		// on conquest, so no other civilization can own this one.
+		if (eBuilding == THAI_FLOATING_MARKET)
+		{
+			if (iChange < 0)
+			{
+				setBuildingYieldChange(THAI_FLOATING_MARKET, YIELD_FOOD, 0);
+			}
+			else if (iChange > 0)
+			{
+				setBuildingYieldChange(THAI_FLOATING_MARKET, YIELD_FOOD, plot()->isRiver() ? 2 : 0);
 			}
 		}
 
@@ -10142,6 +10164,14 @@ int CvCity::getAdditionalBaseYieldRateByBuilding(YieldTypes eIndex, BuildingType
 			else if (eBuilding == LOTUS_TEMPLE)
 			{
 				iExtraRate += getReligionCount() - ((GET_PLAYER(getOwnerINLINE()).getStateReligion() != NO_RELIGION && isHasReligion(GET_PLAYER(getOwnerINLINE()).getStateReligion())) ? 1 : 0);
+			}
+			else if (eBuilding == THAI_FLOATING_MARKET)
+			{
+				// Fresol: only in cities on a river
+				if (plot()->isRiver())
+				{
+					iExtraRate += 2;
+				}
 			}
 		}
 		else if (eIndex == YIELD_PRODUCTION)

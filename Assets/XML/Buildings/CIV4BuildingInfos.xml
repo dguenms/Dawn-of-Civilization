@@ -2368,20 +2368,17 @@
 			<Description>TXT_KEY_BUILDING_THAI_FLOATING_MARKET</Description>
 			<Civilopedia>TXT_KEY_BUILDING_THAI_FLOATING_MARKET_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_BUILDING_THAI_FLOATING_MARKET_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_THAI_FLOATING_MARKET_HELP</Help>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
 			<ArtDefineTag>ART_DEF_BUILDING_THAI_FLOATING_MARKET</ArtDefineTag>
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra>
 			<PrereqTech>TECH_CURRENCY</PrereqTech>
-			<bRiver>1</bRiver>
 			<iCost>150</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>60</iConquestProb>
 			<iAsset>3</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
-			<YieldChanges>
-				<iYield>2</iYield>
-			</YieldChanges>
 			<CommerceModifiers>
 				<iCommerce>25</iCommerce>
 			</CommerceModifiers>
