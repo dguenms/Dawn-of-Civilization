@@ -1271,11 +1271,16 @@ def specificName(iPlayer):
 			return "TXT_KEY_CIV_BENGAL_BANGLADESH"
 		
 		if iEra <= iRenaissance:
-			if iReligion == iHinduism:
-				return "TXT_KEY_CIV_BENGAL_SENA"
+			if bEmpire:
+				if iReligion == iHinduism:
+					return "TXT_KEY_CIV_BENGAL_SENA"
 			
-			if iReligion == iBuddhism:
-				return "TXT_KEY_CIV_BENGAL_PALA"
+				if iReligion == iBuddhism:
+					return "TXT_KEY_CIV_BENGAL_PALA"
+				
+				return civAdjective(iPlayer)
+			
+			return capital.getName()
 		
 	elif iCiv == iArabia:
 		if bResurrected:
