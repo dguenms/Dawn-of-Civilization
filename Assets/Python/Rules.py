@@ -255,7 +255,9 @@ def brazilianMadeireiroAbility(plot, city, iFeature):
 	}, 0)
 	
 	if civ(plot) == iBrazil:
-		iGold = dFeatureGold[iFeature]
+		# Fresol: deforestation gold comes from a player action, not from a per turn roll, so it has
+		# to be scaled with game speed like the other one time gains
+		iGold = scale(dFeatureGold[iFeature])
 		
 		if iGold > 0:
 			player(plot).changeGold(iGold)
