@@ -36,6 +36,9 @@
 
 CvPlayerAI* CvPlayerAI::m_aPlayers = NULL;
 
+// Fresol: per bonus lookup table for AI_isStrategicBonus, built once per game (see there)
+static bool* s_pabStrategicBonus = NULL;
+
 void CvPlayerAI::initStatics()
 {
 	m_aPlayers = new CvPlayerAI[MAX_PLAYERS];
@@ -48,6 +51,7 @@ void CvPlayerAI::initStatics()
 void CvPlayerAI::freeStatics()
 {
 	SAFE_DELETE_ARRAY(m_aPlayers);
+	SAFE_DELETE_ARRAY(s_pabStrategicBonus);
 }
 
 bool CvPlayerAI::areStaticsInitialized()
@@ -7016,7 +7020,9 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 						{
 							if (getNumTradeableBonuses((BonusTypes)(pNode->m_data.m_iData)) > 1)
 							{
-								iWeight += AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), ePlayer, 1);
+								// Fresol: we are handing this resource out, so it has to be valued from
+								// the side that receives it, not from our own surplus copy.
+								iWeight += GET_PLAYER(ePlayer).AI_bonusTradeVal(((BonusTypes)(pNode->m_data.m_iData)), getID(), 1);
 								pabBonusDeal[pNode->m_data.m_iData] = true;
 							}
 						}
@@ -7280,11 +7286,12 @@ int CvPlayerAI::AI_bonusActualHealthChange(BonusTypes eBonus, int iChange) const
 }
 
 // Leoreth
-int CvPlayerAI::AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange, bool bAssumeNone) const
 {
 	CvBonusInfo& kBonus = GC.getBonusInfo(eBonus);
 
-	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	// Fresol: bAssumeNone asks for the value as if this player owned no copy of the resource
+	int iNumBonuses = bAssumeNone ? 0 : getNumAvailableBonuses(eBonus);
 	int iNumCities = getNumCities();
 
 	int iCurrentAffectedCities = std::min(iNumBonuses * kBonus.getAffectedCities(), iNumCities);
@@ -7297,21 +7304,22 @@ int CvPlayerAI::AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange) con
 }
 
 // Leoreth
-int CvPlayerAI::AI_bonusHappinessChange(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusHappinessChange(BonusTypes eBonus, int iChange, bool bAssumeNone) const
 {
-	return GC.getBonusInfo(eBonus).getHappiness() * AI_bonusAffectedCitiesChange(eBonus, iChange);
+	return GC.getBonusInfo(eBonus).getHappiness() * AI_bonusAffectedCitiesChange(eBonus, iChange, bAssumeNone);
 }
 
 // Leoreth
-int CvPlayerAI::AI_bonusHealthChange(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusHealthChange(BonusTypes eBonus, int iChange, bool bAssumeNone) const
 {
-	return GC.getBonusInfo(eBonus).getHealth() * AI_bonusAffectedCitiesChange(eBonus, iChange);
+	return GC.getBonusInfo(eBonus).getHealth() * AI_bonusAffectedCitiesChange(eBonus, iChange, bAssumeNone);
 }
 
 // Leoreth
-int CvPlayerAI::AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange, bool bAssumeNone) const
 {
-	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	// Fresol: as if this player owned no copy
+	int iNumBonuses = bAssumeNone ? 0 : getNumAvailableBonuses(eBonus);
 
 	if (iChange == 0 || (iChange > 0 && iNumBonuses > 0) || (iChange < 0 && iNumBonuses + iChange > 0))
 	{
@@ -7343,9 +7351,10 @@ int CvPlayerAI::AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange) 
 }
 
 // Leoreth
-int CvPlayerAI::AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange, bool bAssumeNone) const
 {
-	int iNumBonuses = getNumAvailableBonuses(eBonus);
+	// Fresol: as if this player owned no copy
+	int iNumBonuses = bAssumeNone ? 0 : getNumAvailableBonuses(eBonus);
 	if (iChange == 0 || (iChange > 0 && iNumBonuses > 0) || (iChange < 0 && iNumBonuses + iChange > 0))
 	{
 		return 0;
@@ -7378,13 +7387,13 @@ int CvPlayerAI::AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) con
 // Leoreth
 // note: the returned value is always positive, even if iChange is negative
 // this is because negative value is being used when we calculate the value of our bonus we trade away
-int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange) const
+int CvPlayerAI::AI_bonusEffectVal(BonusTypes eBonus, int iChange, bool bAssumeNone) const
 {
 	int iHappinessValue = 50;
 	int iHealthValue = 30;
 
-	int iHappinessChange = AI_bonusHappinessChange(eBonus, iChange) + AI_bonusBuildingHappinessChange(eBonus, iChange);
-	int iHealthChange = AI_bonusHealthChange(eBonus, iChange) + AI_bonusBuildingHealthChange(eBonus, iChange);
+	int iHappinessChange = AI_bonusHappinessChange(eBonus, iChange, bAssumeNone) + AI_bonusBuildingHappinessChange(eBonus, iChange, bAssumeNone);
+	int iHealthChange = AI_bonusHealthChange(eBonus, iChange, bAssumeNone) + AI_bonusBuildingHealthChange(eBonus, iChange, bAssumeNone);
 
 	return iHappinessValue * iHappinessChange + iHealthValue * iHealthChange;
 }
@@ -7773,13 +7782,131 @@ int CvPlayerAI::AI_corporationBonusVal(BonusTypes eBonus, int iChange) const
 }
 
 
+// Fresol: a strategic bonus is a resource that a unit requires, or one that speeds up building
+// construction while providing no happiness or health of its own (stone, marble). The answer
+// depends on the XML only, so the table is computed once on first use and looked up afterwards -
+// the trade AI calls this often.
+// The table is the same for every player: only the XML is asked, so a unit that only another
+// civilization can build, and one that is already obsolete, both still count.
+bool CvPlayerAI::AI_isStrategicBonus(BonusTypes eBonus) const
+{
+	if (s_pabStrategicBonus == NULL)
+	{
+		PROFILE("CvPlayerAI::AI_isStrategicBonus::buildTable");
+
+		s_pabStrategicBonus = new bool[GC.getNumBonusInfos()];
+
+		for (int iBonus = 0; iBonus < GC.getNumBonusInfos(); iBonus++)
+		{
+			bool bStrategic = false;
+
+			// a bonus is strategic if any unit requires it ...
+			for (int iI = 0; !bStrategic && iI < GC.getNumUnitInfos(); iI++)
+			{
+				CvUnitInfo& kLoopUnit = GC.getUnitInfo((UnitTypes) iI);
+
+				if (kLoopUnit.getPrereqAndBonus() == iBonus)
+				{
+					bStrategic = true;
+				}
+
+				for (int iJ = 0; !bStrategic && iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
+				{
+					if (kLoopUnit.getPrereqOrBonuses(iJ) == iBonus)
+					{
+						bStrategic = true;
+					}
+				}
+			}
+
+			// Fresol: a unit prerequisite is what makes a resource strategic; a building or wonder that
+			// requires it does not. Dujiangyan and Tsukiji need rice, but rice stays an ordinary food
+			// resource.
+
+			// Fresol: a resource that speeds up building construction is as important as a unit
+			// prerequisite, but it has no happiness or health of its own and nothing requires it, so
+			// without this it would have no trade value at all (stone, marble)
+			if (!bStrategic
+				&& GC.getBonusInfo((BonusTypes) iBonus).getHappiness() == 0
+				&& GC.getBonusInfo((BonusTypes) iBonus).getHealth() == 0)
+			{
+				for (int iI = 0; !bStrategic && iI < GC.getNumBuildingInfos(); iI++)
+				{
+					if (GC.getBuildingInfo((BuildingTypes) iI).getBonusProductionModifier(iBonus) != 0)
+					{
+						bStrategic = true;
+					}
+				}
+			}
+
+			s_pabStrategicBonus[iBonus] = bStrategic;
+		}
+	}
+
+	return s_pabStrategicBonus[eBonus];
+}
+
+
 int CvPlayerAI::AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const
 {
 	int iValue;
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
 
-	iValue = AI_bonusVal(eBonus, iChange);
+	// Fresol: trade prices deliberately ignore the corporation value a resource may have (AI_bonusVal
+	// would add it), so that owning a corporation does not by itself change what the resource costs.
+	// Corporations are accounted for by the rules further down instead.
+	iValue = AI_baseBonusVal(eBonus, iChange);
+
+	if (AI_isStrategicBonus(eBonus))
+	{
+		// Fresol: a strategic resource is only worth anything while it is the first (or last) copy, so
+		// a trade over a first copy came out worthless and the AI had no price to name for it. Floor a
+		// first copy at AI_STRATEGIC_MIN_PRICE gold per turn. A copy the player already owns is not
+		// floored: it has no value of its own, and an AI must not pay for a resource it has no use for.
+		if (getNumAvailableBonuses(eBonus) <= 0)
+		{
+			int iMinValue = (GC.getDefineINT("AI_STRATEGIC_MIN_PRICE") * 200) / std::max(1, (GC.getBonusInfo(eBonus).getAITradeModifier() + 100));
+
+			if (iValue < iMinValue)
+			{
+				iValue = iMinValue;
+			}
+		}
+
+		// Fresol: this function always values a bonus from the point of view of the player who
+		// receives it (see AI_dealVal), so an AI on this end is the buyer of the resource. AI buyers
+		// only pay half of what a strategic resource is worth, otherwise a human could sell them
+		// resources at full price. Human buyers pay full price.
+		if (!isHuman())
+		{
+			iValue /= 2;
+		}
+	}
+
+	// Fresol - start: charge at least what one copy is worth to a player who owns none of it, so
+	// that a resource is never sold below its own worth just because the buyer already has some.
+	// Unlock value (units, buildings, routes) is not counted: a buyer who owns a copy has already
+	// unlocked it. Only when an AI sells to a human - an AI that buys must not pay for unused value.
+	if (isHuman() && !GET_PLAYER(ePlayer).isHuman())
+	{
+		int iOwnValue = AI_bonusEffectVal(eBonus, 1, true) / 10;
+
+		if (iValue < iOwnValue)
+		{
+			iValue = iOwnValue;
+		}
+	}
+	// Fresol - end
+
+	// Fresol: this function values a bonus from the point of view of the player who receives it (see
+	// AI_dealVal), so the evaluated player is the buyer here and ePlayer is the seller. An AI that has
+	// to give up a resource its own corporation feeds on asks 50% more for it - running a corporation
+	// on this resource is what makes the last copy valuable to the seller.
+	if (GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) > 0)
+	{
+		iValue = (iValue * 3) / 2;
+	}
 
 	// Leoreth: bonuses mostly affect a set number of cities now, so no scaling by empire size required
 	//iValue *= ((std::min(getNumCities(), GET_PLAYER(ePlayer).getNumCities()) + 3) * 30);
@@ -7803,7 +7930,6 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 
 	AttitudeTypes eAttitude;
 	bool bStrategic;
-	int iI, iJ;
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
 
@@ -7847,85 +7973,54 @@ DenialTypes CvPlayerAI::AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) co
 		return DENIAL_JOKING;
 	}*/
 
-	if (GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) > AI_corporationBonusVal(eBonus))
+	eAttitude = AI_getAttitude(ePlayer);
+
+	// Fresol: a corporation of theirs that this resource feeds must not be reason enough to refuse
+	// on its own, otherwise an AI would never sell to a player whose corporation wants the
+	// resource. Only refuse when our relations are poor as well.
+	if (GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) > AI_corporationBonusVal(eBonus)
+		&& eAttitude <= GC.getLeaderHeadInfo(getPersonalityType()).getStrategicBonusRefuseAttitudeThreshold())
 	{
 		return DENIAL_JOKING;
 	}
 
-	bStrategic = false;
-
-	for (iI = 0; !bStrategic && iI < GC.getNumUnitClassInfos(); iI++)
+	// Fresol: our own corporation feeds on this resource, so giving additional copies away costs us;
+	// do not hand them to a player who does not run a corporation that uses it either. A first copy
+	// is fine: it only serves the resource itself (happiness, health, unlocking units)
+	// and does not feed a competing corporation.
+	if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > 0
+		&& AI_corporationBonusVal(eBonus) > 0
+		&& GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) <= 0)
 	{
-		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
-		if (eUnit == NO_UNIT) continue;
-
-		if (getCapitalCity() != NULL && getCapitalCity()->allUpgradesAvailable(eUnit) != NO_UNIT) continue;
-
-		if (GC.getUnitInfo((UnitTypes) iI).getPrereqAndBonus() == eBonus)
-		{
-			bStrategic = true;
-		}
-
-		for (iJ = 0; !bStrategic && iJ < GC.getNUM_UNIT_PREREQ_OR_BONUSES(); iJ++)
-		{
-			if (GC.getUnitInfo((UnitTypes) iI).getPrereqOrBonuses(iJ) == eBonus)
-			{
-				bStrategic = true;
-			}
-		}
+		return DENIAL_JOKING;
 	}
 
-	for (iI = 0; !bStrategic && iI < GC.getNumBuildingInfos(); iI++)
-	{
-		if (!canConstruct((BuildingTypes)iI, false, false, false, true)) continue;
+	bStrategic = AI_isStrategicBonus(eBonus);
 
-		bool bAnyPrereqAvailable = false;
-		if (isTechAvailable((TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getPrereqAndTech()))
-		{
-			bAnyPrereqAvailable = true;
-		}
-
-		for (iJ = 0; !bAnyPrereqAvailable && iJ < GC.getNUM_BUILDING_AND_TECH_PREREQS(); iJ++)
-		{
-			TechTypes eTech = (TechTypes)GC.getBuildingInfo((BuildingTypes)iI).getPrereqAndTechs(iJ);
-			if (eTech == NO_TECH) break;
-
-			if (isTechAvailable(eTech))
-			{
-				bAnyPrereqAvailable = true;
-			}
-		}
-
-		if (!bAnyPrereqAvailable) continue;
-
-		if (GC.getBuildingInfo((BuildingTypes) iI).getPrereqAndBonus() == eBonus)
-		{
-			bStrategic = true;
-		}
-
-		for (iJ = 0; !bStrategic && iJ < GC.getNUM_BUILDING_PREREQ_OR_BONUSES(); iJ++)
-		{
-			if (GC.getBuildingInfo((BuildingTypes) iI).getPrereqOrBonuses(iJ) == eBonus)
-			{
-				bStrategic = true;
-			}
-		}
-	}
+	// XXX marble and stone???
+	// Fresol: yes - marble and stone are covered by the construction speed rule in
+	// AI_isStrategicBonus(), not by a wonder or unit prerequisite.
 
 	if (bStrategic)
 	{
-		if (AI_bonusVal(eBonus, -1) == 0)
+		// Fresol: do not sell a strategic resource to someone who already has a copy of it as long
+		// as an extra copy gives them no happiness or health benefit: the resource is worth nothing
+		// to them in that case, so there is no price to quote and it ends up traded away for free.
+		// Corporation resources are exempt because an additional copy does provide value there.
+		if (GET_PLAYER(ePlayer).getNumAvailableBonuses(eBonus) > 0
+			&& GET_PLAYER(ePlayer).AI_corporationBonusVal(eBonus) <= 0
+			&& GET_PLAYER(ePlayer).AI_bonusEffectVal(eBonus, 1) <= 0)
+		{
+			return (GET_PLAYER(ePlayer).isHuman() ? DENIAL_JOKING : DENIAL_NO_GAIN);
+		}
+
+		// Fresol: only trade strategic resources if we have at least 2 copies (never give away the last one)
+		if (getNumAvailableBonuses(eBonus) <= 1)
 		{
 			return DENIAL_JOKING;
 		}
-	}
 
-	// XXX marble and stone???
-
-	eAttitude = AI_getAttitude(ePlayer);
-
-	if (bStrategic)
-	{
+		// Fresol: refuse to trade strategic resources below the leader's attitude threshold
 		if (eAttitude <= GC.getLeaderHeadInfo(getPersonalityType()).getStrategicBonusRefuseAttitudeThreshold())
 		{
 			return DENIAL_ATTITUDE;
