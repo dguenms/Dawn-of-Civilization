@@ -18539,6 +18539,28 @@ void CvCity::liberate(bool bConquest)
 	GET_PLAYER(eOwner).updateMaintenance(); // Leoreth
 }
 
+// Fresol: whether the given player is able to take the city at all. A player who can see an
+// enemy unit inside the city radius cannot take it, and the caller used to give up entirely in
+// that case instead of looking at the remaining candidates.
+static bool canPlayerTakeCity(int iX, int iY, PlayerTypes ePlayer)
+{
+	for (int iPlot = 0; iPlot < NUM_CITY_PLOTS; ++iPlot)
+	{
+		CvPlot* pLoopPlot = ::plotCity(iX, iY, iPlot);
+
+		if (NULL != pLoopPlot)
+		{
+			if (pLoopPlot->isVisibleEnemyUnit(ePlayer))
+			{
+				return false;
+			}
+		}
+	}
+
+	return true;
+}
+
+
 PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 {
 	if (isCapital())
@@ -18548,6 +18570,11 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 
 	PlayerTypes eBestPlayer = NO_PLAYER;
 	int iBestValue = 25; // Leoreth: some minimum amount of culture required
+
+	// Fresol: the best candidate that can actually take the city, which may be a lower scorer
+	// than eBestPlayer. See the end of this function for why it is tracked separately.
+	PlayerTypes eBestSafePlayer = NO_PLAYER;
+	int iBestSafeValue = 25;
 
 	int iTotalCultureTimes100 = countTotalCultureTimes100();
 
@@ -18598,11 +18625,14 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 					int iValue = std::max(100, iCultureTimes100) / std::max(1, iCapitalDistance);
 
 					// Leoreth: better value for core and historical tiles
-					if (plot()->isCore())
+					// Fresol: ask about the candidate that is being scored, not about whoever owns
+					// the city right now. The previous form was identical for every candidate, so
+					// the bonus above could not influence the result at all.
+					if (plot()->isCore((PlayerTypes)iPlayer))
 					{
 						iValue *= 3;
 					}
-					else if (plot()->getSettlerValue(getOwner()) > 0)
+					else if (plot()->getSettlerValue((PlayerTypes)iPlayer) > 0)
 					{
 						iValue *= 2;
 					}
@@ -18612,33 +18642,31 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 						iBestValue = iValue;
 						eBestPlayer = (PlayerTypes)iPlayer;
 					}
+
+					// Fresol: remember the best candidate that can actually take the city, so that
+					// one blocked by a visible enemy unit does not take the whole choice with it.
+					// The city's own owner is excluded here just as it is from eBestPlayer.
+					if (iValue > iBestSafeValue && getOwnerINLINE() != iPlayer
+						&& canPlayerTakeCity(getX_INLINE(), getY_INLINE(), (PlayerTypes)iPlayer))
+					{
+						iBestSafeValue = iValue;
+						eBestSafePlayer = (PlayerTypes)iPlayer;
+					}
 				}
 			}
 		}
 	}
 
-	if (NO_PLAYER != eBestPlayer)
+	// unchanged: the city is never offered to whoever holds it right now
+	if (NO_PLAYER != eBestPlayer && getOwnerINLINE() == eBestPlayer)
 	{
-		if (getOwnerINLINE() == eBestPlayer)
-		{
-			return NO_PLAYER;
-		}
-
-		for (int iPlot = 0; iPlot < NUM_CITY_PLOTS; ++iPlot)
-		{
-			CvPlot* pLoopPlot = ::plotCity(getX_INLINE(), getY_INLINE(), iPlot);
-
-			if (NULL != pLoopPlot)
-			{
-				if (pLoopPlot->isVisibleEnemyUnit(eBestPlayer))
-				{
-					return NO_PLAYER;
-				}
-			}
-		}
+		return NO_PLAYER;
 	}
 
-	return eBestPlayer;
+	// Fresol: if the best candidate cannot take the city because it can see an enemy unit in it,
+	// fall back to the best candidate that can, instead of returning NO_PLAYER for the whole
+	// choice. When nothing is vetoed this returns the same player as before.
+	return eBestSafePlayer;
 }
 
 int CvCity::getBestYieldAvailable(YieldTypes eYield) const
