@@ -1146,10 +1146,6 @@ BeginPlot
 	EndCity
 EndPlot
 BeginPlot
-	x=29,y=43
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
 	x=29,y=44
 	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
@@ -1743,10 +1739,6 @@ BeginPlot
 	x=32,y=11
 	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
-EndPlot
-BeginPlot
-	x=32,y=12
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
 	x=32,y=21
@@ -3643,7 +3635,7 @@ BeginPlot
 	ImprovementType=IMPROVEMENT_QUARRY
 EndPlot
 BeginPlot
-	x=56,y=59
+	x=56,y=58
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
@@ -6042,7 +6034,7 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=68,y=49
+	x=67,y=49
 	ImprovementType=IMPROVEMENT_FISHING_BOATS
 EndPlot
 BeginPlot
@@ -9500,10 +9492,6 @@ BeginPlot
 		YearFounded=1610
 		PreviousOwner=CIVILIZATION_SWEDEN
 	EndCity
-EndPlot
-BeginPlot
-	x=81,y=71
-	ImprovementType=IMPROVEMENT_CAMP
 EndPlot
 BeginPlot
 	x=81,y=72
