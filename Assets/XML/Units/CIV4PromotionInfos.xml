@@ -907,6 +907,10 @@
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<iFeatureDefense>20</iFeatureDefense>
 				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureDefense>20</iFeatureDefense>
+				</FeatureDefense>
 			</FeatureDefenses>
 			<UnitCombats>
 				<UnitCombat>
@@ -942,6 +946,10 @@
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
 					<iFeatureDefense>30</iFeatureDefense>
 				</FeatureDefense>
+				<FeatureDefense>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
+					<iFeatureDefense>30</iFeatureDefense>
+				</FeatureDefense>
 			</FeatureDefenses>
 			<FeatureDoubleMoves>
 				<FeatureDoubleMove>
@@ -954,6 +962,10 @@
 				</FeatureDoubleMove>
 				<FeatureDoubleMove>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<bFeatureDoubleMove>1</bFeatureDoubleMove>
+				</FeatureDoubleMove>
+				<FeatureDoubleMove>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<bFeatureDoubleMove>1</bFeatureDoubleMove>
 				</FeatureDoubleMove>
 			</FeatureDoubleMoves>
@@ -991,6 +1003,10 @@
 				</FeatureAttack>
 				<FeatureAttack>
 					<FeatureType>FEATURE_RAINFOREST</FeatureType>
+					<iFeatureAttack>50</iFeatureAttack>
+				</FeatureAttack>
+				<FeatureAttack>
+					<FeatureType>FEATURE_TAIGA</FeatureType>
 					<iFeatureAttack>50</iFeatureAttack>
 				</FeatureAttack>
 			</FeatureAttacks>
