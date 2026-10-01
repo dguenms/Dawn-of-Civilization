@@ -170,12 +170,20 @@
 		<Spanish>Mughal</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_CIV_MUGHALS_GHORID</Tag>
-		<English>Ghorid</English>
-		<French>Ghorid</French>
-		<German>Ghorid</German>
-		<Italian>Ghorid</Italian>
-		<Spanish>Ghorid</Spanish>
+		<Tag>TXT_KEY_CIV_MUGHALS_TUGHLUQ</Tag>
+		<English>Tughluq</English>
+		<French>Tughluq</French>
+		<German>Tughluq</German>
+		<Italian>Tughluq</Italian>
+		<Spanish>Tughluq</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHALS_LODI</Tag>
+		<English>Lodi</English>
+		<French>Lodi</French>
+		<German>Lodi</German>
+		<Italian>Lodi</Italian>
+		<Spanish>LodiLodi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>

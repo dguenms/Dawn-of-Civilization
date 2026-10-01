@@ -487,7 +487,7 @@ dEmpireThreshold = {
 	iPoland : 3,
 	iInca : 3,
 	iMongols : 8,
-	iMughals : 6,
+	iMughals : 9,
 	iItaly : 7,
 	iTatars: 3,
 	iRussia : 8,
@@ -2021,7 +2021,10 @@ def specificAdjective(iPlayer):
 	
 	elif iCiv == iMughals:
 		if not tPlayer.isHasTech(iFirearms):
-			return "TXT_KEY_CIV_MUGHALS_GHORID"
+			if getColumn(iPlayer) <= 7:
+				return "TXT_KEY_CIV_MUGHALS_TUGHLUQ"
+			
+			return "TXT_KEY_CIV_MUGHALS_LODI"
 	
 	elif iCiv == iTatars:
 		if capital.getRegionID() in [rUrals, rSiberia]:
@@ -2428,6 +2431,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_BYZANTIUM_DESPOTATE"
 	
 	elif iCiv == iRajputs:
+		if iReligion == iIslam:
+			return "TXT_KEY_SULTANATE_OF"
+		
 		if bEmpire:
 			return "TXT_KEY_EMPIRE_ADJECTIVE"
 		
@@ -2740,6 +2746,9 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 			return "TXT_KEY_CIV_AZTECS_ALTEPETL"
 				
 	elif iCiv == iMughals:
+		if iReligion != iIslam:
+			return "TXT_KEY_MAHARAJATE_OF"
+		
 		if bResurrected:
 			if bEmpire:
 				return "TXT_KEY_EMPIRE_OF"

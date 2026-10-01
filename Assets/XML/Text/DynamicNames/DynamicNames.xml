@@ -618,4 +618,12 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MAHARAJATE_OF</Tag>
+		<English>Maharajate of %s1</English>
+		<French>Maharajate of %s1</French>
+		<German>Maharajate of %s1</German>
+		<Italian>Maharajate of %s1</Italian>
+		<Spanish>Maharajate of %s1</Spanish>
+	</TEXT>
 </Civ4GameText>
