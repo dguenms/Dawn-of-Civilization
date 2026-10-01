@@ -3,6 +3,7 @@ from DynamicCivs import checkName
 from Slots import findSlot, findMinorSlot, addPlayer, initWars
 from GoalHandlers import event_handler_registry
 from Periods import dScenarioPeriods, setPeriod
+from Religions import dDisappearances
 
 from Core import *
 from RFCUtils import *
@@ -527,6 +528,10 @@ class Scenario(object):
 				game.setReligionGameTurnFounded(iReligion, year(iFoundingYear))
 		
 		game.setVoteSourceReligion(1, iCatholicism, False)
+		
+		for iYear, func in dDisappearances.items():
+			if self.iStartYear >= iYear:
+				func()
 	
 	def adjustBuildings(self):
 		for city in cities.all():

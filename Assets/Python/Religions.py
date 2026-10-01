@@ -38,9 +38,6 @@ iNetherlands: 10,
 iAmerica	: 20,
 }, 50)
 
-def getCatholicPreference(iPlayer):
-	return dCatholicPreference[iPlayer]
-
 
 ## HANDLERS
 	
@@ -209,15 +206,10 @@ def spreadReligionByContact(iReligion, rRegion, lCivilizations):
 
 
 @handler("BeginGameTurn")
-def checkRemoveBuddhismIndia():
-	if year() == year(1000):
-		removeBuddhismIndia()
-
-
-@handler("BeginGameTurn")
-def checkRemoveJainismIndia():
-	if year() == year(1200):
-		removeJainismIndia()
+def checkReligionDisappearance():
+	for iYear, func in dDisappearances.items():
+		if year() == year(iYear):
+			func()
 
 
 @handler("techAcquired")
@@ -363,11 +355,11 @@ def reformationChoice(iPlayer):
 
 
 def chooseProtestantism(iPlayer):
-	return rand(100) >= getCatholicPreference(iPlayer)
+	return rand(100) >= dCatholicPreference[iPlayer]
 
 
 def isProtestantAnyway(iPlayer):
-	return rand(100) >= (getCatholicPreference(iPlayer)+50)/2
+	return rand(100) >= (dCatholicPreference[iPlayer]+50)/2
 
 
 def embraceReformation(iPlayer):
@@ -441,6 +433,15 @@ def removeJainismIndia():
 	lMinorityRegions = [rRajputana, rDeccan, rPunjab]
 	for plot in plots.regions(*lMinorityRegions):
 		plot.setSpreadFactor(iJainism, iMinority)
+
+
+### functions by year ###
+
+
+dDisappearances = {
+	1000: removeBuddhismIndia,
+	1200: removeJainismIndia,
+}
 
 
 ### popup handlers - transition to using Popups module ###
