@@ -7744,12 +7744,12 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=37
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_HAMLET
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
 	x=103,y=38
-	ImprovementType=IMPROVEMENT_HAMLET
+	ImprovementType=IMPROVEMENT_PLANTATION
 EndPlot
 BeginPlot
 	x=103,y=41
@@ -7858,7 +7858,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=40
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -8040,6 +8039,10 @@ EndPlot
 BeginPlot
 	x=105,y=40
 	ImprovementType=IMPROVEMENT_MINE
+EndPlot
+BeginPlot
+	x=105,y=41
+	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
 	x=105,y=43

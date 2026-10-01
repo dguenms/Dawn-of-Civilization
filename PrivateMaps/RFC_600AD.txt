@@ -1859,7 +1859,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=40
-	ImprovementType=IMPROVEMENT_PASTURE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -2083,6 +2082,10 @@ BeginPlot
 	x=105,y=39
 	ImprovementType=IMPROVEMENT_PADDY_FIELD
 	RouteType=ROUTE_ROAD
+EndPlot
+BeginPlot
+	x=105,y=41
+	ImprovementType=IMPROVEMENT_PASTURE
 EndPlot
 BeginPlot
 	x=105,y=43

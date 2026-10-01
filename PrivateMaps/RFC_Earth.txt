@@ -46484,13 +46484,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=37
-	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=103,y=38
+	BonusType=BONUS_BANANA
+	FeatureType=FEATURE_JUNGLE, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -46967,7 +46968,6 @@ BeginPlot
 	x=104,y=40
 	isNOfRiver
 	RiverWEDirection=3
-	BonusType=BONUS_COW
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -47431,6 +47431,8 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	BonusType=BONUS_COW
+	BonusVarietyType=BONUS_COW_BROWN
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot

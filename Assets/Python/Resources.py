@@ -180,7 +180,7 @@ dResourcesDict = {
 	(43, 26)  : (1700,  iCoffee),   # Central Brazil
 	(125, 24) : (1700,  iCoffee),   # Java
 	(78, 55)  : (1700,  iTobacco),  # Thrace
-	(103, 38) : (1700,  iTobacco),  # India
+	(103, 37) : (1700,  iTobacco),  # India
 	(131, 44) : (1700,  iTea),      # Taiwan
 	(87, 62)  : (1750,  iWheat),    # Don
 	(58, 66)  : (1750,  iPotato),   # England
@@ -239,7 +239,7 @@ dResourcesDict = {
 	(122, 48) : (1850,  iTobacco),  # Sichuan
 	(128, 61) : (1850,  iTobacco),  # Manchuria
 	(110, 56) : (1850,  iCotton),	# Xinjiang
-	(105, 35) : (1850,  iTea),      # Tamil Nadu
+	(104, 35) : (1850,  iTea),      # Tamil Nadu
 	(109, 31) : (1850,  iTea),      # Sri Lanka
 	(87, 54)  : (1850,  iTea),      # Georgia
 	(93, 52)  : (1850,  iTea),      # Mazandaran
