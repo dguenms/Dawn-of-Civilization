@@ -2724,7 +2724,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 				{
-					if (/*DOMAIN_SEA != getDomainType() ||*/ (pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || (!bAttack && !canEnterTerritory(pPlot->getTeam())) )  // sea units can enter impassable in own cultural borders // Leoreth: now ALL units
+					// Fresol: an attack on impassable terrain is possible, entering it is not, so the whole
+					// check sits behind bAttack the way the impassable feature check above does
+					if (!bAttack && ((pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || !canEnterTerritory(pPlot->getTeam())) )  // sea units can enter impassable in own cultural borders // Leoreth: now ALL units
 					{
 						if (bIgnoreLoad || !canLoad(pPlot))
 						{
@@ -13132,6 +13134,21 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 				{
 					return false;
 				}
+			}
+		}
+	}
+
+	// Fresol: and the same for impassable terrain. This is the one difference from the matching
+	// check in canMoveInto, which is skipped while attacking, and that is what lets the attack
+	// happen without the attacker following the defender onto the tile
+	if (m_pUnitInfo->getTerrainImpassable(pPlot->getTerrainType()) && (pPlot->getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(pPlot->getFeatureType()).isMakesPassable()))
+	{
+		TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
+		if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
+		{
+			if ((pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || !canEnterTerritory(pPlot->getTeam()))
+			{
+				return false;
 			}
 		}
 	}
