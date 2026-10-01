@@ -1741,12 +1741,11 @@ void CvUnit::updateCombat(bool bQuick)
 			{
 				bAdvance = canAdvance(pPlot, ((pDefender->canDefendAgainst(this) ) ? 1 : 0));
 
-				if (bAdvance)
+				// Fresol: the defender is captured by whatever kills it, and a unit can attack a
+				// tile it cannot advance into (an impassable feature), so this cannot wait on bAdvance
+				if (!isNoCapture())
 				{
-					if (!isNoCapture())
-					{
-						pDefender->setCapturingPlayer(getOwnerINLINE());
-					}
+					pDefender->setCapturingPlayer(getOwnerINLINE());
 				}
 
 				pDefender->kill(false);
