@@ -123,11 +123,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RAJPUTANA_VASSAL</Tag>
-		<English>%s2 Jagir</English>
-		<French>%s2 Jagir</French>
-		<German>%s2 Jagir</German>
-		<Italian>%s2 Jagir</Italian>
-		<Spanish>%s2 Jagir</Spanish>
+		<English>%s4 Jagir</English>
+		<French>%s4 Jagir</French>
+		<German>%s4 Jagir</German>
+		<Italian>%s4 Jagir</Italian>
+		<Spanish>%s4 Jagir</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_RAJPUTANA_FASCIST</Tag>
