@@ -1280,7 +1280,8 @@ def specificName(iPlayer):
 				
 				return civAdjective(iPlayer)
 			
-			return capital.getName()
+			if iReligion != iIslam:
+				return capital.getName()
 		
 	elif iCiv == iArabia:
 		if bResurrected:
