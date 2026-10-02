@@ -6696,7 +6696,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_JEWISH_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -7056,7 +7056,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_ORTHODOX_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -7410,7 +7410,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_CATHOLIC_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -7766,7 +7766,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_PROTESTANT_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -8120,7 +8120,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_ISLAMIC_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -8474,7 +8474,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_HINDU_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -8828,7 +8828,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_JAIN_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -9181,7 +9181,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_BUDDHIST_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -9535,7 +9535,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_CONFUCIAN_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -9889,7 +9889,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_TAOIST_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>
@@ -10243,7 +10243,7 @@
 			<PrereqBuildingClasses>
 				<PrereqBuildingClass>
 					<BuildingClassType>BUILDINGCLASS_ZOROASTRIAN_TEMPLE</BuildingClassType>
-					<iNumBuildingNeeded>2</iNumBuildingNeeded>
+					<iNumBuildingNeeded>4</iNumBuildingNeeded>
 				</PrereqBuildingClass>
 			</PrereqBuildingClasses>
 			<Flavors>

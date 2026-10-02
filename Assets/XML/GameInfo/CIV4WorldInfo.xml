@@ -15,7 +15,7 @@
 			<iUnitNameModifier>0</iUnitNameModifier>
 			<iTargetNumCities>4</iTargetNumCities>
 			<iNumFreeBuildingBonuses>7</iNumFreeBuildingBonuses>
-			<iBuildingClassPrereqModifier>100</iBuildingClassPrereqModifier>
+			<iBuildingClassPrereqModifier>0</iBuildingClassPrereqModifier>
 			<iMaxConscriptModifier>75</iMaxConscriptModifier>
 			<iWarWearinessModifier>-50</iWarWearinessModifier>
 			<iGridWidth>32</iGridWidth>
