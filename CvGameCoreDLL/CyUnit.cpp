@@ -329,7 +329,10 @@ bool CyUnit::canSpread(CyPlot* pPlot, int /*ReligionTypes*/ eReligion, bool bTes
 
 bool CyUnit::canJoin(CyPlot* pPlot, int /*SpecialistTypes*/ eSpecialist)
 {
-	return m_pUnit ? m_pUnit->canFound(pPlot->getPlot(), (SpecialistTypes) eSpecialist) : false;
+	// Fresol: this used to call canFound(), whose only overload takes a bool as its second
+	// parameter, so the specialist was passed as bTestVisible and the answer was really "can
+	// this unit found a city here". Ask the question the function name promises instead.
+	return m_pUnit ? m_pUnit->canJoin(pPlot->getPlot(), (SpecialistTypes) eSpecialist) : false;
 }
 
 bool CyUnit::canConstruct(CyPlot* pPlot, int /*BuildingTypes*/ eBuilding)
