@@ -4930,6 +4930,15 @@ CvCity* CvUnit::bombardTarget(const CvPlot* pPlot) const
 
 			if (pLoopCity != NULL)
 			{
+				// Fresol: a siege weapon cannot bombard across a strait unless it can make a landing
+				if (!isAmphib() && getUnitCombatType() == UNITCOMBAT_SIEGE)
+				{
+					if (pPlot->isStraitCrossing(pLoopPlot))
+					{
+						continue;
+					}
+				}
+
 				if (pLoopCity->isBombardable(this))
 				{
 					int iValue = pLoopCity->getDefenseDamage();
