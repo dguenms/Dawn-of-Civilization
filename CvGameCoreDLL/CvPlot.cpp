@@ -4878,14 +4878,20 @@ bool CvPlot::isStraitCrossingCorner(DirectionTypes eDiagonalDirection) const
 
 bool CvPlot::isNOfRiver() const
 {
-	// Fresol: this answers as if a river ran along the south edge when the south-east corner is a
-	// strait crossing, which it is not.  The engine places the tree art from these answers, and a
-	// river cuts the trees along its course -- that is what stops the trees of the two land tiles
-	// a strait separates from reaching over the water.  Nothing is stored and no river is drawn,
-	// see updateRiverSymbol, and no rule can see it either, see isNOfRiverReal().
-	// One corner per edge is enough: every crossing corner is the south-east corner of one tile
-	// and the north-east corner of another, so both land tiles of a crossing get their cut.
-	return m_bNOfRiver || isStraitCrossingCorner(DIRECTION_SOUTHEAST);
+	// Fresol: this answers as if a river ran along the south edge when a strait lies to the south,
+	// which it does not.  The engine places the tree art from these answers, and a river cuts the
+	// trees along its course -- that is what stops the trees of the two land tiles a strait
+	// separates from reaching over the water.  Nothing is stored and no river is drawn, see
+	// updateRiverSymbol, and no rule can see it either, see isNOfRiverReal().
+	// A river on a tile's *north* edge is recorded on the neighbour north of it, so the land tile
+	// south of a strait has to answer here too for the strait to cut the trees on all four sides.
+	if (m_bNOfRiver || isStrait())
+	{
+		return true;
+	}
+
+	CvPlot* pSouthPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_SOUTH);
+	return (pSouthPlot != NULL && pSouthPlot->isStrait());
 }
 
 
@@ -4932,8 +4938,15 @@ void CvPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 bool CvPlot::isWOfRiver() const
 {
-	// Fresol: see isNOfRiver() -- the east edge, faked when its north-east corner is a crossing
-	return m_bWOfRiver || isStraitCrossingCorner(DIRECTION_NORTHEAST);
+	// Fresol: see isNOfRiver() -- a strait answers for its east edge, and the land tile east of a
+	// strait answers for the strait's west edge
+	if (m_bWOfRiver || isStrait())
+	{
+		return true;
+	}
+
+	CvPlot* pEastPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_EAST);
+	return (pEastPlot != NULL && pEastPlot->isStrait());
 }
 
 
@@ -9201,8 +9214,7 @@ void CvPlot::updateRiverSymbol(bool bForce, bool bAdjacent)
 
 			for (int i = DIRECTION_NORTHEAST; i < NUM_DIRECTION_TYPES; i += 2)
 			{
-				CvPlot* pDiagonalPlot = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)i);
-				if (pDiagonalPlot == NULL || !pDiagonalPlot->isStrait())
+				if (!isStraitCrossingCorner((DirectionTypes)i))
 				{
 					continue;
 				}
@@ -9214,11 +9226,8 @@ void CvPlot::updateRiverSymbol(bool bForce, bool bAdjacent)
 					continue;
 				}
 
-				if (!pSidePlot1->isWater() && !pSidePlot2->isWater())
-				{
-					gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot1->getX(), pSidePlot1->getY());
-					gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot2->getX(), pSidePlot2->getY());
-				}
+				gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot1->getX(), pSidePlot1->getY());
+				gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot2->getX(), pSidePlot2->getY());
 			}
 		}
 
