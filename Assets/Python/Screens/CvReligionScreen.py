@@ -10,7 +10,7 @@ import CvUtil
 import ScreenInput
 import CvScreenEnums
 from RFCUtils import *
-from Consts import *
+from Core import *
 
 # BUG - start
 import BugUtil
@@ -304,8 +304,6 @@ class CvReligionScreen:
 		if AdvisorOpt.isReligious():
 			# Count the number of temples and monastery
 			self.BUGConstants()
-			iPlayer = PyPlayer(self.iActivePlayer)
-			cityList = iPlayer.getCityList()
 # BUG - start
 			iCities = [0] * self.NUM_RELIGIONS
 			iTemple = [0] * self.NUM_RELIGIONS
@@ -313,39 +311,18 @@ class CvReligionScreen:
 			iMissionaries_Active = [0] * self.NUM_RELIGIONS
 			iMissionaries_Construct = [0] * self.NUM_RELIGIONS
 			
-			for pLoopCity in cityList:
-				lHolyCity = pLoopCity.getHolyCity()
-				lReligions = pLoopCity.getReligions()
-
-				for iRel in self.RELIGIONS:
-					# count the number of cities
-					if iRel in lReligions:
-						iCities[iRel] += 1
-
-					# count the number of temples
-					iBldg = ReligionUtil.getBuilding(iRel, ReligionUtil.BUILDING_TEMPLE)
-					if self.calculateBuilding(pLoopCity, iBldg) == self.objectHave:
-						iTemple[iRel] += 1
-
-					# count the number of monasteries
-					iBldg = ReligionUtil.getBuilding(iRel, ReligionUtil.BUILDING_MONASTERY)
-					if self.calculateBuilding(pLoopCity, iBldg) == self.objectHave:
-						iMonastery[iRel] += 1
-
-					# count the number of missionaries under construction
-					iUnit = ReligionUtil.getUnit(iRel, ReligionUtil.UNIT_MISSIONARY)
-					if pLoopCity.GetCy().getFirstUnitOrder(iUnit) != -1:
-						iMissionaries_Construct[iRel] += 1
-
-			# count the number of active missionaries
-			for iUnit in PlayerUtil.playerUnits(self.iActivePlayer):  
-				for iRel in self.RELIGIONS:
-					if iUnit.getUnitType() == ReligionUtil.getUnit(iRel, ReligionUtil.UNIT_MISSIONARY):
-						iMissionaries_Active[iRel] += 1
+			for iReligion in self.RELIGIONS:
+				iCities[iReligion] = cities.owner(self.iActivePlayer).count(lambda city: city.isHasReligion(iReligion))
+				iTemple[iReligion] = cities.owner(self.iActivePlayer).count(lambda city: city.isHasRealBuilding(temple(iReligion)))
+				iMonastery[iReligion] = cities.owner(self.iActivePlayer).count(lambda city: city.isHasRealBuilding(monastery(iReligion)))
+				
+				iMissionary = missionary(iReligion)
+				iMissionaries_Active[iReligion] = player(self.iActivePlayer).getUnitClassCount(infos.unit(iMissionary).getUnitClassType())
+				iMissionaries_Construct[iReligion] = player(self.iActivePlayer).getUnitClassMaking(infos.unit(iMissionary).getUnitClassType())
 
 			# number of cities...
 			iY = self.Y_INFLUENCE + 20
-			sCities = "%s [%i]:" % (self.szCities, len(cityList))
+			sCities = "%s [%i]:" % (self.szCities, cities.owner(self.iActivePlayer).count())
 			screen.setLabelAt("", szArea, sCities, CvUtil.FONT_LEFT_JUSTIFY, self.LEFT_EDGE_TEXT, iY, self.DZ, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, -1, -1)
 
 			xLoop = self.X_RELIGION_START + self.DX_RELIGION
