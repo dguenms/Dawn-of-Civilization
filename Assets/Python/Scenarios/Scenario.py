@@ -172,7 +172,7 @@ RELIGION_FOUNDING_DATES = {
 	iIslam: 622,
 	iHinduism: -1500,
 	iJainism: -600,
-	iBuddhism: 80,
+	iBuddhism: -480,
 	iConfucianism: -500,
 	iTaoism: -400,
 	iZoroastrianism: -600,
