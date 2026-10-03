@@ -263,7 +263,11 @@ public:
 	bool isStartingPlot() const;																																			// Exposed to Python
 	void setStartingPlot(bool bNewValue);																															// Exposed to Python
 	
-	DllExport bool isNOfRiver() const;																																// Exposed to Python					
+	DllExport bool isNOfRiver() const;																																// Exposed to Python
+	bool isNOfRiverReal() const;		// Fresol: the flag as stored, without the strait's imaginary river
+	bool isStraitCrossingCorner(DirectionTypes eDiagonalDirection) const;	// Fresol: one corner of the 2x2 a strait crossing needs the trees cut at
+	bool isWOfRiverReal() const;		// Fresol: the flag as stored, without the strait's imaginary river
+
 	DllExport void setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir);											// Exposed to Python					
 																																																		
 	DllExport bool isWOfRiver() const;																																// Exposed to Python					

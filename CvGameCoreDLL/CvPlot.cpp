@@ -1862,13 +1862,13 @@ bool CvPlot::isRiverMask() const
 	}
 
 	pPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_EAST);
-	if ((pPlot != NULL) && pPlot->isNOfRiver())
+	if ((pPlot != NULL) && pPlot->isNOfRiverReal())
 	{
 		return true;
 	}
 
 	pPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_SOUTH);
-	if ((pPlot != NULL) && pPlot->isWOfRiver())
+	if ((pPlot != NULL) && pPlot->isWOfRiverReal())
 	{
 		return true;
 	}
@@ -4638,6 +4638,12 @@ void CvPlot::setArea(int iNewValue)
 
 int CvPlot::getFeatureVariety() const
 {
+	// MacAurther: Straits
+	if (isStrait())
+	{
+		return determineVariety();
+	}
+
 	FAssert((getFeatureType() == NO_FEATURE) || (m_iFeatureVariety < GC.getFeatureInfo(getFeatureType()).getArtInfo()->getNumVarieties()));
 	FAssert(m_iFeatureVariety >= 0);
 	return m_iFeatureVariety;
@@ -4827,9 +4833,65 @@ void CvPlot::setStartingPlot(bool bNewValue)
 }
 
 
+bool CvPlot::isNOfRiverReal() const
+{
+	// Fresol: the flag as stored.  Everything inside the DLL that reasons about rivers has to use
+	// this one -- see isNOfRiver() for the answer the renderer gets instead.
+	return m_bNOfRiver;
+}
+
+
+bool CvPlot::isWOfRiverReal() const
+{
+	// Fresol: see isNOfRiverReal()
+	return m_bWOfRiver;
+}
+
+
+bool CvPlot::isStraitCrossingCorner(DirectionTypes eDiagonalDirection) const
+{
+	// Fresol: a corner is a strait crossing when the two tiles on one diagonal of the 2x2 block
+	// it belongs to are both straits and the two on the other are both land.  That is the shape
+	// the tree cut exists for: a pair of land tiles whose tree art would reach over the water.
+	CvPlot* pDiagonalPlot = plotDirection(getX_INLINE(), getY_INLINE(), eDiagonalDirection);
+	if (pDiagonalPlot == NULL)
+	{
+		return false;
+	}
+
+	// the two tiles the corner's own tile shares that corner with
+	CvPlot* pSidePlot1 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((eDiagonalDirection + NUM_DIRECTION_TYPES - 1) % NUM_DIRECTION_TYPES));
+	CvPlot* pSidePlot2 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((eDiagonalDirection + 1) % NUM_DIRECTION_TYPES));
+	if (pSidePlot1 == NULL || pSidePlot2 == NULL)
+	{
+		return false;
+	}
+
+	bool bDiagonalStraits = isStrait() && pDiagonalPlot->isStrait();
+	bool bDiagonalLand = !isWater() && !pDiagonalPlot->isWater();
+	bool bSideStraits = pSidePlot1->isStrait() && pSidePlot2->isStrait();
+	bool bSideLand = !pSidePlot1->isWater() && !pSidePlot2->isWater();
+
+	return ((bDiagonalStraits && bSideLand) || (bDiagonalLand && bSideStraits));
+}
+
+
 bool CvPlot::isNOfRiver() const
 {
-	return m_bNOfRiver;
+	// Fresol: this answers as if a river ran along the south edge when a strait lies to the south,
+	// which it does not.  The engine places the tree art from these answers, and a river cuts the
+	// trees along its course -- that is what stops the trees of the two land tiles a strait
+	// separates from reaching over the water.  Nothing is stored and no river is drawn, see
+	// updateRiverSymbol, and no rule can see it either, see isNOfRiverReal().
+	// A river on a tile's *north* edge is recorded on the neighbour north of it, so the land tile
+	// south of a strait has to answer here too for the strait to cut the trees on all four sides.
+	if (m_bNOfRiver || isStrait())
+	{
+		return true;
+	}
+
+	CvPlot* pSouthPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_SOUTH);
+	return (pSouthPlot != NULL && pSouthPlot->isStrait());
 }
 
 
@@ -4838,9 +4900,9 @@ void CvPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 	CvPlot* pAdjacentPlot;
 	int iI;
 
-	if ((isNOfRiver() != bNewValue) || (eRiverDir != m_eRiverWEDirection))
+	if ((m_bNOfRiver != bNewValue) || (eRiverDir != m_eRiverWEDirection))
 	{
-		if (isNOfRiver() != bNewValue)
+		if (m_bNOfRiver != bNewValue)
 		{
 			updatePlotGroupBonus(false);
 			m_bNOfRiver = bNewValue;
@@ -4862,7 +4924,7 @@ void CvPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 			if (area() != NULL)
 			{
-				area()->changeNumRiverEdges((isNOfRiver()) ? 1 : -1);
+				area()->changeNumRiverEdges((m_bNOfRiver) ? 1 : -1);
 			}
 		}
 
@@ -4876,7 +4938,15 @@ void CvPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 bool CvPlot::isWOfRiver() const
 {
-	return m_bWOfRiver;
+	// Fresol: see isNOfRiver() -- a strait answers for its east edge, and the land tile east of a
+	// strait answers for the strait's west edge
+	if (m_bWOfRiver || isStrait())
+	{
+		return true;
+	}
+
+	CvPlot* pEastPlot = plotDirection(getX_INLINE(), getY_INLINE(), DIRECTION_EAST);
+	return (pEastPlot != NULL && pEastPlot->isStrait());
 }
 
 
@@ -4885,9 +4955,9 @@ void CvPlot::setWOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 	CvPlot* pAdjacentPlot;
 	int iI;
 
-	if ((isWOfRiver() != bNewValue) || (eRiverDir != m_eRiverNSDirection))
+	if ((m_bWOfRiver != bNewValue) || (eRiverDir != m_eRiverNSDirection))
 	{
-		if (isWOfRiver() != bNewValue)
+		if (m_bWOfRiver != bNewValue)
 		{
 			updatePlotGroupBonus(false);
 			m_bWOfRiver = bNewValue;
@@ -4909,7 +4979,7 @@ void CvPlot::setWOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 			if (area())
 			{
-				area()->changeNumRiverEdges((isWOfRiver()) ? 1 : -1);
+				area()->changeNumRiverEdges((m_bWOfRiver) ? 1 : -1);
 			}
 		}
 
@@ -4923,13 +4993,15 @@ void CvPlot::setWOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 CardinalDirectionTypes CvPlot::getRiverNSDirection() const
 {
-	return (CardinalDirectionTypes)m_eRiverNSDirection;
+	// Fresol: see isNOfRiver() -- the direction a strait's imaginary river runs in
+	return isStrait() ? CARDINALDIRECTION_NORTH : (CardinalDirectionTypes)m_eRiverNSDirection;
 }
 
 
 CardinalDirectionTypes CvPlot::getRiverWEDirection() const
 {
-	return (CardinalDirectionTypes)m_eRiverWEDirection;
+	// Fresol: see isNOfRiver() -- the direction a strait's imaginary river runs in
+	return isStrait() ? CARDINALDIRECTION_EAST : (CardinalDirectionTypes)m_eRiverWEDirection;
 }
 
 
@@ -5833,6 +5905,18 @@ void CvPlot::setPlotType(PlotTypes eNewValue, bool bRecalculate, bool bRebuildGr
 			//gDLL->getEngineIFace()->SetDirty(GlobeTexture_DIRTY_BIT, true);
 
 			updateFeatureSymbol();
+			// MacAurther: Straits
+			if (bWasWater != isWater())
+			{
+				for (int i = 0; i < NUM_DIRECTION_TYPES; ++i)
+				{
+					CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)i);
+					if (pAdjacentPlot != NULL && pAdjacentPlot->isStrait())
+					{
+						pAdjacentPlot->updateFeatureSymbol(true);
+					}
+				}
+			}
 			setLayoutDirty(true);
 			updateRouteSymbol(false, true);
 			updateRiverSymbol(false, true);
@@ -5907,6 +5991,37 @@ int CvPlot::determineVariety(FeatureTypes eFeature) const
 	if (eFeature == NO_FEATURE)
 	{
 		eFeature = getFeatureType();
+	}
+
+	// MacAurther: Straits
+	if (eFeature == FEATURE_STRAIT || eFeature == FEATURE_ISLANDS_STRAIT)
+	{
+		if (!isWater())
+		{
+			return 0;
+		}
+
+		int iMask = 0;
+		for (int i = 0; i < 2; ++i)
+		{
+			int iDX = (i == 0) ? 1 : -1;
+			CvPlot* pOther = plotXY(getX_INLINE(), getY_INLINE(), iDX, 1);
+			CvPlot* pSideX = plotXY(getX_INLINE(), getY_INLINE(), iDX, 0);
+			CvPlot* pSideY = plotXY(getX_INLINE(), getY_INLINE(), 0, 1);
+			if (pOther != NULL && pSideX != NULL && pSideY != NULL &&
+				pOther->isWater() && pOther->isStrait() && !pSideX->isWater() && !pSideY->isWater())
+			{
+				iMask |= 1 << i;
+			}
+		}
+
+		int iTexture = 0;
+		if (isStrait())
+		{
+			iTexture = m_iFeatureVariety / 4;
+		}
+
+		return iTexture * 4 + iMask;
 	}
 
 	if (eFeature == FEATURE_FOREST)
@@ -6081,6 +6196,19 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 
 	if (eOldFeature != eNewValue)
 	{
+		// MacAurther: Straits
+		if (eOldFeature == FEATURE_STRAIT || eOldFeature == FEATURE_ISLANDS_STRAIT || isStrait())
+		{
+			for (int i = 0; i < NUM_DIRECTION_TYPES; ++i)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)i);
+				if (pAdjacentPlot != NULL && pAdjacentPlot->isStrait())
+				{
+					pAdjacentPlot->updateFeatureSymbol(true);
+				}
+			}
+		}
+
 		// Leoreth: update culture costs
 		CvPlot* pLoopPlot;
 		for (int iI = 0; iI < NUM_CITY_PLOTS_3; iI++)
@@ -8376,7 +8504,7 @@ void CvPlot::updateRiverCrossing(DirectionTypes eIndex)
 		case DIRECTION_NORTH:
 			if (pPlot != NULL)
 			{
-				bValid = pPlot->isNOfRiver();
+				bValid = pPlot->isNOfRiverReal();
 			}
 			break;
 
@@ -8385,7 +8513,7 @@ void CvPlot::updateRiverCrossing(DirectionTypes eIndex)
 			break;
 
 		case DIRECTION_EAST:
-			bValid = isWOfRiver();
+			bValid = isWOfRiverReal();
 			break;
 
 		case DIRECTION_SOUTHEAST:
@@ -8393,7 +8521,7 @@ void CvPlot::updateRiverCrossing(DirectionTypes eIndex)
 			break;
 
 		case DIRECTION_SOUTH:
-			bValid = isNOfRiver();
+			bValid = isNOfRiverReal();
 			break;
 
 		case DIRECTION_SOUTHWEST:
@@ -8403,7 +8531,7 @@ void CvPlot::updateRiverCrossing(DirectionTypes eIndex)
 		case DIRECTION_WEST:
 			if (pPlot != NULL)
 			{
-				bValid = pPlot->isWOfRiver();
+				bValid = pPlot->isWOfRiverReal();
 			}
 			break;
 
@@ -8425,29 +8553,29 @@ void CvPlot::updateRiverCrossing(DirectionTypes eIndex)
 
 			if (pSouthWestPlot && pNorthWestPlot && pSouthEastPlot && pNorthEastPlot)
 			{
-				if (pSouthWestPlot->isWOfRiver() && pNorthWestPlot->isWOfRiver())
+				if (pSouthWestPlot->isWOfRiverReal() && pNorthWestPlot->isWOfRiverReal())
 				{
 					bValid = true;
 				}
-				else if (pNorthEastPlot->isNOfRiver() && pNorthWestPlot->isNOfRiver())
+				else if (pNorthEastPlot->isNOfRiverReal() && pNorthWestPlot->isNOfRiverReal())
 				{
 					bValid = true;
 				}
 				else if ((eIndex == DIRECTION_NORTHEAST) || (eIndex == DIRECTION_SOUTHWEST))
 				{
-					if (pNorthEastPlot->isNOfRiver() && (pNorthWestPlot->isWOfRiver() || pNorthWestPlot->isWater()))
+					if (pNorthEastPlot->isNOfRiverReal() && (pNorthWestPlot->isWOfRiverReal() || pNorthWestPlot->isWater()))
 					{
 						bValid = true;
 					}
-					else if ((pNorthEastPlot->isNOfRiver() || pSouthEastPlot->isWater()) && pNorthWestPlot->isWOfRiver())
+					else if ((pNorthEastPlot->isNOfRiverReal() || pSouthEastPlot->isWater()) && pNorthWestPlot->isWOfRiverReal())
 					{
 						bValid = true;
 					}
-					else if (pSouthWestPlot->isWOfRiver() && (pNorthWestPlot->isNOfRiver() || pNorthWestPlot->isWater()))
+					else if (pSouthWestPlot->isWOfRiverReal() && (pNorthWestPlot->isNOfRiverReal() || pNorthWestPlot->isWater()))
 					{
 						bValid = true;
 					}
-					else if ((pSouthWestPlot->isWOfRiver() || pSouthEastPlot->isWater()) && pNorthWestPlot->isNOfRiver())
+					else if ((pSouthWestPlot->isWOfRiverReal() || pSouthEastPlot->isWater()) && pNorthWestPlot->isNOfRiverReal())
 					{
 						bValid = true;
 					}
@@ -8456,19 +8584,19 @@ void CvPlot::updateRiverCrossing(DirectionTypes eIndex)
 				{
 					FAssert((eIndex == DIRECTION_SOUTHEAST) || (eIndex == DIRECTION_NORTHWEST));
 
-					if (pNorthWestPlot->isNOfRiver() && (pNorthWestPlot->isWOfRiver() || pNorthEastPlot->isWater()))
+					if (pNorthWestPlot->isNOfRiverReal() && (pNorthWestPlot->isWOfRiverReal() || pNorthEastPlot->isWater()))
 					{
 						bValid = true;
 					}
-					else if ((pNorthWestPlot->isNOfRiver() || pSouthWestPlot->isWater()) && pNorthWestPlot->isWOfRiver())
+					else if ((pNorthWestPlot->isNOfRiverReal() || pSouthWestPlot->isWater()) && pNorthWestPlot->isWOfRiverReal())
 					{
 						bValid = true;
 					}
-					else if (pNorthEastPlot->isNOfRiver() && (pSouthWestPlot->isWOfRiver() || pSouthWestPlot->isWater()))
+					else if (pNorthEastPlot->isNOfRiverReal() && (pSouthWestPlot->isWOfRiverReal() || pSouthWestPlot->isWater()))
 					{
 						bValid = true;
 					}
-					else if ((pNorthEastPlot->isNOfRiver() || pNorthEastPlot->isWater()) && pSouthWestPlot->isWOfRiver())
+					else if ((pNorthEastPlot->isNOfRiverReal() || pNorthEastPlot->isWater()) && pSouthWestPlot->isWOfRiverReal())
 					{
 						bValid = true;
 					}
@@ -9061,6 +9189,54 @@ void CvPlot::updateRiverSymbol(bool bForce, bool bAdjacent)
 			}
 		}
 	}
+
+	// Fresol - start: a strait carries no river and none may be drawn, but the engine still has
+	// to cut the trees along the two land tiles it separates.  Those cuts happen while the river
+	// symbol is built, so build one, let it cut, then hide it again.
+	// A plot answers for an imaginary river of its own when it is a strait, and also when one of
+	// its crossing corners makes it answer for an edge -- a land tile at a crossing does, and it
+	// would otherwise draw that river.  A plot that really does carry a river is left alone.
+	bool bStrait = isStrait();
+	bool bImaginaryRiver = bStrait || (isNOfRiver() != m_bNOfRiver) || (isWOfRiver() != m_bWOfRiver);
+
+	if (bImaginaryRiver)
+	{
+		gDLL->getRiverIFace()->destroy(m_pRiverSymbol);
+		m_pRiverSymbol = gDLL->getRiverIFace()->createRiver();
+		FAssertMsg(m_pRiverSymbol != NULL, "m_pRiverSymbol is not expected to be equal with NULL");
+		gDLL->getRiverIFace()->init(m_pRiverSymbol, 0, 0, 0, this);
+
+		if (bStrait)
+		{
+			// cut the trees on the two land tiles of every crossing this strait takes part in --
+			// a diagonal strait neighbour with two land tiles between them, one group per pair
+			gDLL->getEngineIFace()->ForceTreeOffsets(getX_INLINE(), getY_INLINE());
+
+			for (int i = DIRECTION_NORTHEAST; i < NUM_DIRECTION_TYPES; i += 2)
+			{
+				if (!isStraitCrossingCorner((DirectionTypes)i))
+				{
+					continue;
+				}
+
+				CvPlot* pSidePlot1 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((i + NUM_DIRECTION_TYPES - 1) % NUM_DIRECTION_TYPES));
+				CvPlot* pSidePlot2 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((i + 1) % NUM_DIRECTION_TYPES));
+				if (pSidePlot1 == NULL || pSidePlot2 == NULL)
+				{
+					continue;
+				}
+
+				gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot1->getX(), pSidePlot1->getY());
+				gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot2->getX(), pSidePlot2->getY());
+			}
+		}
+
+		// nothing may be drawn, but the symbol stays alive: dropping it is what makes the engine
+		// lay the trees out again and undo the cuts
+		gDLL->getRiverIFace()->Hide(m_pRiverSymbol, true);
+		return;
+	}
+	// Fresol - end
 
 	if (!isRiverMask())
 	{
@@ -9819,11 +9995,11 @@ void CvPlot::processArea(CvArea* pArea, int iChange)
 		pArea->changeNumOwnedTiles(iChange);
 	}
 
-	if (isNOfRiver())
+	if (isNOfRiverReal())
 	{
 		pArea->changeNumRiverEdges(iChange);
 	}
-	if (isWOfRiver())
+	if (isWOfRiverReal())
 	{
 		pArea->changeNumRiverEdges(iChange);
 	}

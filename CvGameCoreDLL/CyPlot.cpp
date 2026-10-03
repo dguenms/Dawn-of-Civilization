@@ -566,7 +566,8 @@ void CyPlot::setStartingPlot(bool bNewValue)
 
 bool CyPlot::isNOfRiver()
 {
-	return m_pPlot ? m_pPlot->isNOfRiver() : false;
+	// Fresol: report the flag as stored -- a strait's imaginary river is for the renderer only
+	return m_pPlot ? m_pPlot->isNOfRiverReal() : false;
 }
 
 void CyPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
@@ -579,7 +580,8 @@ void CyPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 bool CyPlot::isWOfRiver()
 {
-	return m_pPlot ? m_pPlot->isWOfRiver() : false;
+	// Fresol: see isNOfRiver()
+	return m_pPlot ? m_pPlot->isWOfRiverReal() : false;
 }
 
 void CyPlot::setWOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
@@ -592,12 +594,14 @@ void CyPlot::setWOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 CardinalDirectionTypes CyPlot::getRiverWEDirection()
 {
-	return m_pPlot->getRiverWEDirection();
+	// Fresol: see isNOfRiver()
+	return (m_pPlot != NULL && !m_pPlot->isStrait()) ? m_pPlot->getRiverWEDirection() : NO_CARDINALDIRECTION;
 }
 
 CardinalDirectionTypes CyPlot::getRiverNSDirection()
 {
-	return m_pPlot->getRiverNSDirection();
+	// Fresol: see isNOfRiver()
+	return (m_pPlot != NULL && !m_pPlot->isStrait()) ? m_pPlot->getRiverNSDirection() : NO_CARDINALDIRECTION;
 }
 
 bool CyPlot::isIrrigated()
