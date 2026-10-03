@@ -3261,6 +3261,12 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		return GC.getMOVE_DENOMINATOR();
 	}
 
+	// Fresol: crossing a strait between two land tiles takes the whole turn, as a landing does
+	if (pUnit->getDomainType() == DOMAIN_LAND && pFromPlot->isStraitCrossing(this))
+	{
+		return pUnit->maxMoves();
+	}
+
 	FAssert(pUnit->getDomainType() != DOMAIN_IMMOBILE);
 
 	if (pUnit->ignoreTerrainCost())
@@ -12331,6 +12337,32 @@ bool CvPlot::isWaterPower(DirectionTypes eDirection) const
 	
 	return false;
 }
+
+// Fresol: a move between the two land tiles of a 2x2 block whose other diagonal is two
+// straits, the way a land unit crosses a narrow sea
+bool CvPlot::isStraitCrossing(const CvPlot* pToPlot) const
+{
+	if (pToPlot == NULL || pToPlot == this)
+	{
+		return false;
+	}
+
+	if (xDistance(getX_INLINE(), pToPlot->getX_INLINE()) != 1 || yDistance(getY_INLINE(), pToPlot->getY_INLINE()) != 1)
+	{
+		return false;
+	}
+
+	CvPlot* pSidePlot1 = GC.getMapINLINE().plotINLINE(pToPlot->getX_INLINE(), getY_INLINE());
+	CvPlot* pSidePlot2 = GC.getMapINLINE().plotINLINE(getX_INLINE(), pToPlot->getY_INLINE());
+
+	if (pSidePlot1 == NULL || pSidePlot2 == NULL)
+	{
+		return false;
+	}
+
+	return pSidePlot1->isStrait() && pSidePlot2->isStrait();
+}
+
 
 bool CvPlot::isStrait() const
 {

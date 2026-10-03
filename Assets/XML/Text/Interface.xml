@@ -2623,6 +2623,14 @@
 		<Spanish>[ICON_BULLET]%D1_Bonus%% from Open Terrain (Unit Ability)</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_COMBAT_PLOT_STRAIT_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Change%% Crossing a Strait</English>
+		<French>[ICON_BULLET]%D1_Change%% travers&#233;e d'un d&#233;troit</French>
+		<German>[ICON_BULLET]%D1_Change%% Meerenge &#252;berquert</German>
+		<Italian>[ICON_BULLET]%D1_Change%% attraversamento di uno stretto</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change%% cruzar un estrecho</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_COMBAT_PLOT_EXTRA_RIVER_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</English>
 		<French>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</French>

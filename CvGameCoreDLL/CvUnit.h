@@ -53,6 +53,7 @@ struct DllExport CombatDetails					// Exposed to Python
 	int iAnimalCombatModifierT;
 	int iRiverAttackModifier;
 	int iAmphibAttackModifier;
+	int iStraitAttackModifier; // Fresol
 	int iKamikazeModifier;
 	int iModifierTotal;
 	int iBaseCombatStr;

@@ -3201,6 +3201,18 @@ It is fine for a human player mouse-over (which is what it is used for).
                         }
                     }
 
+                    // Fresol: attacking across a strait
+                    if (!(pAttacker->isAmphib()) && pAttacker->getDomainType() == DOMAIN_LAND && pAttacker->plot()->isStraitCrossing(pPlot))
+                    {
+                        iModifier = GC.getAMPHIB_ATTACK_MODIFIER();
+
+                        if (iModifier != 0)
+                        {
+                            szString.append(NEWLINE);
+                            szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_STRAIT_MOD", -(iModifier)));
+                        }
+                    }
+
                     iModifier = pDefender->getExtraCombatPercent();
 
 					if (iModifier != 0)
@@ -3773,6 +3785,18 @@ It is fine for a human player mouse-over (which is what it is used for).
 						szString.append(NEWLINE);
 						szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_AMPHIB_MOD", -(iModifier)));
 					}
+				}
+			}
+
+			// Fresol: attacking across a strait
+			if (!(pAttacker->isAmphib()) && pAttacker->getDomainType() == DOMAIN_LAND && pAttacker->plot()->isStraitCrossing(pPlot))
+			{
+				iModifier = GC.getAMPHIB_ATTACK_MODIFIER();
+
+				if (iModifier != 0)
+				{
+					szString.append(NEWLINE);
+					szString.append(gDLL->getText("TXT_KEY_COMBAT_PLOT_STRAIT_MOD", -(iModifier)));
 				}
 			}
 

@@ -591,6 +591,7 @@ public:
 	bool isSlaveImprovement() const;
 	bool isWaterPower(DirectionTypes eDirection) const;
 	bool isStrait() const;
+	bool isStraitCrossing(const CvPlot* pToPlot) const; // Fresol
 
 	// Leoreth: graphics paging
 	static void EvictGraphicsIfNecessary();
