@@ -339,6 +339,7 @@ dFeaturesDict = {
 	(68, 57)  : (1100, iFloodPlains), # Lombardy
 	(67, 55)  : (1100, iFloodPlains), # Tuscany
 	(114, 43) : (1200, iRainforest),  # Bengal
+	(38, 65)  : (1400, iStrait),      # Newfoundland
 	(120, 40) : (1700, iRainforest),  # Laos
 	(8, 55)   : (1850, iFloodPlains), # California
 	(8, 54)   : (1850, iFloodPlains), # California

@@ -17428,7 +17428,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=65
-	FeatureType=FEATURE_STRAIT, FeatureVariety=0
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
