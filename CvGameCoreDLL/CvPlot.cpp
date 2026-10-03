@@ -9179,38 +9179,46 @@ void CvPlot::updateRiverSymbol(bool bForce, bool bAdjacent)
 
 	// Fresol - start: a strait carries no river and none may be drawn, but the engine still has
 	// to cut the trees along the two land tiles it separates.  Those cuts happen while the river
-	// symbol is built, so build one, let it cut, then hide it again.  A plot that really does
-	// carry a river is left alone.
-	if (isStrait())
+	// symbol is built, so build one, let it cut, then hide it again.
+	// A plot answers for an imaginary river of its own when it is a strait, and also when one of
+	// its crossing corners makes it answer for an edge -- a land tile at a crossing does, and it
+	// would otherwise draw that river.  A plot that really does carry a river is left alone.
+	bool bStrait = isStrait();
+	bool bImaginaryRiver = bStrait || (isNOfRiver() != m_bNOfRiver) || (isWOfRiver() != m_bWOfRiver);
+
+	if (bImaginaryRiver)
 	{
 		gDLL->getRiverIFace()->destroy(m_pRiverSymbol);
 		m_pRiverSymbol = gDLL->getRiverIFace()->createRiver();
 		FAssertMsg(m_pRiverSymbol != NULL, "m_pRiverSymbol is not expected to be equal with NULL");
 		gDLL->getRiverIFace()->init(m_pRiverSymbol, 0, 0, 0, this);
 
-		// cut the trees on the two land tiles of every crossing this strait takes part in -- a
-		// diagonal strait neighbour with two land tiles between them, one corner group per pair
-		gDLL->getEngineIFace()->ForceTreeOffsets(getX_INLINE(), getY_INLINE());
-
-		for (int i = DIRECTION_NORTHEAST; i < NUM_DIRECTION_TYPES; i += 2)
+		if (bStrait)
 		{
-			CvPlot* pDiagonalPlot = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)i);
-			if (pDiagonalPlot == NULL || !pDiagonalPlot->isStrait())
-			{
-				continue;
-			}
+			// cut the trees on the two land tiles of every crossing this strait takes part in --
+			// a diagonal strait neighbour with two land tiles between them, one group per pair
+			gDLL->getEngineIFace()->ForceTreeOffsets(getX_INLINE(), getY_INLINE());
 
-			CvPlot* pSidePlot1 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((i + NUM_DIRECTION_TYPES - 1) % NUM_DIRECTION_TYPES));
-			CvPlot* pSidePlot2 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((i + 1) % NUM_DIRECTION_TYPES));
-			if (pSidePlot1 == NULL || pSidePlot2 == NULL)
+			for (int i = DIRECTION_NORTHEAST; i < NUM_DIRECTION_TYPES; i += 2)
 			{
-				continue;
-			}
+				CvPlot* pDiagonalPlot = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)i);
+				if (pDiagonalPlot == NULL || !pDiagonalPlot->isStrait())
+				{
+					continue;
+				}
 
-			if (!pSidePlot1->isWater() && !pSidePlot2->isWater())
-			{
-				gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot1->getX(), pSidePlot1->getY());
-				gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot2->getX(), pSidePlot2->getY());
+				CvPlot* pSidePlot1 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((i + NUM_DIRECTION_TYPES - 1) % NUM_DIRECTION_TYPES));
+				CvPlot* pSidePlot2 = plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes)((i + 1) % NUM_DIRECTION_TYPES));
+				if (pSidePlot1 == NULL || pSidePlot2 == NULL)
+				{
+					continue;
+				}
+
+				if (!pSidePlot1->isWater() && !pSidePlot2->isWater())
+				{
+					gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot1->getX(), pSidePlot1->getY());
+					gDLL->getEngineIFace()->ForceTreeOffsets(pSidePlot2->getX(), pSidePlot2->getY());
+				}
 			}
 		}
 
