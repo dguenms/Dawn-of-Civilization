@@ -2021,12 +2021,12 @@
 		<Spanish>Temples:</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUG_RELIGIOUS_MONASTARY</Tag>
-		<English>Monastaries:</English>
-		<French>Monastaries:</French>
+		<Tag>TXT_KEY_BUG_RELIGIOUS_MONASTERY</Tag>
+		<English>Monasteries:</English>
+		<French>Monasteries:</French>
 		<German>Kl&#246;ster:</German>
 		<Italian>Monasteri:</Italian>
-		<Spanish>Monastaries:</Spanish>
+		<Spanish>Monasteries:</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUG_RELIGIOUS_MISSIONARY</Tag>

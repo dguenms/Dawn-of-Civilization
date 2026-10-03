@@ -421,7 +421,7 @@ class CvReligionScreen:
 
 		self.szCities = localText.getText("TXT_KEY_BUG_RELIGIOUS_CITY", ())
 		self.szTemples = localText.getText("TXT_KEY_BUG_RELIGIOUS_TEMPLE", ())
-		self.szMonastaries = localText.getText("TXT_KEY_BUG_RELIGIOUS_MONASTARY", ())
+		self.szMonastaries = localText.getText("TXT_KEY_BUG_RELIGIOUS_MONASTERY", ())
 		self.szMissionaries = localText.getText("TXT_KEY_BUG_RELIGIOUS_MISSIONARY", ())
 
 		self.zoomArt = ArtFileMgr.getInterfaceArtInfo("INTERFACE_BUTTONS_CITYSELECTION").getPath()
