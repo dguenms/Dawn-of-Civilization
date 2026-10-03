@@ -8627,6 +8627,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		pCombatDetails->iPlainsAttackModifier = 0; // Leoreth
 		pCombatDetails->iPlainsDefenseModifier = 0; // Leoreth
 		pCombatDetails->iRiverAttackModifier = 0; // Leoreth
+		pCombatDetails->iStraitAttackModifier = 0; // Fresol
 		pCombatDetails->iFeatureAttackModifier = 0;
 		pCombatDetails->iFeatureDefenseModifier = 0;
 		pCombatDetails->iTerrainAttackModifier = 0;
@@ -8644,6 +8645,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		pCombatDetails->iAnimalCombatModifierT = 0;
 		pCombatDetails->iRiverAttackModifier = 0;
 		pCombatDetails->iAmphibAttackModifier = 0;
+		pCombatDetails->iStraitAttackModifier = 0; // Fresol
 		pCombatDetails->iKamikazeModifier = 0;
 		pCombatDetails->iModifierTotal = 0;
 		pCombatDetails->iBaseCombatStr = 0;
@@ -9101,6 +9103,20 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 				if (pCombatDetails != NULL)
 				{
 					pCombatDetails->iAmphibAttackModifier = iExtraModifier;
+				}
+			}
+		}
+
+		// Fresol: attacking across a strait is a landing in all but name
+		if (!(pAttacker->isAmphib()) && pAttacker->getDomainType() == DOMAIN_LAND)
+		{
+			if (pAttacker->plot()->isStraitCrossing(pAttackedPlot))
+			{
+				iExtraModifier = -GC.getAMPHIB_ATTACK_MODIFIER();
+				iTempModifier += iExtraModifier;
+				if (pCombatDetails != NULL)
+				{
+					pCombatDetails->iStraitAttackModifier = iExtraModifier;
 				}
 			}
 		}
