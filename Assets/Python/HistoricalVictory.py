@@ -823,7 +823,7 @@ dGoals = {
 			CityCount(plots.region(rCentralEurope), 2, mode=STATELESS),
 			by=1700,
 		),
-		SpecialistCount(sum(iSpecialistGreatGeneral, iSpecialistGreatArtist, iSpecialistGreatStatesman), 12, by=1800),
+		SpecialistCount(sum(iSpecialistGreatGeneral, iSpecialistGreatArtist, iSpecialistGreatStatesman), 16, by=1800),
 	),
 	iCongo: (
 		ReligiousVotePercent(12, by=1650),
