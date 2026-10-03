@@ -4577,12 +4577,12 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bObsolet
 
 			for (iI = 0; iI < GC.getNumSpecialistInfos(); iI++)
 			{
-				changeStateReligionSpecialistCount(eReligion, (SpecialistTypes)iI, GC.getBuildingInfo(eBuilding).getStateReligionSpecialistCount((SpecialistTypes)iI));
+				changeStateReligionSpecialistCount(eReligion, (SpecialistTypes)iI, GC.getBuildingInfo(eBuilding).getStateReligionSpecialistCount((SpecialistTypes)iI) * iChange);
 			}
 
 			for (iI = 0; iI < NUM_COMMERCE_TYPES; iI++)
 			{
-				changeStateReligionCommerceRateModifier(eReligion, (CommerceTypes)iI, GC.getBuildingInfo(eBuilding).getStateReligionCommerceRateModifier((CommerceTypes)iI));
+				changeStateReligionCommerceRateModifier(eReligion, (CommerceTypes)iI, GC.getBuildingInfo(eBuilding).getStateReligionCommerceRateModifier((CommerceTypes)iI) * iChange);
 			}
 		}
 
