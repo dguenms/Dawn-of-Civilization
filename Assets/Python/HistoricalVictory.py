@@ -820,7 +820,7 @@ dGoals = {
 				plots.region(rGreece),
 				plots.region(rBalkans).named(BALKANS),
 			),
-			CityCount(plots.region(rCentralEurope), 2),
+			CityCount(plots.region(rCentralEurope), 2, mode=STATELESS),
 			by=1700,
 		),
 		SpecialistCount(sum(iSpecialistGreatGeneral, iSpecialistGreatArtist, iSpecialistGreatStatesman), 12, by=1800),
