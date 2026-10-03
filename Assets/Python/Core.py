@@ -575,6 +575,18 @@ def year(year=None):
 	return Turn(getTurnForYear(year))
 
 
+def isBefore(iYear):
+	return year() < year(iYear)
+
+
+def isAfter(iYear):
+	return year() > year(iYear)
+
+
+def isBetween(iAfter, iBefore):
+	return year(iAfter) <= year() <= year(iBefore)
+
+
 def turn(turn = None):
 	return year(turn)
 
@@ -1283,10 +1295,12 @@ class PlotFactory:
 		return self.area(dExpansionArea, dExpansionAreaExceptions, identifier)
 
 	def respawn(self, identifier, iPeriod=None):
-		if identifier in dRespawnArea:
-			return self.area(dRespawnArea, dRespawnAreaExceptions, identifier)
 		if iPeriod is None:
 			iPeriod = period(identifier)
+		if identifier in dRespawnArea:
+			if iPeriod in dPeriodRespawnArea:
+				return self.area(dPeriodRespawnArea, dPeriodRespawnAreaExceptions, identifier)
+			return self.area(dRespawnArea, dRespawnAreaExceptions, identifier)
 		if iPeriod in dPeriodCoreArea:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
 		return self.birth(identifier)
@@ -1567,7 +1581,7 @@ class CityFactory:
 	def core(self, identifier):
 		return self.plots.core(identifier).cities()
 
-	def respawn(self, identifier):
+	def respawn(self, identifier, iPeriod=None):
 		return self.plots.respawn(identifier).cities()
 	
 	def capital(self, identifier):

@@ -87,6 +87,22 @@ dPeriodNames = {
 	iPeriodQing:					"Qing",
 	iPeriodModernGermany:			"Modern_Germany",
 }
+	
+
+dResurrectionPeriods = {
+	iGreece: iPeriodModernGreece,
+	iPhoenicia: iPeriodCarthage,
+	iCelts: iPeriodInsularCelts,
+	iJapan: iPeriodMeiji,
+	iTurks: iPeriodSeljuks,
+	iMoors: iPeriodMorocco,
+	iSpain: iPeriodSpain,
+	iInca: iPeriodPeru,
+	iItaly: iPeriodModernItaly,
+	iMongols: -1,
+	iMughals: iPeriodPakistan,
+	iManchuria: -1,
+}
 
 
 def setPeriod(iCiv, iPeriod):
@@ -115,6 +131,46 @@ def evacuate(iPlayer):
 	return False
 
 
+def getResurrectionPeriod(iCiv):
+	if iCiv == iChina:
+		if isAfter(dBirth[iMongols]):
+			return iPeriodMing
+	
+	elif iCiv == iIndia:
+		if isBefore(1900):
+			return iPeriodMaratha
+		return -1
+	
+	elif iCiv == iNubia:
+		if isAfter(1000):
+			return iPeriodMakuria
+	
+	elif iCiv == iFrance:
+		if isAfter(1800):
+			return iPeriodNationalFrance
+	
+	elif iCiv == iTurks:
+		if isAfter(1700):
+			return iPeriodUzbeks
+	
+	elif iCiv == iHolyRome:
+		if isAfter(1700):
+			return iPeriodAustria
+	
+	elif iCiv == iEngland:
+		if isBetween(1700, 1920):
+			return iPeriodUnitedKingdom
+		
+		if isAfter(1500):
+			return iPeriodGreatBritain
+	
+	elif iCiv == iGermany:
+		if isAfter(1950):
+			return iPeriodModernGermany
+	
+	return dResurrectionPeriods.get(iCiv)
+
+
 @handler("birth")
 def onBirth(iPlayer):
 	iCiv = civ(iPlayer)
@@ -137,34 +193,20 @@ def onCollapse(iPlayer):
 @handler("resurrection")
 def onResurrection(iPlayer):
 	iCiv = civ(iPlayer)
+	iResurrectionPeriod = getResurrectionPeriod(iCiv)
 	
 	if iCiv == iEgypt:
 		if player(iPlayer).getStateReligion() == -1 and cities.owner(iPlayer).any(lambda city: city.getPreviousCiv() == iGreece):
 			setPeriod(iEgypt, iPeriodPtolemaicEgypt)
-
-	if iCiv == iGreece:
-		setPeriod(iGreece, iPeriodModernGreece)
 	
-	if iCiv == iChina:
-		if year() > year(dBirth[iMongols]):
-			setPeriod(iChina, iPeriodMing)
-		
+	elif iCiv == iChina:
 		setPeriod(iManchuria, -1)
 	
-	if iCiv == iIndia:
-		if year() < year(1900):
-			setPeriod(iIndia, iPeriodMaratha)
-		else:
-			setPeriod(iIndia, -1)
+	elif iCiv == iNorse:
+		setPeriod(iCiv, getNorsePeriod(iPlayer))
 	
-	if iCiv == iCelts:
-		setPeriod(iCelts, iPeriodInsularCelts)
-	
-	if iCiv == iMongols:
-		setPeriod(iCiv, -1)
-	
-	if iCiv == iManchuria:
-		setPeriod(iCiv, -1)
+	if iResurrectionPeriod is not None:
+		setPeriod(iCiv, iResurrectionPeriod)
 
 
 @handler("cityAcquired")

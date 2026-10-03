@@ -1,6 +1,7 @@
 from Core import *
 from RFCUtils import *
 from Slots import *
+from Periods import *
 
 from Popups import popup
 from Events import events, handler
@@ -65,7 +66,8 @@ def isResurrectionPossible():
 
 						
 def getResurrectionCities(iCiv, bFromCollapse=False):
-	potentialCities = cities.respawn(iCiv)
+	iResurrectionPeriod = getResurrectionPeriod(iCiv)
+	potentialCities = cities.respawn(iCiv, iResurrectionPeriod)
 	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iCiv, city, len(potentialCities) == 1))
 
 	# if capital exists and not part of the resurrection, it fails, unless from collapse
