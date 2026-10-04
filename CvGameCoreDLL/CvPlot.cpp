@@ -4833,8 +4833,67 @@ void CvPlot::setStartingPlot(bool bNewValue)
 }
 
 
+// Fresol - start
+// Experiment D. The trees two land tiles across a strait share are cut by the engine's river
+// symbol, not by the river flags (experiment C), while the water is drawn from the flags even
+// with no symbol built at all (experiment A). So build the symbol just long enough for the
+// engine to cut the trees, then take both sources of water away again: hide the symbol, and
+// let the flags go quiet by themselves because they only speak while the build is in flight.
+static CvPlot* g_pStraitRiverPlot = NULL;		// the one plot whose river build is in flight
+
+
+bool CvPlot::neighbourIsStrait(DirectionTypes eDirection) const
+{
+	CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), eDirection);
+
+	return (pAdjacentPlot != NULL) && pAdjacentPlot->isStrait();
+}
+
+
+// A strait river edge only cuts anything where it separates water from land, because that is
+// where the trees are. An edge with water on both sides would build a river that cuts nothing,
+// so no symbol is made for those plots at all.
+bool CvPlot::straitRiverCutsTrees(DirectionTypes eDirection) const
+{
+	CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), eDirection);
+
+	if (pAdjacentPlot == NULL)
+	{
+		return false;
+	}
+
+	if (pAdjacentPlot->isStrait())
+	{
+		return !isWater();
+	}
+
+	if (isStrait())
+	{
+		return !pAdjacentPlot->isWater();
+	}
+
+	return false;
+}
+
+
+bool CvPlot::inStraitRiverBuild() const
+{
+	return (this == g_pStraitRiverPlot);
+}
+// Fresol - end
+
+
 bool CvPlot::isNOfRiver() const
 {
+	// Fresol - start
+	// Only the edge that actually looks across a strait gets a river, so the trees are cut
+	// towards the strait and nowhere else.
+	if (!m_bNOfRiver && inStraitRiverBuild() && (isStrait() || neighbourIsStrait(DIRECTION_SOUTH)))
+	{
+		return true;
+	}
+	// Fresol - end
+
 	return m_bNOfRiver;
 }
 
@@ -4882,6 +4941,13 @@ void CvPlot::setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir)
 
 bool CvPlot::isWOfRiver() const
 {
+	// Fresol - start
+	if (!m_bWOfRiver && inStraitRiverBuild() && (isStrait() || neighbourIsStrait(DIRECTION_EAST)))
+	{
+		return true;
+	}
+	// Fresol - end
+
 	return m_bWOfRiver;
 }
 
@@ -9123,6 +9189,47 @@ void CvPlot::updateRiverSymbol(bool bForce, bool bAdjacent)
 			}
 		}
 	}
+
+	// Fresol - start
+	// Experiment D: build one river symbol per strait plot, let the engine cut the trees the
+	// way it does for a real river, then hide the symbol and stop answering for the river.
+	// Both sources of water are gone afterwards, and the cut stays because the offset the
+	// engine computed is only recomputed when something asks it to be.
+	// The isRiverMask() guard keeps plots that really do carry a river out of this: they need
+	// the ordinary symbol below, and taking the branch here would leave them without one.
+	// Only where one of the two edges we claim actually separates water from land is there a
+	// tree to cut, so the rest is skipped.
+	if (!isRiverMask() && (straitRiverCutsTrees(DIRECTION_SOUTH) || straitRiverCutsTrees(DIRECTION_EAST)))
+	{
+		if (m_pRiverSymbol == NULL)
+		{
+			g_pStraitRiverPlot = this;
+
+			m_pRiverSymbol = gDLL->getRiverIFace()->createRiver();
+			FAssertMsg(m_pRiverSymbol != NULL, "m_pRiverSymbol is not expected to be equal with NULL");
+			gDLL->getRiverIFace()->init(m_pRiverSymbol, 0, 0, 0, this);
+
+			//force tree cuts for adjacent plots
+			DirectionTypes affectedDirections[] = {NO_DIRECTION, DIRECTION_EAST, DIRECTION_SOUTHEAST, DIRECTION_SOUTH};
+			for (int i = 0; i < 4; ++i)
+			{
+				pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), affectedDirections[i]);
+				if (pAdjacentPlot != NULL)
+				{
+					gDLL->getEngineIFace()->ForceTreeOffsets(pAdjacentPlot->getX(), pAdjacentPlot->getY());
+				}
+			}
+
+			gDLL->getRiverIFace()->Hide(m_pRiverSymbol, true);
+
+			g_pStraitRiverPlot = NULL;
+
+			gDLL->getEngineIFace()->MarkPlotTextureAsDirty(getX_INLINE(), getY_INLINE());
+		}
+
+		return;
+	}
+	// Fresol - end
 
 	if (!isRiverMask())
 	{
