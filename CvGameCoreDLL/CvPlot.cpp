@@ -3261,8 +3261,10 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		return GC.getMOVE_DENOMINATOR();
 	}
 
-	// Fresol: crossing a strait between two land tiles takes the whole turn, as a landing does
-	if (pUnit->getDomainType() == DOMAIN_LAND && pFromPlot->isStraitCrossing(this))
+	// Fresol: crossing a strait between two land tiles takes the whole turn, as a landing does.
+	// A strait that only opens into a lake is waded like a river instead, so it costs nothing
+	// beyond the terrain it runs through.
+	if (pUnit->getDomainType() == DOMAIN_LAND && pFromPlot->isStraitCrossing(this) && !pFromPlot->isLakeStraitCrossing(this))
 	{
 		return pUnit->maxMoves();
 	}
@@ -3323,7 +3325,9 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot) const
 		}
 	}
 
-	if (pFromPlot->isValidRoute(pUnit) && isValidRoute(pUnit) && ((GET_TEAM(pUnit->getTeam()).isBridgeBuilding() || !(pFromPlot->isRiverCrossing(directionXY(pFromPlot, this))))))
+	// Fresol: a lake strait is crossed like a river, so a road over it needs bridge building
+	// before it counts, the way a road over a river does
+	if (pFromPlot->isValidRoute(pUnit) && isValidRoute(pUnit) && ((GET_TEAM(pUnit->getTeam()).isBridgeBuilding() || !(pFromPlot->isRiverCrossing(directionXY(pFromPlot, this)) || pFromPlot->isLakeStraitCrossing(this)))))
 	{
 		iRouteCost = std::max((GC.getRouteInfo(pFromPlot->getRouteType()).getMovementCost() + GET_TEAM(pUnit->getTeam()).getRouteChange(pFromPlot->getRouteType())),
 			               (GC.getRouteInfo(getRouteType()).getMovementCost() + GET_TEAM(pUnit->getTeam()).getRouteChange(getRouteType())));
@@ -12361,6 +12365,34 @@ bool CvPlot::isStraitCrossing(const CvPlot* pToPlot) const
 	}
 
 	return pSidePlot1->isStrait() && pSidePlot2->isStrait();
+}
+
+
+// Fresol: the same crossing, but where both straits lie in a lake rather than in the sea. A
+// strait that a sea unit can leave into open water is merged into that water area and so is
+// not a lake; one that only opens into a lake stays one. Wading a lake strait is a river
+// crossing, not a landing.
+bool CvPlot::isLakeStraitCrossing(const CvPlot* pToPlot) const
+{
+	if (pToPlot == NULL || pToPlot == this)
+	{
+		return false;
+	}
+
+	if (xDistance(getX_INLINE(), pToPlot->getX_INLINE()) != 1 || yDistance(getY_INLINE(), pToPlot->getY_INLINE()) != 1)
+	{
+		return false;
+	}
+
+	CvPlot* pSidePlot1 = GC.getMapINLINE().plotINLINE(pToPlot->getX_INLINE(), getY_INLINE());
+	CvPlot* pSidePlot2 = GC.getMapINLINE().plotINLINE(getX_INLINE(), pToPlot->getY_INLINE());
+
+	if (pSidePlot1 == NULL || pSidePlot2 == NULL)
+	{
+		return false;
+	}
+
+	return pSidePlot1->isStrait() && pSidePlot1->isLake() && pSidePlot2->isStrait() && pSidePlot2->isLake();
 }
 
 

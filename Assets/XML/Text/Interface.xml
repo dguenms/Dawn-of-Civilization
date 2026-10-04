@@ -2631,6 +2631,14 @@
 		<Spanish>[ICON_BULLET]%D1_Change%% cruzar un estrecho</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_COMBAT_PLOT_LAKE_STRAIT_MOD</Tag>
+		<English>[ICON_BULLET]%D1_Change%% Crossing a Strait (River)</English>
+		<French>[ICON_BULLET]%D1_Change%% travers&#233;e d'un d&#233;troit (rivi&#232;re)</French>
+		<German>[ICON_BULLET]%D1_Change%% Meerenge &#252;berquert (Fluss)</German>
+		<Italian>[ICON_BULLET]%D1_Change%% attraversamento di uno stretto (fiume)</Italian>
+		<Spanish>[ICON_BULLET]%D1_Change%% cruzar un estrecho (r&#237;o)</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_COMBAT_PLOT_EXTRA_RIVER_MOD</Tag>
 		<English>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</English>
 		<French>[ICON_BULLET]%D1_Bonus%% from River (Unit Ability)</French>

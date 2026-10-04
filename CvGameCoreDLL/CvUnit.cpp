@@ -4930,10 +4930,12 @@ CvCity* CvUnit::bombardTarget(const CvPlot* pPlot) const
 
 			if (pLoopCity != NULL)
 			{
-				// Fresol: a siege weapon cannot bombard across a strait unless it can make a landing
+				// Fresol: a siege weapon cannot bombard across a sea strait unless it can make a
+				// landing. A lake strait is crossed like a river, and a river does not stop a
+				// bombardment, so neither does this one.
 				if (!isAmphib() && getUnitCombatType() == UNITCOMBAT_SIEGE)
 				{
-					if (pPlot->isStraitCrossing(pLoopPlot))
+					if (pPlot->isStraitCrossing(pLoopPlot) && !pPlot->isLakeStraitCrossing(pLoopPlot))
 					{
 						continue;
 					}
@@ -9116,16 +9118,34 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			}
 		}
 
-		// Fresol: attacking across a strait is a landing in all but name
+		// Fresol: attacking across a strait is a landing in all but name, and attacking across
+		// one that only opens into a lake carries the river penalty instead
 		if (!(pAttacker->isAmphib()) && pAttacker->getDomainType() == DOMAIN_LAND)
 		{
 			if (pAttacker->plot()->isStraitCrossing(pAttackedPlot))
 			{
-				iExtraModifier = -GC.getAMPHIB_ATTACK_MODIFIER();
-				iTempModifier += iExtraModifier;
-				if (pCombatDetails != NULL)
+				if (pAttacker->plot()->isLakeStraitCrossing(pAttackedPlot))
 				{
-					pCombatDetails->iStraitAttackModifier = iExtraModifier;
+					// wading a lake strait is a river crossing, and the river penalty passes
+					// over units that ignore rivers, exactly as it does at a river
+					if (!(pAttacker->isRiver()))
+					{
+						iExtraModifier = -GC.getRIVER_ATTACK_MODIFIER();
+						iTempModifier += iExtraModifier;
+						if (pCombatDetails != NULL)
+						{
+							pCombatDetails->iStraitAttackModifier = iExtraModifier;
+						}
+					}
+				}
+				else
+				{
+					iExtraModifier = -GC.getAMPHIB_ATTACK_MODIFIER();
+					iTempModifier += iExtraModifier;
+					if (pCombatDetails != NULL)
+					{
+						pCombatDetails->iStraitAttackModifier = iExtraModifier;
+					}
 				}
 			}
 		}
