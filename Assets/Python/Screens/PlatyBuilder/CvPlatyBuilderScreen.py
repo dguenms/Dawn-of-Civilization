@@ -1873,8 +1873,15 @@ class CvWorldBuilderScreen:
 			if ItemInfo.getNumVarieties() > 1:
 				screen.setTableText("WBCurrentItem", 0, 0, sText, ItemInfo.getVarietyButton(self.iSelectClass), WidgetTypes.WIDGET_PYTHON, 7874, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 				screen.addDropDownBoxGFC("WBSelectClass", 0, 25, iWidth, WidgetTypes.WIDGET_GENERAL, -1, -1, FontTypes.GAME_FONT)
-				for i in xrange(ItemInfo.getNumVarieties()):
-					screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_FEATURE_VARIETY", (i,)), i, i, i == self.iSelectClass)
+				# MacAurther: Strait graphics
+				if ItemInfo.getType() in ("FEATURE_STRAIT", "FEATURE_ISLANDS_STRAIT"):
+					self.iSelectClass = (self.iSelectClass // 4) * 4
+					for iTexture, sKey in enumerate(("SANDY_STRAIGHT", "SANDY_MEANDERING", "ROCKY_STRAIGHT", "ROCKY_MEANDERING", "MUDDY_STRAIGHT", "MUDDY_MEANDERING")):
+						i = iTexture * 4
+						screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_STRAIT_" + sKey, ()), i, i, i == self.iSelectClass)
+				else:
+					for i in xrange(ItemInfo.getNumVarieties()):
+						screen.addPullDownString("WBSelectClass", CyTranslator().getText("TXT_KEY_WB_FEATURE_VARIETY", (i,)), i, i, i == self.iSelectClass)
 			else:
 				screen.setTableText("WBCurrentItem", 0, 0, sText, ItemInfo.getButton(), WidgetTypes.WIDGET_PYTHON, 7874, self.iSelection, CvUtil.FONT_LEFT_JUSTIFY)
 				self.iSelectClass = 0

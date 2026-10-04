@@ -1,0 +1,352 @@
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Alex Mantzaris (Firaxis Games) -->
+<!-- Sid Meier's Civilization 4 -->
+<!-- Copyright Firaxis Games 2005 -->
+<!-- -->
+<!-- Art Defines Schema -->
+<Schema xmlns="urn:schemas-microsoft-com:xml-data" xmlns:dt="urn:schemas-microsoft-com:datatypes">
+	<ElementType name="SelectionSound" content="textOnly"/>
+	<ElementType name="ActionSound" content="textOnly"/>
+	<ElementType name="TrainSound" content="textOnly"/>
+	<ElementType name="PatrolSound" content="textOnly"/>
+	<ElementType name="AudioRunTypeLoop" content="textOnly"/>
+	<ElementType name="AudioRunTypeEnd" content="textOnly"/>
+	<ElementType name="AudioRunSounds" content="eltOnly">
+		<element type="AudioRunTypeLoop" minOccurs="0" maxOccurs="1"/>
+		<element type="AudioRunTypeEnd" minOccurs="0" maxOccurs="1"/>
+	</ElementType>
+	<ElementType name="Type" content="textOnly"/>
+	<ElementType name="LSystem" content="textOnly"/>
+	<ElementType name="RouteType" content="textOnly"/>
+	<ElementType name="Path" content="textOnly"/>
+	<ElementType name="Grid" content="textOnly"/>
+	<ElementType name="Detail" content="textOnly"/>
+	<ElementType name="Connections" content="textOnly"/>
+	<ElementType name="ModelConnections" content="textOnly"/>
+	<ElementType name="Rotations" content="textOnly"/>
+	<ElementType name="ModelFileKey" content="textOnly"/>
+	<ElementType name="Animated" content="textOnly" dt:type="boolean"/>
+	<ElementType name="ModelFile" content="textOnly"/>
+	<ElementType name="LateModelFile" content="textOnly"/>
+	<ElementType name="BorderFile" content="textOnly"/>
+	<ElementType name="Tag" content="textOnly"/>
+	<ElementType name="Name" content="textOnly"/>
+	<ElementType name="TextureIndex" content="textOnly" dt:type="int"/>
+	<ElementType name="DeltaType" content="textOnly"/>
+	<ElementType name="RouteModelInfo" content="eltOnly">
+		<element type="ModelFile"/>
+		<element type="LateModelFile"/>
+		<element type="ModelFileKey"/>
+		<element type="Animated"/>
+		<element type="RouteType"/>
+		<element type="Connections"/>
+		<element type="ModelConnections"/>
+		<element type="Rotations"/>
+	</ElementType>
+	<ElementType name="RouteModelInfos" content="eltOnly">
+		<element type="RouteModelInfo" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="Civ4RouteModelInfos" content="eltOnly">
+		<element type="RouteModelInfos" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="Civ4RiverModelInfos" content="eltOnly">
+		<element type="RiverModelInfos" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="RiverModelInfo" content="eltOnly">
+		<element type="ModelFile"/>
+		<element type="BorderFile"/>
+		<element type="TextureIndex"/>
+		<element type="DeltaType"/>
+		<element type="Connections"/>
+		<element type="Rotations"/>
+	</ElementType>
+	<ElementType name="RiverModelInfos" content="eltOnly">
+		<element type="RiverModelInfo" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="LayerOrder" content="textOnly" dt:type="int"/>
+	<ElementType name="AlphaShader" content="textOnly" dt:type="boolean"/>
+	<ElementType name="TextureBlend01" content="textOnly"/>
+	<ElementType name="TextureBlend02" content="textOnly"/>
+	<ElementType name="TextureBlend03" content="textOnly"/>
+	<ElementType name="TextureBlend04" content="textOnly"/>
+	<ElementType name="TextureBlend05" content="textOnly"/>
+	<ElementType name="TextureBlend06" content="textOnly"/>
+	<ElementType name="TextureBlend07" content="textOnly"/>
+	<ElementType name="TextureBlend08" content="textOnly"/>
+	<ElementType name="TextureBlend09" content="textOnly"/>
+	<ElementType name="TextureBlend10" content="textOnly"/>
+	<ElementType name="TextureBlend11" content="textOnly"/>
+	<ElementType name="TextureBlend12" content="textOnly"/>
+	<ElementType name="TextureBlend13" content="textOnly"/>
+	<ElementType name="TextureBlend14" content="textOnly"/>
+	<ElementType name="TextureBlend15" content="textOnly"/>
+	<ElementType name="Description" content="textOnly"/>
+	<ElementType name="NIF" content="textOnly"/>
+	<ElementType name="KFM" content="textOnly"/>
+	<ElementType name="SHADERNIF" content="textOnly"/>
+	<ElementType name="Button" content="textOnly"/>
+	<ElementType name="FontButtonIndex" content="textOnly" dt:type="int"/>
+	<ElementType name="fScale" content="textOnly"/>
+	<ElementType name="fUpdateRate" content="textOnly"/>
+	<ElementType name="fInterfaceScale" content="textOnly"/>
+	<ElementType name="bActAsLand" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bActAsAir" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bAnimated" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bIsProjectile" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bRiverArt" content="textOnly" dt:type="boolean"/>
+	<ElementType name="TileArtType" content="textOnly"/>
+	<ElementType name="LightType" content="textOnly"/>
+	<ElementType name="bExtraAnimations" content="textOnly" dt:type="boolean"/>
+	<ElementType name="Leaderhead" content="textOnly"/>
+	<ElementType name="NoShaderNIF" content="textOnly"/>
+	<ElementType name="BackgroundKFM" content="textOnly"/>
+	<ElementType name="ShadowNIF" content="textOnly"/>
+	<ElementType name="ShadowAttachNode" content="textOnly"/>
+	<ElementType name="fShadowScale" content="textOnly"/>
+	<ElementType name="ShadowDef" content="eltOnly">
+		<element type="ShadowNIF"/>
+		<element type="ShadowAttachNode"/>
+		<element type="fShadowScale"/>
+	</ElementType>
+	<ElementType name="iDamageStates" content="textOnly" dt:type="int"/>
+	<ElementType name="Texture" content="textOnly"/>
+	<ElementType name="fWidth" content="textOnly"/>
+	<ElementType name="fLength" content="textOnly"/>
+	<ElementType name="fTaper" content="textOnly"/>
+	<ElementType name="fFadeStartTime" content="textOnly"/>
+	<ElementType name="fFadeFalloff" content="textOnly"/>
+	<ElementType name="TrailDefinition" content="eltOnly">
+		<element type="Texture"/>
+		<element type="fWidth"/>
+		<element type="fLength"/>
+		<element type="fTaper"/>
+		<element type="fFadeStartTime"/>
+		<element type="fFadeFalloff"/>
+	</ElementType>
+	<ElementType name="fBattleDistance" content="textOnly"/>
+	<ElementType name="fExchangeAngle" content="textOnly"/>
+	<ElementType name="bSmoothMove" content="textOnly" dt:type="boolean"/>
+	<ElementType name="fAngleInterpRate" content="textOnly"/>
+	<ElementType name="fBankRate" content="textOnly"/>
+	<ElementType name="fRangedDeathTime" content="textOnly"/>
+	<ElementType name="bCombatExempt" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bActAsRanged" content="textOnly" dt:type="boolean"/>
+	<ElementType name="InterfaceArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Path"/>
+	</ElementType>
+	<ElementType name="InterfaceArtInfos" content="eltOnly">
+		<element type="InterfaceArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="MovieArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Path"/>
+	</ElementType>
+	<ElementType name="MovieArtInfos" content="eltOnly">
+		<element type="MovieArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="MiscArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Path"/>
+		<element type="fScale"/>
+		<element type="NIF"/>
+		<element type="KFM"/>
+	</ElementType>
+	<ElementType name="MiscArtInfos" content="eltOnly">
+		<element type="MiscArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="UnitArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Button"/>
+		<element type="fScale"/>
+		<element type="fInterfaceScale"/>
+		<element type="bActAsLand"/>
+		<element type="bActAsAir"/>
+		<element type="NIF"/>
+		<element type="KFM"/>
+		<element type="SHADERNIF" minOccurs="0"/>
+		<element type="ShadowDef"/>
+		<element type="iDamageStates" minOccurs="0"/>
+		<element type="TrailDefinition" minOccurs="0"/>
+		<element type="fBattleDistance"/>
+		<element type="fRangedDeathTime"/>
+		<element type="bSmoothMove" minOccurs="0"/>
+		<element type="fAngleInterpRate" minOccurs="0"/>
+		<element type="fBankRate" minOccurs="0"/>
+		<element type="fExchangeAngle" minOccurs="0"/>
+		<element type="bCombatExempt" minOccurs="0"/>
+		<element type="bActAsRanged"/>
+		<element type="TrainSound" minOccurs="0" maxOccurs="1"/>
+		<element type="AudioRunSounds" minOccurs="1" maxOccurs="1"/>
+		<element type="PatrolSound" minOccurs="0" maxOccurs="1"/>
+		<element type="SelectionSound" minOccurs="0" maxOccurs="1"/>
+		<element type="ActionSound" minOccurs="0" maxOccurs="1"/>
+	</ElementType>
+	<ElementType name="UnitArtInfos" content="eltOnly">
+		<element type="UnitArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="BuildingArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="LSystem"/>
+		<element type="bAnimated"/>
+		<element type="fScale"/>
+		<element type="fInterfaceScale"/>
+		<element type="NIF"/>
+		<element type="KFM"/>
+		<element type="Button"/>
+	</ElementType>
+	<ElementType name="BuildingArtInfos" content="eltOnly">
+		<element type="BuildingArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="bWhiteFlag" content="textOnly" dt:type="boolean"/>
+	<ElementType name="CivilizationArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Button"/>
+		<element type="Path"/>
+		<element type="bWhiteFlag"/>
+	</ElementType>
+	<ElementType name="CivilizationArtInfos" content="eltOnly">
+		<element type="CivilizationArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="LeaderheadArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Button"/>
+		<element type="NIF"/>
+		<element type="KFM"/>
+		<element type="NoShaderNIF"/>
+		<element type="BackgroundKFM" minOccurs="0"/>
+	</ElementType>
+	<ElementType name="LeaderheadArtInfos" content="eltOnly">
+		<element type="LeaderheadArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="BonusArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="fScale"/>
+		<element type="fInterfaceScale"/>
+		<element type="NIF"/>
+		<element type="KFM"/>
+		<element type="SHADERNIF" minOccurs="0"/>
+		<element type="Button"/>
+		<element type="FontButtonIndex"/>
+	</ElementType>
+	<ElementType name="BonusArtInfos" content="eltOnly">
+		<element type="BonusArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="ImprovementArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="bExtraAnimations"/>
+		<element type="fScale"/>
+		<element type="fInterfaceScale"/>
+		<element type="NIF"/>
+		<element type="KFM"/>
+		<element type="SHADERNIF" minOccurs="0"/>
+		<element type="Button"/>
+	</ElementType>
+	<ElementType name="ImprovementArtInfos" content="eltOnly">
+		<element type="ImprovementArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="TerrainArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Path"/>
+		<element type="Grid"/>
+		<element type="Detail"/>
+		<element type="Button"/>
+		<element type="LayerOrder"/>
+		<element type="AlphaShader"/>
+		<element type="TextureBlend01"/>
+		<element type="TextureBlend02"/>
+		<element type="TextureBlend04"/>
+		<element type="TextureBlend08"/>
+		<element type="TextureBlend03"/>
+		<element type="TextureBlend06"/>
+		<element type="TextureBlend12"/>
+		<element type="TextureBlend09"/>
+		<element type="TextureBlend07"/>
+		<element type="TextureBlend14"/>
+		<element type="TextureBlend13"/>
+		<element type="TextureBlend11"/>
+		<element type="TextureBlend10"/>
+		<element type="TextureBlend05"/>
+		<element type="TextureBlend15"/>
+	</ElementType>
+	<ElementType name="TerrainArtInfos" content="eltOnly">
+		<element type="TerrainArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FeatureArtPiece" content="eltOnly">
+		<element type="ModelFile" minOccurs="0" maxOccurs="*"/>
+		<element type="Connections"/>
+	</ElementType>
+	<ElementType name="FeatureDummyNode" content="eltOnly">
+		<element type="Tag"/>
+		<element type="Name"/>
+	</ElementType>
+	<ElementType name="FeatureArtPieces" content="eltOnly">
+		<element type="FeatureArtPiece" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FeatureDummyNodes" content="eltOnly">
+		<element type="FeatureDummyNode" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="VarietyButton" content="textOnly"/>
+	<ElementType name="bGenerateRotations" content="textOnly" dt:type="boolean"/>
+	<ElementType name="FeatureVariety" content="eltOnly">
+		<element type="FeatureArtPieces"/>
+		<element type="FeatureDummyNodes"/>
+		<element type="bGenerateRotations"/>
+		<element type="VarietyButton"/>
+	</ElementType>
+	<ElementType name="FeatureArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="bAnimated"/>
+		<element type="bRiverArt"/>
+		<element type="TileArtType"/>
+		<element type="LightType"/>
+		<element type="fScale"/>
+		<element type="fInterfaceScale"/>
+		<element type="Button"/>
+		<element type="FeatureVariety" minOccurs="1" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="FeatureArtInfos" content="eltOnly">
+		<element type="FeatureArtInfo" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="EffectArtInfo" content="eltOnly">
+		<element type="Type"/>
+		<element type="Description"/>
+		<element type="fScale"/>
+		<element type="fUpdateRate"/>
+		<element type="Path"/>
+		<element type="bIsProjectile"/>
+	</ElementType>
+	<ElementType name="Scene" content="textOnly"/>
+	<ElementType name="SceneNoShader" content="textOnly"/>
+	<ElementType name="Soundtrack" content="textOnly"/>
+	<ElementType name="Loading" content="textOnly"/>
+	<ElementType name="LoadingSlideshow" content="textOnly"/>
+	<ElementType name="MainMenu" content="eltOnly">
+		<element type="Type"/>
+		<element type="Description"/>
+		<element type="Scene"/>
+		<element type="SceneNoShader"/>
+		<element type="Soundtrack"/>
+		<element type="Loading"/>
+		<element type="LoadingSlideshow"/>
+	</ElementType>
+	<ElementType name="Civ4MainMenus" content="eltOnly">
+		<element type="MainMenus" minOccurs="0" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="MainMenus" content="eltOnly">
+		<element type="MainMenu" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="Civ4ArtDefines" content="eltOnly">
+		<element type="InterfaceArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="MovieArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="MiscArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="UnitArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="BuildingArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="CivilizationArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="LeaderheadArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="BonusArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="ImprovementArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="TerrainArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="FeatureArtInfos" minOccurs="0" maxOccurs="*"/>
+		<element type="MainMenus" minOccurs="0" maxOccurs="1"/>
+	</ElementType>
+</Schema>

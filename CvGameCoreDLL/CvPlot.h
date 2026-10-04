@@ -263,6 +263,12 @@ public:
 	bool isStartingPlot() const;																																			// Exposed to Python
 	void setStartingPlot(bool bNewValue);																															// Exposed to Python
 	
+	// Fresol - start
+	bool neighbourIsStrait(DirectionTypes eDirection) const;
+	bool straitRiverCutsTrees(DirectionTypes eDirection) const;
+	bool inStraitRiverBuild() const;
+	// Fresol - end
+
 	DllExport bool isNOfRiver() const;																																// Exposed to Python					
 	DllExport void setNOfRiver(bool bNewValue, CardinalDirectionTypes eRiverDir);											// Exposed to Python					
 																																																		

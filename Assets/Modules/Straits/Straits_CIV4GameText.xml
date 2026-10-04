@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Fresol: labels for the strait textures in WorldBuilder, from DoCAmerica "The Straitening" (commit 00693470e) -->
+<Civ4GameText>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STRAIT_SANDY_STRAIGHT</Tag>
+		<English>Sandy - Straight</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STRAIT_SANDY_MEANDERING</Tag>
+		<English>Sandy - Meandering</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STRAIT_ROCKY_STRAIGHT</Tag>
+		<English>Rocky - Straight</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STRAIT_ROCKY_MEANDERING</Tag>
+		<English>Rocky - Meandering</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STRAIT_MUDDY_STRAIGHT</Tag>
+		<English>Muddy - Straight</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_WB_STRAIT_MUDDY_MEANDERING</Tag>
+		<English>Muddy - Meandering</English>
+	</TEXT>
+</Civ4GameText>
