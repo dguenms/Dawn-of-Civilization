@@ -4930,6 +4930,17 @@ CvCity* CvUnit::bombardTarget(const CvPlot* pPlot) const
 
 			if (pLoopCity != NULL)
 			{
+				// Fresol: a siege weapon cannot bombard across a sea strait unless it can make a
+				// landing. A lake strait is crossed like a river, and a river does not stop a
+				// bombardment, so neither does this one.
+				if (!isAmphib() && getUnitCombatType() == UNITCOMBAT_SIEGE)
+				{
+					if (pPlot->isStraitCrossing(pLoopPlot) && !pPlot->isLakeStraitCrossing(pLoopPlot))
+					{
+						continue;
+					}
+				}
+
 				if (pLoopCity->isBombardable(this))
 				{
 					int iValue = pLoopCity->getDefenseDamage();
@@ -8627,6 +8638,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		pCombatDetails->iPlainsAttackModifier = 0; // Leoreth
 		pCombatDetails->iPlainsDefenseModifier = 0; // Leoreth
 		pCombatDetails->iRiverAttackModifier = 0; // Leoreth
+		pCombatDetails->iStraitAttackModifier = 0; // Fresol
 		pCombatDetails->iFeatureAttackModifier = 0;
 		pCombatDetails->iFeatureDefenseModifier = 0;
 		pCombatDetails->iTerrainAttackModifier = 0;
@@ -8644,6 +8656,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 		pCombatDetails->iAnimalCombatModifierT = 0;
 		pCombatDetails->iRiverAttackModifier = 0;
 		pCombatDetails->iAmphibAttackModifier = 0;
+		pCombatDetails->iStraitAttackModifier = 0; // Fresol
 		pCombatDetails->iKamikazeModifier = 0;
 		pCombatDetails->iModifierTotal = 0;
 		pCombatDetails->iBaseCombatStr = 0;
@@ -9101,6 +9114,38 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 				if (pCombatDetails != NULL)
 				{
 					pCombatDetails->iAmphibAttackModifier = iExtraModifier;
+				}
+			}
+		}
+
+		// Fresol: attacking across a strait is a landing in all but name, and attacking across
+		// one that only opens into a lake carries the river penalty instead
+		if (!(pAttacker->isAmphib()) && pAttacker->getDomainType() == DOMAIN_LAND)
+		{
+			if (pAttacker->plot()->isStraitCrossing(pAttackedPlot))
+			{
+				if (pAttacker->plot()->isLakeStraitCrossing(pAttackedPlot))
+				{
+					// wading a lake strait is a river crossing, and the river penalty passes
+					// over units that ignore rivers, exactly as it does at a river
+					if (!(pAttacker->isRiver()))
+					{
+						iExtraModifier = -GC.getRIVER_ATTACK_MODIFIER();
+						iTempModifier += iExtraModifier;
+						if (pCombatDetails != NULL)
+						{
+							pCombatDetails->iStraitAttackModifier = iExtraModifier;
+						}
+					}
+				}
+				else
+				{
+					iExtraModifier = -GC.getAMPHIB_ATTACK_MODIFIER();
+					iTempModifier += iExtraModifier;
+					if (pCombatDetails != NULL)
+					{
+						pCombatDetails->iStraitAttackModifier = iExtraModifier;
+					}
 				}
 			}
 		}
