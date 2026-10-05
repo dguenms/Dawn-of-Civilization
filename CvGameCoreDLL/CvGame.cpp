@@ -8142,7 +8142,13 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 
 			if (ePlayer != NO_PLAYER && eOtherPlayer != NO_PLAYER)
 			{
-				GET_TEAM(GET_PLAYER(ePlayer).getTeam()).changeEspionagePointsAgainstTeam(GET_PLAYER(eOtherPlayer).getTeam(), kVote.getEspionage() * GET_PLAYER(ePlayer).getReligionPopulation(GC.getGame().getVoteSourceReligion(kData.eVoteSource)));
+				// Fresol - start: CvGame::doVoteSelection scales the vote timer by game speed, so this
+				// resolution is voted on the same number of times per game at every speed, while espionage
+				// income is a per turn rate. Scale this one time gain the way the other one time gains are
+				// scaled (CvUnit::pillage, CvPlayer::receiveGoody) so its weight does not shrink at slow
+				// game speeds.
+				GET_TEAM(GET_PLAYER(ePlayer).getTeam()).changeEspionagePointsAgainstTeam(GET_PLAYER(eOtherPlayer).getTeam(), (kVote.getEspionage() * GET_PLAYER(ePlayer).getReligionPopulation(GC.getGame().getVoteSourceReligion(kData.eVoteSource)) * GC.getGameSpeedInfo(getGameSpeedType()).getGrowthPercent()) / 100);
+				// Fresol - end
 			}
 
 			setVoteOutcome(kData, NO_PLAYER_VOTE);

@@ -845,7 +845,11 @@ def acceptColonialAcquisition(iPlayer):
 		if city.isHuman():
 			colonialAcquisition(iPlayer, city)
 			
-	player().changeGold(data.players[iPlayer].colonialAcquisitionCities.count() * 200)
+	# Fresol: compensation for handing over cities. Colonial acquisition is triggered by the tech
+	# condition once per game (see handleColonialAcquisition), so the amount does not repeat with
+	# the turn count and has to be scaled with game speed like the other one time gains.
+	# Note the popup in handleColonialAcquisition shows the same amount and is scaled the same way.
+	player().changeGold(scale(data.players[iPlayer].colonialAcquisitionCities.count() * 200))
 
 def refuseColonialAcquisition(iPlayer):
 	for city in data.players[iPlayer].colonialAcquisitionCities:
@@ -865,7 +869,8 @@ def handleColonialAcquisition(iPlayer):
 	if not targets:
 		return
 	
-	iGold = targets.count() * 200
+	# Fresol: same amount as in acceptColonialAcquisition, scaled the same way
+	iGold = scale(targets.count() * 200)
 	
 	targetPlayers = targets.cities().owners()
 	freePlots, cityPlots = targets.split(lambda plot: not city(plot))
@@ -896,7 +901,7 @@ def handleColonialAcquisition(iPlayer):
 			for plot in targets.cities().owner(iTarget):
 				if bAccepted:
 					colonialAcquisition(iPlayer, plot)
-					player(iTarget).changeGold(200)
+					player(iTarget).changeGold(scale(200))
 				else:
 					data.timedConquest(iPlayer, location(plot))
 
