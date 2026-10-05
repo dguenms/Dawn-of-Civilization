@@ -18481,8 +18481,6 @@ void CvCity::liberate(bool bConquest)
 
 	if (NO_PLAYER != ePlayer)
 	{
-		CvEventReporter::getInstance().cityLiberated(this);
-
 		int iOldOwnerCulture = getCultureTimes100(eOwner);
 		int iOldMasterLand = 0;
 		int iOldVassalLand = 0;
@@ -18505,8 +18503,12 @@ void CvCity::liberate(bool bConquest)
 		}
 		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, eOwner, szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
+		CvPlot* const pPlot = plot();
+
 		GET_PLAYER(ePlayer).acquireCity(this, bConquest, true, true);
 		GET_PLAYER(ePlayer).AI_changeMemoryCount(eOwner, MEMORY_LIBERATED_CITIES, 1);
+
+		CvEventReporter::getInstance().cityLiberated(pPlot->getPlotCity());
 
 		if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(GET_PLAYER(eOwner).getTeam()))
 		{

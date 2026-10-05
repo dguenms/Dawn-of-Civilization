@@ -730,6 +730,18 @@ def prepareKushanBirth(iCiv):
 			plot.setRouteType(iRouteRoad)
 
 
+### CITY LIBERATED ###
+
+
+@handler("cityLiberated")
+def grantLiberatedMinorDefenders(city):
+	if not is_minor(city):
+		return
+	
+	iNumDefenders = 1 + (game.getCurrentEra() + 1) / 2
+	ensureDefenders(city.getOwner(), city, iNumDefenders)
+
+
 ### IMPLEMENTATION ###
 
 def relocateCapitals(iPlayer, city):
