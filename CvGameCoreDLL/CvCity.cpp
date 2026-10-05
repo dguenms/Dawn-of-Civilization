@@ -10059,7 +10059,11 @@ void CvCity::setStateReligionCommerceRateModifier(ReligionTypes eReligion, Comme
 // Leoreth
 void CvCity::changeStateReligionCommerceRateModifier(ReligionTypes eReligion, CommerceTypes eCommerce, int iChange)
 {
+	if (iChange == 0) return;
+		
 	m_ppaiStateReligionCommerceRateModifier[eReligion][eCommerce] += iChange;
+
+	updateCommerce(eCommerce);
 }
 
 
