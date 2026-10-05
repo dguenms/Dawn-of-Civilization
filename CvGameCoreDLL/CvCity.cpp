@@ -18559,7 +18559,8 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 
 	for (int iPlayer = 0; iPlayer < MAX_CIV_PLAYERS; ++iPlayer)
 	{
-		CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+		PlayerTypes ePlayer = (PlayerTypes)iPlayer;
+		CvPlayer& kLoopPlayer = GET_PLAYER(ePlayer);
 
 		if (kLoopPlayer.isMinorCiv())
 		{
@@ -18570,6 +18571,9 @@ PlayerTypes CvCity::getLiberationPlayer(bool bConquest) const
 		{
 			if (kLoopPlayer.canReceiveTradeCity())
 			{
+				if (plot()->getSettlerValue(ePlayer) == 0 && getCultureTimes100(ePlayer) * 5 < countTotalCultureTimes100() && !isPreviousOwner(ePlayer))
+					continue;
+
 				CvCity* pCapital = kLoopPlayer.getCapitalCity();
 				if (NULL != pCapital)
 				{
