@@ -928,6 +928,7 @@ class Birth(object):
 		if self.iPlayer is None:
 			if self.sharesLimitedSlot():
 				self.canceled = True
+				self.player.setAlive(False, False)
 				log.rise("BIRTH CANCELED: skipping %s slot to keep it free", infos.civ(self.iCiv).getText())
 				return
 			
@@ -941,8 +942,6 @@ class Birth(object):
 		self.updateCivilization()
 		self.updateStartingLocation()
 		self.updateNames()
-		
-		self.player.setInitialBirthTurn(self.iTurn)
 		
 		if not self.isHuman():
 			self.player.setAlive(True, True)

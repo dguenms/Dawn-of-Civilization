@@ -11917,7 +11917,10 @@ void CvPlayer::setAlive(bool bNewValue, bool bTurnActive)
 				//if (!isBarbarian()) //Rhye
 				if (!isBarbarian() && !isMinorCiv()) //Rhye
 				{
-					szBuffer = gDLL->getText("TXT_KEY_MISC_CIV_DESTROYED", getCivilizationAdjectiveKey());
+					if (GC.getGameINLINE().getGameTurn() >= getInitialBirthTurn())
+					{
+						szBuffer = gDLL->getText("TXT_KEY_MISC_CIV_DESTROYED", getCivilizationAdjectiveKey());
+					}
 
 					for (iI = 0; iI < MAX_PLAYERS; iI++)
 					{
