@@ -3985,6 +3985,14 @@
 		<Spanish>[ICON_BULLET]%D1_Mod%% Extra Commerce for State [ICON_RELIGION] Buildings</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FREE_COLONY</Tag>
+		<English>Select the cities to which you wish to grant independence.</English>
+		<French>Select the cities to which you wish to grant independence.</French>
+		<German>Select the cities to which you wish to grant independence.</German>
+		<Italian>Select the cities to which you wish to grant independence.</Italian>
+		<Spanish>Select the cities to which you wish to grant independence.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>
