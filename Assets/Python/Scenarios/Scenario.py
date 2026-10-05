@@ -487,6 +487,25 @@ class Scenario(object):
 	
 		for civilization in self.lCivilizations:
 			civilization.apply()
+
+		# Fresol - start: a civilization the scenario sets up at or around its own birth year
+		# is in the same position as one that has just been born, but it never goes through
+		# Rise.assignAttributes, so it misses the free civic changes a new civilization gets.
+		# Iran in 1500 AD, Germany in 1700 AD and Colombia in 1815 AD are such cases. A birth
+		# grants two turns counted from the birth turn, so what is left of that window is what
+		# is granted here.
+		for civilization in self.lCivilizations:
+			if not civilization.isPlayable():
+				continue
+
+			if not civilization.player.isHuman():
+				continue
+
+			iNoAnarchyTurns = 2 - since(year(dBirth[civilization.iCiv]))
+
+			if iNoAnarchyTurns > 0:
+				civilization.player.changeNoAnarchyTurns(min(iNoAnarchyTurns, 2))
+		# Fresol - end
 		
 		setupScenarioResources()
 		
