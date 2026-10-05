@@ -17731,7 +17731,7 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 			// Religion
 			if (NO_PLAYER != city.getOwnerINLINE() && NO_RELIGION != GET_PLAYER(city.getOwnerINLINE()).getStateReligion())
 			{
-				if (city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()))
+				if (city.isHasReligion(GET_PLAYER(city.getOwnerINLINE()).getStateReligion()) && !isWorldWonderClass((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
 				{
 					int iReligionMod = GET_PLAYER(city.getOwnerINLINE()).getStateReligionBuildingProductionModifier();
 					if (0 != iReligionMod)
