@@ -53,7 +53,7 @@ def openGibraltar(iOwner, iPlayer, city):
 
 @handler("cityAcquired")
 def conquistadorCapital(iOwner, iPlayer, city):
-	if city.getRegionID() in lAmerica and civ(iOwner) in lBioNewWorld and civ(iPlayer) not in lBioNewWorld and data.dFirstContactConquerors[civ(iOwner)]:
+	if city.getRegionID() in lAmerica and civ(iOwner) in lBioNewWorld and civ(iPlayer) not in lBioNewWorld and not is_minor(iPlayer) and data.dFirstContactConquerors[civ(iOwner)]:
 		if cities.regions(*lAmerica).none(lambda c: c.isHasRealBuilding(iAdministrativeCenter)):
 			city.setHasRealBuilding(iAdministrativeCenter, True)
 
