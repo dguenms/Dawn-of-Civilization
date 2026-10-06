@@ -8903,6 +8903,21 @@ void CvPlot::updateFeatureSymbolVisibility()
 		{
 			if(GC.getFeatureInfo(getFeatureType()).isVisibleAlways())
 				bVisible = true;
+
+			// Fresol: the cape's storm only means "you cannot sail here", so it stays on the
+			// map until the viewing team can actually take a ship through. That needs both
+			// Compass (the warships) and Cartography (the work boat), so the second of the
+			// two is what clears it. Purely visual - the feature and its passability rules
+			// are untouched.
+			if (getFeatureType() == FEATURE_CAPE)
+			{
+				TeamTypes eViewer = GC.getGameINLINE().getActiveTeam();
+
+				if (eViewer != NO_TEAM)
+				{
+					bVisible = bVisible && !(GET_TEAM(eViewer).isHasTech((TechTypes)COMPASS) && GET_TEAM(eViewer).isHasTech((TechTypes)CARTOGRAPHY));
+				}
+			}
 		}
 
 		bool wasVisible = !gDLL->getFeatureIFace()->IsHidden(m_pFeatureSymbol);

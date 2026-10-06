@@ -5678,6 +5678,15 @@ void CvTeam::setHasTech(TechTypes eIndex, bool bNewValue, PlayerTypes ePlayer, b
 
 	if (isHasTech(eIndex) != bNewValue)
 	{
+		// Fresol: completing Compass or Cartography changes whether the cape is drawn,
+		// but nothing else re-evaluates the feature symbols at that moment (the map is
+		// only refreshed when the active player changes), so do it here. updateVisibility
+		// is graphics only and returns early before the map exists.
+		if (bNewValue && (eIndex == COMPASS || eIndex == CARTOGRAPHY) && GC.getGameINLINE().isFinalInitialized())
+		{
+			GC.getMapINLINE().updateVisibility();
+		}
+
 		// Leoreth: update total tech value
 		changeTotalTechValue(bNewValue ? GC.getTechInfo(eIndex).getResearchCost() : -GC.getTechInfo(eIndex).getResearchCost());
 
