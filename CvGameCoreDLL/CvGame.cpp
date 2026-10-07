@@ -9434,7 +9434,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 		}
 	}*/
 
-	TeamTypes eTeam = GET_PLAYER(eNewPlayer).getTeam();
+	TeamTypes eTeam = (TeamTypes)eNewPlayer; // GET_PLAYER(eNewPlayer).getTeam();
 	GC.getInitCore().setLeader(eNewPlayer, eLeader);
 	GC.getInitCore().setCiv(eNewPlayer, eCiv);
 	GC.getInitCore().setSlotStatus(eNewPlayer, SS_COMPUTER);
