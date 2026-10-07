@@ -17344,6 +17344,11 @@ bool CvCity::isValidBuildingLocation(BuildingTypes eBuilding) const
 		}
 	}
 
+	if (GC.getBuildingInfo(eBuilding).isBuildingClassNeededInCity(BUILDING_PALACE) && !isCapital())
+	{
+		return false;
+	}
+
 	return true;
 }
 
