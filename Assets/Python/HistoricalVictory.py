@@ -799,9 +799,9 @@ dGoals = {
 			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.regions(rSiberia, rAmur).adjacent_regions(rSeaOfJapan, rSeaOfOkhotsk, rBeringSea).named(SIBERIAN_COAST), by=1920),
 		),
 		All(
-			Communist(),
-			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True),
-			UnitCount((iICBM, 30), (iSatellite, 30)),
+			Communist(mode=STATELESS),
+			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True, mode=STATELESS),
+			UnitCount((iICBM, 30), (iSatellite, 30), mode=STATELESS),
 			by=1970,
 		),
 	),
