@@ -127,7 +127,8 @@ def isPartOfResurrection(iCiv, city, bOnlyOne):
 		if bCapital:
 			return True
 		
-		if city.isCore(iCiv) and not city.isPlayerCore(iOwner):
+		# core does not flip: Manchuria is an exception because its moved core disrupts the Chinese respawn
+		if city.isCore(iCiv) and (not city.isPlayerCore(iOwner) or civ(iOwner) == iManchuria):
 			return True
 		
 		if city.isColony():
