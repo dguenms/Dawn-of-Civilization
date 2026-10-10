@@ -1211,6 +1211,7 @@
 			<Strategy>TXT_KEY_UNIT_SCOUT_STRATEGY</Strategy>
 			<Advisor>ADVISOR_GROWTH</Advisor>
 			<bNoBadGoodies>1</bNoBadGoodies>
+			<bNoCapture>1</bNoCapture>
 			<bMilitarySupport>1</bMilitarySupport>
 			<bMilitaryProduction>1</bMilitaryProduction>
 			<UnitClassUpgrades>
