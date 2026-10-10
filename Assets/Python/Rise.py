@@ -308,8 +308,12 @@ def deleteExpansionUnits(iPlayer):
 	if players.minor().cities().any(lambda city: plot_(city).getExpansion() == iPlayer):
 		return
 	
-	for unit in units.owner(iPlayer).where(lambda u: u.isHasPromotion(iVolunteer)):
-		unit.kill(False, -1)
+	for tile, tileUnits in units.owner(iPlayer).where(lambda u: u.isHasPromotion(iVolunteer)).grouped(location):
+		for unit in tileUnits:
+			unit.kill(False, -1)
+			
+		if city(tile):
+			ensureDefenders(iPlayer, tile, 2)
 
 
 @handler("changeWar")

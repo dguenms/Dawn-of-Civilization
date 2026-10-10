@@ -399,7 +399,7 @@ def domesticCrisis(iPlayer):
 		
 def calculatePlayerAdministration(iPlayer):
 	if capital(iPlayer) and not capital(iPlayer).isPlayerCore(iPlayer):
-		return 0
+		return 10
 	
 	return cities.owner(iPlayer).sum(calculateAdministration) + 10
 
