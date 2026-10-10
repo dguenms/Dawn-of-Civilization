@@ -9091,6 +9091,7 @@ name_translations = {
 	"Kandarpapura": {
 		iChinese: "Shunhua",
 		iIndian: _,
+		iLocal: _,
 		iVietnamese: (
 			translate("Hue", iAfter=iIndustrial),
 			"Phu Xuan",
