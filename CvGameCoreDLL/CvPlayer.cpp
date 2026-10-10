@@ -23162,7 +23162,7 @@ bool CvPlayer::isVotingMember(VoteSourceTypes eVoteSource) const
 
 PlayerTypes CvPlayer::pickConqueredCityOwner(const CvCity& kCity) const
 {
-	PlayerTypes eBestPlayer = kCity.getLiberationPlayer(true);
+	/*PlayerTypes eBestPlayer = kCity.getLiberationPlayer(true);
 
 	if (NO_PLAYER != eBestPlayer)
 	{
@@ -23170,7 +23170,7 @@ PlayerTypes CvPlayer::pickConqueredCityOwner(const CvCity& kCity) const
 		{
 			return eBestPlayer;
 		}
-	}
+	}*/
 
 	return getID();
 }
