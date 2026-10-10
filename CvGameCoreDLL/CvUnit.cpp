@@ -12702,17 +12702,17 @@ bool CvUnit::isPromotionValid(PromotionTypes ePromotion) const
 
 	CvPromotionInfo& promotionInfo = GC.getPromotionInfo(ePromotion);
 
-	if (promotionInfo.getWithdrawalChange() + m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal() > GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"))
+	if (promotionInfo.getWithdrawalChange() > 0 && promotionInfo.getWithdrawalChange() + m_pUnitInfo->getWithdrawalProbability() + getExtraWithdrawal() > GC.getDefineINT("MAX_WITHDRAWAL_PROBABILITY"))
 	{
 		return false;
 	}
 
-	if (promotionInfo.getInterceptChange() + maxInterceptionProbability() > GC.getDefineINT("MAX_INTERCEPTION_PROBABILITY"))
+	if (promotionInfo.getInterceptChange() > 0 && promotionInfo.getInterceptChange() + maxInterceptionProbability() > GC.getDefineINT("MAX_INTERCEPTION_PROBABILITY"))
 	{
 		return false;
 	}
 
-	if (promotionInfo.getEvasionChange() + evasionProbability() > GC.getDefineINT("MAX_EVASION_PROBABILITY"))
+	if (promotionInfo.getEvasionChange() > 0 && promotionInfo.getEvasionChange() + evasionProbability() > GC.getDefineINT("MAX_EVASION_PROBABILITY"))
 	{
 		return false;
 	}
