@@ -14762,11 +14762,12 @@ name_translations = {
 		iArabic: "Parashawar",
 		iChinese: "Baishawa",
 		iDravidian: "Pesavar",
+		iEnglish: _,
 		iIndian: "Purushapura",
 		iKorean: "Pesyawereu",
 		iLocal: "Pishaur", # Punjabi
 		iPersian: (
-			translate("Peshawar", iReligion=iIslam),
+			translate(_, iReligion=iIslam),
 			"Peskabvar",
 		),
 		iThai: "Petwa",
