@@ -603,9 +603,14 @@ class PiracyGold(TrackRequirement):
 	def __init__(self, iRequired, **options):
 		TrackRequirement.__init__(self, iRequired, **options)
 		
-		self.accumulated("unitPillage")
 		self.accumulated("blockade")
 		self.accumulated("combatGold")
+		
+		self.handle("unitPillage", self.accumulate_pillage_gold)
+		
+	def accumulate_pillage_gold(self, goal, iGold, unit):
+		if plot(unit).isWater():
+			self.accumulate(iGold)
 
 
 # First Catholic URV goal
