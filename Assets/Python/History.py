@@ -474,10 +474,11 @@ def spanishExplorers(iTech, iTeam, iPlayer):
 @handler("techAcquired")
 def americanWestCoastSettlement(iTech, iTeam, iPlayer):
 	if iTech == iRailroad and civ(iPlayer) == iAmerica and not player(iPlayer).isHuman():
-		enemyCities = cities.region(rCalifornia).notowner(iAmerica).where(lambda city: team(iTeam).canDeclareWar(city.getTeam()))
+		enemyCities = cities.region(rCalifornia).notowner(iAmerica).where(lambda city: team(iTeam).canDeclareWar(city.getTeam()) or team(iTeam).isAtWar(city.getTeam()))
 		
 		for iEnemy in enemyCities.owners():
-			team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
+			if not team(iPlayer).isAtWar(iEnemy):
+				team(iPlayer).declareWar(iEnemy, True, WarPlanTypes.WARPLAN_LIMITED)
 		
 		for city in enemyCities:
 			plot = plots.surrounding(city).without(city).land().passable().no_enemies(iPlayer).random()
