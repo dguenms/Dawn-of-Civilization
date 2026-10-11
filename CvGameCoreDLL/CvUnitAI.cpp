@@ -9327,7 +9327,7 @@ bool CvUnitAI::AI_spreadCorporation()
 	{
 		return false;
 	}
-	bool bHasHQ = (GET_TEAM(getTeam()).hasHeadquarters((CorporationTypes)iI));
+	bool bHasHQ = (GET_TEAM(getTeam()).hasHeadquarters(eCorporation));
 
 	int iBestValue = 0;
 	CvPlot* pBestPlot = NULL;

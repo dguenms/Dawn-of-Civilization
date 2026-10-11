@@ -1,0 +1,18 @@
+{
+  "exception_runtime_sha256": "2fa6efc053203460a23d3a25158f227d895d2dadc63acc1a372da97c3a4281c3",
+  "tools": {
+    "llvm-ar": "c92eabe193817e6bcdc58a4e92c7beb5688de6c58d58d404475367956ef3653b",
+    "llvm-ranlib": "c92eabe193817e6bcdc58a4e92c7beb5688de6c58d58d404475367956ef3653b",
+    "llvm-rc": "5810b86dcb877ba1c224271594a754731651298cddda8b0f21abd4eafb9adf3a"
+  },
+  "link_inputs": {
+    "sdk/Kernel32.Lib": "a739cdc6ebbf16d052ea7a02927081ba0574ea335eaa43b4c14b7ca8b837c15f",
+    "sdk/User32.Lib": "c7a9c33f9318bb6c8b6d0eb78df28002fe15800b2e9556fabd9febc10fcb14aa",
+    "sdk/WinMM.Lib": "ad69b7de8b60db72622a5f773a423f86d1c23e486403445437bfae8ba4a37490",
+    "source/python24.lib": "e29009638fd2dbd58d67261a1c9555a183aa7c6bba616ffdd004f8efc8c30124",
+    "source/boost_python-vc71-mt-1_32.lib": "68e7b76501d6057ac11efe60f200f7c91d705dcfc352e9730107cc1769114f51",
+    "sdk/Psapi.Lib": "d5e1749fb5079780d4fae1371ba60443da8ec57bb615745e5467f8f9d5a3600e"
+  },
+  "mod_baseline": "a3d4ad3f6c216019dbfb142431da3dcb1374ad58",
+  "mod_reference_sha256": "4c56f9aa15ea71ad34171d83b56927e507edbfe99224fc357d2d693f169840c6"
+}

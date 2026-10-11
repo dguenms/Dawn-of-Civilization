@@ -2694,7 +2694,10 @@ UnitTypes getUniqueUnit(CivilizationTypes eCivilization, UnitTypes eUnit)
 void log(char* format, ...)
 {
 	static char buf[2048];
-	_vsnprintf( buf, 2048-4, format, (char*)(&format+1) );
+	va_list args;
+	va_start(args, format);
+	_vsnprintf( buf, 2048-4, format, args );
+	va_end(args);
 	gDLL->logMsg("sdkDbg.log", buf);
 }
 

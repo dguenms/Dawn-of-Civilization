@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "ceaee048142fece144752c6f6431cb0905a7a6160f78ab8cf5cf0b6216f99418",
+  "archive_url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.2/clang+llvm-23.1.2-x86_64-pc-windows-msvc.tar.zst",
+  "tools": {
+    "clang++.exe": "86d0fe0705bc5edbd223fba597b461dedf840a48bb3c59f0a4312a9df4e2d5bd",
+    "lld-link.exe": "7ad488d97cae260baab3a962f61ab4e9133a223069d939c102c845e2f5b77f1c",
+    "llvm-ar.exe": "367d541d508a27c201647ce31ee8ed16c8a63daf0da7363ada10f3cf8d794a35",
+    "llvm-dlltool.exe": "367d541d508a27c201647ce31ee8ed16c8a63daf0da7363ada10f3cf8d794a35",
+    "llvm-nm.exe": "4d80f42ede2fc4262fe2a61bde80b5e47ee6af9a64c24014d37470f108894568",
+    "llvm-ranlib.exe": "367d541d508a27c201647ce31ee8ed16c8a63daf0da7363ada10f3cf8d794a35",
+    "llvm-rc.exe": "0859ba07b39e8665fdcd5321d54fa8f05410c4332f87249a158fed7cdb7b3d2d",
+    "llvm-undname.exe": "06fff119265d85a1866e63436ff140467608237595fd3d0b21e7b92aab8578c1"
+  }
+}

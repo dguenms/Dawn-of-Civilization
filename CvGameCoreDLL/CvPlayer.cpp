@@ -2662,7 +2662,8 @@ const wchar* CvPlayer::getName(uint uiForm) const
 //Rhye (jdog) -  start ---------------------
 void CvPlayer::setName(std::wstring szNewValue)
 {
-	if ( isCityNameValid(CvWString(szNewValue), false))
+	CvWString szName(szNewValue);
+	if ( isCityNameValid(szName, false))
 	{
 		m_szName = szNewValue;
 		gDLL->getInterfaceIFace()->setDirty(Score_DIRTY_BIT, true);

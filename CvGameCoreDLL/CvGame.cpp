@@ -106,7 +106,10 @@ CvGame::~CvGame()
 void CvGame::logMsg(char* format, ... )
 {
 	static char buf[2048];
-	_vsnprintf( buf, 2048-4, format, (char*)(&format+1) );
+	va_list args;
+	va_start(args, format);
+	_vsnprintf( buf, 2048-4, format, args );
+	va_end(args);
 	gDLL->logMsg("sdkDbg.log", buf);
 }
 //Rhye - end
@@ -1941,7 +1944,7 @@ void CvGame::normalizeAddExtras()
 												{
 												pLoopPlot->setFeatureType(NO_FEATURE);
 
-													for (iK = 0; iK < GC.getNumBonusInfos(); iK++)
+													for (int iK = 0; iK < GC.getNumBonusInfos(); iK++)
 													{
 														if (GC.getBonusInfo((BonusTypes)iK).isNormalize())
 														{
@@ -1973,7 +1976,7 @@ void CvGame::normalizeAddExtras()
 
 				shuffleArray(aiShuffle, NUM_CITY_PLOTS, getMapRand());
 
-				for (iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
+				for (int iJ = 0; iJ < NUM_CITY_PLOTS; iJ++)
 				{
 					if (GET_PLAYER((PlayerTypes)iI).AI_foundValue(pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE(), -1, true) >= iTargetValue)
 					{

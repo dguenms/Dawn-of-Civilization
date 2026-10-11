@@ -1313,7 +1313,9 @@ void CyGame::addGreatPersonBornName(std::wstring sName)
 
 bool CyGame::isGreatPersonBorn(std::wstring sName)
 {
-	return m_pGame ? m_pGame->isGreatPersonBorn(CvWString(sName)) : false;
+	if (!m_pGame) return false;
+	CvWString szName(sName);
+	return m_pGame->isGreatPersonBorn(szName);
 }
 
 void CyGame::autosave()

@@ -54,7 +54,7 @@ private:
 
 	void AlignData(int size);
 	void AppendString(LPCSTR string);
-	void AppendData(void* data, int dataLength);
+	void AppendData(const void* data, int dataLength);
 	void EnsureSpace(int length);
 
 	DLGTEMPLATE* dialogTemplate;

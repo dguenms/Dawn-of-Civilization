@@ -18,6 +18,8 @@
 //#include "CvStructs.h"
 #include "CvInfos.h"
 #include "CvGlobals.h"
+#include "FVariableSystem.h"
+#include "CvDLLXMLIFaceBase.h"
 
 class FXmlSchemaCache;
 class FXml;

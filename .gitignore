@@ -13,3 +13,10 @@ UpgradeLog.XML
 *.opensdf
 *.sdf
 *.suo
+
+# C++23 build outputs and locally acquired target dependencies.
+/tmp/
+/build/
+/build-*/
+__pycache__/
+/CMakeUserPresets.json

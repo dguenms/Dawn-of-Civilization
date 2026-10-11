@@ -1,5 +1,5 @@
 #include "CvGameCoreDLL.h"
-#include ".\cvreplaymessage.h"
+#include "CvReplayMessage.h"
 
 CvReplayMessage::CvReplayMessage(int iTurn, ReplayMessageTypes eType, PlayerTypes ePlayer) :
 	m_iTurn(iTurn),

@@ -1,0 +1,47 @@
+{
+  "clang_version": "23.1.2",
+  "cv_random_header_sha256": "028a3ea0339ffa3c45209db7c2b664ed1ab4a6219782c58c44f337c27748084f",
+  "icu70": {
+    "libicudata.so.70": "c1404396288e178c8db2f30203cb8150e4d2c14cacee9a2883e0092f45399cc8",
+    "libicui18n.so.70": "24fa78caa9b66c10c90711c51089f45273b643f132031172d54a3e98d711d48e",
+    "libicuuc.so.70": "4683f3623dc47a92e862dc3c8770caff81c9f4c7e116bb672fc439737b06d88a"
+  },
+  "installed_images": {
+    "Assets/CvGameCoreDLL.dll": {
+      "sha256": "9837629e59f23bfcb634fdf3908af0838fa53cd2595b0da99ef3a668efc96269",
+      "version_evidence": "3.1.7.0 file resource"
+    },
+    "Civ4BeyondSword.exe": {
+      "sha256": "3b392c8e64712f2532b05a1ea0f74e43ef5c4ccd51e8874b97b11386b835482d",
+      "version_evidence": "3.1.9.0 (128100)"
+    },
+    "boost_python-vc71-mt-1_32.dll": {
+      "sha256": "196722e9709d9fc69791bafa654972542ae299c9a40efec5ba29ce8ba44acf27",
+      "version_evidence": "1.32 by basename; no version resource"
+    },
+    "msvcp71.dll": {
+      "sha256": "df96156f6a548fd6fe5672918de5ae4509d3c810a57bffd2a91de45a3ed5b23b",
+      "version_evidence": "7.10.3077.0"
+    },
+    "msvcr71.dll": {
+      "sha256": "8094af5ee310714caebccaeee7769ffb08048503ba478b879edfef5f1a24fefe",
+      "version_evidence": "7.10.3052.4"
+    },
+    "python24.dll": {
+      "sha256": "85e590546b9e367d333b5d7d31b576ccc593bc93c033c549b601ec15dfe36bc3",
+      "version_evidence": "2.4.1"
+    }
+  },
+  "pefile_version": "2024.8.26",
+  "proton_launcher_sha256": "a4f94c208355639c87877ba63e8faf1f26d8c0731db04f722dee66cdfcfbf478",
+  "proton_version": "1791559474 proton-11.0-2e-x86_64",
+  "schema": 1,
+  "sdk_baseline": "3c14d26e21e6e335a19af00fc2c0d7acf207fd14",
+  "tools": {
+    "clang++": "a0fba39747ecfa51a0b176191041c978a430ba30b3091ea369cc4547ae7fe09b",
+    "lld-link": "f6982be190cee2ed9498441a74a40198cd159b936e378f07cef4553490badd0e",
+    "llvm-dlltool": "c92eabe193817e6bcdc58a4e92c7beb5688de6c58d58d404475367956ef3653b",
+    "llvm-nm": "ecb59530a8b95a1c53f80a1aa5a93c13fabd0454f7b99e03ab4198e0323a20c4",
+    "llvm-undname": "f78c0fe51489e5350b25d330bd3bb548207c41c72e6e66c2c4bce43102d675c8"
+  }
+}
