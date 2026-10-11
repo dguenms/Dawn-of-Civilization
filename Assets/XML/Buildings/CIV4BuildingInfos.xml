@@ -16793,7 +16793,7 @@
 			<MaxStartEra>ERA_GLOBAL</MaxStartEra>
 			<PrereqTech>TECH_THERMODYNAMICS</PrereqTech>
 			<GreatPeopleUnitClass>UNITCLASS_GREAT_ENGINEER</GreatPeopleUnitClass>
-			<FreeBuilding>BUILDINGCLASS_SEWER</FreeBuilding>
+			<FreeBuilding>BUILDINGCLASS_WATERWORKS</FreeBuilding>
 			<iGreatPeopleRateChange>2</iGreatPeopleRateChange>
 			<bTeamShare>1</bTeamShare>
 			<bNukeImmune>1</bNukeImmune>
