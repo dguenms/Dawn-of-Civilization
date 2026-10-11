@@ -1299,7 +1299,7 @@ class PlotFactory:
 			iPeriod = period(identifier)
 		if identifier in dRespawnArea:
 			if iPeriod in dPeriodRespawnArea:
-				return self.area(dPeriodRespawnArea, dPeriodRespawnAreaExceptions, identifier)
+				return self.area(dPeriodRespawnArea, dPeriodRespawnAreaExceptions, iPeriod)
 			return self.area(dRespawnArea, dRespawnAreaExceptions, identifier)
 		if iPeriod in dPeriodCoreArea:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)
