@@ -51,10 +51,10 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_SWEDEN_FASCIST</Tag>
-		<English>%s2 Empire</English>
-		<French>%s2 Empire</French>
-		<German>%s2 Empire</German>
-		<Italian>%s2 Empire</Italian>
-		<Spanish>%s2 Empire</Spanish>
+		<English>National Gathering of %s1</English>
+		<French>National Gathering of %s1</French>
+		<German>National Gathering of %s1</German>
+		<Italian>National Gathering of %s1</Italian>
+		<Spanish>National Gathering of %s1</Spanish>
 	</TEXT>
 </Civ4GameText>

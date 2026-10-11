@@ -461,7 +461,7 @@ lRepublicOf = [iEgypt, iIndia, iChina, iPersia, iCelts, iJapan, iEthiopia, iKore
 lRepublicAdj = [iBabylonia, iAssyria, iHittites, iRome, iToltecs, iKarnataka, iMoors, iSpain, iFrance, iRus, iPortugal, iInca, iItaly, iAztecs, iArgentina, iSaudis, iBelgium]
 
 lSocialistRepublicOf = [iEgypt, iCelts, iMoors, iHolyRome, iVietnam, iMisr, iBrazil, iNorse, iSweden, iColombia]
-lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iSaudis, iArgentina]
+lSocialistRepublicAdj = [iHittites, iPersia, iToltecs, iTurks, iItaly, iAztecs, iIran, iSaudis, iArgentina, iBelgium]
 
 lPeoplesRepublicOf = [iIndia, iChina, iPolynesia, iJapan, iRajputs, iBengal, iTibet, iMali, iJava, iPoland, iMughals, iThailand, iCongo]
 lPeoplesRepublicAdj = [iTamils, iKarnataka, iByzantium, iRus, iMongols]

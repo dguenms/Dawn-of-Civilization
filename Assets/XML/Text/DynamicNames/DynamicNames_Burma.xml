@@ -74,6 +74,14 @@
 		<Spanish>%s1 City States</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_BURMA_FASCIST</Tag>
+		<English>%s1 Junta</English>
+		<French>%s1 Junta</French>
+		<German>%s1 Junta</German>
+		<Italian>%s1 Junta</Italian>
+		<Spanish>%s1 Junta</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_BURMA_MYANMAR</Tag>
 		<English>Myanmar</English>
 		<French>Myanmar</French>

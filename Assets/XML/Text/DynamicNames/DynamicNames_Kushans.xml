@@ -42,6 +42,14 @@
 		<Spanish>%s2 Kingdom</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_KUSHANS_FASCIST</Tag>
+		<English>New %s2 Empire</English>
+		<French>New %s2 Empire</French>
+		<German>New %s2 Empire</German>
+		<Italian>New %s2 Empire</Italian>
+		<Spanish>New %s2 Empire</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_KUSHAN_VASSAL</Tag>
 		<English>Kshatrapa of %s1</English>
 		<French>Kshatrapa of %s1</French>

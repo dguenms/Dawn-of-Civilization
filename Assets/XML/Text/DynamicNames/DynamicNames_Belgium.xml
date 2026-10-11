@@ -49,4 +49,12 @@
 		<Italian>United Kingdom of %s1</Italian>
 		<Spanish>United Kingdom of %s1</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_BELGIUM_FASCIST</Tag>
+		<English>%s2 National Union</English>
+		<French>%s2 National Union</French>
+		<German>%s2 National Union</German>
+		<Italian>%s2 National Union</Italian>
+		<Spanish>%s2 National Union</Spanish>
+	</TEXT>
 </Civ4GameText>
