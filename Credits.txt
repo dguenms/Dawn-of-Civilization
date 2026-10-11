@@ -98,6 +98,7 @@ FLAGS:
 
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
+* Savanna: ProjectMaximus
 
 MODULES
 * Empire State Building: Voyhkah
