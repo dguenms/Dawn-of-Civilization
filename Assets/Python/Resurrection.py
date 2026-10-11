@@ -160,6 +160,10 @@ def doResurrection(iCiv, lCityList, bAskFlip=True, bDisplay=False):
 	if iPlayer == -1:
 		log.rise("RESURRECTION ABORTED: NO FREE SLOT FOR: %s", infos.civ(iCiv).getText())
 		return
+		
+	for p in plots.all().land():
+		if p.getExpansion() == iPlayer:
+			p.resetExpansion()
 
 	updateCivilization(iPlayer, iCiv)
 
