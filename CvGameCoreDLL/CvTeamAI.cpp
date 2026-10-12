@@ -1977,7 +1977,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 			{
 				CvTeamAI& kLoopTeam = GET_TEAM((TeamTypes)iLoopTeam);
 
-				if (kLoopTeam.isAlive())
+				if (kLoopTeam.isAlive() && !kLoopTeam.isVassal(eTeam))
 				{
 					if (kLoopTeam.AI_isLandTarget(getID()))
 					{
@@ -2016,7 +2016,7 @@ DenialTypes CvTeamAI::AI_surrenderTrade(TeamTypes eTeam, int iPowerMultiplier) c
 					// Leoreth: can only capitulate to neighbor if any
 					else
 					{
-						if (GET_PLAYER(getLeaderID()).isNeighbor(kLoopTeam.getLeaderID()) && !GET_PLAYER(getLeaderID()).isNeighbor(kMasterTeam.getLeaderID()))
+						if (atWar(getID(), (TeamTypes)iLoopTeam) && GET_PLAYER(getLeaderID()).isNeighbor(kLoopTeam.getLeaderID()) && !GET_PLAYER(getLeaderID()).isNeighbor(kMasterTeam.getLeaderID()))
 						{
 							return DENIAL_TOO_FAR;
 						}
