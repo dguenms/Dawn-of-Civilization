@@ -91,6 +91,16 @@ existing file before replacing it. On Linux, use these Steam launch options:
 WINEDLLOVERRIDES="msvcr71,msvcp71,vcruntime140=n" %command%
 ```
 
+Keep Proton/Wine prefixes and test installations outside this checkout when
+it is installed as a mod. BtS recursively scans the mod directory before
+loading the DLL, including files reached through symlinks. A prefix's
+`pfx/dosdevices/z:` link points to `/` and can send that scan through the host
+filesystem indefinitely, leaving Steam showing a running game with no window.
+The SDK acquisition script now uses a temporary prefix outside the checkout.
+For prefixes left by earlier builds or smoke tests, remove their `z:` symlink
+or move the entire prefix outside the mod; a symlink from `Mods/` to this
+checkout can remain.
+
 DoC needs its existing `_MOD_FRACTRADE` definition and Psapi import library in
 addition to the stock port. The compiler fixes retain the reference port's
 token-paste, loop-scope, complete-type, string-conversion and varargs changes.

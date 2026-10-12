@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Acquire the user-selected VC7.1 header bundle into ignored local storage."""
 import argparse
+from contextlib import ExitStack
 import hashlib
 import json
 import os
 from pathlib import Path
 import subprocess
+import tempfile
 import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,19 +58,22 @@ def main():
                 args.proton.parent / 'version').read_text().strip() != lock['proton_version']:
             raise RuntimeError('pinned Proton differs')
     install = output / 'installed'
-    prefix = output / 'proton-prefix'
     command = [str(installer), '/VERYSILENT', '/SP-',
                '/SUPPRESSMSGBOXES', '/NORESTART', '/NOICONS', '/NOCLOSEAPPLICATIONS',
                '/DIR=' + winpath(install), '/LOG=' + winpath(output / 'setup.log')]
     env = os.environ.copy()
-    if os.name != 'nt':
-        prefix.mkdir(exist_ok=True)
-        command = [str(args.proton.resolve()), 'run', *command]
-        env.update(STEAM_COMPAT_DATA_PATH=str(prefix),
-                   STEAM_COMPAT_CLIENT_INSTALL_PATH=str(args.steam_client.resolve()), WINEDEBUG='-all')
-    with (output / 'setup-proton.log').open('wb') as log:
-        subprocess.run(command, env=env, stdout=log, stderr=subprocess.STDOUT,
-                       timeout=180, check=True)
+    with ExitStack() as stack:
+        if os.name != 'nt':
+            # BtS recursively scans the mod folder before loading its DLL.
+            # A Wine prefix here exposes / through dosdevices/z: and makes
+            # that scan recurse into the host filesystem and back into mods.
+            prefix = stack.enter_context(tempfile.TemporaryDirectory(prefix='doc-sdk-proton-'))
+            command = [str(args.proton.resolve()), 'run', *command]
+            env.update(STEAM_COMPAT_DATA_PATH=prefix,
+                       STEAM_COMPAT_CLIENT_INSTALL_PATH=str(args.steam_client.resolve()), WINEDEBUG='-all')
+        with (output / 'setup-proton.log').open('wb') as log:
+            subprocess.run(command, env=env, stdout=log, stderr=subprocess.STDOUT,
+                           timeout=180, check=True)
     toolkit = install / 'Microsoft Visual C++ Toolkit 2003'
     expected = [toolkit / 'include/xstring', toolkit / 'include/yvals.h',
                 toolkit / 'include/typeinfo', toolkit / 'lib/msvcrt.lib',
