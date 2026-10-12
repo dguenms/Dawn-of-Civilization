@@ -38,8 +38,12 @@ def dependency_paths(directory=None):
     directory = directory or ROOT / 'tmp/dependencies'
     install = directory / 'sdk/installed'
     return {'vc71': install / 'Microsoft Visual C++ Toolkit 2003',
-            'windows_sdk': install / 'WindowsSDK',
-            'exception_runtime': directory / 'runtime/minimum/vcruntime140.dll_x86'}
+            'windows_sdk': install / 'WindowsSDK'}
+
+
+def diagnostic_runtime_path(directory=None):
+    directory = directory or ROOT / 'tmp/dependencies'
+    return directory / 'runtime/minimum/vcruntime140.dll_x86'
 
 
 def pe_summary(path):

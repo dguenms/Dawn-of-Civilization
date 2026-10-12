@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
-"""Prepare pinned VC7.1 SDK inputs and the x86 exception runtime in repo tmp/.
+"""Prepare pinned VC7.1 SDK inputs in repo tmp/.
 
-Verified dependencies are reused independently. The SDK installer runs only
-when SDK files are missing; the redist is extracted without installation,
-retaining its license/support payload beside the minimum-runtime payload.
+Verified SDK files are reused. Native x86 exception runtime extraction is an
+explicit diagnostic option; production builds use the static EH adapter.
 """
 
 import argparse
@@ -17,8 +16,8 @@ import subprocess
 import tempfile
 import urllib.request
 
-from build_support import (ROOT, LOCK, dependency_paths, digest, output_directory,
-                           require_hash, write_json)
+from build_support import (ROOT, LOCK, dependency_paths, diagnostic_runtime_path,
+                           digest, output_directory, require_hash, write_json)
 import prepare_headers
 
 
@@ -270,7 +269,8 @@ def prepare_runtime(output, installer=None, seven_zip='7z'):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--only', choices=['sdk', 'runtime'], help='prepare just one dependency group')
+    parser.add_argument('--only', choices=['sdk', 'runtime', 'all'], default='sdk',
+                        help='SDK by default; runtime is for reference diagnostics only')
     parser.add_argument('--output-dir', type=Path, default=ROOT / 'tmp/dependencies')
     parser.add_argument('--sdk-installer', type=Path, help='use an existing pinned SDK installer')
     parser.add_argument('--runtime-installer', type=Path, help='use an existing pinned VC_redist.x86.exe')
@@ -286,18 +286,19 @@ def main(argv=None):
     report_path.unlink(missing_ok=True)
     report = {'schema': 1, 'pass': False, 'dependencies': {}}
     try:
-        if args.only != 'runtime':
+        if args.only in ('sdk', 'all'):
             report['dependencies']['sdk'] = prepare_sdk(
                 output / 'sdk', args.sdk_installer, args.proton, args.steam_client)
             print('SDK: ' + ('reused verified files' if report['dependencies']['sdk']['reused'] else 'installed'))
-        if args.only != 'sdk':
+        if args.only in ('runtime', 'all'):
             report['dependencies']['runtime'] = prepare_runtime(
                 output / 'runtime', args.runtime_installer, args.seven_zip)
             print('Runtime: ' + ('reused verified files' if report['dependencies']['runtime']['reused'] else 'extracted'))
         paths = dependency_paths(output)
-        report['paths'] = {name: str(path) for name, path in paths.items()
-                           if (args.only != 'runtime' and name != 'exception_runtime') or
-                              (args.only != 'sdk' and name == 'exception_runtime')}
+        report['paths'] = ({name: str(path) for name, path in paths.items()}
+                           if args.only in ('sdk', 'all') else {})
+        if args.only in ('runtime', 'all'):
+            report['paths']['exception_runtime'] = str(diagnostic_runtime_path(output))
         report['pass'] = True
     except Exception as error:
         report['error'] = str(error)

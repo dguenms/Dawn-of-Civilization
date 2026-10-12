@@ -33,7 +33,7 @@ Python 2.4, Boost.Python 1.32 and DoC's existing gameplay and save fields.
 The historical Visual Studio/Makefile build files remain as references.
 
 Requirements: CMake 3.28+, Ninja, Python 3.9+ with `pefile==2024.8.26`,
-7-Zip and the original BtS installation. Run commands from this repository's
+and the original BtS installation. Run commands from this repository's
 root. Preserve the baseline DLL for the build's export comparison:
 
 ```bash
@@ -44,7 +44,7 @@ git show a3d4ad3f6c216019dbfb142431da3dcb1374ad58:Assets/CvGameCoreDLL.dll > tmp
 ### Linux
 
 Use the pinned Linux LLVM 23.1.2 tools and ICU 70 libraries. Acquire the target
-headers and exception runtime, or reuse the identical acquired dependencies
+SDK headers/import libraries, or reuse the identical acquired dependencies
 from a local BridgedCvGameCore checkout:
 
 ```bash
@@ -67,23 +67,24 @@ PowerShell, extract the baseline without redirecting binary data through text:
 ```powershell
 New-Item -ItemType Directory -Force tmp/cxx23-port | Out-Null
 cmd /c "git show a3d4ad3f6c216019dbfb142431da3dcb1374ad58:Assets/CvGameCoreDLL.dll > tmp/cxx23-port/original-CvGameCoreDLL.dll"
-python tools/prepare_dependencies.py --seven-zip "C:/Program Files/7-Zip/7z.exe"
+python tools/prepare_dependencies.py
 python tools/build_dll.py `
   --bts-dir "C:/Games/Beyond the Sword" `
   --llvm-bin "C:/LLVM-23.1.2/bin" `
   --reference-dll tmp/cxx23-port/original-CvGameCoreDLL.dll
 ```
 
-`prepare_dependencies.py` prepares both dependency groups under
-`tmp/dependencies/` and reuses files after verifying their checksums. Repeated
-runs need neither Proton nor 7-Zip when both groups are complete. Use `--only sdk`
-or `--only runtime` to prepare one group, and `--sdk-installer` or
-`--runtime-installer` to use a downloaded installer.
+`prepare_dependencies.py` prepares the SDK inputs under `tmp/dependencies/`
+and reuses files after verifying their checksums. Repeated runs need no Proton
+when the SDK group is complete. `--sdk-installer` selects a downloaded installer.
+For native exception-runtime reference diagnostics only, use `--only runtime`
+with 7-Zip; `--only all` explicitly prepares both groups. The supplemental
+runtime is not a production build input.
 
 For a custom dependency location, pass `--output-dir tmp/my-dependencies` to
 the preparation script and `--deps-dir tmp/my-dependencies` to the build script.
 Existing caches, including those from BridgedCvGameCore, still work through
-`--vc71`, `--windows-sdk` and `--exception-runtime` overrides. `--output-dir`
+`--vc71` and `--windows-sdk` overrides. `--output-dir`
 selects a custom build directory; Ninja reuses unchanged objects.
 
 `prepare_headers.py` generates the compatibility header view during CMake
@@ -93,12 +94,14 @@ pins additional tools, link inputs and the original DoC DLL;
 `windows-toolchain-lock.json` pins the Windows LLVM package.
 
 Both builds produce `tmp/dll-build/CvGameCoreDLL.dll` and a build report. Copy
-that DLL into this mod's `Assets/` directory. The pinned `vcruntime140.dll`
-from the build directory must be beside `Civ4BeyondSword.exe`; preserve any
-existing file before replacing it. On Linux, use these Steam launch options:
+that DLL into this mod's `Assets/` directory. The static exception adapter
+from BridgedCvGameCore commit `8c1830992e0d5b5da615e51d4583417541eafc57`
+uses the original MSVCR71 and requires no `vcruntime140.dll` copy. Its ABI
+contract and diagnostic commands are in [compat/README.md](compat/README.md).
+On Linux, use these Steam launch options:
 
 ```text
-WINEDLLOVERRIDES="msvcr71,msvcp71,vcruntime140=n" %command%
+WINEDLLOVERRIDES="msvcr71,msvcp71=n" %command%
 ```
 
 Keep Proton/Wine prefixes and test installations outside this checkout when
@@ -122,7 +125,7 @@ adapter adds an `IUnknown` forward declaration and erases the missing
 `__deref_opt_out_z` annotation required by the pinned shell headers. No bundled
 Boost/Python source or downloaded Microsoft header is edited.
 
-Validation on Linux/Proton: two clean 101-unit C++23 builds produce byte-identical DLLs; all 2,450 original
+Initial port validation on Linux/Proton: two clean 101-unit C++23 builds produce byte-identical DLLs; all 2,450 original
 DoC exports and 1,207 executable-required exports are present. Paired original
 and converted DLL tests register identical Python API surfaces, pass 1,000
 wrapper lifetime iterations and wrong-arity exception handling, and finalize
@@ -130,6 +133,16 @@ Python and unload successfully. These checks cover compilation, symbols and
 binding startup; DoC gameplay, UI, save round trips and multiplayer still need
 their own in-game validation. The Windows host build has not been exercised
 for this DoC port.
+
+Static exception-adapter port validation: the 101 DoC units and two adapter
+units build with all 2,450 original exports and no modern CRT imports. All
+11,027 exception descriptors pass the metadata audit (at most eight catch
+clauses per function). Paired original/converted Proton checks again match
+the Python API surface and pass 1,000 wrapper lifetime iterations, wrong-arity
+exceptions, interpreter finalization and DLL unload, without loading a
+supplemental runtime. The three adapter sources are byte-identical to the
+validated upstream change. DoC gameplay/save/UI and multiplayer were not
+retested by this port.
 
 ## Main Features
 

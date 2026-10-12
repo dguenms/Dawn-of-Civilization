@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(DawnOfCivilizationGameCore LANGUAGES CXX)
+project(DawnOfCivilizationGameCore LANGUAGES CXX ASM)
 set(CMAKE_CXX_STANDARD_LIBRARIES "")
 set(CMAKE_SHARED_LIBRARY_CREATE_CXX_FLAGS "")
 set(CMAKE_CXX_USING_LINKER_DEFAULT "")
@@ -15,8 +15,7 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 set(CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG" CACHE STRING "Pinned serial release optimization" FORCE)
 set(BRIDGED_VC71 "" CACHE PATH "Acquired Microsoft Visual C++ Toolkit 2003 root")
 set(BRIDGED_WINDOWS_SDK "" CACHE PATH "Acquired WindowsSDK root")
-set(BRIDGED_EXCEPTION_RUNTIME "" CACHE FILEPATH "Pinned native Microsoft x86 vcruntime140.dll")
-foreach(input IN ITEMS BRIDGED_VC71 BRIDGED_WINDOWS_SDK BRIDGED_EXCEPTION_RUNTIME)
+foreach(input IN ITEMS BRIDGED_VC71 BRIDGED_WINDOWS_SDK)
   if(NOT EXISTS "${${input}}")
     message(FATAL_ERROR "Set ${input} to the acquired pinned target input")
   endif()
@@ -33,20 +32,21 @@ set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
   "${CMAKE_CURRENT_SOURCE_DIR}/tools/prepare_headers.py"
   "${CMAKE_CURRENT_SOURCE_DIR}/tools/build_support.py"
   "${CMAKE_CURRENT_SOURCE_DIR}/tools/dependency-lock.json")
-file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/vcruntime-handler.def"
-  "LIBRARY vcruntime140.dll\nEXPORTS\n  __CxxFrameHandler3\n  _CxxThrowException@8\n")
-execute_process(COMMAND "${BRIDGED_LLVM_BIN}/llvm-dlltool${BRIDGED_LLVM_EXECUTABLE_SUFFIX}" -m i386 -k
-  -d "${CMAKE_CURRENT_BINARY_DIR}/vcruntime-handler.def"
-  -l "${CMAKE_CURRENT_BINARY_DIR}/vcruntime-handler.lib"
-  RESULT_VARIABLE import_result ERROR_VARIABLE import_error)
-if(NOT import_result EQUAL 0)
-  message(FATAL_ERROR "Exception import generation failed: ${import_error}")
-endif()
+
+# The bounded adapter translates Clang's EH3 frames through the installed
+# VC7.1 exception machinery. Keep its strict C++ and x86 assembly separate
+# from the inherited SDK translation units and their compatibility flags.
+add_library(msvc_eh OBJECT compat/msvc_eh.cpp compat/msvc_eh_x86.s)
+set_target_properties(msvc_eh PROPERTIES CXX_STANDARD 23 CXX_STANDARD_REQUIRED YES
+  CXX_EXTENSIONS NO)
+target_compile_options(msvc_eh PRIVATE
+  "$<$<COMPILE_LANGUAGE:CXX>:-std=c++23;-pedantic-errors;-Wall;-Wextra;-Werror;-ffreestanding;-fno-builtin;-fno-exceptions;-fno-rtti;-fno-stack-protector;-fms-extensions>"
+  "$<$<COMPILE_LANGUAGE:ASM>:--target=i686-pc-windows-msvc>")
 
 # Match the inherited Makefile's direct .cpp inventory. No nested Boost runtime
 # source is built, and the inherited legacy build files remain references.
 file(GLOB sdk_sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/CvGameCoreDLL/*.cpp")
-add_library(CvGameCoreDLL SHARED ${sdk_sources})
+add_library(CvGameCoreDLL SHARED ${sdk_sources} $<TARGET_OBJECTS:msvc_eh>)
 set_target_properties(CvGameCoreDLL PROPERTIES PREFIX "" SUFFIX ".dll"
   IMPORT_PREFIX "" IMPORT_SUFFIX ".lib" CXX_STANDARD 23 CXX_STANDARD_REQUIRED YES
   CXX_EXTENSIONS NO)
@@ -66,13 +66,9 @@ target_compile_options(CvGameCoreDLL PRIVATE
   -fno-strict-aliasing -ffp-contract=off -Wall -Wextra)
 target_link_options(CvGameCoreDLL PRIVATE /subsystem:windows /largeaddressaware /opt:ref /opt:icf)
 target_link_libraries(CvGameCoreDLL PRIVATE
-  "${CMAKE_CURRENT_BINARY_DIR}/vcruntime-handler.lib"
   "${CMAKE_CURRENT_SOURCE_DIR}/CvGameCoreDLL/Python24/libs/python24.lib"
   "${CMAKE_CURRENT_SOURCE_DIR}/CvGameCoreDLL/Boost-1.32.0/libs/boost_python-vc71-mt-1_32.lib"
   "${BRIDGED_VC71}/lib/msvcrt.lib" "${BRIDGED_VC71}/lib/msvcprt.lib"
   "${BRIDGED_VC71}/lib/oldnames.lib"
   "${BRIDGED_WINDOWS_SDK}/lib/Kernel32.Lib" "${BRIDGED_WINDOWS_SDK}/lib/User32.Lib"
   "${BRIDGED_WINDOWS_SDK}/lib/WinMM.Lib" "${BRIDGED_WINDOWS_SDK}/lib/Psapi.Lib")
-add_custom_command(TARGET CvGameCoreDLL POST_BUILD
-  COMMAND "${CMAKE_COMMAND}" -E copy_if_different "${BRIDGED_EXCEPTION_RUNTIME}"
-    "$<TARGET_FILE_DIR:CvGameCoreDLL>/vcruntime140.dll")

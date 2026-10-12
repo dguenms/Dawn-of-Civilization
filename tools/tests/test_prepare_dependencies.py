@@ -204,16 +204,26 @@ class DependencyPreparationTest(unittest.TestCase):
         self.assertEqual(set(report['dependencies']), {'runtime'})
         self.assertEqual(set(report['paths']), {'exception_runtime'})
 
-    def test_complete_sdk_skips_while_runtime_is_extracted(self):
+    def test_complete_sdk_default_does_not_prepare_runtime(self):
         self.write_sdk_files()
-        mocks, _ = self.runtime_mocks()
-        with mocks:
+        with patch.object(dependencies, 'prepare_runtime', side_effect=AssertionError('unexpected runtime')):
             dependencies.main(['--output-dir', str(self.output),
                                '--runtime-installer', str(self.runtime_installer)])
         report = json.loads((self.output / 'report.json').read_text())
         self.assertTrue(report['pass'])
         self.assertTrue(report['dependencies']['sdk']['reused'])
-        self.assertFalse(report['dependencies']['runtime']['reused'])
+        self.assertEqual(set(report['dependencies']), {'sdk'})
+        self.assertEqual(set(report['paths']), {'vc71', 'windows_sdk'})
+
+    def test_explicit_all_prepares_sdk_and_diagnostic_runtime(self):
+        self.write_sdk_files()
+        mocks, _ = self.runtime_mocks()
+        with mocks:
+            dependencies.main(['--only', 'all', '--output-dir', str(self.output),
+                               '--runtime-installer', str(self.runtime_installer)])
+        report = json.loads((self.output / 'report.json').read_text())
+        self.assertTrue(report['pass'])
+        self.assertEqual(set(report['dependencies']), {'sdk', 'runtime'})
         self.assertEqual(set(report['paths']), {'vc71', 'windows_sdk', 'exception_runtime'})
 
     @unittest.skipIf(dependencies.os.name == 'nt', 'Proton is only used on Linux')
