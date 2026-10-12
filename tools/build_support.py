@@ -3,10 +3,8 @@ import hashlib
 import json
 from pathlib import Path
 
-import pefile
-
 ROOT = Path(__file__).resolve().parents[1]
-LOCK = json.loads((ROOT / 'tools/s1-lock.json').read_text())
+LOCK = json.loads((ROOT / 'tools/dependency-lock.json').read_text())
 
 
 def digest(path):
@@ -21,7 +19,32 @@ def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n')
 
 
+def require_hash(path, expected):
+    actual = digest(path)
+    if actual != expected:
+        raise RuntimeError(f'SHA256 mismatch for {path}: {actual}, expected {expected}')
+
+
+def output_directory(path):
+    output = path.resolve()
+    tmp = (ROOT / 'tmp').resolve()
+    if not output.is_relative_to(tmp) or output == tmp:
+        raise ValueError(f'output must be a dedicated directory below {tmp}: {output}')
+    output.mkdir(parents=True, exist_ok=True)
+    return output
+
+
+def dependency_paths(directory=None):
+    directory = directory or ROOT / 'tmp/dependencies'
+    install = directory / 'sdk/installed'
+    return {'vc71': install / 'Microsoft Visual C++ Toolkit 2003',
+            'windows_sdk': install / 'WindowsSDK',
+            'exception_runtime': directory / 'runtime/minimum/vcruntime140.dll_x86'}
+
+
 def pe_summary(path):
+    import pefile
+
     pe = pefile.PE(str(path))
     versions = {}
     for group in getattr(pe, 'FileInfo', []):

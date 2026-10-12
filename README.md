@@ -48,41 +48,51 @@ headers and exception runtime, or reuse the identical acquired dependencies
 from a local BridgedCvGameCore checkout:
 
 ```bash
-python3 tools/s2_deps.py --proton /path/to/Proton/proton --steam-client /path/to/Steam
-python3 tools/s2_runtime_deps.py
+python3 tools/prepare_dependencies.py --proton /path/to/Proton/proton --steam-client /path/to/Steam
 
 BTS_DIR="/path/to/Beyond the Sword"
-python3 tools/s3.py \
+python3 tools/build_dll.py \
   --bts-dir "$BTS_DIR" \
   --llvm-bin /path/to/llvm-23.1.2/bin \
   --icu70-dir /path/to/icu70 \
-  --vc71 "tmp/s2-deps/installed/Microsoft Visual C++ Toolkit 2003" \
-  --windows-sdk tmp/s2-deps/installed/WindowsSDK \
-  --exception-runtime tmp/s2-runtime-deps/minimum/vcruntime140.dll_x86 \
   --reference-dll tmp/cxx23-port/original-CvGameCoreDLL.dll
 ```
 
 ### Windows
 
 Use the pinned Windows LLVM 23.1.2 archive identified in
-`tools/s3-windows-lock.json`. Put Python, CMake and Ninja on `PATH`. In
+`tools/windows-toolchain-lock.json`. Put Python, CMake and Ninja on `PATH`. In
 PowerShell, extract the baseline without redirecting binary data through text:
 
 ```powershell
 New-Item -ItemType Directory -Force tmp/cxx23-port | Out-Null
 cmd /c "git show a3d4ad3f6c216019dbfb142431da3dcb1374ad58:Assets/CvGameCoreDLL.dll > tmp/cxx23-port/original-CvGameCoreDLL.dll"
-python tools/s2_deps.py
-python tools/s2_runtime_deps.py --seven-zip "C:/Program Files/7-Zip/7z.exe"
-python tools/s3.py `
+python tools/prepare_dependencies.py --seven-zip "C:/Program Files/7-Zip/7z.exe"
+python tools/build_dll.py `
   --bts-dir "C:/Games/Beyond the Sword" `
   --llvm-bin "C:/LLVM-23.1.2/bin" `
-  --vc71 "tmp/s2-deps/installed/Microsoft Visual C++ Toolkit 2003" `
-  --windows-sdk tmp/s2-deps/installed/WindowsSDK `
-  --exception-runtime tmp/s2-runtime-deps/minimum/vcruntime140.dll_x86 `
   --reference-dll tmp/cxx23-port/original-CvGameCoreDLL.dll
 ```
 
-Both builds produce `tmp/s3-build/CvGameCoreDLL.dll` and a build report. Copy
+`prepare_dependencies.py` prepares both dependency groups under
+`tmp/dependencies/` and reuses files after verifying their checksums. Repeated
+runs need neither Proton nor 7-Zip when both groups are complete. Use `--only sdk`
+or `--only runtime` to prepare one group, and `--sdk-installer` or
+`--runtime-installer` to use a downloaded installer.
+
+For a custom dependency location, pass `--output-dir tmp/my-dependencies` to
+the preparation script and `--deps-dir tmp/my-dependencies` to the build script.
+Existing caches, including those from BridgedCvGameCore, still work through
+`--vc71`, `--windows-sdk` and `--exception-runtime` overrides. `--output-dir`
+selects a custom build directory; Ninja reuses unchanged objects.
+
+`prepare_headers.py` generates the compatibility header view during CMake
+configuration. `build_support.py` provides shared hashing and PE metadata.
+`dependency-lock.json` pins Linux tools and stock references; `link-lock.json`
+pins additional tools, link inputs and the original DoC DLL;
+`windows-toolchain-lock.json` pins the Windows LLVM package.
+
+Both builds produce `tmp/dll-build/CvGameCoreDLL.dll` and a build report. Copy
 that DLL into this mod's `Assets/` directory. The pinned `vcruntime140.dll`
 from the build directory must be beside `Civ4BeyondSword.exe`; preserve any
 existing file before replacing it. On Linux, use these Steam launch options:

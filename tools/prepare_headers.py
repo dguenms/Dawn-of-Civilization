@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 import re
 
-ROOT = Path(__file__).resolve().parents[1]
+from build_support import ROOT, digest, output_directory
 PINS = {
     'vc71/include/xstring': 'c715ae6f152ca41d73e701c5d77dd5da0b61832250c967d2a8376b9471656943',
     'vc71/include/yvals.h': 'b9340f3de0fd2f1c0e0b81b99e9f42252a0ec5652267536e9c62b0b4f1bf8980',
@@ -18,10 +18,10 @@ PINS = {
     'sdk/include/specstrings_strict.h': 'ffa3606ab8c816a797cfe3f9d2ff5d48941b08e91a623d3683ef1e21bc986573',
     'sdk/include/Rpcsal.h': 'c54f4904a2863d8a3e652dd614ffaad4a51a047c04f336835af24ab3b709bb6c',
 }
-
-
-def digest(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+HEADER_TREE_PINS = {
+    'vc71': '85a92fc7e2678f7f8a6d3e09c568215cad126b87652358b2145245ce205fa6f6',
+    'sdk': 'fce75d4031c5d5b411173cee2cb198d690c3c861c3d78ada3e3bb67b2e066a9f',
+}
 
 
 def write_if_changed(path, data):
@@ -62,30 +62,34 @@ def generate_sal(sdk, output):
     write_if_changed(output / 'sal.h', ('\n'.join(lines) + '\n').encode())
 
 
+def verify_inputs(vc71, sdk):
+    """Verify target libraries and complete header trees before reuse or generation."""
+    for name, expected in PINS.items():
+        tree, relative = name.split('/', 1)
+        path = (vc71 if tree == 'vc71' else sdk) / relative
+        if digest(path) != expected:
+            raise RuntimeError(f'pinned target dependency differs: {path}')
+    for tree, expected in HEADER_TREE_PINS.items():
+        base = (vc71 if tree == 'vc71' else sdk) / 'include'
+        # Pin the same spelling and ordering on Windows and Linux hosts.
+        rows = sorted((path.relative_to(base).as_posix(), digest(path))
+                      for path in base.rglob('*') if path.is_file())
+        if hashlib.sha256(json.dumps(rows, separators=(',', ':')).encode()).hexdigest() != expected:
+            raise RuntimeError(f'pinned target header tree differs: {base}')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--vc71', type=Path, required=True)
     parser.add_argument('--sdk', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
-    output = args.output.resolve()
-    if not output.is_relative_to(ROOT / 'tmp') or output == ROOT / 'tmp':
-        parser.error('output must be a dedicated ignored directory under repo tmp/')
-    output.mkdir(parents=True, exist_ok=True)
+    try:
+        output = output_directory(args.output)
+    except ValueError as error:
+        parser.error(str(error))
     inputs = {}
-    for name, expected in PINS.items():
-        tree, relative = name.split('/', 1)
-        path = (args.vc71 if tree == 'vc71' else args.sdk) / relative
-        if digest(path) != expected:
-            raise RuntimeError(f'pinned target dependency differs: {path}')
-    for base, expected in [
-        (args.vc71 / 'include', '85a92fc7e2678f7f8a6d3e09c568215cad126b87652358b2145245ce205fa6f6'),
-        (args.sdk / 'include', 'fce75d4031c5d5b411173cee2cb198d690c3c861c3d78ada3e3bb67b2e066a9f')]:
-        # Pin the same spelling and ordering on Windows and Linux hosts.
-        rows = sorted((path.relative_to(base).as_posix(), digest(path))
-                      for path in base.rglob('*') if path.is_file())
-        if hashlib.sha256(json.dumps(rows, separators=(',', ':')).encode()).hexdigest() != expected:
-            raise RuntimeError(f'pinned target header tree differs: {base}')
+    verify_inputs(args.vc71, args.sdk)
     generate_sal(args.sdk / 'include', output)
     roots = []
     # Include the inherited tree in the case-insensitive view. This preserves

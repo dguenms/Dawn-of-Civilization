@@ -16,28 +16,35 @@ import build_support as support
 import pefile
 
 ROOT = support.ROOT
-LOCK = json.loads((ROOT / 'tools/s3-lock.json').read_text())
+LOCK = json.loads((ROOT / 'tools/link-lock.json').read_text())
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    for name in ['bts-dir', 'llvm-bin', 'vc71', 'windows-sdk', 'exception-runtime']:
+    for name in ['bts-dir', 'llvm-bin']:
         parser.add_argument('--' + name, type=Path, required=True)
+    parser.add_argument('--deps-dir', type=Path, default=ROOT / 'tmp/dependencies',
+                        help='dependencies prepared by prepare_dependencies.py')
+    for name in ['vc71', 'windows-sdk', 'exception-runtime']:
+        parser.add_argument('--' + name, type=Path, help='override the prepared dependency path')
     parser.add_argument('--reference-dll', type=Path, required=True, help='original mod DLL for additional export coverage')
     parser.add_argument('--icu70-dir', type=Path, help='required for the pinned Linux LLVM package')
-    parser.add_argument('--output-dir', type=Path, default=ROOT / 'tmp/s3-build')
+    parser.add_argument('--output-dir', type=Path, default=ROOT / 'tmp/dll-build')
     parser.add_argument('--jobs', type=int, default=4)
     parser.add_argument('--cmake', default='cmake')
     args = parser.parse_args()
+    for name, path in support.dependency_paths(args.deps_dir).items():
+        if getattr(args, name) is None:
+            setattr(args, name, path)
     windows_host = sys.platform == 'win32'
     if not windows_host and args.icu70_dir is None:
         parser.error('--icu70-dir is required on Linux')
     if args.jobs < 1:
         parser.error('jobs must be positive')
-    output = args.output_dir.resolve()
-    if not output.is_relative_to(ROOT / 'tmp') or output == ROOT / 'tmp':
-        parser.error('output-dir must be a dedicated ignored directory under repo tmp/')
-    output.mkdir(parents=True, exist_ok=True)
+    try:
+        output = support.output_directory(args.output_dir)
+    except ValueError as error:
+        parser.error(str(error))
     report_path = output / 'report.json'
     attempt = output / 'attempts' / datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ')
     attempt.mkdir(parents=True)
@@ -50,9 +57,13 @@ def main():
     try:
         if support.digest(args.reference_dll) != LOCK['mod_reference_sha256']:
             raise RuntimeError('original DoC DLL differs from the pinned mod baseline')
+        for name in support.dependency_paths():
+            if not getattr(args, name).exists():
+                raise RuntimeError(f'missing {name.replace("_", "-")}: {getattr(args, name)}; '
+                                   'run tools/prepare_dependencies.py or pass an explicit path')
         if pefile.__version__ != support.LOCK['pefile_version']:
             raise RuntimeError('pinned pefile version differs')
-        tool_pins = json.loads((ROOT / 'tools/s3-windows-lock.json').read_text())['tools'] if windows_host else {
+        tool_pins = json.loads((ROOT / 'tools/windows-toolchain-lock.json').read_text())['tools'] if windows_host else {
             **support.LOCK['tools'], **LOCK['tools']}
         for name, expected in tool_pins.items():
             if support.digest(args.llvm_bin / name) != expected:
@@ -169,9 +180,9 @@ def main():
                       source_sha256={str(path): support.digest(path) for path in
                           [*(ROOT / 'CvGameCoreDLL').glob('*.cpp'), *(ROOT / 'CvGameCoreDLL').glob('*.h'),
                            ROOT / 'CMakeLists.txt', ROOT / 'cmake/windows-x86-clang.cmake',
-                           ROOT / 'compat/vc71_prelude.h', ROOT / 'tools/s3_headers.py',
-                           ROOT / 'tools/s3-lock.json', ROOT / 'tools/s1-lock.json',
-                           ROOT / 'tools/s3-windows-lock.json',
+                           ROOT / 'compat/vc71_prelude.h', ROOT / 'tools/prepare_headers.py',
+                           ROOT / 'tools/link-lock.json', ROOT / 'tools/dependency-lock.json',
+                           ROOT / 'tools/windows-toolchain-lock.json',
                            ROOT / 'tools/build_support.py', Path(__file__)]})
         report['pass'] = True
     except Exception as error:

@@ -23,14 +23,16 @@ foreach(input IN ITEMS BRIDGED_VC71 BRIDGED_WINDOWS_SDK BRIDGED_EXCEPTION_RUNTIM
 endforeach()
 find_package(Python3 REQUIRED COMPONENTS Interpreter)
 set(compat_dir "${CMAKE_CURRENT_BINARY_DIR}/compat-headers")
-execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/s3_headers.py"
+execute_process(COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/tools/prepare_headers.py"
   --vc71 "${BRIDGED_VC71}" --sdk "${BRIDGED_WINDOWS_SDK}" --output "${compat_dir}"
   RESULT_VARIABLE header_result OUTPUT_VARIABLE header_output ERROR_VARIABLE header_error)
 if(NOT header_result EQUAL 0)
   message(FATAL_ERROR "Target header preparation failed: ${header_error}")
 endif()
 set_property(DIRECTORY APPEND PROPERTY CMAKE_CONFIGURE_DEPENDS
-  "${CMAKE_CURRENT_SOURCE_DIR}/tools/s3_headers.py")
+  "${CMAKE_CURRENT_SOURCE_DIR}/tools/prepare_headers.py"
+  "${CMAKE_CURRENT_SOURCE_DIR}/tools/build_support.py"
+  "${CMAKE_CURRENT_SOURCE_DIR}/tools/dependency-lock.json")
 file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/vcruntime-handler.def"
   "LIBRARY vcruntime140.dll\nEXPORTS\n  __CxxFrameHandler3\n  _CxxThrowException@8\n")
 execute_process(COMMAND "${BRIDGED_LLVM_BIN}/llvm-dlltool${BRIDGED_LLVM_EXECUTABLE_SUFFIX}" -m i386 -k
