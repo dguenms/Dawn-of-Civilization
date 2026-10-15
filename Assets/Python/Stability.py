@@ -398,10 +398,10 @@ def domesticCrisis(iPlayer):
 		message(iPlayer, 'TXT_KEY_STABILITY_DOMESTIC_CRISIS', iCrisisTurns, color=iRed)
 		
 def calculatePlayerAdministration(iPlayer):
-	if capital(iPlayer) and not capital(iPlayer).isPlayerCore(iPlayer):
-		return 10
+	if cities.core(iPlayer).none(lambda city: city.getArea() == capital(iPlayer).getArea()):
+		return 0
 	
-	return cities.owner(iPlayer).sum(calculateAdministration) + 10
+	return cities.owner(iPlayer).sum(calculateAdministration)
 
 def calculateAdministration(city):
 	iPlayer = city.getOwner()
@@ -426,8 +426,12 @@ def calculateAdministration(city):
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
 	
-	if city.isCapital() and not isDecline(iPlayer):
-		iAdministration += iPopulation
+	if city.isCapital():
+		iAdministration += 10
+	
+		if not isDecline(iPlayer):
+			iAdministration += iPopulation
+	
 	
 	return iAdministration
 
@@ -546,8 +550,8 @@ def calculateStability(iPlayer):
 	iDifferentReligionPopulation = 0
 	iNoReligionPopulation = 0
 	
-	iAdministration = calculatePlayerAdministration(iPlayer)
-	iSeparatism = calculatePlayerSeparatism(iPlayer)
+	iAdministration = calculatePlayerAdministration(iPlayer) + 1
+	iSeparatism = calculatePlayerSeparatism(iPlayer) + 1
 	
 	bDecline = isDecline(iPlayer)
 	
