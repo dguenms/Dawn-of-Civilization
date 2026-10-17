@@ -12866,6 +12866,11 @@ void CvPlayerAI::AI_doReligion()
 		return;
 	}
 
+	if (getStateReligion() != NO_RELIGION && getNumCities() > 0 && countReligionSpreadUnits(getCapitalCity()->area(), getStateReligion()) > 1)
+	{
+		return;
+	}
+
 	FAssertMsg(AI_getReligionTimer() == 0, "AI Religion timer is expected to be 0");
 
 	eBestReligion = AI_bestReligion();
