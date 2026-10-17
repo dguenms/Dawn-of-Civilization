@@ -1086,7 +1086,7 @@ dStartingUnits = CivDict({
 		iAttack: 4,
 		iHarass: 2,
 		iDefend: 2,
-		iMissionary: 6,
+		iMissionary: 5,
 	},
 	iThailand: {
 		iSettle: 1,
@@ -1348,6 +1348,13 @@ dExtraAIUnits = CivDict({
 	iInca: {
 		iCityAttack: 2,
 	},
+	iMughals: {
+		iShockCity: 2,
+		iCityAttack: 2,
+		iCitySiege: 2,
+		iCounter: 1,
+		iMissionary: 3,
+	},
 	iAztecs: {
 		iAttack: 1,
 		iSkirmish: 1,
@@ -1510,6 +1517,9 @@ dAdditionalUnits = CivDict({
 	},
 	iMughals: {
 		iShockCity: 2,
+		iCityAttack: 4,
+		iCitySiege: 4,
+		iCounter: 2,
 		iHarass: 4,
 	},
 	iThailand: {
@@ -1602,6 +1612,9 @@ dStartingExperience = CivDict({
 	},
 	iMughals: {
 		iAttack: 2,
+		iCityAttack: 2,
+		iShockCity: 2,
+		iCitySiege: 2,
 	},
 	iTatars: {
 		iShock: 3,
