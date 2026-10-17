@@ -183,7 +183,7 @@
 		<French>Lodi</French>
 		<German>Lodi</German>
 		<Italian>Lodi</Italian>
-		<Spanish>LodiLodi</Spanish>
+		<Spanish>Lodi</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CIV_MUGHALS_SHORT_DESC</Tag>
@@ -196,5 +196,37 @@
 		<German>Moguln</German>
 		<Italian>Mughals</Italian>
 		<Spanish>Mughals</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHAL_KARNATAKA</Tag>
+		<English>Deccan Subah</English>
+		<French>Deccan Subah</French>
+		<German>Deccan Subah</German>
+		<Italian>Deccan Subah</Italian>
+		<Spanish>Deccan Subah</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHAL_BENGAL</Tag>
+		<English>Bengal Subah</English>
+		<French>Bengal Subah</French>
+		<German>Bengal Subah</German>
+		<Italian>Bengal Subah</Italian>
+		<Spanish>Bengal Subah</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHAL_NAME_INDIA</Tag>
+		<English>Hindustan</English>
+		<French>Hindustan</French>
+		<German>Hindustan</German>
+		<Italian>Hindustan</Italian>
+		<Spanish>Hindustan</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_MUGHAL_NAME_RAJPUTS</Tag>
+		<English>Rajasthan</English>
+		<French>Rajasthan</French>
+		<German>Rajasthan</German>
+		<Italian>Rajasthan</Italian>
+		<Spanish>Rajasthan</Spanish>
 	</TEXT>
 </Civ4GameText>
