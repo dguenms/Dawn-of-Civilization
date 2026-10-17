@@ -335,6 +335,7 @@ iCanada :	[(26, 62), (27, 62), (28, 62), (29, 62), (30, 59), (30, 62), (31, 59),
 }, [])
 
 dPeriodCoreArea = {
+iPeriodPtolemaicEgypt :				((77, 43),	(79, 44)),
 iPeriodMakuria :					((78, 37),	(80, 39)),
 iPeriodMing : 						((120, 49),	(129, 56)),
 iPeriodModernGreece :				((74, 49),	(76, 54)),
@@ -361,6 +362,7 @@ iPeriodModernGermany : 				((65, 61),	(69, 65)),
 }
 
 dPeriodCoreAreaExceptions = appenddict({
+iPeriodPtolemaicEgypt :			[(77, 43)],
 iPeriodMakuria :				[(78, 37)],
 iPeriodMing :					[(120, 49), (120, 50), (120, 54), (120, 55), (120, 56), (121, 49), (121, 50), (121, 54), (121, 55), (121, 56), (122, 49), (122, 50), (123, 49), (123, 50), (128, 56)],
 iPeriodModernGreece :			[(74, 54)],
