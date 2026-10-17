@@ -398,7 +398,7 @@ def domesticCrisis(iPlayer):
 		message(iPlayer, 'TXT_KEY_STABILITY_DOMESTIC_CRISIS', iCrisisTurns, color=iRed)
 		
 def calculatePlayerAdministration(iPlayer):
-	if cities.core(iPlayer).none(lambda city: city.getArea() == capital(iPlayer).getArea()):
+	if capital(iPlayer) and cities.core(iPlayer).none(lambda city: city.getArea() == capital(iPlayer).getArea()):
 		return 0
 	
 	return cities.owner(iPlayer).sum(calculateAdministration)
