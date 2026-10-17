@@ -88,6 +88,8 @@ lBirthWars = [
 	(iArabia, iBabylonia),
 	(iArabia, iPersia),
 	(iMongols, iChina),
+	(iMughals, iBengal),
+	(iMughals, iRajputs),
 	(iOttomans, iByzantium),
 	(iManchuria, iChina),
 ]
