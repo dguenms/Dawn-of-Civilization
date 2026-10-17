@@ -3020,7 +3020,7 @@ def leader(iPlayer):
 		if iReligion != -1 and capital in cities.rectangle(tNorway): return iHaakon
 	
 	elif iCiv == iBengal:
-		if iReligion == iIslam: return iAlauddin
+		if iEra >= iRenaissance: return iAlauddin
 		
 	elif iCiv == iTurks:
 		if bResurrected: return iTamerlane
