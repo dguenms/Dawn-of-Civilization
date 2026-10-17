@@ -2114,11 +2114,10 @@ dTechPreferences = {
 		iHumanities: 20,
 		iHorticulture: 20,
 		iUrbanPlanning: 20,
-		iPhilosophy: 15,
+		iFirearms: 20,
 		iEducation: 15,
 		iPaper: 15,
 		iPatronage: 15,
-		iEngineering: 15,
 	
 		iReplaceableParts: -15,
 		iCombinedArms: -15,
