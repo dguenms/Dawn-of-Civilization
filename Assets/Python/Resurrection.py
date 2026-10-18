@@ -64,11 +64,15 @@ def onReleasedPlayer(iPlayer, iReleasedCivilization):
 def isResurrectionPossible():
 	return countAvailableSlots() > 1
 
+
+def getPotentialResurrectionCities(iCiv):
+	iResurrectionPeriod = getResurrectionPeriod(iCiv)
+	return cities.respawn(iCiv, iResurrectionPeriod)
+
 						
 def getResurrectionCities(iCiv, bFromCollapse=False):
-	iResurrectionPeriod = getResurrectionPeriod(iCiv)
-	potentialCities = cities.respawn(iCiv, iResurrectionPeriod)
-	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iCiv, city, len(potentialCities) == 1))
+	potentialCities = getPotentialResurrectionCities(iCiv)
+	resurrectionCities = potentialCities.where(lambda city: isPartOfResurrection(iCiv, city))
 
 	# if capital exists and not part of the resurrection, it fails, unless from collapse
 	capital = cities.respawnCapital(iCiv)
@@ -91,7 +95,7 @@ def getResurrectionCities(iCiv, bFromCollapse=False):
 	
 	return resurrectionCities.entities()
 					
-def isPartOfResurrection(iCiv, city, bOnlyOne):
+def isPartOfResurrection(iCiv, city):
 	iOwner = city.getOwner()
 	
 	# for humans: not for recently conquered cities to avoid annoying reflips
@@ -144,9 +148,15 @@ def canResurrectFromCities(iCiv, resurrectionCities):
 	# cannot resurrect without cities
 	if not resurrectionCities:
 		return False
+	
+	potentialCities = getPotentialResurrectionCities(iCiv)
 
 	# only one city is not sufficient for resurrection, unless there is only one city available
-	if len(resurrectionCities) <= 1 and len(resurrectionCities) < cities.respawn(iCiv).count():
+	if len(resurrectionCities) <= 1 and len(resurrectionCities) < potentialCities.count():
+		return False
+	
+	# less than third is not sufficient for resurrection
+	if len(resurrectionCities) * 3 < potentialCities.count():
 		return False
 
 	# at least one city needs to be in core for the resurrecting civ
