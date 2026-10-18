@@ -8704,6 +8704,7 @@ name_translations = {
 	},
 	"Jixi": {
 		iChinese: _,
+		iJapanese: "Keisei",
 		iKorean: "Donggyeong",
 	},
 	"Jocay": {
