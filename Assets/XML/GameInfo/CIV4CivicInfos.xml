@@ -174,6 +174,12 @@
 					<iProductionModifier>100</iProductionModifier>
 				</BuildingProductionModifier>
 			</BuildingProductionModifiers>
+			<UnitCombatFoodProductions>
+				<UnitCombatFoodProduction>
+					<UnitCombatType>UNITCOMBAT_LIGHT_CAVALRY</UnitCombatType>
+					<bFoodProduction>1</bFoodProduction>
+				</UnitCombatFoodProduction>
+			</UnitCombatFoodProductions>
 			<WeLoveTheKing>TXT_KEY_CIVIC_WE_LOVE_MONARCH</WeLoveTheKing>
 		</CivicInfo>
 		<CivicInfo>
