@@ -2786,3 +2786,8 @@ int CyPlayer::getReligionEffectModifier(int iReligion)
 {
 	return m_pPlayer ? m_pPlayer->getReligionEffectModifier((ReligionTypes)iReligion) : -1;
 }
+
+bool CyPlayer::isUnitCombatFoodProduction(int eUnitCombat)
+{
+	return m_pPlayer ? m_pPlayer->isUnitCombatFoodProduction((UnitCombatTypes)eUnitCombat) : false;
+}

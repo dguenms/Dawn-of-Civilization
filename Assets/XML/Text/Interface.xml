@@ -3993,6 +3993,14 @@
 		<Spanish>Select the cities to which you wish to grant independence.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIVIC_UNIT_COMBAT_FOOD</Tag>
+		<English>[ICON_BULLET][LINK=literal]%s1[\LINK] Produced with [ICON_FOOD]</English>
+		<French>[ICON_BULLET][LINK=literal]%s1[\LINK] Produced with [ICON_FOOD]</French>
+		<German>[ICON_BULLET][LINK=literal]%s1[\LINK] Produced with [ICON_FOOD]</German>
+		<Italian>[ICON_BULLET][LINK=literal]%s1[\LINK] Produced with [ICON_FOOD]</Italian>
+		<Spanish>[ICON_BULLET][LINK=literal]%s1[\LINK] Produced with [ICON_FOOD]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

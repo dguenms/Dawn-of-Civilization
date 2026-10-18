@@ -3276,6 +3276,15 @@ bool CvCity::isFoodProduction(UnitTypes eUnit) const
 		}
 	}
 
+	// Leoreth
+	if (GC.getUnitInfo(eUnit).getUnitCombatType() != NO_UNITCOMBAT)
+	{
+		if (GET_PLAYER(getOwnerINLINE()).isUnitCombatFoodProduction((UnitCombatTypes)GC.getUnitInfo(eUnit).getUnitCombatType()))
+		{
+			return true;
+		}
+	}
+
 	return false;
 }
 

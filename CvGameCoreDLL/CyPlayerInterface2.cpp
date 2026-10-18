@@ -150,5 +150,6 @@ void CyPlayerPythonInterface2(python::class_<CyPlayer>& x)
 		.def("canBuySlaves", &CyPlayer::canBuySlaves, "bool ()")
 		.def("calculateTransmissionResearch", &CyPlayer::calculateTransmissionResearch, "int ()")
 		.def("getReligionEffectModifier", &CyPlayer::getReligionEffectModifier, "int (int eReligion)")
+		.def("isUnitCombatFoodProduction", &CyPlayer::isUnitCombatFoodProduction, "bool (int eUnitCombat)")
 		;
 }

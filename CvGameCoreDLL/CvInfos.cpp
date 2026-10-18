@@ -5823,6 +5823,7 @@ m_paiDomainExperienceModifiers(NULL), // Leoreth
 m_pabHurry(NULL),
 m_pabSpecialBuildingNotRequired(NULL),
 m_pabSpecialistValid(NULL),
+m_pabUnitCombatFoodProduction(NULL), // Leoreth
 m_ppiImprovementYieldChanges(NULL),
 m_ppiSpecialistTypeExtraYields(NULL)
 {
@@ -5857,6 +5858,7 @@ CvCivicInfo::~CvCivicInfo()
 	SAFE_DELETE_ARRAY(m_pabHurry);
 	SAFE_DELETE_ARRAY(m_pabSpecialBuildingNotRequired);
 	SAFE_DELETE_ARRAY(m_pabSpecialistValid);
+	SAFE_DELETE_ARRAY(m_pabUnitCombatFoodProduction); // Leoreth
 
 	if (m_ppiImprovementYieldChanges != NULL)
 	{
@@ -6360,6 +6362,12 @@ bool CvCivicInfo::isSpecialistValid(int i) const
 	return m_pabSpecialistValid ? m_pabSpecialistValid[i] : false;
 }
 
+// Leoreth
+bool CvCivicInfo::isUnitCombatFoodProduction(UnitCombatTypes eUnitCombat) const
+{
+	return m_pabUnitCombatFoodProduction ? m_pabUnitCombatFoodProduction[eUnitCombat] : false;
+}
+
 int CvCivicInfo::getImprovementYieldChanges(int i, int j) const
 {
 	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
@@ -6601,6 +6609,10 @@ void CvCivicInfo::read(FDataStreamBase* stream)
 	m_pabSpecialistValid = new bool[GC.getNumSpecialistInfos()];
 	stream->Read(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
 
+	SAFE_DELETE_ARRAY(m_pabUnitCombatFoodProduction);
+	m_pabUnitCombatFoodProduction = new bool[NUM_UNITCOMBATS];
+	stream->Read(NUM_UNITCOMBATS, m_pabUnitCombatFoodProduction);
+
 	int i;
 	if (m_ppiImprovementYieldChanges != NULL)
 	{
@@ -6733,6 +6745,7 @@ void CvCivicInfo::write(FDataStreamBase* stream)
 	stream->Write(GC.getNumHurryInfos(), m_pabHurry);
 	stream->Write(GC.getNumSpecialBuildingInfos(), m_pabSpecialBuildingNotRequired);
 	stream->Write(GC.getNumSpecialistInfos(), m_pabSpecialistValid);
+	stream->Write(NUM_UNITCOMBATS, m_pabUnitCombatFoodProduction); // Leoreth
 
 	int i;
 	for(i=0;i<GC.getNumImprovementInfos();i++)
@@ -6933,6 +6946,9 @@ bool CvCivicInfo::read(CvXMLLoadUtility* pXML)
 	pXML->SetVariableListTagPair(&m_pabHurry, "Hurrys", sizeof(GC.getHurryInfo((HurryTypes)0)), GC.getNumHurryInfos());
 	pXML->SetVariableListTagPair(&m_pabSpecialBuildingNotRequired, "SpecialBuildingNotRequireds", sizeof(GC.getSpecialBuildingInfo((SpecialBuildingTypes)0)), GC.getNumSpecialBuildingInfos());
 	pXML->SetVariableListTagPair(&m_pabSpecialistValid, "SpecialistValids", sizeof(GC.getSpecialistInfo((SpecialistTypes)0)), GC.getNumSpecialistInfos());
+	
+	// Leoreth
+	pXML->SetVariableListTagPair(&m_pabUnitCombatFoodProduction, "UnitCombatFoodProductions", sizeof(GC.getUnitCombatInfo((UnitCombatTypes)0)), NUM_UNITCOMBATS);
 
 	pXML->SetVariableListTagPair(&m_paiBuildingHappinessChanges, "BuildingHappinessChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());
 	pXML->SetVariableListTagPair(&m_paiBuildingHealthChanges, "BuildingHealthChanges", sizeof(GC.getBuildingClassInfo((BuildingClassTypes)0)), GC.getNumBuildingClassInfos());

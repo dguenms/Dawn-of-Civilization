@@ -898,6 +898,10 @@ public:
 	bool canPopRush();
 	void changeHurryCount(HurryTypes eIndex, int iChange);
 
+	int getUnitCombatFoodProductionCount(UnitCombatTypes eUnitCombat) const;
+	bool isUnitCombatFoodProduction(UnitCombatTypes eUnitCombat) const;
+	void changeUnitCombatFoodProductionCount(UnitCombatTypes eUnitCombat, int iChange);
+
 	int getSpecialBuildingNotRequiredCount(SpecialBuildingTypes eIndex) const;												// Exposed to Python
 	bool isSpecialBuildingNotRequired(SpecialBuildingTypes eIndex) const;															// Exposed to Python
 	void changeSpecialBuildingNotRequiredCount(SpecialBuildingTypes eIndex, int iChange);
@@ -1594,6 +1598,7 @@ protected:
 	int* m_aiCommerceFlexibleCount;
 	int* m_aiGoldPerTurnByPlayer;
 	int* m_aiEspionageSpendingWeightAgainstTeam;
+	int* m_aiUnitCombatFoodProductionCount; // Leoreth
 
 	// Leoreth
 	int* m_aiDomainExperienceModifiers;

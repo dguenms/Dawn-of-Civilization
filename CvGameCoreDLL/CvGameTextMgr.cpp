@@ -7475,6 +7475,15 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 		szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_MILITARY_FOOD"));
 	}
 
+	for (iI = 0; iI < NUM_UNITCOMBATS; iI++)
+	{
+		if (GC.getCivicInfo(eCivic).isUnitCombatFoodProduction((UnitCombatTypes)iI))
+		{
+			szHelpText.append(NEWLINE);
+			szHelpText.append(gDLL->getText("TXT_KEY_CIVIC_UNIT_COMBAT_FOOD", GC.getUnitCombatInfo((UnitCombatTypes)iI).getDescription()));
+		}
+	}
+
 	//	Conscription
 	if (getWorldSizeMaxConscript(eCivic) != 0)
 	{

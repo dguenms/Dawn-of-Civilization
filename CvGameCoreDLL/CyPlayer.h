@@ -617,6 +617,8 @@ public:
 	bool canBuySlaves() const;
 	int calculateTransmissionResearch() const;
 	int getReligionEffectModifier(int eReligion);
+
+	bool isUnitCombatFoodProduction(int eUnitCombat);
 	
 private:
 	CvPlayer* m_pPlayer;

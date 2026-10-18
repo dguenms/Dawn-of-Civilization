@@ -68,6 +68,7 @@ CvPlayer::CvPlayer()
 	m_aiStabilityParameters = new int[NUM_PARAMETERS];
 	m_aiModifiers = new int[NUM_MODIFIER_TYPES];
 	m_aiReligionYieldChange = new int[NUM_YIELD_TYPES];
+	m_aiUnitCombatFoodProductionCount = new int[NUM_UNITCOMBATS];
 
 	m_abFeatAccomplished = new bool[NUM_FEAT_TYPES];
 	m_abOptions = new bool[NUM_PLAYEROPTION_TYPES];
@@ -144,6 +145,7 @@ CvPlayer::~CvPlayer()
 	SAFE_DELETE_ARRAY(m_aiStabilityParameters); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiModifiers); // Leoreth
 	SAFE_DELETE_ARRAY(m_aiReligionYieldChange); // Leoreth
+	SAFE_DELETE_ARRAY(m_aiUnitCombatFoodProductionCount); // Leoreth
 	SAFE_DELETE_ARRAY(m_abFeatAccomplished);
 	SAFE_DELETE_ARRAY(m_abOptions);
 }
@@ -642,6 +644,12 @@ void CvPlayer::reset(PlayerTypes eID, bool bConstructorCall)
 	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
 	{
 		m_aiDomainExperienceModifiers[iI] = 0;
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_UNITCOMBATS; iI++)
+	{
+		m_aiUnitCombatFoodProductionCount[iI] = 0;
 	}
 
 	// Leoreth
@@ -13727,6 +13735,24 @@ int CvPlayer::getBuildingClassCountPlusMaking(BuildingClassTypes eIndex) const
 }
 
 
+int CvPlayer::getUnitCombatFoodProductionCount(UnitCombatTypes eUnitCombat) const
+{
+	return m_aiUnitCombatFoodProductionCount[eUnitCombat];
+}
+
+
+bool CvPlayer::isUnitCombatFoodProduction(UnitCombatTypes eUnitCombat) const
+{
+	return getUnitCombatFoodProductionCount(eUnitCombat) > 0;
+}
+
+
+void CvPlayer::changeUnitCombatFoodProductionCount(UnitCombatTypes eUnitCombat, int iChange)
+{
+	m_aiUnitCombatFoodProductionCount[eUnitCombat] += iChange;
+}
+
+
 int CvPlayer::getHurryCount(HurryTypes eIndex) const
 {
 	FAssert(eIndex >= 0);
@@ -18587,6 +18613,12 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 	for (iI = 0; iI < NUM_DOMAIN_TYPES; iI++)
 	{
 		changeDomainExperienceModifier((DomainTypes)iI, GC.getCivicInfo(eCivic).getDomainExperienceModifier(iI) * iChange);
+	}
+
+	// Leoreth
+	for (iI = 0; iI < NUM_UNITCOMBATS; iI++)
+	{
+		changeUnitCombatFoodProductionCount((UnitCombatTypes)iI, GC.getCivicInfo(eCivic).isUnitCombatFoodProduction((UnitCombatTypes)iI) ? iChange : 0);
 	}
 
 	// Masryeen UP: +1 commerce on Farms with Slavery
