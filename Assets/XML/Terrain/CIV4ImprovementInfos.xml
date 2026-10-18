@@ -1041,6 +1041,14 @@
 			<ImprovementUpgrade/>
 			<TechYieldChanges>
 				<TechYieldChange>
+					<PrereqTech>TECH_PRINTING</PrereqTech>
+					<TechYields>
+						<iYield>0</iYield>
+						<iYield>0</iYield>
+						<iYield>1</iYield>
+					</TechYields>
+				</TechYieldChange>
+				<TechYieldChange>
 					<PrereqTech>TECH_MACHINE_TOOLS</PrereqTech>
 					<TechYields>
 						<iYield>0</iYield>
