@@ -399,8 +399,7 @@ dGoals = {
 		),
 		All(
 			LiberatedCities(plots.regions(*lAfrica).named(AFRICA), group(iCivGroupAfrica).named(AFRICAN), 12),
-			AllAttitude(AttitudeTypes.ATTITUDE_FRIENDLY, civs=group(iCivGroupAfrica).named(AFRICAN)),
-			at=1930,
+			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, civs=group(iCivGroupAfrica).named(AFRICA), bIndependent=True),
 		),
 	),
 	iToltecs: (
