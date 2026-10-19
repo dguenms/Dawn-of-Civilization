@@ -540,7 +540,7 @@ void CvDllPythonEvents::reportCityLost(CvCity* pCity)
 	}
 }
 
-void CvDllPythonEvents::reportCityGifted(CvCity* pCity)
+void CvDllPythonEvents::reportCityGifted(CvCity* pCity, PlayerTypes eOldOwner, CivilizationTypes eOldPreviousCiv)
 {
 	if (preEvent())
 	{
@@ -549,12 +549,14 @@ void CvDllPythonEvents::reportCityGifted(CvCity* pCity)
 
 		CyCity* pyu = new CyCity(pCity);
 		eventData.add(gDLL->getPythonIFace()->makePythonObject(pyu));
+		eventData.add((int)eOldOwner);
+		eventData.add((int)eOldPreviousCiv);
 		postEvent(eventData);
 		delete pyu;
 	}
 }
 
-void CvDllPythonEvents::reportCityLiberated(CvCity* pCity)
+void CvDllPythonEvents::reportCityLiberated(CvCity* pCity, PlayerTypes eOldOwner, CivilizationTypes eOldPreviousCiv)
 {
 	if (preEvent())
 	{
@@ -563,6 +565,8 @@ void CvDllPythonEvents::reportCityLiberated(CvCity* pCity)
 
 		CyCity* pyu = new CyCity(pCity);
 		eventData.add(gDLL->getPythonIFace()->makePythonObject(pyu));
+		eventData.add((int)eOldOwner);
+		eventData.add((int)eOldPreviousCiv);
 		postEvent(eventData);
 		delete pyu;
 	}

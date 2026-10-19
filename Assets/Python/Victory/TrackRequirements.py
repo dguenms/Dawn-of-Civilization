@@ -550,11 +550,20 @@ class LiberatedCities(TrackRequirement):
 		self.civs = civs
 		
 		self.handle("cityLiberated", self.increment_liberated)
+		self.handle("cityGifted", self.increment_liberated)
 	
-	def increment_liberated(self, goal, city):
-		if city in self.area and city.getPreviousCiv() not in self.civs:
-			self.increment()
-			goal.check()
+	def increment_liberated(self, goal, city, iPreviousCiv):
+		if city not in self.area:
+			return
+		
+		if civ(city) not in self.civs:
+			return
+		
+		if is_minor(iPreviousCiv) or iPreviousCiv in self.civs:
+			return
+		
+		self.increment()
+		goal.check()
 
 
 class PeaceTurns(TrackRequirement):

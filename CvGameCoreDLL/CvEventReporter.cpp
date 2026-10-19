@@ -213,14 +213,14 @@ void CvEventReporter::cityLost( CvCity *pCity)
 	m_kPythonEventMgr.reportCityLost(pCity);
 }
 
-void CvEventReporter::cityGifted(CvCity* pCity)
+void CvEventReporter::cityGifted(CvCity* pCity, PlayerTypes eOldOwner, CivilizationTypes eOldPreviousCiv)
 {
-	m_kPythonEventMgr.reportCityGifted(pCity);
+	m_kPythonEventMgr.reportCityGifted(pCity, eOldOwner, eOldPreviousCiv);
 }
 
-void CvEventReporter::cityLiberated(CvCity* pCity)
+void CvEventReporter::cityLiberated(CvCity* pCity, PlayerTypes eOldOwner, CivilizationTypes eOldPreviousCiv)
 {
-	m_kPythonEventMgr.reportCityLiberated(pCity);
+	m_kPythonEventMgr.reportCityLiberated(pCity, eOldOwner, eOldPreviousCiv);
 }
 
 void CvEventReporter::cultureExpansion( CvCity *pCity, PlayerTypes ePlayer )

@@ -1545,12 +1545,14 @@ void CvCity::doTask(TaskTypes eTask, int iData1, int iData2, bool bOption, bool 
 		else
 		{
 			CvPlot* pPlot = plot();
+			PlayerTypes eOldOwner = getOwner();
+			CivilizationTypes eOldPreviousCiv = getPreviousCiv();
 			GET_PLAYER((PlayerTypes)iData1).acquireCity(this, false, true, true);
 
 			if (pPlot->isCity())
 			{
 				GET_PLAYER(pPlot->getPlotCity()->getOwnerINLINE()).updateMaintenance(); // Leoreth
-				CvEventReporter::getInstance().cityGifted(pPlot->getPlotCity());
+				CvEventReporter::getInstance().cityGifted(pPlot->getPlotCity(), eOldOwner, eOldPreviousCiv);
 			}
 		}
 		break;
@@ -18522,11 +18524,12 @@ void CvCity::liberate(bool bConquest)
 		GC.getGameINLINE().addReplayMessage(REPLAY_MESSAGE_MAJOR_EVENT, eOwner, szBuffer, getX_INLINE(), getY_INLINE(), (ColorTypes)GC.getInfoTypeForString("COLOR_HIGHLIGHT_TEXT"));
 
 		CvPlot* const pPlot = plot();
+		CivilizationTypes eOldPreviousCiv = getPreviousCiv();
 
 		GET_PLAYER(ePlayer).acquireCity(this, bConquest, true, true);
 		GET_PLAYER(ePlayer).AI_changeMemoryCount(eOwner, MEMORY_LIBERATED_CITIES, 1);
 
-		CvEventReporter::getInstance().cityLiberated(pPlot->getPlotCity());
+		CvEventReporter::getInstance().cityLiberated(pPlot->getPlotCity(), eOwner, eOldPreviousCiv);
 
 		if (GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isVassal(GET_PLAYER(eOwner).getTeam()))
 		{

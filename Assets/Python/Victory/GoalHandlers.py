@@ -126,10 +126,17 @@ class EventHandlerRegistry(object):
 		
 		return cityCaptureGold
 	
+	def cityGifted(self, goal, applicable, func):
+		def cityGifted((city, iOldOwner, iOldPreviousCiv)):
+			if applicable(goal, iOldOwner):
+				func(goal, city, iOldPreviousCiv)
+		
+		return cityGifted
+	
 	def cityLiberated(self, goal, applicable, func):
-		def cityLiberated((city,)):
-			if applicable(goal, city.getOwner()):
-				func(goal, city)
+		def cityLiberated((city, iOldOwner, iOldPreviousCiv)):
+			if applicable(goal, iOldOwner):
+				func(goal, city, iOldPreviousCiv)
 		
 		return cityLiberated
 	
@@ -205,9 +212,7 @@ class EventHandlerRegistry(object):
 	
 	def goldGranted(self, goal, applicable, func):
 		def goldGranted((iFrom, iTo, iGold)):
-			print "gold granted from %s to %s: %d" % (name(iFrom), name(iTo), iGold)
 			if applicable(goal, iTo):
-				print "call %s" % func.__name__
 				func(goal, iGold)
 		
 		return goldGranted
