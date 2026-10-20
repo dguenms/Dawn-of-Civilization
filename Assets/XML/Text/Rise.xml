@@ -90,8 +90,32 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_AUS</Tag>
+		<English>The colonies of Australia are demanding responsible self-government.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_AZT</Tag>
 		<English>Nahua speaking peoples are migrating into the Valley of Mexico looking for their prophesied new homeland.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_BEL</Tag>
+		<English>The Catholic Low Countries are demanding self-determination.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_BEN</Tag>
+		<English>The Bengali rulers of Gauda are asserting their independence.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -274,6 +298,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_KAR</Tag>
+		<English>The Andhras are establishing their rule in the western Deccan.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_KHM</Tag>
 		<English>The ruler of Chenla is building the new capital of Angkor to found the Khmer Empire.</English>
 		<French></French>
@@ -322,6 +354,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MAN</Tag>
+		<English>The Jurchen people have adopted the name Manchu and are raising their Seven Grievances against the Chinese Ming.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_MAY</Tag>
 		<English>Independent city states are developing on the Yucatan peninsula.</English>
 		<French></French>
@@ -332,6 +372,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_MEX</Tag>
 		<English>Officers in colonial Mexico are gathering forces to achieve independence.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_MIS</Tag>
+		<English>Shia rulers in Egypt are rejecting the authority of the Sunni Caliphate.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -426,6 +474,14 @@
 		<Spanish></Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_RAJ</Tag>
+		<English>Various castes in western India are adopting the Rajput warrior identity.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_ROM</Tag>
 		<English>The Latin people of Italy have begun settling the city of Rome.</English>
 		<French></French>
@@ -436,6 +492,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_RUS</Tag>
 		<English>The city of Moscow is growing into the leading principality of the Russian lands.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_SAU</Tag>
+		<English>Wahhabi religious forces are gathering strength in Najd.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
@@ -460,6 +524,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_MESSAGE_RISE_SWE</Tag>
 		<English>Swedish rulers are asserting their independence from the kingdoms of Denmark and Norway.</English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_RISE_TAT</Tag>
+		<English>The western appanage of the Mongol Empire is breaking off into an independent horde.</English>
 		<French></French>
 		<German></German>
 		<Italian></Italian>
