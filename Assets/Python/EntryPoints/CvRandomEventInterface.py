@@ -799,7 +799,7 @@ def canApplyVolcano1(argsList):
 			loopPlot = plotXY(kTriggeredData.iPlotX, kTriggeredData.iPlotY, iDX, iDY)
 			if not loopPlot.isNone():
 				if (iDX != 0 or iDY != 0):
-					if loopPlot.getImprovementType() != -1:
+					if loopPlot.getImprovementType() != -1 and not infos.improvement(loopPlot.getImprovementType()).isPermanent():
 						iNumImprovements += 1
 
 	return (iNumImprovements > 0)
@@ -814,7 +814,7 @@ def applyVolcano1(argsList):
 			loopPlot = plotXY(kTriggeredData.iPlotX, kTriggeredData.iPlotY, iDX, iDY)
 			if not loopPlot.isNone():
 				if (iDX != 0 or iDY != 0):
-					if loopPlot.getImprovementType() != -1:
+					if loopPlot.getImprovementType() != -1 and not infos.improvement(loopPlot.getImprovementType()).isPermanent():
 						listPlots.append(loopPlot)
 					
 	listRuins = []
