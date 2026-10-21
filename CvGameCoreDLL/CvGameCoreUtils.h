@@ -278,6 +278,7 @@ bool isLimitedUnitClass(UnitClassTypes eUnitClass);										// Exposed to Pytho
 bool isWorldWonderClass(BuildingClassTypes eBuildingClass);						// Exposed to Python
 bool isTeamWonderClass(BuildingClassTypes eBuildingClass);						// Exposed to Python
 bool isNationalWonderClass(BuildingClassTypes eBuildingClass);				// Exposed to Python
+bool canCitySpareHappinessForSlave(const CvCity* pCity);					// Fresol
 bool isLimitedWonderClass(BuildingClassTypes eBuildingClass);					// Exposed to Python
 int limitedWonderClassLimit(BuildingClassTypes eBuildingClass);
 

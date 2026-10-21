@@ -544,6 +544,15 @@ bool isNationalWonderClass(BuildingClassTypes eBuildingClass)
 	return (GC.getBuildingClassInfo(eBuildingClass).getMaxPlayerInstances() != -1);
 }
 
+
+// Fresol: a slave unit is spent when it works and costs its city a happiness point when it
+// settles as a specialist, so an AI slave may only act while its city can pay for that. Used
+// both when the AI decides where to send it and when it settles into a city.
+bool canCitySpareHappinessForSlave(const CvCity* pCity)
+{
+	return ((pCity != NULL) && ((pCity->happyLevel() - pCity->unhappyLevel()) > 3));
+}
+
 bool isLimitedWonderClass(BuildingClassTypes eBuildingClass)
 {
 	return (isWorldWonderClass(eBuildingClass) || isTeamWonderClass(eBuildingClass) || isNationalWonderClass(eBuildingClass));
