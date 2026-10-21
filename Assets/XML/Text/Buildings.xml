@@ -1887,23 +1887,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY</Tag>
-		<English>Zoroastrian Pir</English>
-		<French>
-			<Text>Pir zoroastrien:Pirs zoroastriens</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>Zoroastrischer Pir</German>
-		<Italian>Zoroastrian Pir</Italian>
-		<Spanish>Zoroastrian Pir</Spanish>
+		<English>Zoroastrian Anjuman</English>
+		<French>Zoroastrian Anjuman</French>
+		<German>Zoroastrischer Anjuman</German>
+		<Italian>Zoroastrian Anjuman</Italian>
+		<Spanish>Zoroastrian Anjuman</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_MONASTERY_STRATEGY</Tag>
-		<English>[COLOR_BUILDING_TEXT]Pirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</English>
-		<French>[COLOR_BUILDING_TEXT]Pirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</French>
-		<German>[COLOR_BUILDING_TEXT]Pirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</German>
-		<Italian>[COLOR_BUILDING_TEXT]Pirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>[COLOR_BUILDING_TEXT]Pirs[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>[COLOR_BUILDING_TEXT]Anjumans[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</English>
+		<French>[COLOR_BUILDING_TEXT]Anjumans[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</French>
+		<German>[COLOR_BUILDING_TEXT]Anjumans[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</German>
+		<Italian>[COLOR_BUILDING_TEXT]Anjumans[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>[COLOR_BUILDING_TEXT]Anjumans[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Monasteries[COLOR_REVERT]) provide culture and allow you to create [COLOR_UNIT_TEXT]Zoroastrian Magus[COLOR_REVERT], who can spread [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] in other cities. In addition, they increase their city's research output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_CATHEDRAL</Tag>
@@ -3291,19 +3287,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_HOLY_SITE</Tag>
-		<English>Jewish Holy Site</English>
-		<French>Jewish Holy Site</French>
-		<German>Jewish Holy Site</German>
-		<Italian>Jewish Holy Site</Italian>
-		<Spanish>Jewish Holy Site</Spanish>
+		<English>Jewish Makom</English>
+		<French>Jewish Makom</French>
+		<German>Jewish Makom</German>
+		<Italian>Jewish Makom</Italian>
+		<Spanish>Jewish Makom</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Makom[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Makom[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Makom[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Makom[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Makom[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jewish[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_HOLY_SITE</Tag>
@@ -3315,11 +3311,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Orthodox Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Orthodox Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Orthodox Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Orthodox Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Orthodox Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Orthodox[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_HOLY_SITE</Tag>
@@ -3331,11 +3327,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Catholic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Catholic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Catholic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Catholic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Catholic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Catholic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_HOLY_SITE</Tag>
@@ -3347,107 +3343,107 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Protestant Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Protestant Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Protestant Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Protestant Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Protestant Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Protestant[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_HOLY_SITE</Tag>
-		<English>Islamic Holy Site</English>
-		<French>Islamic Holy Site</French>
-		<German>Islamic Holy Site</German>
-		<Italian>Islamic Holy Site</Italian>
-		<Spanish>Islamic Holy Site</Spanish>
+		<English>Islamic Haram</English>
+		<French>Islamic Haram</French>
+		<German>Islamic Haram</German>
+		<Italian>Islamic Haram</Italian>
+		<Spanish>Islamic Haram</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Haram[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Islamic[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_HOLY_SITE</Tag>
-		<English>Hindu Holy Site</English>
-		<French>Hindu Holy Site</French>
-		<German>Hindu Holy Site</German>
-		<Italian>Hindu Holy Site</Italian>
-		<Spanish>Hindu Holy Site</Spanish>
+		<English>Hindu Tirtha</English>
+		<French>Hindu Tirtha</French>
+		<German>Hindu Tirtha</German>
+		<Italian>Hindu Tirtha</Italian>
+		<Spanish>Hindu Tirtha</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Hindu[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_HOLY_SITE</Tag>
-		<English>Buddhist Holy Site</English>
-		<French>Buddhist Holy Site</French>
-		<German>Buddhist Holy Site</German>
-		<Italian>Buddhist Holy Site</Italian>
-		<Spanish>Buddhist Holy Site</Spanish>
+		<English>Buddhist Bodhimanda</English>
+		<French>Buddhist Bodhimanda</French>
+		<German>Buddhist Bodhimanda</German>
+		<Italian>Buddhist Bodhimanda</Italian>
+		<Spanish>Buddhist Bodhimanda</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Bodhimanda[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Bodhimanda[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Bodhimanda[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Bodhimanda[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Bodhimanda[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Buddhist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_HOLY_SITE</Tag>
-		<English>Confucian Holy Site</English>
-		<French>Confucian Holy Site</French>
-		<German>Confucian Holy Site</German>
-		<Italian>Confucian Holy Site</Italian>
-		<Spanish>Confucian Holy Site</Spanish>
+		<English>Confucian Shengji</English>
+		<French>Confucian Shengji</French>
+		<German>Confucian Shengji</German>
+		<Italian>Confucian Shengji</Italian>
+		<Spanish>Confucian Shengji</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Shengji[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Shengji[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Shengji[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Shengji[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Shengji[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Confucian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_HOLY_SITE</Tag>
-		<English>Taoist Holy Site</English>
-		<French>Taoist Holy Site</French>
-		<German>Taoist Holy Site</German>
-		<Italian>Taoist Holy Site</Italian>
-		<Spanish>Taoist Holy Site</Spanish>
+		<English>Taoist Mingshan</English>
+		<French>Taoist Mingshan</French>
+		<German>Taoist Mingshan</German>
+		<Italian>Taoist Mingshan</Italian>
+		<Spanish>Taoist Mingshan</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Mingshan[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Mingshan[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Mingshan[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Mingshan[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Mingshan[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Taoist[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_HOLY_SITE</Tag>
-		<English>Zoroastrian Holy Site</English>
-		<French>Zoroastrian Holy Site</French>
-		<German>Zoroastrian Holy Site</German>
-		<Italian>Zoroastrian Holy Site</Italian>
-		<Spanish>Zoroastrian Holy Site</Spanish>
+		<English>Zoroastrian Pir</English>
+		<French>Zoroastrian Pir</French>
+		<German>Zoroastrian Pir</German>
+		<Italian>Zoroastrian Pir</Italian>
+		<Spanish>Zoroastrian Pir</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Pir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Pir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Pir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Pir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Pir[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Zoroastrian[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_SANCTUARY</Tag>
@@ -3643,19 +3639,19 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_RELIQUARY</Tag>
-		<English>Jewish Reliquary</English>
-		<French>Jewish Reliquary</French>
-		<German>Jewish Reliquary</German>
-		<Italian>Jewish Reliquary</Italian>
-		<Spanish>Jewish Reliquary</Spanish>
+		<English>Jewish Kever Tzaddik</English>
+		<French>Jewish Kever Tzaddik</French>
+		<German>Jewish Kever Tzaddik</German>
+		<Italian>Jewish Kever Tzaddik</Italian>
+		<Spanish>Jewish Kever Tzaddik</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JEWISH_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Kever Tzaddik[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Kever Tzaddik[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Kever Tzaddik[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Kever Tzaddik[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Kever Tzaddik[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jewish Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Judaism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_RELIQUARY</Tag>
@@ -3667,11 +3663,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ORTHODOX_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Orthodox Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Orthodox Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Orthodox Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Orthodox Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Orthodox Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Orthodoxy[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_RELIQUARY</Tag>
@@ -3683,11 +3679,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CATHOLIC_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Catholic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Catholic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Catholic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Catholic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Catholic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Catholicism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_RELIQUARY</Tag>
@@ -3699,107 +3695,107 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_PROTESTANT_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Protestant Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Protestant Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Protestant Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Protestant Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Protestant Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Protestantism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_RELIQUARY</Tag>
-		<English>Islamic Reliquary</English>
-		<French>Islamic Reliquary</French>
-		<German>Islamic Reliquary</German>
-		<Italian>Islamic Reliquary</Italian>
-		<Spanish>Islamic Reliquary</Spanish>
+		<English>Islamic Dargah</English>
+		<French>Islamic Dargah</French>
+		<German>Islamic Dargah</German>
+		<Italian>Islamic Dargah</Italian>
+		<Spanish>Islamic Dargah</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ISLAMIC_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Dargah[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Dargah[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Dargah[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Dargah[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Dargah[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Islamic Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Islam[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_RELIQUARY</Tag>
-		<English>Hindu Reliquary</English>
-		<French>Hindu Reliquary</French>
-		<German>Hindu Reliquary</German>
-		<Italian>Hindu Reliquary</Italian>
-		<Spanish>Hindu Reliquary</Spanish>
+		<English>Hindu Bhandara</English>
+		<French>Hindu Bhandara</French>
+		<German>Hindu Bhandara</German>
+		<Italian>Hindu Bhandara</Italian>
+		<Spanish>Hindu Bhandara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_HINDU_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Hindu Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Hinduism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_RELIQUARY</Tag>
-		<English>Buddhist Reliquary</English>
-		<French>Buddhist Reliquary</French>
-		<German>Buddhist Reliquary</German>
-		<Italian>Buddhist Reliquary</Italian>
-		<Spanish>Buddhist Reliquary</Spanish>
+		<English>Buddhist Granthalaya</English>
+		<French>Buddhist Granthalaya</French>
+		<German>Buddhist Granthalaya</German>
+		<Italian>Buddhist Granthalaya</Italian>
+		<Spanish>Buddhist Granthalaya</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_BUDDHIST_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Granthalaya[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Granthalaya[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Granthalaya[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Granthalaya[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Granthalaya[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Buddhist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Buddhism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_RELIQUARY</Tag>
-		<English>Confucian Reliquary</English>
-		<French>Confucian Reliquary</French>
-		<German>Confucian Reliquary</German>
-		<Italian>Confucian Reliquary</Italian>
-		<Spanish>Confucian Reliquary</Spanish>
+		<English>Confucian Citang</English>
+		<French>Confucian Citang</French>
+		<German>Confucian Citang</German>
+		<Italian>Confucian Citang</Italian>
+		<Spanish>Confucian Citang</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_CONFUCIAN_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Citang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Citang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Citang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Citang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Citang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Confucian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Confucianism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_RELIQUARY</Tag>
-		<English>Taoist Reliquary</English>
-		<French>Taoist Reliquary</French>
-		<German>Taoist Reliquary</German>
-		<Italian>Taoist Reliquary</Italian>
-		<Spanish>Taoist Reliquary</Spanish>
+		<English>Taoist Daochang</English>
+		<French>Taoist Daochang</French>
+		<German>Taoist Daochang</German>
+		<Italian>Taoist Daochang</Italian>
+		<Spanish>Taoist Daochang</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_TAOIST_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Daochang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Daochang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Daochang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Daochang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Daochang[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Taoist Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Taoism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_RELIQUARY</Tag>
-		<English>Zoroastrian Reliquary</English>
-		<French>Zoroastrian Reliquary</French>
-		<German>Zoroastrian Reliquary</German>
-		<Italian>Zoroastrian Reliquary</Italian>
-		<Spanish>Zoroastrian Reliquary</Spanish>
+		<English>Zoroastrian Dakhma</English>
+		<French>Zoroastrian Dakhma</French>
+		<German>Zoroastrian Dakhma</German>
+		<Italian>Zoroastrian Dakhma</Italian>
+		<Spanish>Zoroastrian Dakhma</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_ZOROASTRIAN_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Dakhma[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Dakhma[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Dakhma[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Dakhma[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Dakhma[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Zoroastrian Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Zoroastrianism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_SPECIALBUILDING_SANCTUARY</Tag>
@@ -3979,35 +3975,35 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIN_RELIQUARY</Tag>
-		<English>Jain Reliquary</English>
-		<French>Jain Reliquary</French>
-		<German>Jain Reliquary</German>
-		<Italian>Jain Reliquary</Italian>
-		<Spanish>Jain Reliquary</Spanish>
+		<English>Jain Bhandara</English>
+		<French>Jain Bhandara</French>
+		<German>Jain Bhandara</German>
+		<Italian>Jain Bhandara</Italian>
+		<Spanish>Jain Bhandara</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIN_RELIQUARY_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</English>
-		<French>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</French>
-		<German>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT] provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</English>
+		<French>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</French>
+		<German>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Bhandara[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Reliquary[COLOR_REVERT]) provides an additional [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot and increases its city's gold output if [COLOR_HIGHLIGHT_TEXT]Jainism[COLOR_REVERT] is the state religion.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIN_HOLY_SITE</Tag>
-		<English>Jain Holy Site</English>
-		<French>Jain Holy Site</French>
-		<German>Jain Holy Site</German>
-		<Italian>Jain Holy Site</Italian>
-		<Spanish>Jain Holy Site</Spanish>
+		<English>Jain Tirtha</English>
+		<French>Jain Tirtha</French>
+		<German>Jain Tirtha</German>
+		<Italian>Jain Tirtha</Italian>
+		<Spanish>Jain Tirtha</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIN_HOLY_SITE_STRATEGY</Tag>
-		<English>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
-		<French>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
-		<German>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
-		<Italian>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
-		<Spanish>The [COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT] increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
+		<English>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</English>
+		<French>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</French>
+		<German>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</German>
+		<Italian>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Italian>
+		<Spanish>The [COLOR_BUILDING_TEXT]Tirtha[COLOR_REVERT] ([COLOR_BUILDING_TEXT]Jain Holy Site[COLOR_REVERT]) increases the impact of state religion effects provided by [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] buildings and provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot. In addition, it increases the yield of trade routes with other [COLOR_HIGHLIGHT_TEXT]Jain[COLOR_REVERT] cities. It also provides a [COLOR_HIGHLIGHT_TEXT]Priest[COLOR_REVERT] slot.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_JAIN_SHRINE</Tag>
