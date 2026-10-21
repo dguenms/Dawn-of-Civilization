@@ -770,17 +770,17 @@
 		</FeatureArtInfo>
 		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_CAPE</Type>
-			<bAnimated>0</bAnimated>
+			<bAnimated>1</bAnimated>
 			<bRiverArt>0</bRiverArt>
 			<TileArtType>TILE_ART_TYPE_NONE</TileArtType>
 			<LightType>LIGHT_TYPE_SUN</LightType>
-			<fScale>0.0001</fScale>
-			<fInterfaceScale>0.0001</fInterfaceScale>
+			<fScale>0.7</fScale>
+			<fInterfaceScale>1.0</fInterfaceScale>
 			<Button></Button>
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Resources/Oil/Oil.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Cape/cape_sunami.nif</ModelFile>
 						<Connections></Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
