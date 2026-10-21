@@ -132,7 +132,10 @@ class FirstDiscover(StateRequirement):
 		self.expire("techAcquired", self.expire_first_discovered)
 	
 	def init(self, goal):
-		if game.countKnownTechNumTeams(self.iTech) > 0:
+		if game.getFirstDiscovered(self.iTech) == player(goal.iPlayer).getCivilizationType():
+			self.succeed()
+			goal.check()
+		elif game.getFirstDiscovered(self.iTech) != -1:
 			goal.set_state(FAILURE)
 	
 	def check_first_discovered(self, goal, iTech, iPlayer):
