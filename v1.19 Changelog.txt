@@ -7,13 +7,65 @@ MAP
 * Adjusted terrain in Tibet
 
 CIVILIZATIONS
-* Egypt:
+* Egypt
 	* Leaders: removed Baibars and Nasser
-* China:
+* China
 	* Coat of Arms: Han character
-* Arabia:
+* India
+	* Unique Units: Kshatriya (Light Swordsman): starts with Shock, Patiyodha (Archer): +25% withdrawal chance, +25% attack on Hills, Forest, Rainforest, Jungle
+	* Unique Building: Edict (Monument): +1 statesman slot, free Mobility promotion for civilian units
+	* Unique Historical Victory:
+		* Control the Mahabodhi and Vishwanath in 100 BC and control 30 temples by 800 AD
+		* Be the first to discover five Classical era technologies
+		* Control 16% of the world's population by 1200 AD
+* Dravidians renamed to Tamils
+	* Coat of Arms: Chola tiger
+	* Leaders: removed Krishna Deva Raya
+	* Unique Units: removed Rocketeer
+	* Unique Building: Urukku Forge (Forge): +3 experience for Melee units
+	* Unique Historical Victory:
+		* Have 5000 gold and 5000 culture by 600 AD
+		* Control or vassalize the Deccan, Bengal, Srivijaya and Burma in 1000 AD
+		* Acquire 7500 gold by trade by 1200 AD, and acquire 15000 gold by trade and have a population of 80 by 1500 AD
+* Ethiopia:
+	* Unique Historical Victory:
+		* Third goal: Liberate twelve cities in Africa from non-African civilizations and have friendly relations with five other independent civilizations in Africa
+* Karnataka
+	* Birth: 271 BC
+	* Coat of Arms: double headed eagle, yellow/green
+	* Leaders: Amoghavarsha, Krisha Deva Raya
+	* Unique Units: Karnatabala (Swordsman): starts with Formation, Guerilla I, can enter Rainforest and Jungle, Rocketeer (Grenadier): +2 strength, +25% against Musketeer, additional collateral damage
+	* Unique Buildings: Viragallu (Monument): +10% heal rate, units start with Combat I
+	* Unique Power: Rock-Cut Architecture: +1 production on Hills when constructing buildings
+	* Unique Historical Victory:
+		* Control a city in the Deccan, a city in Tamilakam, a city in Rajputana, and a city in Hindustan by 800 AD
+		* Control ten temples and a Jain Shikhara and settle four Great Artists, Scientists and Statesmen in your cities by 1100 AD
+		* Have a population of 28 in your capital and experience two golden ages by 1500 AD
+* Rajputs
+	* Birth: 475 AD
+	* Coat of Arms: Suryavanshi sun, red/yellow
+	* Leaders: Bhoja, Sanga
+	* Unique Units: Kathiawari (Horse Archer): starts with Shock and Disengage I, Purbiya (Arquebusier): starts with Leadership
+	* Unique Buildings: Stepwell (Bath): does not require Aqueduct, +1 food, +1 engineer slot
+	* Unique Power: Agnivanshi: +1 experience from combat outside borders
+	* Unique Historical Victory:
+		* Control five Castles, five Stepwells, four Forges and four Jewellers by 1000 AD
+		* Settle three Great Merchants in your cities by 1300 AD
+		* Allow no Islamic cities in Northwest India in 1100 AD, and allow no Islamic cities in India and create four Great Generals in 1500 AD
+* Bengal
+	* Birth: 554 AD
+	* Coat of Arms: Water Lily, drab blue/orange
+	* Leaders: Dharmapala, Alauddin
+	* Unique Units: Varu (War Elephant): starts with Shock, Paik (Longbowman): +2 first strikes, starts with Amphibious and River Combat
+	* Unique Building: Katra (Bank): requires Commune, +50% foreign trade route yield
+	* Unique Power: Muslin: Textile Industry is unlocked with Companies and extra production and commerce from Workshops
+	* Unique Historical Victory:
+		* Control six Buddhist Sangas and three wonders by 1000 AD
+		* Have three cities with Influential culture and have 30 Islamic cities in your trade network by 1500 AD
+		* Discover all Renaissance technologies and have 15000 by 1750 AD
+* Arabia
 	* Leaders: removed Saladin
-* Tibet:
+* Tibet
 	* Unique Historical Victory:
 		* First goal: Acquire seven cities by 1000 AD
 * England
@@ -21,7 +73,7 @@ CIVILIZATIONS
 		* Second goal: Control twelve cities in Asia and ten cities in Africa, settle six cities in Oceania and build a Railroad connection from North Africa to South Africa by 1880 AD
 * Misr
 	* Birth: 969 AD
-	* Coat of Arms: Triple Moons
+	* Coat of Arms: Triple Moons, gold/white
 	* Leaders: Saladin, Baibars, Muhammad Ali, Nasser
 	* Unique Unit: Mamluk (Lancer): starts with Skirmish and Formation
 	* Unique Building: Souk (Market): +50% foreign trade route yield
@@ -30,6 +82,17 @@ CIVILIZATIONS
 		* Control three shrines and settle two Great Prophets in Cairo by 1250 AD
 		* Have a population of 50 in cities along the Nile and generate 5000 commerce from city trade routes by 1500 AD
 		* Discover seven Industrial technologies and control three cities in North Africa, Sudan, Arabia, Syria, Anatolia and Greece in 1840 AD
+* Tatars
+	* Birth: 1259 AD
+	* Coat of Arms: Golden Horde banner, light brown/red
+	* Leader: Uzbeg
+	* Unique Unit: Chambul (Lancer): +30% open terrain strength, starts with March, Steppe Adaptation
+	* Unique Building: Basqaq (Post Office): +3 espionage, -25% maintenance
+	* Unique Power: Despoilment: pillaging improvements grants experience and capturing workers grants gold
+	* Unique Historical Victory:
+		* Control or vassalize Russia and acquire 400 gold by pillaging and capturing workers by 1500 AD
+		* Control Siberia and Central Asia and have 20 level four Mounted units by 1550 AD
+		* Acquire 500 gold from tribute and 2500 gold by pillaging and capturing workers by 1780 AD
 * Manchus
 	* Birth: 1586 AD
 	* Coat of Arms: Chinese Dragon, yellow/blue
@@ -41,8 +104,30 @@ CIVILIZATIONS
 		* Control or vassalize Mongolia, Dzungaria, Tibet, Burma, Vietnam and Korea by 1750 AD
 		* Have 25000 gold and 50000 culture and have 12% of the world population in China and Manchuria by 1850 AD
 		* Be the most advanced civilization in 1900 AD
+* Saudis
+	* Birth: 1744 AD
+	* Coat of Arms: palm tree, green/white
+	* Leader: Ibn Saud
+	* Unique Unit: Ikhwan (Dragoon): can enter Desert, +50% Semidesert and Desert strength, starts with Desert Adaptation
+	* Unique Building: Oil Depot (Industrial Park): requires Refining, +1 production and +3 commerce on improved Oil resources
+	* Unique Power: Salafiyyah: +1 food from priest and great prophet
+	* Unique Historical Victory:
+		* Allow only Arab civilizations in the Arab world in 1920 AD
+		* Create seven Great Prophets by 1930 AD
+		* Have twelve Oil resources between you and your allies, spread Oil Industry to four of your cities, and have 25000 gold by 1970 AD
+* Belgium
+	* Birth: 1830 AD
+	* Coat of Arms: Belgian lion, light red/yellow
+	* Leader: Leopold
+	* Unique Unit: Chasseur (Grenadier): +25% withdrawal chance
+	* Unique Building: Chocolaterie (Coffeehouse): +2 happiness from Cocoa, +25% culture
+	* Unique Power: International African Association: Guaranteed to be included in Congresses
+	* Unique Historical Victory:
+		* Create four Great Engineers by 1920 AD
+		* Control four Banana resources, three Gem resources and three Ivory resources by 1900 AD, control three Rubber resources by 1920 AD, and control a Uranium resource by 1950 AD
+		* Control 65% of Europe directly or through allies by 1960 AD
 * Australia
-	* Birth: 1851 AD
+	* Birth: 1850 AD
 	* Coat of Arms: Commonwealth Star, yellow/green
 	* Leader: Curtin
 	* Unique Units:
