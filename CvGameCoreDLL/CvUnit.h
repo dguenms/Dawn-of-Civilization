@@ -797,6 +797,10 @@ public:
 
 	bool verifyStackValid();
 
+	// Fresol: the sweep setXY used to run only on entering a tile, so that an attacker which cannot
+	// enter the tile it attacked across can still pick up what is left on it
+	void captureDefenselessUnits(CvPlot* pPlot);
+
 	// edead / Afforess (Leoreth)
 	bool canTradeUnit(PlayerTypes eReceivingPlayer);
 	void tradeUnit(PlayerTypes eReceivingPlayer);
