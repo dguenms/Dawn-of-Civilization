@@ -606,7 +606,8 @@ void CvSelectionGroup::autoMission()
 					}
 				}
 
-				if (bVisibleHuman && GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 1) > 0)
+				// Fresol: same radius as the turn start check in doTurn, which uses 2
+				if (bVisibleHuman && GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) > 0)
 				{
 					clearMissionQueue();
 				}
