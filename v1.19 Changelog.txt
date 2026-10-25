@@ -52,6 +52,9 @@ CIVILIZATIONS
 		* Control five Castles, five Stepwells, four Forges and four Jewellers by 1000 AD
 		* Settle three Great Merchants in your cities by 1300 AD
 		* Allow no Islamic cities in Northwest India in 1100 AD, and allow no Islamic cities in India and create four Great Generals in 1500 AD
+* Turks
+	* Unique Historical Victory:
+		* Second goal: Have a land based trade connection from a city in China to a Mediterranean port and spread Silk Route to twelve of your cities by 1100 AD
 * Bengal
 	* Birth: 554 AD
 	* Coat of Arms: Water Lily, drab blue/orange

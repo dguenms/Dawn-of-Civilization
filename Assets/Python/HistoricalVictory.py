@@ -546,7 +546,7 @@ dGoals = {
 		),
 		All(
 			RouteConnection(NamedList(iRouteRoad).named(LAND_BASED_TRADE), plots.regions(rNorthChina, rSouthChina).named(CITY_IN_CHINA), plots.regions(rEgypt, rLevant, rAnatolia).coastal().named(MEDITERRANEAN_PORT), start_owners=True),
-			CorporationCount(iSilkRoute, 14),
+			CorporationCount(iSilkRoute, 12),
 			by=1100,
 		),
 		DifferentCities(
