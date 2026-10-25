@@ -144,6 +144,7 @@ BUILDINGS
 * Granary: +1 health
 * Bath: +1 health
 * Sewer: +1 health
+* Park: +1 happiness, +1 health
 * Hospital: +1 health
 * Temple: +2 culture, +1 happiness, +1 happiness with state religion, +1 priest slot with state religion
 * Monastery: +3 culture, can train missionaries, +10% research with state religion, obsoletes with Psychology

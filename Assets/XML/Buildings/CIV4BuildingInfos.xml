@@ -5013,8 +5013,8 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iHappiness>2</iHappiness>
-			<iHealth>2</iHealth>
+			<iHappiness>3</iHappiness>
+			<iHealth>3</iHealth>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<ConstructSound>AS2D_BUILD_MARKETPLACE</ConstructSound>
