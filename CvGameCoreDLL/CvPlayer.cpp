@@ -15233,8 +15233,9 @@ void CvPlayer::clearSpaceShipPopups()
 void CvPlayer::updateHistory()
 {
 	int iTurn = GC.getGameINLINE().getGameTurn();
+	int iTotalCommerce = calculateTotalCommerce();
 
-	GC.getGameINLINE().setCivilizationHistory(HISTORY_ECONOMY, getCivilizationType(), iTurn, calculateTotalCommerce());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_ECONOMY, getCivilizationType(), iTurn, iTotalCommerce);
 	GC.getGameINLINE().setCivilizationHistory(HISTORY_INDUSTRY, getCivilizationType(), iTurn, calculateTotalYield(YIELD_PRODUCTION));
 	GC.getGameINLINE().setCivilizationHistory(HISTORY_AGRICULTURE, getCivilizationType(), iTurn, calculateTotalYield(YIELD_FOOD));
 	GC.getGameINLINE().setCivilizationHistory(HISTORY_POWER, getCivilizationType(), iTurn, getPower());
@@ -15243,6 +15244,8 @@ void CvPlayer::updateHistory()
 	GC.getGameINLINE().setCivilizationHistory(HISTORY_TECHNOLOGY, getCivilizationType(), iTurn, GET_TEAM(getTeam()).getTotalTechValue());
 	GC.getGameINLINE().setCivilizationHistory(HISTORY_POPULATION, getCivilizationType(), iTurn, getTotalPopulation());
 	GC.getGameINLINE().setCivilizationHistory(HISTORY_LAND, getCivilizationType(), iTurn, getTotalLand());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_SURPLUS, getCivilizationType(), iTurn, iTotalCommerce - calculateInflatedCosts());
+	GC.getGameINLINE().setCivilizationHistory(HISTORY_EXPANSION, getCivilizationType(), iTurn, getStabilityParameter(PARAMETER_ADMINISTRATION) - getStabilityParameter(PARAMETER_SEPARATISM));
 }
 
 std::string CvPlayer::getScriptData() const
@@ -25899,6 +25902,16 @@ int CvPlayer::getPopulationHistory(int iTurn) const
 int CvPlayer::getLandHistory(int iTurn) const
 {
 	return getHistory(HISTORY_LAND, iTurn);
+}
+
+int CvPlayer::getSurplusHistory(int iTurn) const
+{
+	return getHistory(HISTORY_SURPLUS, iTurn);
+}
+
+int CvPlayer::getExpansionHistory(int iTurn) const
+{
+	return getHistory(HISTORY_EXPANSION, iTurn);
 }
 
 bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const

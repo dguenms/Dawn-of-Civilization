@@ -99,7 +99,7 @@ class CvInfoScreen:
 		self.iGraph_Smoothing_7in1 = -1
 		self.iGraph_Smoothing_3in1 = -1
 
-		self.NUM_SCORES		= 10
+		self.NUM_SCORES		= 12
 		self.RANGE_SCORES	= range(self.NUM_SCORES)
 		
 		(
@@ -112,7 +112,9 @@ class CvInfoScreen:
 			self.ESPIONAGE_SCORE, 
 			self.TECH_SCORE,
 			self.POPULATION_SCORE,
-			self.LAND_SCORE
+			self.LAND_SCORE,
+			self.SURPLUS_SCORE,
+			self.EXPANSION_SCORE,
 		) = self.RANGE_SCORES
 
 		self.scoreCache	= []
@@ -431,6 +433,8 @@ class CvInfoScreen:
 		self.TEXT_MILITARY = localText.getText("TXT_KEY_DEMO_SCREEN_MILITARY_TEXT", ())
 		self.TEXT_LAND_AREA = localText.getText("TXT_KEY_DEMO_SCREEN_LAND_AREA_TEXT", ())
 		self.TEXT_POPULATION = localText.getText("TXT_KEY_DEMO_SCREEN_POPULATION_TEXT", ())
+		self.TEXT_SURPLUS = localText.getText("TXT_KEY_DEMO_SCREEN_SURPLUS_TEXT", ())
+		self.TEXT_EXPANSION = localText.getText("TXT_KEY_DEMO_SCREEN_EXPANSION_TEXT", ())
 		self.TEXT_HAPPINESS = localText.getText("TXT_KEY_DEMO_SCREEN_HAPPINESS_TEXT", ())
 		self.TEXT_HEALTH = localText.getText("TXT_KEY_DEMO_SCREEN_HEALTH_TEXT", ())
 		self.TEXT_IMP_EXP = localText.getText("TXT_KEY_DEMO_SCREEN_EXPORTS_TEXT", ()) + " - " + localText.getText("TXT_KEY_DEMO_SCREEN_IMPORTS_TEXT", ())
@@ -477,6 +481,8 @@ class CvInfoScreen:
 		sTemp1[7] = localText.getText("TXT_KEY_CONCEPT_TECHNOLOGY", ())
 		sTemp1[8] = localText.getText("TXT_KEY_DEMO_SCREEN_POPULATION_TEXT", ())
 		sTemp1[9] = localText.getText("TXT_KEY_DEMO_SCREEN_LAND_AREA_TEXT", ())
+		sTemp1[10] = localText.getText("TXT_KEY_DEMO_SCREEN_SURPLUS_TEXT", ())
+		sTemp1[11] = localText.getText("TXT_KEY_DEMO_SCREEN_EXPANSION_TEXT", ())
 
 		for i in range(self.NUM_SCORES):
 			sTemp2[i] = BugUtil.colorText(sTemp1[i], "COLOR_YELLOW")
@@ -767,6 +773,8 @@ class CvInfoScreen:
 		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_TECH, 7, 7, False)
 		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_POPULATION, 8, 8, False)
 		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_LAND_AREA, 9, 9, False)
+		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_SURPLUS, 10, 10, False)
+		screen.addPullDownString(self.szGraphDropdownWidget, self.TEXT_EXPANSION, 11, 11, False)
 
 #BUG: Change Graphs - start
 		if AdvisorOpt.isGraphs():
@@ -923,6 +931,10 @@ class CvInfoScreen:
 			return gc.getPlayer(iPlayer).getPopulationHistory(iTurn)
 		elif (scoreType == self.LAND_SCORE):
 			return gc.getPlayer(iPlayer).getLandHistory(iTurn)
+		elif (scoreType == self.SURPLUS_SCORE):
+			return gc.getPlayer(iPlayer).getSurplusHistory(iTurn)
+		elif (scoreType == self.EXPANSION_SCORE):
+			return gc.getPlayer(iPlayer).getExpansionHistory(iTurn)
 
 	# Requires the cache to be built
 	def getHistory(self, scoreType, iPlayer, iRelTurn):
@@ -3092,6 +3104,12 @@ class CvInfoScreen:
 					
 					elif (iSelected == 9):
 						self.iGraphTabID = self.LAND_SCORE
+					
+					elif (iSelected == 10):
+						self.iGraphTabID = self.SURPLUS_SCORE
+					
+					elif (iSelected == 11):
+						self.iGraphTabID = self.EXPANSION_SCORE
 
 					self.drawGraphs()
 

@@ -4001,6 +4001,22 @@
 		<Spanish>[ICON_BULLET][LINK=literal]%s1[\LINK] Produced with [ICON_FOOD]</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_DEMO_SCREEN_SURPLUS_TEXT</Tag>
+		<English>Surplus</English>
+		<French>Surplus</French>
+		<German>Surplus</German>
+		<Italian>Surplus</Italian>
+		<Spanish>Surplus</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DEMO_SCREEN_EXPANSION_TEXT</Tag>
+		<English>Expansion</English>
+		<French>Expansion</French>
+		<German>Expansion</German>
+		<Italian>Expansion</Italian>
+		<Spanish>Expansion</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

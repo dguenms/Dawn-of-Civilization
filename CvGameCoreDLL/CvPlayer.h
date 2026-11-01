@@ -1363,6 +1363,8 @@ public:
 	int getTechnologyHistory(int iTurn) const;
 	int getPopulationHistory(int iTurn) const;
 	int getLandHistory(int iTurn) const;
+	int getSurplusHistory(int iTurn) const;
+	int getExpansionHistory(int iTurn) const;
 
 	CvCity* findBuildingCity(BuildingTypes eBuilding, bool bEffect = true) const;
 
