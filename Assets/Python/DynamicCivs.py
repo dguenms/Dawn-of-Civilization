@@ -2567,7 +2567,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 					if civic.iSociety == iEgalitarianism:
 						return "TXT_KEY_EMPIRE_OF"
 					
-					return "TXT_KEY_EMPIRE_ADJECTIVE"
+				return "TXT_KEY_EMPIRE_ADJECTIVE"
 					
 			return "TXT_KEY_EMPIRE_NAME"
 			
