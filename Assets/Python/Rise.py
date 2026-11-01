@@ -276,11 +276,8 @@ def createExpansionArmies(bWar, iAttacker, iDefender):
 	bLessPowerful = player(iAttacker).getPower() < player(iDefender).getPower()
 	
 	if expansionCities and attackerCities:
-		target, attacker_closest = expansionCities.closest_pair(attackerCities)
-		defender_closest = defenderCities.closest(attacker_closest)
-		
 		iDistance = player(iDefender).isHuman() and 3 or 2
-		spawn = possibleSpawnsBetween(attacker_closest, defender_closest, iDistance).closest(defender_closest)
+		target, spawn = getClosestTargetCitySpawn(iAttacker, expansionCities, iDistance)
 		
 		iExtraAI = 0
 		iExtraTargets = 0
@@ -290,7 +287,7 @@ def createExpansionArmies(bWar, iAttacker, iDefender):
 			if not player(iAttacker).isHuman():
 				iExtraAI = 1
 		
-		createExpansionUnits(iAttacker, iDefender, spawn, defender_closest, iExtraAI, iExtraTargets)
+		createExpansionUnits(iAttacker, iDefender, spawn, target, iExtraAI, iExtraTargets)
 
 
 def createExpansionUnits(iAttacker, iDefender, tile, closest, iExtraAI, iExtraTargets):
@@ -310,12 +307,7 @@ def deleteExpansionUnits(iPlayer):
 	if players.minor().cities().any(lambda city: plot_(city).getExpansion() == iPlayer):
 		return
 	
-	for tile, tileUnits in units.owner(iPlayer).where(lambda u: u.isHasPromotion(iVolunteer)).grouped(location):
-		for unit in tileUnits:
-			unit.kill(False, -1)
-			
-		if city(tile):
-			ensureDefenders(iPlayer, tile, 2)
+	deleteVolunteers(iPlayer)
 
 
 @handler("changeWar")

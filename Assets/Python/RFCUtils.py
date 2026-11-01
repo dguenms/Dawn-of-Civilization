@@ -1244,6 +1244,31 @@ def getColumn(iPlayer):
 	return max(lTechs)
 
 
+# used: History, Rise
+def getClosestTargetCitySpawn(iPlayer, targets, iDistance=2):
+	attacker_cities = cities.owner(iPlayer)
+	target, attacker_closest = targets.closest_pair(attacker_cities)
+	
+	if not target:
+		return None, None
+	
+	defender_cities = cities.owner(target.getOwner())
+	defender_closest = defender_cities.closest(attacker_closest)
+	
+	spawn = possibleSpawnsBetween(attacker_closest, defender_closest, 2).closest(defender_closest)
+	return target, spawn
+	
+
+# used: History, Rise
+def deleteVolunteers(iPlayer):
+	for tile, tileUnits in units.owner(iPlayer).where(lambda u: u.isHasPromotion(iVolunteer)).grouped(location):
+		for unit in tileUnits:
+			unit.kill(False, -1)
+			
+		if city(tile):
+			ensureDefenders(iPlayer, tile, 2)
+
+
 def placeArtStyleUnits(iCiv):
 	lUnits = [
 		iAntiTank, iArcher, iArquebusier, iArtillery, iAxeman, iBombard, iCannon, iCaravel, iCatapult, iCavalry, 
