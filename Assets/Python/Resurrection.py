@@ -328,9 +328,9 @@ def getResurrectionTechs(iPlayer):
 					lSourcePlayers.append(iPeer)
 			
 	# direct neighbors (India can benefit from England etc)
-	for iPeer in players.major().existing().without(iPlayer).without(lSourcePlayers):
-		if game.isNeighbors(iPlayer, iPeer):
-			lSourcePlayers.append(iPeer)
+	#for iPeer in players.major().existing().without(iPlayer).without(lSourcePlayers):
+	#	if game.isNeighbors(iPlayer, iPeer):
+	#		lSourcePlayers.append(iPeer)
 				
 	# use independents as source civs in case no other can be found
 	if not lSourcePlayers:
