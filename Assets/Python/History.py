@@ -213,6 +213,54 @@ def checkLateColonists():
 
 
 @handler("BeginGameTurn")
+def checkLateColonialConquerors():
+	if game.countKnownTechNumTeams(iNationalism) == 0:
+		return
+	
+	if game.getBuildingClassCreatedCount(infos.building(iUnitedNations).getBuildingClassType()) > 0:
+		return
+	
+	for iCiv in civs.of(*lLateColonyCivs).periodic_iter(8):
+		iPlayer = slot(iCiv)
+		if iPlayer < 0: continue
+		
+		if player(iPlayer).isHuman(): continue
+		if not player(iPlayer).isExisting(): continue
+			
+		enemies = players.major().alive().without(iPlayer).at_war(iPlayer)
+		
+		def isValidTarget(city):
+			if city.getRegionID() not in lLateColonialRegions: return False
+			if plot(city).getWarValue(iCiv) <= 1: return False
+			if city.area().getCitiesPerPlayer(iPlayer) == 0: return False
+			if enemies.any(lambda p: city.area().getCitiesPerPlayer(p) > 0): return False
+			
+			return True
+		
+		targets = players.minor().cities().where(isValidTarget)
+		if not targets:
+			targetPlayers = players.major().existing().without(dCivGroups[iCivGroupEurope]).without(dCivGroups[iCivGroupAmerica]).without(enemies).where(lambda p: team(iPlayer).canDeclareWar(player(p).getTeam())).where(lambda p: player(iPlayer).AI_getAttitude(p) < AttitudeTypes.ATTITUDE_PLEASED)
+			targets = targetPlayers.cities().where(isValidTarget)
+		
+		if not targets:
+			deleteVolunteers(iPlayer)
+			continue
+		
+		target, spawn = getClosestTargetCitySpawn(iPlayer, targets)
+		if not spawn: continue
+		
+		if not team(iPlayer).isAtWar(target.getTeam()):
+			team(iPlayer).declareWar(target.getTeam(), False, WarPlanTypes.WARPLAN_LIMITED)
+		
+		iExtra = is_minor(target) and 3 or 0
+		dUnits = {
+			iCityAttack: 4 + iExtra,
+			iCitySiege: 2 + iExtra,
+		}
+		createRoleUnits(iPlayer, spawn, dUnits.items()).promotion(iVolunteer)
+
+
+@handler("BeginGameTurn")
 def checkRaiders():
 	if year().between(860, 1250):
 		if turn() % turns(10) == 9:
