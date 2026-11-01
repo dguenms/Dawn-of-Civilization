@@ -2947,7 +2947,7 @@ int CvTeam::calculateTechDifferenceModifier() const
 		iModifier += (iRelativeTechValue - 80) / 5;
 		iModifier *= 5;
 
-		iModifier = std::max(iModifier, -lTechBackwardsBonus[GET_PLAYER(getLeaderID()).getCurrentEra()]);
+		iModifier = std::max(iModifier, -GC.getEraInfo(GET_PLAYER(getLeaderID()).getCurrentEra()).getTechBackwardsCostModifier());
 	}
 
 	return iModifier;
@@ -2957,12 +2957,12 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 {
 	int iModifier = 0;
 
-	int iCurrentEra = GET_PLAYER(getLeaderID()).getCurrentEra();
-	int iStartingEra = GET_PLAYER(getLeaderID()).getStartingEra();
+	EraTypes eCurrentEra = GET_PLAYER(getLeaderID()).getCurrentEra();
+	EraTypes eStartingEra = GET_PLAYER(getLeaderID()).getStartingEra();
 
 	// effect does not apply during the era you started in
-	int iLeaderPenalty = (iCurrentEra > iStartingEra) ? lTechLeaderPenalty[iCurrentEra] : 0;
-	int iBackwardsBonus = (iCurrentEra > iStartingEra) ? lTechBackwardsBonus[iCurrentEra] : 0;
+	int iLeaderModifier = (eCurrentEra > eStartingEra) ? GC.getEraInfo(eCurrentEra).getTechLeaderCostModifier() : 0;
+	int iBackwardsModifier = (eCurrentEra > eStartingEra) ? GC.getEraInfo(eCurrentEra).getTechBackwardsCostModifier() : 0;
 
 	// Leoreth: slow down beelining, help catch up
 	int iCivsAlive = GC.getGameINLINE().countMajorPlayersAlive();
@@ -2988,7 +2988,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// 0% for the fourth civ (iCivsWithTech == 3)
 	// limited to human players now
 	int iLowerThreshold = iCivsAlive / 4;
-	if (GET_PLAYER(getLeaderID()).isHuman() && iCivsWithTech < iLowerThreshold) iSpreadModifier += iLeaderPenalty * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
+	if (GET_PLAYER(getLeaderID()).isHuman() && iCivsWithTech < iLowerThreshold) iSpreadModifier += iLeaderModifier * (iLowerThreshold - iCivsWithTech) / iLowerThreshold;
 
 	// more than three quarters know it -> less expensive
 	// assume there are 12 civs, then its a decrease for the 10th to 12th civ to discover something
@@ -2996,7 +2996,7 @@ int CvTeam::getSpreadResearchModifier(TechTypes eTech) const
 	// so 25% for the 12th civ (iCivsWithTech == 11)
 	// 0% for the 9th civ (iCivsWithTech == 8)
 	int iUpperThreshold = 3 * iLowerThreshold;
-	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsBonus * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
+	if (iCivsWithTech > iUpperThreshold) iSpreadModifier -= iBackwardsModifier * (iCivsWithTech - (iUpperThreshold-1)) / (iCivsAlive - iUpperThreshold);
 
 	iModifier += iSpreadModifier;
 

@@ -142,9 +142,6 @@ enum OverseasGroup
 
 #endif	// CVRHYES_H
 
-static const int lTechLeaderPenalty[NUM_ERAS] = {0, 0, 20, 25, 25, 25, 25};
-static const int lTechBackwardsBonus[NUM_ERAS] = {0, 20, 30, 40, 50, 50, 50};
-
 // Leoreth: persecution priority
 static const int persecutionValue[NUM_RELIGIONS][NUM_RELIGIONS] =
 {
