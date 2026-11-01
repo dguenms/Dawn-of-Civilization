@@ -561,7 +561,7 @@ def isUnitOfRole(iUnit, iRole):
 	elif iRole == iExplore:
 		return unit.isNoBadGoodies()
 	elif iRole in [iSiege, iCitySiege]:
-		return iCombatType == UnitCombatTypes.UNITCOMBAT_SIEGE
+		return iCombatType == UnitCombatTypes.UNITCOMBAT_SIEGE and not unit.isOnlyDefensive()
 	elif iRole == iSkirmish:
 		return iCombatType in [UnitCombatTypes.UNITCOMBAT_ARCHER, UnitCombatTypes.UNITCOMBAT_GUN] and unit.getCollateralDamage() > 0
 	elif iRole == iLightEscort:
