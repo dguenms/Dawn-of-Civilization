@@ -11118,6 +11118,13 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 			iValue /= 2;
 		}
 	}
+	else if (eCivic == CIVIC_MANORIALISM)
+	{
+		if (getCivilizationType() == AMERICA)
+		{
+			iValue /= 2;
+		}
+	}
 
 	return iValue;
 }
