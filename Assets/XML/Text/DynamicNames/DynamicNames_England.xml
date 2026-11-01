@@ -298,6 +298,14 @@
 		<Spanish>%s2 Mandate of Lebanon</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_CELTS</Tag>
+		<English>Lordship of Ireland</English>
+		<French>Lordship of Ireland</French>
+		<German>Lordship of Ireland</German>
+		<Italian>Lordship of Ireland</Italian>
+		<Spanish>Lordship of Ireland</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_CIV_ENGLISH_SWAHILI</Tag>
 		<English>%s2 East Africa</English>
 		<French>
