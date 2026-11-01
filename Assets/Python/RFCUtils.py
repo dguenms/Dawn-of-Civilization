@@ -314,10 +314,12 @@ def colonialConquest(iPlayer, tPlot):
 	if not targetPlot:
 		return
 	
-	if iCiv in [iSpain, iPortugal, iNetherlands]:
+	if iCiv in [iSpain, iPortugal]:
 		iNumUnits = 2
-	elif iCiv in [iFrance, iEngland]:
+	elif iCiv in [iFrance, iEngland, iNetherlands]:
 		iNumUnits = 3
+		if not player(iPlayer).isHuman():
+			iNumUnits += 1
 		
 	iExperience = not player(iPlayer).isHuman() and 2 or 0
 	
