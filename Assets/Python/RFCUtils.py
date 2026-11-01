@@ -370,9 +370,9 @@ def getColonialTargets(iPlayer, bEmpty=False):
 	iCiv = civ(iPlayer)
 	
 	dNumCities = {
-		iFrance: 2,
+		iFrance: 3,
 		iSpain: 1,
-		iEngland: 4,
+		iEngland: 7,
 		iPortugal: 5,
 		iNetherlands: 4,
 	}
