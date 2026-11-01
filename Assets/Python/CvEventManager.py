@@ -540,7 +540,7 @@ class CvEventManager(object):
 		'City Population Growth'
 		pCity = argsList[0]
 		iPlayer = argsList[1]
-		CvUtil.pyPrint("%s has grown" %(pCity.getName(),))
+		#CvUtil.pyPrint("%s has grown" %(pCity.getName(),))
 	
 	def onCityDoTurn(self, argsList):
 		'City Production'
