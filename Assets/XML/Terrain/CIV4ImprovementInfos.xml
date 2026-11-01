@@ -987,7 +987,7 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
-			<bGraphicalOnly>0</bGraphicalOnly>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_WORKSHOP</Type>
@@ -1672,7 +1672,7 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
-			<bGraphicalOnly>0</bGraphicalOnly>
+			<bGraphicalOnly>1</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_QUARRY</Type>
