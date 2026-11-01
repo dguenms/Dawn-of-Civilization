@@ -507,7 +507,7 @@ def getSeparatismModifier(iPlayer, city):
 	if city.isColony():		
 		if iCurrentEra <= iIndustrial and civic.iTerritory == iColonialism and bHistorical: iModifier -= 1
 		
-		if iCurrentEra >= iIndustrial: iModifier += 1
+		#if iCurrentEra >= iIndustrial: iModifier += 1
 		if iCurrentEra >= iGlobal: iModifier += 1
 	
 	# cap
