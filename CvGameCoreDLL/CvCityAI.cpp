@@ -8885,8 +8885,8 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 
 					if (!isHuman())
 					{
-						iValue *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getImprovementWeightModifier(eFinalImprovement) + 200));
-						iValue /= 200;
+						iValue *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getImprovementWeightModifier(eFinalImprovement) + 100));
+						iValue /= 100;
 					}
 
 					if (pPlot->getImprovementType() == NO_IMPROVEMENT)
@@ -8916,7 +8916,7 @@ void CvCityAI::AI_bestPlotBuild(CvPlot* pPlot, int* piBestValue, BuildTypes* peB
 						// cottage/villages (don't want to chop them up if turns have been invested)
 						ImprovementTypes eImprovementDowngrade = (ImprovementTypes)GC.getImprovementInfo(pPlot->getImprovementType()).getImprovementPillage();
 						//int iUpgradeValue = 8;
-						int iUpgradeValue = 16;
+						int iUpgradeValue = 24;
 
 						while (eImprovementDowngrade != NO_IMPROVEMENT)
 						{
