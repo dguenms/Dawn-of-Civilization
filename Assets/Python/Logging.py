@@ -4,7 +4,9 @@ from RFCUtils import *
 from Events import handler
 
 from datetime import timedelta
+
 import time
+import sys
 
 
 RISE_LOG = "Rise.log"
@@ -13,6 +15,8 @@ RELATIONS_LOG = "Relations.log"
 CIVICS_LOG = "Civics.log"
 GW_LOG = "GlobalWarming.log"
 PLAGUE_LOG = "Plague.log"
+CONGRESS_LOG = "Congress.log"
+STABILITY_LOG = "Stability.log"
 
 TIMER = None
 TECHS = None
@@ -258,8 +262,23 @@ def onRevolution(iPlayer):
 		civics("")
 
 
+LOG_ENCODING = 'latin-1'
+
+def _u(value):
+    if isinstance(value, str):
+        return value.decode(LOG_ENCODING)
+    return value
+
 def log(file, message, *format):
-	fileLog(file, str(message % format))
+    text = _u(message) % tuple([_u(a) for a in format])
+    fileLog(file, text.encode(LOG_ENCODING, 'replace'))
+
+
+def module(message, *format):
+	caller_frame = sys._getframe(1)
+	caller_globals = caller_frame.f_globals
+	module = caller_globals.get('__name__')
+	log(module + ".log", message, *format)
 
 
 def rise(message, *format):
@@ -284,3 +303,11 @@ def global_warming(message, *format):
 
 def plague(message, *format):
 	log(PLAGUE_LOG, message, *format)
+
+
+def congress(message, *format):
+	log(CONGRESS_LOG, message, *format)
+
+
+def stability(message, *format):
+	log(STABILITY_LOG, message, *format)
