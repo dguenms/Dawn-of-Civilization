@@ -23,7 +23,7 @@ def checkTurn(iPlayer, iGameTurn):
 @handler("techAcquired")
 def onTechAcquired(iTech):
 	if iTech == iNationalism and game.countKnownTechNumTeams(iNationalism) == 1:
-		scheduleCongress()
+		scheduleInitialCongress()
 
 
 @handler("buildingBuilt")
@@ -57,7 +57,10 @@ def getCongressInterval():
 	if game.getBuildingClassCreatedCount(infos.building(iPalaceOfNations).getBuildingClassType()) > 0:
 		return turns(4)
 		
-	return turns(15)
+	return turns(10)
+
+def scheduleInitialCongress():
+	data.iCongressTurn = turn() + turns(rand(5))
 	
 def scheduleCongress():
 	if data.iCongressTurn <= turn():
@@ -72,7 +75,7 @@ def isCongressEnabled():
 	if game.getBuildingClassCreatedCount(infos.building(iUnitedNations).getBuildingClassType()) > 0:
 		return False
 		
-	return (game.countKnownTechNumTeams(iNationalism) > 0)
+	return game.countKnownTechNumTeams(iNationalism) > 0
 	
 def startsGlobalWar(attackers, defenders):
 	if attackers < 2: return False
