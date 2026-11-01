@@ -10726,7 +10726,7 @@ int CvPlayerAI::AI_civicValue(CivicTypes eCivic) const
 
 		for (iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
 		{
-			iTempValue += ((GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_FOOD) > 0 ? 2 : 1) * AI_averageYieldMultiplier((YieldTypes)iI) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) /*+ getNumCities() * 2*/))) / 100;
+			iTempValue += ((GC.getImprovementInfo((ImprovementTypes)iJ).getYieldChange(YIELD_FOOD) > 0 ? 2 : 1) * AI_averageYieldMultiplier((YieldTypes)iI) * (100 + GC.getLeaderHeadInfo(getPersonalityType()).getImprovementWeightModifier((ImprovementTypes)iJ)) * (kCivic.getImprovementYieldChanges(iJ, iI) * (getImprovementCount((ImprovementTypes)iJ) /*+ getNumCities() * 2*/))) / 10000;
 		}
 
 		// Leoreth: specialist specific yield changes
