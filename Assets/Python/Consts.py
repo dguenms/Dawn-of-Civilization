@@ -1360,7 +1360,7 @@ iNumReligionMapTypes = 5
 (iNone, iMinority, iPeriphery, iHistorical, iCore) = range(iNumReligionMapTypes)
 
 lTradingCompanyCivs = [iSpain, iFrance, iEngland, iPortugal, iNetherlands]
-lLateColonyCivs = lTradingCompanyCivs + [iGermany]
+lLateColonyCivs = lTradingCompanyCivs + [iGermany, iBelgium]
 
 lMongolCivs = [iPersia, iByzantium, iTurks, iArabia, iRus]
 
