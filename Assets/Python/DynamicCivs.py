@@ -150,6 +150,7 @@ dSpecificVassalTitles = deepdict({
 		iBabylonia : "TXT_KEY_CIV_ENGLISH_BABYLONIA",
 		iPersia : "TXT_KEY_MANDATE_OF",
 		iPhoenicia : "TXT_KEY_CIV_ENGLISH_PHOENICIA",
+		iCelts : "TXT_KEY_CIV_ENGLISH_CELTS",
 		iMaya : "TXT_KEY_CIV_ENGLISH_MAYA",
 		iByzantium : "TXT_KEY_CIV_ENGLISH_BYZANTIUM",
 		iNorse : "TXT_KEY_CIV_ENGLISH_NORSE",
