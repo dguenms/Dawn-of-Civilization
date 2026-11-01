@@ -425,6 +425,16 @@ def calculateAdministration(city):
 	
 	if civ(iPlayer) == iOttomans and player(iPlayer).getCurrentEra() in [iMedieval, iRenaissance]:
 		iAdministrationModifier += 100
+	
+	#if civ(iPlayer) in [iFrance, iEngland]:
+	#	if player(iPlayer).getCurrentEra() == iIndustrial:
+	#		iAdministrationModifier += 100
+	#	elif player(iPlayer).getCurrentEra() == iGlobal:
+	#		iAdministrationModifier += 50
+	
+	if civ(iPlayer) in [iPortugal, iNetherlands]:
+		if player(iPlayer).getCurrentEra() == iIndustrial:
+			iAdministrationModifier += 50
 
 	iAdministration = iAdministrationModifier * iPopulation / 100
 	
