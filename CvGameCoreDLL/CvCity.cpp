@@ -7453,7 +7453,7 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 		return 0;
 	}
 
-	int iNumCitiesPercent = 50;
+	int iNumCitiesPercent = 100;
 
 	iNumCitiesPercent *= (getPopulation() + 9);
 	iNumCitiesPercent /= 10;
@@ -7471,7 +7471,9 @@ int CvCity::calculateColonyMaintenanceTimes100() const
 
 	iNumCities *= iNumCitiesPercent;
 
-	int iMaintenance = (iNumCities * iNumCities) / 100;
+	// approximate n log n, then dividing by 100
+	int iMaintenance = (87 * iNumCities * iNumCities + 2867 * iNumCities - 4096 + 51200) / 102400;
+	//int iMaintenance = (iNumCities * iNumCities) / 100;
 
 	iMaintenance = std::min(iMaintenance, (GC.getHandicapInfo(getHandicapType()).getMaxColonyMaintenance() * calculateDistanceMaintenanceTimes100()) / 100);
 
