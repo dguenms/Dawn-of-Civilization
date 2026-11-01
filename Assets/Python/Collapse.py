@@ -131,6 +131,7 @@ def getPartialCollapseCities(iPlayer):
 def collapseToCore(iPlayer):
 	retainedCities = getPartialCollapseCities(iPlayer)
 	secededCities = cities.owner(iPlayer).without(retainedCities)
+	colonialCities = secededCities.where(CyCity.isColony)
 	ahistoricalCities = secededCities.where(lambda city: plot_(city).getPlayerSettlerValue(iPlayer) == 0)
 	
 	# release all vassals
@@ -138,7 +139,7 @@ def collapseToCore(iPlayer):
 		team(iVassal).setVassal(player(iPlayer).getTeam(), False, False)
 				
 	# more than half ahistorical, only secede ahistorical cities
-	if 2 * ahistoricalCities.count() > secededCities.count():
+	if 2 * ahistoricalCities.count() + colonialCities.count() > secededCities.count() and 3 * ahistoricalCities.count() > secededCities.count():
 	
 		# notify owner
 		message(iPlayer, 'TXT_KEY_STABILITY_FOREIGN_SECESSION', color=iRed)
