@@ -29,6 +29,8 @@ dCivilizationAdministrationModifier = CivDict({
 	iNubia: -100,
 	iChina: -50,
 	iRome: 50,
+	iFrance: 50,
+	iJava: -50,
 	iMisr: -50,
 	iOttomans: -50,
 	iTatars: -50,
