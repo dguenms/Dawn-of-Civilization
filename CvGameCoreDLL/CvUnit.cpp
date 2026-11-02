@@ -14919,7 +14919,7 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 
 			if (pCity != NULL)
 			{
-				pCity->setHasReligion(eReligion, false, true);
+				pCity->removeReligion(eReligion);
 			}
 
 			pCity->changeCultureUpdateTimer(1);
