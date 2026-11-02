@@ -5039,8 +5039,8 @@
 			<iMinAreaSize>-1</iMinAreaSize>
 			<iConquestProb>70</iConquestProb>
 			<iMaxLatitude>90</iMaxLatitude>
-			<iHappiness>4</iHappiness>
-			<iHealth>2</iHealth>
+			<iHappiness>5</iHappiness>
+			<iHealth>3</iHealth>
 			<iAsset>4</iAsset>
 			<fVisibilityPriority>1.0</fVisibilityPriority>
 			<YieldChanges>
