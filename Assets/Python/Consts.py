@@ -1291,11 +1291,6 @@ iLagoon, iArcticCoast, iSemidesert, iSteppe, iMoorland, iSaltFlat, iSaltLake, iA
 #Plague
 iImmunity = 20
 
-# Victory
-iVictoryPaganism = 10
-iVictorySecularism = 11
-
-
 #leaders
 iNumLeaders = 160
 (iLeaderBarbarian, iNativeLeader, iIndependentLeader, iDjoser, iHatshepsut, iRamesses, iPtolemy, iSargon, iHammurabi, iWentAntu, 
