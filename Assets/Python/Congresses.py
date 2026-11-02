@@ -221,7 +221,7 @@ class Congress:
 		return player(iPlayer).isHuman() and game.getAIAutoPlay() == 0
 	
 	def active(self):
-		if game.getAIAutoPlay() > 0:
+		if game.getAIAutoPlay() == 0:
 			return active()
 		
 		return -1
