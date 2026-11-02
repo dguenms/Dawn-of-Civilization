@@ -559,7 +559,7 @@ class LiberatedCities(TrackRequirement):
 		if civ(city) not in self.civs:
 			return
 		
-		if is_minor(iPreviousCiv) or iPreviousCiv in self.civs:
+		if iPreviousCiv in lMinors or iPreviousCiv in self.civs:
 			return
 		
 		self.increment()
