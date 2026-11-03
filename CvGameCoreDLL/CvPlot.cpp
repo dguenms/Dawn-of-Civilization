@@ -12272,6 +12272,7 @@ int CvPlot::getRegionGroupForRegion(int iRegion)
 	case REGION_SOUTH_CHINA:
 	case REGION_NORTH_CHINA:
 	case REGION_TARIM_BASIN:
+	case REGION_TIBET:
 	case REGION_MANCHURIA:
 	case REGION_KOREA:
 	case REGION_JAPAN:
