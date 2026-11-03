@@ -5880,7 +5880,7 @@
 			<BonusHappinessChanges>
 				<BonusHappinessChange>
 					<BonusType>BONUS_HIT_SINGLES</BonusType>
-					<iHappinessChange>1</iHappinessChange>
+					<iHappinessChange>2</iHappinessChange>
 				</BonusHappinessChange>
 			</BonusHappinessChanges>
 			<Flavors>
