@@ -49787,7 +49787,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=49
-	BonusType=BONUS_GOLD
+	BonusType=BONUS_SILVER
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
