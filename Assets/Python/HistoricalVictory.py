@@ -857,7 +857,7 @@ dGoals = {
 		),
 		All(
 			GoldAmount(25000),
-			CultureAmount(50000),
+			CultureAmount(40000),
 			AreaPopulationPercent(plots.regions(rSouthChina, rNorthChina, rManchuria).named(CHINA_AND_MANCHURIA), 12),
 			by=1850,
 		),
