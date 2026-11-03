@@ -1348,7 +1348,7 @@
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
-			<iAffectedCities>3</iAffectedCities>
+			<iAffectedCities>4</iAffectedCities>
 			<iPlacementOrder>5</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
@@ -1393,7 +1393,7 @@
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
-			<iAffectedCities>3</iAffectedCities>
+			<iAffectedCities>4</iAffectedCities>
 			<iPlacementOrder>5</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
@@ -1930,7 +1930,7 @@
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
 			<iHappiness>1</iHappiness>
-			<iAffectedCities>3</iAffectedCities>
+			<iAffectedCities>4</iAffectedCities>
 			<iPlacementOrder>5</iPlacementOrder>
 			<iConstAppearance>50</iConstAppearance>
 			<iMinAreaSize>3</iMinAreaSize>
