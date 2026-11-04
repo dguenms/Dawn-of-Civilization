@@ -6,16 +6,24 @@ from Events import handler
 
 @handler("BeginGameTurn")
 def decayCommunications(iGameTurn):
-	if iGameTurn < year(-600):
-		iPeriod = 30
-	elif iGameTurn < year(600):
-		iPeriod = 18
-	else:
-		iPeriod = 12
-		
+	iPeriod = getDecayPeriod()
 	for iPlayer in players.major().existing().periodic_iter(iPeriod):
 		if canDecay(iPlayer):
 			decay(iPlayer)
+
+
+def getDecayPeriod():
+	if isAfter(1800):
+		return 25
+	
+	if isAfter(1500):
+		return 20
+	
+	if isBefore(-600):
+		return 30
+	
+	return 15
+	
 
 
 def canDecay(iPlayer):
@@ -37,6 +45,9 @@ def canDecay(iPlayer):
 	
 def decay(iPlayer):
 	contacts = players.major().existing().where(lambda p: canDecay(p) and team(iPlayer).canContact(p) and team(iPlayer).canCutContact(p))
+	
+	if contacts.count() <= 6:
+		return
 	
 	# master/vassal relationships: keep only masters where contact can be cut with all vassals
 	dVassals = vassals()
