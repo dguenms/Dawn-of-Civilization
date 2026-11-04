@@ -3115,9 +3115,6 @@
 					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
-			<OrPreReqs>
-				<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
-			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_SCIENTIFIC_METHOD</PrereqTech>
 				<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
