@@ -3158,6 +3158,9 @@
 					<iFlavor>1</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_ECONOMICS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_URBAN_PLANNING</PrereqTech>
 				<PrereqTech>TECH_CIVIL_LIBERTIES</PrereqTech>
