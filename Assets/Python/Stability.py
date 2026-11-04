@@ -704,7 +704,7 @@ def calculateStability(iPlayer):
 	iCivicEraTechStability = 0
 	
 	# Civics (eras and techs and religions)
-	# note: make sure to reflect this in CvPlayerAI::isUnstableCivic
+	# note: make sure to reflect this in CvPlayer::isUnstableCivic
 	if iVassalage in civics:
 		if iCurrentEra == iMedieval: iCivicEraTechStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
@@ -717,6 +717,9 @@ def calculateStability(iPlayer):
 		if iCurrentEra <= iClassical: iCivicEraTechStability += 2
 		elif iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
 	
+	if iMerchantTrade in civics:
+		if iCurrentEra >= iIndustrial: iCivicEraTechStability -= 5
+	
 	if iIsolationism in civics:
 		if iCurrentEra >= iGlobal: iCivicEraTechStability -= (iCurrentEra - iRenaissance) * 4
 	
@@ -727,7 +730,7 @@ def calculateStability(iPlayer):
 		if (iSlavery, iManorialism, iCasteSystem) in civics: iCivicEraTechStability -= 5
 	
 	if tPlayer.isHasTech(iEconomics):
-		if (iReciprocity, iRedistribution, iMerchantTrade) in civics: iCivicEraTechStability -= 5
+		if (iReciprocity, iRedistribution) in civics: iCivicEraTechStability -= 5
 	
 	if tPlayer.isHasTech(iNationalism):
 		if (iNationhood, iMultilateralism) not in civics: iCivicEraTechStability -= 2

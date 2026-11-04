@@ -25926,7 +25926,7 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 
 	if (getCurrentEra() >= ERA_INDUSTRIAL)
 	{
-		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_VASSALAGE)
+		if (eCivic == CIVIC_REPUBLIC || eCivic == CIVIC_VASSALAGE || eCivic == CIVIC_MERCHANT_TRADE)
 		{
 			return true;
 		}
@@ -25940,15 +25940,15 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 		}
 	}
 
-	if (GET_TEAM(getTeam()).isHasTech((TechTypes)ECONOMICS))
+	if (GET_TEAM(getTeam()).isHasTech(ECONOMICS))
 	{
-		if (eCivic == CIVIC_RECIPROCITY || eCivic == CIVIC_REDISTRIBUTION || eCivic == CIVIC_MERCHANT_TRADE)
+		if (eCivic == CIVIC_RECIPROCITY || eCivic == CIVIC_REDISTRIBUTION)
 		{
 			return true;
 		}
 	}
 
-	if (GET_TEAM(getTeam()).isHasTech((TechTypes)CIVIL_RIGHTS))
+	if (GET_TEAM(getTeam()).isHasTech(CIVIL_RIGHTS))
 	{
 		if (eCivic == CIVIC_SLAVERY || eCivic == CIVIC_MANORIALISM || eCivic == CIVIC_CASTE_SYSTEM)
 		{
@@ -25956,7 +25956,7 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 		}
 	}
 
-	if (GET_TEAM(getTeam()).isHasTech((TechTypes)NATIONALISM))
+	if (GET_TEAM(getTeam()).isHasTech(NATIONALISM))
 	{
 		if (eCivic == CIVIC_HEGEMONY || eCivic == CIIVC_THALASSOCRACY)
 		{
@@ -25964,7 +25964,7 @@ bool CvPlayer::isUnstableCivic(CivicTypes eCivic) const
 		}
 	}
 
-	if (GET_TEAM(getTeam()).isHasTech((TechTypes)DOCTRINE))
+	if (GET_TEAM(getTeam()).isHasTech(DOCTRINE))
 	{
 		if (eCivic == CIVIC_ANIMISM || eCivic == CIVIC_DEIFICATION)
 		{
