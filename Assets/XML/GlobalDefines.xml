@@ -934,6 +934,10 @@
 		<iDefineIntVal>5</iDefineIntVal>
 	</Define>
 	<Define>
+		<DefineName>CITY_DEFENSE_STARVATION_DAMAGE_RATE</DefineName>
+		<iDefineIntVal>10</iDefineIntVal>
+	</Define>
+	<Define>
 		<DefineName>UPKEEP_POPULATION_OFFSET</DefineName>
 		<iDefineIntVal>-8</iDefineIntVal>
 	</Define>

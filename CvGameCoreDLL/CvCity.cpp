@@ -15525,6 +15525,8 @@ void CvCity::doGrowth()
 		{
 			changePopulation(-1);
 		}
+
+		changeDefenseDamage(GC.getDefineINT("CITY_DEFENSE_STARVATION_DAMAGE_RATE"));
 	}
 }
 
