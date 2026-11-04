@@ -19782,6 +19782,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_MEASUREMENT</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
@@ -19848,6 +19851,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_MEASUREMENT</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_GEOGRAPHY</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>120</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
