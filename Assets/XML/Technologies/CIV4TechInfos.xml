@@ -3308,6 +3308,9 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_REPLACEABLE_PARTS</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_PHYSICS</PrereqTech>
 				<PrereqTech>TECH_GEOLOGY</PrereqTech>
