@@ -5714,6 +5714,11 @@ int CvPlayerAI::AI_getCompetitorAttitude(PlayerTypes ePlayer) const
 		iAttitude -= 1;
 	}
 
+	if (iAttitude < 0 && GET_TEAM(getTeam()).isDefensivePact(GET_PLAYER(ePlayer).getTeam()))
+	{
+		iAttitude += 1;
+	}
+
 	return iAttitude;
 }
 
