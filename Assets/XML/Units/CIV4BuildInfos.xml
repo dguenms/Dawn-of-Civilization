@@ -13,6 +13,15 @@
 			<iTime>400</iTime>
 			<RouteType>ROUTE_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<PrereqTech>TECH_HYDRAULICS</PrereqTech>
+					<iTime>1200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
 			<HotKey>KB_R</HotKey>
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
@@ -27,6 +36,15 @@
 			<iTime>400</iTime>
 			<RouteType>ROUTE_ROMAN_ROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_SHOVEL</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<PrereqTech>TECH_HYDRAULICS</PrereqTech>
+					<iTime>1200</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
 			<HotKey>KB_R</HotKey>
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
@@ -42,6 +60,15 @@
 			<iTime>800</iTime>
 			<RouteType>ROUTE_RAILROAD</RouteType>
 			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<PrereqTech>TECH_HYDRAULICS</PrereqTech>
+					<iTime>2400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
 			<HotKey>KB_R</HotKey>
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
@@ -56,6 +83,15 @@
 			<iTime>800</iTime>
 			<RouteType>ROUTE_HIGHWAY</RouteType>
 			<EntityEvent>ENTITY_EVENT_RAILROAD</EntityEvent>
+			<FeatureStructs>
+				<FeatureStruct>
+					<FeatureType>FEATURE_MARSH</FeatureType>
+					<PrereqTech>TECH_BIOTECHNOLOGY</PrereqTech>
+					<iTime>2400</iTime>
+					<iProduction>0</iProduction>
+					<bRemove>0</bRemove>
+				</FeatureStruct>
+			</FeatureStructs>
 			<HotKey>KB_R</HotKey>
 			<bAltDown>0</bAltDown>
 			<bShiftDown>0</bShiftDown>
