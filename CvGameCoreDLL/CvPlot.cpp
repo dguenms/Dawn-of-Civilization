@@ -12086,7 +12086,15 @@ void CvPlot::setContinentArea(int iNewValue)
 
 bool CvPlot::isOverseas(const CvPlot* pPlot) const
 {
-	return getOverseasGroup() != pPlot->getOverseasGroup() && getContinentArea() != pPlot->getContinentArea();
+	if (getContinentArea() == pPlot->getContinentArea()) return false;
+	if (getOverseasGroup() == pPlot->getOverseasGroup()) return false;
+	
+	if (getAdjacentOverseasGroup() == NO_OVERSEAS_GROUP) return true;
+	if (pPlot->getAdjacentOverseasGroup() == NO_OVERSEAS_GROUP) return true;
+
+	if (getAdjacentOverseasGroup() == pPlot->getOverseasGroup() && getOverseasGroup() == pPlot->getAdjacentOverseasGroup()) return false;
+
+	return true;
 }
 
 void CvPlot::setBirthProtected(PlayerTypes ePlayer)
@@ -12304,6 +12312,36 @@ int CvPlot::getOverseasGroup() const
 		return OVERSEAS_GROUP_ASIA;
 	case REGION_GROUP_OCEANIA:
 		return OVERSEAS_GROUP_OCEANIA;
+	default:
+		return NO_OVERSEAS_GROUP;
+	}
+}
+
+int CvPlot::getAdjacentOverseasGroup() const
+{
+	switch (getRegionID())
+	{
+	case REGION_MAGHREB:
+	case REGION_ETHIOPIA:
+	case REGION_HORN_OF_AFRICA:
+	case REGION_SINDH:
+	case REGION_HINDU_KUSH:
+	case REGION_TARIM_BASIN:
+	case REGION_MONGOLIA:
+	case REGION_MANCHURIA:
+		return OVERSEAS_GROUP_EUROPE;
+	case REGION_IBERIA:
+	case REGION_EGYPT:
+	case REGION_NUBIA:
+	case REGION_ARABIA:
+		return OVERSEAS_GROUP_AFRICA;
+	case REGION_PERSIA:
+	case REGION_KHORASAN:
+	case REGION_TRANSOXIANA:
+	case REGION_CENTRAL_ASIAN_STEPPE:
+	case REGION_SIBERIA:
+	case REGION_AMUR:
+		return OVERSEAS_GROUP_ASIA;
 	default:
 		return NO_OVERSEAS_GROUP;
 	}

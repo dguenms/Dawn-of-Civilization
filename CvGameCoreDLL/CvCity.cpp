@@ -351,7 +351,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	int iCurrentEra = GET_PLAYER(eOwner).getCurrentEra();
 	int iExtraPopulation = iCurrentEra > 0 ? iCurrentEra : 0;
 
-	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech((TechTypes)EXPLORATION))
+	if (GET_TEAM(GET_PLAYER(eOwner).getTeam()).isHasTech(EXPLORATION))
 	{
 		if (isColony())
 		{
@@ -2228,35 +2228,9 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 	// Leoreth - build settlers only in cities on the same continent as the capital until the discovery of Exploration
 	if (GC.getUnitInfo(eUnit).isFound())
 	{
-		CvPlot* pCapital = GET_PLAYER(getOwnerINLINE()).getCapitalCity()->plot();
-
-		int iCapitalRegion = GET_PLAYER(getOwnerINLINE()).getCapitalCity()->getRegionID();
-		int iRegion = getRegionID();
-
-		int iCapitalContinent = GET_PLAYER(getOwner()).getCapitalCity()->plot()->getContinentID();
-		int iCityContinent = plot()->getContinentID();
-
-		bool bException = false;
-
-		if ((iCapitalRegion == REGION_ANATOLIA || iCapitalRegion == REGION_GREECE) && (iCityContinent == 0 || iCityContinent == 1))
+		if (isColony() && !GET_TEAM(getTeam()).isHasTech(EXPLORATION))
 		{
-			bException = true;
-		}
-		else if ((iCapitalRegion == REGION_IBERIA && iRegion == REGION_MAGHREB) || (iCapitalRegion == REGION_MAGHREB && iRegion == REGION_IBERIA))
-		{
-			bException = true;
-		}
-		else if ((iCapitalContinent == 1 && iCityContinent == 2) || (iCapitalContinent == 2 && iCityContinent == 1)) // East Asia and Middle East
-		{
-			bException = true;
-		}
-
-		if (iCapitalContinent != iCityContinent && !bException)
-		{
-			if (!GET_TEAM(GET_PLAYER(getOwner()).getTeam()).isHasTech((TechTypes)EXPLORATION))
-			{
-				return false;
-			}
+			return false;
 		}
 	}
 
