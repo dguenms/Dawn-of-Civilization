@@ -15394,7 +15394,7 @@
 		<UnitInfo>
 			<Class>UNITCLASS_CAVALRY</Class>
 			<Type>UNIT_AUSTRALIAN_LIGHT_HORSE</Type>
-			<Combat>UNITCOMBAT_GUN</Combat>
+			<Combat>UNITCOMBAT_LIGHT_CAVALRY</Combat>
 			<Domain>DOMAIN_LAND</Domain>
 			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
 			<Description>TXT_KEY_UNIT_AUSTRALIAN_LIGHT_HORSE</Description>
