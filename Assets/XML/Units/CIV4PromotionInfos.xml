@@ -543,7 +543,7 @@
 			<Type>PROMOTION_AMPHIBIOUS</Type>
 			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS</Description>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_COMBAT2</PromotionPrereqOr1>
+			<PromotionPrereqOr1>PROMOTION_COMBAT1</PromotionPrereqOr1>
 			<TechPrereq>TECH_SEAFARING</TechPrereq>
 			<bAmphib>1</bAmphib>
 			<bRiver>1</bRiver>
