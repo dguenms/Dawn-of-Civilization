@@ -149,6 +149,10 @@ def getResurrectionPeriod(iCiv):
 		if isAfter(1800):
 			return iPeriodNationalFrance
 	
+	elif iCiv == iMalays:
+		if isAfter(1900):
+			return iPeriodModernMalaysia
+	
 	elif iCiv == iTurks:
 		if isAfter(1700):
 			return iPeriodUzbeks

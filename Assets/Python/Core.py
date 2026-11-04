@@ -1297,9 +1297,9 @@ class PlotFactory:
 	def respawn(self, identifier, iPeriod=None):
 		if iPeriod is None:
 			iPeriod = period(identifier)
+		if iPeriod in dPeriodRespawnArea:
+			return self.area(dPeriodRespawnArea, dPeriodRespawnAreaExceptions, iPeriod)
 		if identifier in dRespawnArea:
-			if iPeriod in dPeriodRespawnArea:
-				return self.area(dPeriodRespawnArea, dPeriodRespawnAreaExceptions, iPeriod)
 			return self.area(dRespawnArea, dRespawnAreaExceptions, identifier)
 		if iPeriod in dPeriodCoreArea:
 			return self.area(dPeriodCoreArea, dPeriodCoreAreaExceptions, iPeriod)

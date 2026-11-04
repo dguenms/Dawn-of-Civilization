@@ -424,11 +424,13 @@ dPeriodRespawnArea = {
 iPeriodPtolemaicEgypt : ((76, 40), (82, 45)),
 iPeriodMakuria: ((78, 35), (81, 39)),
 iPeriodUzbeks: ((96, 53), (106, 59)),
+iPeriodModernMalaysia: ((119, 30),	(128, 33)),
 iPeriodAustria: ((69, 57), (77, 62)),
 iPeriodUnitedKingdom: ((52, 62), (59, 71)),
 }
 
 dPeriodRespawnAreaExceptions = appenddict({
 iPeriodUzbeks: [(104, 53), (104, 54), (104, 55), (104, 56), (105, 53), (105, 54), (105, 55), (105, 56), (106, 53), (106, 54), (106, 55), (106, 56)],
+iPeriodModernMalaysia: [(119, 33), (126, 30), (127, 30), (127, 31)],
 iPeriodAustria: [(69, 57), (69, 61), (69, 62), (73, 62), (74, 61), (74, 62), (75, 61), (75, 62), (76, 57), (76, 61), (76, 62), (77, 57), (77, 61), (77, 62)],
 })
