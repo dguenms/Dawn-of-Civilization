@@ -951,6 +951,9 @@ bool CvDeal::startTrade(TradeData trade, PlayerTypes eFromPlayer, PlayerTypes eT
 	case TRADE_WAR:
 		GET_TEAM(GET_PLAYER(eFromPlayer).getTeam()).declareWar(((TeamTypes)trade.m_iData), true, NO_WARPLAN);
 
+		// Leoreth: agreeing to a war grants some extra war turns for relationship bonus
+		GET_TEAM(GET_PLAYER(eToPlayer).getTeam()).AI_changeShareWarCounter(GET_PLAYER(eFromPlayer).getTeam(), getTurns(10));
+
 		for (iI = 0; iI < MAX_PLAYERS; iI++)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive())
