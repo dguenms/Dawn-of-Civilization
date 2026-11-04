@@ -17361,6 +17361,9 @@
 				</UnitAI>
 			</UnitAIs>
 			<PrereqTech>TECH_BALLISTICS</PrereqTech>
+			<TechTypes>
+				<PrereqTech>TECH_METALLURGY</PrereqTech>
+			</TechTypes>
 			<BonusType>BONUS_IRON</BonusType>
 			<iCost>180</iCost>
 			<iAdvancedStartCost>100</iAdvancedStartCost>
