@@ -3348,6 +3348,9 @@
 					<iFlavor>3</iFlavor>
 				</Flavor>
 			</Flavors>
+			<OrPreReqs>
+				<PrereqTech>TECH_HORTICULTURE</PrereqTech>
+			</OrPreReqs>
 			<AndPreReqs>
 				<PrereqTech>TECH_GEOLOGY</PrereqTech>
 				<PrereqTech>TECH_MEASUREMENT</PrereqTech>
