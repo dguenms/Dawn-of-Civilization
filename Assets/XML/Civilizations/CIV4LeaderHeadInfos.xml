@@ -452,7 +452,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -570,7 +570,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -995,7 +995,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -1113,7 +1113,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -1560,7 +1560,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -1678,7 +1678,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -2111,7 +2111,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -2229,7 +2229,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -2662,7 +2662,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -2780,7 +2780,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -3227,7 +3227,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -3345,7 +3345,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -3776,7 +3776,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -3894,7 +3894,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -4329,7 +4329,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -4447,7 +4447,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -4891,7 +4891,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -5009,7 +5009,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -5443,7 +5443,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -5561,7 +5561,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -5992,7 +5992,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -6110,7 +6110,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -6537,7 +6537,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -6655,7 +6655,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -7086,7 +7086,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -7204,7 +7204,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -7631,7 +7631,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -7749,7 +7749,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -8185,7 +8185,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -8303,7 +8303,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -8738,7 +8738,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -8856,7 +8856,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -9296,7 +9296,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -9414,7 +9414,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -9845,7 +9845,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -9963,7 +9963,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -10403,7 +10403,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -10521,7 +10521,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -10963,7 +10963,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -11081,7 +11081,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -11514,7 +11514,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -11632,7 +11632,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -12065,7 +12065,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -12163,7 +12163,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
@@ -12589,7 +12589,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -12707,7 +12707,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -13147,7 +13147,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -13265,7 +13265,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -13703,7 +13703,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -13821,7 +13821,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -14248,7 +14248,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -14366,7 +14366,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -14789,7 +14789,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -14907,7 +14907,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -15335,7 +15335,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -15453,7 +15453,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -15896,7 +15896,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -16014,7 +16014,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -16453,7 +16453,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -16571,7 +16571,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -17010,7 +17010,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -17128,7 +17128,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -17568,7 +17568,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -17686,7 +17686,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -18113,7 +18113,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -18231,7 +18231,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -18658,7 +18658,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -18776,7 +18776,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -19211,7 +19211,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -19329,7 +19329,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -19760,7 +19760,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -19878,7 +19878,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -20309,7 +20309,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -20427,7 +20427,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -20867,7 +20867,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -20985,7 +20985,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -21421,7 +21421,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -21539,7 +21539,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -21965,7 +21965,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -22083,7 +22083,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -22514,7 +22514,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -22632,7 +22632,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -23063,7 +23063,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -23181,7 +23181,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -23612,7 +23612,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -23730,7 +23730,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -24168,7 +24168,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -24286,7 +24286,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -24724,7 +24724,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -24842,7 +24842,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -25275,7 +25275,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -25393,7 +25393,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -25819,7 +25819,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -25937,7 +25937,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -26375,7 +26375,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -26493,7 +26493,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -26935,7 +26935,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -27053,7 +27053,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -27491,7 +27491,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -27609,7 +27609,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -28040,7 +28040,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -28158,7 +28158,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -28589,7 +28589,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -28707,7 +28707,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -29147,7 +29147,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -29265,7 +29265,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -29696,7 +29696,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -29814,7 +29814,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -30245,7 +30245,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -30363,7 +30363,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -30797,7 +30797,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -30915,7 +30915,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -31353,7 +31353,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -31471,7 +31471,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -31902,7 +31902,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -32020,7 +32020,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -32447,7 +32447,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -32565,7 +32565,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -33005,7 +33005,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -33123,7 +33123,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -33559,7 +33559,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -33677,7 +33677,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -34099,7 +34099,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -34217,7 +34217,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -34639,7 +34639,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -34757,7 +34757,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -35203,7 +35203,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -35321,7 +35321,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -35754,7 +35754,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -35872,7 +35872,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -36306,7 +36306,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -36424,7 +36424,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -36853,7 +36853,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -36971,7 +36971,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -37398,7 +37398,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -37516,7 +37516,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -37970,7 +37970,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -38088,7 +38088,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -38528,7 +38528,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -38630,7 +38630,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -39028,7 +39028,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -39146,7 +39146,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -39579,7 +39579,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -39697,7 +39697,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -40156,7 +40156,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -40274,7 +40274,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -40716,7 +40716,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -40834,7 +40834,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -41269,7 +41269,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -41387,7 +41387,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -41825,7 +41825,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -41923,7 +41923,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
@@ -42334,7 +42334,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -42432,7 +42432,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
@@ -42856,7 +42856,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -42974,7 +42974,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -43405,7 +43405,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -43523,7 +43523,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -43961,7 +43961,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -44079,7 +44079,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -44519,7 +44519,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -44637,7 +44637,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -45069,7 +45069,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -45187,7 +45187,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -45634,7 +45634,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -45752,7 +45752,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -46195,7 +46195,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -46313,7 +46313,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -46751,7 +46751,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -46869,7 +46869,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -47301,7 +47301,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -47419,7 +47419,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -47859,7 +47859,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -47977,7 +47977,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -48409,7 +48409,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -48527,7 +48527,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -48967,7 +48967,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -49085,7 +49085,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -49516,7 +49516,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -49634,7 +49634,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -50065,7 +50065,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -50183,7 +50183,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -50741,7 +50741,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -51163,7 +51163,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -51281,7 +51281,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -51712,7 +51712,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -51830,7 +51830,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -52261,7 +52261,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -52379,7 +52379,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -52810,7 +52810,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -52928,7 +52928,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -53355,7 +53355,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -53473,7 +53473,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -53900,7 +53900,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -54018,7 +54018,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -54449,7 +54449,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -54567,7 +54567,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -55005,7 +55005,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -55123,7 +55123,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -55578,7 +55578,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -55696,7 +55696,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -56134,7 +56134,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -56252,7 +56252,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -56678,7 +56678,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -56796,7 +56796,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -57238,7 +57238,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -57356,7 +57356,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -57796,7 +57796,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -57914,7 +57914,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -58354,7 +58354,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -58452,7 +58452,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_TRADED_TECH_TO_US</MemoryType>
@@ -58876,7 +58876,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -58994,7 +58994,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -59434,7 +59434,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -59552,7 +59552,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -60110,7 +60110,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>75</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -60550,7 +60550,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -60668,7 +60668,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -61106,7 +61106,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -61224,7 +61224,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -61664,7 +61664,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -61782,7 +61782,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -62225,7 +62225,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -62343,7 +62343,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -62775,7 +62775,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -62893,7 +62893,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -63316,7 +63316,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -63434,7 +63434,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -63870,7 +63870,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -63988,7 +63988,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -64428,7 +64428,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -64546,7 +64546,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -64980,7 +64980,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -65098,7 +65098,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -65546,7 +65546,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -65664,7 +65664,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -66100,7 +66100,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -66214,7 +66214,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -66641,7 +66641,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -66759,7 +66759,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -67223,7 +67223,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -67341,7 +67341,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -67781,7 +67781,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -67899,7 +67899,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -68330,7 +68330,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -68448,7 +68448,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -68879,7 +68879,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -68997,7 +68997,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -69423,7 +69423,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -69541,7 +69541,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -69975,7 +69975,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -70093,7 +70093,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -70540,7 +70540,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -70658,7 +70658,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -71085,7 +71085,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -71203,7 +71203,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -71637,7 +71637,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -71755,7 +71755,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -72202,7 +72202,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -72320,7 +72320,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -72762,7 +72762,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -72880,7 +72880,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -73342,7 +73342,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -73460,7 +73460,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -73902,7 +73902,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -74020,7 +74020,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -74451,7 +74451,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -74569,7 +74569,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -74975,7 +74975,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -75093,7 +75093,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -75520,7 +75520,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -75638,7 +75638,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -76078,7 +76078,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -76196,7 +76196,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -76627,7 +76627,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -76745,7 +76745,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -77176,7 +77176,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -77294,7 +77294,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -77728,7 +77728,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -77846,7 +77846,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -78278,7 +78278,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -78396,7 +78396,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -78830,7 +78830,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -78948,7 +78948,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -79395,7 +79395,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -79513,7 +79513,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -79972,7 +79972,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -80090,7 +80090,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -80538,7 +80538,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -80656,7 +80656,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -81104,7 +81104,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -81222,7 +81222,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -81656,7 +81656,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -81774,7 +81774,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -82217,7 +82217,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -82335,7 +82335,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -82775,7 +82775,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -82893,7 +82893,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -83333,7 +83333,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -83451,7 +83451,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -83887,7 +83887,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -84005,7 +84005,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -84445,7 +84445,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -84563,7 +84563,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -84994,7 +84994,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -85112,7 +85112,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -85548,7 +85548,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -85666,7 +85666,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -86113,7 +86113,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -86231,7 +86231,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -86666,7 +86666,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -86784,7 +86784,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -87224,7 +87224,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -87342,7 +87342,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -87778,7 +87778,7 @@
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryRand>100</iMemoryRand>
+					<iMemoryRand>50</iMemoryRand>
 				</MemoryDecay>
 				<MemoryDecay>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
@@ -87896,7 +87896,7 @@
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_ACCEPTED_STOP_TRADING</MemoryType>
-					<iMemoryAttitudePercent>50</iMemoryAttitudePercent>
+					<iMemoryAttitudePercent>100</iMemoryAttitudePercent>
 				</MemoryAttitudePercent>
 				<MemoryAttitudePercent>
 					<MemoryType>MEMORY_DENIED_STOP_TRADING</MemoryType>
