@@ -23,22 +23,29 @@ def getTechPreferences(iPlayer):
 	dPreferences = defaultdict({}, 0)
 	iCivilization = civ(iPlayer)
 	
-	if iCivilization not in dTechPreferences:
-		return dPreferences
-		
-	for iTech, iValue in dTechPreferences[iCivilization].items():
-		dPreferences[iTech] = iValue
-		
-	for iTech, iValue in dTechPreferences[iCivilization].items():
-		for i in range(4):
-			iOrPrereq = infos.tech(iTech).getPrereqOrTechs(i)
-			iAndPrereq = infos.tech(iTech).getPrereqAndTechs(i)
+	if iCivilization in dTechPreferences:
+		for iTech, iValue in dTechPreferences[iCivilization].items():
+			dPreferences[iTech] += iValue
 			
-			if iOrPrereq < 0 and iAndPrereq < 0: break
-			
-			updatePrereqPreference(dPreferences, iOrPrereq, iValue)
-			updatePrereqPreference(dPreferences, iAndPrereq, iValue)
+		for iTech, iValue in dTechPreferences[iCivilization].items():
+			for i in range(4):
+				iOrPrereq = infos.tech(iTech).getPrereqOrTechs(i)
+				iAndPrereq = infos.tech(iTech).getPrereqAndTechs(i)
+				
+				if iOrPrereq < 0 and iAndPrereq < 0: break
+				
+				updatePrereqPreference(dPreferences, iOrPrereq, iValue)
+				updatePrereqPreference(dPreferences, iAndPrereq, iValue)
 	
+	if iCivilization in dBuildingPreferences:
+		for iBuilding, iValue in dBuildingPreferences[iCivilization].items():
+			iTech = infos.building(iBuilding).getPrereqAndTech()
+			dPreferences[iTech] += getBuildingTechPreference(iTech, max(iValue, 50) / 2)
+			
+			for i in range(4):
+				iTech = infos.building(iBuilding).getPrereqAndTechs(i)
+				dPreferences[iTech] += getBuildingTechPreference(iTech, max(iValue, 50) / 3)
+			
 	return dPreferences
 	
 def updatePrereqPreference(dPreferences, iPrereqTech, iValue):
@@ -53,6 +60,12 @@ def updatePrereqPreference(dPreferences, iPrereqTech, iValue):
 		iPrereqValue = max(min(iPrereqValue, iValue), iPrereqValue + iValue / 2)
 		
 	dPreferences[iPrereqTech] = iPrereqValue
+
+def getBuildingTechPreference(iTech, iValue):
+	if iTech < 0: return 0
+	if iValue < 0: return 0
+	
+	return iValue
 	
 def initPlayerTechPreferences(iPlayer):
 	initTechPreferences(iPlayer, getTechPreferences(iPlayer))
@@ -2016,6 +2029,7 @@ dTechPreferences = {
 		iExploration: -20,
 	},
 	iMoors : {
+		iEducation: 30,
 		iCivilService: 20,
 	
 		iExploration: -40,

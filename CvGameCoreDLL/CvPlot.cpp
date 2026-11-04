@@ -12147,32 +12147,6 @@ bool CvPlot::isUnconquerable(const CvUnit* pUnit) const
 	return isBirthProtected() && getBirthProtected() == getOwnerINLINE() && isEnemyCity(*pUnit) && GET_PLAYER(getOwnerINLINE()).getNumCities() <= 1;
 }
 
-int CvPlot::getContinentID() const
-{
-	switch (getRegionGroup())
-	{
-	case REGION_GROUP_EUROPE:
-		return 0;	// Europe = 0
-	case REGION_GROUP_MIDDLE_EAST:
-	case REGION_GROUP_NORTH_AFRICA:
-		return 1; // Middle East = 1
-	case REGION_GROUP_SOUTH_ASIA:
-	case REGION_GROUP_NORTH_ASIA:
-	case REGION_GROUP_EAST_ASIA:
-		return 2;	// East Asia = 2
-	case REGION_GROUP_OCEANIA:
-		return 3;	// Australia = 3
-	case REGION_GROUP_SUB_SAHARAN_AFRICA:
-		return 4;	// Africa = 4;
-	case REGION_GROUP_NORTH_AMERICA:
-		return 5;	// North America = 5
-	case REGION_GROUP_SOUTH_AMERICA:
-		return 6;	// South America = 6
-	}
-
-	return -1;
-}
-
 int CvPlot::getRegionGroup() const
 {
 	return getRegionGroupForRegion(getRegionID());

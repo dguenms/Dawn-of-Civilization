@@ -581,7 +581,6 @@ public:
 
 	bool isUnconquerable(const CvUnit* pUnit) const;
 
-	int getContinentID() const;
 	int getRegionGroup() const;
 	int getOverseasGroup() const;
 	int getAdjacentOverseasGroup() const;
