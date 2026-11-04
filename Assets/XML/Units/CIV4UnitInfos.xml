@@ -6738,6 +6738,12 @@
 				</UnitMeshGroup>
 			</UnitMeshGroups>
 			<FormationType>FORMATION_TYPE_RANGED</FormationType>
+			<FreePromotions>
+				<FreePromotion>
+					<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
+					<bFreePromotion>1</bFreePromotion>
+				</FreePromotion>
+			</FreePromotions>
 		</UnitInfo>
 		<UnitInfo>
 			<Class>UNITCLASS_MUSKETEER</Class>
