@@ -48,6 +48,10 @@ class BestPopulationCities(BestCitiesRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITIES"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
 	
+	def __init__(self, iRequired, **options):
+		options["population"] = True
+		BestCitiesRequirement.__init__(self, iRequired, **options)
+	
 	def metric(self, city):
 		return city.getPopulation()
 
@@ -64,6 +68,10 @@ class BestPopulationCity(BestCityRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_CITY"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
 	
+	def __init__(self, city, **options):
+		options["population"] = True
+		BestCityRequirement.__init__(self, city, **options)
+	
 	def metric(self, city):
 		return city.getPopulation()
 	
@@ -72,6 +80,10 @@ class BestPopulationPlayer(BestPlayersRequirement):
 
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_BEST_POPULATION_PLAYER"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_BEST_POPULATION"
+	
+	def __init__(self, **options):
+		options["population"] = True
+		BestPlayersRequirement.__init__(self, **options)
 	
 	def metric(self, iPlayer):
 		return player(iPlayer).getRealPopulation()

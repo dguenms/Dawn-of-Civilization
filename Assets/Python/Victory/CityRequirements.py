@@ -99,6 +99,7 @@ class CityPopulation(CityRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_CITY_POPULATION"
 	
 	def __init__(self, city, iRequired, **options):
+		options["population"] = True
 		CityRequirement.__init__(self, city, iRequired, **options)
 		
 		self.iRequired = iRequired

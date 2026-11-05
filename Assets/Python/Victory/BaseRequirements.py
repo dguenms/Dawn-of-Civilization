@@ -111,6 +111,9 @@ class Requirement(object):
 	
 	def progress(self, evaluator, **options):
 		return "%s %s" % (self.indicator(evaluator), self.progress_text())
+	
+	def is_population(self):
+		return self.options.get("population")
 
 
 class ThresholdRequirement(Requirement):

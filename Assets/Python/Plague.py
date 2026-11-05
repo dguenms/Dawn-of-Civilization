@@ -198,6 +198,9 @@ def isVulnerable(iPlayer):
 	if civ(iPlayer) == iCongo and year() <= year(1650): return
 	elif civ(iPlayer) == iMali and year() <= year(1500): return
 	
+	if data.players[iPlayer].historicalVictory and data.players[iPlayer].historicalVictory.plague_protected(): return False
+	if data.players[iPlayer].religiousVictory and data.players[iPlayer].religiousVictory.plague_protected(): return False
+	
 	if is_minor(iPlayer) and -10 < data.players[iPlayer].iPlagueCountdown <= 0: #more vulnerable
 		return True
 			

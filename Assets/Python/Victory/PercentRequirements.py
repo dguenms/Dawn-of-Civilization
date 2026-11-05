@@ -38,8 +38,9 @@ class AreaPopulationPercent(PercentRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_POPULATION_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_POPULATION_PERCENT"
 	
-	def __init__(self, area, *parameters, **options):
-		PercentRequirement.__init__(self, area, *parameters, **options)
+	def __init__(self, area, iPercentage, **options):
+		options["population"] = True
+		PercentRequirement.__init__(self, area, iPercentage, **options)
 		
 		self.area = area
 	
@@ -102,8 +103,9 @@ class PopulationInAreaPercent(PercentRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION_IN_AREA_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_IN_AREA_PERCENT"
 	
-	def __init__(self, area, *parameters, **options):
-		PercentRequirement.__init__(self, area, *parameters, **options)
+	def __init__(self, area, iPercentage, **options):
+		options["population"] = True
+		PercentRequirement.__init__(self, area, iPercentage, **options)
 		
 		self.area = area
 	
@@ -124,6 +126,10 @@ class PopulationPercent(PercentRequirement):
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_CONTROL"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_PERCENT"
+	
+	def __init__(self, iPercentage, **options):
+		options["population"] = True
+		PercentRequirement.__init__(self, iPercentage, **options)
 	
 	def value(self, iPlayer):
 		return cities.owner(iPlayer).sum(CyCity.getPopulation)
@@ -164,8 +170,9 @@ class ReligionSpreadPercent(PercentRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_SPREAD_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_SPREAD_PERCENT"
 	
-	def __init__(self, iReligion, *parameters, **options):
-		PercentRequirement.__init__(self, iReligion, *parameters, **options)
+	def __init__(self, iReligion, iPercentage, **options):
+		options["population"] = True
+		PercentRequirement.__init__(self, iReligion, iPercentage, **options)
 		
 		self.iReligion = iReligion
 	
@@ -181,6 +188,10 @@ class ReligiousVotePercent(PercentRequirement):
 	GOAL_DESC_KEY = "TXT_KEY_VICTORY_DESC_ACQUIRE"
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGIOUS_VOTE_PERCENT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGIOUS_VOTE_PERCENT"
+	
+	def __init__(self, iPercentage, **options):
+		options["population"] = True
+		PercentRequirement.__init__(self, iPercentage, **options)
 	
 	def value(self, iPlayer):
 		return player(iPlayer).getVotes(16, 1)

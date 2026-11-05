@@ -55,6 +55,10 @@ class AreaPopulationCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_AREA_POPULATION_COUNT"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AREA_POPULATION_COUNT"
 	
+	def __init__(self, area, iRequired, **options):
+		options["population"] = True
+		ThresholdRequirement.__init__(self, area, iRequired, **options)
+	
 	def value(self, iPlayer, area):
 		return area.cities().owner(iPlayer).sum(CyCity.getPopulation)
 
@@ -128,6 +132,10 @@ class AveragePopulation(ThresholdRequirement):
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_AVERAGE_POPULATION"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_AVERAGE_POPULATION"
+	
+	def __init__(self, iRequired, **options):
+		options["population"] = True
+		ThresholdRequirement.__init__(self, iRequired, **options)
 	
 	def value(self, iPlayer):
 		iNumCities = player(iPlayer).getNumCities()
@@ -620,6 +628,7 @@ class PopulationCity(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_CITY"
 	
 	def __init__(self, iRequired, **options):
+		options["population"] = True
 		ThresholdRequirement.__init__(self, iRequired, **options)
 		
 	def value(self, iPlayer):
@@ -652,6 +661,7 @@ class PopulationCityCount(ThresholdRequirement):
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION_CITY_COUNT"
 	
 	def __init__(self, iPopulation, iRequired, **options):
+		options["population"] = True
 		ThresholdRequirement.__init__(self, iPopulation, iRequired, **options)
 		
 		self.iPopulation = iPopulation
@@ -691,6 +701,10 @@ class PopulationCount(ThresholdRequirement):
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_POPULATION"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_POPULATION"
 	
+	def __init__(self, iRequired, **options):
+		options["population"] = True
+		ThresholdRequirement.__init__(self, iRequired, **options)
+	
 	def value(self, iPlayer):
 		return player(iPlayer).getTotalPopulation()
 
@@ -707,6 +721,10 @@ class ReligionPopulationCount(ThresholdRequirement):
 	
 	DESC_KEY = "TXT_KEY_VICTORY_DESC_RELIGION_POPULATION"
 	PROGR_KEY = "TXT_KEY_VICTORY_PROGR_RELIGION_POPULATION"
+	
+	def __init__(self, iReligion, iRequired, **options):
+		options["population"] = True
+		ThresholdRequirement.__init__(self, iReligion, iRequired, **options)
 	
 	def value(self, iPlayer, iReligion):
 		return player(iPlayer).getReligionPopulation(iReligion)

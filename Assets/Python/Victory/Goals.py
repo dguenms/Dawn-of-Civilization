@@ -320,6 +320,12 @@ class Goal(Describable):
 	def show_date_turn(self):
 		return not team(self.iPlayer).isHasTech(iCalendar) or not AdvisorOpt.isUHVFinishDateNone()
 	
+	def is_population(self):
+		return any(requirement.is_population() for requirement in self.requirements)
+	
+	def plague_protected(self):
+		return self.is_population() and self.iYear is not None and 0 <= until(year(self.iYear)) <= turns(10)
+	
 	def get_description_arguments(self):
 		return self.requirements[0].get_description_arguments() + Describable.get_description_arguments(self)
 	
@@ -450,6 +456,9 @@ class AllGoal(Goal):
 	def get_description_arguments(self):
 		return []
 	
+	def plague_protected(self):
+		return any(goal.plague_protected() for goal in self.requirements)
+	
 
 class DifferentCitiesGoal(Goal):
 
@@ -538,6 +547,9 @@ class DifferentCitiesGoal(Goal):
 	
 	def format_progress(self):
 		return list(self.progress_entries())
+	
+	def plague_protected(self):
+		return any(goal.plague_protected() for goal in self.requirements)
 	
 
 class Combined(Describable):
