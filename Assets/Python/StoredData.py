@@ -119,9 +119,6 @@ class PlayerData:
 		
 		# Victory
 		
-		self.historicalGoals = []
-		self.religiousGoals = []
-		
 		self.historicalVictory = None
 		self.religiousVictory = None
 		

@@ -65,10 +65,6 @@ from Locations import *
 from Core import *
 
 	
-def countAchievedGoals(argsList):
-	iPlayer = argsList[0]
-	return count(data.players[iPlayer].historicalGoals, lambda goal: goal.succeeded())
-	
 ## World Builder ## Platypedia
 import CvPlatyBuilderScreen
 import WBPlotScreen

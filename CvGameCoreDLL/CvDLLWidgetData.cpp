@@ -3735,16 +3735,6 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 
 	if (GC.getGameINLINE().getActivePlayer() == ePlayer)
 	{
-		//Rhye - start
-		parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
-		szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_CHECKF2"));
-		szBuffer.append(NEWLINE);
-		parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
-		szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_CHECKF8"));
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("------------------------"));
-		szBuffer.append(NEWLINE);
-		//Rhye - end
 		parseScoreHelp(widgetDataStruct, szBuffer);
 		return;
 	}
@@ -3809,14 +3799,6 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 
 		szBuffer.append(NEWLINE);
 
-		//Rhye - start
-		if (!GET_PLAYER(ePlayer).isMinorCiv() && !GET_PLAYER(ePlayer).isBarbarian())
-		{
-			parseCompleteStabilityInfo(widgetDataStruct, szBuffer);
-			parseHistoricalVictoryInfo(widgetDataStruct, szBuffer);
-		}
-		//Rhye - end
-
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_CTRL_TRADE"));
 
 		if ((GET_PLAYER(ePlayer).getTeam() != GC.getGameINLINE().getActiveTeam()) && !(GET_TEAM(GC.getGameINLINE().getActiveTeam()).isAtWar(GET_PLAYER(ePlayer).getTeam())))
@@ -3841,36 +3823,6 @@ void CvDLLWidgetData::parseContactCivHelp(CvWidgetDataStruct &widgetDataStruct, 
 		szBuffer.append(gDLL->getText("TXT_KEY_MISC_SHIFT_SEND_CHAT"));
 	}
 }
-
-//Rhye - start
-void CvDLLWidgetData::parseCompleteStabilityInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer) {
-	long result = 0;
-	CyArgsList argsList;
-	argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "getStabilityLevel", argsList.makeFunctionArgs(), &result);
-	int iResult = (int)result;
-
-	szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_ADVISOR_TITLE"));
-	szBuffer.append(" ");
-
-	if (iResult == 0) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_COLLAPSING"));
-	else if (iResult == 1) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_UNSTABLE"));
-	else if (iResult == 2) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SHAKY"));
-	else if (iResult == 3) szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_STABLE"));
-	else szBuffer.append(gDLL->getText("TXT_KEY_STABILITY_SOLID"));
-
-	szBuffer.append(NEWLINE);
-}
-
-void CvDLLWidgetData::parseHistoricalVictoryInfo(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer) {
-	long result = -1;
-	CyArgsList argsList;
-	argsList.add((PlayerTypes)widgetDataStruct.m_iData1);
-	gDLL->getPythonIFace()->callFunction(PYScreensModule, "countAchievedGoals", argsList.makeFunctionArgs(), &result);
-	szBuffer.append(gDLL->getText("TXT_KEY_VICTORY_ACCOMPLISHED", (int)result));
-	szBuffer.append(NEWLINE);
-}
-//Rhye - end
 
 void CvDLLWidgetData::parseConvertHelp(CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
