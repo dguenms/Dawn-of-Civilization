@@ -618,6 +618,7 @@ barbarians = [
 	Barbarians(200, 700, {iMedjay: 2, iSwordsman: 2}, ((80, 36), (84, 41)), 8, INVADERS, target_area=((78, 36), (82, 40)), adjective="TXT_KEY_ADJECTIVE_BLEMMYES", promotions=(iDesertAdaptation,)),
 	Barbarians(300, 1500, {iCamelArcher: 1}, ((56, 39), (76, 44)), 9, NOMADS, target_area=((54, 34), (76, 48)), adjective="TXT_KEY_ADJECTIVE_BERBER"),
 	Barbarians(300, 1500, {iCamelArcher: 1}, ((86, 38), (91, 45)), 10, NOMADS, target_area=((77, 39), (91, 50)), adjective="TXT_KEY_ADJECTIVE_BEDOUIN"),
+	Barbarians(300, 1550, {iSwordsman: 2}, ((130, 33), (133, 40)), 12, NATIVES, adjective="TXT_KEY_ADJECTIVE_AUSTRONESIAN"),
 	Barbarians(350, 600, {iHorseArcher: 3, iSwordsman: 2}, ((98, 43), (108, 49)), 6, INVADERS, target_area=((98, 42), (112, 49)), adjective="TXT_KEY_ADJECTIVE_HUNA"),
 	Barbarians(350, 500, {iSwordsman: 2, iWarElephant: 1}, ((104, 43),	(110, 48)), 6, INVADERS, adjective="TXT_KEY_ADJECTIVE_MALAVA"),
 	Barbarians(350, 500, {iSwordsman: 3, iAxeman: 2}, ((59, 59), (65, 65)), 5, INVADERS, target_area=((59, 55), (66, 63)), iAlternativeCiv=iFrance, adjective="TXT_KEY_ADJECTIVE_FRANKISH"),
