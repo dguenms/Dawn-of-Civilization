@@ -3068,7 +3068,7 @@ def leader(iPlayer):
 		if iEra >= iRenaissance: return iCharles
 	
 	elif iCiv == iBurma:
-		if iEra >= iRenaissance: return iBayinnaung
+		if isAfter(1500): return iBayinnaung
 	
 	elif iCiv == iRus:
 		if iEra >= iRenaissance: return iKhmelnytsky
