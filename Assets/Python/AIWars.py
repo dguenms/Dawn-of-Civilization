@@ -4,13 +4,15 @@ from RFCUtils import *
 from Events import handler
 from Resurrection import getResurrectionTechs
 
+import Logging as log
+
 
 ### Constants ###
 
-iMinIntervalEarly = 10
-iMaxIntervalEarly = 20
-iMinIntervalLate = 40
-iMaxIntervalLate = 60
+iMinIntervalEarly = 5
+iMaxIntervalEarly = 10
+iMinIntervalLate = 10
+iMaxIntervalLate = 20
 iThreshold = 100
 iMinValue = 30
 
@@ -162,7 +164,7 @@ def checkConquests():
 		
 @handler("BeginGameTurn")
 def checkWarPlans(iGameTurn):		
-	if iGameTurn == data.iNextTurnAIWar:
+	if iGameTurn >= data.iNextTurnAIWar:
 		planWars(iGameTurn)
 
 
@@ -174,7 +176,8 @@ def checkTargetMinors():
 @handler("BeginGameTurn")
 def increaseAggressionLevels():
 	for iLoopPlayer in players.major():
-		data.players[iLoopPlayer].iAggressionLevel = dAggressionLevel[iLoopPlayer] + rand(2)
+		if possibleTargets(iLoopPlayer):
+			data.players[iLoopPlayer].iAggressionLevel += rand(2)
 
 
 @handler("techAcquired")	
@@ -347,7 +350,6 @@ def planWars(iGameTurn):
 			if team(iLoopPlayer).getAtWarCount(True) > 0:
 				iCivsAtWar += 1
 		if 100 * iCivsAtWar / game.countCivPlayersAlive() > 50:
-			data.iNextTurnAIWar = iGameTurn + getNextInterval(iGameTurn)
 			return
 
 	iAttackingPlayer = determineAttackingPlayer()
