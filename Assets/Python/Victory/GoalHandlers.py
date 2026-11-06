@@ -177,7 +177,7 @@ class EventHandlerRegistry(object):
 	
 	def combatResult(self, goal, applicable, func):
 		def combatResult((winningUnit, losingUnit)):
-			if applicable(goal, winningUnit.getOwner()):
+			if applicable(goal, winningUnit.getOwner()) and not infos.unit(winningUnit).isHiddenNationality():
 				func(goal, losingUnit)
 		
 		return combatResult
