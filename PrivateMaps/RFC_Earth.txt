@@ -53353,6 +53353,7 @@ BeginPlot
 	x=118,y=39
 	RiverNSDirection=2
 	isWOfRiver
+	BonusType=BONUS_COPPER
 	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
