@@ -175,6 +175,7 @@ void CyStructsPythonInterface1()
 		.def_readwrite("iAnimalCombatModifierT", &CombatDetails::iAnimalCombatModifierT)
 		.def_readwrite("iRiverAttackModifier", &CombatDetails::iRiverAttackModifier)
 		.def_readwrite("iAmphibAttackModifier", &CombatDetails::iAmphibAttackModifier)
+		.def_readwrite("iStraitAttackModifier", &CombatDetails::iStraitAttackModifier) // Fresol
 		.def_readwrite("iKamikazeModifier", &CombatDetails::iKamikazeModifier)
 		.def_readwrite("iModifierTotal", &CombatDetails::iModifierTotal)
 		.def_readwrite("iBaseCombatStr", &CombatDetails::iBaseCombatStr)
