@@ -6316,6 +6316,18 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 		return 0;
 	}
 
+	// Fresol - start: the Bandeirante carries the explore AI but fights. It starts with
+	// Woodsman I and Guerilla I free, so it would otherwise buy the scout's own promotions.
+	if (getUnitType() == (UnitTypes)GC.getInfoTypeForString("UNIT_PORTUGUESE_BANDEIRANTE")
+		&& (ePromotion == (PromotionTypes)GC.getInfoTypeForString("PROMOTION_MORALE")
+		 || ePromotion == (PromotionTypes)GC.getInfoTypeForString("PROMOTION_SENTRY")
+		 || ePromotion == (PromotionTypes)GC.getInfoTypeForString("PROMOTION_GUERILLA2")
+		 || ePromotion == (PromotionTypes)GC.getInfoTypeForString("PROMOTION_WOODSMAN2")))
+	{
+		return 0;
+	}
+	// Fresol - end
+
 	if (GC.getPromotionInfo(ePromotion).isBlitz())
 	{
 		if ((AI_getUnitAIType() == UNITAI_RESERVE  && baseMoves() > 1) ||
@@ -6436,7 +6448,12 @@ int CvUnitAI::AI_promotionValue(PromotionTypes ePromotion)
 	}
 
 	iTemp = GC.getPromotionInfo(ePromotion).getMovesChange();
-	if ((AI_getUnitAIType() == UNITAI_ATTACK_SEA) ||
+	// Fresol: movement is a scout's whole job, so score it level with what Sentry is worth above
+	if (AI_getUnitAIType() == UNITAI_EXPLORE)
+	{
+		iValue += (iTemp * 40);
+	}
+	else if ((AI_getUnitAIType() == UNITAI_ATTACK_SEA) ||
 		(AI_getUnitAIType() == UNITAI_PIRATE_SEA) ||
 		  (AI_getUnitAIType() == UNITAI_RESERVE_SEA) ||
 		  (AI_getUnitAIType() == UNITAI_ESCORT_SEA) ||
