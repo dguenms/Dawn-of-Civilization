@@ -15296,6 +15296,14 @@ void CvCity::popOrder(int iNum, bool bFinish, bool bChoose)
 		startHeadOrder();
 	}
 
+	if (getCivilizationType() == KARNATAKA)
+	{
+		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+		{
+			getCityIndexPlot(iI)->updateYield();
+		}
+	}
+
 	if ((getTeam() == GC.getGameINLINE().getActiveTeam()) || GC.getGameINLINE().isDebugMode())
 	{
 		setInfoDirty(true);
