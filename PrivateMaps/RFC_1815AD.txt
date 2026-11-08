@@ -424,7 +424,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=20,y=42
-	ImprovementType=IMPROVEMENT_COTTAGE
+	ImprovementType=IMPROVEMENT_PLANTATION
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
@@ -471,7 +471,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=21,y=41
-	ImprovementType=IMPROVEMENT_PLANTATION
+	ImprovementType=IMPROVEMENT_MINE
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot

@@ -171,7 +171,7 @@ dResourcesDict = {
 	(37, 12)  : (1700,  iHorse),    # Argentina
 	(79, 70)  : (1700,  iFish),     # Ingria
 	(81, 30)  : (1700,  iBanana),   # Central Africa
-	(21, 41)  : (1700,  iBanana),   # Guatemala
+	(20, 42)  : (1700,  iBanana),   # Guatemala
 	(33, 42)  : (1700,  iCoffee),   # Hispaniola
 	(46, 25)  : (1700,  iCoffee),	# Eastern Brazil
 	(46, 22)  : (1700,  iCoffee),   # Southern Brazil
@@ -216,14 +216,13 @@ dResourcesDict = {
 	(111, 43) : (1800,  iTea),      # West Bengal
 	(149, 4)  : (1800,  iSheep),    # New Zealand
 	(0, 9)    : (1800,  iSheep),    # New Zealand
-	(8, 55)   : (1850,  iRice),     # California
+	(8, 54)   : (1850,  iRice),     # California
 	(137, 62) : (1850,  iCow),      # Hokkaido
 	(84, 61)  : (1850,  iIron),     # Donbas
-	(8, 53)   : (1850,  iCow),      # California
 	(142, 17) : (1850,  iCow),		# Queensland
 	(138, 12) : (1850,  iHorse),	# Australia
 	(8, 52)   : (1850,  iSheep),    # California
-	(8, 54)   : (1850,  iCitrus),   # California
+	(8, 53)   : (1850,  iCitrus),   # California
 	(12, 57)  : (1850,  iPotato),	# Idaho
 	(4, 41)   : (1850,  iCitrus),   # Hawaii
 	(142, 11) : (1850,  iCitrus),   # Australia
@@ -341,8 +340,6 @@ dFeaturesDict = {
 	(114, 43) : (1200, iRainforest),  # Bengal
 	(38, 65)  : (1400, iStrait),      # Newfoundland
 	(120, 40) : (1700, iRainforest),  # Laos
-	(8, 55)   : (1850, iFloodPlains), # California
-	(8, 54)   : (1850, iFloodPlains), # California
 	(8, 53)   : (1850, iFloodPlains), # California
 	(9, 52)   : (1850, iFloodPlains), # California
 }
