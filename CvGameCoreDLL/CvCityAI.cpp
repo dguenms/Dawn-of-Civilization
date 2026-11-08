@@ -10461,6 +10461,16 @@ BuildingTypes CvCityAI::AI_bestAdvancedStartBuilding(int iPass)
 // Leoreth: return first non-state religion to make it work for now
 ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion)
 {
+	// Fresol - start
+	// Return the religion the AI would most like to persecute, not merely the first one by XML
+	// index that happens to be acceptable. Religions are indexed in XML order while
+	// persecutionValue ranks them by preference, so breaking on the first negative value let an
+	// AI give up wholesale: Islam at tolerance 2 reaches Judaism (index 0) and stops, ignoring
+	// Hinduism, Jainism and Zoroastrianism, which it values far more highly. The value now also
+	// decides which candidate wins, so the priority table actually drives the choice.
+	ReligionTypes eBestReligion = NO_RELIGION;
+	int iBestValue = -1;
+
 	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
 		if (eIgnoredReligion == iI)
@@ -10470,19 +10480,26 @@ ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion
 
 		if (GET_PLAYER(getOwner()).getStateReligion() != iI)
 		{
-			if (GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI) < 0)
+			int iValue = GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI);
+
+			if (iValue < 0)
 			{
-				break;
+				continue;
 			}
 
 			if (isHasReligion((ReligionTypes)iI) && !isHolyCity((ReligionTypes)iI))
 			{
-				return (ReligionTypes)iI;
+				if (iValue > iBestValue)
+				{
+					iBestValue = iValue;
+					eBestReligion = (ReligionTypes)iI;
+				}
 			}
 		}
 	}
 
-	return NO_RELIGION;
+	return eBestReligion;
+	// Fresol - end
 }
 
 // Leoreth: building AI weights, civ specific preferences and special conditions for some wonders
