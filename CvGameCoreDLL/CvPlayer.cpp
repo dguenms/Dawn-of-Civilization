@@ -5134,7 +5134,7 @@ void CvPlayer::findNewCapital()
 	
 	if (pOldCapital != NULL)
 	{
-		pOldCapital->getArea();
+		iOldCapitalArea = pOldCapital->getArea(); // Fresol: was missing, so the same continent preference below never applied
 	}
 
 	iBestValue = 0;
