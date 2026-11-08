@@ -500,20 +500,8 @@ class Congress:
 			
 	def startResults(self):
 		if not autoplay():
-			content = []
-			content.append(("TXT_KEY_CONGRESS_RESULTS", self.sHostCityName))
-			
-			for sName, iOldOwner, iNewOwner in self.lAssignments:
-				content.append(text("TXT_KEY_CONGRESS_RESULT_ASSIGNMENT", sName, adjective(iOldOwner), adjective(iNewOwner)))
-				
-			for sName, iOldOwner, iNewOwner in self.lColonies:
-				if iOldOwner >= 0:
-					content.append(("TXT_KEY_CONGRESS_RESULT_COLONY_TERRITORY", sName, adjective(iOldOwner), name(iNewOwner)))
-				else:
-					content.append(("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner)))
-			
-			if not self.lAssignments and not self.lColonies:
-				content.append("TXT_KEY_CONGRESS_NO_RESULTS")
+			text_key = "TXT_KEY_CONGRESS_NO_RESULTS"
+			results = tuple()
 				
 			if self.lAssignments or self.lColonies:
 				text_key = "TXT_KEY_CONGRESS_RESULTS"
@@ -529,9 +517,6 @@ class Congress:
 						content.append(("TXT_KEY_CONGRESS_RESULT_COLONY", sName, name(iNewOwner)))
 						
 				results = itemize(content, lambda row: text(row[0], *row[1:]))
-			else:
-				text_key = "TXT_KEY_CONGRESS_NO_RESULTS"
-				results = tuple()
 				
 			self.results.text(text_key, self.sHostCityName, results).cancel().launch()
 			
@@ -646,7 +631,7 @@ class Congress:
 				else:
 					self.assignCity(iClaimant, plot.getOwner(), (x, y))
 			else:
-				self.lColonies.append(("%s %s" % (cn.getDisplayName(iClaimant, (x, y)), plot.getRegionName()), plot.getOwner(), iClaimant))
+				self.lColonies.append((cn.getDisplayName(iClaimant, (x, y)), plot.getOwner(), iClaimant))
 				if bCanRefuse:
 					self.lHumanAssignments.append((iClaimant, (x, y)))
 				else:
