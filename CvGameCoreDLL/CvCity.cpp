@@ -18980,7 +18980,7 @@ bool CvCity::isColony() const
 	CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
 	if (pCapital == NULL) return false;
 
-	if (pCapital->plot()->getRegionID() == REGION_ETHIOPIA && plot()->getOverseasGroup() == OVERSEAS_GROUP_EUROPE) return false;
+	if (getCivilizationType() == MONGOLS && pCapital->plot()->getAdjacentOverseasGroup() == OVERSEAS_GROUP_EUROPE && plot()->getOverseasGroup() == OVERSEAS_GROUP_EUROPE) return false;
 
 	return plot()->isOverseas(pCapital->plot());
 }
