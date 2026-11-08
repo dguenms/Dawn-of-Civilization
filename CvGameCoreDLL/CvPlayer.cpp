@@ -5134,7 +5134,7 @@ void CvPlayer::findNewCapital()
 	
 	if (pOldCapital != NULL)
 	{
-		pOldCapital->getArea();
+		iOldCapitalArea = pOldCapital->getArea();
 	}
 
 	iBestValue = 0;
