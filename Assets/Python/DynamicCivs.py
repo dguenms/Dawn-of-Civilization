@@ -1386,13 +1386,13 @@ def specificName(iPlayer):
 			return short(iPlayer)
 		
 		if iEra >= iIndustrial:
-			if bEmpire:
+			if bEmpire or getColumn(iPlayer) >= 11:
 				return "TXT_KEY_CIV_BURMA_KONBAUNG"
 			
 			return short(iPlayer)
 		
 		if iEra >= iRenaissance:
-			if bEmpire:
+			if bEmpire or getColumn(iPlayer) >= 11:
 				return "TXT_KEY_CIV_BURMA_TOUNGOO"
 			
 			if capital in cities.birth(iBurma).coastal():
@@ -2627,7 +2627,7 @@ def specificTitle(iPlayer, lPreviousOwners=[]):
 		
 		if iEra >= iRenaissance:
 			if bEmpire or getColumn(iPlayer) >= 11:
-				return "TXT_KEY_EMPIRE_ADJECTIVE"
+				return "TXT_KEY_EMPIRE_NAME"
 			
 			if capital in cities.birth(iBurma).coastal():
 				return "TXT_KEY_KINGDOM_NAME"
