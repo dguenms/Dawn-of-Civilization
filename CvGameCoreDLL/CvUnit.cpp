@@ -14886,10 +14886,6 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 				if (pCity->isHasRealBuilding((BuildingTypes)iI) && GC.getBuildingInfo((BuildingTypes)iI).getPrereqReligion() == eReligion)
 				{
 					iLoot += iLootModifier;
-					if (GC.getBuildingClassInfo((BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType()).getMaxGlobalInstances() > 1)
-					{
-						pCity->setHasRealBuilding((BuildingTypes)iI, false);
-					}
 				}
 			}
 
@@ -14898,7 +14894,7 @@ bool CvUnit::persecute(ReligionTypes eReligion)
 				pCity->changePopulation(-pCity->getPopulation() / 5);
 			}
 
-			iLoot += GC.getGame().getSorenRandNum(iLoot, "Random loot");
+			iLoot += getTurns(GC.getGame().getSorenRandNum(iLoot, "Random loot"));
 			GET_PLAYER(getOwner()).changeGold(iLoot);
 
 			for (int iI = 0; iI < MAX_CIV_PLAYERS; iI++)
