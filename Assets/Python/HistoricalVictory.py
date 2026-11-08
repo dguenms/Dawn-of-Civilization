@@ -665,7 +665,7 @@ dGoals = {
 		DefeatedUnits(civs(iBarbarian, iMongols, iTatars), 40, by=1400),
 		All(
 			ImprovementCount((iCamp, 6), (iQuarry, 3)),
-			TradeRouteCount(20),
+			TradeRouteCount(30),
 			by=1450,
 		),
 	),
