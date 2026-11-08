@@ -3030,12 +3030,12 @@
 		<Spanish>Mudbrick Pyramid</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BUILDING_HITTITE_BLOOMERY</Tag>
-		<English>Bloomery</English>
-		<French>Bloomery</French>
-		<German>Bloomery</German>
-		<Italian>Bloomery</Italian>
-		<Spanish>Bloomery</Spanish>
+		<Tag>TXT_KEY_BUILDING_HITTITE_BLOOMERY_FURNACE</Tag>
+		<English>Bloomery Furnace</English>
+		<French>Bloomery Furnace</French>
+		<German>Bloomery Furnace</German>
+		<Italian>Bloomery Furnace</Italian>
+		<Spanish>Bloomery Furnace</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILDING_VIETNAMESE_WATER_PUPPET_THEATRE</Tag>

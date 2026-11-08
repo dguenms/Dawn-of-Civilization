@@ -2540,7 +2540,7 @@
 			<Buildings>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_FORGE</BuildingClassType>
-					<BuildingType>BUILDING_HITTITE_BLOOMERY</BuildingType>
+					<BuildingType>BUILDING_HITTITE_BLOOMERY_FURNACE</BuildingType>
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_PAGAN_TEMPLE</BuildingClassType>

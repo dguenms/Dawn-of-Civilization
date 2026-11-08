@@ -2742,12 +2742,12 @@
 		</BuildingInfo>
 		<BuildingInfo>
 			<BuildingClass>BUILDINGCLASS_FORGE</BuildingClass>
-			<Type>BUILDING_HITTITE_BLOOMERY</Type>
-			<Description>TXT_KEY_BUILDING_HITTITE_BLOOMERY</Description>
-			<Civilopedia>TXT_KEY_BUILDING_HITTITE_BLOOMERY_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_HITTITE_BLOOMERY_STRATEGY</Strategy>
+			<Type>BUILDING_HITTITE_BLOOMERY_FURNACE</Type>
+			<Description>TXT_KEY_BUILDING_HITTITE_BLOOMERY_FURNACE</Description>
+			<Civilopedia>TXT_KEY_BUILDING_HITTITE_BLOOMERY_FURNACE_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_HITTITE_BLOOMERY_FURNACE_STRATEGY</Strategy>
 			<Advisor>ADVISOR_ECONOMY</Advisor>
-			<ArtDefineTag>ART_DEF_BUILDING_HITTITE_BLOOMERY</ArtDefineTag>
+			<ArtDefineTag>ART_DEF_BUILDING_HITTITE_BLOOMERY_FURNACE</ArtDefineTag>
 			<FreeStartEra>ERA_RENAISSANCE</FreeStartEra>
 			<PrereqTech>TECH_BLOOMERY</PrereqTech>
 			<iCost>120</iCost>
