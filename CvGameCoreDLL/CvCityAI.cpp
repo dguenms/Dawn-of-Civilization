@@ -10458,31 +10458,37 @@ BuildingTypes CvCityAI::AI_bestAdvancedStartBuilding(int iPass)
 	return AI_bestBuildingThreshold(iFocusFlags, 0, std::max(0, 20 - iPass * 5));
 }
 
-// Leoreth: return first non-state religion to make it work for now
 ReligionTypes CvCityAI::AI_getPersecutionReligion(ReligionTypes eIgnoredReligion)
 {
+	ReligionTypes eBestReligion = NO_RELIGION;
+	int iBestValue = -1;
+
 	for (int iI = 0; iI < GC.getNumReligionInfos(); iI++)
 	{
 		if (eIgnoredReligion == iI)
-		{
 			continue;
-		}
 
-		if (GET_PLAYER(getOwner()).getStateReligion() != iI)
+		if (GET_PLAYER(getOwner()).getStateReligion() == iI)
+			continue;
+
+		if (!isHasReligion((ReligionTypes)iI))
+			continue;
+
+		if (isHolyCity((ReligionTypes)iI))
+			continue;
+
+		int iValue = GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI);
+		if (iValue < 0)
+			continue;
+
+		if (iValue > iBestValue)
 		{
-			if (GET_PLAYER(getOwner()).AI_getPersecutionValue((ReligionTypes)iI) < 0)
-			{
-				break;
-			}
-
-			if (isHasReligion((ReligionTypes)iI) && !isHolyCity((ReligionTypes)iI))
-			{
-				return (ReligionTypes)iI;
-			}
+			eBestReligion = (ReligionTypes)iI;
+			iBestValue = iValue;
 		}
 	}
 
-	return NO_RELIGION;
+	return eBestReligion;
 }
 
 // Leoreth: building AI weights, civ specific preferences and special conditions for some wonders
