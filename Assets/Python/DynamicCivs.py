@@ -1109,7 +1109,7 @@ def specificName(iPlayer):
 				
 			return "TXT_KEY_CIV_NUBIA_FUNJ"
 		
-		if iEra >= iRenaissance:
+		if iReligion in [iOrthodoxy, iCatholicism, iProtestantism]:
 			if isCurrentCapital(iPlayer, "Para"):
 				return "TXT_KEY_CIV_NUBIA_NOBATIA"
 			
