@@ -8142,7 +8142,8 @@ void CvGame::processVote(const VoteTriggeredData& kData, int iChange)
 
 			if (ePlayer != NO_PLAYER && eOtherPlayer != NO_PLAYER)
 			{
-				GET_TEAM(GET_PLAYER(ePlayer).getTeam()).changeEspionagePointsAgainstTeam(GET_PLAYER(eOtherPlayer).getTeam(), kVote.getEspionage() * GET_PLAYER(ePlayer).getReligionPopulation(GC.getGame().getVoteSourceReligion(kData.eVoteSource)));
+				int iEspionage = kVote.getEspionage() * GET_PLAYER(ePlayer).getReligionPopulation(GC.getGame().getVoteSourceReligion(kData.eVoteSource)) * GC.getGameSpeedInfo(getGameSpeedType()).getGrowthPercent() / 100;
+				GET_TEAM(GET_PLAYER(ePlayer).getTeam()).changeEspionagePointsAgainstTeam(GET_PLAYER(eOtherPlayer).getTeam(), iEspionage);
 			}
 
 			setVoteOutcome(kData, NO_PLAYER_VOTE);

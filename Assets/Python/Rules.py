@@ -255,7 +255,7 @@ def brazilianMadeireiroAbility(plot, city, iFeature):
 	}, 0)
 	
 	if civ(plot) == iBrazil:
-		iGold = dFeatureGold[iFeature]
+		iGold = scale(dFeatureGold[iFeature])
 		
 		if iGold > 0:
 			player(plot).changeGold(iGold)

@@ -910,8 +910,9 @@ def acceptColonialAcquisition(iPlayer):
 	for city in data.players[iPlayer].colonialAcquisitionCities:
 		if city.isHuman():
 			colonialAcquisition(iPlayer, city)
-			
-	player().changeGold(data.players[iPlayer].colonialAcquisitionCities.count() * 200)
+	
+	iGold = scale(data.players[iPlayer].colonialAcquisitionCities.count() * 200)
+	player().changeGold(iGold)
 
 def refuseColonialAcquisition(iPlayer):
 	for city in data.players[iPlayer].colonialAcquisitionCities:
@@ -931,7 +932,7 @@ def handleColonialAcquisition(iPlayer):
 	if not targets:
 		return
 	
-	iGold = targets.count() * 200
+	iGold = scale(targets.count() * 200)
 	
 	targetPlayers = targets.cities().owners()
 	freePlots, cityPlots = targets.split(lambda plot: not city(plot))
@@ -944,7 +945,7 @@ def handleColonialAcquisition(iPlayer):
 			askedCities = cityPlots.cities().owner(iTarget)
 			askedCityNames = askedCities.format(formatter=CyCity.getName)
 					
-			iAskGold = askedCities.count() * 200
+			iAskGold = scale(askedCities.count() * 200)
 			
 			data.players[iPlayer].colonialAcquisitionCities = askedCities
 			colonialAcquisitionPopup.text(adjective(iPlayer), adjective(iPlayer), iAskGold, askedCityNames) \
@@ -962,7 +963,8 @@ def handleColonialAcquisition(iPlayer):
 			for plot in targets.cities().owner(iTarget):
 				if bAccepted:
 					colonialAcquisition(iPlayer, plot)
-					player(iTarget).changeGold(200)
+					iGold = scale(200)
+					player(iTarget).changeGold(iGold)
 				else:
 					data.timedConquest(iPlayer, location(plot))
 
