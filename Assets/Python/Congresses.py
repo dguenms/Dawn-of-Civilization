@@ -658,10 +658,13 @@ class Congress:
 		return True
 		
 	def isHumanOwned(self, plot):
+		if not plot.isOwned():
+			return False
+		
 		if self.isActivePlayer(plot.getOwner()):
 			return True
 		
-		if plot.isOwned() and team(plot.getTeam()).isVassal(player().getTeam()):
+		if team(plot.getTeam()).isVassal(player().getTeam()):
 			return True
 		
 		return False
