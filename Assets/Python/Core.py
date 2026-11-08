@@ -252,6 +252,7 @@ def isExtendedBirth(iPlayer):
 	
 	# add special conditions for extended AI flip zones here
 	if civ(iPlayer) == iOttomans and player(iByzantium).isExisting(): return False
+	if civ(iPlayer) == iRussia and player(iRus).isHuman(): return False
 	
 	return True
 

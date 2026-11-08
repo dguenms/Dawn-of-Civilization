@@ -569,20 +569,20 @@ lCivilizations = [
 		techs=techs.column(7).including(iCommune, iPaper, iCompass, iGunpowder).without(iTheology)
 	),
 	Civilization(
-		iRussia,
-		iGold=300,
-		iAdvancedStartPoints=200,
-		iStateReligion=iOrthodoxy,
-		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
-		techs=techs.column(7).including(iCropRotation, iPatronage, iDoctrine),
-	),
-	Civilization(
 		iOttomans,
 		iGold=300,
 		iAdvancedStartPoints=200,
 		iStateReligion=iIslam,
 		lCivics=[iDespotism, iTheocracy, iSlavery, iMerchantTrade, iSyncretism, iHegemony],
 		techs=techs.column(7).including(iCommune, iPaper, iDoctrine, iGunpowder)
+	),
+	Civilization(
+		iRussia,
+		iGold=500,
+		iAdvancedStartPoints=300,
+		iStateReligion=iOrthodoxy,
+		lCivics=[iDespotism, iVassalage, iManorialism, iMerchantTrade, iClergy, iHegemony],
+		techs=techs.column(8).without(iCompass),
 	),
 	Civilization(
 		iCongo,
@@ -1127,18 +1127,6 @@ dStartingUnits = CivDict({
 		iHarass: 6,
 		iDefend: 2,
 	},
-	iRussia: {
-		iSettle: 4,
-		iWork: 5,
-		iDefend: 4,
-		iAttack: 3,
-		iCounter: 4,
-		iSiege: 3,
-		iShock: 1,
-		iHarass: 3,
-		iExplore: 2,
-		iMissionary: 3,
-	},
 	iOttomans: {
 		iSettle: 3,
 		iWork: 3,
@@ -1147,6 +1135,17 @@ dStartingUnits = CivDict({
 		iShock: 3,
 		iSiege: 4,
 		iMissionary: 2,
+	},
+	iRussia: {
+		iSettle: 4,
+		iWork: 5,
+		iDefend: 4,
+		iCityAttack: 4,
+		iCounter: 3,
+		iCitySiege: 3,
+		iShockCity: 3,
+		iExplore: 2,
+		iMissionary: 3,
 	},
 	iCongo: {
 		iSettle: 1,
@@ -1375,6 +1374,13 @@ dExtraAIUnits = CivDict({
 	},
 	iTatars: {
 		iWork: 2,
+	},
+	iRussia: {
+		iSettle: 1,
+		iWork: 2,
+		iCityAttack: 3,
+		iCitySiege: 3,
+		iShockCity: 2,
 	},
 	iCongo: {
 		iSettle: 1,
@@ -2167,6 +2173,16 @@ dTechPreferences = {
 		iCivilLiberties: 20,
 		iBiology: 20,
 	},
+	iOttomans : {
+		iGunpowder: 25,
+		iFirearms: 30,
+		iCombinedArms: 20,
+		iJudiciary: 20,
+	},
+	iThailand : {
+		iCartography: -50,
+		iExploration: -50,
+	},
 	iRussia : {
 		iMacroeconomics: 30,
 		iCollectivism: 30,
@@ -2182,16 +2198,6 @@ dTechPreferences = {
 		iCivilLiberties: -20,
 		iSocialContract: -20,
 		iRepresentation: -20,
-	},
-	iOttomans : {
-		iGunpowder: 25,
-		iFirearms: 30,
-		iCombinedArms: 20,
-		iJudiciary: 20,
-	},
-	iThailand : {
-		iCartography: -50,
-		iExploration: -50,
 	},
 	iNetherlands : {
 		iAcademia: 30,
@@ -2267,7 +2273,6 @@ dDefaultWonderPreferences = {
 	iFrance: -12,
 	iKhmer: -15,
 	iEngland: -12,
-	iRussia: -12,
 	iThailand: -15,
 	iCongo: -20,
 	iNetherlands: -12,

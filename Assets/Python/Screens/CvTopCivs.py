@@ -339,24 +339,6 @@ HISTORIANS = {
 			"TXT_KEY_HISTORIAN_KOSTOMAROV",
 		),
 	},
-	iRussia: {
-		iMedieval: (
-			"TXT_KEY_HISTORIAN_NIKITIN",
-		),
-		iRenaissance: (
-			"TXT_KEY_HISTORIAN_KARAMZIN",
-			"TXT_KEY_HISTORIAN_MULLER",
-			"TXT_KEY_HISTORIAN_TATISHCHEV",
-		),
-		iIndustrial: (
-			"TXT_KEY_HISTORIAN_SOLOVYOV",
-			"TXT_KEY_HISTORIAN_KLYUCHEVSKY",
-			"TXT_KEY_HISTORIAN_POKROVSKY",
-		),
-		iGlobal: (
-			"TXT_KEY_HISTORIAN_VOLGIN",
-		),
-	},
 	iMali: {
 		iRenaissance: (
 			"TXT_KEY_HISTORIAN_KATI",
@@ -451,6 +433,24 @@ HISTORIANS = {
 		),
 		iGlobal: (
 			"TXT_KEY_HISTORIAN_INAN",
+		),
+	},
+	iRussia: {
+		iMedieval: (
+			"TXT_KEY_HISTORIAN_NIKITIN",
+		),
+		iRenaissance: (
+			"TXT_KEY_HISTORIAN_KARAMZIN",
+			"TXT_KEY_HISTORIAN_MULLER",
+			"TXT_KEY_HISTORIAN_TATISHCHEV",
+		),
+		iIndustrial: (
+			"TXT_KEY_HISTORIAN_SOLOVYOV",
+			"TXT_KEY_HISTORIAN_KLYUCHEVSKY",
+			"TXT_KEY_HISTORIAN_POKROVSKY",
+		),
+		iGlobal: (
+			"TXT_KEY_HISTORIAN_VOLGIN",
 		),
 	},
 	iSweden: {

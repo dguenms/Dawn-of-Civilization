@@ -299,19 +299,6 @@ lCivilizations = [
 		},
 	),
 	Civilization(
-		iRussia,
-		iLeader=iIvan,
-		iStateReligion=iOrthodoxy,
-		iGold=200,
-		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
-		techs=techs.column(8).including(iGunpowder, iCompanies, iJudiciary, iPrinting, iFirearms),
-		dAttitudes={iSweden: -2},
-		dMemories={
-			iPoland: {MemoryTypes.MEMORY_DECLARED_WAR: 4},
-			iOttomans: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
-		},
-	),
-	Civilization(
 		iOttomans,
 		iLeader=iSuleiman,
 		iStateReligion=iIslam,
@@ -324,6 +311,19 @@ lCivilizations = [
 			iPoland: {MemoryTypes.MEMORY_DECLARED_WAR: 4},
 			iMisr: {MemoryTypes.MEMORY_REJECTED_DEMAND: 4},
 			iIran: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
+		},
+	),
+	Civilization(
+		iRussia,
+		iLeader=iIvan,
+		iStateReligion=iOrthodoxy,
+		iGold=200,
+		lCivics=[iDespotism, iVassalage, iManorialism, iRegulatedTrade, iClergy, iHegemony],
+		techs=techs.column(8).including(iGunpowder, iCompanies, iJudiciary, iPrinting, iFirearms),
+		dAttitudes={iSweden: -2},
+		dMemories={
+			iPoland: {MemoryTypes.MEMORY_DECLARED_WAR: 4},
+			iOttomans: {MemoryTypes.MEMORY_DENIED_RELIGION: 2},
 		},
 	),
 	Civilization(

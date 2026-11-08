@@ -788,22 +788,6 @@ dGoals = {
 			by=1780,
 		),
 	),
-	iRussia: (
-		All(
-			BuildingCount(iOrthodoxCathedral, 2, by=1500),
-			BuildingCount(sum(lOrthodoxWonders).named(ORTHODOX_WONDERS), 3, by=1600),
-		),
-		All(
-			SettledCities(12, area=plots.regions(rUrals, rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
-			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.regions(rSiberia, rAmur).adjacent_regions(rSeaOfJapan, rSeaOfOkhotsk, rBeringSea).named(SIBERIAN_COAST), by=1920),
-		),
-		All(
-			Communist(mode=STATELESS),
-			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True, mode=STATELESS),
-			UnitCount((iICBM, 30), (iSatellite, 30), mode=STATELESS),
-			by=1970,
-		),
-	),
 	iOttomans: (
 		CityBuildingCount(capital().named(CAPITAL), wonders(), 4, at=1550),
 		All(
@@ -823,6 +807,22 @@ dGoals = {
 			by=1700,
 		),
 		SpecialistCount(sum(iSpecialistGreatGeneral, iSpecialistGreatArtist, iSpecialistGreatStatesman), 16, by=1800),
+	),
+	iRussia: (
+		All(
+			BuildingCount(iOrthodoxCathedral, 2, by=1500),
+			BuildingCount(sum(lOrthodoxWonders).named(ORTHODOX_WONDERS), 3, by=1600),
+		),
+		All(
+			SettledCities(12, area=plots.regions(rUrals, rSiberia, rCentralAsianSteppe, rAmur).named(SIBERIA), by=1700),
+			RouteConnection([iRouteRailroad], plots.capitals(iRussia).named(MOSCOW), plots.regions(rSiberia, rAmur).adjacent_regions(rSeaOfJapan, rSeaOfOkhotsk, rBeringSea).named(SIBERIAN_COAST), by=1920),
+		),
+		All(
+			Communist(mode=STATELESS),
+			AttitudeCount(AttitudeTypes.ATTITUDE_FRIENDLY, 5, bCommunist=True, mode=STATELESS),
+			UnitCount((iICBM, 30), (iSatellite, 30), mode=STATELESS),
+			by=1970,
+		),
 	),
 	iCongo: (
 		ReligiousVotePercent(12, by=1650),
