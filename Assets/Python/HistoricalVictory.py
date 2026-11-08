@@ -661,8 +661,8 @@ dGoals = {
 		),
 	),
 	iRus: (
-		ReligionPopulationCount(iOrthodoxy, 30, by=1200),
-		DefeatedUnits(civs(iBarbarian), 25, by=1250),
+		ReligionPopulationCount(iOrthodoxy, 35, by=1300),
+		DefeatedUnits(civs(iBarbarian, iMongols, iTatars), 40, by=1400),
 		All(
 			ImprovementCount((iCamp, 6), (iQuarry, 3)),
 			TradeRouteCount(20),
