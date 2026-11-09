@@ -987,7 +987,7 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
-			<bGraphicalOnly>1</bGraphicalOnly>
+			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_WORKSHOP</Type>
@@ -1624,7 +1624,7 @@
 					<YieldChanges>
 						<iYieldChange>1</iYieldChange>
 						<iYieldChange>0</iYieldChange>
-						<iYieldChange>1</iYieldChange>
+						<iYieldChange>2</iYieldChange>
 					</YieldChanges>
 				</BonusTypeStruct>
 				<BonusTypeStruct>
@@ -1672,7 +1672,7 @@
 					</RouteYields>
 				</RouteYieldChange>
 			</RouteYieldChanges>
-			<bGraphicalOnly>1</bGraphicalOnly>
+			<bGraphicalOnly>0</bGraphicalOnly>
 		</ImprovementInfo>
 		<ImprovementInfo>
 			<Type>IMPROVEMENT_QUARRY</Type>
