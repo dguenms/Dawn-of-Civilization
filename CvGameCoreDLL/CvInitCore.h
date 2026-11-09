@@ -400,6 +400,10 @@ protected:
 	CvString* m_aszXMLCheck;
 	mutable CvString m_szTempCheck;
 
+	mutable CvWString m_aszTempCivDesc[MAX_PLAYERS];
+	mutable CvWString m_aszTempCivShortDesc[MAX_PLAYERS];
+	mutable CvWString m_aszTempCivAdj[MAX_PLAYERS];
+
 // BUG - EXE/DLL Paths - start
 	static void setPathNames();
 

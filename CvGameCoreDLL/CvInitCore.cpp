@@ -1279,13 +1279,11 @@ const CvWString & CvInitCore::getCivDescription(PlayerTypes eID, uint uiForm) co
 
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
-		m_szTemp = gDLL->getObjectText(CvString(m_aszCivDescription[eID]).GetCString(), uiForm, true);
+		m_aszTempCivDesc[eID] = gDLL->getObjectText(CvString(m_aszCivDescription[eID]).GetCString(), uiForm, true);
+		return m_aszTempCivDesc[eID];
 	}
-	else
-	{
-		m_szTemp = "";
-	}
-
+		
+	m_szTemp = "";
 	return m_szTemp;
 }
 
@@ -1321,13 +1319,11 @@ const CvWString & CvInitCore::getCivShortDesc(PlayerTypes eID, uint uiForm) cons
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
 		// Assume we have stored the key
-		m_szTemp = gDLL->getObjectText(CvString(m_aszCivShortDesc[eID]).GetCString(), uiForm, true);
-	}
-	else
-	{
-		m_szTemp = "";
+		m_aszTempCivShortDesc[eID] = gDLL->getObjectText(CvString(m_aszCivShortDesc[eID]).GetCString(), uiForm, true);
+		return m_aszTempCivShortDesc[eID];
 	}
 
+	m_szTemp = "";
 	return m_szTemp;
 }
 
@@ -1363,13 +1359,11 @@ const CvWString & CvInitCore::getCivAdjective(PlayerTypes eID, uint uiForm) cons
 	if ( checkBounds(eID, 0, MAX_PLAYERS) )
 	{
 		// Assume we have stored the key
-		m_szTemp = gDLL->getObjectText(CvString(m_aszCivAdjective[eID]).GetCString(), uiForm, true);
+		m_aszTempCivAdj[eID] = gDLL->getObjectText(CvString(m_aszCivAdjective[eID]).GetCString(), uiForm, true);
+		return m_aszTempCivAdj[eID];
 	}
-	else
-	{
-		m_szTemp = "";
-	}
-
+		
+	m_szTemp = "";
 	return m_szTemp;
 }
 
