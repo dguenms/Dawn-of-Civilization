@@ -5852,8 +5852,9 @@ void CvCityAI::AI_updateBestBuild()
 							iHealthAdjust += getImprovementHealthPercentChange(eImprovement) / 100;
 							if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 							{
-								iHappyAdjust -= getImprovementHappinessPercentChange(pLoopPlot->getImprovementType());
-								iHealthAdjust -= getImprovementHealthPercentChange(pLoopPlot->getImprovementType());
+								// Fresol: getImprovementHappiness/HealthPercentChange() return percent points (see CvCity::getImprovementHappiness(), which divides by 100), so the -= needs the same / 100 as the += above
+								iHappyAdjust -= getImprovementHappinessPercentChange(pLoopPlot->getImprovementType()) / 100;
+								iHealthAdjust -= getImprovementHealthPercentChange(pLoopPlot->getImprovementType()) / 100;
 							}
 
 							// Leoreth: ignore yield change of defensive structures if no natural food on the tile
