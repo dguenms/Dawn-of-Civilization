@@ -147,19 +147,22 @@ public:
 	int AI_bonusVal(BonusTypes eBonus, int iChange = 1) const;
 	int AI_baseBonusVal(BonusTypes eBonus, int iChange = 1) const;
 	int AI_bonusTradeVal(BonusTypes eBonus, PlayerTypes ePlayer, int iChange) const;
+	bool AI_isStrategicBonus(BonusTypes eBonus) const;
 	DenialTypes AI_bonusTrade(BonusTypes eBonus, PlayerTypes ePlayer) const;
 	int AI_corporationBonusVal(BonusTypes eBonus, int iChange = 1) const;
 
 	// Leoreth: determine value provided by additional resource instances
-	int AI_bonusEffectVal(BonusTypes eBonus, int iChange) const;
+	// Fresol: bAssumeNone asks for the value a single copy would have for a player who owns none
+	// of the resource, which is the least a seller may charge for it (see AI_bonusTradeVal)
+	int AI_bonusEffectVal(BonusTypes eBonus, int iChange, bool bAssumeNone = false) const;
 
-	int AI_bonusHappinessChange(BonusTypes eBonus, int iChange) const;
-	int AI_bonusHealthChange(BonusTypes eBonus, int iChange) const;
+	int AI_bonusHappinessChange(BonusTypes eBonus, int iChange, bool bAssumeNone = false) const;
+	int AI_bonusHealthChange(BonusTypes eBonus, int iChange, bool bAssumeNone = false) const;
 
-	int AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange) const;
-	int AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange) const;
+	int AI_bonusBuildingHappinessChange(BonusTypes eBonus, int iChange, bool bAssumeNone = false) const;
+	int AI_bonusBuildingHealthChange(BonusTypes eBonus, int iChange, bool bAssumeNone = false) const;
 
-	int AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange) const;
+	int AI_bonusAffectedCitiesChange(BonusTypes eBonus, int iChange, bool bAssumeNone = false) const;
 
 	int AI_bonusActualHappinessChange(BonusTypes eBonus, int iChange) const;
 	int AI_bonusActualHealthChange(BonusTypes eBonus, int iChange) const;

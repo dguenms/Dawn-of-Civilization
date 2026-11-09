@@ -765,6 +765,11 @@
 		<DefineName>PEACE_TREATY_LENGTH</DefineName>
 		<iDefineIntVal>10</iDefineIntVal>
 	</Define>
+	<!-- Fresol: minimum price (gold per turn) an AI asks for a strategic resource it trades -->
+	<Define>
+		<DefineName>AI_STRATEGIC_MIN_PRICE</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
 	<Define>
 		<DefineName>MAX_ANARCHY_TURNS</DefineName>
 		<iDefineIntVal>100</iDefineIntVal>
