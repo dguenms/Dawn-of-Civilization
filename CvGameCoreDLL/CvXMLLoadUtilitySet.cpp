@@ -2001,6 +2001,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(int **ppiList, const TCHAR* szRoot
 			piList = *ppiList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iInfoBaseLength);
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
@@ -2070,6 +2071,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(bool **ppbList, const TCHAR* szRoo
 			pbList = *ppbList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iInfoBaseLength);
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
@@ -2138,6 +2140,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(float **ppfList, const TCHAR* szRo
 			pfList = *ppfList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iInfoBaseLength);
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
@@ -2206,6 +2209,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(CvString **ppszList, const TCHAR* 
 			pszList = *ppszList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iInfoBaseLength);
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
@@ -2274,6 +2278,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(int **ppiList, const TCHAR* szRoot
 			piList = *ppiList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iTagListLength);
 				if(!(iNumSibs <= iTagListLength))
 				{
 					char	szMessage[1024];
@@ -2343,6 +2348,7 @@ void CvXMLLoadUtility::SetVariableListTagPairForAudioScripts(int **ppiList, cons
 			piList = *ppiList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iTagListLength);
 				if(!(iNumSibs <= iTagListLength))
 				{
 					char	szMessage[1024];
@@ -2415,6 +2421,7 @@ void CvXMLLoadUtility::SetVariableListTagPairForAudioScripts(int **ppiList, cons
 			piList = *ppiList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iInfoBaseLength);
 				if(!(iNumSibs <= iInfoBaseLength))
 				{
 					char	szMessage[1024];
@@ -2487,6 +2494,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(bool **ppbList, const TCHAR* szRoo
 			pbList = *ppbList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iTagListLength);
 				if(!(iNumSibs <= iTagListLength))
 				{
 					char	szMessage[1024];
@@ -2555,6 +2563,7 @@ void CvXMLLoadUtility::SetVariableListTagPair(CvString **ppszList, const TCHAR* 
 			pszList = *ppszList;
 			if (0 < iNumSibs)
 			{
+				FAssert(iNumSibs <= iTagListLength);
 				if(!(iNumSibs <= iTagListLength))
 				{
 					char	szMessage[1024];
