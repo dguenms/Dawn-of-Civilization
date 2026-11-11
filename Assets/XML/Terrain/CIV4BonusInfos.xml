@@ -33,6 +33,7 @@
 			</Rands>
 			<iPlayer>100</iPlayer>
 			<bHills>1</bHills>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -61,7 +62,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
-			<iAITradeModifier>5</iAITradeModifier>
 			<iHappiness>1</iHappiness>
 			<iAffectedCities>3</iAffectedCities>
 			<iPlacementOrder>5</iPlacementOrder>
@@ -129,6 +129,7 @@
 			<iUnique>6</iUnique>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -208,6 +209,7 @@
 			<iPlayer>100</iPlayer>
 			<iUnique>4</iUnique>
 			<bHills>1</bHills>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -248,6 +250,7 @@
 			<bHills>1</bHills>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -341,6 +344,7 @@
 			<iUnique>6</iUnique>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -385,6 +389,7 @@
 			<bHills>1</bHills>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -435,6 +440,7 @@
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
 			<bNormalize>1</bNormalize>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -480,6 +486,7 @@
 			<iUnique>7</iUnique>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_DESERT</TerrainType>
@@ -538,6 +545,7 @@
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
 			<bNormalize>1</bNormalize>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -574,6 +582,7 @@
 			<bHills>1</bHills>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -1523,7 +1532,6 @@
 				<iYieldChange>0</iYieldChange>
 				<iYieldChange>1</iYieldChange>
 			</YieldChanges>
-			<iAITradeModifier>5</iAITradeModifier>
 			<iHappiness>1</iHappiness>
 			<iAffectedCities>3</iAffectedCities>
 			<iPlacementOrder>5</iPlacementOrder>
@@ -1621,6 +1629,7 @@
 			<bHills>1</bHills>
 			<bFlatlands>1</bFlatlands>
 			<bNoRiverSide>1</bNoRiverSide>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -1773,6 +1782,7 @@
 			</Rands>
 			<iPlayer>100</iPlayer>
 			<bHills>1</bHills>
+			<bStrategic>1</bStrategic>
 			<TerrainBooleans>
 				<TerrainBoolean>
 					<TerrainType>TERRAIN_PLAINS</TerrainType>

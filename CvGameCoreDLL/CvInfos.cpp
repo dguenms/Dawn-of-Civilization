@@ -14182,6 +14182,7 @@ m_bHills(false),
 m_bFlatlands(false),
 m_bNoRiverSide(false),
 m_bNormalize(false),
+m_bStrategic(false),
 m_piYieldChange(NULL),
 m_piImprovementChange(NULL),
 m_pbTerrain(NULL),
@@ -14366,6 +14367,11 @@ bool CvBonusInfo::isNormalize() const
 	return m_bNormalize;
 }
 
+bool CvBonusInfo::isStrategic() const
+{
+	return m_bStrategic;
+}
+
 const TCHAR* CvBonusInfo::getArtDefineTag() const
 {
 	return m_szArtDefineTag;
@@ -14471,6 +14477,7 @@ void CvBonusInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bFlatlands);
 	stream->Read(&m_bNoRiverSide);
 	stream->Read(&m_bNormalize);
+	stream->Read(&m_bStrategic);
 
 	stream->ReadString(m_szArtDefineTag);
 
@@ -14536,6 +14543,7 @@ void CvBonusInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bFlatlands);
 	stream->Write(m_bNoRiverSide);
 	stream->Write(m_bNormalize);
+	stream->Write(m_bStrategic);
 
 	stream->WriteString(m_szArtDefineTag);
 
@@ -14618,6 +14626,7 @@ bool CvBonusInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bFlatlands, "bFlatlands");
 	pXML->GetChildXmlValByName(&m_bNoRiverSide, "bNoRiverSide");
 	pXML->GetChildXmlValByName(&m_bNormalize, "bNormalize");
+	pXML->GetChildXmlValByName(&m_bStrategic, "bStrategic");
 
 	pXML->SetVariableListTagPair(&m_pbTerrain, "TerrainBooleans", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
 	pXML->SetVariableListTagPair(&m_pbFeature, "FeatureBooleans", sizeof(GC.getFeatureInfo((FeatureTypes)0)), GC.getNumFeatureInfos());

@@ -1714,4 +1714,8 @@
 		<DefineName>CULTURE_COST_RIVER</DefineName>
 		<iDefineIntVal>-5</iDefineIntVal>
 	</Define>
+	<Define>
+		<DefineName>MIN_STRATEGIC_RESOURCE_VALUE</DefineName>
+		<iDefineIntVal>15</iDefineIntVal>
+	</Define>
 </Civ4Defines>

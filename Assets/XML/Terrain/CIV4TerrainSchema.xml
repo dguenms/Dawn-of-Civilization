@@ -235,6 +235,7 @@
 	<ElementType name="bNoRiverSide" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bNormalize" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFeature" content="textOnly" dt:type="boolean"/>
+	<ElementType name="bStrategic" content="textOnly" dt:type="boolean"/> <!-- Leoreth -->
 	<ElementType name="FeatureBoolean" content="eltOnly">
 		<element type="FeatureType"/>
 		<element type="bFeature"/>
@@ -285,6 +286,7 @@
 		<element type="bFlatlands" minOccurs="0"/>
 		<element type="bNoRiverSide" minOccurs="0"/>
 		<element type="bNormalize" minOccurs="0"/>
+		<element type="bStrategic" minOccurs="0"/> <!-- Leoreth -->
 		<element type="TerrainBooleans" minOccurs="0"/>
 		<element type="FeatureBooleans" minOccurs="0"/>
 		<element type="FeatureTerrainBooleans" minOccurs="0"/>
