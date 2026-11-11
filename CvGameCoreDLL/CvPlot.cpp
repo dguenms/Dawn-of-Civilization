@@ -5979,6 +5979,17 @@ int CvPlot::determineVariety(FeatureTypes eFeature) const
 		}
 	}
 
+	if (eFeature == FEATURE_SAVANNA)
+	{
+		switch (getRegionGroup())
+		{
+		case REGION_GROUP_SUB_SAHARAN_AFRICA:
+			return isCoastalLand() ? 0 : 1;
+		default:
+			return 0;
+		}
+	}
+
 	return (GC.getFeatureInfo(eFeature).getArtInfo()->getNumVarieties() * ((getLatitude() * 9) / 8)) / 90;
 }
 
