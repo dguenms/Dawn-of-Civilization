@@ -129,6 +129,7 @@ MISCELLANEOUS
 * Apple111111: game font symbol assignment fix
 * MaciejLipinski, Krieger-FS: city names
 * migck: unit changes
+* Fresol: Claude prompts
 
 PEDIA
 * Wikipedia
