@@ -13138,24 +13138,21 @@ bool CvUnitAI::AI_foundRange(int iRange, bool bFollow)
 				{
 					if (canFound(pLoopPlot))
 					{
-						if (GET_PLAYER(getOwnerINLINE()).isMinorCiv() || isBarbarian())
-						{
-							iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
+						iValue = pLoopPlot->getFoundValue(getOwnerINLINE());
 
-							if (iValue > iBestValue)
+						if (iValue > iBestValue)
+						{
+							if (!(pLoopPlot->isVisibleEnemyUnit(this)))
 							{
-								if (!(pLoopPlot->isVisibleEnemyUnit(this)))
+								if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_FOUND, getGroup(), 3) == 0)
 								{
-									if (GET_PLAYER(getOwnerINLINE()).AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_FOUND, getGroup(), 3) == 0)
+									if (generatePath(pLoopPlot, MOVE_SAFE_TERRITORY, true, &iPathTurns))
 									{
-										if (generatePath(pLoopPlot, MOVE_SAFE_TERRITORY, true, &iPathTurns))
+										if (iPathTurns <= iRange)
 										{
-											if (iPathTurns <= iRange)
-											{
-												iBestValue = iValue;
-												pBestPlot = getPathEndTurnPlot();
-												pBestFoundPlot = pLoopPlot;
-											}
+											iBestValue = iValue;
+											pBestPlot = getPathEndTurnPlot();
+											pBestFoundPlot = pLoopPlot;
 										}
 									}
 								}
