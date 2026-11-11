@@ -6564,7 +6564,10 @@ void CvGame::doGlobalWarming()
 					{
 						CvEventReporter::getInstance().globalWarmingEffect(pPlot, bChanged, eCurrentTerrain, pPlot->getTerrainType(), eCurrentFeature);
 
-						pPlot->setImprovementType(NO_IMPROVEMENT);
+						if (pPlot->getImprovementType() != NO_IMPROVEMENT && !GC.getImprovementInfo(pPlot->getImprovementType()).isPermanent())
+						{
+							pPlot->setImprovementType(NO_IMPROVEMENT);
+						}
 
 						CvCity* pCity = GC.getMapINLINE().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE());
 						if (pCity != NULL)
