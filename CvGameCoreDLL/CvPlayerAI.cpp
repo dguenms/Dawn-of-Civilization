@@ -18639,7 +18639,7 @@ bool CvPlayerAI::AI_canUpdateCitySites() const
 	for (int iI = 0; iI < AI_getNumCitySites(); iI++)
 	{
 		pCitySitePlot = AI_getCitySite(iI);
-		if (AI_plotTargetMissionAIs(pCitySitePlot, MISSIONAI_FOUND) > 0)
+		if (AI_plotTargetMissionAIs(pCitySitePlot, MISSIONAI_FOUND) > 0 && canFound(pCitySitePlot->getX(), pCitySitePlot->getY()))
 		{
 			return false;
 		}
