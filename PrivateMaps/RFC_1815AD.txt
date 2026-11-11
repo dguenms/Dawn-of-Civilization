@@ -1054,10 +1054,6 @@ BeginPlot
 	RouteType=ROUTE_ROAD
 EndPlot
 BeginPlot
-	x=28,y=50
-	ImprovementType=IMPROVEMENT_FISHING_BOATS
-EndPlot
-BeginPlot
 	x=28,y=52
 	ImprovementType=IMPROVEMENT_SLAVE_PLANTATION
 	RouteType=ROUTE_ROAD
