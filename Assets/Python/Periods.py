@@ -70,6 +70,7 @@ dPeriodNames = {
 	iPeriodSeljuks:					"Seljuks",
 	iPeriodNationalFrance:			"National_France",
 	iPeriodMeiji:					"Meiji",
+	iPeriodModernMalaysia:			"Modern_Malaysia",
 	iPeriodDenmark:					"Denmark",
 	iPeriodNorway:					"Norway",
 	iPeriodUzbeks:					"Uzbeks",
