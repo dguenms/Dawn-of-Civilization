@@ -569,4 +569,44 @@
 			<Plural>0</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_TAMILS</Tag>
+		<English>Madras Presidency</English>
+		<French>Madras Presidency</French>
+		<German>Madras Presidency</German>
+		<Italian>Madras Presidency</Italian>
+		<Spanish>Madras Presidency</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_KARNATAKA</Tag>
+		<English>Bombay Presidency</English>
+		<French>Bombay Presidency</French>
+		<German>Bombay Presidency</German>
+		<Italian>Bombay Presidency</Italian>
+		<Spanish>Bombay Presidency</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_BENGAL</Tag>
+		<English>Bengal Presidency</English>
+		<French>Bengal Presidency</French>
+		<German>Bengal Presidency</German>
+		<Italian>Bengal Presidency</Italian>
+		<Spanish>Bengal Presidency</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_RAJPUTS</Tag>
+		<English>Rajputana Presidency</English>
+		<French>Rajputana Presidency</French>
+		<German>Rajputana Presidency</German>
+		<Italian>Rajputana Presidency</Italian>
+		<Spanish>Rajputana Presidency</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_ENGLISH_MUGHALS</Tag>
+		<English>Sind Presidency</English>
+		<French>Sind Presidency</French>
+		<German>Sind Presidency</German>
+		<Italian>Sind Presidency</Italian>
+		<Spanish>Sind Presidency</Spanish>
+	</TEXT>
 </Civ4GameText>
