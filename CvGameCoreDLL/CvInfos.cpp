@@ -14672,6 +14672,7 @@ m_bNukeImmune(false),
 m_bMakesPassable(false), // Leoreth
 m_iWorldSoundscapeScriptId(0),
 m_iEffectProbability(0),
+m_eRemovalFeatureType(NO_FEATURE), // Leoreth
 m_piYieldChange(NULL),
 m_piRiverYieldChange(NULL),
 m_piHillsYieldChange(NULL),
@@ -14816,6 +14817,11 @@ bool CvFeatureInfo::isNukeImmune() const
 const TCHAR* CvFeatureInfo::getOnUnitChangeTo() const
 {
 	return m_szOnUnitChangeTo;
+}
+
+FeatureTypes CvFeatureInfo::getRemovalFeatureType() const
+{
+	return m_eRemovalFeatureType;
 }
 
 const TCHAR* CvFeatureInfo::getArtDefineTag() const
@@ -15000,6 +15006,16 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iEffectProbability, "iEffectProbability");
 
 	pXML->SetVariableListTagPair(&m_pbTerrain, "TerrainBooleans", sizeof(GC.getTerrainInfo((TerrainTypes)0)), GC.getNumTerrainInfos());
+
+	return true;
+}
+
+bool CvFeatureInfo::readPass2(CvXMLLoadUtility* pXML)
+{
+	CvString szTextVal;
+
+	pXML->GetChildXmlValByName(szTextVal, "RemovalFeatureType");
+	m_eRemovalFeatureType = (FeatureTypes)GC.getInfoTypeForString(szTextVal);
 
 	return true;
 }

@@ -1849,7 +1849,9 @@ class CvPlotDesc:
 			iBuild = getImprovementBuild(improvementTypeNum)
 			if iBuild is not None and self.plot.getFeatureType() >= 0:
 				if infos.build(iBuild).isFeatureRemove(self.plot.getFeatureType()):
-					self.plot.setFeatureType(-1, 0)
+					iRemovalFeatureType = infos.feature(self.plot.getFeatureType()).getRemovalFeatureType()
+					iVariety = iRemovalFeatureType >= 0 and self.plot.getFeatureVariety() or 0
+					self.plot.setFeatureType(iRemovalFeatureType, iVariety)
 
 		if (self.routeType):
 			routeTypeNum = CvUtil.findInfoTypeNum(gc.getRouteInfo, gc.getNumRouteInfos(), self.routeType)

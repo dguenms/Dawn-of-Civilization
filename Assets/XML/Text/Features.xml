@@ -93,4 +93,12 @@
 		<Italian>Strait</Italian>
 		<Spanish>Strait</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_FEATURE_WOODLAND</Tag>
+		<English>Woodland</English>
+		<French>Woodland</French>
+		<German>Woodland</German>
+		<Italian>Woodland</Italian>
+		<Spanish>Woodland</Spanish>
+	</TEXT>
 </Civ4GameText>

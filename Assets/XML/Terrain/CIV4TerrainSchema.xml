@@ -146,6 +146,7 @@
 	<ElementType name="EffectType" content="textOnly"/>
 	<ElementType name="iEffectProbability" content="textOnly" dt:type="int"/>
 	<ElementType name="OnUnitChangeTo" content="textOnly"/>
+	<ElementType name="RemovalFeatureType" content="textOnly"/> <!-- Leoreth -->
 	<ElementType name="FeatureInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -178,6 +179,7 @@
 		<element type="bVisibleAlways"/>
 		<element type="bNukeImmune"/>
 		<element type="OnUnitChangeTo"/>
+		<element type="RemovalFeatureType" minOccurs="0"/> <!-- Leoreth -->
 		<element type="TerrainBooleans"/>
 		<element type="FootstepSounds"/>
 		<element type="WorldSoundscapeAudioScript" minOccurs="0"/>

@@ -5903,7 +5903,7 @@ int CvPlot::determineVariety(FeatureTypes eFeature) const
 		eFeature = getFeatureType();
 	}
 
-	if (eFeature == FEATURE_FOREST)
+	if (eFeature == FEATURE_FOREST || eFeature == FEATURE_WOODLAND)
 	{
 		switch (getTerrainType())
 		{
@@ -8861,7 +8861,11 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, TeamTypes eTeam
 					// Python Event
 					CvEventReporter::getInstance().plotFeatureRemoved(this, getFeatureType(), pCity);
 
-					setFeatureType(NO_FEATURE);
+					FeatureTypes eRemovalFeature = GC.getFeatureInfo(getFeatureType()).getRemovalFeatureType();
+					int iRemovalVariety = eRemovalFeature != NO_FEATURE ? getFeatureVariety() : 0;
+
+					// Leoreth: removal feature type
+					setFeatureType(eRemovalFeature, iRemovalVariety);
 				}
 			}
 

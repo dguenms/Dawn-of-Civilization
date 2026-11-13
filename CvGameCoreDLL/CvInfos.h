@@ -3407,6 +3407,7 @@ public:
 	bool isVisibleAlways() const;			// Exposed to Python
 	bool isNukeImmune() const;			// Exposed to Python
 	const TCHAR* getOnUnitChangeTo() const;
+	FeatureTypes getRemovalFeatureType() const;
 
 	const TCHAR* getArtDefineTag() const;
 	void setArtDefineTag(const TCHAR* szTag);
@@ -3434,6 +3435,7 @@ public:
 	const TCHAR* getVarietyButton(int variety) const; // Exposed to Python
 
 	bool read(CvXMLLoadUtility* pXML);
+	bool readPass2(CvXMLLoadUtility* pXML);
 
 	//---------------------------------------PROTECTED MEMBER VARIABLES---------------------------------
 protected:
@@ -3463,6 +3465,7 @@ protected:
 	bool m_bNukeImmune;
 	bool m_bMakesPassable; // Leoreth
 	CvString m_szOnUnitChangeTo;
+	FeatureTypes m_eRemovalFeatureType; // Leoreth
 
 	int m_iWorldSoundscapeScriptId;
 

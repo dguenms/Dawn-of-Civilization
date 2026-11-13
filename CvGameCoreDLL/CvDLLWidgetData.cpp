@@ -3085,8 +3085,17 @@ void CvDLLWidgetData::parseActionHelp(CvWidgetDataStruct &widgetDataStruct, CvWS
 							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_CHANGE_PRODUCTION", iProduction, pCity->getNameKey()));
 						}
 
+						FeatureTypes eRemovalFeature = GC.getFeatureInfo(pMissionPlot->getFeatureType()).getRemovalFeatureType();
+
 						szBuffer.append(NEWLINE);
-						szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REMOVE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide()));
+						if (eRemovalFeature != NO_FEATURE)
+						{
+							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REPLACE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide(), GC.getFeatureInfo(eRemovalFeature).getTextKeyWide()));
+						}
+						else
+						{
+							szBuffer.append(gDLL->getText("TXT_KEY_ACTION_REMOVE_FEATURE", GC.getFeatureInfo(pMissionPlot->getFeatureType()).getTextKeyWide()));
+						}
 					}
 
 				}

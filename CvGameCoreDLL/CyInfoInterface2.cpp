@@ -413,6 +413,7 @@ void CyInfoPythonInterface2()
 		.def("getAdvancedStartRemoveCost", &CvFeatureInfo::getAdvancedStartRemoveCost, "int ()")
 		.def("getTurnDamage", &CvFeatureInfo::getTurnDamage, "int ()")
 		.def("getGlobalWarmingDefense", &CvFeatureInfo::getGlobalWarmingDefense, "int ()")
+		.def("getRemovalFeatureType", &CvFeatureInfo::getRemovalFeatureType, "int ()")
 // BUG - Global Warming Mod - start
 #ifdef _MOD_GWARM
 		.def("getWarmingDefense", &CvFeatureInfo::getWarmingDefense, "int ()") //GWMod new XML field M.A.

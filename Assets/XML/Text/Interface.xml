@@ -4017,6 +4017,14 @@
 		<Spanish>Expansion</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_ACTION_REPLACE_FEATURE</Tag>
+		<English>[COLOR_WARNING_TEXT]Will remove the %s1_FeatName and leave %s2_FeatName[COLOR_REVERT]</English>
+		<French>[COLOR_WARNING_TEXT]Will remove the %s1_FeatName and leave %s2_FeatName[COLOR_REVERT]</French>
+		<German>[COLOR_WARNING_TEXT]Will remove the %s1_FeatName and leave %s2_FeatName[COLOR_REVERT]</German>
+		<Italian>[COLOR_WARNING_TEXT]Will remove the %s1_FeatName and leave %s2_FeatName[COLOR_REVERT]</Italian>
+		<Spanish>[COLOR_WARNING_TEXT]Will remove the %s1_FeatName and leave %s2_FeatName[COLOR_REVERT]</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_</Tag>
 		<English></English>
 		<French></French>

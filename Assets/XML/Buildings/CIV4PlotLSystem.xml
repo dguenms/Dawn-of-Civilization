@@ -806,7 +806,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:5</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:50</Attribute>
+			<Attribute Class="Scalar">fCenterCut:10</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
@@ -814,7 +814,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:60</Attribute>
+			<Attribute Class="Scalar">fCenterCut:15</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
@@ -822,7 +822,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:15</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:70</Attribute>
+			<Attribute Class="Scalar">fCenterCut:25</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
@@ -830,7 +830,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:25</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:90</Attribute>
+			<Attribute Class="Scalar">fCenterCut:40</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
@@ -5063,6 +5063,7 @@
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Rotate>-45</Rotate>
 		</ArtRef>
 		<ArtRef Name="goal:IMPROVEMENT_PADDY_FIELD">
@@ -5118,6 +5119,7 @@
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Rotate>-45</Rotate>
 			<Scale>0.5</Scale>
 		</ArtRef>
@@ -5131,6 +5133,7 @@
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Rotate>-45</Rotate>
 			<Scale>0.5</Scale>
 		</ArtRef>
@@ -5175,6 +5178,7 @@
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
 			<Rotate>-45</Rotate>
 			<Scale>0.5</Scale>
@@ -5188,6 +5192,7 @@
 			<Attribute Class="Scalar">szExtra:art:IMPROVEMENT_FARM2</Attribute>
 			<Attribute Class="Scalar">bZMode_Ground:1</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
+			<Attribute Class="Scalar">bCutTrees:1</Attribute>
 			<Attribute Class="Scalar">szForceContourGeometry:Shadow</Attribute>
 			<Rotate>-45</Rotate>
 			<Scale>0.5</Scale>
