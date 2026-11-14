@@ -1547,7 +1547,11 @@
 			<Civilopedia>TXT_KEY_FEATURE_WOODLAND_PEDIA</Civilopedia>
 			<ArtDefineTag>ART_DEF_FEATURE_WOODLAND</ArtDefineTag>
 			<YieldChanges/>
-			<RiverYieldChange/>
+			<RiverYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>0</iYieldChange>
+				<iYieldChange>1</iYieldChange>
+			</RiverYieldChange>
 			<HillsYieldChange/>
 			<iMovement>1</iMovement>
 			<iSeeThrough>1</iSeeThrough>
