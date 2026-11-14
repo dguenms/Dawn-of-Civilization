@@ -5180,7 +5180,7 @@
 			<bActAsLand>0</bActAsLand>
 			<bActAsAir>0</bActAsAir>
 			<NIF>Art/Units/Militia/Middle_Eastern/spearman.nif</NIF>
-			<KFM>Art/Units/Spearman/Spearman.kfm</KFM>
+			<KFM>Art/Units/Militia/Middle_Eastern/Spearman.kfm</KFM>
 			<SHADERNIF>Art/Units/Militia/Middle_Eastern/spearman.nif</SHADERNIF>
 			<ShadowDef>
 				<ShadowNIF>Art/Units/01_UnitShadows/UnitShadow.nif</ShadowNIF>
