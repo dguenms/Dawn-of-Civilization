@@ -317,4 +317,60 @@
 			<Plural>0:0:1:1</Plural>
 		</Spanish>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_AUSTRALIA</Tag>
+		<English>New Holland</English>
+		<French>New Holland</French>
+		<German>New Holland</German>
+		<Italian>New Holland</Italian>
+		<Spanish>New Holland</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_BENGAL</Tag>
+		<English>Directorate of Bengal</English>
+		<French>Directorate of Bengal</French>
+		<German>Directorate of Bengal</German>
+		<Italian>Directorate of Bengal</Italian>
+		<Spanish>Directorate of Bengal</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_KARNATAKA</Tag>
+		<English>Commandment of Malabar</English>
+		<French>Commandment of Malabar</French>
+		<German>Commandment of Malabar</German>
+		<Italian>Commandment of Malabar</Italian>
+		<Spanish>Commandment of Malabar</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_MALAYSIA</Tag>
+		<English>Governorate of %s1</English>
+		<French>Governorate of %s1</French>
+		<German>Governorate of %s1</German>
+		<Italian>Governorate of %s1</Italian>
+		<Spanish>Governorate of %s1</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_TAMILS</Tag>
+		<English>Governorate of Coromandel</English>
+		<French>Governorate of Coromandel</French>
+		<German>Governorate of Coromandel</German>
+		<Italian>Governorate of Coromandel</Italian>
+		<Spanish>Governorate of Coromandel</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_RAJPUTANA</Tag>
+		<English>Directorate of Surat</English>
+		<French>Directorate of Surat</French>
+		<German>Directorate of Surat</German>
+		<Italian>Directorate of Surat</Italian>
+		<Spanish>Directorate of Surat</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_CIV_DUTCH_</Tag>
+		<English></English>
+		<French></French>
+		<German></German>
+		<Italian></Italian>
+		<Spanish></Spanish>
+	</TEXT>
 </Civ4GameText>

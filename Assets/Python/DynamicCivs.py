@@ -225,9 +225,15 @@ dSpecificVassalTitles = deepdict({
 	iNetherlands : {
 		iMali : "TXT_KEY_CIV_DUTCH_MALI",
 		iEthiopia : "TXT_KEY_CIV_DUTCH_ETHIOPIA",
+		iTamils : "TXT_KEY_CIV_DUTCH_TAMILS",
+		iKarnataka : "TXT_KEY_CIV_DUTCH_KARNATAKA",
+		iMalays : "TXT_KEY_CIV_DUTCH_MALAYSIA",
+		iRajputs : "TXT_KEY_CIV_DUTCH_RAJPUTANA",
+		iBengal : "TXT_KEY_CIV_DUTCH_BENGAL",
 		iCongo : "TXT_KEY_CIV_DUTCH_CONGO",
 		iAmerica : "TXT_KEY_CIV_DUTCH_AMERICA",
 		iBrazil : "TXT_KEY_CIV_DUTCH_BRAZIL",
+		iAustralia : "TXT_KEY_CIV_DUTCH_AUSTRALIA",
 	},
 	iGermany : {
 		iHolyRome : "TXT_KEY_CIV_GERMAN_HOLY_ROME",
@@ -1054,6 +1060,9 @@ def vassalName(iPlayer, iMaster):
 		
 	if iCiv == iNetherlands:
 		return short(iPlayer)
+	
+	if iMasterCiv == iNetherlands and iCiv == iMalays:
+		return capitalName(iPlayer)
 
 	sSpecificName = dForeignNames[iMasterCiv].get(iCiv)
 	if sSpecificName:
