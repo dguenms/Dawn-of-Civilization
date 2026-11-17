@@ -3854,11 +3854,22 @@ class CvMainInterface:
 				
 # BUG - Raw Yields - start
 				bShowRawYields = g_bYieldView and CityScreenOpt.isShowRawYields()
+				if bShowRawYields:
+					iWidthCityName = 100
+					iWidthYields = 65
+				else:
+					iWidthCityName = 145
+					iWidthYields = 73
+				
+				if gc.getPlayer(pHeadSelectedCity.getOwner()).getTradeYieldModifier(YieldTypes.YIELD_PRODUCTION) > 0:
+					iWidthCityName -= iWidthYields / 2
+					iWidthYields += iWidthYields / 2				
+				
 				if (bShowRawYields):
 					screen.addTableControlGFC( "TradeRouteTable", 4, 10, 187, 238, 98, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 					screen.setStyle( "TradeRouteTable", "Table_City_Style" )
-					screen.setTableColumnHeader( "TradeRouteTable", 0, u"", 111 )
-					screen.setTableColumnHeader( "TradeRouteTable", 1, u"", 60 )
+					screen.setTableColumnHeader( "TradeRouteTable", 0, u"", iWidthCityName )
+					screen.setTableColumnHeader( "TradeRouteTable", 1, u"", iWidthYields )
 					screen.setTableColumnHeader( "TradeRouteTable", 2, u"", 55 )
 					screen.setTableColumnHeader( "TradeRouteTable", 3, u"", 10 )
 					screen.setTableColumnRightJustify( "TradeRouteTable", 1 )
@@ -3866,8 +3877,8 @@ class CvMainInterface:
 				else:
 					screen.addTableControlGFC( "TradeRouteTable", 3, 10, 187, 238, 98, False, False, 32, 32, TableStyles.TABLE_STYLE_STANDARD )
 					screen.setStyle( "TradeRouteTable", "Table_City_Style" )
-					screen.setTableColumnHeader( "TradeRouteTable", 0, u"", 158 )
-					screen.setTableColumnHeader( "TradeRouteTable", 1, u"", 68 )
+					screen.setTableColumnHeader( "TradeRouteTable", 0, u"", iWidthCityName )
+					screen.setTableColumnHeader( "TradeRouteTable", 1, u"", iWidthYields )
 					screen.setTableColumnHeader( "TradeRouteTable", 2, u"", 10 )
 					screen.setTableColumnRightJustify( "TradeRouteTable", 1 )
 # BUG - Raw Yields - end
