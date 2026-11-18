@@ -806,7 +806,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:5</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:10</Attribute>
+			<Attribute Class="Scalar">fCenterCut:20</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
@@ -814,7 +814,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:10</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:15</Attribute>
+			<Attribute Class="Scalar">fCenterCut:25</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
@@ -822,7 +822,7 @@
 			<Attribute Class="Scalar">bPlace:0</Attribute>
 			<Attribute Class="Scalar">iCropArea:15</Attribute>
 			<Attribute Class="Scalar">bCutTrees:1</Attribute>
-			<Attribute Class="Scalar">fCenterCut:25</Attribute>
+			<Attribute Class="Scalar">fCenterCut:30</Attribute>
 			<Attribute Class="Scalar">fTwist:-0.7853981633</Attribute>
 			<Attribute Class="Scalar">bIsPartOfImprovement:1</Attribute>
 		</ArtRef>
