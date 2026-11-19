@@ -3683,7 +3683,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=52
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -4102,6 +4102,7 @@ EndPlot
 BeginPlot
 	x=9,y=47
 	BonusType=BONUS_SALT
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -4123,7 +4124,7 @@ EndPlot
 BeginPlot
 	x=9,y=51
 	BonusType=BONUS_OIL
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -4151,6 +4152,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=56
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -4544,6 +4546,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=46
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -4554,6 +4557,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -4566,6 +4570,7 @@ BeginPlot
 	x=10,y=50
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -4580,6 +4585,7 @@ BeginPlot
 	x=10,y=52
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -4590,16 +4596,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=54
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=10,y=55
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=10,y=56
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -4623,6 +4632,7 @@ BeginPlot
 	x=10,y=59
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -5027,6 +5037,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=50
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -5035,11 +5046,13 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	BonusType=BONUS_STONE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=52
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -5047,11 +5060,13 @@ BeginPlot
 	x=11,y=53
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=54
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -5063,11 +5078,13 @@ EndPlot
 BeginPlot
 	x=11,y=56
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=11,y=57
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -5080,6 +5097,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=11,y=59
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -5453,18 +5471,21 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=12,y=49
 	BonusType=BONUS_DEER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=12,y=50
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -5472,6 +5493,7 @@ BeginPlot
 	x=12,y=51
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -5499,6 +5521,7 @@ EndPlot
 BeginPlot
 	x=12,y=55
 	BonusType=BONUS_STONE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -5509,6 +5532,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=57
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -5949,6 +5973,7 @@ BeginPlot
 	x=13,y=55
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -5961,6 +5986,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=57
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -6367,6 +6393,7 @@ BeginPlot
 	x=14,y=50
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -6408,6 +6435,7 @@ EndPlot
 BeginPlot
 	x=14,y=56
 	BonusType=BONUS_URANIUM
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -6796,7 +6824,6 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=45
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -6812,6 +6839,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -6819,6 +6847,7 @@ BeginPlot
 	x=15,y=49
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -6826,6 +6855,7 @@ BeginPlot
 	x=15,y=50
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -7243,6 +7273,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=16,y=45
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -7261,6 +7292,7 @@ BeginPlot
 	x=16,y=48
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -7270,6 +7302,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -7278,6 +7311,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_SALT
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -7677,18 +7711,19 @@ EndPlot
 BeginPlot
 	x=17,y=44
 	BonusType=BONUS_OBSIDIAN
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=17,y=45
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=17,y=46
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -7696,6 +7731,7 @@ BeginPlot
 	x=17,y=47
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -7703,11 +7739,13 @@ BeginPlot
 	x=17,y=48
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=17,y=49
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -8152,6 +8190,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=18,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -14407,6 +14446,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=38
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -14733,12 +14773,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=33,y=16
 	BonusType=BONUS_STONE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=3
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -15366,6 +15408,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=37
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -15627,6 +15670,7 @@ BeginPlot
 	x=35,y=5
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -15634,6 +15678,7 @@ BeginPlot
 	x=35,y=6
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -15666,6 +15711,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -15681,16 +15727,19 @@ BeginPlot
 	x=35,y=13
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
 BeginPlot
 	x=35,y=14
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
 BeginPlot
 	x=35,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -15702,6 +15751,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=17
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -16095,6 +16145,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=9
 	TerrainType=TERRAIN_TUNDRA
 	PlotType=1
 EndPlot
@@ -16110,6 +16161,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=6
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -16120,6 +16172,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=8
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -16133,6 +16186,7 @@ EndPlot
 BeginPlot
 	x=36,y=10
 	BonusType=BONUS_IRON
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -16140,6 +16194,7 @@ BeginPlot
 	x=36,y=11
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=1
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -16150,6 +16205,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=13
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -16172,6 +16228,7 @@ BeginPlot
 	x=36,y=17
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -16179,6 +16236,7 @@ BeginPlot
 	x=36,y=18
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -16187,7 +16245,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_RARE_EARTHS
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -16619,6 +16677,7 @@ BeginPlot
 	x=37,y=11
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -16677,12 +16736,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=20
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=37,y=21
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -17530,6 +17590,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=5
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_MOORLAND
 	PlotType=2
 EndPlot
@@ -19902,7 +19963,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=44,y=27
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -20329,11 +20390,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=45,y=27
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=45,y=28
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -20343,7 +20406,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -20757,21 +20820,25 @@ BeginPlot
 	RiverWEDirection=1
 	isWOfRiver
 	BonusType=BONUS_TOBACCO
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=46,y=28
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=46,y=29
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=46,y=30
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -21184,16 +21251,19 @@ BeginPlot
 	x=47,y=28
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
 BeginPlot
 	x=47,y=29
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=47,y=30
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -23844,6 +23914,7 @@ EndPlot
 BeginPlot
 	x=53,y=67
 	BonusType=BONUS_COAL
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=9
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -24265,6 +24336,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=67
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=9
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -24549,11 +24621,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=41
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=55,y=42
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -24962,6 +25036,7 @@ BeginPlot
 	x=56,y=37
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -24989,11 +25064,13 @@ EndPlot
 BeginPlot
 	x=56,y=42
 	BonusType=BONUS_IRON
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=56,y=43
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -25028,6 +25105,7 @@ BeginPlot
 	x=56,y=49
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25397,6 +25475,7 @@ BeginPlot
 	x=57,y=36
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -25462,6 +25541,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -25593,6 +25673,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=70
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=9
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -25838,6 +25919,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=36
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -25911,6 +25993,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -26790,6 +26873,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -26806,6 +26890,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=47
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26821,6 +26906,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=60,y=50
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -26835,6 +26921,7 @@ BeginPlot
 	x=60,y=52
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -27181,6 +27268,7 @@ BeginPlot
 	x=61,y=34
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27188,6 +27276,7 @@ BeginPlot
 	x=61,y=35
 	BonusType=BONUS_IVORY
 	BonusVarietyType=BONUS_IVORY_AFRICAN
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27248,6 +27337,7 @@ EndPlot
 BeginPlot
 	x=61,y=45
 	BonusType=BONUS_HORSE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -27624,6 +27714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=35
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28139,6 +28230,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28155,6 +28247,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=51
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28576,6 +28669,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=47
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -28617,6 +28711,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=55
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28945,6 +29040,7 @@ BeginPlot
 	x=65,y=34
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -28975,6 +29071,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=40
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -29427,6 +29524,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=41
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -29486,6 +29584,7 @@ EndPlot
 BeginPlot
 	x=66,y=51
 	BonusType=BONUS_COAL
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -29866,6 +29965,7 @@ EndPlot
 BeginPlot
 	x=67,y=40
 	BonusType=BONUS_DEER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -30392,6 +30492,7 @@ BeginPlot
 	x=68,y=53
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -30822,6 +30923,7 @@ EndPlot
 BeginPlot
 	x=69,y=49
 	BonusType=BONUS_WHEAT
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -31278,11 +31380,13 @@ EndPlot
 BeginPlot
 	x=70,y=48
 	BonusType=BONUS_OLIVES
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=70,y=49
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -31543,6 +31647,7 @@ BeginPlot
 	x=71,y=14
 	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_DIAMONDS
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -31665,6 +31770,7 @@ BeginPlot
 	x=71,y=33
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -31723,6 +31829,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -31767,6 +31874,7 @@ EndPlot
 BeginPlot
 	x=71,y=52
 	BonusType=BONUS_WINE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -31993,6 +32101,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=11
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=8
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32004,6 +32113,7 @@ EndPlot
 BeginPlot
 	x=72,y=13
 	BonusType=BONUS_RARE_EARTHS
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -32016,6 +32126,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -32032,6 +32143,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=18
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32039,6 +32151,7 @@ BeginPlot
 	x=72,y=19
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32146,6 +32259,7 @@ BeginPlot
 	x=72,y=33
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32245,6 +32359,7 @@ EndPlot
 BeginPlot
 	x=72,y=52
 	BonusType=BONUS_OLIVES
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32262,6 +32377,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=55
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -32472,6 +32588,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=11
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=8
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32492,11 +32609,13 @@ BeginPlot
 	x=73,y=14
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=73,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -32507,6 +32626,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=17
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32514,6 +32634,7 @@ BeginPlot
 	x=73,y=18
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32521,11 +32642,13 @@ BeginPlot
 	x=73,y=19
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=73,y=20
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32613,6 +32736,7 @@ BeginPlot
 	x=73,y=33
 	BonusType=BONUS_IVORY
 	BonusVarietyType=BONUS_IVORY_AFRICAN
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -32665,6 +32789,7 @@ EndPlot
 BeginPlot
 	x=73,y=43
 	BonusType=BONUS_SALT
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32935,12 +33060,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=11
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=8
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=12
-	FeatureType=FEATURE_FOREST, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=8
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -32953,32 +33079,37 @@ BeginPlot
 	x=74,y=14
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=16
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=17
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=18
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=74,y=19
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -33093,6 +33224,7 @@ BeginPlot
 	x=74,y=34
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -33147,6 +33279,7 @@ EndPlot
 BeginPlot
 	x=74,y=44
 	BonusType=BONUS_SPICES
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -33179,6 +33312,7 @@ EndPlot
 BeginPlot
 	x=74,y=50
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -33190,6 +33324,7 @@ EndPlot
 BeginPlot
 	x=74,y=52
 	BonusType=BONUS_OLIVES
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -33201,6 +33336,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=54
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -33423,6 +33559,7 @@ BeginPlot
 	x=75,y=12
 	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_DIAMONDS
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=8
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -33430,6 +33567,7 @@ BeginPlot
 	x=75,y=13
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -33449,6 +33587,7 @@ BeginPlot
 	x=75,y=16
 	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_DIAMONDS
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -33575,6 +33714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=34
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -33625,6 +33765,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -33651,12 +33792,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=49
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=75,y=50
 	BonusType=BONUS_WINE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -33667,6 +33810,7 @@ BeginPlot
 	RiverWEDirection=3
 	isWOfRiver
 	BonusType=BONUS_SILVER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -33930,11 +34074,13 @@ BeginPlot
 	x=76,y=15
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=76,y=16
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34106,6 +34252,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34144,6 +34291,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=51
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34160,6 +34308,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=54
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34410,6 +34559,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -34531,11 +34681,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=33
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=77,y=34
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34612,6 +34764,7 @@ EndPlot
 BeginPlot
 	x=77,y=48
 	BonusType=BONUS_WINE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34644,6 +34797,7 @@ EndPlot
 BeginPlot
 	x=77,y=54
 	BonusType=BONUS_OLIVES
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -35014,11 +35168,13 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=78,y=35
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -35107,6 +35263,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -35145,6 +35302,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=55
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -35512,6 +35670,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=34
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -35654,6 +35813,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=55
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36002,6 +36162,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=80,y=34
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36009,6 +36170,7 @@ BeginPlot
 	x=80,y=35
 	RiverNSDirection=0
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36422,7 +36584,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=24
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -36435,7 +36597,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=26
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -36888,6 +37050,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=25
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -36899,7 +37062,7 @@ EndPlot
 BeginPlot
 	x=82,y=27
 	BonusType=BONUS_GOLD
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -36946,11 +37109,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=35
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=82,y=36
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37014,6 +37179,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -37029,6 +37195,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=51
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -37360,6 +37527,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=27
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -37410,6 +37578,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=36
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37481,6 +37650,7 @@ EndPlot
 BeginPlot
 	x=83,y=49
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -37826,6 +37996,7 @@ BeginPlot
 	x=84,y=28
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37878,6 +38049,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=37
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -37927,6 +38099,7 @@ BeginPlot
 	x=84,y=46
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37953,6 +38126,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=51
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -38275,6 +38449,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=28
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -38316,6 +38491,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=34
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -38782,6 +38958,7 @@ EndPlot
 BeginPlot
 	x=86,y=34
 	BonusType=BONUS_SALT
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -38849,6 +39026,7 @@ EndPlot
 BeginPlot
 	x=86,y=47
 	BonusType=BONUS_IRON
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -39137,12 +39315,13 @@ EndPlot
 BeginPlot
 	x=87,y=16
 	BonusType=BONUS_SPICES
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=87,y=17
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -39209,6 +39388,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=30
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -39225,6 +39405,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=33
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -39259,6 +39440,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=39
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -39308,7 +39490,7 @@ BeginPlot
 	x=87,y=48
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -39592,6 +39774,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -39709,6 +39892,7 @@ EndPlot
 BeginPlot
 	x=88,y=36
 	BonusType=BONUS_SHEEP
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -39725,6 +39909,7 @@ EndPlot
 BeginPlot
 	x=88,y=39
 	BonusType=BONUS_INCENSE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -40161,6 +40346,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=33
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -40182,6 +40368,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=37
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -40268,6 +40455,7 @@ EndPlot
 BeginPlot
 	x=89,y=51
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -40319,6 +40507,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=89,y=59
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -40640,6 +40829,7 @@ EndPlot
 BeginPlot
 	x=90,y=36
 	BonusType=BONUS_MILLET
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -40678,11 +40868,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=43
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=90,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -40764,6 +40956,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=90,y=56
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -41102,6 +41295,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=36
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -41244,6 +41438,7 @@ BeginPlot
 	x=91,y=60
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -41539,7 +41734,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=34
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -41691,6 +41886,7 @@ BeginPlot
 	x=92,y=61
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -42038,6 +42234,7 @@ EndPlot
 BeginPlot
 	x=93,y=44
 	BonusType=BONUS_DATES
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -42126,11 +42323,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=60
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=93,y=61
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -42483,6 +42682,7 @@ EndPlot
 BeginPlot
 	x=94,y=44
 	BonusType=BONUS_WINE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=7
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -42534,6 +42734,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=53
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -42549,6 +42750,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=56
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -42576,6 +42778,7 @@ EndPlot
 BeginPlot
 	x=94,y=61
 	BonusType=BONUS_SALT
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -42908,6 +43111,7 @@ EndPlot
 BeginPlot
 	x=95,y=40
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -42951,6 +43155,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=48
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -42979,6 +43184,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=53
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -43357,6 +43563,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=43
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -43388,6 +43595,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=49
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -43406,6 +43614,7 @@ BeginPlot
 	x=96,y=52
 	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_TURQUOISE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -43793,11 +44002,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=43
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=97,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -44244,6 +44455,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=43
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -44324,6 +44536,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=56
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -44701,6 +44914,7 @@ BeginPlot
 	x=99,y=45
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -44762,11 +44976,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=99,y=56
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=99,y=57
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -45180,6 +45396,7 @@ BeginPlot
 	RiverNSDirection=2
 	isWOfRiver
 	BonusType=BONUS_COTTON
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -45247,6 +45464,7 @@ BeginPlot
 	x=100,y=58
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -45703,6 +45921,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=58
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -46059,6 +46278,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=42
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -46502,6 +46722,7 @@ BeginPlot
 	x=103,y=40
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -46519,11 +46740,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=103,y=43
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
 BeginPlot
 	x=103,y=44
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=1
 EndPlot
@@ -46634,6 +46857,7 @@ EndPlot
 BeginPlot
 	x=103,y=61
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -46995,6 +47219,7 @@ EndPlot
 BeginPlot
 	x=104,y=45
 	BonusType=BONUS_COPPER
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -47072,6 +47297,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=58
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -47087,6 +47313,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=104,y=61
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -47387,11 +47614,13 @@ EndPlot
 BeginPlot
 	x=105,y=35
 	BonusType=BONUS_MILLET
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=105,y=36
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -47869,6 +48098,7 @@ BeginPlot
 	x=106,y=37
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=1
 EndPlot
@@ -48010,6 +48240,7 @@ BeginPlot
 	x=106,y=59
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -48378,7 +48609,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=44
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_MUDPLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -48472,6 +48703,7 @@ BeginPlot
 	x=107,y=59
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -48854,7 +49086,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_MUDPLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -49763,7 +49995,7 @@ BeginPlot
 	x=110,y=45
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_MUDPLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -49839,6 +50071,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=59
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -50190,6 +50423,7 @@ BeginPlot
 	x=111,y=42
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_MUDPLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -50205,7 +50439,7 @@ BeginPlot
 	x=111,y=44
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_FLOOD_PLAINS, FeatureVariety=0
+	FeatureType=FEATURE_MUDPLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -50290,6 +50524,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=59
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=2
 EndPlot
@@ -50300,6 +50535,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=61
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_STEPPE
 	PlotType=1
 EndPlot
@@ -50741,6 +50977,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=112,y=60
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -51092,6 +51329,7 @@ BeginPlot
 	x=113,y=43
 	isNOfRiver
 	RiverWEDirection=1
+	FeatureType=FEATURE_MUDPLAINS, FeatureVariety=0
 	TerrainType=TERRAIN_GRASS
 	PlotType=2
 EndPlot
@@ -56996,6 +57234,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=14
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=8
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -57006,6 +57245,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=16
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -57013,6 +57253,7 @@ BeginPlot
 	x=126,y=17
 	isNOfRiver
 	RiverWEDirection=3
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -57473,17 +57714,20 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=127,y=16
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=127,y=17
 	BonusType=BONUS_IRON
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=1
 EndPlot
@@ -57926,11 +58170,13 @@ EndPlot
 BeginPlot
 	x=128,y=13
 	BonusType=BONUS_INCENSE
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=128,y=14
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -57942,6 +58188,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=128,y=16
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -58385,16 +58632,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=12
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=5
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
 BeginPlot
 	x=129,y=13
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=129,y=14
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -58421,6 +58671,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=19
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -58844,6 +59095,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=13
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -59308,11 +59560,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=13
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=131,y=14
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -59774,6 +60028,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=13
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -60233,6 +60488,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=13
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=0
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -61103,6 +61359,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=11
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -61967,6 +62224,7 @@ BeginPlot
 	x=137,y=10
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -62402,6 +62660,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=10
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -62418,6 +62677,7 @@ BeginPlot
 	x=138,y=12
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -62883,11 +63143,13 @@ BeginPlot
 	x=139,y=14
 	RiverNSDirection=2
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
 BeginPlot
 	x=139,y=15
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -63342,6 +63604,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=3
 	isWOfRiver
+	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
