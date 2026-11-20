@@ -527,63 +527,63 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/BambooForest/bamboo15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/BambooForest/BambooForest15_01.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -594,63 +594,63 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/HybridForest/Hybrid15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/HybridForest/Hybrid15_01.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -661,69 +661,404 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/TropicalForest/Tropical_Forest15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Forest/TropicalForest/Tropical_Forest15_01.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/EucalyptusForest/EucalyptusForest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/MediterraneanForest/MediterraneanForest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/LongleafForest/LongleafForest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/CedarForest/CedarForest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
 		<FeatureArtInfo>
