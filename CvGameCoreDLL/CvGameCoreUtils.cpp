@@ -1783,7 +1783,8 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 										iCost += PATH_CITY_WEIGHT;
 									}
 
-									if (pFromPlot->isRiverCrossing(directionXY(pFromPlot, pToPlot)))
+									// Fresol: attacking across a lake strait is a river crossing
+									if (pFromPlot->isRiverCrossing(directionXY(pFromPlot, pToPlot)) || pFromPlot->isLakeStraitCrossing(pToPlot))
 									{
 										if (!(pLoopUnit->isRiver()))
 										{
