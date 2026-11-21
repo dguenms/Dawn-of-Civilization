@@ -16028,6 +16028,11 @@ void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer
 		}
 	}
 
+	// Fresol: read the two player names once. Every name getter hands out a pointer into the same
+	// CvInitCore scratch buffer, so a getText() call that looks up two of them blanks the first.
+	CvWString szPlayer1Name = GET_PLAYER(ePlayer1).getNameKey();
+	CvWString szPlayer2Name = GET_PLAYER(ePlayer2).getNameKey();
+
 	if (!szDealOne.isEmpty())
 	{
 		if (!szDealTwo.isEmpty())
@@ -16042,7 +16047,7 @@ void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer
 			}
 			else
 			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_DEAL", GET_PLAYER(ePlayer1).getNameKey(), szDealOne.getCString(), GET_PLAYER(ePlayer2).getNameKey(), szDealTwo.getCString()));
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_DEAL", szPlayer1Name.GetCString(), szDealOne.getCString(), szPlayer2Name.GetCString(), szDealTwo.getCString()));
 			}
 		}
 		else
@@ -16057,7 +16062,7 @@ void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer
 			}
 			else
 			{
-				szBuffer.append(gDLL->getText("TXT_KEY_MISC_DEAL_ONESIDED", GET_PLAYER(ePlayer1).getNameKey(), szDealOne.getCString(), GET_PLAYER(ePlayer2).getNameKey()));
+				szBuffer.append(gDLL->getText("TXT_KEY_MISC_DEAL_ONESIDED", szPlayer1Name.GetCString(), szDealOne.getCString(), szPlayer2Name.GetCString()));
 			}
 		}
 	}
@@ -16073,7 +16078,7 @@ void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer
 		}
 		else
 		{
-			szBuffer.append(gDLL->getText("TXT_KEY_MISC_DEAL_ONESIDED", GET_PLAYER(ePlayer2).getNameKey(), szDealTwo.getCString(), GET_PLAYER(ePlayer1).getNameKey()));
+			szBuffer.append(gDLL->getText("TXT_KEY_MISC_DEAL_ONESIDED", szPlayer2Name.GetCString(), szDealTwo.getCString(), szPlayer1Name.GetCString()));
 		}
 	}
 }

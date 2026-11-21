@@ -4406,7 +4406,11 @@ bool CvUnit::nuke(int iX, int iY)
 		{
 			if (GET_PLAYER((PlayerTypes)iI).isAlive() && (getOwner() == iI || abTeamsAffected[GET_PLAYER((PlayerTypes)iI).getTeam()]))
 			{
-				szBuffer = gDLL->getText("TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE", GET_PLAYER(getOwnerINLINE()).getCivilizationAdjective(), getNameKey(), GET_PLAYER(bestInterceptor->getOwnerINLINE()).getCivilizationAdjective(), bestInterceptor->getNameKey());
+				// Fresol: copy the names into locals first - these getters hand out a pointer into a
+				// buffer shared by every name lookup, so the second one overwrote the first.
+				CvWString szInterceptedAdj = GET_PLAYER(getOwnerINLINE()).getCivilizationAdjective();
+				CvWString szInterceptorAdj = GET_PLAYER(bestInterceptor->getOwnerINLINE()).getCivilizationAdjective();
+				szBuffer = gDLL->getText("TXT_KEY_MISC_NUKE_INTERCEPTED_SATELLITE", szInterceptedAdj.GetCString(), getNameKey(), szInterceptorAdj.GetCString(), bestInterceptor->getNameKey());
 				gDLL->getInterfaceIFace()->addMessage(((PlayerTypes)iI), (((PlayerTypes)iI) == getOwnerINLINE()), GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_NUKE_INTERCEPTED", MESSAGE_TYPE_MAJOR_EVENT, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), pPlot->getX_INLINE(), pPlot->getY_INLINE(), true, true);
 			}
 		}
@@ -7156,7 +7160,10 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 		szCityName = pClosestCity->getName();
 	}
 
-	CvWString szBuffer = gDLL->getText(szFormatReveal.GetCString(), GET_PLAYER(getOwnerINLINE()).getCivilizationAdjectiveKey(), getNameKey(), kTargetPlayer.getCivilizationAdjectiveKey(), szCityName.GetCString());
+	// Fresol: copy the names into locals first - same reason as the war declaration message.
+	CvWString szRevealOwnAdj = GET_PLAYER(getOwnerINLINE()).getCivilizationAdjectiveKey();
+	CvWString szRevealTargetAdj = kTargetPlayer.getCivilizationAdjectiveKey();
+	CvWString szBuffer = gDLL->getText(szFormatReveal.GetCString(), szRevealOwnAdj.GetCString(), getNameKey(), szRevealTargetAdj.GetCString(), szCityName.GetCString());
 	gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_EXPOSED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
 
 	//SuperSpies: TSHEEP Enable Loyalty Promotion
@@ -7206,7 +7213,10 @@ bool CvUnit::testSpyIntercepted(PlayerTypes eTargetPlayer, int iModifier)
 		}
 		szFormatReveal = "TXT_KEY_SPY_ESCAPED_REVEAL";
 		szFormatNoReveal = "TXT_KEY_SPY_ESCAPED";
-		szBuffer = gDLL->getText(szFormatReveal.GetCString(), GET_PLAYER(getOwnerINLINE()).getCivilizationAdjectiveKey(), getNameKey(), kTargetPlayer.getCivilizationAdjectiveKey(), szCityName.GetCString());
+		// Fresol: copy the names into locals first - same reason as the war declaration message.
+		CvWString szEscapedOwnAdj = GET_PLAYER(getOwnerINLINE()).getCivilizationAdjectiveKey();
+		CvWString szEscapedTargetAdj = kTargetPlayer.getCivilizationAdjectiveKey();
+		szBuffer = gDLL->getText(szFormatReveal.GetCString(), szEscapedOwnAdj.GetCString(), getNameKey(), szEscapedTargetAdj.GetCString(), szCityName.GetCString());
 		gDLL->getInterfaceIFace()->addMessage(getOwnerINLINE(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_EXPOSED", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_GREEN"), getX_INLINE(), getY_INLINE(), true, true);
 		szBuffer = gDLL->getText(szFormatNoReveal.GetCString(), getNameKey(), kTargetPlayer.getCivilizationAdjectiveKey(), szCityName.GetCString());
 		gDLL->getInterfaceIFace()->addMessage(eTargetPlayer, true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_EXPOSE", MESSAGE_TYPE_INFO, getButton(), (ColorTypes)GC.getInfoTypeForString("COLOR_RED"), getX_INLINE(), getY_INLINE(), true, true);
