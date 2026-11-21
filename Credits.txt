@@ -99,6 +99,7 @@ FLAGS:
 OTHER GRAPHICS
 * Slave unit, Indian Edict: RFC Classical World by srpt
 * Savanna: ProjectMaximus
+* Shrubland, Forest, Rainforest, Jungle, Marsh, Oasis, Floodplains, Islands art: Tab911
 
 MODULES
 * Empire State Building: Voyhkah
