@@ -1741,12 +1741,11 @@ void CvUnit::updateCombat(bool bQuick)
 			{
 				bAdvance = canAdvance(pPlot, ((pDefender->canDefendAgainst(this) ) ? 1 : 0));
 
-				if (bAdvance)
+				// Fresol: the defender is captured by whatever kills it, and a unit can attack a
+				// tile it cannot advance into (an impassable feature), so this cannot wait on bAdvance
+				if (!isNoCapture())
 				{
-					if (!isNoCapture())
-					{
-						pDefender->setCapturingPlayer(getOwnerINLINE());
-					}
+					pDefender->setCapturingPlayer(getOwnerINLINE());
 				}
 
 				pDefender->kill(false);
@@ -1761,7 +1760,17 @@ void CvUnit::updateCombat(bool bQuick)
 
 			if (pPlot->getNumVisibleEnemyDefenders(this) == 0 && !pPlot->isUnconquerable(this))
 			{
-				getGroup()->groupMove(pPlot, true, ((bAdvance) ? this : NULL));
+				if (bAdvance)
+				{
+					getGroup()->groupMove(pPlot, true, this);
+				}
+				else
+				{
+					// Fresol: the attacker is not allowed onto this tile - it attacked across an impassable
+					// feature or terrain. Moving the group in would leave it standing where it cannot be, so
+					// run the sweep that entering would have run instead, and leave the attacker where it is
+					captureDefenselessUnits(pPlot);
+				}
 			}
 
 			// This is is put before the plot advancement, the unit will always try to walk back
@@ -1797,7 +1806,14 @@ void CvUnit::updateCombat(bool bQuick)
 
 			if (pPlot->getNumVisibleEnemyDefenders(this) == 0)
 			{
-				getGroup()->groupMove(pPlot, true, ((bAdvance) ? this : NULL));
+				if (bAdvance) // Fresol: same as above, for the withdrawal path
+				{
+					getGroup()->groupMove(pPlot, true, this);
+				}
+				else
+				{
+					captureDefenselessUnits(pPlot);
+				}
 			}
 
 			getGroup()->clearMissionQueue();
@@ -2725,7 +2741,9 @@ bool CvUnit::canMoveInto(const CvPlot* pPlot, bool bAttack, bool bDeclareWar, bo
 				TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
 				if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
 				{
-					if (/*DOMAIN_SEA != getDomainType() ||*/ (pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || (!bAttack && !canEnterTerritory(pPlot->getTeam())) )  // sea units can enter impassable in own cultural borders // Leoreth: now ALL units
+					// Fresol: an attack on impassable terrain is possible, entering it is not, so the whole
+					// check sits behind bAttack the way the impassable feature check above does
+					if (!bAttack && ((pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || !canEnterTerritory(pPlot->getTeam())) )  // sea units can enter impassable in own cultural borders // Leoreth: now ALL units
 					{
 						if (bIgnoreLoad || !canLoad(pPlot))
 						{
@@ -10391,6 +10409,69 @@ int CvUnit::getY() const
 }
 
 
+// Fresol: move down everything on pPlot that belongs to an enemy and cannot stand up to this unit.
+// This used to run only inside setXY, so it happened only when a unit entered a tile. A unit can
+// now attack across a tile it cannot enter, and doing nothing there would leave the rest of the
+// defenders' stack standing while the one that fought was taken.
+void CvUnit::captureDefenselessUnits(CvPlot* pPlot)
+{
+	CLLNode<IDInfo>* pUnitNode;
+	CvUnit* pLoopUnit;
+	CLinkList<IDInfo> oldUnits;
+
+	if (canFight())
+	{
+		oldUnits.clear();
+
+		pUnitNode = pPlot->headUnitNode();
+
+		while (pUnitNode != NULL)
+		{
+			oldUnits.insertAtEnd(pUnitNode->m_data);
+			pUnitNode = pPlot->nextUnitNode(pUnitNode);
+		}
+
+		pUnitNode = oldUnits.head();
+
+		while (pUnitNode != NULL)
+		{
+			pLoopUnit = ::getUnit(pUnitNode->m_data);
+			pUnitNode = oldUnits.next(pUnitNode);
+
+			if (pLoopUnit != NULL)
+			{
+				if (isEnemy(pLoopUnit->getTeam(), pPlot) || pLoopUnit->isEnemy(getTeam()))
+				{
+					if (!pLoopUnit->canCoexistWithEnemyUnit(getTeam()))
+					{
+						if (NO_UNITCLASS == pLoopUnit->getUnitInfo().getUnitCaptureClassType() && pLoopUnit->canDefendAgainst(this, pPlot))
+						{
+							pLoopUnit->jumpToNearestValidPlot(); // can kill unit
+						}
+						else
+						{
+							if (!m_pUnitInfo->isHiddenNationality() && !pLoopUnit->getUnitInfo().isHiddenNationality())
+							{
+								GET_TEAM(pLoopUnit->getTeam()).changeWarWeariness(getTeam(), *pPlot, GC.getDefineINT("WW_UNIT_CAPTURED"));
+								GET_TEAM(getTeam()).changeWarWeariness(pLoopUnit->getTeam(), *pPlot, GC.getDefineINT("WW_CAPTURED_UNIT"));
+								GET_TEAM(getTeam()).AI_changeWarSuccess(pLoopUnit->getTeam(), GC.getDefineINT("WAR_SUCCESS_UNIT_CAPTURING"));
+							}
+
+							if (!isNoCapture())
+							{
+								pLoopUnit->setCapturingPlayer(getOwnerINLINE());
+							}
+
+							pLoopUnit->kill(false, getOwnerINLINE());
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
 void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool bCheckPlotVisible)
 {
 	CLLNode<IDInfo>* pUnitNode;
@@ -10402,7 +10483,6 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 	CvPlot* pOldPlot;
 	CvPlot* pNewPlot;
 	CvPlot* pLoopPlot;
-	CLinkList<IDInfo> oldUnits;
 	ActivityTypes eOldActivityType;
 	int iI;
 
@@ -10453,56 +10533,9 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 			}
 		}
 
-		if (canFight())
-		{
-			oldUnits.clear();
-
-			pUnitNode = pNewPlot->headUnitNode();
-
-			while (pUnitNode != NULL)
-			{
-				oldUnits.insertAtEnd(pUnitNode->m_data);
-				pUnitNode = pNewPlot->nextUnitNode(pUnitNode);
-			}
-
-			pUnitNode = oldUnits.head();
-
-			while (pUnitNode != NULL)
-			{
-				pLoopUnit = ::getUnit(pUnitNode->m_data);
-				pUnitNode = oldUnits.next(pUnitNode);
-
-				if (pLoopUnit != NULL)
-				{
-					if (isEnemy(pLoopUnit->getTeam(), pNewPlot) || pLoopUnit->isEnemy(getTeam()))
-					{
-						if (!pLoopUnit->canCoexistWithEnemyUnit(getTeam()))
-						{
-							if (NO_UNITCLASS == pLoopUnit->getUnitInfo().getUnitCaptureClassType() && pLoopUnit->canDefendAgainst(this, pNewPlot))
-							{
-								pLoopUnit->jumpToNearestValidPlot(); // can kill unit
-							}
-							else
-							{
-								if (!m_pUnitInfo->isHiddenNationality() && !pLoopUnit->getUnitInfo().isHiddenNationality())
-								{
-									GET_TEAM(pLoopUnit->getTeam()).changeWarWeariness(getTeam(), *pNewPlot, GC.getDefineINT("WW_UNIT_CAPTURED"));
-									GET_TEAM(getTeam()).changeWarWeariness(pLoopUnit->getTeam(), *pNewPlot, GC.getDefineINT("WW_CAPTURED_UNIT"));
-									GET_TEAM(getTeam()).AI_changeWarSuccess(pLoopUnit->getTeam(), GC.getDefineINT("WAR_SUCCESS_UNIT_CAPTURING"));
-								}
-
-								if (!isNoCapture())
-								{
-									pLoopUnit->setCapturingPlayer(getOwnerINLINE());
-								}
-
-								pLoopUnit->kill(false, getOwnerINLINE());
-							}
-						}
-					}
-				}
-			}
-		}
+		// Fresol: this sweep now lives in captureDefenselessUnits, so that the combat code can run
+		// the same thing for an attacker that is not allowed to enter the tile it attacked across
+		captureDefenselessUnits(pNewPlot);
 
 		if (pNewPlot->isGoody(getTeam()))
 		{
@@ -13133,6 +13166,21 @@ bool CvUnit::canAdvance(const CvPlot* pPlot, int iThreshold) const
 				{
 					return false;
 				}
+			}
+		}
+	}
+
+	// Fresol: and the same for impassable terrain. This is the one difference from the matching
+	// check in canMoveInto, which is skipped while attacking, and that is what lets the attack
+	// happen without the attacker following the defender onto the tile
+	if (m_pUnitInfo->getTerrainImpassable(pPlot->getTerrainType()) && (pPlot->getFeatureType() == NO_FEATURE || !GC.getFeatureInfo(pPlot->getFeatureType()).isMakesPassable()))
+	{
+		TechTypes eTech = (TechTypes)m_pUnitInfo->getTerrainPassableTech(pPlot->getTerrainType());
+		if (NO_TECH == eTech || !GET_TEAM(getTeam()).isHasTech(eTech))
+		{
+			if ((pPlot->getTeam() == NO_TEAM && !canFound(pPlot)) || !canEnterTerritory(pPlot->getTeam()))
+			{
+				return false;
 			}
 		}
 	}
