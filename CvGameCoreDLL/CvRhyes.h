@@ -19,6 +19,9 @@ typedef list<char*> LISTCHAR;
 #define BUILDING_PALACE			((BuildingClassTypes)0)
 #define BUILDING_PLAGUE			((BuildingTypes)GC.getInfoTypeForString("BUILDING_PLAGUE"))
 
+// Fresol: the BuildingTypes enum only covers wonders, so unique buildings have to be resolved by name
+#define THAI_FLOATING_MARKET	((BuildingTypes)GC.getInfoTypeForString("BUILDING_THAI_FLOATING_MARKET"))
+
 #define UNITCLASS_SLAVE			((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SLAVE"))
 
 

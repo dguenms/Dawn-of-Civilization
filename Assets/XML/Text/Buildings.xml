@@ -1142,6 +1142,14 @@
 		<Spanish>Floating Market</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_BUILDING_THAI_FLOATING_MARKET_HELP</Tag>
+		<English>[ICON_BULLET]+2[ICON_FOOD] when the city is on a river</English>
+		<French>[ICON_BULLET]+2[ICON_FOOD] lorsque la ville est sur un fleuve</French>
+		<German>[ICON_BULLET]+2[ICON_FOOD] wenn die Stadt an einem Fluss liegt</German>
+		<Italian>[ICON_BULLET]+2[ICON_FOOD] quando la citt&#224; &#232; su un fiume</Italian>
+		<Spanish>[ICON_BULLET]+2[ICON_FOOD] cuando la ciudad est&#233; en un r&#237;o</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_BUILDING_THEATRE_STRATEGY</Tag>
 		<English>[COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] increase a city's culture. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Cinemas[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] national wonder.</English>
 		<French>[COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] increase a city's culture. They also allow you to hire one [COLOR_HIGHLIGHT_TEXT]Artist[COLOR_REVERT] specialist. [COLOR_BUILDING_TEXT]Theatres[COLOR_REVERT] are required to build [COLOR_BUILDING_TEXT]Cinemas[COLOR_REVERT] and the [COLOR_BUILDING_TEXT]National Theatre[COLOR_REVERT] national wonder.</French>
