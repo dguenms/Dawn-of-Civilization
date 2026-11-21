@@ -10505,7 +10505,7 @@ int CvCityAI::AI_buildingWeight(BuildingTypes eBuilding) const
 		int iFloodPlainsCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
-			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_FLOOD_PLAINS)
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_FLOOD_PLAINS || getCityIndexPlot(iI)->getFeatureType() == FEATURE_MUDPLAIN)
 			{
 				iFloodPlainsCount += 1;
 			}

@@ -271,7 +271,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 
 	if (lResult == 1)
 	{
-		if (pPlot->getFeatureType() != NO_FEATURE && pPlot->getFeatureType() != FEATURE_FLOOD_PLAINS && pPlot->getFeatureType() != FEATURE_WOODLAND) // Leoreth: flood plains and woodland are not removed by cities
+		if (pPlot->getFeatureType() != NO_FEATURE && pPlot->getFeatureType() != FEATURE_FLOOD_PLAINS && pPlot->getFeatureType() != FEATURE_MUDPLAIN && pPlot->getFeatureType() != FEATURE_WOODLAND) // Leoreth: flood plains, mudplains and woodland are not removed by cities
 		{
 			pPlot->setFeatureType(NO_FEATURE);
 		}
@@ -7733,7 +7733,7 @@ void CvCity::updateFeatureHealth()
 				{
 					// Leoreth: Congo UP: no unhealthiness from jungle and marsh
 					bool bCongoUP = (getCivilizationType() == CONGO && (eFeature == FEATURE_JUNGLE || eFeature == FEATURE_MARSH));
-					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HANGING_GARDENS) && eFeature == FEATURE_FLOOD_PLAINS);
+					bool bHangingGardens = (GET_PLAYER(getOwnerINLINE()).isHasBuildingEffect(HANGING_GARDENS) && (eFeature == FEATURE_FLOOD_PLAINS || eFeature == FEATURE_MUDPLAIN));
 
 					if (!bCongoUP && !bHangingGardens)
 					{
@@ -8395,7 +8395,7 @@ int CvCity::getAdditionalHealthByBuilding(BuildingTypes eBuilding, int& iGood, i
 		int iFloodPlainsCount = 0;
 		for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
 		{
-			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_FLOOD_PLAINS)
+			if (getCityIndexPlot(iI)->getFeatureType() == FEATURE_FLOOD_PLAINS || getCityIndexPlot(iI)->getFeatureType() == FEATURE_MUDPLAIN)
 			{
 				iFloodPlainsCount += 1;
 			}

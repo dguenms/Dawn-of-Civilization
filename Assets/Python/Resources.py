@@ -439,7 +439,7 @@ def createTerrains():
 @handler("BeginGameTurn")
 def createFeatures():
 	for tile, iFeature in dFeatures[game.getGameTurn()]:
-		if not plot(tile).isCity() or iFeature == iFloodPlains:
+		if not plot(tile).isCity() or iFeature in [iFloodPlains, iMudplain]:
 			plot(tile).setFeatureType(iFeature, 0)
 
 
@@ -511,7 +511,7 @@ def setupScenarioResources():
 	for iTurn, lFeatures in dFeatures:
 		if iTurn <= iStartTurn:
 			for (x, y), iFeature in lFeatures:
-				if not plot(x, y).isCity() or iFeature == iFloodPlains:
+				if not plot(x, y).isCity() or iFeature in [iFloodPlains, iMudplain]:
 					plot(x, y).setFeatureType(iFeature, 0)
 	
 	for iTurn, lFeatures in dRemovedFeatures:
