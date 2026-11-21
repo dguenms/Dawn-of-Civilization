@@ -19,6 +19,110 @@
 #include "CvDLLFAStarIFaceBase.h"
 
 #include "CvRhyes.h" //Rhye
+// Fresol - start
+// AI_isWaterAreaRelevant() drops every water area that is not the largest on the map and does
+// not have two cities of ours and two of another team on its shore. For a city whose water is a
+// lake or a small enclosed sea the water area is therefore set to NULL and the work boat branches
+// in AI_chooseProduction() never fire, even though the city can build a work boat and the boat
+// would be placed in one of the water areas the city touches.
+//
+// The work boat is the only sea unit such a city can build: it has iMinAreaSize -1, while every
+// other sea unit in the game requires an adjacent water area of at least 20 tiles, so no navy can
+// appear here and nothing else needs to be guarded against.
+//
+// So the resources of the adjacent water areas that the relevance test dropped count as needed as
+// well. Every such area is looked at, because a city can touch several of them (two lakes, a lake
+// and a small sea). Only areas the city actually touches are considered: jumpToNearestValidPlot()
+// places a newly built boat in the nearest valid water plot, and a boat can only work plots of its
+// own water area (or, for domain sea, plots of an area its plot touches).
+static int countExtraSeaWorkersNeeded(CvCity* pCity, CvArea* pExcludeWaterArea)
+{
+	int iCount = 0;
+
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		CvPlot* pPlot = plotDirection(pCity->getX_INLINE(), pCity->getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pPlot == NULL)
+		{
+			continue;
+		}
+
+		if (!pPlot->isWater() || pPlot->area() == NULL)
+		{
+			continue;
+		}
+
+		if (pPlot->area() == pExcludeWaterArea)
+		{
+			continue;
+		}
+
+		bool bAlreadyCounted = false;
+
+		for (int iJ = 0; iJ < iI; ++iJ)
+		{
+			CvPlot* pOtherPlot = plotDirection(pCity->getX_INLINE(), pCity->getY_INLINE(), ((DirectionTypes)iJ));
+
+			if (pOtherPlot != NULL && pOtherPlot->area() == pPlot->area())
+			{
+				bAlreadyCounted = true;
+				break;
+			}
+		}
+
+		if (!bAlreadyCounted)
+		{
+			iCount += GET_PLAYER(pCity->getOwnerINLINE()).countUnimprovedBonuses(pPlot->area(), pCity->plot());
+		}
+	}
+
+	return iCount;
+}
+
+// Work boats this player already has in the water areas adjacent to the city (each area counted
+// once). A new boat can end up in any of them, so counting them together avoids building one per
+// water area when one would do.
+static int countWorkBoatsInAdjacentWaterAreas(CvCity* pCity, CvArea* pExcludeWaterArea)
+{
+	int iCount = 0;
+
+	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	{
+		CvPlot* pPlot = plotDirection(pCity->getX_INLINE(), pCity->getY_INLINE(), ((DirectionTypes)iI));
+
+		if (pPlot == NULL || !pPlot->isWater() || pPlot->area() == NULL)
+		{
+			continue;
+		}
+
+		if (pPlot->area() == pExcludeWaterArea)
+		{
+			continue;
+		}
+
+		bool bAlreadyCounted = false;
+
+		for (int iJ = 0; iJ < iI; ++iJ)
+		{
+			CvPlot* pOtherPlot = plotDirection(pCity->getX_INLINE(), pCity->getY_INLINE(), ((DirectionTypes)iJ));
+
+			if (pOtherPlot != NULL && pOtherPlot->area() == pPlot->area())
+			{
+				bAlreadyCounted = true;
+				break;
+			}
+		}
+
+		if (!bAlreadyCounted)
+		{
+			iCount += GET_PLAYER(pCity->getOwnerINLINE()).AI_totalWaterAreaUnitAIs(pPlot->area(), UNITAI_WORKER_SEA);
+		}
+	}
+
+	return iCount;
+}
+// Fresol - end
 
 #define BUILDINGFOCUS_FOOD					(1 << 1)
 #define BUILDINGFOCUS_PRODUCTION			(1 << 2)
@@ -750,7 +854,13 @@ void CvCityAI::AI_chooseProduction()
 
     int iExistingWorkers = kPlayer.AI_totalAreaUnitAIs(pArea, UNITAI_WORKER);
     int iNeededWorkers = kPlayer.AI_neededWorkers(pArea);
-    int iNeededSeaWorkers = (pWaterArea == NULL) ? 0 : AI_neededSeaWorkers();
+    int iSeaWorkersNeededForArea = (pWaterArea == NULL) ? 0 : AI_neededSeaWorkers();
+    int iNeededSeaWorkers = iSeaWorkersNeededForArea;
+    // Fresol - start
+    int iExtraSeaWorkersNeeded = countExtraSeaWorkersNeeded(this, pWaterArea);
+
+    iNeededSeaWorkers += iExtraSeaWorkersNeeded;
+    // Fresol - end
 
     int iTargetCulturePerTurn = AI_calculateTargetCulturePerTurn();
 
@@ -1242,19 +1352,31 @@ void CvCityAI::AI_chooseProduction()
 		}
     }
 
-	if (pWaterArea != NULL)
+	// Fresol - start
+	if (iNeededSeaWorkers > 0)
 	{
-		if (iNeededSeaWorkers > 0)
+		bool bNeedMoreSeaWorkers = false;
+
+		if (pWaterArea != NULL && kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_WORKER_SEA) < iSeaWorkersNeededForArea)
 		{
-			if (kPlayer.AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_WORKER_SEA) < iNeededSeaWorkers)
+			bNeedMoreSeaWorkers = true;
+		}
+
+		if (!bNeedMoreSeaWorkers && iExtraSeaWorkersNeeded > 0 &&
+			countWorkBoatsInAdjacentWaterAreas(this, pWaterArea) < iExtraSeaWorkersNeeded)
+		{
+			bNeedMoreSeaWorkers = true;
+		}
+
+		if (bNeedMoreSeaWorkers)
+		{
+			if (AI_chooseUnit(UNITAI_WORKER_SEA))
 			{
-				if (AI_chooseUnit(UNITAI_WORKER_SEA))
-				{
-					return;
-				}
+				return;
 			}
 		}
 	}
+	// Fresol - end
 
 	// Leoreth: second additional settler check
 	if (iNumSettlers == 0 && iNumSettlers < iMaxSettlers && GET_PLAYER(getOwnerINLINE()).AI_getNumTrainAIUnits(UNITAI_SETTLE) == 0)
