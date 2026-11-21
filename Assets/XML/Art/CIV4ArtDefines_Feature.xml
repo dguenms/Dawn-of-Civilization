@@ -274,63 +274,63 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Rainforest/Jungle15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Rainforest/PalmForest/Jungle15_01.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -1437,7 +1437,7 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Marsh/marsh_1.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Marsh/Marsh/marsh_1.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -1448,7 +1448,7 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Marsh/marsh_2.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Marsh/Marsh/marsh_2.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -1459,7 +1459,7 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Marsh/marsh_3.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Marsh/Marsh/marsh_3.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -1470,7 +1470,7 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Marsh/marsh_4.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Marsh/Marsh/marsh_4.nif</ModelFile>
 						<Connections/>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -2728,63 +2728,63 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga/Snowy15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Arctic/Snowy15_01.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -2795,63 +2795,63 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Taiga2/Snowy15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Taiga/Boreal/Snowy15_01.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -2939,63 +2939,63 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna01_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna01_01.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna02_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna02_01.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna03_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna03_01.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna04_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna04_01.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna05_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna05_01.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna06_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna06_01.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna07_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna07_01.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna08_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna08_01.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna09_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna09_01.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna10_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna10_01.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna11_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna11_01.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna12_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna12_01.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna13_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna13_01.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna14_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna14_01.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Savanna/Savanna15_01.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Savanna/Savanna/Savanna15_01.nif</ModelFile>
 					<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
