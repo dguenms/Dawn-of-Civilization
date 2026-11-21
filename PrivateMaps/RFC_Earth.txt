@@ -11670,7 +11670,7 @@ EndPlot
 BeginPlot
 	x=26,y=32
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_RAINFOREST, FeatureVariety=0
+	FeatureType=FEATURE_RAINFOREST, FeatureVariety=1
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -24175,7 +24175,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=54,y=37
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -24578,13 +24578,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=34
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=55,y=35
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -25023,7 +25023,7 @@ BeginPlot
 	x=56,y=35
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -25039,7 +25039,7 @@ BeginPlot
 	x=56,y=37
 	isNOfRiver
 	RiverWEDirection=3
-	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -26369,7 +26369,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=59,y=35
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -26813,7 +26813,7 @@ BeginPlot
 	x=60,y=34
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -26821,7 +26821,7 @@ BeginPlot
 	x=60,y=35
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -27263,7 +27263,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -27711,7 +27711,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=34
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -28153,7 +28153,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=63,y=34
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -28580,13 +28580,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=32
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=64,y=33
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -28596,7 +28596,7 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_IVORY
 	BonusVarietyType=BONUS_IVORY_AFRICAN
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -29483,7 +29483,7 @@ BeginPlot
 	isNOfRiver
 	RiverWEDirection=1
 	BonusType=BONUS_IRON
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -29934,7 +29934,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=34
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -30382,7 +30382,7 @@ BeginPlot
 	RiverWEDirection=3
 	isWOfRiver
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -30390,7 +30390,7 @@ BeginPlot
 	x=68,y=34
 	BonusType=BONUS_COW
 	BonusVarietyType=BONUS_COW_BROWN
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -31706,7 +31706,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=24
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -31759,13 +31759,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=31
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=71,y=32
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -32154,7 +32154,7 @@ BeginPlot
 	x=72,y=19
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=4
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -32248,7 +32248,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=31
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -32651,7 +32651,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=20
-	FeatureType=FEATURE_SHRUBLAND, FeatureVariety=6
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -32731,7 +32731,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=32
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -33213,13 +33213,13 @@ BeginPlot
 	isWOfRiver
 	BonusType=BONUS_GEMS
 	BonusVarietyType=BONUS_GEMS_DIAMONDS
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=74,y=33
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -33711,7 +33711,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=75,y=33
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -34101,7 +34101,7 @@ BeginPlot
 	x=76,y=19
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -34193,7 +34193,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=32
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -34576,7 +34576,7 @@ BeginPlot
 	x=77,y=18
 	BonusType=BONUS_IVORY
 	BonusVarietyType=BONUS_IVORY_AFRICAN
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=4
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -34592,7 +34592,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=20
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -35080,7 +35080,7 @@ BeginPlot
 	RiverWEDirection=1
 	BonusType=BONUS_IVORY
 	BonusVarietyType=BONUS_IVORY_AFRICAN
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -35533,7 +35533,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=13
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -35574,7 +35574,7 @@ BeginPlot
 	x=79,y=19
 	RiverNSDirection=2
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -35582,7 +35582,7 @@ BeginPlot
 	x=79,y=20
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -35605,7 +35605,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=24
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -35625,14 +35625,14 @@ BeginPlot
 	x=79,y=27
 	BonusType=BONUS_IVORY
 	BonusVarietyType=BONUS_IVORY_AFRICAN
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=79,y=28
 	BonusType=BONUS_SALT
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -36098,7 +36098,7 @@ EndPlot
 BeginPlot
 	x=80,y=23
 	BonusType=BONUS_GOLD
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=1
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -36530,19 +36530,19 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=81,y=15
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=81,y=16
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=81,y=17
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -37011,7 +37011,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=18
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -37492,7 +37492,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=21
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -37500,14 +37500,14 @@ BeginPlot
 	x=83,y=22
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=83,y=23
 	BonusType=BONUS_COTTON
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -37519,7 +37519,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=83,y=25
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -37942,7 +37942,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=19
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=3
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -37991,7 +37991,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=27
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -39784,7 +39784,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=16
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=4
 	TerrainType=TERRAIN_PLAINS
 	PlotType=2
 EndPlot
@@ -45807,7 +45807,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=101,y=40
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -46276,7 +46276,7 @@ EndPlot
 BeginPlot
 	x=102,y=41
 	BonusType=BONUS_DYE
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -48585,7 +48585,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=40
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -49042,7 +49042,7 @@ BeginPlot
 	x=108,y=38
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_GRASS
 	PlotType=1
 EndPlot
@@ -49054,7 +49054,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=108,y=40
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -49505,14 +49505,14 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=109,y=38
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
 BeginPlot
 	x=109,y=39
 	BonusType=BONUS_IRON
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -49960,7 +49960,7 @@ EndPlot
 BeginPlot
 	x=110,y=39
 	BonusType=BONUS_SUGAR
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=2
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -60082,7 +60082,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=22
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -60985,7 +60985,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=22
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
@@ -61430,7 +61430,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=23
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -63638,13 +63638,13 @@ EndPlot
 BeginPlot
 	x=140,y=20
 	BonusType=BONUS_BANANA
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
 BeginPlot
 	x=140,y=21
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=1
 EndPlot
@@ -64076,7 +64076,7 @@ BeginPlot
 	x=141,y=19
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_SAVANNA, FeatureVariety=0
+	FeatureType=FEATURE_SAVANNA, FeatureVariety=5
 	TerrainType=TERRAIN_SAVANNA
 	PlotType=2
 EndPlot
