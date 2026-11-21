@@ -28634,7 +28634,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=40
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -29505,7 +29505,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=37
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -33258,7 +33258,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=40
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -35197,7 +35197,7 @@ BeginPlot
 	x=78,y=38
 	RiverNSDirection=0
 	isWOfRiver
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=1
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -39456,7 +39456,7 @@ EndPlot
 BeginPlot
 	x=87,y=41
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -40399,7 +40399,7 @@ EndPlot
 BeginPlot
 	x=89,y=42
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=2
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -41316,7 +41316,7 @@ EndPlot
 BeginPlot
 	x=91,y=39
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -42656,7 +42656,7 @@ EndPlot
 BeginPlot
 	x=94,y=39
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -42716,7 +42716,7 @@ EndPlot
 BeginPlot
 	x=94,y=49
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=2
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -44063,7 +44063,7 @@ EndPlot
 BeginPlot
 	x=97,y=52
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=2
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -44534,7 +44534,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=55
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -48208,7 +48208,7 @@ EndPlot
 BeginPlot
 	x=106,y=53
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -49155,7 +49155,7 @@ BeginPlot
 	x=108,y=56
 	isNOfRiver
 	RiverWEDirection=1
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -50048,7 +50048,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=54
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -50082,7 +50082,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=110,y=60
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -50518,7 +50518,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=111,y=57
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_SEMIDESERT
 	PlotType=2
 EndPlot
@@ -51410,7 +51410,7 @@ EndPlot
 BeginPlot
 	x=113,y=56
 	BonusType=BONUS_DATES
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
@@ -52769,7 +52769,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=57
-	FeatureType=FEATURE_OASIS, FeatureVariety=0
+	FeatureType=FEATURE_OASIS, FeatureVariety=3
 	TerrainType=TERRAIN_DESERT
 	PlotType=2
 EndPlot
