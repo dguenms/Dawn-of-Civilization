@@ -565,7 +565,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=1,y=21
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -995,7 +995,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=23
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1224,7 +1224,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=2,y=68
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -1397,7 +1397,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=21
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1433,7 +1433,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=28
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -1504,7 +1504,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=3,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2056,7 +2056,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=4,y=69
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -2244,7 +2244,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=23
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2285,7 +2285,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=31
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2457,7 +2457,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=5,y=65
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2578,7 +2578,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=5
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -2730,7 +2730,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -2888,13 +2888,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=6,y=66
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=6,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -3311,7 +3311,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=7,y=63
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3520,7 +3520,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=20
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3666,7 +3666,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=49
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3749,7 +3749,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=8,y=62
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -3974,7 +3974,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=9,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4407,7 +4407,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=19
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -4530,7 +4530,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=10,y=43
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -5320,7 +5320,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=19
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -5342,13 +5342,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=12,y=23
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
 BeginPlot
 	x=12,y=24
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -5770,7 +5770,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=18
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -5791,13 +5791,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=13,y=23
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -5808,7 +5808,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=13,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -6240,7 +6240,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=14,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -6693,7 +6693,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=15,y=20
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -7570,7 +7570,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=17,y=17
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -10351,7 +10351,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=23,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -10835,7 +10835,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=24,y=43
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11229,7 +11229,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=34
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11241,7 +11241,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=25,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11734,7 +11734,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=44
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -11746,7 +11746,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=26,y=46
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12018,7 +12018,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=13
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12034,7 +12034,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=16
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -12159,7 +12159,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=39
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -12343,13 +12343,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=27,y=70
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=27,y=71
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -12751,7 +12751,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=28,y=64
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -13108,7 +13108,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=47
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -13255,7 +13255,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=29,y=72
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -13564,7 +13564,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=30,y=46
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14455,7 +14455,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=39
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14490,7 +14490,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=32,y=45
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -14711,7 +14711,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=4
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -14722,7 +14722,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=33,y=6
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -15182,7 +15182,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=34,y=3
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -15653,7 +15653,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=35,y=2
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -16417,7 +16417,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16516,7 +16516,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=61
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16527,7 +16527,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=36,y=63
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16636,7 +16636,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=3
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -16867,7 +16867,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=37
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16886,7 +16886,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=40
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -16898,7 +16898,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=37,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17362,7 +17362,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=38,y=40
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -17577,7 +17577,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=39,y=2
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -21120,7 +21120,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=47,y=4
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -23102,7 +23102,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=51,y=70
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -24781,7 +24781,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=55,y=69
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -24896,7 +24896,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=11
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -24977,7 +24977,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=27
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -25253,7 +25253,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=56,y=74
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -25687,7 +25687,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=57,y=72
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -26146,7 +26146,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=58,y=73
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -27805,7 +27805,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=62,y=50
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -28439,7 +28439,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=4
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -28820,7 +28820,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=64,y=72
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -29273,7 +29273,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=65,y=74
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -29730,7 +29730,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=66,y=75
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30037,7 +30037,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=67,y=53
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -30359,7 +30359,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=68,y=30
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31096,7 +31096,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=69,y=77
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -31376,7 +31376,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=47
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -31559,7 +31559,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=70,y=77
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -32034,7 +32034,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=71,y=78
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -32374,7 +32374,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=54
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32522,7 +32522,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=72,y=78
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -32835,7 +32835,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=51
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -32946,7 +32946,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=73,y=69
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -33445,7 +33445,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=74,y=71
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34300,7 +34300,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=52
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34404,7 +34404,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=76,y=69
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -34778,7 +34778,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=77,y=50
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35293,7 +35293,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=78,y=53
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -35787,7 +35787,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=79,y=50
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -36959,7 +36959,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=82,y=8
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -38274,7 +38274,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=84,y=74
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -38507,7 +38507,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=85,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39356,7 +39356,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=23
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -39426,7 +39426,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=87,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -39821,7 +39821,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=88,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -41157,7 +41157,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=8
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -41243,7 +41243,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=91,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -41697,7 +41697,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=92,y=26
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42221,7 +42221,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=93,y=41
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -42563,7 +42563,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=94,y=21
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43127,7 +43127,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=95,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=4
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -43658,7 +43658,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=96,y=58
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_SALTLAKE
 	PlotType=3
 EndPlot
@@ -43914,7 +43914,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=97,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -44272,7 +44272,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=98,y=6
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -46088,7 +46088,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=5
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -46189,7 +46189,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46205,7 +46205,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=28
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46217,7 +46217,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=30
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -46233,7 +46233,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=102,y=33
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -48531,7 +48531,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=107,y=32
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -51765,7 +51765,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=114,y=42
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -52143,7 +52143,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=29
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -52164,7 +52164,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=33
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -52175,13 +52175,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=115,y=36
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -52203,7 +52203,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=115,y=40
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -52583,7 +52583,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=116,y=28
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -53037,7 +53037,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=117,y=26
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -54521,7 +54521,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=120,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -54933,7 +54933,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -54955,7 +54955,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=121,y=29
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -55417,7 +55417,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=27
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -55438,7 +55438,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=122,y=31
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -56352,7 +56352,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=124,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -56789,7 +56789,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=125,y=17
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57269,7 +57269,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=126,y=19
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=5
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57777,7 +57777,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -57830,7 +57830,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=127,y=34
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58710,7 +58710,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=25
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58748,7 +58748,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=32
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -58775,7 +58775,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=129,y=37
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59162,7 +59162,7 @@ EndPlot
 BeginPlot
 	x=130,y=24
 	BonusType=BONUS_WHALE
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59234,7 +59234,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=37
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59260,7 +59260,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=130,y=41
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -59634,7 +59634,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=131,y=25
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60116,7 +60116,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=28
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60133,7 +60133,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=31
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60159,13 +60159,13 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=132,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
 BeginPlot
 	x=132,y=36
-	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS_STRAIT, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60562,7 +60562,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=26
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60582,7 +60582,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=29
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60618,7 +60618,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -60748,7 +60748,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=133,y=59
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61015,7 +61015,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=27
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -61229,7 +61229,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=134,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -61447,7 +61447,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=135,y=26
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62295,7 +62295,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=137,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62738,7 +62738,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -62814,7 +62814,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=138,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63317,7 +63317,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=139,y=44
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63714,7 +63714,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=34
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63740,7 +63740,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=39
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -63786,7 +63786,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=140,y=48
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64087,7 +64087,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=21
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64304,7 +64304,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=141,y=63
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64513,7 +64513,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=20
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64589,7 +64589,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=34
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -64742,7 +64742,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=142,y=64
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=6
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -64989,7 +64989,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=143,y=29
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -65422,7 +65422,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=144,y=32
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -66010,7 +66010,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=145,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -66218,7 +66218,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=146,y=27
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -66668,7 +66668,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=35
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -66830,7 +66830,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=147,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_OCEAN
 	PlotType=3
 EndPlot
@@ -67029,7 +67029,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=148,y=24
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -67246,7 +67246,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=148,y=67
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=1
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=7
 	TerrainType=TERRAIN_ARCTIC_COAST
 	PlotType=3
 EndPlot
@@ -67440,7 +67440,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=22
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -67481,7 +67481,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=30
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=2
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot
@@ -67548,7 +67548,7 @@ BeginPlot
 EndPlot
 BeginPlot
 	x=149,y=43
-	FeatureType=FEATURE_ISLANDS, FeatureVariety=0
+	FeatureType=FEATURE_ISLANDS, FeatureVariety=3
 	TerrainType=TERRAIN_COAST
 	PlotType=3
 EndPlot

@@ -1361,73 +1361,6 @@
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
 			</FeatureVariety>
-			<FeatureVariety>
-				<FeatureArtPieces>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest01_01.nif</ModelFile>
-						<Connections>NW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest02_01.nif</ModelFile>
-						<Connections>NE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest03_01.nif</ModelFile>
-						<Connections>NW NE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest04_01.nif</ModelFile>
-						<Connections>SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest05_01.nif</ModelFile>
-						<Connections>NW SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest06_01.nif</ModelFile>
-						<Connections>NE SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest07_01.nif</ModelFile>
-						<Connections>NW NE SE</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest08_01.nif</ModelFile>
-						<Connections>SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest09_01.nif</ModelFile>
-						<Connections>NW SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest10_01.nif</ModelFile>
-						<Connections>NE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest11_01.nif</ModelFile>
-						<Connections>NW NE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest12_01.nif</ModelFile>
-						<Connections>SE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest13_01.nif</ModelFile>
-						<Connections>NW SE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest14_01.nif</ModelFile>
-						<Connections>NE SE SW</Connections>
-					</FeatureArtPiece>
-					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Forest/BorealForest/BorealForest15_01.nif</ModelFile>
-						<Connections>NW NE SE SW</Connections>
-					</FeatureArtPiece>
-				</FeatureArtPieces>
-				<FeatureDummyNodes/>
-				<bGenerateRotations>0</bGenerateRotations>
-				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
-			</FeatureVariety>
 		</FeatureArtInfo>
 		<FeatureArtInfo>
 			<Type>ART_DEF_FEATURE_FALLOUT</Type>
@@ -1569,148 +1502,148 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/Islands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/Islands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/GrassIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -1721,148 +1654,148 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/IcyIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/ForestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -1873,148 +1806,148 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/DryIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/RainforestIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -2025,148 +1958,756 @@
 			<FeatureVariety>
 				<FeatureArtPieces>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
 						<Connections>NW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
 						<Connections>NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
 						<Connections>NW NE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
 						<Connections>SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
 						<Connections>NW SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
 						<Connections>NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
 						<Connections>NW NE SE</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island0.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>NW SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
 						<Connections>NE SE SW</Connections>
 					</FeatureArtPiece>
 					<FeatureArtPiece>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_nw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_ne.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_se.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island1_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island2_sw.nif</ModelFile>
-						<ModelFile>Art/Terrain/Features/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/TropicalIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Button_Islands.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MediterraneanIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Button_Islands.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/DryIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Button_Islands.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/MoorlandIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Button_Islands.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island0.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_nw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_ne.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_se.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island1_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island2_sw.nif</ModelFile>
+						<ModelFile>Art/Terrain/Features/Islands/IcyIslands/island3_sw.nif</ModelFile>
 						<Connections>NW NE SE SW</Connections>
 					</FeatureArtPiece>
 				</FeatureArtPieces>
@@ -3141,6 +3682,274 @@
 				<FeatureDummyNodes/>
 				<bGenerateRotations>0</bGenerateRotations>
 				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Tropical/Tropical_Forest15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/Forest.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
+			</FeatureVariety>
+			<FeatureVariety>
+				<FeatureArtPieces>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen01_01.nif</ModelFile>
+						<Connections>NW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen02_01.nif</ModelFile>
+						<Connections>NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen03_01.nif</ModelFile>
+						<Connections>NW NE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen04_01.nif</ModelFile>
+						<Connections>SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen05_01.nif</ModelFile>
+						<Connections>NW SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen06_01.nif</ModelFile>
+						<Connections>NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen07_01.nif</ModelFile>
+						<Connections>NW NE SE</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen08_01.nif</ModelFile>
+						<Connections>SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen09_01.nif</ModelFile>
+						<Connections>NW SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen10_01.nif</ModelFile>
+						<Connections>NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen11_01.nif</ModelFile>
+						<Connections>NW NE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen12_01.nif</ModelFile>
+						<Connections>SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen13_01.nif</ModelFile>
+						<Connections>NW SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen14_01.nif</ModelFile>
+						<Connections>NE SE SW</Connections>
+					</FeatureArtPiece>
+					<FeatureArtPiece>
+						<ModelFile>Art/Terrain/Features/Woodland/Evergreen/Evergreen15_01.nif</ModelFile>
+						<Connections>NW NE SE SW</Connections>
+					</FeatureArtPiece>
+				</FeatureArtPieces>
+				<FeatureDummyNodes/>
+				<bGenerateRotations>0</bGenerateRotations>
+				<VarietyButton>Art/Interface/Buttons/TerrainFeatures/ForestEvergreen.dds</VarietyButton>
 			</FeatureVariety>
 		</FeatureArtInfo>
 		<FeatureArtInfo>
