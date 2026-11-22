@@ -11781,27 +11781,6 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>DIPLO_ARMENIA_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/armenia_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_ARMENIA_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/armenia_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_ARMENIA_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/armenia_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
 			<SoundID>DIPLO_ASSYRIA_EARLY</SoundID>
 			<Filename>Sounds/Diplomacy/assyria_early</Filename>
 			<LoadType>STREAMED</LoadType>
@@ -11907,27 +11886,6 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>DIPLO_HUNGARY_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/hungary_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_HUNGARY_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/hungary_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_HUNGARY_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/hungary_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
 			<SoundID>DIPLO_INDONESIA_EARLY</SoundID>
 			<Filename>Sounds/Diplomacy/indonesia_early</Filename>
 			<LoadType>STREAMED</LoadType>
@@ -11944,27 +11902,6 @@
 		<SoundData>
 			<SoundID>DIPLO_INDONESIA_LATE</SoundID>
 			<Filename>Sounds/Diplomacy/indonesia_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_IROQUOIS_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/iroquois_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_IROQUOIS_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/iroquois_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_IROQUOIS_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/iroquois_late</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
@@ -12054,69 +11991,6 @@
 			<bInGeneric>1</bInGeneric>
 		</SoundData>
 		<SoundData>
-			<SoundID>DIPLO_MEXICO_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/mexico_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_MEXICO_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/mexico_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_MEXICO_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/mexico_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_MISSISSIPPI_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/mississippi_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_MISSISSIPPI_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/mississippi_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_MISSISSIPPI_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/mississippi_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_NIGERIA_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/nigeria_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_NIGERIA_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/nigeria_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_NIGERIA_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/nigeria_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
 			<SoundID>DIPLO_NUBIA_EARLY</SoundID>
 			<Filename>Sounds/Diplomacy/nubia_early</Filename>
 			<LoadType>STREAMED</LoadType>
@@ -12175,69 +12049,6 @@
 		<SoundData>
 			<SoundID>DIPLO_POLYNESIA_LATE</SoundID>
 			<Filename>Sounds/Diplomacy/polynesia_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SCYTHIA_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/scythia_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SCYTHIA_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/scythia_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SCYTHIA_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/scythia_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SOUTHAFRICA_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/southafrica_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SOUTHAFRICA_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/southafrica_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SOUTHAFRICA_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/southafrica_late</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SWAHILI_EARLY</SoundID>
-			<Filename>Sounds/Diplomacy/swahili_early</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SWAHILI_MIDDLE</SoundID>
-			<Filename>Sounds/Diplomacy/swahili_middle</Filename>
-			<LoadType>STREAMED</LoadType>
-			<bIsCompressed>1</bIsCompressed>
-			<bInGeneric>1</bInGeneric>
-		</SoundData>
-		<SoundData>
-			<SoundID>DIPLO_SWAHILI_LATE</SoundID>
-			<Filename>Sounds/Diplomacy/swahili_late</Filename>
 			<LoadType>STREAMED</LoadType>
 			<bIsCompressed>1</bIsCompressed>
 			<bInGeneric>1</bInGeneric>
