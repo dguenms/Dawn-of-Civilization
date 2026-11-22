@@ -113,6 +113,7 @@ GAME TEXT
 
 MUSIC:
 * Native American music: Mullah Cable, freethink
+* Leader music: History Rewritten by Xyth, integrated by Gameboy2396
 
 MISCELLANEOUS
 * Corossol: Phoenicia
