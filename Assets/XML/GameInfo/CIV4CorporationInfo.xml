@@ -28,11 +28,16 @@
 				<iHeadquarterCommerce>0</iHeadquarterCommerce>
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
+			<!-- Fresol: 0.21 food and 0.8 gold per copy (the world size factor of 50% is applied on top,
+			     so 42 and 160 are the values to put here). With the old 50/150 a copy could be
+			     absorbed without changing the city at all: the 4th, 8th and 12th copy added no
+			     gold and the food only grew on the 5th and 10th copy. Every copy from the first to
+			     the twelfth now raises at least one of the two. -->
 			<CommercesProduced>
-				<iCommerceProduced>150</iCommerceProduced>
+				<iCommerceProduced>160</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
-				<iYieldProduced>50</iYieldProduced>
+				<iYieldProduced>42</iYieldProduced>
 			</YieldsProduced>
 			<Button>Art/Interface/Buttons/Corporations/SilkRoute.dds</Button>
 			<MovieFile>NONE</MovieFile>
@@ -64,11 +69,16 @@
 				<iHeadquarterCommerce>1</iHeadquarterCommerce>
 			</HeadquarterCommerces>
 			<BonusProduced>NONE</BonusProduced>
+			<!-- Fresol: 0.21 food and 0.8 gold per copy (the world size factor of 50% is applied on top,
+			     so 42 and 160 are the values to put here). With the old 50/150 a copy could be
+			     absorbed without changing the city at all: the 4th, 8th and 12th copy added no
+			     gold and the food only grew on the 5th and 10th copy. Every copy from the first to
+			     the twelfth now raises at least one of the two. -->
 			<CommercesProduced>
-				<iCommerceProduced>150</iCommerceProduced>
+				<iCommerceProduced>160</iCommerceProduced>
 			</CommercesProduced>
 			<YieldsProduced>
-				<iYieldProduced>50</iYieldProduced>
+				<iYieldProduced>42</iYieldProduced>
 			</YieldsProduced>
 			<Button>Art/Interface/Buttons/Corporations/TradingCompany.dds</Button>
 			<MovieFile>NONE</MovieFile>
